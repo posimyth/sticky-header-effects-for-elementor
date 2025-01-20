@@ -57,6 +57,7 @@ function she_header_load_plugin() {
 	}
 
 	require( SHE_HEADER_PATH . 'plugin.php' );
+	require( SHE_HEADER_PATH . 'includes/dashboard/class-she-wp-menu.php' );
 }
 add_action( 'plugins_loaded', 'she_header_load_plugin' );
 

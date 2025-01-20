@@ -1,0 +1,15 @@
+{
+    "name": "posim/sticky-header-effects-for-elementor",
+    "autoload": {
+        "psr-4": {
+            "Posim\\StickyHeaderEffectsForElementor\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "devangvachheta137",
+            "email": "devang.posimyth@gmail.com"
+        }
+    ],
+    "require": {}
+}

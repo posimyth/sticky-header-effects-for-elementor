@@ -1,0 +1,26 @@
+import { combineReducers } from 'redux';
+import { 
+    Dashboard_data, 
+    widgets_data, 
+    extra_option_data, 
+    check_plugin, 
+    Listing_data, 
+    Custom_code,
+    Performance_data,
+    White_label,
+    license_data,
+    Wdkit_widgets_list,
+} from "./reducer";
+
+export default combineReducers({
+    Dashboard_data,
+    widgets_data,
+    extra_option_data,
+    check_plugin,
+    Listing_data,
+    Custom_code,
+    Performance_data,
+    White_label,
+    license_data,
+    Wdkit_widgets_list,
+});
