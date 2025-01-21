@@ -90,6 +90,9 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				case 'shed_onload_data':
 					$response = $this->shed_onload_data();
 					break;
+				case 'she_plugin_install':
+					$response = $this->she_plugin_install();
+					break;
 				default:
 					$response = $this->tpae_set_response( false, 'Invalid type.', 'Something went wrong.' );
 					break;
@@ -102,7 +105,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		/**
 		 * Set Response
 		 *
-		 * @since 6.0.0
+		 * @since 1.7.3
 		 */
 		public function shed_onload_data() {
 
@@ -159,7 +162,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 *
 		 * It is Use for Check Plugin Dependency of template.
 		 *
-		 * @since 6.0.0
+		 * @since 1.7.3
 		 *
 		 * @param array $plugins List of required plugins to check.
 		 */
@@ -186,6 +189,82 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			}
 
 			return $update_plugin;
+		}
+
+		/**
+		 * Plugin Install
+		 *
+		 * @since 1.7.3
+		 */
+		public function she_plugin_install() {
+
+			add_action( 'wp_ajax_she_dashboard_ajax_call', array( $this, 'she_dashboard_ajax_call' ) );
+
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				$response = $this->tpae_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
+				return $response;
+			}
+
+			$slug = isset( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
+			$name = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
+			if ( ! $slug ) {
+				return $this->tpae_set_response( false, 'Slug Not Found.', 'Something went wrong.' );
+			}
+
+			$installed_plugins = get_plugins();
+
+			include_once ABSPATH . 'wp-admin/includes/file.php';
+			include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+			include_once ABSPATH . 'wp-admin/includes/class-automatic-upgrader-skin.php';
+			include_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
+
+			$result   = array();
+			$response = wp_remote_post(
+				'http://api.wordpress.org/plugins/info/1.0/',
+				array(
+					'body' => array(
+						'action'  => 'plugin_information',
+						'request' => serialize(
+							(object) array(
+								'slug'   => $name,
+								'fields' => array(
+									'version' => false,
+								),
+							)
+						),
+					),
+				)
+			);
+
+			$plugin_info = unserialize( wp_remote_retrieve_body( $response ) );
+
+			if ( ! $plugin_info ) {
+				wp_send_json_error( array( 'content' => __( 'Failed to retrieve plugin information.', 'tpebl' ) ) );
+			}
+
+			$skin     = new \Automatic_Upgrader_Skin();
+			$upgrader = new \Plugin_Upgrader( $skin );
+
+			$plugin_basename = $slug;
+
+			if ( ! isset( $installed_plugins[ $plugin_basename ] ) && empty( $installed_plugins[ $plugin_basename ] ) ) {
+
+				$installed         = $upgrader->install( $plugin_info->download_link );
+				$activation_result = activate_plugin( $plugin_basename );
+
+				$success = null === $activation_result;
+				$result  = $this->tpae_set_response( $success, 'Successfully Install', 'Successfully Install', '' );
+
+			} elseif ( isset( $installed_plugins[ $plugin_basename ] ) ) {
+
+				$activation_result = activate_plugin( $plugin_basename );
+
+				$success = null === $activation_result;
+				$result  = $this->tpae_set_response( $success, 'Successfully Activate', 'Successfully Activate', '' );
+
+			}
+
+			return $result;
 		}
 	}
 
