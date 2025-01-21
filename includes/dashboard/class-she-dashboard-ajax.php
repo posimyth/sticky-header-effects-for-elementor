@@ -93,6 +93,9 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				case 'she_plugin_install':
 					$response = $this->she_plugin_install();
 					break;
+				case 'she_theme_install':
+					$response = $this->she_theme_install();
+					break;
 				case 'she_prev_version':
 					$response = $this->she_prev_version();
 					break;
@@ -116,6 +119,11 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		public function shed_onload_data() {
 
 			$plugins = array(
+				array(
+					'name'        => 'the-plus-addons-for-elementor-page-builder',
+					'status'      => '',
+					'plugin_slug' => 'the-plus-addons-for-elementor-page-builder/theplus-elementor-addon.php',
+				),
 				array(
 					'name'        => 'wdesignkit',
 					'status'      => '',
@@ -159,6 +167,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				'message'     => esc_html__( 'success', 'she-header' ),
 				'description' => esc_html__( 'success', 'she-header' ),
 				'user_info'   => $user_info,
+				'plugin_detail' => $plugin_details,
 			);
 
 			return $response;
