@@ -1,0 +1,81 @@
+@import "../../style/global.scss";
+
+.theplus_theme_builder_cover_main {
+
+    .theplus_theme_builder_box_cover_main {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        background-color: $theplus_white;
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 16px 25px;
+        width: 100%;
+        position: relative;
+    }
+
+    .theplus_theme_builder_grid_view_box {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        position: relative;
+    }
+
+    .theplus_theme_builder_box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+    }
+
+    .theplus_theme_builder_cover_img_box {
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .theplus_theme_builder_img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .theplus_theme_builder_description {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+
+    .tpae_tb_crd_desc {
+        font-family: $theplus_font_family;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+        color: $theplus_gray_primary_normal;
+        margin: 0;
+    }
+
+    .theplus_view_all_btm_btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        margin: 30PX 0;
+        position: relative;
+    }   
+}
+
+@media (max-width:991px) {
+    .theplus_theme_builder_cover_main .theplus_theme_builder_box_cover_main .theplus_theme_builder_grid_view_box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:576px) {
+    .theplus_theme_builder_cover_main .theplus_theme_builder_box_cover_main .theplus_theme_builder_grid_view_box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

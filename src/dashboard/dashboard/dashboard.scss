@@ -1,0 +1,1132 @@
+@import "../../style/global.scss";
+
+.tpae_dash_inner_main {
+
+    .tpae_wlcm_sec_cover {
+        background-color: $theplus_white;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px;
+        position: relative;
+
+        .tpae_wlcm_sec_in {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .tpae_whats_new {
+            padding: 12px 25px;
+            text-align: center;
+            border: 1px solid $tpae-ghost-btn_border;
+            border-radius: 5px;
+            height: fit-content;
+            position: relative;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $theplus_purple;
+
+                .tpae_whats_new_txt {
+                    color: $theplus_white;
+                }
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .tpae_whats_new_count {
+            background-color: $theplus_red;
+            font-size: 10px;
+            border-radius: 50px;
+            width: 15px;
+            height: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            color: $theplus_white;
+        }
+
+        .tpae_whats_new_txt {
+            font-family: $theplus_font_family;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 500;
+            color: $theplus_dark_blk;
+        }
+
+        .tpae_user_img_wn {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 24px;
+            position: relative;
+        }
+
+        .tpae_user_img_cover {
+            width: 70px;
+            height: 70px;
+            position: relative;
+        }
+
+        .tpae_user_img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+
+        .tpae-pro-check {
+            display: flex;
+            height: max-content;
+            width: max-content;
+            position: absolute;
+            top: 1px;
+        }
+
+        .tpae_user_name {
+            font-family: $theplus_font_family;
+            font-size: 16px;
+            color: $theplus_black;
+            line-height: 26px;
+            font-weight: 500;
+            margin: 0;
+            line-height: 26px;
+        }
+
+        .tpae_slide_form_sec {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .tpae_numinfo_wdkit_cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100%;
+            gap: 15px;
+            width: 65%;
+        }
+
+        .tpae_numeric_info_cover {
+            display: flex;
+            width: 100%;
+            gap: 15px;
+            box-sizing: border-box;
+            flex-wrap: nowrap;
+            position: relative;
+        }
+
+        .tpae_numeric_card {
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 18px;
+            border: 1px solid $theplus_light_gray_tint;
+            border-radius: 8px;
+        }
+
+        .shw_arrow{
+            cursor: pointer;
+        }
+
+        .tpae_numbers {
+            font-family: $theplus_font_family;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+            color: $theplus_dark_blk;
+        }
+
+        .tpae_sm_abt_num {
+            font-family: $theplus_font_family;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17px;
+            color: $theplus_dark_blk;
+        }
+
+        .tpae_product_slider {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .tp_sections_main {
+            display: flex;
+            background-color: #1717cc;
+            width: 100%;
+        }
+
+        .tp_slider_image {
+            max-width: 45%;
+            min-width: 35%;
+            object-fit: contain;
+        }
+
+        .tp_sections_one {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 25px;
+            width: 50%;
+        }
+
+        .tp_banner_heading {
+            color: white;
+            margin: 0;
+            height: 45px;
+        }
+
+        .nxt_wdesignkit_btn_group {
+            align-items: center;
+            display: flex;
+            gap: 15px;
+            justify-content: left;
+            width: 100%;
+        }
+
+        .tp_install_wdesignkit_btn {
+            background-color: #c22076;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 15px;
+            cursor: pointer;
+            text-align: center;
+            white-space: nowrap;
+
+            button,
+            a {
+                background-color: transparent;
+                border: none;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+
+        .tp_learn_btn_link {
+            color: white;
+            font-family: $theplus_font_family;
+            font-size: 12px;
+            line-height: 22px;
+            position: relative;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .tp_learn_btn_link::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            bottom: 1px;
+            left: 0px;
+            background-color: #fff;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .tp_learn_btn_link:hover::after {
+            transform: scaleX(1)
+        }
+
+        .tpae_wdesignkit_banner {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            background-color: #040483;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tpae_wdk_left_content {
+            width: 60%;
+            padding: 23px 35px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .tpae_wdk_banner_h {
+            font-family: $theplus_font_family;
+            color: $theplus_white;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 500;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        .tpae_wdk_btn_grp {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tpae_install_wdk_btn {
+            color: $theplus_white;
+            font-family: $theplus_font_family;
+            font-size: 12px;
+            line-height: 22px;
+            background-color: #c22076;
+            padding: 12px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+
+            &:hover {
+                background-color: #9b1a5e;
+            }
+
+            &:focus {
+                box-shadow: none;
+                outline: none;
+            }
+        }
+
+        .tpae_learn_btn_link {
+            color: $theplus_white;
+            font-family: $theplus_font_family;
+            font-size: 12px;
+            line-height: 22px;
+            text-decoration: none;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 1px;
+                bottom: -5px;
+                left: 0;
+                background-color: #fff;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            &:hover {
+                &::before {
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+            }
+
+            &:focus {
+                box-shadow: none;
+                outline: none;
+            }
+        }
+
+        .tpae_wdk_rit_content {
+            width: 60%;
+
+            img {
+                width: 100%;
+                height: 200px;
+                max-height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .tpae_sub_form_cover {
+            width: 35%;
+            height: 100%;
+            display: flex;
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            background: $theplus_purple;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .tpae_subscribe_form_h {
+            font-family: $theplus_font_family;
+            color: $theplus_white;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 500;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        .tpae-name-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .tpae_subscribe_input {
+            border: 1px solid $theplus_white_light;
+            border-radius: 5px;
+            padding: 10px 15px;
+            color: $theplus_white;
+            font-family: $theplus_font_family;
+            background-color: transparent;
+            font-size: 12px;
+            line-height: 17px;
+            font-weight: 400;
+            width: 100%;
+            box-sizing: border-box;
+
+            &::placeholder {
+                color: $theplus_white_light;
+            }
+
+            &:focus {
+                box-shadow: none;
+                outline: none;
+                border: 1px solid $theplus_white;
+            }
+
+        }
+
+        .tpae-username-tooltip {
+            background-color: red;
+            color: white;
+            width: max-content;
+            padding: 6px;
+            position: absolute;
+            top: -39px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            border-radius: 6px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: red transparent transparent transparent;
+            }
+
+        }
+
+        .tpae_subscribe_btn {
+            font-family: $theplus_font_family;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 500;
+            color: $theplus_red_btn_bg;
+            background-color: $theplus_white;
+            border-radius: 5px;
+            padding: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            transition: 0.3s linear;
+            box-sizing: border-box;
+
+            &:hover {
+                background-color: $theplus_nav_strip_bg_light;
+            }
+        }
+    }
+
+    .tpae_qik_infocrd_main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        box-sizing: border-box;
+        position: relative;
+
+        .tpae_qikinfo_grp_cover {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .tpae-ghost-btn {
+            width: 100%;
+        }
+
+        .tpae_qik_infocrd_cover {
+            display: flex;
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: $theplus_white;
+            border-radius: 10px;
+            width: 26%;
+            min-height: 119px;
+            padding: 20px;
+            gap: 15px;
+            position: relative;
+
+            &.tpae_ratings_box {
+                max-width: 49.2%;
+                width: 55%;
+            }
+        }
+
+        .tpae-purple-common-btn {
+            width: 100%;
+        }
+
+        .tpae_qik_info_crd_title {
+            font-family: $theplus_font_family;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 500;
+            margin: 0;
+            color: $theplus_black;
+        }
+
+        .tpae_rating_box {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 9px;
+            position: relative;
+
+            a {
+                &:focus {
+                    box-shadow: none;
+                }
+
+                svg {
+                    fill: $theplus_toggle_off_bg;
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: #f9b744;
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .tpae_icon_bx_cover {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            width: 100%;
+        }
+
+        .theplus_icon_cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: $theplus_purple;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            &:hover {
+                background-color: $theplus_purple_dark;
+            }
+        }
+    }
+
+    .slideshow-container,
+    .tpae-slideshow-skeleton {
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 0;
+        border-radius: 8px;
+        height: 150px;
+        width: 100%;
+    }
+
+    .tp_main_slider {
+        display: none;
+    }
+
+    .tpae-slider-text-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .tp_main_slider.active {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+        height: 100%;
+    }
+
+    .tp_slider_dot {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dot {
+        margin: 0 2px;
+        border-radius: 50%;
+        cursor: pointer;
+        background: #ccc;
+        width: 8px;
+        height: 8px;
+        margin: 3px;
+        transition: transform .2s linear;
+    }
+
+    .dot.active {
+        background: #fff;
+        transform: scale(1.4);
+        z-index: 1;
+    }
+
+    .slide_animation {
+        animation: slide_animation 1s ease;
+    }
+
+    @keyframes slide_animation {
+        from {
+            opacity: 0.4;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+.tpae_whats_new_cover {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    transition: 0.3s linear;
+    z-index: 1000;
+
+    &.tpae_whats_new_box_opened {
+        right: 0;
+        opacity: 1;
+
+        &::-webkit-scrollbar {
+            display: block;
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: darkgray;
+            border-radius: 16px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: lightgray;
+        }
+    }
+
+    &.tpae_whats_new_box_closed {
+        right: -100%;
+        opacity: 0;
+    }
+
+    .tpae_heading_icon_strip {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 16px;
+        position: relative;
+        margin-top: 30px;
+
+        .tpae_whats_new_heading {
+            font-family: $theplus_font_family;
+            font-size: 18px;
+            line-height: 21px;
+            font-weight: 500;
+            color: $theplus_black;
+            margin: 0;
+        }
+
+        .tpae_whats_new_close_btn {
+            cursor: pointer;
+        }
+    }
+
+    .tpae-whats-new-outer {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .tpae-whats-new-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        overflow: scroll;
+        gap: 10px;
+        width: 350px;
+        height: 100vh;
+        background: white;
+        padding: 20px;
+        transition: all 0.5s ease-in-out;
+        box-shadow: -5px 4px 124px 0px rgba(0, 0, 0, 0.1490196078);
+        z-index: 9;
+
+        &::-webkit-scrollbar {
+            display: block;
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: darkgray;
+            border-radius: 16px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: lightgray;
+        }
+
+    }
+
+    .tpae_whats_new_card_info_cover {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-sizing: border-box;
+        margin: 15px 0px;
+
+        .tpae_whats_new_img_cover {
+            position: relative;
+            width: 100%;
+            border-radius: 9px;
+            overflow: hidden;
+        }
+
+        .tpae_whatsn_new_img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .tpae_img_heading_info {
+            font-family: $theplus_font_family;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 500;
+            color: $theplus_black;
+            margin: 0;
+            padding-top: 16px;
+            position: relative;
+        }
+
+        .tpae_text_info {
+            font-family: $theplus_font_family;
+            font-size: 14px;
+            line-height: 21px;
+            font-weight: 500;
+            color: $theplus_gray_primary_normal;
+            margin: 0;
+            padding-top: 7px;
+            position: relative;
+        }
+
+        .tpae_whats_new_btn_group {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 22px;
+            padding-top: 20px;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .tpae_whats_new_info_cta_btn {
+            font-family: $theplus_font_family;
+            font-size: 14px;
+            line-height: 21px;
+            font-weight: 500;
+            color: $theplus_white;
+            text-align: center;
+            border-radius: 5px;
+            background-color: $theplus_purple;
+            padding: 12px 25px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+
+            &:hover {
+                background-color: $theplus_purple_dark;
+            }
+        }
+
+        .tpae_whats_new_btn_link {
+            font-family: $theplus_font_family;
+            font-size: 14px;
+            line-height: 21px;
+            font-weight: 500;
+            color: $theplus_gray_primary_normal;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 1px;
+                bottom: 0px;
+                left: 0;
+                background-color: $theplus_gray_primary_normal;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            &:hover {
+                &::before {
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+            }
+        }
+    }
+
+    .tpae_wht_ghst_cmn_btn {
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+}
+
+.tpae-data-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 75px;
+        transform-origin: center;
+        animation: rotate4 2s linear infinite;
+        stroke: $theplus_purple_dark;
+    }
+
+    circle {
+        fill: none;
+        stroke-width: 2;
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        stroke-linecap: round;
+        animation: dash4 1.5s ease-in-out infinite;
+    }
+
+    @keyframes rotate4 {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes dash4 {
+        0% {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+        }
+
+        50% {
+            stroke-dasharray: 90, 200;
+            stroke-dashoffset: -35px;
+        }
+
+        100% {
+            stroke-dashoffset: -125px;
+        }
+    }
+
+}
+
+.tpae_dash_inner_main.theplus-skeleton {
+
+    .theplus_user_name,
+    .tpae_numbers,
+    .tpae_sm_abt_num,
+    .tpae_sub_form_cover,
+    .tpae_subscribe_input,
+    .tpae_subscribe_btn,
+    .tpae_qik_info_crd_title,
+    .tpae-ghost-btn,
+    .tpae_rating_box,
+    .theplus_icon_cover,
+    .tpae-slideshow-skeleton,
+    .tpae_whats_new_txt,
+    .shw_arrow {
+        background: $skeleton_bg;
+        animation: $animation;
+        color: transparent;
+        pointer-events: none;
+        border: none;
+
+        &::placeholder {
+            color: transparent;
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+    .tpae_wlcm_sec_cover .tpae_numeric_card {
+        gap: 10px;
+
+        .tpae_numbers {
+            width: 50%;
+        }
+    }
+
+
+    .tpae_whats_new,
+    .tpae_subscribe_form_h {
+        pointer-events: none;
+        color: transparent;
+    }
+
+    path {
+        fill: none;
+    }
+}
+
+
+@media (max-width: 1440px) {
+    .tpae_dash_inner_main .tpae_wlcm_sec_cover .tpae_subscribe_form_h {
+        font-size: 18px;
+        padding-bottom: 14px;
+        padding-right: 0;
+    }
+
+    .tpae_whats_new_cover {
+        .tpae_whats_new_card_info_cover {
+
+            .tpae_img_heading_info {
+                font-size: 16px;
+            }
+
+            .tpae_heading_icon_strip {
+                .tpae_whats_new_heading {
+                    font-size: 16px;
+                }
+
+                .tpae_whats_new_close_btn {
+                    width: 6%;
+                }
+            }
+
+            .tpae_text_info {
+                font-size: 12px;
+            }
+
+            .tpae_whats_new_info_cta_btn {
+                font-size: 12px;
+                padding: 9px 19px;
+            }
+
+            .tpae_whats_new_btn_link {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1290px) {
+    .tpae_dash_inner_main .tpae_qik_infocrd_main .tpae_qik_infocrd_cover {
+        min-height: 130px;
+        padding: 16px;
+        width: 48%;
+
+        &.tpae_ratings_box {
+            width: 100%;
+            max-width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width :1176px) {
+    .tpae_dash_inner_main .tpae_qik_infocrd_main .tpae_qikinfo_grp_cover {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .theplus_dashboard_main_cover {
+        .tpae_wlcm_sec_cover {
+            padding: 21px;
+
+            .tpae_user_name {
+                font-size: 21px;
+            }
+
+            .tpae_user_img_cover {
+                width: 60px;
+                height: 60px;
+            }
+
+            .tpae_whats_new {
+                font-size: 13px;
+                padding: 12px 16px;
+            }
+
+            .tpae_slide_form_sec {
+                flex-wrap: wrap;
+            }
+
+            .tpae_numinfo_wdkit_cover {
+                gap: 15px;
+                position: relative;
+                width: 100%;
+                height: unset;
+            }
+
+            .tpae_numeric_card {
+                padding: 11px;
+            }
+
+            .tpae_sm_abt_num {
+                font-size: 11px;
+            }
+
+            .tpae_numbers {
+                font-size: 16px;
+            }
+
+            .tpae_wdk_left_content {
+                padding: 25px;
+            }
+
+            .tpae_sub_form_cover {
+                width: 100%;
+                padding: 25px;
+                height: fit-content;
+            }
+        }
+
+        .tpae_subscribe_btn {
+            padding: 12px 16px;
+        }
+
+        .tpae_qik_infocrd_main .tpae_qik_infocrd_cover {
+            width: 48%;
+        }
+
+        .theplus_elementor_widgets_banner_left_content {
+            .theplus_elementor_widgets_banner_top_sm_strip {
+                margin-bottom: 22x;
+            }
+
+            .tpae_ele_wid_banner_btn {
+                padding: 9px 19px;
+            }
+
+            .theplus_banner_points_listing {
+                margin-top: 25px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+    .tpae_whats_new_cover {
+        width: 51%;
+    }
+}
+
+@media (max-width: 768px) {
+    .theplus_dashboard_main_cover {
+        .tpae_main_cover {
+
+            .tpae_wlcm_sec_cover {
+                .tpae_wdk_left_content {
+                    padding: 21px;
+                }
+
+                .tpae_user_name {
+                    font-size: 18px;
+                }
+            }
+
+            .tpae_sub_form_cover {
+                padding: 21px;
+            }
+        }
+    }
+
+    .tpae_whats_new_cover {
+        width: 55%;
+        padding: 22px;
+
+        .tpae_heading_icon_strip {
+            margin-top: 30px;
+        }
+    }
+
+    .tpae_catwise_wid_manage_cov {
+        padding-bottom: 26px;
+    }
+}
+
+@media (max-width:720px) {
+    .theplus_dashboard_main_cover .tpae_qik_infocrd_main .tpae_qik_infocrd_cover {
+        width: 100%;
+    }
+}

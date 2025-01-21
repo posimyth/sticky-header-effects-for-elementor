@@ -1,0 +1,299 @@
+@import "../../style/global.scss";
+
+.tpae_navigation_cover {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $theplus_white;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: sticky;
+    top: 52px;
+
+    .tpae_logo_strip {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background: $theplus_purple_gradient;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 20px;
+        position: relative;
+
+        .tpae-mobile-menu-cn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+
+            .tpae-menu-btn {
+                display: none;
+            }
+        }
+
+        .tpae_main_logo {
+            width: 125px;
+        }
+
+        .tpae_hint_text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-family: $theplus_font_family;
+            color: $theplus_white;
+            padding: 6px 10px;
+            border-radius: 5px;
+            background-color: $theplus_white_very_light;
+        }
+    }
+
+    .tpae_navlinks_cover {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-sizing: border-box;
+        padding: 20px 10px;
+
+        .tpae_navlinks_inner_cover {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            gap: 10px;
+            list-style: none;
+            position: relative;
+            margin: 0;
+
+            li {
+                margin-bottom: 0;
+            }
+
+            .tpae_navlink {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-family: $theplus_font_family;
+                font-size: 16px;
+                line-height: 19px;
+                font-weight: 500;
+                color: $theplus_black;
+                padding: 15px;
+                box-sizing: border-box;
+                cursor: pointer;
+                border-radius: 5px;
+                text-decoration: none;
+                border: 1px solid transparent;
+                position: relative;
+
+                &:hover {
+                    color: $theplus_purple;
+                    background-color: $theplus_nav_strip_bg_light;
+                }
+
+                &:focus {
+                    box-shadow: none;
+                    background-color: $theplus_nav_strip_bg_light;
+                }
+
+                &.tpae_active_tab {
+                    color: $theplus_purple;
+                    background-color: $theplus_nav_strip_bg_light;
+                }
+
+                // &:active {
+                //     border: 1px solid $theplus_purple;
+                //     color: $theplus_purple;
+                //     background: $theplus_purple;
+                // }
+            }
+
+            .tpae_navlink_icon {
+                transition: 0.3s linear;
+            }
+        }
+
+        .tpae_ver_nd_sys_info {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 10px;
+            margin: 0px 15px;
+
+            .theplus_version,
+            .tpae_system_info {
+                text-wrap: nowrap;
+                color: $theplus_gray_primary_normal;
+                text-decoration: none;
+                font-size: 12px;
+                line-height: 14px;
+            }
+
+            .tpae_system_info:focus {
+                box-shadow: unset
+            }
+        }
+
+        // .tpae_extra_options_navlink_cover {
+        //     display: flex;
+        //     flex-direction: column;
+        //     width: 100%;
+        //     height: 52px;
+        //     overflow: hidden;
+        //     transition: height .4s ease-out;
+        //     &:focus{
+        //         height: max-content;
+        //     }
+
+        //     &:active{
+        //         height: max-content;
+        //     }
+
+        //     &:target{
+        //         height: max-content;
+        //     }
+        // }
+
+        .tpae_ext_opt_in_tabs {
+            list-style: none;
+            margin: 10px 0 0 19px;
+            border-left: 1px solid #dcdcdc;
+
+            .tpae_navlink {
+                padding: 15px;
+            }
+
+            .tpae_nav_dropdown_links {
+                margin: 0 0 10px 12px;
+
+                .tpae_navlink {
+                    font-size: 14px;
+                    line-height: 11px;
+
+                    &.tpae_active_tab:after {
+                        background-color: $theplus_purple;
+                        border-radius: 100%;
+                        bottom: 0;
+                        content: " ";
+                        height: 7px;
+                        margin: auto 0;
+                        position: absolute;
+                        right: 20px;
+                        top: 0;
+                        width: 7px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media query start
+
+@media (max-width: 1440px) {
+    .tpae_navigation_cover .tpae_logo_strip {
+        .tpae_hint_text {
+            font-size: 12px;
+        }
+
+        .tpae_main_logo {
+            width: 100px;
+        }
+
+        padding: 15px;
+    }
+}
+
+@media (max-width: 1290px) {
+    .tpae_navigation_cover {
+        .tpae_navlinks_cover {
+            padding: 10px 15px;
+
+            .tpae_navlinks_inner_cover {
+                .tpae_navlink {
+                    font-size: 14px;
+                    padding: 10px 15px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .tpae_navigation_cover {
+        .tpae_logo_strip {
+            .tpae_hint_text {
+                padding: 5px 8px;
+            }
+        }
+
+        .tpae_navlinks_cover {
+            .tpae_navlinks_inner_cover {
+                .tpae_navlink {
+                    padding: 8px;
+                }
+            }
+
+            .tpae_ver_nd_sys_info {
+                margin: 0px 10px;
+
+                .theplus_version,
+                .tpae_system_info {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 782px) {
+    .tpae_navigation_cover {
+        top: 66px;
+
+        .tpae_logo_strip .tpae-mobile-menu-cn .tpae-menu-btn {
+            display: flex;
+        }
+
+        .tpae_navlinks_cover {
+            transition: 0.3s linear;
+            padding: 0px 15px;
+            height: 0;
+
+            &.tpae_open_menu {
+                padding: 10px 15px;
+                height: max-content;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 600px) {
+    .tpae_navigation_cover {
+        top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tpae_navigation_cover {
+        .tpae_navlinks_cover {
+            .tpae_navlinks_inner_cover {
+                gap: 0;
+            }
+
+            .tpae_ver_nd_sys_info {
+                gap: 7px;
+                padding: 9px;
+
+                .theplus_version,
+                .tpae_system_info {
+                    padding: 0px;
+                }
+            }
+        }
+    }
+}
+
+// media query end

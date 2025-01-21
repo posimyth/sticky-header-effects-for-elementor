@@ -1,0 +1,137 @@
+
+@import "../../style/global.scss";
+
+.theplus_products_cover_main {
+
+    .theplus_product_box {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 40px;
+        background-color: $theplus_white;
+        border-radius: 8px;
+        position: relative;
+
+        .theplus_product_logo_title_cover {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theplus_product_name {
+            font-size: 14px;
+        }
+
+        .theplus-installation {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+
+            .tpae-install-btn {
+                display: flex;
+                min-width: 160px;
+                gap: 5px;
+                justify-content: center;
+                align-items: center;
+                font-size: 14px;
+                font-weight: 500;
+                color: #8072fc;
+                background-color: transparent;
+                padding: 11px 25px;
+                border: 1px solid #8072fc;
+                border-radius: 5px;
+                white-space: nowrap;
+                cursor: pointer;
+                transition: 0.3s linear;
+
+                &:hover {
+                    background-color: #8072fc1a;
+                }
+
+                &.theplus-success {
+                    color: #14c38e;
+                    border-color: #14c38e;
+                    pointer-events: none;
+                }
+
+            }
+
+            .tpae-loading-circle {
+                height: 15px;
+                width: 15px;
+                border: 3px solid #8072fc;
+                border-bottom: 3px solid #8072fc4a;
+                border-radius: 50%;
+                animation: loading 1s infinite linear;
+            }
+
+        }
+
+        .theplus_product_logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            position: relative;
+
+            img {
+                width: 50px;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+                position: relative;
+            }
+        }
+
+        .tpae-ghost-btn {
+            text-wrap: nowrap;
+        }
+    }
+}
+
+.theplus_products_cover_main.theplus-skeleton {
+
+    .theplus_product_logo,
+    .tpae-in-sec-heading,
+    .theplus_product_box .theplus-installation .tpae-install-btn,
+    .tpae-ghost-btn {
+        background: $skeleton_bg;
+        animation: $animation;
+        color: transparent;
+        pointer-events: none;
+        border: none;
+
+        img,
+        svg {
+            display: none;
+        }
+
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 767px) {
+    .theplus_products_cover_main .theplus_product_box {
+        padding: 25px;
+
+        .theplus-installation {
+            .tpae-install-btn {
+                padding: 8px 11px;
+                min-width: unset;
+            }
+
+        }
+    }
+}
