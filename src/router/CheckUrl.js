@@ -30,26 +30,18 @@ const CheckUrl = (props) => {
 
   const get_onload_dashboard = async () => {
 
-    // var plugin_url = tpae_db_object.tpae_url;
-    // var nonce = tpae_db_object.nonce;
-    // var ajax_url = tpae_db_object.ajax_url;
+    var plugin_url = shed_data.shed_url;
+    var nonce = shed_data.nonce;
+    var ajax_url = shed_data.ajax_url;
 
-    // let plugin_data = [
-    //   {
-    //     'plugin_slug': 'wdesignkit/wdesignkit.php',
-    //     'status': ''
-    //   },
-    // ]
+    let form = new FormData();
+    form.append('action', 'she_dashboard_ajax_call');
+    form.append('nonce', nonce);
+    form.append('type', 'shed_onload_data');
 
-    // let form = new FormData();
-    // form.append('action', 'tpae_dashboard_ajax_call');
-    // form.append('nonce', nonce);
-    // form.append('type', 'tpae_onload_data');
-    // form.append('plugin_data', JSON.stringify(plugin_data));
-
-    // var response = await axios.post(ajax_url, form);
-    // var data = response.data;
-
+    var response = await axios.post(ajax_url, form);
+    var data = response.data;
+    console.log( data );
     // props.tpae_set_white_lable(data.white_label);
     // props.tpae_set_wdkit_widgets(data.wdk_widgets);
     // props.tpae_set_widgets(data.widgets);

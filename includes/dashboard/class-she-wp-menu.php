@@ -53,8 +53,8 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 		 * @since 1.7.3
 		 */
 		public function __construct() {
-            add_action( 'admin_menu', array( $this, 'she_admin_menu' ) );
-            add_action( 'admin_enqueue_scripts', array( $this, 'she_enqueue_scripts' ) );
+			add_action( 'admin_menu', array( $this, 'she_admin_menu' ) );
+			add_action( 'admin_enqueue_scripts', array( $this, 'she_enqueue_scripts' ) );
 		}
 
 		/**
@@ -70,7 +70,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 			}
 		}
 
-        /**
+		/**
 		 * Load wdkit page content.
 		 *
 		 * @since 1.7.3
@@ -79,25 +79,32 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 			echo '<div id="she-app"></div>';
 		}
 
-        /**
+		/**
 		 * Register the JavaScript for the admin area.
 		 *
-		 * @param string $hook give builder name.
+		 * @param string $page give builder name.
 		 * @since 1.0.0
 		 */
-		public function she_enqueue_scripts( $hook ) {
+		public function she_enqueue_scripts( $page ) {
 
-			wp_enqueue_style( 'she-editor-css', SHE_HEADER_URL . 'build/index.css', array(), SHE_HEADER_VERSION );
-            wp_enqueue_script( 'she-editor-js', SHE_HEADER_URL . 'build/index.js', array( 'wp-i18n', 'wp-element', 'wp-components' ), SHE_HEADER_VERSION, true );
-			wp_set_script_translations( 'she-editor-js', 'she-header' );
-            wp_localize_script(
-				'she-editor-js',
-				'sheData',
-				array(
-					'ajax_url' => admin_url( 'admin-ajax.php' ),
-                ),
-            );
-        }
+			if ( 'toplevel_page_she-header' === $page ) {
+				wp_enqueue_style( 'she-editor-css', SHE_HEADER_URL . 'build/index.css', array(), SHE_HEADER_VERSION );
+
+				wp_enqueue_script( 'she-editor-js', SHE_HEADER_URL . 'build/index.js', array( 'wp-i18n', 'wp-element', 'wp-components' ), SHE_HEADER_VERSION, true );
+				wp_set_script_translations( 'she-editor-js', 'she-header' );
+				wp_localize_script(
+					'she-editor-js',
+					'shed_data',
+					array(
+						'ajax_url'        => admin_url( 'admin-ajax.php' ),
+						'nonce'           => wp_create_nonce( 'she-db-nonce' ),
+						'shed_url'        => SHE_HEADER_URL,
+						'shed_wp_version' => get_bloginfo( 'version' ),
+						'shed_pro'        => 0,
+					),
+				);
+			}
+		}
 	}
 
 	She_Wp_Menu::instance();
