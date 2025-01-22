@@ -189,6 +189,48 @@
     }
 }
 
+.she_nav_bnner {
+
+    background: rgba(4, 4, 131, 1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    gap: 12px;
+
+    .she_bnner_txt {
+        color: #ffff;
+        padding: 5px 10px 5px 13px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+    .she_dwd_sections {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .she_dwd_btn {
+        padding: 10px;
+        background: rgba(194, 32, 118, 1);
+        color: #ffff;
+        border-radius: 4px;
+    }
+
+    .she_dwd_link {
+        display: flex;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+    }
+
+    .she_footer_img img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 // media query start
 
 @media (max-width: 1440px) {

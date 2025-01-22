@@ -38,7 +38,7 @@ const Dashboard = (props) => {
                 </div>
 
                 {/* {'0' == tpae_pro && */}
-                    <ElementorWidgetsBanner />
+                    {/* <ElementorWidgetsBanner /> */}
                 {/* } */}
             </div>
         </>

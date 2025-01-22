@@ -222,7 +222,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				$plugin_info = plugins_api(
 					'plugin_information',
 					array(
-						'slug' => 'the-plus-addons-for-elementor-page-builder',
+						'slug' => 'sticky-header-effects-for-elementor',
 					)
 				);
 
@@ -249,7 +249,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 						continue;
 					}
 
-					if ( version_compare( $version, L_THEPLUS_VERSION, '>=' ) ) {
+					if ( version_compare( $version, SHE_HEADER_VERSION, '>=' ) ) {
 						continue;
 					}
 
@@ -257,7 +257,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 					$versions_list[] = $version;
 				}
 
-				set_transient( 'she_rollback_version_' . L_THEPLUS_VERSION, $versions_list, WEEK_IN_SECONDS );
+				set_transient( 'she_rollback_version_' . SHE_HEADER_VERSION, $versions_list, WEEK_IN_SECONDS );
 			}
 
 			return $versions_list;
@@ -277,7 +277,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				return $this->she_set_response( false, 'Invalid nonce.', 'Try selecting another version.' );
 			}
 
-			$plugin_slug = basename( L_THEPLUS_PNAME, '.php' );
+			$plugin_slug = basename( SHE_HEADER_PLUGIN_BASE, '.php' );
 
 			$this_version    = $current_ver;
 			$this_pluginname = SHE_HEADER_PLUGIN_BASE;
