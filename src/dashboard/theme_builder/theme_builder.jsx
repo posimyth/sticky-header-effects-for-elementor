@@ -14,12 +14,6 @@ const ThemeBuilder = (props) => {
     const Navigate = useNavigate();
     const [nexter_btn, setNexter_btn] = useState('Enable Theme Builder');
 
-    // useEffect(() => {
-    //     if (props?.tpae_white_lable_data?.plugin_ads && props?.tpae_white_lable_data?.plugin_ads == 'on') {
-    //         Navigate('/');
-    //     }
-    // }, [props?.tpae_white_lable_data?.plugin_ads]);
-
     const Install_Nexter = async () => {
         setNexter_btn('Installing. . . ')
 
@@ -36,7 +30,6 @@ const ThemeBuilder = (props) => {
             setNexter_btn('Installed Successfully');
             window.location.reload();
         }
-
     }
 
     let card_array = [
@@ -135,9 +128,7 @@ const ThemeBuilder = (props) => {
                 <div className='theplus_view_all_btm_btn'>
                     <a href="https://nexterwp.com/nexter-extension" target="_blank" rel="noopener noreferrer" className='tpae-ghost-btn'>{__('Learn More', 'tpebl')}</a>
                 </div>
-
             </div>
-
         </div>
     )
 }

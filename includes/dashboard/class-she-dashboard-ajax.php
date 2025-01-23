@@ -102,6 +102,9 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				case 'she_rollback_check':
 					$response = $this->she_rollback_check();
 					break;
+				case 'she_api_call':
+					$response = $this->she_api_call();
+					break;
 				default:
 					$response = $this->she_set_response( false, 'Invalid type.', 'Something went wrong.' );
 					break;

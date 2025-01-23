@@ -1,0 +1,166 @@
+@import "../../style/global.scss";
+
+.tpae-ele-temp-inn-main {
+
+    .tpae-element-temp-bx-cov-main {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        background-color: $theplus_white;
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 16px 25px;
+        width: 100%;
+        position: relative;
+
+        .tpae-ele-temp-grid-vbox {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            gap: 12px;
+
+            .tpae-ele-temp-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                box-sizing: border-box;
+                gap: 15px;
+                position: relative;
+
+                .tpae-in-sec-heading {
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    cursor: default;
+                    height: 46px;
+
+                    &:hover~.tpae-float-box-title {
+                        margin: auto auto 105px auto;
+                        opacity: 1;
+                    }
+                }
+
+                .tpae-ghost-btn {
+                    width: 100%;
+                }
+            }
+
+            .tpae-ele-temp-detail {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                gap: 10px;
+            }
+        }
+
+        .tpae-ele-temp-cov-img-box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+            border-radius: 5px 5px 0px 0px;
+            overflow: hidden;
+            position: relative;
+            background: #f5f5f5;
+
+            .theplus-elementor-template-img {
+                width: calc(100% - 30px);
+                height: calc(100% - 15px);
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .tp-btn-wrap {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0 15px;
+        }
+
+        .tp-btn-wrap .tp-common-btn {
+            width: fit-content;
+            width: -moz-fit-content;
+        }
+
+        .tp-common-btn {
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #1a1a1a;
+            cursor: pointer;
+            display: flex;
+            font-family: $theplus_font_family;
+            font-size: 14px;
+            font-weight: 500;
+            justify-content: center;
+            line-height: 17px;
+            padding: 12px 20px;
+            position: relative;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+            width: 100%;
+        }
+
+        .tp-common-btn:hover {
+            background-color: $theplus_purple;
+            border-color: $theplus_purple;
+            color: #fff;
+        }
+    }
+
+    .tpae-purple-common-btn {
+        gap: 5px;
+    }
+}
+
+.tpae-ele-temp-box.theplus-skeleton {
+
+    .tpae-ele-temp-cov-img-box,
+    .tpae-in-sec-heading,
+    .tpae-ghost-btn {
+        background: $skeleton_bg;
+        animation: $animation;
+        border-radius: 4px;
+        display: inline-block;
+        color: transparent;
+        pointer-events: none;
+        border: none;
+    }
+
+    .tpae-ele-temp-cov-img-box {
+        min-height: 240px;
+    }
+}
+
+.tpae-ele-temp-inn-main.theplus-skeleton .tp-common-btn {
+    background: $skeleton_bg;
+    animation: $animation;
+    border-radius: 4px;
+    display: inline-block;
+    color: transparent;
+    pointer-events: none;
+    border: none;
+}
+
+// --------- media query start --------- //
+@media (max-width:1200px) {
+    .tpae-ele-temp-inn-main .tpae-element-temp-bx-cov-main .tpae-ele-temp-grid-vbox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:768px) {
+    .tpae-ele-temp-inn-main .tpae-element-temp-bx-cov-main .tpae-ele-temp-grid-vbox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+// --------- media query end --------- //

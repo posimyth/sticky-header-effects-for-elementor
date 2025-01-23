@@ -29,6 +29,7 @@ define( 'SHE_HEADER_MODULES_PATH', SHE_HEADER_PATH . 'modules/' );
 define( 'SHE_HEADER_URL', plugins_url( '/', SHE_HEADER__FILE__ ) );
 define( 'SHE_HEADER_ASSETS_URL', SHE_HEADER_URL . 'assets/' );
 define( 'SHE_HEADER_MODULES_URL', SHE_HEADER_URL . 'modules/' );
+define( 'SHE_WDKIT_URL', 'https://wdesignkit.com/' );
 
 /**
  * Load gettext translate for our text domain.

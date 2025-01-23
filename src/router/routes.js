@@ -2,8 +2,8 @@ import DashboardInnerMain from '../dashboard/dashboard/dashboard';
 import MoreProducts from '../dashboard/more_products/more_products';
 import ThemeBuilder from '../dashboard/theme_builder/theme_builder';
 import RollBack from '../dashboard/rollback_plugin/rollback';
-
-
+import ElementorTemplates from '../dashboard/elementor_templates/elementor_templates';
+import Extension from '../dashboard/extension/extension';
 
 
 const routes = [
@@ -22,6 +22,14 @@ const routes = [
   {
     path: '/rollback_plugin',
     element: <RollBack />
+  },
+  {
+    path: '/elementor_templates',
+    element: <ElementorTemplates />
+  },
+  {
+    path: '/extension',
+    element: <Extension />
   },
   {
     path: '*',

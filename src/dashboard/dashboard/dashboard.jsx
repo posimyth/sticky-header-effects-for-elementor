@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './dashboard.scss';
-// import widget_json from '../widgets/widget_list'
 import { connect } from 'react-redux';
 import { __ } from '@wordpress/i18n';
 
@@ -11,13 +10,6 @@ const DashboardInnerMain = (props) => {
     var plugin_url = shed_data.shed_url;
     var nonce = shed_data.nonce;
     var ajax_url = shed_data.ajax_url;
-    // var tpae_pro = tpae_db_object.tpae_pro;
-    var tpae_pro = 1;
-    var plugin_status = props.plugin_check;
-    // var Tpae_card_bg = tpae_db_object?.tpae_url + 'assets/images/tpae-dummy-bg.png';
-
-    // const free_pro = tpae_db_object?.tpae_pro == '1' ? true : false;
-    const free_pro = true;
 
     const slides = [
         {
@@ -121,13 +113,8 @@ const DashboardInnerMain = (props) => {
     const [ErrorTooltip, setErrorTooltip] = useState({ 'tpaeName': false, 'tpaeEmail': false });
     const [plugin_detail, setplugin_detail] = useState(slides);
     const stopSlider = useRef('');
-    const Email = useRef('');
-    const [Emails, setEmail] = useState(true);
 
     const [whatsnew, setwhatsnew] = useState([]);
-    const [total_widget, settotal_widget] = useState(0);
-    const [active_widget, setactive_widget] = useState(0);
-    // const [total_used_widget, settotal_used_widget] = useState(0);
 
     const [hoveredIndex, setHoveredIndex] = useState(5);
     const [selectedIndex, setSelectedIndex] = useState(null);
@@ -150,45 +137,7 @@ const DashboardInnerMain = (props) => {
     useEffect(() => {
         setUserName(props.tpae_dashboard_data?.user_name || '');
         setUserImage(props.tpae_dashboard_data?.user_image || '');
-
-        // let used_widgets = 0;
-        // if (props.tpae_dashboard_data?.used_widgets?.widgets) {
-        //     used_widgets = Object.keys(props.tpae_dashboard_data.used_widgets.widgets).length;
-        // }
-
-        // settotal_used_widget(used_widgets || 0);
     }, [props.tpae_dashboard_data]);
-
-    useEffect(() => {
-        let total_widget = 0;
-        let parent_widget = props?.tpae_widgets_list;
-        let ck_widget = parent_widget?.check_elements?.length > 0 ? parent_widget?.check_elements : [];
-        let ex_widget = parent_widget?.extras_elements?.length > 0 ? parent_widget?.extras_elements : [];
-
-        let Enable_widget = ck_widget.concat(ex_widget);
-        // let widget_data = Object.values(widget_json).length > 0 ? Object.values(widget_json) : [];
-        let active_widget = []
-
-        // widget_data.map((widget_list) => {
-        //     widget_list.length > 0 && widget_list.map((widget_cat) => {
-        //         if (widget_cat?.widgets?.length > 0) {
-        //             widget_cat.widgets.map((widgets) => {
-        //                 total_widget++;
-        //                 if (Enable_widget.includes(widgets.name)) {
-        //                     if ((widgets.tag != 'pro' || free_pro)) {
-        //                         active_widget.push(widgets);
-        //                     }
-        //                 }
-        //             })
-        //         }
-        //     })
-        // })
-
-        let widget_count = active_widget.length > 0 ? active_widget.length : 0;
-
-        settotal_widget(total_widget);
-        setactive_widget(widget_count);
-    }, [props?.tpae_widgets_list])
 
     useEffect(() => {
 
@@ -292,12 +241,6 @@ const DashboardInnerMain = (props) => {
     }
 
     const Notification_validation = async (e) => {
-
-        if (Email.current.value) {
-            setEmail(true);
-        } else {
-            setEmail(false);
-        }
 
         let OriginalOBJ = ErrorTooltip;
 
@@ -411,11 +354,11 @@ const DashboardInnerMain = (props) => {
                     <div className='tpae_user_img_wn'>
                         <div className='tpae_user_img_cover'>
                             <img className='tpae_user_img' src={userImage || plugin_url + 'assets/images/tp-placeholder.jpg'} draggable={false} />
-                            {tpae_pro == '1' &&
+                            {/* {tpae_pro == '1' &&
                                 <span className='tpae-pro-check'>
                                     <img src={plugin_url + 'assets/svg/premium_icon.svg'} draggable={false} />
                                 </span>
-                            }
+                            } */}
                         </div>
                         <h3 className='theplus_user_name'>{__('Welcome,', 'tpebl')} {userName || '...'}</h3>
                     </div>
@@ -441,146 +384,137 @@ const DashboardInnerMain = (props) => {
                                 </div>
                             </div>
                         </div>
-
-                        {!(props.tpae_white_lable_data?.plugin_ads == 'on') &&
-                            <div className='tpae_product_slider'>
-                                {props?.tpae_dashboard_data?.success ?
-                                    <div className="slideshow-container">
-                                        {plugin_detail.map((slide, index) => (
-                                            <div className={`tp_main_slider slide_animation ${index === slideIndex ? 'active' : ''}`} key={index} style={{ background: slide.bg_color }}>
-                                                <div className='tpae-slider-text-content'>
-                                                    <h3 className="tp_banner_heading">{slide.heading}</h3>
-                                                    <div className="nxt_wdesignkit_btn_group">
-                                                        <div className="tp_install_wdesignkit_btn" style={{ background: slide.bt_color }}>
-                                                            {slide?.status == 'active' ?
-                                                                <a target="_blank" href={slide?.browseLink} rel="noopener noreferrer" style={{ color: slide.bt_txt_color }}>
-                                                                    {slide.buttonLinkLabel}
-                                                                </a>
-                                                                :
-                                                                <button style={{ color: slide.bt_txt_color }} onClick={() => install_widgets(slide.key, index)}>
-                                                                    {slide.buttonLabel}
-                                                                </button>
-                                                            }
-                                                        </div>
-                                                        <a className="tp_learn_btn_link" target="_blank" rel="noopener noreferrer" href={slide.learnLink}> Learn More </a>
+                        <div className='tpae_product_slider'>
+                            {props?.tpae_dashboard_data?.success ?
+                                <div className="slideshow-container">
+                                    {plugin_detail.map((slide, index) => (
+                                        <div className={`tp_main_slider slide_animation ${index === slideIndex ? 'active' : ''}`} key={index} style={{ background: slide.bg_color }}>
+                                            <div className='tpae-slider-text-content'>
+                                                <h3 className="tp_banner_heading">{slide.heading}</h3>
+                                                <div className="nxt_wdesignkit_btn_group">
+                                                    <div className="tp_install_wdesignkit_btn" style={{ background: slide.bt_color }}>
+                                                        {slide?.status == 'active' ?
+                                                            <a target="_blank" href={slide?.browseLink} rel="noopener noreferrer" style={{ color: slide.bt_txt_color }}>
+                                                                {slide.buttonLinkLabel}
+                                                            </a>
+                                                            :
+                                                            <button style={{ color: slide.bt_txt_color }} onClick={() => install_widgets(slide.key, index)}>
+                                                                {slide.buttonLabel}
+                                                            </button>
+                                                        }
                                                     </div>
+                                                    <a className="tp_learn_btn_link" target="_blank" rel="noopener noreferrer" href={slide.learnLink}> Learn More </a>
                                                 </div>
-                                                <img className='tp_slider_image' src={slide.imgSrc} alt={`Slide ${index + 1}`} />
                                             </div>
-                                        ))}
-                                        <div className='tp_slider_dot'>
-                                            {slides.map((_, index) => (
-                                                <span
-                                                    className={`dot ${index === slideIndex ? 'active' : ''}`}
-                                                    onClick={() => currentSlide(index + 1)}
-                                                    key={index}
-                                                ></span>
-                                            ))}
+                                            <img className='tp_slider_image' src={slide.imgSrc} alt={`Slide ${index + 1}`} />
                                         </div>
+                                    ))}
+                                    <div className='tp_slider_dot'>
+                                        {slides.map((_, index) => (
+                                            <span
+                                                className={`dot ${index === slideIndex ? 'active' : ''}`}
+                                                onClick={() => currentSlide(index + 1)}
+                                                key={index}
+                                            ></span>
+                                        ))}
                                     </div>
-                                    :
-                                    <div className='tpae-slideshow-skeleton'></div>
-                                }
-                            </div>
-                        }
-                    </div>
-                    {props?.tpae_white_lable_data?.plugin_ads != 'on' &&
-                        <div className='tpae_sub_form_cover'>
-                            <h3 className='tpae_subscribe_form_h'>{__('Stay Update with Elementor News & Plugin Updates.', 'tpebl')}</h3>
-                            <span className='tpae-name-container'>
-
-                                <input
-                                    className='tpae_subscribe_input'
-                                    type='text'
-                                    value={tpaeuser_name}
-                                    onChange={(e) => { setTpaeuser_name(e.target.value); setErrorTooltip({ 'tpaeName': false, 'tpaeEmail': false }) }}
-                                    placeholder={__('Your Name', 'tpebl')} />
-                                {
-                                    ErrorTooltip.tpaeName &&
-                                    <span className='tpae-username-tooltip'>{__('Please enter valid Name', 'tpebl')}</span>
-                                }
-                            </span>
-                            <span className='tpae-name-container'>
-                                <input
-                                    className='tpae_subscribe_input'
-                                    ref={Email}
-                                    type='email'
-                                    value={tpaeuser_email}
-                                    onChange={(e) => { setTpaeuser_email(e.target.value); setErrorTooltip({ 'tpaeName': false, 'tpaeEmail': false }) }}
-                                    placeholder={__('Your Email', 'tpebl')} />
-                                {!Emails &&
-                                    <span className='tpae-username-tooltip'>{__('Please enter valid email', 'tpebl')}</span>
-                                }
-                            </span>
-                            <a className='tpae_subscribe_btn' onClick={(e) => { Notification_validation(e) }}>{subscribe_btn}</a>
+                                </div>
+                                :
+                                <div className='tpae-slideshow-skeleton'></div>
+                            }
                         </div>
-                    }
+                    </div>
+                    <div className='tpae_sub_form_cover'>
+                        <h3 className='tpae_subscribe_form_h'>{__('Stay Update with Elementor News & Plugin Updates.', 'tpebl')}</h3>
+                        <span className='tpae-name-container'>
+
+                            <input
+                                className='tpae_subscribe_input'
+                                type='text'
+                                value={tpaeuser_name}
+                                onChange={(e) => { setTpaeuser_name(e.target.value); setErrorTooltip({ 'tpaeName': false, 'tpaeEmail': false }) }}
+                                placeholder={__('Your Name', 'tpebl')} />
+                            {
+                                ErrorTooltip.tpaeName &&
+                                <span className='tpae-username-tooltip'>{__('Please enter valid Name', 'tpebl')}</span>
+                            }
+                        </span>
+                        <span className='tpae-name-container'>
+                            <input
+                                className='tpae_subscribe_input'
+                                type='email'
+                                value={tpaeuser_email}
+                                onChange={(e) => { setTpaeuser_email(e.target.value); setErrorTooltip({ 'tpaeName': false, 'tpaeEmail': false }) }}
+                                placeholder={__('Your Email', 'tpebl')} />
+                            {ErrorTooltip.tpaeEmail &&
+                                <span className='tpae-username-tooltip'>{__('Please enter valid email', 'tpebl')}</span>
+                            }
+                        </span>
+                        <a className='tpae_subscribe_btn' onClick={(e) => { Notification_validation(e) }}>{subscribe_btn}</a>
+                    </div>
                 </div>
             </div>
-            {!(props.tpae_white_lable_data?.help_link == 'on') &&
-                <div className='tpae_qik_infocrd_main'>
-                    <div className='tpae_qikinfo_grp_cover'>
-                        <div className='tpae_qik_infocrd_cover theplus_docs'>
-                            <h4 className='tpae_qik_info_crd_title'>{__('Documentation', 'tpebl')}</h4>
-                            <a target='_blank' rel="noopener noreferrer" href='https://theplusaddons.com/docs?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='tpae-ghost-btn'>{__('Read Now', 'tpebl')}</a>
-                        </div>
+            <div className='tpae_qik_infocrd_main'>
+                <div className='tpae_qikinfo_grp_cover'>
+                    <div className='tpae_qik_infocrd_cover theplus_docs'>
+                        <h4 className='tpae_qik_info_crd_title'>{__('Documentation', 'tpebl')}</h4>
+                        <a target='_blank' rel="noopener noreferrer" href='https://theplusaddons.com/docs?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='tpae-ghost-btn'>{__('Read Now', 'tpebl')}</a>
+                    </div>
 
-                        <div className='tpae_qik_infocrd_cover theplus_help'>
-                            <h4 className='tpae_qik_info_crd_title'>{__('Need Help?', 'tpebl')}</h4>
-                            <a target='_blank' rel="noopener noreferrer" href={tpae_pro == '0' ? 'https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/#new-topic-0?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://store.posimyth.com/helpdesk?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} className='tpae-ghost-btn'>{__('Raise Ticket', 'tpebl')}</a>
-                        </div>
+                    <div className='tpae_qik_infocrd_cover theplus_help'>
+                        <h4 className='tpae_qik_info_crd_title'>{__('Need Help?', 'tpebl')}</h4>
+                        <a target='_blank' rel="noopener noreferrer" href='https://store.posimyth.com/helpdesk?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='tpae-ghost-btn'>{__('Raise Ticket', 'tpebl')}</a>
+                    </div>
 
-                        <div className='tpae_qik_infocrd_cover'>
-                            <h4 className='tpae_qik_info_crd_title'>{__('Join Community', 'tpebl')}</h4>
-                            <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/groups/theplus4elementor?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='tpae-ghost-btn'>{__('Join Now', 'tpebl')}</a>
-                        </div>
+                    <div className='tpae_qik_infocrd_cover'>
+                        <h4 className='tpae_qik_info_crd_title'>{__('Join Community', 'tpebl')}</h4>
+                        <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/groups/theplus4elementor?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='tpae-ghost-btn'>{__('Join Now', 'tpebl')}</a>
+                    </div>
 
-                        <div className='tpae_qik_infocrd_cover'>
-                            <h4 className='tpae_qik_info_crd_title'>{__('Request Feature', 'tpebl')}</h4>
-                            <a target='_blank' rel="noopener noreferrer" href='https://roadmap.theplusaddons.com?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='tpae-ghost-btn'>{__('Suggest Now', 'tpebl')}</a>
+                    <div className='tpae_qik_infocrd_cover'>
+                        <h4 className='tpae_qik_info_crd_title'>{__('Request Feature', 'tpebl')}</h4>
+                        <a target='_blank' rel="noopener noreferrer" href='https://roadmap.theplusaddons.com?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='tpae-ghost-btn'>{__('Suggest Now', 'tpebl')}</a>
+                    </div>
+                </div>
+
+                <div className='tpae_qikinfo_grp_cover'>
+
+                    <div className='tpae_qik_infocrd_cover tpae_ratings_box'>
+                        <h4 className='tpae_qik_info_crd_title'>{__('Rate The Plus Addons for Elementor', 'tpebl')}</h4>
+                        <div className='tpae_rating_box'>
+                            {ratingSvg.map((obj, index) => (
+                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/reviews/?filter=5#new-post&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://go.posimyth.com/review-tpae?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='tpae-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
+                            ))}
                         </div>
                     </div>
 
-                    <div className='tpae_qikinfo_grp_cover'>
+                    <div className='tpae_qik_infocrd_cover'>
+                        <h4 className='tpae_qik_info_crd_title'>{__('Video Tutorials', 'tpebl')}</h4>
+                        <a target='_blank' rel="noopener noreferrer" href="https://www.youtube.com/watch?v=DfkjFCRhqNE&list=PLFRO-irWzXaLK9H5opSt88xueTnRhqvO5&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings" className='tpae-ghost-btn'>{__('Watch Now', 'tpebl')}</a>
+                    </div>
 
-                        <div className='tpae_qik_infocrd_cover tpae_ratings_box'>
-                            <h4 className='tpae_qik_info_crd_title'>{__('Rate The Plus Addons for Elementor', 'tpebl')}</h4>
-                            <div className='tpae_rating_box'>
-                                {ratingSvg.map((obj, index) => (
-                                    <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/reviews/?filter=5#new-post&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://go.posimyth.com/review-tpae?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='tpae-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className='tpae_qik_infocrd_cover'>
-                            <h4 className='tpae_qik_info_crd_title'>{__('Video Tutorials', 'tpebl')}</h4>
-                            <a target='_blank' rel="noopener noreferrer" href="https://www.youtube.com/watch?v=DfkjFCRhqNE&list=PLFRO-irWzXaLK9H5opSt88xueTnRhqvO5&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings" className='tpae-ghost-btn'>{__('Watch Now', 'tpebl')}</a>
-                        </div>
-
-                        <div className='tpae_qik_infocrd_cover theplus_dashboard_social_icons_card_box'>
-                            <h4 className='tpae_qik_info_crd_title'>{__("We're Active on", 'tpebl')}</h4>
-                            <div className='tpae_icon_bx_cover'>
-                                <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/tpaelementor?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
-                                    <img src={plugin_url + 'assets/svg/dashboard_tab/facebook_icon.svg'} draggable={false} />
-                                </a>
-                                <a target='_blank' rel="noopener noreferrer" href='https://x.com/intent/user?screen_name=tpaelementor&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
-                                    <img src={plugin_url + 'assets/svg/dashboard_tab/X_icon.svg'} draggable={false} />
-                                </a>
-                                <a target='_blank' rel="noopener noreferrer" href='https://instagram.com/theplus_elementor?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
-                                    <img src={plugin_url + 'assets/svg/dashboard_tab/instagram_icon.svg'} draggable={false} />
-                                </a>
-                                <a target='_blank' rel="noopener noreferrer" href='https://t.me/posimyth?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
-                                    <img src={plugin_url + 'assets/svg/dashboard_tab/telegram_icon.svg'} draggable={false} />
-                                </a>
-                                <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/company/posimyth?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
-                                    <img src={plugin_url + 'assets/svg/dashboard_tab/linkedin_icon.svg'} draggable={false} />
-                                </a>
-                            </div>
+                    <div className='tpae_qik_infocrd_cover theplus_dashboard_social_icons_card_box'>
+                        <h4 className='tpae_qik_info_crd_title'>{__("We're Active on", 'tpebl')}</h4>
+                        <div className='tpae_icon_bx_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/tpaelementor?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
+                                <img src={plugin_url + 'assets/svg/dashboard_tab/facebook_icon.svg'} draggable={false} />
+                            </a>
+                            <a target='_blank' rel="noopener noreferrer" href='https://x.com/intent/user?screen_name=tpaelementor&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
+                                <img src={plugin_url + 'assets/svg/dashboard_tab/X_icon.svg'} draggable={false} />
+                            </a>
+                            <a target='_blank' rel="noopener noreferrer" href='https://instagram.com/theplus_elementor?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
+                                <img src={plugin_url + 'assets/svg/dashboard_tab/instagram_icon.svg'} draggable={false} />
+                            </a>
+                            <a target='_blank' rel="noopener noreferrer" href='https://t.me/posimyth?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
+                                <img src={plugin_url + 'assets/svg/dashboard_tab/telegram_icon.svg'} draggable={false} />
+                            </a>
+                            <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/company/posimyth?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
+                                <img src={plugin_url + 'assets/svg/dashboard_tab/linkedin_icon.svg'} draggable={false} />
+                            </a>
                         </div>
                     </div>
                 </div>
-            }
-
+            </div>
             {/*---------------------------------- what's New Button Slider Start ---------------------------------- */}
 
             {/* <div className={slideLeft ? 'tpae_whats_new_cover tpae_whats_new_box_opened' : 'tpae_whats_new_cover tpae_whats_new_box_closed'}>
@@ -631,11 +565,6 @@ const get_redux = state => ({
     tpae_widgets_list: state.widgets_data.widgets_rx,
     plugin_check: state.check_plugin.plugin_status_rx,
     tpae_white_lable_data: state.White_label.white_lable_rx,
-
 })
 
-const set_redux = dispatch => ({
-    // tpae_set_userinfo: data => dispatch( Dashboard_a_rx( data ) ),
-})
-
-export default connect(get_redux, set_redux)(DashboardInnerMain)
+export default connect(get_redux)(DashboardInnerMain)

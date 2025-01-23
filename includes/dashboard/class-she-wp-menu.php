@@ -101,6 +101,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 						'shed_url'        => SHE_HEADER_URL,
 						'shed_wp_version' => get_bloginfo( 'version' ),
 						'shed_pro'        => 0,
+						'shed_wdkit_url'  => SHE_WDKIT_URL,
 					),
 				);
 			}

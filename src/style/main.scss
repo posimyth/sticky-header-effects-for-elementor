@@ -49,7 +49,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: calc(100% + 20px);
+  // width: calc(100% + 20px);
   padding: 20px;
   box-sizing: border-box;
 
@@ -131,7 +131,7 @@
   border: none;
 
   &:hover {
-    background-color: $theplus_purple_dark;
+    background-color: $she_btn_hover;
     color: $theplus_white;
   }
 
