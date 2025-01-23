@@ -78,7 +78,6 @@ class Module extends Module_Base {
 				'type' => Controls_Manager::RAW_HTML,
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 				'condition' => [
-
 					'transparent!' => '',
 				],
 			]
@@ -1067,11 +1066,11 @@ $element->add_control(
 				'transparent!' => '',
 			],
 			'selectors' => [
-				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-theme-site-logo:not(.elementor-widget-n-menu .elementor-widget-theme-site-logo) .elementor-widget-container, 
-				{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-image:not(.elementor-widget-n-menu .elementor-widget-image) .elementor-widget-container, 
-				{{WRAPPER}}.she-header-yes:not(.she-header) .logo .elementor-widget-container' => '-webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);',
-				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-n-menu .elementor-widget-image .elementor-widget-container, 
-				{{WRAPPER}}.she-header-yes:not(.she-header) .not-logo .elementor-widget-container' => '-webkit-filter: none; filter: none;'
+				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-theme-site-logo:not(.elementor-widget-n-menu .elementor-widget-theme-site-logo), 
+				{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-image:not(.elementor-widget-n-menu .elementor-widget-image), 
+				{{WRAPPER}}.she-header-yes:not(.she-header) .logo' => '-webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);',
+				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-n-menu .elementor-widget-image, 
+				{{WRAPPER}}.she-header-yes:not(.she-header) .not-logo' => '-webkit-filter: none; filter: none;'
 			],
 		]
 	);
@@ -1095,11 +1094,11 @@ $element->add_control(
 				'transparent!' => '',
 			],
 			'selectors' => [
-				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-theme-site-logo .elementor-widget-container,
-				{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-image .elementor-widget-container,
-				{{WRAPPER}}.she-header-yes:not(.she-header) .logo .elementor-widget-container' => '-webkit-filter: brightness(0) invert(0); filter: brightness(0) invert(0);',
-				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-n-menu .elementor-widget-image .elementor-widget-container, 
-				{{WRAPPER}}.she-header-yes:not(.she-header) .not-logo .elementor-widget-container' => '-webkit-filter: none; filter: none;'
+				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-theme-site-logo,
+				{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-image,
+				{{WRAPPER}}.she-header-yes:not(.she-header) .logo' => '-webkit-filter: brightness(0) invert(0); filter: brightness(0) invert(0);',
+				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-n-menu .elementor-widget-image, 
+				{{WRAPPER}}.she-header-yes:not(.she-header) .not-logo' => '-webkit-filter: none; filter: none;'
 			],
 		]
 	);
@@ -1138,11 +1137,11 @@ $element->add_control(
 				'transparent!' => '',
 			],
 			'selectors' => [
-				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo .elementor-widget-container,
-				{{WRAPPER}}.she-header .elementor-widget-image .elementor-widget-container,
-				{{WRAPPER}}.she-header .logo .elementor-widget-container' => '-webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);',
-				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image .elementor-widget-container, 
-				{{WRAPPER}}.she-header .not-logo .elementor-widget-container' => '-webkit-filter: none; filter: none;'
+				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo,
+				{{WRAPPER}}.she-header .elementor-widget-image,
+				{{WRAPPER}}.she-header .logo' => '-webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);',
+				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image, 
+				{{WRAPPER}}.she-header .not-logo' => '-webkit-filter: none; filter: none;'
 			],
 		]
 	);
@@ -1166,11 +1165,11 @@ $element->add_control(
 				'transparent!' => '',
 			],
 			'selectors' => [
-				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo .elementor-widget-container,
-				{{WRAPPER}}.she-header .elementor-widget-image .elementor-widget-container,
-				{{WRAPPER}}.she-header .logo .elementor-widget-container' => '-webkit-filter: brightness(0) invert(0); filter: brightness(0) invert(0);',
-				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image .elementor-widget-container, 
-				{{WRAPPER}}.she-header .not-logo .elementor-widget-container' => '-webkit-filter: none; filter: none;'
+				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo,
+				{{WRAPPER}}.she-header .elementor-widget-image,
+				{{WRAPPER}}.she-header .logo' => '-webkit-filter: brightness(0) invert(0); filter: brightness(0) invert(0);',
+				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image, 
+				{{WRAPPER}}.she-header .not-logo' => '-webkit-filter: none; filter: none;'
 			],
 		]
 	);
@@ -1194,11 +1193,11 @@ $element->add_control(
 				'transparent!' => '',
 			],
 			'selectors' => [
-				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo .elementor-widget-container,
-				{{WRAPPER}}.she-header .elementor-widget-image .elementor-widget-container,
-				{{WRAPPER}}.she-header .logo .elementor-widget-container' => '-webkit-filter: brightness(1) invert(0); filter: brightness(1) invert(0);',
-				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image .elementor-widget-container, 
-				{{WRAPPER}}.she-header .not-logo .elementor-widget-container' => '-webkit-filter: none; filter: none;'
+				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo,
+				{{WRAPPER}}.she-header .elementor-widget-image,
+				{{WRAPPER}}.she-header .logo' => '-webkit-filter: brightness(1) invert(0); filter: brightness(1) invert(0);',
+				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image, 
+				{{WRAPPER}}.she-header .not-logo' => '-webkit-filter: none; filter: none;'
 			],
 		]
 	);
