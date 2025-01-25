@@ -8,9 +8,6 @@ import { __ } from '@wordpress/i18n';
 
 const Dashboard = (props) => {
 
-    
-    // var tpae_pro = tpae_db_object.tpae_pro;
-
     const Outside_click = (e) => {
 
         let drop_down = document.querySelectorAll(".tpae_ctm_drpdwn_content.theplus_wp_show")
@@ -36,10 +33,6 @@ const Dashboard = (props) => {
                         </Routes>
                     </div>
                 </div>
-
-                {/* {'0' == tpae_pro && */}
-                    {/* <ElementorWidgetsBanner /> */}
-                {/* } */}
             </div>
         </>
     )

@@ -36,7 +36,7 @@ const ElementorTemplates = (props) => {
                 <div className='tpae-ele-temp-cov-img-box'></div>
                 <div className='tpae-ele-temp-detail'>
                     <h4 className='theplus-elementor-template-title tpae-in-sec-heading'>{__('Name Of the Template', 'tpgb')}</h4>
-                    <p target="_blank" className='tpae-ghost-btn'>{__('Live Preview', 'tpgb')}</p>
+                    <p target="_blank" className='she-ghost-btn'>{__('Live Preview', 'tpgb')}</p>
                 </div>
             </div>
         );
@@ -106,8 +106,8 @@ const ElementorTemplates = (props) => {
 
     return (
         <div className={`tpae-ele-temp-inn-main tpae-main-container ${template_list?.length > 0 ? '' : 'theplus-skeleton'}`}>
-            <div className='tpae-section-heading-cover'>
-                <h3 className='tpae-section-heading'>{__('Elementor Templates', 'tpgb')}</h3>
+            <div className='she-section-heading-cover'>
+                <h3 className='she-section-heading'>{__('Elementor Templates', 'tpgb')}</h3>
 
                 <div className='tp-common-btn'>
                     {plugin_status?.status === "active" || pluginActive ?
@@ -143,7 +143,7 @@ const ElementorTemplates = (props) => {
                                 </div>
                                 <div className='tpae-ele-temp-detail'>
                                     <h4 className='theplus-elementor-template-title tpae-in-sec-heading'>{t_data.title}</h4>
-                                    <a href={t_data.post_url} target="_blank" className='tpae-ghost-btn'>{__('Live Preview', 'tpgb')}</a>
+                                    <a href={t_data.post_url} target="_blank" className='she-ghost-btn'>{__('Live Preview', 'tpgb')}</a>
                                     <span className='tpae-float-box-title'>{t_data.title}</span>
                                 </div>
                             </div>

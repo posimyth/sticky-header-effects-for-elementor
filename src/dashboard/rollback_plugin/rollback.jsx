@@ -88,9 +88,9 @@ const RollBack = (props) => {
 
     return (
         <div className='tpae_rollback_cover_main tpae-main-container'>
-            <div className='tpae-section-heading-cover'>
+            <div className='she-section-heading-cover'>
                 <div className='tpae_sec_war_grp'>
-                    <h3 className='tpae-section-heading'>{__('Roll Back Plugin', 'tpebl')}</h3>
+                    <h3 className='she-section-heading'>{__('Roll Back Plugin', 'tpebl')}</h3>
                 </div>
                 <div className='tpae_head_tgl_btn_grp'>
 

@@ -91,8 +91,8 @@ const ThemeBuilder = (props) => {
 
     return (
         <div className='theplus_theme_builder_cover_main tpae-main-container'>
-            <div className='tpae-section-heading-cover'>
-                <h3 className='tpae-section-heading'>{__('Elementor Theme Builder', 'tpebl')}</h3>
+            <div className='she-section-heading-cover'>
+                <h3 className='she-section-heading'>{__('Elementor Theme Builder', 'tpebl')}</h3>
 
                 <div className='tpae_head_tgl_btn_grp'>
                     {props?.plugin_check[4]?.status !== 'active' ?
@@ -126,7 +126,7 @@ const ThemeBuilder = (props) => {
                     }
                 </div>
                 <div className='theplus_view_all_btm_btn'>
-                    <a href="https://nexterwp.com/nexter-extension" target="_blank" rel="noopener noreferrer" className='tpae-ghost-btn'>{__('Learn More', 'tpebl')}</a>
+                    <a href="https://nexterwp.com/nexter-extension" target="_blank" rel="noopener noreferrer" className='she-ghost-btn'>{__('Learn More', 'tpebl')}</a>
                 </div>
             </div>
         </div>

@@ -138,8 +138,8 @@ const MoreProducts = (props) => {
 
     return (
         <div className={`theplus_products_cover_main tpae-main-container ${props?.tpae_dashboard_data?.success ? '' : 'theplus-skeleton'}`}>
-            <div className='tpae-section-heading-cover'>
-                <h3 className='tpae-section-heading'>{__('More Products', 'tpebl')}</h3>
+            <div className='she-section-heading-cover'>
+                <h3 className='she-section-heading'>{__('More Products', 'tpebl')}</h3>
 
                 <div className='tpae_head_tgl_btn_grp'>
                     <a href='https://posimyth.com/' target='_blank' rel="noopener noreferrer" className='tpae-purple-common-btn'>{__('Visit Official Website', 'tpebl')}</a>
@@ -168,7 +168,7 @@ const MoreProducts = (props) => {
                                     PluginStatusBtn(name, slug)
                                 }
 
-                                <a href={product.Product_Url} target='_blank' rel="noopener noreferrer" className='tpae-ghost-btn'>{__('Learn More', 'tpebl')}</a>
+                                <a href={product.Product_Url} target='_blank' rel="noopener noreferrer" className='she-ghost-btn'>{__('Learn More', 'tpebl')}</a>
                             </div>
                         </div>
                     </div>
