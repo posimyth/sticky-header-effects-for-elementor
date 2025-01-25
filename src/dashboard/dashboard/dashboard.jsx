@@ -346,7 +346,7 @@ const DashboardInnerMain = (props) => {
     };
 
     return (
-        <div className={`she_dash_inner_main she-main-container ${props?.tpae_dashboard_data?.success ? '' : 'theplus-skeleton'}`}>
+        <div className={`she_dash_inner_main she-main-container ${props?.tpae_dashboard_data?.success ? '' : 'she-skeleton'}`}>
             <div className='she-section-heading-cover'>
                 <h3 className='she-section-heading'>{__('Dashboard', 'she-header')}</h3>
             </div>

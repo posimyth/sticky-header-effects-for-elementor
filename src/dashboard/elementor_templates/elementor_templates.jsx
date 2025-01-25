@@ -32,11 +32,11 @@ const ElementorTemplates = (props) => {
 
     const Wkit_template_Skeleton = () => {
         return (
-            <div className='tpae-ele-temp-box theplus-skeleton'>
-                <div className='tpae-ele-temp-cov-img-box'></div>
-                <div className='tpae-ele-temp-detail'>
-                    <h4 className='theplus-elementor-template-title tpae-in-sec-heading'>{__('Name Of the Template', 'tpgb')}</h4>
-                    <p target="_blank" className='she-ghost-btn'>{__('Live Preview', 'tpgb')}</p>
+            <div className='she-ele-temp-box she-skeleton'>
+                <div className='she-ele-temp-cov-img-box'></div>
+                <div className='she-ele-temp-detail'>
+                    <h4 className='she-elementor-template-title she-in-sec-heading'>{__('Name Of the Template', 'she-header')}</h4>
+                    <p target="_blank" className='she-ghost-btn'>{__('Live Preview', 'she-header')}</p>
                 </div>
             </div>
         );
@@ -105,26 +105,26 @@ const ElementorTemplates = (props) => {
     const items = Array.from({ length: 9 });
 
     return (
-        <div className={`tpae-ele-temp-inn-main tpae-main-container ${template_list?.length > 0 ? '' : 'theplus-skeleton'}`}>
+        <div className={`she-ele-temp-inn-main she-main-container ${template_list?.length > 0 ? '' : 'she-skeleton'}`}>
             <div className='she-section-heading-cover'>
-                <h3 className='she-section-heading'>{__('Elementor Templates', 'tpgb')}</h3>
+                <h3 className='she-section-heading'>{__('Elementor Templates', 'she-header')}</h3>
 
-                <div className='tp-common-btn'>
+                <div className='she-common-btn'>
                     {plugin_status?.status === "active" || pluginActive ?
-                        <a href={wdkit_Plugin_url()} className='tpae-purple-common-btn' target='_blank' rel="noopener noreferrer">{__('Open Templates', 'tpgb')}</a>
+                        <a href={wdkit_Plugin_url()} className='she-purple-common-btn' target='_blank' rel="noopener noreferrer">{__('Open Templates', 'she-header')}</a>
                         :
-                        <a className='tpae-purple-common-btn' onClick={(e) => handleClick(e)} >{buttonText}</a>
+                        <a className='she-purple-common-btn' onClick={(e) => handleClick(e)} >{buttonText}</a>
                      }
 
                 </div>
             </div>
 
-            <div className='tpae-element-temp-bx-cov-main'>
-                <h3 className='tpae-in-sec-heading'>{__('Import Pre-Designed Website Templates Made With Plus Widgets.', 'tpgb')}</h3>
+            <div className='she-element-temp-bx-cov-main'>
+                <h3 className='she-in-sec-heading'>{__('Import Pre-Designed Website Templates Made With Plus Widgets.', 'she-header')}</h3>
 
                 {/* templates in grid view start */}
 
-                <div className='tpae-ele-temp-grid-vbox'>
+                <div className='she-ele-temp-grid-vbox'>
 
                     {wdkit_skeleton &&
                         items.map((data, index) => {
@@ -136,25 +136,25 @@ const ElementorTemplates = (props) => {
 
                     {template_list?.length > 0 && template_list.map((t_data, index) => {
                         return (
-                            <div className='tpae-ele-temp-box' key={index}>
-                                <div className='tpae-ele-temp-cov-img-box'>
-                                    <img className='theplus-elementor-template-img' src={Tpae_card_bg} draggable={false} />
-                                    <img className='theplus-elementor-template-img' src={t_data.responsive_image[1].url} draggable={false} style={{ position: 'absolute' }} />
+                            <div className='she-ele-temp-box' key={index}>
+                                <div className='she-ele-temp-cov-img-box'>
+                                    <img className='she-elementor-template-img' src={Tpae_card_bg} draggable={false} />
+                                    <img className='she-elementor-template-img' src={t_data.responsive_image[1].url} draggable={false} style={{ position: 'absolute' }} />
                                 </div>
-                                <div className='tpae-ele-temp-detail'>
-                                    <h4 className='theplus-elementor-template-title tpae-in-sec-heading'>{t_data.title}</h4>
-                                    <a href={t_data.post_url} target="_blank" className='she-ghost-btn'>{__('Live Preview', 'tpgb')}</a>
-                                    <span className='tpae-float-box-title'>{t_data.title}</span>
+                                <div className='she-ele-temp-detail'>
+                                    <h4 className='she-elementor-template-title she-in-sec-heading'>{t_data.title}</h4>
+                                    <a href={t_data.post_url} target="_blank" className='she-ghost-btn'>{__('Live Preview', 'she-header')}</a>
+                                    <span className='she-float-box-title'>{t_data.title}</span>
                                 </div>
                             </div>
                         );
                     })}
                 </div>
-                <div className="tp-btn-wrap">
+                <div className="she-btn-wrap">
                     {plugin_status?.status === "active" || pluginActive ?
-                        <a href="?page=wdesign-kit#/browse" target="_blank" rel="noopener noreferrer" className="tp-common-btn">{__('Open Templates', 'tpgb')}</a>
+                        <a href="?page=wdesign-kit#/browse" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('Open Templates', 'she-header')}</a>
                         :
-                        <a href="https://wdesignkit.com/templates?builder=1001" target="_blank" rel="noopener noreferrer" className="tp-common-btn">{__('View More Website Templates', 'tpgb')}</a>
+                        <a href="https://wdesignkit.com/templates?builder=1001" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('View More Website Templates', 'she-header')}</a>
                     }
                 </div>
             </div>

@@ -20,7 +20,7 @@ const ProNotice = (props) => {
                         <li className='theplus_popup_list_icon'><img src={plugin_url + 'assets/svg/upgrade_table/theplus_white_check.svg'} alt="Check Icon" />{__('120+ WordPress Widgets', 'tpebl')}</li>
                         <li className='theplus_popup_list_icon'><img src={plugin_url + 'assets/svg/upgrade_table/theplus_white_check.svg'} alt="Check Icon" />{__('100% Whitelabel Plugin', 'tpebl')}</li>
                     </ul>
-                    <a className="tpae-purple-common-btn" target="_blank" rel="noopener noreferrer" href='https://theplusaddons.com/pricing'><img className='theplus_pro_icon' src={plugin_url + 'assets/svg/premium_icon.svg'} draggable={false} /><span>{__('Upgrade Now', 'tpebl')} </span></a>
+                    <a className="she-purple-common-btn" target="_blank" rel="noopener noreferrer" href='https://theplusaddons.com/pricing'><img className='theplus_pro_icon' src={plugin_url + 'assets/svg/premium_icon.svg'} draggable={false} /><span>{__('Upgrade Now', 'tpebl')} </span></a>
                     <p className='theplus_btm_sm_txt'>{__("Use Code 'FIRST20' for FLAT 20%. (Offer applicable for 1st time only)", 'tpebl')}</p>
                 </div>
             </div>

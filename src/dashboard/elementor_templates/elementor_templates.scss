@@ -1,8 +1,8 @@
 @import "../../style/global.scss";
 
-.tpae-ele-temp-inn-main {
+.she-ele-temp-inn-main {
 
-    .tpae-element-temp-bx-cov-main {
+    .she-element-temp-bx-cov-main {
         display: flex;
         flex-direction: column;
         gap: 25px;
@@ -13,14 +13,14 @@
         width: 100%;
         position: relative;
 
-        .tpae-ele-temp-grid-vbox {
+        .she-ele-temp-grid-vbox {
             position: relative;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             width: 100%;
             gap: 12px;
 
-            .tpae-ele-temp-box {
+            .she-ele-temp-box {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -29,14 +29,14 @@
                 gap: 15px;
                 position: relative;
 
-                .tpae-in-sec-heading {
+                .she-in-sec-heading {
                     -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     cursor: default;
                     height: 46px;
 
-                    &:hover~.tpae-float-box-title {
+                    &:hover~.she-float-box-title {
                         margin: auto auto 105px auto;
                         opacity: 1;
                     }
@@ -47,7 +47,7 @@
                 }
             }
 
-            .tpae-ele-temp-detail {
+            .she-ele-temp-detail {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -57,7 +57,7 @@
             }
         }
 
-        .tpae-ele-temp-cov-img-box {
+        .she-ele-temp-cov-img-box {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -68,7 +68,7 @@
             position: relative;
             background: #f5f5f5;
 
-            .theplus-elementor-template-img {
+            .she-elementor-template-img {
                 width: calc(100% - 30px);
                 height: calc(100% - 15px);
                 object-fit: cover;
@@ -76,19 +76,19 @@
             }
         }
 
-        .tp-btn-wrap {
+        .she-btn-wrap {
             align-items: center;
             display: flex;
             justify-content: center;
             padding: 10px 0 15px;
         }
 
-        .tp-btn-wrap .tp-common-btn {
+        .she-btn-wrap .she-common-btn {
             width: fit-content;
             width: -moz-fit-content;
         }
 
-        .tp-common-btn {
+        .she-common-btn {
             align-items: center;
             background-color: #fff;
             border: 1px solid #ccc;
@@ -109,22 +109,22 @@
             width: 100%;
         }
 
-        .tp-common-btn:hover {
+        .she-common-btn:hover {
             background-color: $theplus_purple;
             border-color: $theplus_purple;
             color: #fff;
         }
     }
 
-    .tpae-purple-common-btn {
+    .she-purple-common-btn {
         gap: 5px;
     }
 }
 
-.tpae-ele-temp-box.theplus-skeleton {
+.she-ele-temp-box.she-skeleton {
 
-    .tpae-ele-temp-cov-img-box,
-    .tpae-in-sec-heading,
+    .she-ele-temp-cov-img-box,
+    .she-in-sec-heading,
     .she-ghost-btn {
         background: $skeleton_bg;
         animation: $animation;
@@ -135,12 +135,12 @@
         border: none;
     }
 
-    .tpae-ele-temp-cov-img-box {
+    .she-ele-temp-cov-img-box {
         min-height: 240px;
     }
 }
 
-.tpae-ele-temp-inn-main.theplus-skeleton .tp-common-btn {
+.she-ele-temp-inn-main.she-skeleton .she-common-btn {
     background: $skeleton_bg;
     animation: $animation;
     border-radius: 4px;
@@ -152,13 +152,13 @@
 
 // --------- media query start --------- //
 @media (max-width:1200px) {
-    .tpae-ele-temp-inn-main .tpae-element-temp-bx-cov-main .tpae-ele-temp-grid-vbox {
+    .she-ele-temp-inn-main .she-element-temp-bx-cov-main .she-ele-temp-grid-vbox {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width:768px) {
-    .tpae-ele-temp-inn-main .tpae-element-temp-bx-cov-main .tpae-ele-temp-grid-vbox {
+    .she-ele-temp-inn-main .she-element-temp-bx-cov-main .she-ele-temp-grid-vbox {
         grid-template-columns: repeat(1, 1fr);
     }
 }

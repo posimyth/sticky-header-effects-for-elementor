@@ -34,7 +34,7 @@
 
 /** The Plus Addons Style Guide end **/
 
-.tpae-main-container {
+.she-main-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -110,7 +110,7 @@
   }
 }
 
-.tpae-purple-common-btn {
+.she-purple-common-btn {
   font-family: $theplus_font_family;
   font-size: 14px;
   line-height: 16px;
@@ -147,7 +147,7 @@
   }
 }
 
-.tpae-purple-common-btn.disable {
+.she-purple-common-btn.disable {
   background-color: #bbb3ff;
 
   &:hover {
@@ -155,7 +155,7 @@
   }
 }
 
-.tpae-in-sec-heading {
+.she-in-sec-heading {
   font-family: $theplus_font_family;
   font-size: 16px;
   line-height: 24px;
@@ -528,7 +528,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  .tpae-in-sec-heading {
+  .she-in-sec-heading {
     font-size: 14px;
 
     &.theplus_top_sec_title {
@@ -656,7 +656,7 @@
   cursor: default;
   position: relative;
 
-  .tpae-float-box-title {
+  .she-float-box-title {
     width: max-content;
     height: fit-content;
     left: auto;
@@ -674,7 +674,7 @@
   }
 
   &:hover {
-    .tpae-float-box-title {
+    .she-float-box-title {
       left: auto;
       opacity: 1;
       transform: translateX(-46px);
@@ -686,7 +686,7 @@
 
 /** tool tip Start **/
 
-.tpae-float-box-title {
+.she-float-box-title {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 14px;
   line-height: 24px;
@@ -1038,12 +1038,12 @@
     }
   }
 
-  .tpae-purple-common-btn {
+  .she-purple-common-btn {
     padding: 10px 20px;
     font-size: 12px;
   }
 
-  .tpae-in-sec-heading {
+  .she-in-sec-heading {
     font-size: 14px;
   }
 

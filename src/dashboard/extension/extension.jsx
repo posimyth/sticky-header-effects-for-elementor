@@ -278,7 +278,7 @@ const Extension = (props) => {
 
     return (
         <>
-            <div className={`theplus-widgets-inner-main tpae-main-container ${props?.tpae_dashboard_data?.success ? '' : 'theplus-skeleton'}`}>
+            <div className={`theplus-widgets-inner-main she-main-container ${props?.tpae_dashboard_data?.success ? '' : 'she-skeleton'}`}>
                 <div className='she-section-heading-cover'>
                     <h3 className='she-section-heading'>{__('Extensions', 'tpebl')}</h3>
                 </div>

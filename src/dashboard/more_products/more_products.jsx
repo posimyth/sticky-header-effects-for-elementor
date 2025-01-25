@@ -137,12 +137,12 @@ const MoreProducts = (props) => {
     }
 
     return (
-        <div className={`theplus_products_cover_main tpae-main-container ${props?.tpae_dashboard_data?.success ? '' : 'theplus-skeleton'}`}>
+        <div className={`theplus_products_cover_main she-main-container ${props?.tpae_dashboard_data?.success ? '' : 'she-skeleton'}`}>
             <div className='she-section-heading-cover'>
                 <h3 className='she-section-heading'>{__('More Products', 'tpebl')}</h3>
 
                 <div className='tpae_head_tgl_btn_grp'>
-                    <a href='https://posimyth.com/' target='_blank' rel="noopener noreferrer" className='tpae-purple-common-btn'>{__('Visit Official Website', 'tpebl')}</a>
+                    <a href='https://posimyth.com/' target='_blank' rel="noopener noreferrer" className='she-purple-common-btn'>{__('Visit Official Website', 'tpebl')}</a>
                 </div>
             </div>
 
@@ -160,7 +160,7 @@ const MoreProducts = (props) => {
                                 <div className='theplus_product_logo'>
                                     <img src={plugin_url + 'assets/images/products/' + product.logo} draggable={false} />
                                 </div>
-                                <h4 className='theplus_product_name tpae-in-sec-heading'>{product.product_txt}</h4>
+                                <h4 className='theplus_product_name she-in-sec-heading'>{product.product_txt}</h4>
                             </div>
                             <div className='theplus-installation'>
 

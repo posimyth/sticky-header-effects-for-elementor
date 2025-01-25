@@ -90,22 +90,22 @@ const ThemeBuilder = (props) => {
     ];
 
     return (
-        <div className='theplus_theme_builder_cover_main tpae-main-container'>
+        <div className='theplus_theme_builder_cover_main she-main-container'>
             <div className='she-section-heading-cover'>
                 <h3 className='she-section-heading'>{__('Elementor Theme Builder', 'tpebl')}</h3>
 
                 <div className='tpae_head_tgl_btn_grp'>
                     {props?.plugin_check[4]?.status !== 'active' ?
-                        <button className='tpae-purple-common-btn' onClick={() => { Install_Nexter() }}>{nexter_btn}</button>
+                        <button className='she-purple-common-btn' onClick={() => { Install_Nexter() }}>{nexter_btn}</button>
                         :
-                        <a href='edit.php?post_type=nxt_builder' target="_blank" rel="noopener noreferrer" className='tpae-purple-common-btn'>{__('Open Theme Builder', 'tpebl')}</a>
+                        <a href='edit.php?post_type=nxt_builder' target="_blank" rel="noopener noreferrer" className='she-purple-common-btn'>{__('Open Theme Builder', 'tpebl')}</a>
                     }
-                    {/* <button className='tpae-purple-common-btn' onClick={() => { Install_Nexter() }}>{__('Install FREE Nexter Theme')}</button> */}
+                    {/* <button className='she-purple-common-btn' onClick={() => { Install_Nexter() }}>{__('Install FREE Nexter Theme')}</button> */}
                 </div>
             </div>
 
             <div className='theplus_theme_builder_box_cover_main'>
-                <h3 className='tpae-in-sec-heading'>{__('Get FREE Theme Builder for Elementor with our Nexter Theme', 'tpebl')}</h3>
+                <h3 className='she-in-sec-heading'>{__('Get FREE Theme Builder for Elementor with our Nexter Theme', 'tpebl')}</h3>
 
                 <div className='theplus_theme_builder_grid_view_box'>
 
@@ -117,7 +117,7 @@ const ThemeBuilder = (props) => {
                                     <img className='theplus_theme_builder_img' src={card?.q_image} draggable={false} style={{ position: 'absolute', left: 0 }} />
                                 </div>
                                 <div className='theplus_theme_builder_description'>
-                                    <h4 className='tpae_theme_build_title tpae-in-sec-heading'>{card?.title}</h4>
+                                    <h4 className='tpae_theme_build_title she-in-sec-heading'>{card?.title}</h4>
                                     <p className='tpae_tb_crd_desc'>{card?.description}</p>
                                 </div>
                             </div>

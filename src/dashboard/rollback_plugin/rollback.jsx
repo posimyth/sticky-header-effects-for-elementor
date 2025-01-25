@@ -87,7 +87,7 @@ const RollBack = (props) => {
     }
 
     return (
-        <div className='tpae_rollback_cover_main tpae-main-container'>
+        <div className='tpae_rollback_cover_main she-main-container'>
             <div className='she-section-heading-cover'>
                 <div className='tpae_sec_war_grp'>
                     <h3 className='she-section-heading'>{__('Roll Back Plugin', 'tpebl')}</h3>
@@ -95,10 +95,10 @@ const RollBack = (props) => {
                 <div className='tpae_head_tgl_btn_grp'>
 
                     {loading ?
-                        <button className={`tpae-purple-common-btn ${!selectedVersion ? 'disabled' : ''}`} disabled={!selectedVersion && !loading}>
+                        <button className={`she-purple-common-btn ${!selectedVersion ? 'disabled' : ''}`} disabled={!selectedVersion && !loading}>
                             <span className="tpae_purple_loader"></span>
                         </button> :
-                        <button className={`tpae-purple-common-btn ${!selectedVersion ? 'disabled' : ''}`} onClick={() => select_ver(selectedVersion)} disabled={!selectedVersion && !loading}>
+                        <button className={`she-purple-common-btn ${!selectedVersion ? 'disabled' : ''}`} onClick={() => select_ver(selectedVersion)} disabled={!selectedVersion && !loading}>
                             {__('Rollback', 'tpebl')}
                         </button>
                     }
