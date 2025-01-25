@@ -34,99 +34,99 @@ const ThemeBuilder = (props) => {
 
     let card_array = [
         {
-            'title': __('Advanced Header Builder', 'tpebl'),
-            'description': __('Get rid of the limited Header customizer. Use Elementor Widgets or Blocks to create custom. menu.', 'tpebl'),
+            'title': __('Advanced Header Builder', 'she-header'),
+            'description': __('Get rid of the limited Header customizer. Use Elementor Widgets or Blocks to create custom. menu.', 'she-header'),
             'image': plugin_url + 'assets/images/new_dashboard/Advanced Header Builder.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/advanced-header-Builder.png',
         },
         {
-            'title': __('Advanced Footer Builder', 'tpebl'),
-            'description': __('Your custom Footer with no limit of layout. Create any footer layout you want with our Footer Builder.', 'tpebl'),
+            'title': __('Advanced Footer Builder', 'she-header'),
+            'description': __('Your custom Footer with no limit of layout. Create any footer layout you want with our Footer Builder.', 'she-header'),
             'image': plugin_url + 'assets/images/new_dashboard/Advanced Footer Builder.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/advanced-footer-builder.png',
         },
         {
-            'title': __('Breadcrumbs Bar', 'tpebl'),
-            'description': __('Help users navigate your website by adding breadcrumb bar that shows the path they\'ve taken.', 'tpebl'),
+            'title': __('Breadcrumbs Bar', 'she-header'),
+            'description': __('Help users navigate your website by adding breadcrumb bar that shows the path they\'ve taken.', 'she-header'),
             'image': plugin_url + 'assets/images/new_dashboard/Breadcrumbs Bar.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/breadcrumbs-bar.png',
         },
         {
-            'title': __('404 Page', 'tpebl'),
-            'description': __('Turn a "Page Not Found" into an opportunity by customizing your 404 error page with your branding and helpful content.', 'tpebl'),
+            'title': __('404 Page', 'she-header'),
+            'description': __('Turn a "Page Not Found" into an opportunity by customizing your 404 error page with your branding and helpful content.', 'she-header'),
             'image': plugin_url + 'assets/images/new_dashboard/404-page.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/404-page.png',
         },
         {
-            'title': __('Single Pages', 'tpebl'),
-            'description': __('Create custom Single pages for your CPT, Blog Posts, or WooCommerce Product Pages.', 'tpebl'),
+            'title': __('Single Pages', 'she-header'),
+            'description': __('Create custom Single pages for your CPT, Blog Posts, or WooCommerce Product Pages.', 'she-header'),
             'image': plugin_url + 'assets/images/new_dashboard/single-pages.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/single-pages.png',
         },
         {
-            'title': __('Archive Pages', 'tpebl'),
-            'description': __('Create custom listing pages for posts, CPT or WooCommerce Products.', 'tpebl'),
+            'title': __('Archive Pages', 'she-header'),
+            'description': __('Create custom listing pages for posts, CPT or WooCommerce Products.', 'she-header'),
             'image': plugin_url + 'assets/images/new_dashboard/archive-pages.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/archive-pages.png',
         },
         {
-            'title': __('Code Snippets', 'tpebl'),
-            'description': __('Get rid of the limited Header customizer. Use WordPress Blocks or Blocks to create custom menu.', 'tpebl'),
+            'title': __('Code Snippets', 'she-header'),
+            'description': __('Get rid of the limited Header customizer. Use WordPress Blocks or Blocks to create custom menu.', 'she-header'),
             'image': plugin_url + 'assets/images/new_dashboard/code-snippets.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/code-snippets.png',
         },
         {
-            'title': __('Display Rules for Theme Builder Sections', 'tpebl'),
-            'description': __('Control where and how your theme builder sections appear on your site.', 'tpebl'),
+            'title': __('Display Rules for Theme Builder Sections', 'she-header'),
+            'description': __('Control where and how your theme builder sections appear on your site.', 'she-header'),
             'image': plugin_url + 'assets/images/new_dashboard/display-rules-sections.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/display-rules-sections.png',
         },
         {
-            'title': __('Action & Filter Hooks', 'tpebl'),
-            'description': __('Fine-tune your website\'s behavior and appearance by utilizing action and filter hooks for developers to extend functionalities.', 'tpebl'),
+            'title': __('Action & Filter Hooks', 'she-header'),
+            'description': __('Fine-tune your website\'s behavior and appearance by utilizing action and filter hooks for developers to extend functionalities.', 'she-header'),
             'image': plugin_url + 'assets/images/new_dashboard/action-filter-hooks.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/action-filter-hooks.png',
         }
     ];
 
     return (
-        <div className='theplus_theme_builder_cover_main she-main-container'>
+        <div className='she-theme-bulder-main she-main-container'>
             <div className='she-section-heading-cover'>
-                <h3 className='she-section-heading'>{__('Elementor Theme Builder', 'tpebl')}</h3>
+                <h3 className='she-section-heading'>{__('Elementor Theme Builder', 'she-header')}</h3>
 
-                <div className='tpae_head_tgl_btn_grp'>
+                <div className='she_head_tgl_btn_grp'>
                     {props?.plugin_check[4]?.status !== 'active' ?
                         <button className='she-purple-common-btn' onClick={() => { Install_Nexter() }}>{nexter_btn}</button>
                         :
-                        <a href='edit.php?post_type=nxt_builder' target="_blank" rel="noopener noreferrer" className='she-purple-common-btn'>{__('Open Theme Builder', 'tpebl')}</a>
+                        <a href='edit.php?post_type=nxt_builder' target="_blank" rel="noopener noreferrer" className='she-purple-common-btn'>{__('Open Theme Builder', 'she-header')}</a>
                     }
                     {/* <button className='she-purple-common-btn' onClick={() => { Install_Nexter() }}>{__('Install FREE Nexter Theme')}</button> */}
                 </div>
             </div>
 
-            <div className='theplus_theme_builder_box_cover_main'>
-                <h3 className='she-in-sec-heading'>{__('Get FREE Theme Builder for Elementor with our Nexter Theme', 'tpebl')}</h3>
+            <div className='she_theme_builder_box_cover_main'>
+                <h3 className='she-in-sec-heading'>{__('Get FREE Theme Builder for Elementor with our Nexter Theme', 'she-header')}</h3>
 
-                <div className='theplus_theme_builder_grid_view_box'>
+                <div className='she_theme_builder_grid_view_box'>
 
                     {card_array.length > 0 && card_array.map((card, index) => {
                         return (
-                            <div className='theplus_theme_builder_box' key={index}>
-                                <div className='theplus_theme_builder_cover_img_box'>
-                                    <img className='theplus_theme_builder_img' src={card?.image} draggable={false} />
-                                    <img className='theplus_theme_builder_img' src={card?.q_image} draggable={false} style={{ position: 'absolute', left: 0 }} />
+                            <div className='she_theme_builder_box' key={index}>
+                                <div className='she_theme_builder_cover_img_box'>
+                                    <img className='she_theme_builder_img' src={card?.image} draggable={false} />
+                                    <img className='she_theme_builder_img' src={card?.q_image} draggable={false} style={{ position: 'absolute', left: 0 }} />
                                 </div>
-                                <div className='theplus_theme_builder_description'>
-                                    <h4 className='tpae_theme_build_title she-in-sec-heading'>{card?.title}</h4>
-                                    <p className='tpae_tb_crd_desc'>{card?.description}</p>
+                                <div className='she_theme_builder_description'>
+                                    <h4 className='she_theme_build_title she-in-sec-heading'>{card?.title}</h4>
+                                    <p className='she_tb_crd_desc'>{card?.description}</p>
                                 </div>
                             </div>
                         );
                     })
                     }
                 </div>
-                <div className='theplus_view_all_btm_btn'>
-                    <a href="https://nexterwp.com/nexter-extension" target="_blank" rel="noopener noreferrer" className='she-ghost-btn'>{__('Learn More', 'tpebl')}</a>
+                <div className='she_view_all_btm_btn'>
+                    <a href="https://nexterwp.com/nexter-extension" target="_blank" rel="noopener noreferrer" className='she-ghost-btn'>{__('Learn More', 'she-header')}</a>
                 </div>
             </div>
         </div>

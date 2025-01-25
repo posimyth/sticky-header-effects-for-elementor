@@ -92,7 +92,7 @@ const RollBack = (props) => {
                 <div className='tpae_sec_war_grp'>
                     <h3 className='she-section-heading'>{__('Roll Back Plugin', 'tpebl')}</h3>
                 </div>
-                <div className='tpae_head_tgl_btn_grp'>
+                <div className='she_head_tgl_btn_grp'>
 
                     {loading ?
                         <button className={`she-purple-common-btn ${!selectedVersion ? 'disabled' : ''}`} disabled={!selectedVersion && !loading}>

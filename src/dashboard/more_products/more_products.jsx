@@ -141,7 +141,7 @@ const MoreProducts = (props) => {
             <div className='she-section-heading-cover'>
                 <h3 className='she-section-heading'>{__('More Products', 'tpebl')}</h3>
 
-                <div className='tpae_head_tgl_btn_grp'>
+                <div className='she_head_tgl_btn_grp'>
                     <a href='https://posimyth.com/' target='_blank' rel="noopener noreferrer" className='she-purple-common-btn'>{__('Visit Official Website', 'tpebl')}</a>
                 </div>
             </div>
