@@ -105,7 +105,7 @@ const RollBack = (props) => {
                 </div>
             </div>
             <div className='theplus_rollback_content_cover'>
-                <div className='tpae_field_card'>
+                <div className='she_field_card'>
                     <div className='theplus_card_top_detail'>
                         <div className='tpae_field_card_heading_strip'>
                             <label htmlFor="tpae_lazyload" className='tpae_field_card_title'>{__('Rollback to Previous Free Version', 'she-header')}</label>
