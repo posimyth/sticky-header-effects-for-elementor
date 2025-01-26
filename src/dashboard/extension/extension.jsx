@@ -81,16 +81,16 @@ const Extension = (props) => {
 
     const nexter_poup_accordian = [
         {
-            question: __('What is Nexter Extension? Why Do I Need an Extra Plugin for These Features?', 'tpebl'),
-            answer: __('Nexter Extension is a unique set of features provided through a separate plugin. We’ve made it independent from The Plus Addons for Elementor widgets. While The Plus Addons focuses on extra Elementor widgets, Nexter Extension helps you prepare your WordPress site for production with better security and higher performance.', 'tpebl'),
+            question: __('What is Nexter Extension? Why Do I Need an Extra Plugin for These Features?', 'she-header'),
+            answer: __('Nexter Extension is a unique set of features provided through a separate plugin. We’ve made it independent from The Plus Addons for Elementor widgets. While The Plus Addons focuses on extra Elementor widgets, Nexter Extension helps you prepare your WordPress site for production with better security and higher performance.', 'she-header'),
         },
         {
-            question: __('Do I Need to Pay Anything to Use These Features?', 'tpebl'),
-            answer: __('Most of the Nexter Extensions are free, while only some are paid. These paid features are included for Pro users of The Plus Addons for Elementor. All Pro users also unlock Nexter Extension Pro.', 'tpebl'),
+            question: __('Do I Need to Pay Anything to Use These Features?', 'she-header'),
+            answer: __('Most of the Nexter Extensions are free, while only some are paid. These paid features are included for Pro users of The Plus Addons for Elementor. All Pro users also unlock Nexter Extension Pro.', 'she-header'),
         },
         {
-            question: __('Will This Affect My Site’s Performance?', 'tpebl'),
-            answer: __('Not at all! These are great features designed to make your WordPress website more secure, faster, and smarter, saving you a lot of time. It’s a single plugin that eliminates multiple hassles, making it easy to create a powerful WordPress website.', 'tpebl'),
+            question: __('Will This Affect My Site’s Performance?', 'she-header'),
+            answer: __('Not at all! These are great features designed to make your WordPress website more secure, faster, and smarter, saving you a lot of time. It’s a single plugin that eliminates multiple hassles, making it easy to create a powerful WordPress website.', 'she-header'),
         }
     ];
 
@@ -99,17 +99,17 @@ const Extension = (props) => {
     const InstallPopup = () => {
         return (
             <div className="tpae-nexter-content">
-                <div className="tpae-nexter-title">{__('Get 22+ More Extensions for your WordPress Website with Nexter Extension', 'tpebl')}</div>
+                <div className="tpae-nexter-title">{__('Get 22+ More Extensions for your WordPress Website with Nexter Extension', 'she-header')}</div>
                 <div className="tpae-features-ndic">
-                    <ul><li>{CheckIcon}{__('Free Theme Builder for Elementor', 'tpebl')}</li>
-                        <li>{CheckIcon}{__('Code Snippets', 'tpebl')}</li>
-                        <li>{CheckIcon}{__('Extra Features', 'tpebl')}</li>
-                        <li>{CheckIcon}{__('Security Hardener', 'tpebl')}</li>
-                        <li>{CheckIcon}{__('Performance Booster', 'tpebl')}</li></ul>
+                    <ul><li>{CheckIcon}{__('Free Theme Builder for Elementor', 'she-header')}</li>
+                        <li>{CheckIcon}{__('Code Snippets', 'she-header')}</li>
+                        <li>{CheckIcon}{__('Extra Features', 'she-header')}</li>
+                        <li>{CheckIcon}{__('Security Hardener', 'she-header')}</li>
+                        <li>{CheckIcon}{__('Performance Booster', 'she-header')}</li></ul>
                 </div>
                 <div className="tpae-install-activate">
                     <a className='tpae-nexter-btn' onClick={(e) => handleClick(e)}>{NexterBtn}</a>
-                    <a href='https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target="_blank" rel="noopener noreferrer" className='tpae-nexter-learn'>{__('Learn More', 'tpebl')}</a>
+                    <a href='https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target="_blank" rel="noopener noreferrer" className='tpae-nexter-learn'>{__('Learn More', 'she-header')}</a>
                 </div>
 
                 {/* <div className='she-nexter-group'>
@@ -202,7 +202,7 @@ const Extension = (props) => {
                                                 {categoryKey.label}
                                             </h3>
                                             <div className='tpae-cat-qik-info'>
-                                                <span className='tpae-ttl-wid-num'>{extension_options.length} {__('Total Extensions', 'tpebl')} </span>
+                                                <span className='tpae-ttl-wid-num'>{extension_options.length} {__('Total Extensions', 'she-header')} </span>
                                                 {/* •
                                             <span className='tpae-active-widget-numbers'>{Active_widget_count(extension_options, 'extras_elements') + __(' Active')}</span> */}
                                             </div>
@@ -224,12 +224,12 @@ const Extension = (props) => {
                                                             }
                                                         </div>
                                                             <div className='tpae-abt-wid-qik-link-cov'>
-                                                                <a href={'https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='tpae-nexter-link'>{__('Live Demo', 'tpebl')}</a>
+                                                                <a href={'https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='tpae-nexter-link'>{__('Live Demo', 'she-header')}</a>
                                                                 {(data.docUrl) &&
                                                                     <span> | </span>
                                                                 }
                                                                 {data.docUrl &&
-                                                                    <a href={data.docUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='tpae-nexter-link'>{__('Read Docs', 'tpebl')}</a>
+                                                                    <a href={data.docUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='tpae-nexter-link'>{__('Read Docs', 'she-header')}</a>
                                                                 }
                                                             </div>
                                                     </div>
@@ -280,15 +280,15 @@ const Extension = (props) => {
         <>
             <div className={`theplus-widgets-inner-main she-main-container ${props?.tpae_dashboard_data?.success ? '' : 'she-skeleton'}`}>
                 <div className='she-section-heading-cover'>
-                    <h3 className='she-section-heading'>{__('Extensions', 'tpebl')}</h3>
+                    <h3 className='she-section-heading'>{__('Extensions', 'she-header')}</h3>
                 </div>
                 <div className='tpae-widget-categories'>
                     <div className='tpae-cat-strip-cov-main'>
 
                         <div className='tpae-cate-btns-cover'>
-                            <span className={`tpae-category-btn ${FreePro == 'all' ? 'tpae-act-cat' : ''}`} onClick={() => { setFreePro('all') }}>{__('All', 'tpebl')}</span>
-                            <span className={`tpae-category-btn ${FreePro == 'free' ? 'tpae-act-cat' : ''}`} onClick={() => { setFreePro('free') }}>{__('Free', 'tpebl')}</span>
-                            <span className={`tpae-category-btn ${FreePro == 'pro' ? 'tpae-act-cat' : ''}`} onClick={() => { setFreePro('pro') }}>{__('Pro', 'tpebl')}</span>
+                            <span className={`tpae-category-btn ${FreePro == 'all' ? 'tpae-act-cat' : ''}`} onClick={() => { setFreePro('all') }}>{__('All', 'she-header')}</span>
+                            <span className={`tpae-category-btn ${FreePro == 'free' ? 'tpae-act-cat' : ''}`} onClick={() => { setFreePro('free') }}>{__('Free', 'she-header')}</span>
+                            <span className={`tpae-category-btn ${FreePro == 'pro' ? 'tpae-act-cat' : ''}`} onClick={() => { setFreePro('pro') }}>{__('Pro', 'she-header')}</span>
                         </div>
 
                         <div className='theplus-right-search-and-btn-group'>
@@ -301,10 +301,10 @@ const Extension = (props) => {
                     <div className='tpae-cat-strip-cov-main theplus-second-strip'>
 
                         <div className='tpae-cate-btns-cover'>
-                            <span className={ActiveTab == 'she_utitlies' ? 'tpae-category-btn tpae-act-cat' : 'tpae-category-btn'} onClick={() => { scroll_to_id('#she_utitlies') }}>{__('Utitlies', 'tpebl')}</span>
-                            <span className={ActiveTab == 'she_performance' ? 'tpae-category-btn tpae-act-cat' : 'tpae-category-btn'} onClick={() => { scroll_to_id('#she_performance') }}>{__('Performance', 'tpebl')}</span>
-                            <span className={ActiveTab == 'she_security' ? 'tpae-category-btn tpae-act-cat' : 'tpae-category-btn'} onClick={() => { scroll_to_id('#she_security') }}>{__('Security', 'tpebl')}</span>
-                            <span className={ActiveTab == 'she_admin_Interface' ? 'tpae-category-btn tpae-act-cat' : 'tpae-category-btn'} onClick={() => { scroll_to_id('#she_admin_Interface') }}>{__('Admin Interface', 'tpebl')}</span>
+                            <span className={ActiveTab == 'she_utitlies' ? 'tpae-category-btn tpae-act-cat' : 'tpae-category-btn'} onClick={() => { scroll_to_id('#she_utitlies') }}>{__('Utitlies', 'she-header')}</span>
+                            <span className={ActiveTab == 'she_performance' ? 'tpae-category-btn tpae-act-cat' : 'tpae-category-btn'} onClick={() => { scroll_to_id('#she_performance') }}>{__('Performance', 'she-header')}</span>
+                            <span className={ActiveTab == 'she_security' ? 'tpae-category-btn tpae-act-cat' : 'tpae-category-btn'} onClick={() => { scroll_to_id('#she_security') }}>{__('Security', 'she-header')}</span>
+                            <span className={ActiveTab == 'she_admin_Interface' ? 'tpae-category-btn tpae-act-cat' : 'tpae-category-btn'} onClick={() => { scroll_to_id('#she_admin_Interface') }}>{__('Admin Interface', 'she-header')}</span>
                         </div>
                     </div>
                 </div>

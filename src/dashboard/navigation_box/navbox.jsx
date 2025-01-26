@@ -77,17 +77,17 @@ const NavBox = (props) => {
                 </div>
                 <div className={`tpae_navlinks_cover ${menuToggel ? 'tpae_open_menu' : ''}`}>
                     <ul className='tpae_navlinks_inner_cover'>
-                        <li><Link className={`${location.pathname == '/' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/" onClick={() => { setmenuToggel(false) }}>{__('Dashboard', 'tpebl')}</Link></li>
-                        <li><Link className={`${location.pathname == '/elementor_templates' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/elementor_templates" onClick={() => { setmenuToggel(false) }}>{__('Header Templates', 'tpebl')}</Link></li>
-                        <li><Link className={`${location.pathname == '/theme_builder' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/theme_builder" onClick={() => { setmenuToggel(false) }}>{__('Elementor Theme Builder ', 'tpebl')}</Link></li>
-                        <li><Link className={`${location.pathname == '/extension' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/extension" onClick={() => { setmenuToggel(false) }}>{__('Extensions', 'tpebl')}</Link></li>
-                        <li><Link className={`${location.pathname == '/more_products' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/more_products" onClick={() => { setmenuToggel(false) }}>{__('More Products', 'tpebl')}</Link></li>
-                        <li><Link className={`${location.pathname == '/rollback_plugin' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/rollback_plugin" onClick={() => { setmenuToggel(false) }}>{__('Roll Back', 'tpebl')}</Link></li>
+                        <li><Link className={`${location.pathname == '/' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/" onClick={() => { setmenuToggel(false) }}>{__('Dashboard', 'she-header')}</Link></li>
+                        <li><Link className={`${location.pathname == '/elementor_templates' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/elementor_templates" onClick={() => { setmenuToggel(false) }}>{__('Header Templates', 'she-header')}</Link></li>
+                        <li><Link className={`${location.pathname == '/theme_builder' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/theme_builder" onClick={() => { setmenuToggel(false) }}>{__('Elementor Theme Builder ', 'she-header')}</Link></li>
+                        <li><Link className={`${location.pathname == '/extension' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/extension" onClick={() => { setmenuToggel(false) }}>{__('Extensions', 'she-header')}</Link></li>
+                        <li><Link className={`${location.pathname == '/more_products' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/more_products" onClick={() => { setmenuToggel(false) }}>{__('More Products', 'she-header')}</Link></li>
+                        <li><Link className={`${location.pathname == '/rollback_plugin' ? 'tpae_navlink tpae_active_tab' : 'tpae_navlink'}`} to="/rollback_plugin" onClick={() => { setmenuToggel(false) }}>{__('Roll Back', 'she-header')}</Link></li>
 
                     </ul>
                     <div className='tpae_ver_nd_sys_info'>
-                        <p className='theplus_version'>{__('Version', 'tpebl')} {tpae_version}</p> |
-                        <a href={baseUrl + '/site-health.php'} target="_blank" rel="noopener noreferrer" className='tpae_system_info'>{__('System Info', 'tpebl')}</a>
+                        <p className='theplus_version'>{__('Version', 'she-header')} {tpae_version}</p> |
+                        <a href={baseUrl + '/site-health.php'} target="_blank" rel="noopener noreferrer" className='tpae_system_info'>{__('System Info', 'she-header')}</a>
                     </div>
                 </div>
                 <div className='tpae_content_area'></div>

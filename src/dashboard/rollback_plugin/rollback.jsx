@@ -90,7 +90,7 @@ const RollBack = (props) => {
         <div className='tpae_rollback_cover_main she-main-container'>
             <div className='she-section-heading-cover'>
                 <div className='tpae_sec_war_grp'>
-                    <h3 className='she-section-heading'>{__('Roll Back Plugin', 'tpebl')}</h3>
+                    <h3 className='she-section-heading'>{__('Roll Back Plugin', 'she-header')}</h3>
                 </div>
                 <div className='she_head_tgl_btn_grp'>
 
@@ -99,7 +99,7 @@ const RollBack = (props) => {
                             <span className="tpae_purple_loader"></span>
                         </button> :
                         <button className={`she-purple-common-btn ${!selectedVersion ? 'disabled' : ''}`} onClick={() => select_ver(selectedVersion)} disabled={!selectedVersion && !loading}>
-                            {__('Rollback', 'tpebl')}
+                            {__('Rollback', 'she-header')}
                         </button>
                     }
                 </div>
@@ -108,7 +108,7 @@ const RollBack = (props) => {
                 <div className='tpae_field_card'>
                     <div className='theplus_card_top_detail'>
                         <div className='tpae_field_card_heading_strip'>
-                            <label htmlFor="tpae_lazyload" className='tpae_field_card_title'>{__('Rollback to Previous Free Version', 'tpebl')}</label>
+                            <label htmlFor="tpae_lazyload" className='tpae_field_card_title'>{__('Rollback to Previous Free Version', 'she-header')}</label>
                         </div>
                     </div>
                     <div className='tpae_field_dropdown'>
@@ -127,7 +127,7 @@ const RollBack = (props) => {
                         </div>
                         <div className='tpae_warning_text'>
                             <img src={plugin_url + 'assets/svg/theplus_warning.svg'} draggable={false} />
-                            {__('Warning: Please backup your database before making the rollback.', 'tpebl')}
+                            {__('Warning: Please backup your database before making the rollback.', 'she-header')}
                         </div>
                     </div>
 

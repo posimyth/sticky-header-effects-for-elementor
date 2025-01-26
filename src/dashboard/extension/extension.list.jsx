@@ -3,11 +3,11 @@ import { __ } from '@wordpress/i18n';
 const plus_extension = [
     {
         name: 'utitlies',
-        label: __('Utitlies', 'tpebl'),
+        label: __('Utitlies', 'she-header'),
         widgets: [
             {
                 name: 'she_adobe_fonts',
-                label: __('Adobe Fonts', 'tpebl'),
+                label: __('Adobe Fonts', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -17,7 +17,7 @@ const plus_extension = [
             },
             {
                 name: 'she_custom_fonts_upload',
-                label: __('Custom Fonts Upload', 'tpebl'),
+                label: __('Custom Fonts Upload', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -27,7 +27,7 @@ const plus_extension = [
             },
             {
                 name: 'she_replace_url_text',
-                label: __('Replace URL & Text', 'tpebl'),
+                label: __('Replace URL & Text', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -37,7 +37,7 @@ const plus_extension = [
             },
             {
                 name: 'she_duplicate_post',
-                label: __('Duplicate Post', 'tpebl'),
+                label: __('Duplicate Post', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -47,7 +47,7 @@ const plus_extension = [
             },
             {
                 name: 'she_regenerate_thumbnails',
-                label: __('Regenerate Thumbnails', 'tpebl'),
+                label: __('Regenerate Thumbnails', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -59,11 +59,11 @@ const plus_extension = [
     },
     {
         name: 'performance',
-        label: __('Performance', 'tpebl'),
+        label: __('Performance', 'she-header'),
         widgets: [
             {
                 name: 'duplicate_post',
-                label: __('Advanced Performance', 'tpebl'),
+                label: __('Advanced Performance', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -73,7 +73,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('Google Fonts', 'tpebl'),
+                label: __('Google Fonts', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -83,7 +83,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('Disable Comments', 'tpebl'),
+                label: __('Disable Comments', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -93,7 +93,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('Disable Image Sizes', 'tpebl'),
+                label: __('Disable Image Sizes', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -103,7 +103,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('Register Custom Image Sizes', 'tpebl'),
+                label: __('Register Custom Image Sizes', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -113,7 +113,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('Disable Icons', 'tpebl'),
+                label: __('Disable Icons', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -125,11 +125,11 @@ const plus_extension = [
     },
     {
         name:'security',
-        label: __('Security', 'tpebl'),
+        label: __('Security', 'she-header'),
         widgets: [
             {
                 name: 'duplicate_post',
-                label: __('Advanced Security', 'tpebl'),
+                label: __('Advanced Security', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -139,7 +139,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('CAPTCHA', 'tpebl'),
+                label: __('CAPTCHA', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -149,7 +149,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('Custom Login URL', 'tpebl'),
+                label: __('Custom Login URL', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -159,7 +159,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('2-Factor Authentication', 'tpebl'),
+                label: __('2-Factor Authentication', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -169,7 +169,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('Content Protection', 'tpebl'),
+                label: __('Content Protection', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -179,7 +179,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('Login Email Notification', 'tpebl'),
+                label: __('Login Email Notification', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -191,11 +191,11 @@ const plus_extension = [
     },
     {
         name:'admin_Interface',
-        label: __('Admin Interface', 'tpebl'),
+        label: __('Admin Interface', 'she-header'),
         widgets: [
             {
                 name: 'duplicate_post',
-                label: __('Disable Admin Settings', 'tpebl'),
+                label: __('Disable Admin Settings', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
@@ -205,7 +205,7 @@ const plus_extension = [
             },
             {
                 name: 'duplicate_post',
-                label: __('Branded WP Admin', 'tpebl'),
+                label: __('Branded WP Admin', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',

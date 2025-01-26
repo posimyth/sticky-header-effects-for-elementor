@@ -318,7 +318,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				'url'    => 'update.php?action=upgrade-plugin&plugin=' . rawurlencode( $this_pluginname ),
 				'plugin' => $this_pluginname,
 				'nonce'  => 'upgrade-plugin_' . $this_pluginname,
-				'title'  => '<img src="' . esc_url( $logo_url ) . '" alt="theplus-logo"><div class="theplus-rb-subtitle">' . esc_html__( 'Rollback to Previous Version', 'tpebl' ) . '</div>',
+				'title'  => '<img src="' . esc_url( $logo_url ) . '" alt="theplus-logo"><div class="theplus-rb-subtitle">' . esc_html__( 'Rollback to Previous Version', 'she-header' ) . '</div>',
 			);
 
 			$upgrader_plugin = new \Plugin_Upgrader( new \Plugin_Upgrader_Skin( $args ) );
@@ -377,7 +377,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			$plugin_info = unserialize( wp_remote_retrieve_body( $response ) );
 
 			if ( ! $plugin_info ) {
-				wp_send_json_error( array( 'content' => __( 'Failed to retrieve plugin information.', 'tpebl' ) ) );
+				wp_send_json_error( array( 'content' => __( 'Failed to retrieve plugin information.', 'she-header' ) ) );
 			}
 
 			$skin     = new \Automatic_Upgrader_Skin();
