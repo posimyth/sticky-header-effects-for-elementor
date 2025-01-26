@@ -281,7 +281,7 @@
     .she-wid-box-cover {
         position: relative;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         align-items: center;
         gap: 20px;
 
@@ -343,18 +343,6 @@
                 text-transform: uppercase;
                 width: fit-content;
 
-                &.tpae-category-tag {
-                    background-color: $theplus_purple_light;
-                    border: 1px solid $theplus_Purple_lit_border;
-                    margin-top: -29px;
-                }
-
-                &.tpae-deprecated-widget {
-                    color: $theplus_red_btn_bg;
-                    border: 1px solid #ffa0ab;
-                    background-color: #ffe7ea;
-                }
-
                 &.she-wid-name-hint-text {
                     color: $theplus_white;
                     border: none;
@@ -365,18 +353,6 @@
                         outline: none;
                         box-shadow: 0 0 0 2px none;
                     }
-                }
-
-                &.tp-tag-color-update {
-                    background-color: #FFAD4C;
-                }
-
-                &.tp-tag-color-new {
-                    background-color: #12B76A;
-                }
-
-                &.tp-tag-color-popular {
-                    background-color: #5262EE;
                 }
             }
         }
@@ -405,27 +381,9 @@
             }
         }
 
-
-        /* wdkit popup Start  */
-
-
-       
-
         .she-content-opan {
             border-bottom: 1px solid #ffffff30;
             border-radius: 8px 8px 0px 0px;
-        }
-
-
-        .tpae-accd-ans.she-opan-accordion {
-            height: auto;
-            overflow: unset;
-            padding: 10px;
-            text-align: left;
-        }
-
-        .tpae-wid-tgl-btn-cover .tpae-toggle-btn:checked+.tpae-toggle-slider.wdk-widget-switcher {
-            background-color: #C22076 !important;
         }
     }
 }

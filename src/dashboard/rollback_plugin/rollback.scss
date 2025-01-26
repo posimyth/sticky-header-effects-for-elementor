@@ -1,12 +1,12 @@
 @import "../../style/global.scss";
 
-.tpae_rollback_cover_main {
+.she_rollback_cover_main {
 
   .she_head_tgl_btn_grp {
     width: 90px;
   }
 
-  .theplus_rollback_content_cover {
+  .she_rollback_content_cover {
     display: flex;
     width: 100%;
     box-sizing: border-box;
@@ -20,7 +20,7 @@
 
 
 
-    .tpae_field_dropdown .tpae_ctm_drpdwn .tpae_ctm_drpdwn_content.theplus_wp_show {
+    .she_field_dropdown .she_ctm_drpdwn .she_ctm_drpdwn_content.theplus_wp_show {
       height: 300px;
       overflow-y: scroll;
 
@@ -41,7 +41,7 @@
 
   }
 
-  .tpae_warning_text {
+  .she_warning_text {
     padding-left: 12px;
     margin-top: 15px;
     width: 100%;
@@ -57,7 +57,7 @@
   }
 
 
-  .tpae_purple_loader {
+  .she_purple_loader {
     border: 3px solid #f3f3f3;
     border-top: 3px solid #ffffff32;
     border-radius: 50%;

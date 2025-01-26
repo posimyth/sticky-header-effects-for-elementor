@@ -75,8 +75,8 @@ const RollBack = (props) => {
 
     /** custom drop down functionality **/
     const Drop_down_toggle = (e) => {
-        let main_object = e.target.closest(".tpae_ctm_drpdwn")
-        let drop_down = main_object.querySelector(".tpae_ctm_drpdwn_content") ? main_object.querySelector(".tpae_ctm_drpdwn_content") : "";
+        let main_object = e.target.closest(".she_ctm_drpdwn")
+        let drop_down = main_object.querySelector(".she_ctm_drpdwn_content") ? main_object.querySelector(".she_ctm_drpdwn_content") : "";
         if (drop_down) {
             if (Object.values(drop_down.classList).includes("theplus_wp_show")) {
                 drop_down.classList.remove("theplus_wp_show");
@@ -87,16 +87,16 @@ const RollBack = (props) => {
     }
 
     return (
-        <div className='tpae_rollback_cover_main she-main-container'>
+        <div className='she_rollback_cover_main she-main-container'>
             <div className='she-section-heading-cover'>
-                <div className='tpae_sec_war_grp'>
+                <div className='she_sec_war_grp'>
                     <h3 className='she-section-heading'>{__('Roll Back Plugin', 'she-header')}</h3>
                 </div>
                 <div className='she_head_tgl_btn_grp'>
 
                     {loading ?
                         <button className={`she-purple-common-btn ${!selectedVersion ? 'disabled' : ''}`} disabled={!selectedVersion && !loading}>
-                            <span className="tpae_purple_loader"></span>
+                            <span className="she_purple_loader"></span>
                         </button> :
                         <button className={`she-purple-common-btn ${!selectedVersion ? 'disabled' : ''}`} onClick={() => select_ver(selectedVersion)} disabled={!selectedVersion && !loading}>
                             {__('Rollback', 'she-header')}
@@ -104,20 +104,20 @@ const RollBack = (props) => {
                     }
                 </div>
             </div>
-            <div className='theplus_rollback_content_cover'>
+            <div className='she_rollback_content_cover'>
                 <div className='she_field_card'>
-                    <div className='theplus_card_top_detail'>
-                        <div className='tpae_field_card_heading_strip'>
-                            <label htmlFor="tpae_lazyload" className='tpae_field_card_title'>{__('Rollback to Previous Free Version', 'she-header')}</label>
+                    <div className='she_card_top_detail'>
+                        <div className='she_field_card_heading_strip'>
+                            <label htmlFor="she_lazyload" className='she_field_card_title'>{__('Rollback to Previous Free Version', 'she-header')}</label>
                         </div>
                     </div>
-                    <div className='tpae_field_dropdown'>
-                        <div className='tpae_ctm_drpdwn' onClick={(e) => { Drop_down_toggle(e) }}>
-                            <div className='tpae_ctm_drpdwn_header'>
-                                <label htmlFor="tpae_preloader">{preloader}</label>
+                    <div className='she_field_dropdown'>
+                        <div className='she_ctm_drpdwn' onClick={(e) => { Drop_down_toggle(e) }}>
+                            <div className='she_ctm_drpdwn_header'>
+                                <label htmlFor="she_preloader">{preloader}</label>
                                 <img src={plugin_url + 'assets/svg/theplus_chevron_down.svg'} draggable={false} />
                             </div>
-                            <div id="tpae_preloader" className='tpae_ctm_drpdwn_content'>
+                            <div id="she_preloader" className='she_ctm_drpdwn_content'>
                                 {version_list.length > 0 && version_list.map((list_data, index) => {
                                     return (
                                         <span value={`${list_data}`} key={index} onClick={() => { setpreloader(list_data); setSelectedVersion(list_data); }}>{list_data}</span>
@@ -125,7 +125,7 @@ const RollBack = (props) => {
                                 })}
                             </div>
                         </div>
-                        <div className='tpae_warning_text'>
+                        <div className='she_warning_text'>
                             <img src={plugin_url + 'assets/svg/theplus_warning.svg'} draggable={false} />
                             {__('Warning: Please backup your database before making the rollback.', 'she-header')}
                         </div>

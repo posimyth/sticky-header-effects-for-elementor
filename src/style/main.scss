@@ -43,7 +43,7 @@
   position: relative;
 }
 
-.theplus_dashboard_main_cover {
+.she_dashboard_main_cover {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -53,7 +53,7 @@
   padding: 20px;
   box-sizing: border-box;
 
-  .tpae_main_cover {
+  .she_main_cover {
     width: 100%;
     max-width: 1400px;
     box-sizing: border-box;
@@ -63,7 +63,7 @@
     justify-content: space-between;
     flex-wrap: nowrap;
 
-    .theplus_navbox_cover {
+    .she_navbox_cover {
       position: sticky;
       top: 52px;
       display: flex;
@@ -74,7 +74,7 @@
       gap: 30px;
     }
 
-    .tpae_dash_inner_main_cover {
+    .she_dash_inner_main_cover {
       width: 80%;
       display: flex;
       box-sizing: border-box;
@@ -266,14 +266,14 @@
   padding: 25px 30px;
   min-height: 155px;
 
-  .tpae_field_card_heading_strip {
+  .she_field_card_heading_strip {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
 
-    .tpae_field_card_title {
+    .she_field_card_title {
       font-family: $theplus_font_family;
       font-size: 14px;
       line-height: 22px;
@@ -360,19 +360,19 @@
 }
 
 
-.tpae_field_dropdown {
+.she_field_dropdown {
   width: 100%;
   position: relative;
 
   /** custome dropdown start **/
 
-  .tpae_ctm_drpdwn {
+  .she_ctm_drpdwn {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 
-    .tpae_ctm_drpdwn_header {
+    .she_ctm_drpdwn_header {
       max-width: 100%;
       display: flex;
       box-sizing: border-box;
@@ -426,7 +426,7 @@
       }
     }
 
-    .tpae_ctm_drpdwn_content {
+    .she_ctm_drpdwn_content {
       display: none;
       flex-direction: column;
       box-shadow: 0px 20px 39px 3px rgba(0, 0, 0, 0.1);
@@ -464,142 +464,9 @@
   /** custome dropdown end **/
 }
 
-
-.tpae_field_card_cover {
-  width: 100%;
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  .tpae_inn_sec_he {
-    font-size: 14px;
-
-    &.nxt_top_sec_title {
-      font-size: 14px;
-      line-height: 18px;
-    }
-  }
-
-  .tpae_crd_h_strip {
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-
-    .nxt_text_info {
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  .tpae_field_card_bottom {
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 12px;
-    position: relative;
-  }
-
-  .nxt_text_info {
-    font-family: $theplus_font_family;
-    font-size: 12px;
-    line-height: 22px;
-    font-weight: 400;
-    color: #727272;
-    margin: 0;
-    position: relative;
-  }
-}
-
-/** field Card start **/
-
-.tpae_field_card_cover {
-  width: 100%;
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  .she-in-sec-heading {
-    font-size: 14px;
-
-    &.theplus_top_sec_title {
-      font-size: 16px;
-      line-height: 21px;
-    }
-  }
-
-  .tpae_card_heading_strip {
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-
-    .theplus_text_info {
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  .tpae_field_card_bottom {
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 12px;
-    position: relative;
-  }
-
-  .theplus_text_info {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 12px;
-    line-height: 22px;
-    font-weight: 500;
-    color: #727272;
-    margin: 0;
-    position: relative;
-  }
-}
-
 /** field Card end **/
 
-/** link between paragraph start **/
-
-.theplus_text_link {
-  font-family: $theplus_font_family;
-  color: $theplus_purple;
-  text-decoration: underline;
-
-  &:hover {
-    color: $theplus_purple_dark;
-  }
-}
-
-
-.tpae_close_icon {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  padding: 10px;
-  cursor: pointer;
-
-}
-
-/** warning Text with icon start **/
-
-.tpae_warning_text {
+.she_warning_text {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -614,73 +481,6 @@
   position: relative;
 }
 
-/** link between paragraph end **/
-
-.tpae_text_field {
-  width: 100%;
-  font-family: $theplus_font_family;
-  font-size: 14px;
-  line-height: 14px !important;
-  color: $theplus_black !important;
-  border: 1px solid $tpae-ghost-btn_border !important;
-  border-radius: 5px;
-  padding: 15px !important;
-  position: relative;
-
-  &:focus {
-    border-color: $theplus_purple !important;
-    box-shadow: none !important;
-  }
-
-  &::placeholder {
-    color: $theplus_gray_primary_normal;
-    font-family: $theplus_font_family;
-    font-size: 14px;
-    line-height: 14px;
-  }
-}
-
-/** info icon start **/
-
-.theplus_info_icon {
-  width: 15px;
-  height: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 8px;
-  color: $theplus_purple;
-  background-color: $theplus_nav_strip_bg_light;
-  border-radius: 100%;
-  cursor: default;
-  position: relative;
-
-  .she-float-box-title {
-    width: max-content;
-    height: fit-content;
-    left: auto;
-    transform: translateX(-96px);
-    margin: auto;
-
-    &::after {
-      top: 50%;
-      left: 100%;
-      margin-top: -5px;
-      border-style: solid;
-      border-color: transparent transparent transparent #555555;
-      transform: translateX(5px);
-    }
-  }
-
-  &:hover {
-    .she-float-box-title {
-      left: auto;
-      opacity: 1;
-      transform: translateX(-46px);
-    }
-  }
-}
 
 /** info icon end **/
 
@@ -719,263 +519,6 @@
 
 // tool tip end //
 
-/** --------- toggle button start --------- **/
-
-.tpae-wid-tgl-btn-cover {
-  position: relative;
-  display: inline-block;
-  width: 49px;
-  height: 26px;
-
-  .tpae-toggle-btn {
-    opacity: 0;
-    width: 0;
-    height: 0;
-
-    &:checked+.tpae-toggle-slider {
-      background-color: $theplus_purple;
-    }
-
-    &:focus+.tpae-toggle-slider {
-      box-shadow: 0 0 1px $theplus_purple;
-    }
-  }
-
-  .tpae-toggle-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #d1d1d6;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 100px;
-    display: flex;
-    justify-content: right;
-
-    &::before {
-      position: absolute;
-      content: "";
-      height: 16px;
-      width: 16px;
-      left: 5px;
-      top: 0px;
-      bottom: 0px;
-      margin: auto;
-      border-radius: 50%;
-      background-color: $theplus_white;
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
-    }
-
-    .theplus-toggle-lock-icon {
-      padding-right: 7px;
-      width: 32%;
-      // display: none;
-    }
-  }
-
-  .tpae-toggle-btn:checked+.tpae-toggle-slider:before {
-    // -webkit-transform: translateX(23px);
-    // -ms-transform: translateX(23px);
-    transform: translateX(23px);
-
-    left: calc(100% - 5px);
-    transform: translateX(-100%);
-  }
-
-
-  &:active {
-    .tpae-toggle-slider::before {
-      width: 25px;
-      height: 16px;
-    }
-  }
-}
-
-/** --------- toggle button end --------- **/
-
-/**------------------- WDesignKit Banner Start -------------------**/
-
-.theplus_wdkit_new_banner {
-  display: none;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: center;
-  background: #040483;
-  margin: 20px 0;
-  padding: 0px 50px;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-  position: relative;
-
-  .theplus_wdkit_new_banner_left {
-    width: 45%;
-    padding: 50px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .theplus_wdkit_new_banner_heading {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    color: #ffffff;
-    padding-bottom: 9px;
-    font-size: 25px;
-    line-height: 39px;
-    font-weight: 600;
-    margin: 0;
-    // padding-bottom: 20px;
-  }
-
-  .theplus_new_banner_sub_txt {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    color: #b1b1d9;
-    padding-bottom: 20px;
-    margin: 0;
-    position: relative;
-  }
-
-  .theplus_wdkit_new_banner_btn_group {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 15px;
-
-    .theplus_wdkit_new_banner_btn {
-      color: #ffffff;
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 12px;
-      line-height: 22px;
-      background-color: #c22076;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-
-      &:hover {
-        background-color: #9b1a5e;
-      }
-
-      &:focus {
-        box-shadow: none;
-        outline: none;
-      }
-    }
-
-    .theplus_wdkit_new_banner_btn_link {
-      color: $theplus_white;
-      font-family: $theplus_font_family;
-      font-size: 14px;
-      line-height: 24px;
-      text-decoration: none;
-      position: relative;
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 1px;
-        bottom: -5px;
-        left: 0;
-        background-color: #fff;
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-      }
-
-      &:hover {
-        &::before {
-          transform: scaleX(1);
-          transform-origin: bottom left;
-        }
-      }
-
-      &:focus {
-        box-shadow: none;
-        outline: none;
-      }
-    }
-  }
-
-  .theplus_wdkit_new_banner_right {
-    width: 45%;
-    padding-top: 21px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    align-self: flex-end;
-
-    .theplus_wdkit_banner_hero_img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-}
-
-.theplus_wdkit_new_banner_bottom_sm_card {
-  display: flex;
-  width: 100%;
-  box-sizing: border-box;
-  position: relative;
-  gap: 20px;
-  justify-content: space-between;
-
-  .theplus_wdkit_new_banner {
-    width: 50%;
-    flex-direction: column;
-
-    .theplus_wdkit_new_banner_heading {
-      font-size: 16px;
-      line-height: 32px;
-    }
-
-    .theplus_new_banner_sub_txt {
-      font-size: 12px;
-    }
-
-    .theplus_wdkit_new_banner_right {
-      height: fit-content;
-    }
-
-    .theplus_wdkit_new_banner_left {
-      width: 100%;
-      padding: 25px 0;
-    }
-
-    .theplus_wdkit_new_banner_right {
-      width: 100%;
-    }
-
-    &.theplus_pink_card {
-      background-color: #C22076;
-
-      .theplus_wdkit_new_banner_btn_group {
-        .theplus_wdkit_new_banner_btn {
-          background-color: #040483;
-
-          &:hover {
-            background-color: #02026c;
-          }
-        }
-
-      }
-
-      .theplus_new_banner_sub_txt {
-        color: #FFFFFFB2;
-      }
-    }
-  }
-
-}
 
 @keyframes pulse {
   0% {
@@ -996,34 +539,30 @@
 /** --------- media query start --------- **/
 
 @media (max-width: 1440px) {
-  .theplus_dashboard_main_cover {
+  .she_dashboard_main_cover {
     padding: 20px;
 
-    .tpae_main_cover {
-      .theplus_navbox_cover {
+    .she_main_cover {
+      .she_navbox_cover {
         width: calc(25% - 20px);
       }
 
-      .tpae_dash_inner_main_cover {
+      .she_dash_inner_main_cover {
         width: 75%;
       }
     }
   }
-
-  .theplus_wdkit_new_banner {
-    padding: 0 25px;
-  }
 }
 
 @media (max-width: 1024px) {
-  .theplus_dashboard_main_cover {
-    .tpae_main_cover {
+  .she_dashboard_main_cover {
+    .she_main_cover {
 
-      .theplus_navbox_cover {
+      .she_navbox_cover {
         width: calc(30% - 20px);
       }
 
-      .tpae_dash_inner_main_cover {
+      .she_dash_inner_main_cover {
         width: 70%;
       }
     }
@@ -1052,23 +591,6 @@
     padding: 10px 20px;
   }
 
-  /** TPAE New Banner strat **/
-
-  .theplus_wdkit_new_banner {
-    padding: 0 32px;
-
-    .theplus_wdkit_new_banner_left {
-      padding: 32px 0;
-    }
-
-    .theplus_wdkit_new_banner_heading {
-      font-size: 21px;
-    }
-
-    .theplus_new_banner_sub_txt {
-      font-size: 14px;
-    }
-  }
 
   /** TPAE New Banner end **/
 }
@@ -1079,14 +601,14 @@
     top: 66px;
   }
 
-  .theplus_dashboard_main_cover .tpae_main_cover {
+  .she_dashboard_main_cover .she_main_cover {
     flex-direction: column;
 
-    .theplus_navbox_cover {
+    .she_navbox_cover {
       width: 100%;
     }
 
-    .tpae_dash_inner_main_cover {
+    .she_dash_inner_main_cover {
       width: 100%;
     }
   }
@@ -1096,49 +618,14 @@
     margin-left: -6px;
   }
 
-  .theplus_dashboard_main_cover {
+  .she_dashboard_main_cover {
     gap: 15px;
-  }
-
-  .tpae-wid-tgl-btn-cover {
-    width: 41px;
-    height: 24px;
-
-
-    .tpae-toggle-slider {
-      .theplus-toggle-lock-icon {
-        width: 29%;
-        padding-right: 5px;
-      }
-    }
   }
 
   .she-ghost-btn {
     font-size: 12px;
     padding: 10px 20px;
   }
-
-  /** TPAE New Banner strat **/
-
-  .theplus_wdkit_new_banner {
-    .theplus_wdkit_new_banner_left {
-      width: 49%;
-    }
-
-    .theplus_wdkit_new_banner_heading {
-      font-size: 19px;
-    }
-
-    .theplus_new_banner_sub_txt {
-      font-size: 12px;
-    }
-
-    .theplus_wdkit_new_banner_right {
-      width: 49%;
-    }
-  }
-
-  // TPAE New Banner End //
 }
 
 @media (max-width: 600px) {
@@ -1147,19 +634,5 @@
   }
 }
 
-@media (max-width: 568px) {
-  .theplus_wdkit_new_banner {
-    flex-direction: column;
-
-    .theplus_wdkit_new_banner_left {
-      width: 100%;
-    }
-
-    .theplus_wdkit_new_banner_right {
-      align-self: center;
-      width: 100%;
-    }
-  }
-}
 
 /** --------- media query end --------- **/

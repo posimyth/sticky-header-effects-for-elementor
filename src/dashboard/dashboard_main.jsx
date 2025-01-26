@@ -10,8 +10,8 @@ const Dashboard = (props) => {
 
     const Outside_click = (e) => {
 
-        let drop_down = document.querySelectorAll(".tpae_ctm_drpdwn_content.theplus_wp_show")
-        if (!e.target.closest(".tpae_ctm_drpdwn_header") && drop_down) {
+        let drop_down = document.querySelectorAll(".she_ctm_drpdwn_content.theplus_wp_show")
+        if (!e.target.closest(".she_ctm_drpdwn_header") && drop_down) {
             drop_down.forEach((content) => {
                 content.classList.remove("theplus_wp_show");
             })
@@ -20,12 +20,12 @@ const Dashboard = (props) => {
 
     return (
         <>
-            <div className='theplus_dashboard_main_cover' onClick={(e) => { Outside_click(e); }}>
-                <div className='tpae_main_cover'>
-                    <div className='theplus_navbox_cover'>
+            <div className='she_dashboard_main_cover' onClick={(e) => { Outside_click(e); }}>
+                <div className='she_main_cover'>
+                    <div className='she_navbox_cover'>
                         <NavBox />
                     </div>
-                    <div className='tpae_dash_inner_main_cover'>
+                    <div className='she_dash_inner_main_cover'>
                         <Routes>
                             {routes.map((route, index) => (
                                 <Route key={index} path={route.path} element={route.element} />))
