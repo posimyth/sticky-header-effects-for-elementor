@@ -6,7 +6,7 @@
         display: flex;
         flex-direction: column;
         gap: 25px;
-        background-color: $theplus_white;
+        background-color: $she_white;
         box-sizing: border-box;
         border-radius: 8px;
         padding: 16px 25px;
@@ -50,11 +50,11 @@
     }
 
     .she_tb_crd_desc {
-        font-family: $theplus_font_family;
+        font-family: $she_font_family;
         font-size: 14px;
         line-height: 24px;
         font-weight: 500;
-        color: $theplus_gray_primary_normal;
+        color: $she_gray_primary_normal;
         margin: 0;
     }
 

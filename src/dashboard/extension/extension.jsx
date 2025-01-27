@@ -96,40 +96,23 @@ const Extension = (props) => {
 
     const InstallPopup = () => {
         return (
+           <>
             <div className="she-nexter-content">
-                <div className="she-nexter-title">{__('Get 22+ More Extensions for your WordPress Website with Nexter Extension', 'she-header')}</div>
+                <div className="she-nexter-title">{__('Build a Strong, Secure and High-Performance Website with 22+ Unique WordPress Extensions from Nexter.', 'she-header')}</div>
                 <div className="she-features-ndic">
-                    <ul><li>{CheckIcon}{__('Free Theme Builder for Elementor', 'she-header')}</li>
-                        <li>{CheckIcon}{__('Code Snippets', 'she-header')}</li>
-                        <li>{CheckIcon}{__('Extra Features', 'she-header')}</li>
-                        <li>{CheckIcon}{__('Security Hardener', 'she-header')}</li>
-                        <li>{CheckIcon}{__('Performance Booster', 'she-header')}</li></ul>
+                    <ul><li>{CheckIcon}{__('22+ Power up Extensions', 'she-header')}</li>
+                        <li>{CheckIcon}{__('Works with Popular WordPress Themes', 'she-header')}</li>
+                        <li>{CheckIcon}{__('Performance Booster', 'she-header')}</li>
+                        <li>{CheckIcon}{__('Security Hardener', 'she-header')}</li></ul>
                 </div>
                 <div className="she-install-activate">
                     <a className='she-nexter-btn' onClick={(e) => handleClick(e)}>{NexterBtn}</a>
                     <a href='https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target="_blank" rel="noopener noreferrer" className='she-nexter-learn'>{__('Learn More', 'she-header')}</a>
                 </div>
-
-                {/* <div className='she-nexter-group'>
-                    <img src={plugin_url + 'assets/images/banner/nexter_group.png'} />
-                </div> */}
-                <div className="she-nexter-accordion">
-                    {nexter_poup_accordian.map((item, index) => (
-                        <div key={index} className="she-nexter-accordion-item">
-                            <div className={`she-nexter-accordio-content ${activeIndex === index ? "she-content-opan" : ""}`} onClick={() => handleToggle(index)}>
-                                <div className="she-accd-qui">{item.question}</div>
-                                <div className='she-pm-lable'>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        {activeIndex !== index && (<path d="M10 4.16675V15.8334" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />)}
-                                        <path d="M4.16797 10H15.8346" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div className={`she-accordion-ans ${activeIndex === index ? "she-opan-accordion" : ""}`}>{item.answer}</div>
-                        </div>
-                    ))}
-                </div>
             </div>
+            <div className='she-nexter-group'></div>
+           </>
+
         )
     }
 

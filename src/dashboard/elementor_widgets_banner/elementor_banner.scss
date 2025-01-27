@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: $theplus_purple_gradient;
+    background: $she_dark_pink;
     width: 100%;
     max-width: 1400px;
     margin-top: 20px;
@@ -19,8 +19,8 @@
         padding: 50px 0px 50px 50px;
 
         .theplus_elementor_widgets_banner_heading {
-            font-family: $theplus_font_family;
-            color: $theplus_white;
+            font-family: $she_font_family;
+            color: $she_white;
             font-size: 25px;
             line-height: 39px;
             font-weight: 600;
@@ -35,18 +35,18 @@
             gap: 15px;
 
             .tpae_ele_wid_banner_btn {
-                color: $theplus_white;
-                font-family: $theplus_font_family;
+                color: $she_white;
+                font-family: $she_font_family;
                 font-size: 14px;
                 line-height: 24px;
-                background-color: $theplus_red_btn_bg;
+                background-color: $she_red_btn_bg;
                 padding: 12px 25px;
                 border-radius: 5px;
                 transition: all 0.3s ease-in-out;
                 text-decoration: none;
 
                 &:hover {
-                    background-color: $theplus_red_btn_bg_dark;
+                    background-color: $she_red_btn_bg_dark;
                 }
 
                 &:focus {
@@ -55,8 +55,8 @@
             }
 
             .tpae_ele_wid_banner_btn_link {
-                color: $theplus_white;
-                font-family: $theplus_font_family;
+                color: $she_white;
+                font-family: $she_font_family;
                 font-size: 14px;
                 line-height: 24px;
                 text-decoration: none;
@@ -100,11 +100,11 @@
                 display: flex;
                 justify-content: left;
                 align-items: center;
-                font-family: $theplus_font_family;
+                font-family: $she_font_family;
                 font-size: 12px;
                 line-height: 18px;
                 font-weight: 400;
-                color: $theplus_white_light;
+                color: $she_white_light;
                 gap: 8px;
                 margin: 0;
             }

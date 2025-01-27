@@ -120,7 +120,7 @@ const ElementorTemplates = (props) => {
             </div>
 
             <div className='she-element-temp-bx-cov-main'>
-                <h3 className='she-in-sec-heading'>{__('Import Pre-Designed Website Templates Made With Plus Widgets.', 'she-header')}</h3>
+                {/* <h3 className='she-in-sec-heading'>{__('Import Pre-Designed Website Templates Made With Plus Widgets.', 'she-header')}</h3> */}
 
                 {/* templates in grid view start */}
 

@@ -9,8 +9,8 @@
         gap: 20px;
         justify-content: space-between;
         box-sizing: border-box;
-        padding: 40px;
-        background-color: $theplus_white;
+        padding: 24px;
+        background-color: $she_white;
         border-radius: 8px;
         position: relative;
 
@@ -98,8 +98,8 @@
     .she-in-sec-heading,
     .she_product_box .she-installation .she-install-btn,
     .she-ghost-btn {
-        background: $skeleton_bg;
-        animation: $animation;
+        background: $she_skeleton_bg;
+        animation: $she_animation;
         color: transparent;
         pointer-events: none;
         border: none;

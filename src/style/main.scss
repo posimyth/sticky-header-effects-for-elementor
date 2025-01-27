@@ -1,11 +1,13 @@
 @import "../style/global.scss";
 
-#theplus-app {
+#she-app {
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100%;
   margin-left: -20px;
+  min-height: calc(100vh - 32px);
+  position: relative;
+  width: calc(100% + 20px);
 }
 
 .notice,
@@ -68,7 +70,7 @@
       top: 52px;
       display: flex;
       flex-direction: column;
-      width: calc(20% - 20px);
+      width: calc(26% - 20px);
       height: max-content;
       box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.031372549);
       gap: 30px;
@@ -93,16 +95,16 @@
   box-sizing: border-box;
   padding: 16px 25px;
   border-radius: 8px;
-  background-color: $theplus_white;
+  background-color: $she_white;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.031372549);
   position: sticky;
   top: 52px;
   z-index: 99;
 
   .she-section-heading {
-    font-family: $theplus_font_family;
+    font-family: $she_font_family;
     font-size: 16px;
-    color: $theplus_black;
+    color: $she_black;
     line-height: 15px;
     font-weight: 500;
     padding: 14px 0px;
@@ -111,11 +113,11 @@
 }
 
 .she-purple-common-btn {
-  font-family: $theplus_font_family;
+  font-family: $she_font_family;
   font-size: 14px;
   line-height: 16px;
-  color: $theplus_white;
-  background-color: $theplus_purple;
+  color: $she_white;
+  background-color: $she_dark_pink;
   border-radius: 5px;
   width: fit-content;
   width: -moz-fit-content;
@@ -123,7 +125,7 @@
   justify-content: center;
   box-sizing: border-box;
   align-items: center;
-  padding: 14px;
+  padding: 12px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -132,18 +134,18 @@
 
   &:hover {
     background-color: $she_btn_hover;
-    color: $theplus_white;
+    color: $she_white;
   }
 
   &:focus {
     box-shadow: none;
-    color: $theplus_white;
+    color: $she_white;
   }
 
   &:focus-visible {
     outline: none;
     box-shadow: none;
-    color: $theplus_white;
+    color: $she_white;
   }
 }
 
@@ -156,24 +158,24 @@
 }
 
 .she-in-sec-heading {
-  font-family: $theplus_font_family;
+  font-family: $she_font_family;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
-  color: $theplus_black;
+  color: $she_black;
   margin: 0;
   position: relative;
 }
 
 .she-ghost-btn {
-  font-family: $theplus_font_family;
+  font-family: $she_font_family;
   font-size: 14px;
   line-height: 17px;
   font-weight: 500;
-  color: $theplus_dark_blk;
-  background-color: $theplus_white;
+  color: $she_dark_blk;
+  background-color: $she_white;
   padding: 12px 25px;
-  border: 1px solid $tpae-ghost-btn_border;
+  border: 1px solid $she-ghost-btn_border;
   border-radius: 5px;
   width: fit-content;
   height: fit-content;
@@ -185,9 +187,9 @@
   cursor: pointer;
 
   &:hover {
-    color: $theplus_white;
-    background-color: $theplus_purple;
-    border-color: $theplus_purple;
+    color: $she_white;
+    background-color: $she_dark_pink;
+    border-color: $she_dark_pink;
   }
 
   &:focus {
@@ -196,8 +198,8 @@
 }
 
 .tpae_tertiary_btn {
-  color: $theplus_purple;
-  font-family: $theplus_font_family;
+  color: $she_dark_pink;
+  font-family: $she_font_family;
   font-size: 14px;
   line-height: 24px;
   text-decoration: none;
@@ -212,7 +214,7 @@
     height: 1px;
     bottom: -5px;
     left: 0;
-    background-color: $theplus_purple;
+    background-color: $she_dark_pink;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
@@ -224,7 +226,7 @@
   }
 
   &:hover {
-    color: $theplus_purple;
+    color: $she_dark_pink;
 
     &::before {
       transform: scaleX(1);
@@ -244,11 +246,11 @@
   justify-content: center;
   gap: 5px;
   padding: 6px;
-  background-color: $theplus_green;
-  font-family: $theplus_font_family;
+  background-color: $she_green;
+  font-family: $she_font_family;
   font-size: 12px;
   line-height: 12px;
-  color: $theplus_white;
+  color: $she_white;
   border-radius: 4px;
   margin-bottom: 35px;
 }
@@ -261,7 +263,7 @@
   align-items: flex-start;
   box-sizing: border-box;
   width: 100%;
-  background-color: $theplus_white;
+  background-color: $she_white;
   border-radius: 8px;
   padding: 25px 30px;
   min-height: 155px;
@@ -274,21 +276,21 @@
     box-sizing: border-box;
 
     .she_field_card_title {
-      font-family: $theplus_font_family;
+      font-family: $she_font_family;
       font-size: 14px;
       line-height: 22px;
       font-weight: 500;
       cursor: pointer;
-      color: $theplus_dark_blk;
+      color: $she_dark_blk;
     }
   }
 
   .she_card_descrip {
-    font-family: $theplus_font_family;
+    font-family: $she_font_family;
     font-size: 12px;
     line-height: 22px;
     font-weight: 400;
-    color: $theplus_dark_blk;
+    color: $she_dark_blk;
     min-height: max-content;
     margin: 0;
   }
@@ -314,7 +316,7 @@
   .tpae_inn_sec_he {
     font-size: 14px;
     font-weight: 500;
-    font-family: $theplus_font_family;
+    font-family: $she_font_family;
 
     &.nxt_top_sec_title {
       font-size: 14px;
@@ -325,7 +327,7 @@
   .tpae_crd_h_strip {
     display: flex;
     width: 100%;
-    font-family: $theplus_font_family;
+    font-family: $she_font_family;
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
@@ -349,7 +351,7 @@
   }
 
   .nxt_text_info {
-    font-family: $theplus_font_family;
+    font-family: $she_font_family;
     font-size: 12px;
     line-height: 22px;
     font-weight: 400;
@@ -380,37 +382,37 @@
       align-items: center;
       width: 100%;
       padding: 15px;
-      font-family: $theplus_font_family;
+      font-family: $she_font_family;
       font-size: 12px;
       line-height: 14px;
       font-weight: 500;
-      border: 1px solid $tpae-ghost-btn_border;
+      border: 1px solid $she-ghost-btn_border;
       border-radius: 5px;
-      color: $theplus_gray_primary_normal;
-      border-color: $tpae-ghost-btn_border;
+      color: $she_gray_primary_normal;
+      border-color: $she-ghost-btn_border;
       gap: 10px;
       background-color: transparent;
       cursor: pointer;
       position: relative;
 
       &:focus {
-        border-color: $theplus_purple;
+        border-color: $she_dark_pink;
       }
 
       &:active {
-        border-color: $theplus_purple;
+        border-color: $she_dark_pink;
       }
 
       &:target {
-        border-color: $theplus_purple;
+        border-color: $she_dark_pink;
       }
 
       &:focus-visible {
-        border-color: $theplus_purple;
+        border-color: $she_dark_pink;
       }
 
       &:focus-within {
-        border-color: $theplus_purple;
+        border-color: $she_dark_pink;
       }
 
       label {
@@ -435,7 +437,7 @@
       min-width: 100%;
       padding: 0px;
       z-index: 3;
-      background-color: $theplus_white;
+      background-color: $she_white;
       position: absolute;
       margin-top: 59px;
       border-radius: 5px;
@@ -454,7 +456,7 @@
         font-size: 14px;
 
         &:hover {
-          background: $theplus_light_gray_tint;
+          background: $she_light_gray_tint;
           border-radius: 5px;
         }
       }
@@ -471,7 +473,7 @@
   justify-content: flex-start;
   align-items: center;
   width: fit-content;
-  font-family: $theplus_font_family;
+  font-family: $she_font_family;
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
@@ -490,8 +492,8 @@
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 14px;
   line-height: 24px;
-  color: $theplus_white;
-  background-color: $theplus_gray_secondary_dark;
+  color: $she_white;
+  background-color: $she_gray_secondary_dark;
   padding: 9px 12px;
   border-radius: 5px;
   position: absolute;
@@ -513,7 +515,7 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: $theplus_gray_secondary_dark transparent transparent transparent;
+    border-color: $she_gray_secondary_dark transparent transparent transparent;
   }
 }
 

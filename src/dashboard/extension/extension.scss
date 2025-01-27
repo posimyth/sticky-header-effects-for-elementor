@@ -11,11 +11,11 @@
         position: relative;
 
         .toggle-text {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 14px;
             font-weight: 500;
             line-height: 24px;
-            color: $theplus_black;
+            color: $she_black;
             position: relative;
         }
     }
@@ -33,7 +33,7 @@
 .she-widget-categories {
     display: flex;
     padding: 25px;
-    background-color: $theplus_white;
+    background-color: $she_white;
     border-radius: 8px;
     flex-direction: column;
     justify-content: flex-start;
@@ -53,7 +53,7 @@
         position: relative;
 
         &.theplus-second-strip {
-            border-top: 1px solid $theplus_light_gray_tint;
+            border-top: 1px solid $she_light_gray_tint;
             margin-top: 20px;
             overflow-x: auto;
             padding-top: 20px;
@@ -73,11 +73,11 @@
         position: relative;
 
         .she-category-btn {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 14px;
             font-weight: 500;
-            color: $theplus_dark_blk;
-            border: 1px solid $tpae-ghost-btn_border;
+            color: $she_dark_blk;
+            border: 1px solid $she-ghost-btn_border;
             background-color: transparent;
             padding: 8px 20px;
             border-radius: 5px;
@@ -90,19 +90,19 @@
             transition: all 0.3s ease-in-out;
 
             &.she-act-cat {
-                background-color: $theplus_purple;
+                background-color: $she_dark_pink;
                 color: #fff;
 
                 &:hover {
-                    border-color: $theplus_purple;
+                    border-color: $she_dark_pink;
                     color: #fff;
                 }
             }
 
             &:hover {
-                border-color: $theplus_purple;
-                background-color: $theplus_purple;
-                color: $theplus_white;
+                border-color: $she_dark_pink;
+                background-color: $she_dark_pink;
+                color: $she_white;
             }
 
             &:focus {
@@ -124,24 +124,24 @@
         }
 
         .she-widget-search-box {
-            border: 1px solid $tpae-ghost-btn_border;
+            border: 1px solid $she-ghost-btn_border;
             outline: none;
             box-shadow: none;
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 14px;
             line-height: 16px;
-            color: $theplus_black;
+            color: $she_black;
             font-weight: 400;
             padding: 10px 15px 9px 41px;
             width: 100%;
             box-sizing: border-box;
 
             &::placeholder {
-                color: $theplus_gray_primary_normal;
+                color: $she_gray_primary_normal;
             }
 
             &:focus {
-                border-color: $theplus_purple;
+                border-color: $she_dark_pink;
             }
         }
 
@@ -162,7 +162,7 @@
     flex-direction: column;
     box-sizing: border-box;
     border-radius: 8px;
-    background-color: $theplus_white;
+    background-color: $she_white;
     position: relative;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.031372549);
 
@@ -192,12 +192,12 @@
 
         .she_card_descrip {
             text-align: center;
-            color: $theplus_gray_primary_normal;
+            color: $she_gray_primary_normal;
         }
     }
 
     .she-ghost-btn {
-        color: $theplus_gray_primary_normal;
+        color: $she_gray_primary_normal;
         font-weight: 400;
     }
 
@@ -218,8 +218,8 @@
     .tpae_sm_txt {
         font-size: 12px;
         line-height: 14px;
-        font-family: $theplus_font_family;
-        color: $theplus_toggle_off_bg;
+        font-family: $she_font_family;
+        color: $she_toggle_off_bg;
     }
 }
 
@@ -237,7 +237,7 @@
     box-sizing: border-box;
     padding-bottom: 30px;
     position: relative;
-    border-bottom: 1px solid $tpae-ghost-btn_border;
+    border-bottom: 1px solid $she-ghost-btn_border;
 
     &:last-child {
         border: none;
@@ -258,21 +258,21 @@
         }
 
         .she-wid-cat-h {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 16px;
             font-weight: 600;
             line-height: 26px;
-            color: $theplus_black;
+            color: $she_black;
             margin: 0;
         }
 
         .she-cat-qik-info {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 12px;
             font-weight: 400;
             line-height: 22px;
-            color: $theplus_black;
-            border: 1px solid $tpae-ghost-btn_border;
+            color: $she_black;
+            border: 1px solid $she-ghost-btn_border;
             padding: 4px 8px;
             border-radius: 5px;
         }
@@ -286,15 +286,14 @@
         gap: 20px;
 
         .she-part-wid-mng-box {
-            background-color: $theplus_white;
+            background-color: $she_white;
             border-radius: 9px;
             padding: 20px;
             display: flex;
-            border: 1px solid $theplus_white;
+            border: 1px solid $she_white;
             justify-content: space-between;
-            align-items: center;
             box-sizing: border-box;
-            border: 1px solid $theplus_white;
+            border: 1px solid $she_white;
             box-shadow: 0px 2px 10px 0px #00000000;
             transition:
                 box-shadow,
@@ -312,8 +311,8 @@
                 .she-wid-in-left {
                     .she-wid-sm-tag {
                         &.tpae-category-tag {
-                            background-color: $theplus_purple;
-                            color: $theplus_white;
+                            background-color: $she_dark_pink;
+                            color: $she_white;
                         }
                     }
                 }
@@ -321,7 +320,7 @@
 
             &:hover {
                 box-shadow: 0px 2px 10px 0px #0000000d;
-                border-color: $tpae-ghost-btn_border;
+                border-color: $she-ghost-btn_border;
             }
         }
 
@@ -332,11 +331,11 @@
             justify-content: center;
 
             .she-wid-sm-tag {
-                font-family: $theplus_font_family;
+                font-family: $she_font_family;
                 font-size: 10px;
                 line-height: 12px;
                 font-weight: 400;
-                color: $theplus_purple;
+                color: $she_dark_pink;
                 box-sizing: border-box;
                 padding: 4px 8px;
                 border-radius: 5px;
@@ -344,9 +343,9 @@
                 width: fit-content;
 
                 &.she-wid-name-hint-text {
-                    color: $theplus_white;
+                    color: $she_white;
                     border: none;
-                    background-color: $theplus_red_btn_bg;
+                    background-color: $she_red_btn_bg;
                     text-decoration: none;
 
                     &:focus {
@@ -358,7 +357,7 @@
         }
 
         .she-wid-name {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 14px;
             font-weight: 500;
             line-height: 16px;
@@ -391,15 +390,15 @@
 .she-catwise-wid-manage-cov {
 
     .she-nexter-tag {
-        background-color: #FEF4F4;
+        background-color: rgba(255, 240, 246, 1);
         border: 1px solid #e5e0ff;
-        border-color: #FCD5D5;
+        border-color: rgba(222, 179, 196, 1);
         margin-top: -29px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         font-size: 10px;
         line-height: 12px;
         font-weight: 400;
-        color: #F12D2D;
+        color: rgba(157, 26, 79, 1);
         box-sizing: border-box;
         padding: 4px 8px;
         border-radius: 5px;
@@ -409,12 +408,12 @@
     }
 
     .she-nexter-link {
-        font-family: $theplus_font_family;
+        font-family: $she_font_family;
         font-size: 12px;
         line-height: 14px;
         font-weight: 400;
         text-decoration: none;
-        color: $theplus_gray_primary_normal;
+        color: $she_gray_primary_normal;
         position: relative;
         cursor: pointer;
 
@@ -426,18 +425,18 @@
             height: 1px;
             bottom: -5px;
             left: 0;
-            background-color: $nexter_purple;
+            background-color: $she_nexter_purple;
             transform-origin: bottom right;
             transition: transform 0.2s ease-out;
         }
 
         &:hover {
-            color: $nexter_purple;
+            color: $she_nexter_purple;
 
             &::before {
                 transform: scaleX(1);
                 transform-origin: bottom left;
-                background-color: $nexter_purple;
+                background-color: $she_nexter_purple;
             }
         }
 
@@ -489,8 +488,10 @@
     }
 
     .she-nexter-bg {
-        background: $nexter_purple;
-        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        background: $she_nexter_purple;
+        // padding: 20px;
         border-radius: 8px;
         text-align: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -502,6 +503,10 @@
         display: flex;
         justify-content: flex-end;
         cursor: pointer;
+        padding: 10px;
+    }
+    .she-features-ndic{
+        padding: 0px 10px 0px 10px;
     }
 
     .she-features-ndic ul {
@@ -526,17 +531,19 @@
         flex-direction: column;
         gap: 15px;
         align-items: center;
+        padding: 10px;
+        padding-bottom: 50px;
     }
 
     .she-nexter-btn {
         padding: 12px 25px 12px 25px;
-        background: $nexter_red;
+        background: $she_nexter_red;
         border-radius: 5px;
-        color: $theplus_white;
+        color: $she_white;
         cursor: pointer;
 
         &:hover {
-            color: $theplus_white;
+            color: $she_white;
         }
 
         &:focus {
@@ -549,12 +556,12 @@
         display: inline-block;
         position: relative;
         padding-left: 15px;
-        color: $theplus_white;
+        color: $she_white;
         text-decoration: none;
         cursor: pointer;
 
         &:hover {
-            color: $theplus_white;
+            color: $she_white;
         }
 
         &:focus {
@@ -571,7 +578,7 @@
         height: 1px;
         bottom: -4px;
         left: 9px;
-        background-color: $theplus_white;
+        background-color: $she_white;
         transform-origin: bottom right;
         transition: transform 0.25s ease-out;
     }
@@ -588,52 +595,16 @@
         line-height: 1.4;
     }
 
-    .she-nexter-accordion {
+    .she-nexter-group{
         display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 30px 0px 30px 0px;
-        ;
+        width: 100%;
+        height: 20vw;
+        position: relative;
+        background-image: url(../../../assets/images/banner/nexter_group.png);
+        background-size: cover
     }
 
-    .she-nexter-accordion-item {
-        border: 1px solid #ffffff30;
-        border-radius: 8px;
-    }
-
-    .she-nexter-accordio-content {
-        display: flex;
-        justify-content: space-between;
-        background: #2323cf;
-        padding: 10px;
-        border-radius: 8px;
-        color: $theplus_white;
-    }
-
-    .she-pm-lable {
-        cursor: pointer;
-    }
-
-    .she-content-opan {
-        border-bottom: 1px solid #ffffff30;
-        border-radius: 8px 8px 0px 0px;
-    }
-
-    .she-accordion-ans {
-        height: 0px;
-        overflow: hidden;
-        padding: 0px;
-        color: $theplus_white;
-        transition: height 0.3s ease, padding 0.3s ease;
-        word-spacing: 4px;
-    }
-
-    .she-accordion-ans.she-opan-accordion {
-        height: auto;
-        overflow: unset;
-        padding: 10px;
-        text-align: left;
-    }
+    
 }
 
 /** skeleton loading */
@@ -643,9 +614,10 @@
     .she-nexter-tag,
     .she-abt-wid-qik-link-cov span,
     .she-nexter-link,
-    .she-nexter-download-template {
-        background: $skeleton_bg;
-        animation: $animation;
+    .she-nexter-download-template,
+    .she-wid-name {
+        background: $she_skeleton_bg;
+        animation: $she_animation;
         border-radius: 4px;
         display: inline-block;
         color: transparent;

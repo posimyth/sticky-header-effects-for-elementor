@@ -105,7 +105,7 @@ const ThemeBuilder = (props) => {
             </div>
 
             <div className='she_theme_builder_box_cover_main'>
-                <h3 className='she-in-sec-heading'>{__('Get FREE Theme Builder for Elementor with our Nexter Theme', 'she-header')}</h3>
+                {/* <h3 className='she-in-sec-heading'>{__('Get FREE Theme Builder for Elementor with our Nexter Theme', 'she-header')}</h3> */}
 
                 <div className='she_theme_builder_grid_view_box'>
 

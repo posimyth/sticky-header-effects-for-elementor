@@ -10,7 +10,7 @@
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    background-color: $theplus_white;
+    background-color: $she_white;
     border-radius: 8px;
     flex-direction: column;
     justify-content: flex-start;
@@ -29,12 +29,12 @@
       }
 
       &::-webkit-scrollbar-track {
-        background-color: $theplus_light_gray_tint;
+        background-color: $she_light_gray_tint;
         border-radius: 5px;
       }
 
       &::-webkit-scrollbar-thumb {
-        background: $theplus_toggle_off_bg;
+        background: $she_toggle_off_bg;
         border-radius: 5px;
       }
     }

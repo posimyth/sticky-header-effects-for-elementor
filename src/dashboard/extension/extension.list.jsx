@@ -51,7 +51,7 @@ const plus_extension = [
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
                 videoUrl: '',
-                tag: 'free',
+                tag: 'BETA',
                 labelIcon: '',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },

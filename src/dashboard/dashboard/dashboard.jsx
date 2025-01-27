@@ -133,8 +133,6 @@ const DashboardInnerMain = (props) => {
             }
         });
     }, [hoveredIndex, selectedIndex]);
-
-    console.log(props.tpae_dashboard_data);
     
     useEffect(() => {
         setUserName(props.tpae_dashboard_data?.user_name || '');
@@ -482,7 +480,7 @@ const DashboardInnerMain = (props) => {
                 <div className='she_qikinfo_grp_cover'>
 
                     <div className='she_qik_infocrd_cover she_ratings_box'>
-                        <h4 className='she_qik_info_crd_title'>{__('Rate The Plus Addons for Elementor', 'she-header')}</h4>
+                        <h4 className='she_qik_info_crd_title'>{__('Rate Sticky Header Effects', 'she-header')}</h4>
                         <div className='she_rating_box'>
                             {ratingSvg.map((obj, index) => (
                                 <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/reviews/?filter=5#new-post&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://go.posimyth.com/review-tpae?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='tpae-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>

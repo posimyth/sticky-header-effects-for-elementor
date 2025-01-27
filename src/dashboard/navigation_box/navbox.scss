@@ -1,62 +1,62 @@
 @import "../../style/global.scss";
 
-.tpae_navigation_cover {
+.she_navigation_cover {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: $theplus_white;
+    background-color: $she_white;
     border-radius: 8px;
     box-sizing: border-box;
     overflow: hidden;
     position: sticky;
     top: 52px;
 
-    .tpae_logo_strip {
+    .she_logo_strip {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        background: $theplus_purple_gradient;
+        background: $she_dark_pink;
         align-items: center;
         box-sizing: border-box;
         padding: 20px;
         position: relative;
 
-        .tpae-mobile-menu-cn {
+        .she-mobile-menu-cn {
             display: flex;
             flex-direction: row;
             align-items: center;
             gap: 10px;
 
-            .tpae-menu-btn {
+            .she-menu-btn {
                 display: none;
             }
         }
 
-        .tpae_main_logo {
-            width: 125px;
+        .she_main_logo {
+            width: 75px;
         }
 
-        .tpae_hint_text {
+        .she_hint_text {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 5px;
-            font-family: $theplus_font_family;
-            color: $theplus_white;
+            font-family: $she_font_family;
+            color: $she_white;
             padding: 6px 10px;
             border-radius: 5px;
-            background-color: $theplus_white_very_light;
+            background-color: $she_white_very_light;
         }
     }
 
-    .tpae_navlinks_cover {
+    .she_navlinks_cover {
         display: flex;
         flex-direction: column;
         position: relative;
         box-sizing: border-box;
-        padding: 20px 10px;
+        padding: 20px 15px;
 
-        .tpae_navlinks_inner_cover {
+        .she_navlinks_inner_cover {
             display: flex;
             flex-direction: column;
             box-sizing: border-box;
@@ -69,16 +69,16 @@
                 margin-bottom: 0;
             }
 
-            .tpae_navlink {
+            .she_navlink {
                 width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                font-family: $theplus_font_family;
+                font-family: $she_font_family;
                 font-size: 16px;
-                line-height: 19px;
+                line-height: 24px;
                 font-weight: 500;
-                color: $theplus_black;
+                color: $she_black;
                 padding: 15px;
                 box-sizing: border-box;
                 cursor: pointer;
@@ -88,43 +88,63 @@
                 position: relative;
 
                 &:hover {
-                    color: $theplus_purple;
-                    background-color: $theplus_nav_strip_bg_light;
+                    color: $she_dark_pink;
+                    background-color: $she_nav_strip_bg_light;
                 }
 
                 &:focus {
                     box-shadow: none;
-                    background-color: $theplus_nav_strip_bg_light;
+                    background-color: $she_nav_strip_bg_light;
                 }
 
-                &.tpae_active_tab {
-                    color: $theplus_purple;
-                    background-color: $theplus_nav_strip_bg_light;
+                &.she_active_tab {
+                    color: $she_dark_pink;
+                    background-color: $she_nav_strip_bg_light;
                 }
 
                 // &:active {
-                //     border: 1px solid $theplus_purple;
-                //     color: $theplus_purple;
-                //     background: $theplus_purple;
+                //     border: 1px solid $she_dark_pink;
+                //     color: $she_dark_pink;
+                //     background: $she_dark_pink;
                 // }
             }
 
             .tpae_navlink_icon {
                 transition: 0.3s linear;
             }
+
+            .she_navlink_cover {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .she-nav-tag {
+                display: flex;
+                align-items: center;
+                padding: 0px 10px;
+                background: rgba(157, 26, 79, 1);
+                color: #FFFFFF;
+                border-radius: 4px;
+
+                .she-nav-tag-txt {
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+            }
         }
 
-        .tpae_ver_nd_sys_info {
+        .she_ver_nd_sys_info {
             display: flex;
             justify-content: left;
             align-items: center;
             gap: 10px;
             margin: 0px 15px;
 
-            .theplus_version,
+            .she_version,
             .tpae_system_info {
                 text-wrap: nowrap;
-                color: $theplus_gray_primary_normal;
+                color: $she_gray_primary_normal;
                 text-decoration: none;
                 font-size: 12px;
                 line-height: 14px;
@@ -160,19 +180,19 @@
             margin: 10px 0 0 19px;
             border-left: 1px solid #dcdcdc;
 
-            .tpae_navlink {
+            .she_navlink {
                 padding: 15px;
             }
 
             .tpae_nav_dropdown_links {
                 margin: 0 0 10px 12px;
 
-                .tpae_navlink {
+                .she_navlink {
                     font-size: 14px;
                     line-height: 11px;
 
-                    &.tpae_active_tab:after {
-                        background-color: $theplus_purple;
+                    &.she_active_tab:after {
+                        background-color: $she_dark_pink;
                         border-radius: 100%;
                         bottom: 0;
                         content: " ";
@@ -224,7 +244,7 @@
         display: flex;
         align-items: center;
         color: white;
-        font-family: $theplus_font_family;
+        font-family: $she_font_family;
         font-size: 12px;
         line-height: 22px;
         position: relative;
@@ -258,13 +278,13 @@
 // media query start
 
 @media (max-width: 1440px) {
-    .tpae_navigation_cover .tpae_logo_strip {
-        .tpae_hint_text {
+    .she_navigation_cover .she_logo_strip {
+        .she_hint_text {
             font-size: 12px;
         }
 
-        .tpae_main_logo {
-            width: 100px;
+        .she_main_logo {
+            width: 60px;
         }
 
         padding: 15px;
@@ -272,12 +292,12 @@
 }
 
 @media (max-width: 1290px) {
-    .tpae_navigation_cover {
-        .tpae_navlinks_cover {
+    .she_navigation_cover {
+        .she_navlinks_cover {
             padding: 10px 15px;
 
-            .tpae_navlinks_inner_cover {
-                .tpae_navlink {
+            .she_navlinks_inner_cover {
+                .she_navlink {
                     font-size: 14px;
                     padding: 10px 15px;
                 }
@@ -288,24 +308,24 @@
 
 
 @media (max-width: 1024px) {
-    .tpae_navigation_cover {
-        .tpae_logo_strip {
-            .tpae_hint_text {
+    .she_navigation_cover {
+        .she_logo_strip {
+            .she_hint_text {
                 padding: 5px 8px;
             }
         }
 
-        .tpae_navlinks_cover {
-            .tpae_navlinks_inner_cover {
-                .tpae_navlink {
+        .she_navlinks_cover {
+            .she_navlinks_inner_cover {
+                .she_navlink {
                     padding: 8px;
                 }
             }
 
-            .tpae_ver_nd_sys_info {
+            .she_ver_nd_sys_info {
                 margin: 0px 10px;
 
-                .theplus_version,
+                .she_version,
                 .tpae_system_info {
                     padding: 0;
                 }
@@ -315,19 +335,19 @@
 }
 
 @media (max-width: 782px) {
-    .tpae_navigation_cover {
+    .she_navigation_cover {
         top: 66px;
 
-        .tpae_logo_strip .tpae-mobile-menu-cn .tpae-menu-btn {
+        .she_logo_strip .she-mobile-menu-cn .she-menu-btn {
             display: flex;
         }
 
-        .tpae_navlinks_cover {
+        .she_navlinks_cover {
             transition: 0.3s linear;
             padding: 0px 15px;
             height: 0;
 
-            &.tpae_open_menu {
+            &.she_open_menu {
                 padding: 10px 15px;
                 height: max-content;
             }
@@ -337,23 +357,23 @@
 }
 
 @media (max-width: 600px) {
-    .tpae_navigation_cover {
+    .she_navigation_cover {
         top: 20px;
     }
 }
 
 @media (max-width: 768px) {
-    .tpae_navigation_cover {
-        .tpae_navlinks_cover {
-            .tpae_navlinks_inner_cover {
+    .she_navigation_cover {
+        .she_navlinks_cover {
+            .she_navlinks_inner_cover {
                 gap: 0;
             }
 
-            .tpae_ver_nd_sys_info {
+            .she_ver_nd_sys_info {
                 gap: 7px;
                 padding: 9px;
 
-                .theplus_version,
+                .she_version,
                 .tpae_system_info {
                     padding: 0px;
                 }

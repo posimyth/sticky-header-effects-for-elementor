@@ -3,7 +3,7 @@
 .she_dash_inner_main {
 
     .she_wlcm_sec_cover {
-        background-color: $theplus_white;
+        background-color: $she_white;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
@@ -21,7 +21,7 @@
         .tpae_whats_new {
             padding: 12px 25px;
             text-align: center;
-            border: 1px solid $tpae-ghost-btn_border;
+            border: 1px solid $she-ghost-btn_border;
             border-radius: 5px;
             height: fit-content;
             position: relative;
@@ -30,10 +30,10 @@
             cursor: pointer;
 
             &:hover {
-                background-color: $theplus_purple;
+                background-color: $she_dark_pink;
 
                 .tpae_whats_new_txt {
-                    color: $theplus_white;
+                    color: $she_white;
                 }
             }
 
@@ -43,7 +43,7 @@
         }
 
         .tpae_whats_new_count {
-            background-color: $theplus_red;
+            background-color: $she_red;
             font-size: 10px;
             border-radius: 50px;
             width: 15px;
@@ -54,15 +54,15 @@
             position: absolute;
             top: -8px;
             right: -8px;
-            color: $theplus_white;
+            color: $she_white;
         }
 
         .tpae_whats_new_txt {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 14px;
             line-height: 16px;
             font-weight: 500;
-            color: $theplus_dark_blk;
+            color: $she_dark_blk;
         }
 
         .she_user_img_wn {
@@ -97,9 +97,9 @@
         }
 
         .tpae_user_name {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 16px;
-            color: $theplus_black;
+            color: $she_black;
             line-height: 26px;
             font-weight: 500;
             margin: 0;
@@ -141,7 +141,7 @@
             justify-content: space-between;
             flex-direction: row;
             padding: 18px;
-            border: 1px solid $theplus_light_gray_tint;
+            border: 1px solid $she_light_gray_tint;
             border-radius: 8px;
             align-items: center;
         }
@@ -151,19 +151,19 @@
         }
 
         .tpae_numbers {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 16px;
             font-weight: 500;
             line-height: 22px;
-            color: $theplus_dark_blk;
+            color: $she_dark_blk;
         }
 
         .she_sm_abt_num {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 14px;
             font-weight: 500;
             line-height: 17px;
-            color: $theplus_dark_blk;
+            color: $she_dark_blk;
         }
 
         .she_product_slider {
@@ -229,7 +229,7 @@
 
         .she_learn_btn_link {
             color: white;
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 12px;
             line-height: 22px;
             position: relative;
@@ -263,14 +263,14 @@
             align-items: center;
             flex-direction: column;
             gap: 10px;
-            background: $theplus_purple;
+            background: $she_dark_pink;
             padding: 20px;
             border-radius: 5px;
         }
 
         .she_subscribe_form_h {
-            font-family: $theplus_font_family;
-            color: $theplus_white;
+            font-family: $she_font_family;
+            color: $she_white;
             font-size: 16px;
             line-height: 20px;
             font-weight: 500;
@@ -284,11 +284,11 @@
         }
 
         .she_subscribe_input {
-            border: 1px solid $theplus_white_light;
+            border: 1px solid $she_white_light;
             border-radius: 5px;
             padding: 10px 15px;
-            color: $theplus_white;
-            font-family: $theplus_font_family;
+            color: $she_white;
+            font-family: $she_font_family;
             background-color: transparent;
             font-size: 12px;
             line-height: 17px;
@@ -297,13 +297,13 @@
             box-sizing: border-box;
 
             &::placeholder {
-                color: $theplus_white_light;
+                color: $she_white_light;
             }
 
             &:focus {
                 box-shadow: none;
                 outline: none;
-                border: 1px solid $theplus_white;
+                border: 1px solid $she_white;
             }
 
         }
@@ -333,12 +333,12 @@
         }
 
         .she_subscribe_btn {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 14px;
             line-height: 16px;
             font-weight: 500;
-            color: $theplus_red_btn_bg;
-            background-color: $theplus_white;
+            color: $she_red_btn_bg;
+            background-color: $she_white;
             border-radius: 5px;
             padding: 16px;
             cursor: pointer;
@@ -351,7 +351,7 @@
             box-sizing: border-box;
 
             &:hover {
-                background-color: $theplus_nav_strip_bg_light;
+                background-color: $she_nav_strip_bg_light;
             }
         }
     }
@@ -385,7 +385,7 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
-            background-color: $theplus_white;
+            background-color: $she_white;
             border-radius: 10px;
             width: 26%;
             min-height: 119px;
@@ -404,12 +404,12 @@
         }
 
         .she_qik_info_crd_title {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 16px;
             line-height: 19px;
             font-weight: 500;
             margin: 0;
-            color: $theplus_black;
+            color: $she_black;
         }
 
         .she_rating_box {
@@ -425,7 +425,7 @@
                 }
 
                 svg {
-                    fill: $theplus_toggle_off_bg;
+                    fill: $she_toggle_off_bg;
                 }
 
                 &:hover {
@@ -457,7 +457,7 @@
             width: 30px;
             height: 30px;
             border-radius: 50px;
-            background-color: $theplus_purple;
+            background-color: $she_dark_pink;
             cursor: pointer;
             text-decoration: none;
 
@@ -466,7 +466,7 @@
             }
 
             &:hover {
-                background-color: $theplus_purple_dark;
+                background-color: $she_purple_dark;
             }
         }
     }
@@ -587,11 +587,11 @@
         margin-top: 30px;
 
         .she_whats_new_heading {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 18px;
             line-height: 21px;
             font-weight: 500;
-            color: $theplus_black;
+            color: $she_black;
             margin: 0;
         }
 
@@ -659,22 +659,22 @@
         }
 
         .she_img_heading_info {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 18px;
             line-height: 28px;
             font-weight: 500;
-            color: $theplus_black;
+            color: $she_black;
             margin: 0;
             padding-top: 16px;
             position: relative;
         }
 
         .she_text_info {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 14px;
             line-height: 21px;
             font-weight: 500;
-            color: $theplus_gray_primary_normal;
+            color: $she_gray_primary_normal;
             margin: 0;
             padding-top: 7px;
             position: relative;
@@ -691,14 +691,14 @@
         }
 
         .she_whats_new_info_cta_btn {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 14px;
             line-height: 21px;
             font-weight: 500;
-            color: $theplus_white;
+            color: $she_white;
             text-align: center;
             border-radius: 5px;
-            background-color: $theplus_purple;
+            background-color: $she_dark_pink;
             padding: 12px 25px;
             transition: all 0.3s ease-in-out;
             cursor: pointer;
@@ -706,16 +706,16 @@
             text-decoration: none;
 
             &:hover {
-                background-color: $theplus_purple_dark;
+                background-color: $she_purple_dark;
             }
         }
 
         .she_whats_new_btn_link {
-            font-family: $theplus_font_family;
+            font-family: $she_font_family;
             font-size: 14px;
             line-height: 21px;
             font-weight: 500;
-            color: $theplus_gray_primary_normal;
+            color: $she_gray_primary_normal;
             cursor: pointer;
             position: relative;
             text-decoration: none;
@@ -728,7 +728,7 @@
                 height: 1px;
                 bottom: 0px;
                 left: 0;
-                background-color: $theplus_gray_primary_normal;
+                background-color: $she_gray_primary_normal;
                 transform-origin: bottom right;
                 transition: transform 0.25s ease-out;
             }
@@ -758,7 +758,7 @@
         width: 75px;
         transform-origin: center;
         animation: rotate4 2s linear infinite;
-        stroke: $theplus_purple_dark;
+        stroke: $she_purple_dark;
     }
 
     circle {
@@ -809,8 +809,8 @@
     .she-slideshow-skeleton,
     .tpae_whats_new_txt,
     .shw_arrow {
-        background: $skeleton_bg;
-        animation: $animation;
+        background: $she_skeleton_bg;
+        animation: $she_animation;
         color: transparent;
         pointer-events: none;
         border: none;
