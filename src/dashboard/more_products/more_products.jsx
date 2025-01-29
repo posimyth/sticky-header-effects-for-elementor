@@ -5,17 +5,18 @@ import { connect } from 'react-redux';
 import './more_products.scss'
 import axios from 'axios';
 import { plugin_status_a_rx } from '../../redux/action.js';
+import { theme_status_a_rx } from '../../redux/action.js';
 import { __ } from '@wordpress/i18n';
 
 const MoreProducts = (props) => {
-    
+
     const [Btnloader, setBtnloader] = useState({
         'the-plus-addons-for-elementor-page-builder': 'done',
         'the-plus-addons-for-block-editor': 'done',
         'uichemy': 'done',
         'wdesignkit': 'done',
         'nexter-extension': 'done',
-        'nexter-theme': 'done'
+        'nexter': 'done'
     })
     const pluginInstaller = useRef([]);
     const pluginStatus = useRef(Btnloader);
@@ -29,17 +30,22 @@ const MoreProducts = (props) => {
     useEffect(() => {
         var new_obj = Object.assign({}, Btnloader)
 
-        
+
         props?.plugin_check?.length > 0 && props?.plugin_check.map((data) => {
             if (new_obj[data.name]) {
                 new_obj = Object.assign({}, new_obj, { [data.name]: data.status })
             }
         })
+
+        if (props?.theme_check) {
+            new_obj = Object.assign({}, new_obj, { 'nexter': props?.theme_check?.status });
+        }
+
         setBtnloader(new_obj);
-        
+
         pluginStatus.current = new_obj;
 
-    }, [props?.plugin_check])
+    }, [props?.plugin_check, props?.theme_check])
 
 
     useEffect(() => {
@@ -56,8 +62,26 @@ const MoreProducts = (props) => {
 
         if (loader_array.length > 0) {
             pluginInstaller.current.push({ 'status': 'pending', 'data': name, 'type': slug })
-        }
-        else {
+        } else if ('nexter' === name) {
+
+            pluginInstaller.current.push({ 'status': 'loading', 'data': name, 'type': slug })
+
+            await activate_theme(name).then(async (res) => {
+                if (undefined != res) {
+                    let index = pluginInstaller.current.findIndex((id) => id.status == 'loading');
+                    await pluginInstaller.current.splice(index, 1)
+
+                    if (pluginInstaller.current.length > 0) {
+                        let next_data = pluginInstaller.current[0].data;
+                        let next_type = pluginInstaller.current[0].type;
+
+                        await pluginInstaller.current.splice(0, 1)
+                        await Get_install_list(next_data, next_type);
+                    }
+                }
+            })
+
+        } else {
             pluginInstaller.current.push({ 'status': 'loading', 'data': name, 'type': slug })
             await Install_Plugin(name, slug).then(async (res) => {
 
@@ -111,16 +135,92 @@ const MoreProducts = (props) => {
         return true;
     }
 
-    const PluginStatusBtn = (name, slug) => {        
+    const activate_theme = async (name) => {
+
+        var form = new FormData();
+        form.append('action', 'she_dashboard_ajax_call');
+        form.append('nonce', nonce);
+        form.append('type', 'she_theme_install');
+        form.append('name', name);
+
+        var res = await axios.post(ajax_url, form);
+
+        if (res.data.success) {
+
+            let old_data = Object.assign({}, pluginStatus.current, { [name]: res.status })
+            pluginStatus.current = old_data;
+            setBtnloader(pluginStatus.current);
+        } else {
+            let old_data = Object.assign({}, pluginStatus.current, { [name]: 'Failed' })
+            pluginStatus.current = old_data;
+            setBtnloader(pluginStatus.current);
+        }
+
+        if (props?.theme_check) {
+            const themeName = props.theme_check.name;
+            const newStatus = pluginStatus.current[themeName];
+
+            var updatedThemeCheck = {
+                ...props.theme_check,
+                status: newStatus
+            };
+        }
+
+        props.tpae_set_theme_status(updatedThemeCheck);
+        return true;
+    }
+
+    const she_theme_active = async (name) => {
         
+        
+        let form = new FormData();
+        form.append('action', 'she_dashboard_ajax_call');
+        form.append('nonce', nonce);
+        form.append('type', 'she_activate_theme');
+        form.append('theme_slug', name);
+
+        let response = await axios.post(ajax_url, form);
+
+        if (response.success) {
+            let old_data = Object.assign({}, pluginStatus.current, { [name]: response.status })
+            pluginStatus.current = old_data;
+            setBtnloader(pluginStatus.current);
+        } else {
+            let old_data = Object.assign({}, pluginStatus.current, { [name]: 'Failed' })
+            pluginStatus.current = old_data;
+            setBtnloader(pluginStatus.current);
+        }
+
+        const updatedThemeCheck = {
+            ...props.theme_check,
+            status: pluginStatus.current[name]
+        };
+        props.tpae_set_theme_status(updatedThemeCheck);
+    }
+
+
+    const PluginStatusBtn = (name, slug) => {
+
         if (Btnloader[name] === 'unavailable') {
-            return (
-                <button className='she-install-btn' onClick={() => { Get_install_list(name, slug) }}>{__('Install & Activate', 'she-header')}</button>
-            )
+            if (name === 'nexter') {
+                return (
+                    <button className='she-install-btn' onClick={() => { Get_install_list(name, 'nexter') }}>{__('Install', 'she-header')}</button>
+                )
+            } else {
+                return (
+                    <button className='she-install-btn' onClick={() => { Get_install_list(name, slug) }}>{__('Install & Activate', 'she-header')}</button>
+                )
+            }
         } else if (Btnloader[name] === 'inactive') {
-            return (
-                <button className='she-install-btn' onClick={() => { Get_install_list(name, slug) }}>{__('Activate Now', 'she-header')}</button>
-            )
+            if (name === 'nexter') {
+                return (
+                    <button className='she-install-btn' onClick={() => { she_theme_active(name) }}>{__('Activate Now', 'she-header')}</button>
+                )
+            } else {
+                return (
+                    <button className='she-install-btn' onClick={() => { Get_install_list(name, slug) }}>{__('Activate Now', 'she-header')}</button>
+                )
+            }
         } else if (Btnloader[name] === 'loading') {
             return (
                 <button className='she-install-btn'>
@@ -151,12 +251,15 @@ const MoreProducts = (props) => {
             </div>
 
             {Object.entries(productsData).map(([key, product]) => {
-                
+
                 let index = props.plugin_check.findIndex(item => item.name === product.id),
                     slug = props.plugin_check[index]?.plugin_slug,
-                    name = props.plugin_check[index]?.name,
-                    status = props.plugin_check[index]?.status;                    
-                    
+                    name = props.plugin_check[index]?.name
+
+                if (key === 'nexter_theme') {
+                    name = props?.theme_check?.name
+                }
+
                 return (
                     <div key={key} className='she_products_box_cover_main'>
                         <div className='she_product_box'>
@@ -185,11 +288,13 @@ const MoreProducts = (props) => {
 
 const get_redux = state => ({
     plugin_check: state.check_plugin.plugin_status_rx,
+    theme_check: state.check_theme.theme_status_rx,
     tpae_dashboard_data: state.Dashboard_data.db_rx,
 })
 
 const set_redux = dispatch => ({
     tpae_set_plugin_status: data => dispatch(plugin_status_a_rx(data)),
+    tpae_set_theme_status: data => dispatch(theme_status_a_rx(data)),
 })
 
 export default connect(get_redux, set_redux)(MoreProducts);

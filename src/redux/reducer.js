@@ -80,6 +80,27 @@ export function check_plugin(state = tpae_plugin_check, action) {
     }
 }
 
+const she_theme_check = {
+    theme_status_rx: [
+        {
+            'nexter': false,
+        }
+    ],
+}
+
+export function check_theme(state = she_theme_check, action) {
+    switch (action.type) {
+        case 'set_theme_status':
+            return {
+                ...StaticRange,
+                theme_status_rx: action.data
+            }
+            break;
+        default:
+            return state
+    }
+}
+
 const tpae_lising_data = {
     lising_data_rx: {
         'client_post_type': 'disable',

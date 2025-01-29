@@ -96,6 +96,9 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				case 'she_theme_install':
 					$response = $this->she_theme_install();
 					break;
+				case 'she_activate_theme':
+					$response = $this->she_activate_theme();
+					break;
 				case 'she_prev_version':
 					$response = $this->she_prev_version();
 					break;
@@ -152,6 +155,8 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			$plugin_details = $this->she_check_plugins_depends( $plugins );
 			$plugin_details = ! empty( $plugin_details ) ? $plugin_details : $plugins;
 
+			$theme_details = $this->she_check_theme_depends( 'nexter' );
+
 			$user       = wp_get_current_user();
 			$user_image = get_avatar_url( $user->ID );
 
@@ -172,6 +177,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				'description' => esc_html__( 'success', 'she-header' ),
 				'user_info'   => $user_info,
 				'plugin_detail' => $plugin_details,
+				'theme_detail'  => $theme_details,
 			);
 
 			return $response;
@@ -208,6 +214,65 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			}
 
 			return $update_plugin;
+		}
+
+		/**
+		 *
+		 * It is Use for Check Theme Dependency of template.
+		 *
+		 * @since 1.7.3
+		 *
+		 * @param array $theme_slug List of required theme to check.
+		 */
+		public function she_check_theme_depends($theme_slug) {
+
+			$theme = wp_get_theme($theme_slug);
+		
+			if (!$theme->exists()) {
+				return array(
+					'name'   => $theme_slug,
+					'status' => 'unavailable',
+				);
+			}
+		
+			$current_theme = wp_get_theme();
+		
+			if ($theme_slug === $current_theme->get_stylesheet()) {
+				return array(
+					'name'   => $theme_slug,
+					'status' => 'active',
+				);
+			} else {
+				return array(
+					'name'   => $theme_slug,
+					'status' => 'inactive',
+				);
+			}
+		}
+
+        /**
+		 *
+		 * It is Use for Active Theme of template.
+		 *
+		 * @since 1.7.3
+		 *
+		 * @param array $plugins List of required plugins to check.
+		 */
+		public function she_activate_theme() {
+
+			$theme_slug = isset( $_POST['theme_slug'] ) ? sanitize_text_field( wp_unslash( $_POST['theme_slug'] ) ) : '';
+			
+			$active_theme = wp_get_theme();
+			$theme_name   = $active_theme->get( 'Name' );
+
+			if ( file_exists( WP_CONTENT_DIR . '/themes/' . $theme_slug ) && 'Nexter' !== $theme_name ) {
+
+				switch_theme( $theme_slug );
+				return array(
+					'name'   => $theme_slug,
+					'status' => 'Activated',
+				);
+			}
 		}
 
 		/**

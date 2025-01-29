@@ -26,6 +26,13 @@ const plugin_status_a_rx = (data) => {
     }
 }
 
+const theme_status_a_rx = (data) => {
+    return {
+        type: 'set_theme_status',
+        data: data
+    }
+}
+
 const listing_data_a_rx = (data) => {
     return {
         type: 'set_lising_data',
@@ -73,6 +80,7 @@ export {
     widgets_a_rx,
     extra_option_a_rx,
     plugin_status_a_rx,
+    theme_status_a_rx,
     listing_data_a_rx,
     custom_code_a_rx,
     performance_a_rx,

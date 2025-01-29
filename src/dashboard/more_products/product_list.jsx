@@ -27,7 +27,7 @@ const productsData = {
         logo: 'nexter-theme-product-logo.png',
         product_txt: 'Nexter WP Theme',
         Product_Url: 'https://nexterwp.com/nexter-theme/',
-        id:'nexter_theme',
+        id:'nexter',
     },
     the_plus_blocks: {
         logo: 'nexter-blocks.svg',

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import {
   Dashboard_a_rx,
   plugin_status_a_rx,
+  theme_status_a_rx,
 } from '../redux/action';
 
 const CheckUrl = (props) => {
@@ -35,6 +36,7 @@ const CheckUrl = (props) => {
     var data = response.data;
 
     props.tpae_set_plugins(data.plugin_detail);
+    props.tpae_set_theme(data.theme_detail);
     props.tpae_set_userinfo(data.user_info);
   };
 
@@ -48,6 +50,7 @@ const get_redux = state => ({
 const set_redux = dispatch => ({
   tpae_set_userinfo: data => dispatch(Dashboard_a_rx(data)),
   tpae_set_plugins: data => dispatch(plugin_status_a_rx(data)),
+  tpae_set_theme: data => dispatch(theme_status_a_rx(data)),
 })
 
 export default connect(get_redux, set_redux)(CheckUrl)
