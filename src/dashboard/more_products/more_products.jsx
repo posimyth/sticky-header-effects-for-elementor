@@ -14,7 +14,8 @@ const MoreProducts = (props) => {
         'the-plus-addons-for-block-editor': 'done',
         'uichemy': 'done',
         'wdesignkit': 'done',
-        'nexter-extension': 'done'
+        'nexter-extension': 'done',
+        'nexter-theme': 'done'
     })
     const pluginInstaller = useRef([]);
     const pluginStatus = useRef(Btnloader);
@@ -28,12 +29,14 @@ const MoreProducts = (props) => {
     useEffect(() => {
         var new_obj = Object.assign({}, Btnloader)
 
+        
         props?.plugin_check?.length > 0 && props?.plugin_check.map((data) => {
             if (new_obj[data.name]) {
                 new_obj = Object.assign({}, new_obj, { [data.name]: data.status })
             }
         })
         setBtnloader(new_obj);
+        
         pluginStatus.current = new_obj;
 
     }, [props?.plugin_check])

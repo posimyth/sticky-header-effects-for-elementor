@@ -24,22 +24,7 @@ const DashboardInnerMain = (props) => {
             imgAlt: __('WdesignKit Image', 'she-header'),
             browseLink: '?page=wdesign-kit#/browse',
             bg_color: 'linear-gradient(rgba(109, 104, 254, 1),rgba(180, 70, 255, 1))',
-            bt_color: '#c22076',
-            bt_txt_color: '#ffffff'
-        },
-        {
-            key: 'wdesignkit',
-            heading: __('Get 1000+ Pre-Designed WordPress Pages & Templates.', 'she-header'),
-            subheading: __('WordPress Pages & Templates.', 'she-header'),
-            buttonLabel: __('Install WDesignKit', 'she-header'),
-            buttonLinkLabel: __('Open Templates', 'she-header'),
-            status: 'unavailable',
-            learnLink: 'https://wdesignkit.com/?utm_source=wpbackend&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings ',
-            imgSrc: plugin_url + 'assets/images/banner/wdesinKit.png',
-            imgAlt: __('WdesignKit Image', 'she-header'),
-            browseLink: '?page=wdesign-kit#/browse',
-            bg_color: '#040483',
-            bt_color: '#c22076',
+            bt_color: '#FF5A6E',
             bt_txt_color: '#ffffff'
         },
         {
@@ -55,6 +40,21 @@ const DashboardInnerMain = (props) => {
             browseLink: 'customize.php?theme=nexter',
             bg_color: '#1717cc',
             bt_color: '#f12d2d',
+            bt_txt_color: '#ffffff'
+        },
+        {
+            key: 'wdesignkit',
+            heading: __('Get 1000+ Pre-Designed WordPress Pages & Templates.', 'she-header'),
+            subheading: __('WordPress Pages & Templates.', 'she-header'),
+            buttonLabel: __('Install WDesignKit', 'she-header'),
+            buttonLinkLabel: __('Open Templates', 'she-header'),
+            status: 'unavailable',
+            learnLink: 'https://wdesignkit.com/?utm_source=wpbackend&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings ',
+            imgSrc: plugin_url + 'assets/images/banner/wdesinKit.png',
+            imgAlt: __('WdesignKit Image', 'she-header'),
+            browseLink: '?page=wdesign-kit#/browse',
+            bg_color: '#040483',
+            bt_color: '#c22076',
             bt_txt_color: '#ffffff'
         },
         {
@@ -106,6 +106,7 @@ const DashboardInnerMain = (props) => {
 
     const [slideLeft, setSlideLeft] = useState(false);
     const [userName, setUserName] = useState('');
+    const [userEmail, setUserEmail] = useState('');
     const [userImage, setUserImage] = useState('');
     const [tpaeuser_name, setTpaeuser_name] = useState('');
     const [tpaeuser_email, setTpaeuser_email] = useState('');
@@ -133,11 +134,16 @@ const DashboardInnerMain = (props) => {
             }
         });
     }, [hoveredIndex, selectedIndex]);
-    
+
     useEffect(() => {
         setUserName(props.tpae_dashboard_data?.user_name || '');
+        setUserEmail(props.tpae_dashboard_data?.user_email || '');
         setUserImage(props.tpae_dashboard_data?.user_image || '');
+        setTpaeuser_name(props.tpae_dashboard_data?.user_name || '');
+        setTpaeuser_email(props.tpae_dashboard_data?.user_email || '');
     }, [props.tpae_dashboard_data]);
+
+
 
     useEffect(() => {
 
@@ -243,7 +249,7 @@ const DashboardInnerMain = (props) => {
     const Notification_validation = async (e) => {
 
         let OriginalOBJ = ErrorTooltip;
-
+    
         if (!tpaeuser_name.trim() || !tpaeuser_email.trim()) {
 
             var newOBJ = {
@@ -304,8 +310,6 @@ const DashboardInnerMain = (props) => {
 
         if (response) {
             setSubscribe_btn('Submited !');
-            btn.style.backgroundImage = 'linear-gradient(90deg, #6f14f1 0%, #8072fc 128.29%)';
-            btn.style.color = 'white';
 
             setTimeout(() => {
                 setSubscribe_btn('Subscribe Now');
@@ -362,14 +366,12 @@ const DashboardInnerMain = (props) => {
                         </div>
                         <h3 className='she_user_name'>{__('Welcome,', 'she-header')} {userName || '...'}</h3>
                     </div>
-                    {/* {!(props.tpae_white_lable_data?.plugin_news == 'on') &&
-                        <div className='tpae_whats_new' onClick={() => whats_new_btn()}>
-                            {props.tpae_dashboard_data?.whatsnew?.data?.length > 0 &&
-                                <span className='tpae_whats_new_count'>{props.tpae_dashboard_data.whatsnew.data.length}</span>
-                            }
-                            <span className='tpae_whats_new_txt'>{__("What's New?")}</span>
-                        </div>
-                    } */}
+                    <div className='tpae_whats_new' onClick={() => whats_new_btn()}>
+                        {props.tpae_dashboard_data?.whatsnew?.data?.length > 0 &&
+                            <span className='tpae_whats_new_count'>{props.tpae_dashboard_data.whatsnew.data.length}</span>
+                        }
+                        <span className='tpae_whats_new_txt'>{__("What's New?")}</span>
+                    </div>
                 </div>
 
                 <div className='she_slide_form_sec'>
@@ -431,7 +433,7 @@ const DashboardInnerMain = (props) => {
                             <input
                                 className='she_subscribe_input'
                                 type='text'
-                                value={tpaeuser_name}
+                                value={!tpaeuser_name ? userName : tpaeuser_name}
                                 onChange={(e) => { setTpaeuser_name(e.target.value); setErrorTooltip({ 'tpaeName': false, 'tpaeEmail': false }) }}
                                 placeholder={__('Your Name', 'she-header')} />
                             {
@@ -443,7 +445,7 @@ const DashboardInnerMain = (props) => {
                             <input
                                 className='she_subscribe_input'
                                 type='email'
-                                value={tpaeuser_email}
+                                value={!tpaeuser_email ? userEmail : tpaeuser_email}
                                 onChange={(e) => { setTpaeuser_email(e.target.value); setErrorTooltip({ 'tpaeName': false, 'tpaeEmail': false }) }}
                                 placeholder={__('Your Email', 'she-header')} />
                             {ErrorTooltip.tpaeEmail &&
@@ -463,17 +465,17 @@ const DashboardInnerMain = (props) => {
 
                     <div className='she_qik_infocrd_cover she_help'>
                         <h4 className='she_qik_info_crd_title'>{__('Need Help?', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://store.posimyth.com/helpdesk?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='she-ghost-btn'>{__('Raise Ticket', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href='https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='she-ghost-btn'>{__('Raise Ticket', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover'>
                         <h4 className='she_qik_info_crd_title'>{__('Join Community', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/groups/theplus4elementor?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='she-ghost-btn'>{__('Join Now', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/groups/theplus4elementor??utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='she-ghost-btn'>{__('Join Now', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover'>
                         <h4 className='she_qik_info_crd_title'>{__('Request Feature', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://roadmap.theplusaddons.com?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='she-ghost-btn'>{__('Suggest Now', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href='https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='she-ghost-btn'>{__('Suggest Now', 'she-header')}</a>
                     </div>
                 </div>
 
@@ -496,19 +498,19 @@ const DashboardInnerMain = (props) => {
                     <div className='she_qik_infocrd_cover she_dashboard_social_icons_card_box'>
                         <h4 className='she_qik_info_crd_title'>{__("We're Active on", 'she-header')}</h4>
                         <div className='she_icon_bx_cover'>
-                            <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/tpaelementor?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/posimyth?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/facebook_icon.svg'} draggable={false} />
                             </a>
-                            <a target='_blank' rel="noopener noreferrer" href='https://x.com/intent/user?screen_name=tpaelementor&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://x.com/posimyth?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/X_icon.svg'} draggable={false} />
                             </a>
-                            <a target='_blank' rel="noopener noreferrer" href='https://instagram.com/theplus_elementor?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://www.instagram.com/posimyth/?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/instagram_icon.svg'} draggable={false} />
                             </a>
-                            <a target='_blank' rel="noopener noreferrer" href='https://t.me/posimyth?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://t.me/posimyth?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/telegram_icon.svg'} draggable={false} />
                             </a>
-                            <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/company/posimyth?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://in.linkedin.com/company/posimyth?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/linkedin_icon.svg'} draggable={false} />
                             </a>
                         </div>
@@ -517,7 +519,7 @@ const DashboardInnerMain = (props) => {
             </div>
             {/*---------------------------------- what's New Button Slider Start ---------------------------------- */}
 
-            {/* <div className={slideLeft ? 'she_whats_new_cover she_whats_new_box_opened' : 'she_whats_new_cover she_whats_new_box_closed'}>
+            <div className={slideLeft ? 'she_whats_new_cover she_whats_new_box_opened' : 'she_whats_new_cover she_whats_new_box_closed'}>
                 <div className='she-whats-new-outer' onClick={(e) => setSlideLeft(false)}></div>
                 <div className='she-whats-new-inner'>
                     <div className='she_heading_icon_strip'>
@@ -554,7 +556,7 @@ const DashboardInnerMain = (props) => {
                         {__('Read Full Changelog')}
                     </a>
                 </div>
-            </div> */}
+            </div>
 
         </div>
     )

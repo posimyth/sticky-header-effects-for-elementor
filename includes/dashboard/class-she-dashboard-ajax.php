@@ -125,7 +125,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				array(
 					'name'        => 'the-plus-addons-for-elementor-page-builder',
 					'status'      => '',
-					'plugin_slug' => 'the-plus-addons-for-elementor-page-builder/theplus-elementor-addon.php',
+					'plugin_slug' => 'the-plus-addons-for-elementor-page-builder/theplus_elementor_addon.php',
 				),
 				array(
 					'name'        => 'wdesignkit',
@@ -161,6 +161,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				'user_image' => $user_image,
 				'roles'      => $user->roles,
 				'user_name'  => $user->display_name,
+				'user_email'  => $user->user_email,
 				'tpae_pro'   => $tpae_pro,
 				'success'    => true,
 			);

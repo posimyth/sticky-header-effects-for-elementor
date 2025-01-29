@@ -195,7 +195,7 @@ const Extension = (props) => {
                                             return (
                                                 <div className={`she-part-wid-mng-box ${(data?.tag == 'pro') && !free_pro ? 'she-widget-pro' : ''}`} key={index}>
                                                     <div className='she-wid-in-left'>
-                                                        <div className={`she-nexter-tag`}>{data.tag}</div>
+                                                        <div className={`she-nexter-tag${data?.tag == 'pro' ? '-pro' : ''}`}>{data.tag}</div>
                                                         <div className='she-wid-name'>{data.label}
                                                             {pro_plugin == '0' && data.status &&
                                                                 <span className={`she-wid-sm-tag she-wid-name-hint-text tp-tag-color-${data.status}`}>{data.status}</span>

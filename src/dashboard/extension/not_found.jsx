@@ -7,7 +7,7 @@ const NotFound = (props) => {
         <div className='she_no_wid_cover'>
             <div className='she_nowid_info she_field_card she-section-heading-cover'>
                 <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M13.995 0C21.2523 0 27.1379 5.88553 27.1379 13.1429C27.1379 20.4002 21.2523 26.2857 13.995 26.2857C6.73768 26.2857 0.852142 20.4002 0.852142 13.1429C0.852142 5.88553 6.73768 0 13.995 0ZM12.587 14.2738V7.50935C12.587 6.73386 13.2195 6.10131 13.995 6.10131C14.7705 6.10131 15.403 6.73974 15.403 7.50935V14.2738C15.403 15.0434 14.7705 15.6819 13.995 15.6819C13.2195 15.6819 12.587 15.0493 12.587 14.2738ZM13.9889 17.192C14.8702 17.192 15.5849 17.9068 15.5849 18.7879C15.5849 19.6692 14.8702 20.3839 13.9889 20.3839C13.1078 20.3839 12.393 19.6692 12.393 18.7879C12.393 17.9068 13.1078 17.192 13.9889 17.192Z" fill="#FF5A6E" /></svg>
-                <h3 className='she-section-heading'>{__('Oops, No Widgets Found!', 'she-header')}</h3>
+                <h3 className='she-section-heading'>{__('Oops, No Extension Found!', 'she-header')}</h3>
                 <p className='she_card_descrip'>{__('Please try searching with an alternative')} <br /> {__('or more common term!', 'she-header')}</p>
             </div>
 

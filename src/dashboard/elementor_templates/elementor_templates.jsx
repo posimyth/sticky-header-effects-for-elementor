@@ -107,7 +107,7 @@ const ElementorTemplates = (props) => {
     return (
         <div className={`she-ele-temp-inn-main she-main-container ${template_list?.length > 0 ? '' : 'she-skeleton'}`}>
             <div className='she-section-heading-cover'>
-                <h3 className='she-section-heading'>{__('Elementor Templates', 'she-header')}</h3>
+                <h3 className='she-section-heading'>{__('Header Templates', 'she-header')}</h3>
 
                 <div className='she-common-btn'>
                     {plugin_status?.status === "active" || pluginActive ?
@@ -154,7 +154,7 @@ const ElementorTemplates = (props) => {
                     {plugin_status?.status === "active" || pluginActive ?
                         <a href="?page=wdesign-kit#/browse" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('Open Templates', 'she-header')}</a>
                         :
-                        <a href="https://wdesignkit.com/templates?builder=1001" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('View More Website Templates', 'she-header')}</a>
+                        <a href="https://wdesignkit.com/templates?builder=1001" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('View More Header Templates', 'she-header')}</a>
                     }
                 </div>
             </div>

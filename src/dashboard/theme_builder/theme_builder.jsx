@@ -36,19 +36,19 @@ const ThemeBuilder = (props) => {
         {
             'title': __('Advanced Header Builder', 'she-header'),
             'description': __('Get rid of the limited Header customizer. Use Elementor Widgets or Blocks to create custom. menu.', 'she-header'),
-            'image': plugin_url + 'assets/images/new_dashboard/Advanced Header Builder.png',
+            'image': plugin_url + 'assets/images/new_dashboard/advanced-header-builder.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/advanced-header-Builder.png',
         },
         {
             'title': __('Advanced Footer Builder', 'she-header'),
             'description': __('Your custom Footer with no limit of layout. Create any footer layout you want with our Footer Builder.', 'she-header'),
-            'image': plugin_url + 'assets/images/new_dashboard/Advanced Footer Builder.png',
+            'image': plugin_url + 'assets/images/new_dashboard/advanced-footer-builder.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/advanced-footer-builder.png',
         },
         {
             'title': __('Breadcrumbs Bar', 'she-header'),
             'description': __('Help users navigate your website by adding breadcrumb bar that shows the path they\'ve taken.', 'she-header'),
-            'image': plugin_url + 'assets/images/new_dashboard/Breadcrumbs Bar.png',
+            'image': plugin_url + 'assets/images/new_dashboard/breadcrumbs-bar.png',
             'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/breadcrumbs-bar.png',
         },
         {
@@ -126,7 +126,7 @@ const ThemeBuilder = (props) => {
                     }
                 </div>
                 <div className='she_view_all_btm_btn'>
-                    <a href="https://nexterwp.com/nexter-extension" target="_blank" rel="noopener noreferrer" className='she-ghost-btn'>{__('Learn More', 'she-header')}</a>
+                    <a href="https://nexterwp.com/nexter-extension" target="_blank" rel="noopener noreferrer" className='she-ghost-btn'>{__('View all Nexter Extension Features', 'she-header')}</a>
                 </div>
             </div>
         </div>

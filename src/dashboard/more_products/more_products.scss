@@ -39,22 +39,22 @@
                 align-items: center;
                 font-size: 14px;
                 font-weight: 500;
-                color: #8072fc;
+                color: #9D1A4F;
                 background-color: transparent;
-                padding: 11px 25px;
-                border: 1px solid #8072fc;
+                padding: 12px 25px;
+                border: 1px solid #9D1A4F;
                 border-radius: 5px;
                 white-space: nowrap;
                 cursor: pointer;
                 transition: 0.3s linear;
 
                 &:hover {
-                    background-color: #8072fc1a;
+                    background-color: rgb(255 244 249);
                 }
 
                 &.she-success {
-                    color: #14c38e;
-                    border-color: #14c38e;
+                    color: #0DAE05;
+                    border-color: #0DAE05;
                     pointer-events: none;
                 }
 
