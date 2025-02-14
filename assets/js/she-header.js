@@ -43,6 +43,9 @@ function sheHeader() {
 	if ($j.inArray(enabled, responsive_settings)!='-1') {
 								
 	var scroll_distance = data_settings["scroll_distance"];
+	var she_offset = data_settings["she_offset"];
+	var she_padding = data_settings["she_padding"];
+	var she_width = data_settings["she_width"];
 	var transparent_header = data_settings["transparent_header_show"];
 	var	background = data_settings["background"];
 	var bottom_border_color = data_settings["custom_bottom_border_color"],
@@ -64,6 +67,21 @@ function sheHeader() {
 	var blur_bg  = data_settings["blur_bg"];
 	
 	var scroll_distance_hide_header = data_settings["scroll_distance_hide_header"];
+    
+    // offset
+    if (width >= 1025) {
+        she_offset = data_settings["she_offset"];
+        she_padding = data_settings["she_padding"];
+        she_width = data_settings["she_width"];
+    }else if (width > 767 && width < 1025) {
+        she_offset = data_settings["she_offset_tablet"];
+        she_padding = data_settings["she_padding_tablet"];
+        she_width = data_settings["she_width_tablet"];
+    }else if (width <= 767) {
+        she_offset = data_settings["she_offset_mobile"];
+        she_padding = data_settings["she_padding_mobile"];
+        she_width = data_settings["she_width_mobile"];
+    }
 	
 	// add transparent class
 	if(transparent_header == "yes" ){
@@ -138,7 +156,7 @@ function sheHeader() {
                 if (
                     typeof scroll_distance_hide_header != "undefined" &&
                     scroll_distance_hide_header
-                ) {
+                ) { 
                     var mywindow = $j(window),
                         mypos = mywindow.scrollTop();
 
@@ -271,6 +289,13 @@ function sheHeader() {
 				header.removeClass('header').addClass("she-header");
 				header.css("background-color", background);
 				header.css("border-bottom", bottom_border);
+                header.css("top", she_offset.size + she_offset.unit);
+                header.css("padding-top", she_padding.top + she_padding.unit);
+                header.css("padding-bottom", she_padding.bottom + she_padding.unit);
+                header.css("padding-left", she_padding.left + she_padding.unit);
+                header.css("padding-right", she_padding.right + she_padding.unit);
+                header.css("width", she_width.size + she_width.unit);
+
 				header.removeClass('she-header-transparent-yes');
 				
 				if( shrink_header == "yes" ) {
@@ -296,6 +321,12 @@ function sheHeader() {
 					header.removeClass("she-header").addClass('header');
 					header.css("background-color", "");
 					header.css("border-bottom", "");
+					header.css("top", "");
+                    header.css("padding-top", "");
+                    header.css("padding-bottom", "");
+                    header.css("padding-left", "");
+                    header.css("padding-right", "");
+                    header.css("width", "");
 				
 					if(transparent_header == "yes" ){
 						header.addClass('she-header-transparent-yes');

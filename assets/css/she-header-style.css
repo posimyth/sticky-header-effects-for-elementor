@@ -12,7 +12,7 @@ Sticky Header Effects Style
   transition: all 0.4s ease-in-out, height 0.4s ease-in-out,
     background-color 0.4s ease-in-out, border-bottom-width 0.4s ease-in-out,
     border-bottom-color 0.4s ease-in-out, margin 0s !important;
-  width: 100% !important;
+  /* width: 100% !important; */
   max-width: 100%;
   z-index: 9999;
 }
@@ -21,13 +21,13 @@ Sticky Header Effects Style
 .she-header {
   margin-bottom: 0;
   margin-top: 0;
-  padding-bottom: 0;
-  padding-top: 0;
+  /* padding-bottom: 0;
+  padding-top: 0; */
 }
 
 .she-header:not(.elementor-sticky) {
   position: fixed !important;
-  top: 0 !important;
+  top: 0;
 }
 
 /* BLURRY HEADER */
@@ -98,7 +98,7 @@ Sticky Header Effects Style
 /* ADMIN BAR OFFSET */
 @media screen and (min-width: 783px) {
   .admin-bar .she-header:not(.elementor-sticky) {
-    top: 32px !important;
+    top: 32px;
   }
 }
 
