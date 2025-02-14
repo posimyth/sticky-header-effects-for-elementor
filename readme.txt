@@ -447,8 +447,3 @@ Bug fixes
 This version adds "Sticky Header" and "Bottom Border" options.
 The sticky feature will bring the section down and overlay it on top of the page. This eliminates the need for negative margins which causes page scrolling problems.
 The bottom border feature adds bottom border width and color options when user scrolls.
-
-== Donate ==
-Enjoy using *Sticky Header Effects*? Please consider making a **[donation](https://www.paypal.me/StickyHeaderEffects)**
-Every donation helps the continued development, maintenance, and support for this plugin.
-**Thank you very much for your support!**
