@@ -163,7 +163,7 @@ class Module extends Module_Base {
 			)
 		);
 		$element->add_responsive_control(
-			'she_offset',
+			'she_offset_top',
 			[
 				'label' => esc_html__( 'Offset', 'she-header' ),
 				'type' => Controls_Manager::SLIDER,
@@ -182,7 +182,7 @@ class Module extends Module_Base {
 				'frontend_available' => true,
 				'default' => [
 					'unit' => 'px',
-					'size' => 32,
+					'size' => 0,
 				],
 				'condition' => [
 					'transparent!' => '',

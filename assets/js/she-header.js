@@ -43,7 +43,7 @@ function sheHeader() {
 	if ($j.inArray(enabled, responsive_settings)!='-1') {
 								
 	var scroll_distance = data_settings["scroll_distance"];
-	var she_offset = data_settings["she_offset"];
+	var she_offset = data_settings["she_offset_top"];
 	var she_padding = data_settings["she_padding"];
 	var she_width = data_settings["she_width"];
 	var transparent_header = data_settings["transparent_header_show"];
@@ -70,15 +70,15 @@ function sheHeader() {
     
     // offset
     if (width >= 1025) {
-        she_offset = data_settings["she_offset"];
+        she_offset = data_settings["she_offset_top"];
         she_padding = data_settings["she_padding"];
         she_width = data_settings["she_width"];
     }else if (width > 767 && width < 1025) {
-        she_offset = data_settings["she_offset_tablet"];
+        she_offset = data_settings["she_offset_top_tablet"];
         she_padding = data_settings["she_padding_tablet"];
         she_width = data_settings["she_width_tablet"];
     }else if (width <= 767) {
-        she_offset = data_settings["she_offset_mobile"];
+        she_offset = data_settings["she_offset_top_mobile"];
         she_padding = data_settings["she_padding_mobile"];
         she_width = data_settings["she_width_mobile"];
     }
@@ -289,7 +289,13 @@ function sheHeader() {
 				header.removeClass('header').addClass("she-header");
 				header.css("background-color", background);
 				header.css("border-bottom", bottom_border);
-                header.css("top", she_offset.size + she_offset.unit);
+
+                if ( document.body.classList.contains('admin-bar') ) {
+                    header.css("top", (32 + she_offset.size) + she_offset.unit);
+                } else {
+                    header.css("top", she_offset.size + she_offset.unit);
+                }
+
                 header.css("padding-top", she_padding.top + she_padding.unit);
                 header.css("padding-bottom", she_padding.bottom + she_padding.unit);
                 header.css("padding-left", she_padding.left + she_padding.unit);
@@ -308,14 +314,14 @@ function sheHeader() {
 				}
 				
 				// ---------------------------------- SHRINK LOGO
-                        if (shrink_logo == "yes") {
-                            header_logo.css({
-                                width: width_l,
-                                transition: "all 0.4s ease-in-out",
-                                "-webkit-transition": "all 0.4s ease-in-out",
-                                "-moz-transition": "all 0.4s ease-in-out",
-                            });
-                        }
+                    if (shrink_logo == "yes") {
+                        header_logo.css({
+                            width: width_l,
+                            transition: "all 0.4s ease-in-out",
+                            "-webkit-transition": "all 0.4s ease-in-out",
+                            "-moz-transition": "all 0.4s ease-in-out",
+                        });
+                    }
 										
 				} else {
 					header.removeClass("she-header").addClass('header');
