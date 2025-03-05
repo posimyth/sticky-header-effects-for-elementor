@@ -189,33 +189,33 @@ class Module extends Module_Base {
 				],
 			]
 		);
-		// $element->add_responsive_control(
-		// 	'she_width',
-		// 	[
-		// 		'label' => esc_html__( 'Width', 'she-header' ),
-		// 		'type' => Controls_Manager::SLIDER,
-		// 		'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
-		// 		'range' => [
-		// 			'px' => [
-		// 				'min' => 0,
-		// 				'max' => 500,
-		// 				'step' => 5,
-		// 			],
-		// 			'%' => [
-		// 				'min' => 0,
-		// 				'max' => 100,
-		// 			],
-		// 		],
-		// 		'frontend_available' => true,
-		// 		'default' => [
-		// 			'unit' => '%',
-		// 			'size' => 100,
-		// 		],
-		// 		'condition' => [
-		// 			'transparent!' => '',
-		// 		],
-		// 	]
-		// );
+		$element->add_responsive_control(
+			'she_width',
+			[
+				'label' => esc_html__( 'Width', 'she-header' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 500,
+						'step' => 5,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'frontend_available' => true,
+				'default' => [
+					'unit' => '%',
+					'size' => 100,
+				],
+				'condition' => [
+					'transparent!' => '',
+				],
+			]
+		);
 		$element->add_responsive_control(
 			'she_padding',
 			[

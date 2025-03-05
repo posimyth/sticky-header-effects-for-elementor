@@ -6,7 +6,7 @@ Tags: Elementor, Elementor Page Builder, Add-ons, Header, Sticky Header
 Requires at least: 6.3
 Tested up to: 6.7
 Requires PHP: 7.0
-Stable tag: 1.7.7
+Stable tag: 1.7.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,6 +88,10 @@ Sticky Header Options for Elementor is extremely light-weight. You also have the
 3. Current effects settings.
 
 == Changelog ==
+
+= 1.7.8 =
+- Fixed: Offset issues on the frontend
+- Fixed: Minor Bug Fixes & Performance Improvements
 
 = 1.7.7 =
 - Fixed: Minor Bug Fixes & Performance Improvements
