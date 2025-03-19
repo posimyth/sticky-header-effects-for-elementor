@@ -290,10 +290,12 @@ function sheHeader() {
 				header.css("background-color", background);
 				header.css("border-bottom", bottom_border);
 
-                if ( document.body.classList.contains('admin-bar') ) {
-                    header.css("top", (32 + she_offset.size) + she_offset.unit);
-                } else {
-                    header.css("top", she_offset.size + she_offset.unit);
+                header.css("top", she_offset.size + she_offset.unit);
+
+                if (width >= 768) {
+                    if ( document.body.classList.contains('admin-bar') ) {
+                        header.css("top", (32 + she_offset.size) + she_offset.unit);
+                    }
                 }
 
                 header.css("padding-top", she_padding.top + she_padding.unit);
