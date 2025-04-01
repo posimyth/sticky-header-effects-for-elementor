@@ -75,7 +75,7 @@
                 align-items: center;
                 justify-content: space-between;
                 font-family: $she_font_family;
-                font-size: 16px;
+                font-size: 14px;
                 line-height: 24px;
                 font-weight: 500;
                 color: $she_black;
@@ -155,7 +155,7 @@
             }
         }
 
-        // .tpae_extra_options_navlink_cover {
+        // .she_extra_options_navlink_cover {
         //     display: flex;
         //     flex-direction: column;
         //     width: 100%;
@@ -175,7 +175,7 @@
         //     }
         // }
 
-        .tpae_ext_opt_in_tabs {
+        .she_ext_opt_in_tabs {
             list-style: none;
             margin: 10px 0 0 19px;
             border-left: 1px solid #dcdcdc;
@@ -184,7 +184,7 @@
                 padding: 15px;
             }
 
-            .tpae_nav_dropdown_links {
+            .she_nav_dropdown_links {
                 margin: 0 0 10px 12px;
 
                 .she_navlink {
@@ -269,9 +269,13 @@
         transform: scaleX(1)
     }
 
-    .she_footer_img img {
+    .she_footer_img {
+        display: flex;
         width: 100%;
-        height: auto;
+        height: 20vh;
+        position: relative;
+        background-size: cover;
+        background-image: url(../../../assets/images/banner/footer_wdk.png);
     }
 }
 
