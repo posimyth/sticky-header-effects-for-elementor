@@ -44,18 +44,18 @@ class Module extends Module_Base {
 			]
 		);
 
-		$element->add_control(
-			'donate_notice',
-			[
-				'type' => Controls_Manager::ALERT,
-				'alert_type' => 'alert',
-				'heading' => esc_html__( 'Donations', 'she-header' ),
-				'content' => esc_html__( 'If you have enjoyed using the plugin please consider ' , 'she-header' ) . ' <br><a href="https://www.paypal.me/StickyHeaderEffects">' . esc_html__( 'DONATING HERE', 'she-header' ) . '</a>' . ' <br><br>' . esc_html__( 'Instead of realeasing a paid Pro verion I will be adding a few Pro features to this free version. However, I will only be providing minimal support from now on.', 'she-header' ) ,
-				'condition' => [
-					'transparent!' => '',
-				],
-			]
-		);
+		// $element->add_control(
+		// 	'donate_notice',
+		// 	[
+		// 		'type' => Controls_Manager::ALERT,
+		// 		'alert_type' => 'alert',
+		// 		'heading' => esc_html__( 'Donations', 'she-header' ),
+		// 		'content' => esc_html__( 'If you have enjoyed using the plugin please consider ' , 'she-header' ) . ' <br><a href="https://www.paypal.me/StickyHeaderEffects">' . esc_html__( 'DONATING HERE', 'she-header' ) . '</a>' . ' <br><br>' . esc_html__( 'Instead of realeasing a paid Pro verion I will be adding a few Pro features to this free version. However, I will only be providing minimal support from now on.', 'she-header' ) ,
+		// 		'condition' => [
+		// 			'transparent!' => '',
+		// 		],
+		// 	]
+		// );
 		
 		$element->add_control(
 			'upgrade_notice',
@@ -78,7 +78,6 @@ class Module extends Module_Base {
 				'type' => Controls_Manager::RAW_HTML,
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 				'condition' => [
-
 					'transparent!' => '',
 				],
 			]
@@ -101,14 +100,11 @@ class Module extends Module_Base {
 					'transparent!' => ''
 				],
 				'render_type' => 'none',
-				'description' => __( 'This will completely enable/disable settings below.<br>
-				*MAY NOT AFFECT SOME SETTINGS WITH RESPONSIVE CONTROLS', 'she-header' ),
 				'frontend_available' => true,
 			]
 		);
 
-
-$element->add_responsive_control(
+		$element->add_responsive_control(
 			'scroll_distance',
 			[
 				'label' => __( 'Scroll Distance (px)', 'she-header' ),
@@ -142,6 +138,116 @@ $element->add_responsive_control(
 					],
 			]
 		);
+
+		$element->add_control(
+			'popover-toggle',
+			[
+				'label' => esc_html__( 'After Sticky', 'she-header' ),
+				'type' => Controls_Manager::POPOVER_TOGGLE,
+				'label_off' => esc_html__( 'Default', 'she-header' ),
+				'label_on' => esc_html__( 'Custom', 'she-header' ),
+				'return_value' => 'yes',
+				'condition' => [
+					'transparent!' => '',
+				],
+			]
+		);
+
+		$element->start_popover();
+		$element->add_control(
+			'she_sticky_header',
+			array(
+				'label'     => __( 'After Sticky', 'she-header' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'after',
+			)
+		);
+		$element->add_responsive_control(
+			'she_offset_top',
+			[
+				'label' => esc_html__( 'Offset', 'she-header' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 500,
+						'step' => 5,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'frontend_available' => true,
+				'default' => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+				'condition' => [
+					'transparent!' => '',
+				],
+			]
+		);
+		$element->add_responsive_control(
+			'she_width',
+			[
+				'label' => esc_html__( 'Width', 'she-header' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 500,
+						'step' => 5,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'frontend_available' => true,
+				'default' => [
+					'unit' => '%',
+					'size' => 100,
+				],
+				'condition' => [
+					'transparent!' => '',
+				],
+			]
+		);
+		$element->add_responsive_control(
+			'she_padding',
+			[
+				'label' => esc_html__( 'Padding', 'she-header' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default' => [
+					'top' => 0,
+					'right' => '',
+					'bottom' => 0,
+					'left' => '',
+					'unit' => 'px',
+					'isLinked' => true,
+				],
+				'frontend_available' => true,
+				'condition' => [
+					'transparent!' => '',
+				],
+			]
+		);
+		$element->add_control(
+			'after_sticky_header_notice',
+			[
+				'raw' => __( 'Adjust properties once Status will be changed to Sticky.', 'she-header' ),
+				'type' => Controls_Manager::RAW_HTML,
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
+				'condition' => [
+					'transparent!' => '',
+				],
+			]
+		);
+		$element->end_popover();
 
 		$element->add_control(
 			'transparent_header_show',
@@ -1067,11 +1173,11 @@ $element->add_control(
 				'transparent!' => '',
 			],
 			'selectors' => [
-				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-theme-site-logo:not(.elementor-widget-n-menu .elementor-widget-theme-site-logo) .elementor-widget-container, 
-				{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-image:not(.elementor-widget-n-menu .elementor-widget-image) .elementor-widget-container, 
-				{{WRAPPER}}.she-header-yes:not(.she-header) .logo .elementor-widget-container' => '-webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);',
-				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-n-menu .elementor-widget-image .elementor-widget-container, 
-				{{WRAPPER}}.she-header-yes:not(.she-header) .not-logo .elementor-widget-container' => '-webkit-filter: none; filter: none;'
+				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-theme-site-logo:not(.elementor-widget-n-menu .elementor-widget-theme-site-logo), 
+				{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-image:not(.elementor-widget-n-menu .elementor-widget-image), 
+				{{WRAPPER}}.she-header-yes:not(.she-header) .logo' => '-webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);',
+				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-n-menu .elementor-widget-image, 
+				{{WRAPPER}}.she-header-yes:not(.she-header) .not-logo' => '-webkit-filter: none; filter: none;'
 			],
 		]
 	);
@@ -1095,11 +1201,11 @@ $element->add_control(
 				'transparent!' => '',
 			],
 			'selectors' => [
-				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-theme-site-logo .elementor-widget-container,
-				{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-image .elementor-widget-container,
-				{{WRAPPER}}.she-header-yes:not(.she-header) .logo .elementor-widget-container' => '-webkit-filter: brightness(0) invert(0); filter: brightness(0) invert(0);',
-				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-n-menu .elementor-widget-image .elementor-widget-container, 
-				{{WRAPPER}}.she-header-yes:not(.she-header) .not-logo .elementor-widget-container' => '-webkit-filter: none; filter: none;'
+				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-theme-site-logo,
+				{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-image,
+				{{WRAPPER}}.she-header-yes:not(.she-header) .logo' => '-webkit-filter: brightness(0) invert(0); filter: brightness(0) invert(0);',
+				'{{WRAPPER}}.she-header-yes:not(.she-header) .elementor-widget-n-menu .elementor-widget-image, 
+				{{WRAPPER}}.she-header-yes:not(.she-header) .not-logo' => '-webkit-filter: none; filter: none;'
 			],
 		]
 	);
@@ -1138,11 +1244,11 @@ $element->add_control(
 				'transparent!' => '',
 			],
 			'selectors' => [
-				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo .elementor-widget-container,
-				{{WRAPPER}}.she-header .elementor-widget-image .elementor-widget-container,
-				{{WRAPPER}}.she-header .logo .elementor-widget-container' => '-webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);',
-				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image .elementor-widget-container, 
-				{{WRAPPER}}.she-header .not-logo .elementor-widget-container' => '-webkit-filter: none; filter: none;'
+				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo,
+				{{WRAPPER}}.she-header .elementor-widget-image,
+				{{WRAPPER}}.she-header .logo' => '-webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);',
+				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image, 
+				{{WRAPPER}}.she-header .not-logo' => '-webkit-filter: none; filter: none;'
 			],
 		]
 	);
@@ -1166,11 +1272,11 @@ $element->add_control(
 				'transparent!' => '',
 			],
 			'selectors' => [
-				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo .elementor-widget-container,
-				{{WRAPPER}}.she-header .elementor-widget-image .elementor-widget-container,
-				{{WRAPPER}}.she-header .logo .elementor-widget-container' => '-webkit-filter: brightness(0) invert(0); filter: brightness(0) invert(0);',
-				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image .elementor-widget-container, 
-				{{WRAPPER}}.she-header .not-logo .elementor-widget-container' => '-webkit-filter: none; filter: none;'
+				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo,
+				{{WRAPPER}}.she-header .elementor-widget-image,
+				{{WRAPPER}}.she-header .logo' => '-webkit-filter: brightness(0) invert(0); filter: brightness(0) invert(0);',
+				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image, 
+				{{WRAPPER}}.she-header .not-logo' => '-webkit-filter: none; filter: none;'
 			],
 		]
 	);
@@ -1194,11 +1300,11 @@ $element->add_control(
 				'transparent!' => '',
 			],
 			'selectors' => [
-				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo .elementor-widget-container,
-				{{WRAPPER}}.she-header .elementor-widget-image .elementor-widget-container,
-				{{WRAPPER}}.she-header .logo .elementor-widget-container' => '-webkit-filter: brightness(1) invert(0); filter: brightness(1) invert(0);',
-				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image .elementor-widget-container, 
-				{{WRAPPER}}.she-header .not-logo .elementor-widget-container' => '-webkit-filter: none; filter: none;'
+				'{{WRAPPER}}.she-header .elementor-widget-theme-site-logo,
+				{{WRAPPER}}.she-header .elementor-widget-image,
+				{{WRAPPER}}.she-header .logo' => '-webkit-filter: brightness(1) invert(0); filter: brightness(1) invert(0);',
+				'{{WRAPPER}}.she-header .elementor-widget-n-menu .elementor-widget-image, 
+				{{WRAPPER}}.she-header .not-logo' => '-webkit-filter: none; filter: none;'
 			],
 		]
 	);
