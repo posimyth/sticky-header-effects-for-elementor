@@ -510,7 +510,6 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 								'parent'          => false,
 								'versions'        => false,
 								'screenshot_url'  => true,
-								'active_installs' => false,
 							),
 						)
 					),

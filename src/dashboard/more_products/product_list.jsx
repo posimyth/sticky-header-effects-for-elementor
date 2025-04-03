@@ -23,12 +23,12 @@ const productsData = {
         Product_Url: 'https://nexterwp.com/nexter-extension/',
         id: 'nexter-extension'
     },
-    nexter_theme: {
-        logo: 'nexter-theme-product-logo.png',
-        product_txt: 'Nexter WP Theme',
-        Product_Url: 'https://nexterwp.com/nexter-theme/',
-        id:'nexter',
-    },
+    // nexter_theme: {
+    //     logo: 'nexter-theme-product-logo.png',
+    //     product_txt: 'Nexter WP Theme',
+    //     Product_Url: 'https://nexterwp.com/nexter-theme/',
+    //     id:'nexter',
+    // },
     the_plus_blocks: {
         logo: 'nexter-blocks.svg',
         product_txt: 'Nexter Blocks',

@@ -485,7 +485,7 @@ const DashboardInnerMain = (props) => {
                         <h4 className='she_qik_info_crd_title'>{__('Rate Sticky Header Effects', 'she-header')}</h4>
                         <div className='she_rating_box'>
                             {ratingSvg.map((obj, index) => (
-                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/reviews/?filter=5#new-post&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://go.posimyth.com/review-tpae?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='tpae-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
+                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/reviews/?filter=5#new-post&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://go.posimyth.com/review-tpae?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='tpae-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
                             ))}
                         </div>
                     </div>
