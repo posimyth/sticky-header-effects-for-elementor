@@ -62,8 +62,13 @@ if ( ! class_exists( 'She_Loader' ) ) {
 		 * @since 1.7.3
 		 */
 		public function she_load() {
-			require SHE_HEADER_PATH . 'includes/dashboard/class-she-dashboard-ajax.php';
-			require SHE_HEADER_PATH . 'includes/dashboard/class-she-wp-menu.php';
+
+			if( is_admin() && current_user_can( 'manage_options' ) ){
+				require SHE_HEADER_PATH . 'includes/dashboard/class-she-dashboard-ajax.php';
+				require SHE_HEADER_PATH . 'includes/dashboard/class-she-wp-menu.php';
+			}
+
+			require SHE_HEADER_PATH . 'includes/preset/class-she-preset.php';
 		}
 	}
 

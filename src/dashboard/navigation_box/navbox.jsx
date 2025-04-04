@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -8,7 +9,10 @@ import { __ } from '@wordpress/i18n';
 const NavBox = (props) => {
 
     var plugin_url = shed_data.shed_url;
-    var tpae_version = shed_data.shed_wp_version;
+    var she_version = shed_data.shed_wp_version;
+    var nonce = shed_data.nonce;
+    var ajax_url = shed_data.ajax_url;
+
 
     const free_pro = shed_data?.tpae_pro == '1' ? true : false;
 
@@ -16,16 +20,30 @@ const NavBox = (props) => {
     const fullUrl = window.location.href;
     const baseUrl = fullUrl.split('/admin.php')[0];
     const [menuToggel, setmenuToggel] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const [buttonText, setButtonText] = useState('Enable Templates');
     const [pluginActive, setPluginActive] = useState(false);
     var plugin_status = props.plugin_check[1];
 
+    const toggleDropdown = (e) => {
+
+        const parentElement = e.target.closest('.she_extra_options_navlink_cover');
+        const rotateIcon = parentElement.querySelector('.tpae_navlink_icon');
+
+        if (!isDropdownOpen) {
+            rotateIcon.style.transform = 'rotate(90deg)';
+        } else {
+            rotateIcon.style.transform = 'rotate(0deg)';
+        }
+
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
     const handleClick = async () => {
 
         setButtonText('Installing WDesignKit');
 
-        setLoaderVisible(true);
 
         let form = new FormData();
         form.append('action', 'she_dashboard_ajax_call');
@@ -40,10 +58,8 @@ const NavBox = (props) => {
         if (data.success) {
             setButtonText('Installed WDesignKit');
             setPluginActive(true);
-            setLoaderVisible(true);
         } else {
             setButtonText('Installation Failed');
-            setLoaderVisible(false);
         }
     };
 
@@ -81,18 +97,23 @@ const NavBox = (props) => {
                         <li><Link className={`${location.pathname == '/elementor_templates' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/elementor_templates" onClick={() => { setmenuToggel(false) }}>{__('Header Templates', 'she-header')}</Link></li>
                         <li className='she_navlink_cover'>
                             <Link className={`${location.pathname == '/theme_builder' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/theme_builder" onClick={() => { setmenuToggel(false) }}>{__('Elementor Theme Builder ', 'she-header')}
-                            <div className='she-nav-tag'>
-                                <span className='she-nav-tag-txt'>FREE</span>
-                            </div>
+                                <div className='she-nav-tag'>
+                                    <span className='she-nav-tag-txt'>FREE</span>
+                                </div>
                             </Link>
                         </li>
                         <li><Link className={`${location.pathname == '/extension' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/extension" onClick={() => { setmenuToggel(false) }}>{__('Extensions', 'she-header')}</Link></li>
-                        <li><Link className={`${location.pathname == '/more_products' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/more_products" onClick={() => { setmenuToggel(false) }}>{__('More Products', 'she-header')}</Link></li>
-                        <li><Link className={`${location.pathname == '/rollback_plugin' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/rollback_plugin" onClick={() => { setmenuToggel(false) }}>{__('Roll Back', 'she-header')}</Link></li>
-
+                        <div className='she_extra_options_navlink_cover'>
+                            <li className={`${location.pathname == '/extra_options' ? 'she_navlink she_active_tab' : 'she_navlink'}`} onClick={(e) => { toggleDropdown(e) }} >{__('Extra Options', 'she-header')}<span className='tpae_navlink_icon'><img src={plugin_url + 'assets/svg/chevron_right_icon.svg'} draggable={false} /></span></li>
+                            {isDropdownOpen && (
+                                <ul className='she_ext_opt_in_tabs'>
+                                    <li className='she_nav_dropdown_links'><Link className={`${location.pathname == '/more_products' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/more_products" onClick={() => { setmenuToggel(false) }}>{__('More Products', 'she-header')}</Link></li>
+                                    <li className='she_nav_dropdown_links'><Link className={`${location.pathname == '/rollback_plugin' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/rollback_plugin" onClick={() => { setmenuToggel(false) }}>{__('Roll Back', 'she-header')}</Link></li>                                </ul>
+                            )}
+                        </div>
                     </ul>
                     <div className='she_ver_nd_sys_info'>
-                        <p className='she_version'>{__('Version', 'she-header')} {tpae_version}</p> |
+                        <p className='she_version'>{__('Version', 'she-header')} {she_version}</p> |
                         <a href={baseUrl + '/site-health.php'} target="_blank" rel="noopener noreferrer" className='tpae_system_info'>{__('System Info', 'she-header')}</a>
                     </div>
                 </div>
@@ -110,7 +131,7 @@ const NavBox = (props) => {
                     <a className='she_dwd_link' href="#">Learn More</a>
                 </div>
                 <div className='she_footer_img'>
-                    <img src={plugin_url + 'assets/images/banner/footer_wdk.png'} alt="" />
+                    {/* <img src={plugin_url + 'assets/images/banner/footer_wdk.png'} alt="" /> */}
                 </div>
             </div>
         </>

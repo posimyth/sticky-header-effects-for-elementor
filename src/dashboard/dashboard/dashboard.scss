@@ -808,7 +808,7 @@
     .theplus_icon_cover,
     .she-slideshow-skeleton,
     .tpae_whats_new_txt,
-    .shw_arrow {
+    .she_numeric_card {
         background: $she_skeleton_bg;
         animation: $she_animation;
         color: transparent;
@@ -842,12 +842,16 @@
     path {
         fill: none;
     }
+
+    .shw_arrow {
+       z-index: -99;
+    }
 }
 
 
 @media (max-width: 1440px) {
     .she_dash_inner_main .she_wlcm_sec_cover .she_subscribe_form_h {
-        font-size: 18px;
+        font-size: 16px;
         padding-bottom: 14px;
         padding-right: 0;
     }
