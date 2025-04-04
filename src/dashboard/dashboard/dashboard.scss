@@ -18,7 +18,7 @@
             position: relative;
         }
 
-        .tpae_whats_new {
+        .she_whats_new {
             padding: 12px 25px;
             text-align: center;
             border: 1px solid $she-ghost-btn_border;
@@ -32,7 +32,7 @@
             &:hover {
                 background-color: $she_dark_pink;
 
-                .tpae_whats_new_txt {
+                .she_whats_new_txt {
                     color: $she_white;
                 }
             }
@@ -42,7 +42,7 @@
             }
         }
 
-        .tpae_whats_new_count {
+        .she_whats_new_count {
             background-color: $she_red;
             font-size: 10px;
             border-radius: 50px;
@@ -57,7 +57,7 @@
             color: $she_white;
         }
 
-        .tpae_whats_new_txt {
+        .she_whats_new_txt {
             font-family: $she_font_family;
             font-size: 14px;
             line-height: 16px;
@@ -88,22 +88,12 @@
             border-radius: 50%;
         }
 
-        .tpae-pro-check {
+        .she-pro-check {
             display: flex;
             height: max-content;
             width: max-content;
             position: absolute;
             top: 1px;
-        }
-
-        .tpae_user_name {
-            font-family: $she_font_family;
-            font-size: 16px;
-            color: $she_black;
-            line-height: 26px;
-            font-weight: 500;
-            margin: 0;
-            line-height: 26px;
         }
 
         .she_slide_form_sec {
@@ -742,7 +732,7 @@
         }
     }
 
-    .tpae_wht_ghst_cmn_btn {
+    .she_wht_ghst_cmn_btn {
         position: relative;
         margin: 0 auto;
         margin-bottom: 30px;
@@ -807,7 +797,7 @@
     .she_rating_box,
     .theplus_icon_cover,
     .she-slideshow-skeleton,
-    .tpae_whats_new_txt,
+    .she_whats_new_txt,
     .she_numeric_card {
         background: $she_skeleton_bg;
         animation: $she_animation;
@@ -833,7 +823,7 @@
     }
 
 
-    .tpae_whats_new,
+    .she_whats_new,
     .she_subscribe_form_h {
         pointer-events: none;
         color: transparent;
@@ -916,16 +906,12 @@
         .she_wlcm_sec_cover {
             padding: 21px;
 
-            .tpae_user_name {
-                font-size: 21px;
-            }
-
             .she_user_img_cover {
                 width: 60px;
                 height: 60px;
             }
 
-            .tpae_whats_new {
+            .she_whats_new {
                 font-size: 13px;
                 padding: 12px 16px;
             }
@@ -953,10 +939,6 @@
                 font-size: 16px;
             }
 
-            .tpae_wdk_left_content {
-                padding: 25px;
-            }
-
             .she_sub_form_cover {
                 width: 100%;
                 padding: 25px;
@@ -972,8 +954,8 @@
             width: 48%;
         }
 
-        .theplus_elementor_widgets_banner_left_content {
-            .theplus_elementor_widgets_banner_top_sm_strip {
+        .she_elementor_widgets_banner_left_content {
+            .she_elementor_widgets_banner_top_sm_strip {
                 margin-bottom: 22x;
             }
 
@@ -997,16 +979,6 @@
     .she_dashboard_main_cover {
         .she_main_cover {
 
-            .she_wlcm_sec_cover {
-                .tpae_wdk_left_content {
-                    padding: 21px;
-                }
-
-                .tpae_user_name {
-                    font-size: 18px;
-                }
-            }
-
             .she_sub_form_cover {
                 padding: 21px;
             }
@@ -1022,9 +994,6 @@
         }
     }
 
-    .tpae_catwise_wid_manage_cov {
-        padding-bottom: 26px;
-    }
 }
 
 @media (max-width:720px) {

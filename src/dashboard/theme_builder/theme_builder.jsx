@@ -11,6 +11,8 @@ const ThemeBuilder = (props) => {
     var nonce = shed_data.nonce;
     var ajax_url = shed_data.ajax_url;
 
+    var image_url = 'https://wdesignkit.com/images/plugins/sticky-header-effects-for-elementor/';
+
     const Navigate = useNavigate();
     const [nexter_btn, setNexter_btn] = useState('Enable Theme Builder');
 
@@ -37,55 +39,55 @@ const ThemeBuilder = (props) => {
             'title': __('Advanced Header Builder', 'she-header'),
             'description': __('Get rid of the limited Header customizer. Use Elementor Widgets or Blocks to create custom. menu.', 'she-header'),
             'image': plugin_url + 'assets/images/theme_bulider/advanced-header-builder.png',
-            'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/advanced-header-Builder.png',
+            'q_image': image_url + 'advanced-header-builder.png',
         },
         {
             'title': __('Advanced Footer Builder', 'she-header'),
             'description': __('Your custom Footer with no limit of layout. Create any footer layout you want with our Footer Builder.', 'she-header'),
             'image': plugin_url + 'assets/images/theme_bulider/advanced-footer-builder.png',
-            'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/advanced-footer-builder.png',
+            'q_image': image_url + 'advanced-footer-builder.png',
         },
         {
             'title': __('Breadcrumbs Bar', 'she-header'),
             'description': __('Help users navigate your website by adding breadcrumb bar that shows the path they\'ve taken.', 'she-header'),
             'image': plugin_url + 'assets/images/theme_bulider/breadcrumbs-bar.png',
-            'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/breadcrumbs-bar.png',
+            'q_image': image_url + 'breadcrumbs-bar.png',
         },
         {
             'title': __('404 Page', 'she-header'),
             'description': __('Turn a "Page Not Found" into an opportunity by customizing your 404 error page with your branding and helpful content.', 'she-header'),
             'image': plugin_url + 'assets/images/theme_bulider/404-page.png',
-            'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/404-page.png',
+            'q_image': image_url + '404-page.png',
         },
         {
             'title': __('Single Pages', 'she-header'),
             'description': __('Create custom Single pages for your CPT, Blog Posts, or WooCommerce Product Pages.', 'she-header'),
             'image': plugin_url + 'assets/images/theme_bulider/single-pages.png',
-            'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/single-pages.png',
+            'q_image': image_url + 'single-pages.png',
         },
         {
             'title': __('Archive Pages', 'she-header'),
             'description': __('Create custom listing pages for posts, CPT or WooCommerce Products.', 'she-header'),
             'image': plugin_url + 'assets/images/theme_bulider/archive-pages.png',
-            'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/archive-pages.png',
+            'q_image': image_url + 'archive-pages.png',
         },
         {
             'title': __('Code Snippets', 'she-header'),
             'description': __('Get rid of the limited Header customizer. Use WordPress Blocks or Blocks to create custom menu.', 'she-header'),
             'image': plugin_url + 'assets/images/theme_bulider/code-snippets.png',
-            'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/code-snippets.png',
+            'q_image': image_url + 'code-snippets.png',
         },
         {
             'title': __('Display Rules for Theme Builder Sections', 'she-header'),
             'description': __('Control where and how your theme builder sections appear on your site.', 'she-header'),
             'image': plugin_url + 'assets/images/theme_bulider/display-rules-sections.png',
-            'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/display-rules-sections.png',
+            'q_image': image_url + 'display-rules-sections.png',
         },
         {
             'title': __('Action & Filter Hooks', 'she-header'),
             'description': __('Fine-tune your website\'s behavior and appearance by utilizing action and filter hooks for developers to extend functionalities.', 'she-header'),
             'image': plugin_url + 'assets/images/theme_bulider/action-filter-hooks.png',
-            'q_image': 'https://wdesignkit.com/images/front/theplus-plugin/more-products/action-filter-hooks.png',
+            'q_image':image_url + 'action-filter-hooks.png',
         }
     ];
 
@@ -134,7 +136,6 @@ const ThemeBuilder = (props) => {
 }
 
 const get_redux = state => ({
-    tpae_white_lable_data: state.White_label.white_lable_rx,
     plugin_check: state.check_plugin.plugin_status_rx,
 })
 

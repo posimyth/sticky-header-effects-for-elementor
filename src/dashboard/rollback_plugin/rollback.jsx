@@ -21,12 +21,6 @@ const RollBack = (props) => {
         get_prev_versions()
     }, [])
 
-    useEffect(() => {
-        if (props?.tpae_white_lable_data?.rollback_tab && props?.tpae_white_lable_data?.rollback_tab == 'on') {
-            Navigate('/');
-        }
-    }, [props?.tpae_white_lable_data?.rollback_tab]);
-
     const get_prev_versions = async () => {
         let form = new FormData();
         form.append('action', 'she_dashboard_ajax_call');
@@ -137,12 +131,4 @@ const RollBack = (props) => {
     )
 }
 
-const get_redux = state => ({
-    tpae_white_lable_data: state.White_label.white_lable_rx,
-})
-
-const set_redux = dispatch => ({
-    tpae_set_white_lable: data => dispatch(white_lable_a_rx(data)),
-})
-
-export default connect(get_redux, set_redux)(RollBack);
+export default (RollBack);

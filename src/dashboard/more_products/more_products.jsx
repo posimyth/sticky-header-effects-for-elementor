@@ -51,13 +51,6 @@ const MoreProducts = (props) => {
 
     }, [props?.plugin_check, props?.theme_check])
 
-
-    useEffect(() => {
-        if (props?.tpae_white_lable_data?.plugin_ads && props?.tpae_white_lable_data?.plugin_ads == 'on') {
-            Navigate('/');
-        }
-    }, [props?.tpae_white_lable_data?.plugin_ads]);
-
     const Get_install_list = async (name, slug) => {
         pluginStatus.current = Object.assign({}, pluginStatus.current, { [name]: 'loading' });
         setBtnloader(pluginStatus.current);
@@ -197,7 +190,7 @@ const MoreProducts = (props) => {
     }
 
     return (
-        <div className={`she_products_cover_main she-main-container ${props?.tpae_dashboard_data?.success ? '' : 'she-skeleton'}`}>
+        <div className={`she_products_cover_main she-main-container ${props?.she_dashboard_data?.success ? '' : 'she-skeleton'}`}>
             <div className='she-section-heading-cover'>
                 <h3 className='she-section-heading'>{__('More Products', 'she-header')}</h3>
 
@@ -274,7 +267,7 @@ const MoreProducts = (props) => {
 const get_redux = state => ({
     plugin_check: state.check_plugin.plugin_status_rx,
     theme_check: state.check_theme.theme_status_rx,
-    tpae_dashboard_data: state.Dashboard_data.db_rx,
+    she_dashboard_data: state.Dashboard_data.db_rx,
 })
 
 const set_redux = dispatch => ({

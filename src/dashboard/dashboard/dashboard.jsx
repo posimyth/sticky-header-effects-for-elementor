@@ -6,7 +6,6 @@ import { __ } from '@wordpress/i18n';
 
 const DashboardInnerMain = (props) => {
 
-
     var plugin_url = shed_data.shed_url;
     var nonce = shed_data.nonce;
     var ajax_url = shed_data.ajax_url;
@@ -108,10 +107,10 @@ const DashboardInnerMain = (props) => {
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [userImage, setUserImage] = useState('');
-    const [tpaeuser_name, setTpaeuser_name] = useState('');
-    const [tpaeuser_email, setTpaeuser_email] = useState('');
+    const [sheuser_name, setSHeuser_name] = useState('');
+    const [sheuser_email, setSHeuser_email] = useState('');
     const [subscribe_btn, setSubscribe_btn] = useState('Subscribe Now');
-    const [ErrorTooltip, setErrorTooltip] = useState({ 'tpaeName': false, 'tpaeEmail': false });
+    const [ErrorTooltip, setErrorTooltip] = useState({ 'sheName': false, 'sheEmail': false });
     const [plugin_detail, setplugin_detail] = useState(slides);
     const stopSlider = useRef('');
 
@@ -123,7 +122,7 @@ const DashboardInnerMain = (props) => {
     const [slideIndex, setSlideIndex] = useState(0);
 
     useEffect(() => {
-        const stars = document.querySelectorAll('.tpae-star path');
+        const stars = document.querySelectorAll('.she-star path');
         stars.forEach((star, index) => {
             if (selectedIndex !== null && index <= selectedIndex) {
                 star.setAttribute('fill', '#F9B744');
@@ -136,12 +135,12 @@ const DashboardInnerMain = (props) => {
     }, [hoveredIndex, selectedIndex]);
 
     useEffect(() => {
-        setUserName(props.tpae_dashboard_data?.user_name || '');
-        setUserEmail(props.tpae_dashboard_data?.user_email || '');
-        setUserImage(props.tpae_dashboard_data?.user_image || '');
-        setTpaeuser_name(props.tpae_dashboard_data?.user_name || '');
-        setTpaeuser_email(props.tpae_dashboard_data?.user_email || '');
-    }, [props.tpae_dashboard_data]);
+        setUserName(props.she_dashboard_data?.user_name || '');
+        setUserEmail(props.she_dashboard_data?.user_email || '');
+        setUserImage(props.she_dashboard_data?.user_image || '');
+        setSHeuser_name(props.she_dashboard_data?.user_name || '');
+        setSHeuser_email(props.she_dashboard_data?.user_email || '');
+    }, [props.she_dashboard_data]);
 
 
 
@@ -250,19 +249,19 @@ const DashboardInnerMain = (props) => {
 
         let OriginalOBJ = ErrorTooltip;
     
-        if (!tpaeuser_name.trim() || !tpaeuser_email.trim()) {
+        if (!sheuser_name.trim() || !sheuser_email.trim()) {
 
             var newOBJ = {
-                'tpaeName': false,
-                'tpaeEmail': false
+                'sheName': false,
+                'sheEmail': false
             };
 
-            if (!tpaeuser_name.trim()) {
-                newOBJ = Object.assign({}, newOBJ, { 'tpaeName': true })
+            if (!sheuser_name.trim()) {
+                newOBJ = Object.assign({}, newOBJ, { 'sheName': true })
             }
 
-            if (!tpaeuser_email.trim()) {
-                newOBJ = Object.assign({}, newOBJ, { 'tpaeEmail': true })
+            if (!sheuser_email.trim()) {
+                newOBJ = Object.assign({}, newOBJ, { 'sheEmail': true })
             }
 
             setErrorTooltip(newOBJ);
@@ -273,10 +272,10 @@ const DashboardInnerMain = (props) => {
 
             return false;
 
-        } else if (!(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(tpaeuser_email))) {
+        } else if (!(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(sheuser_email))) {
             let newOBJ = {
-                'tpaeName': false,
-                'tpaeEmail': true
+                'sheName': false,
+                'sheEmail': true
             };
 
             setErrorTooltip(newOBJ);
@@ -291,13 +290,13 @@ const DashboardInnerMain = (props) => {
         let btn = e.target;
         setSubscribe_btn('. . .');
         btn.style.pointerEvents = 'none';
-        const encodedName = encodeURIComponent(tpaeuser_name);
-        const encodedEmail = encodeURIComponent(tpaeuser_email);
+        const encodedName = encodeURIComponent(sheuser_name);
+        const encodedEmail = encodeURIComponent(sheuser_email);
 
         const welcomeEmailUrl = `https://store.posimyth.com/?fluentcrm=1&route=contact&hash=30275c78-0cf5-42f1-adb0-32901bb25b90&full_name=${encodedName}&email=${encodedEmail}`;
 
-        setTpaeuser_email('');
-        setTpaeuser_name('');
+        setSHeuser_email('');
+        setSHeuser_name('');
 
         const response = await fetch(welcomeEmailUrl, {
             method: 'POST',
@@ -348,7 +347,7 @@ const DashboardInnerMain = (props) => {
     };
 
     return (
-        <div className={`she_dash_inner_main she-main-container ${props?.tpae_dashboard_data?.success ? '' : 'she-skeleton'}`}>
+        <div className={`she_dash_inner_main she-main-container ${props?.she_dashboard_data?.success ? '' : 'she-skeleton'}`}>
             <div className='she-section-heading-cover'>
                 <h3 className='she-section-heading'>{__('Dashboard', 'she-header')}</h3>
             </div>
@@ -359,18 +358,18 @@ const DashboardInnerMain = (props) => {
                         <div className='she_user_img_cover'>
                             <img className='she_user_img' src={userImage || plugin_url + 'assets/images/tp-placeholder.jpg'} draggable={false} />
                             {/* {tpae_pro == '1' &&
-                                <span className='tpae-pro-check'>
+                                <span className='she-pro-check'>
                                     <img src={plugin_url + 'assets/svg/premium_icon.svg'} draggable={false} />
                                 </span>
                             } */}
                         </div>
                         <h3 className='she_user_name'>{__('Welcome,', 'she-header')} {userName || '...'}</h3>
                     </div>
-                    <div className='tpae_whats_new' onClick={() => whats_new_btn()}>
-                        {props.tpae_dashboard_data?.whatsnew?.data?.length > 0 &&
-                            <span className='tpae_whats_new_count'>{props.tpae_dashboard_data.whatsnew.data.length}</span>
+                    <div className='she_whats_new' onClick={() => whats_new_btn()}>
+                        {props.she_dashboard_data?.whatsnew?.data?.length > 0 &&
+                            <span className='she_whats_new_count'>{props.she_dashboard_data.whatsnew.data.length}</span>
                         }
-                        <span className='tpae_whats_new_txt'>{__("What's New?")}</span>
+                        <span className='she_whats_new_txt'>{__("What's New?")}</span>
                     </div>
                 </div>
 
@@ -387,7 +386,7 @@ const DashboardInnerMain = (props) => {
                             </div>
                         </div>
                         <div className='she_product_slider'>
-                            {props?.tpae_dashboard_data?.success ?
+                            {props?.she_dashboard_data?.success ?
                                 <div className="slideshow-container">
                                     {plugin_detail.map((slide, index) => (
                                         <div className={`she_main_slider slide_animation ${index === slideIndex ? 'active' : ''}`} key={index} style={{ background: slide.bg_color }}>
@@ -433,11 +432,11 @@ const DashboardInnerMain = (props) => {
                             <input
                                 className='she_subscribe_input'
                                 type='text'
-                                value={tpaeuser_name !== null ? tpaeuser_name : userName}
-                                onChange={(e) => { setTpaeuser_name(e.target.value); setErrorTooltip({ 'tpaeName': false, 'tpaeEmail': false }) }}
+                                value={sheuser_name !== null ? sheuser_name : userName}
+                                onChange={(e) => { setSHeuser_name(e.target.value); setErrorTooltip({ 'sheName': false, 'sheEmail': false }) }}
                                 placeholder={__('Your Name', 'she-header')} />
                             {
-                                ErrorTooltip.tpaeName &&
+                                ErrorTooltip.sheName &&
                                 <span className='she-username-tooltip'>{__('Please enter valid Name', 'she-header')}</span>
                             }
                         </span>
@@ -445,10 +444,10 @@ const DashboardInnerMain = (props) => {
                             <input
                                 className='she_subscribe_input'
                                 type='email'
-                                value={tpaeuser_email !== null ? tpaeuser_email : userEmail}
-                                onChange={(e) => { setTpaeuser_email(e.target.value); setErrorTooltip({ 'tpaeName': false, 'tpaeEmail': false }) }}
+                                value={sheuser_email !== null ? sheuser_email : userEmail}
+                                onChange={(e) => { setSHeuser_email(e.target.value); setErrorTooltip({ 'sheName': false, 'sheEmail': false }) }}
                                 placeholder={__('Your Email', 'she-header')} />
-                            {ErrorTooltip.tpaeEmail &&
+                            {ErrorTooltip.sheEmail &&
                                 <span className='she-username-tooltip'>{__('Please enter valid email', 'she-header')}</span>
                             }
                         </span>
@@ -485,7 +484,7 @@ const DashboardInnerMain = (props) => {
                         <h4 className='she_qik_info_crd_title'>{__('Rate Sticky Header Effects', 'she-header')}</h4>
                         <div className='she_rating_box'>
                             {ratingSvg.map((obj, index) => (
-                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/reviews/?filter=5#new-post&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://go.posimyth.com/review-tpae?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='tpae-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
+                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/reviews/?filter=5#new-post&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://go.posimyth.com/review-tpae?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='she-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
                             ))}
                         </div>
                     </div>
@@ -552,7 +551,7 @@ const DashboardInnerMain = (props) => {
                         </div>
                     }
 
-                    <a href='https://roadmap.theplusaddons.com/updates/' target='_blank' rel='noopener noreferrer' className='she-ghost-btn tpae_wht_ghst_cmn_btn'>
+                    <a href='https://roadmap.theplusaddons.com/updates/' target='_blank' rel='noopener noreferrer' className='she-ghost-btn she_wht_ghst_cmn_btn'>
                         {__('Read Full Changelog')}
                     </a>
                 </div>
@@ -563,7 +562,7 @@ const DashboardInnerMain = (props) => {
 }
 
 const get_redux = state => ({
-    tpae_dashboard_data: state.Dashboard_data.db_rx,
+    she_dashboard_data: state.Dashboard_data.db_rx,
     plugin_check: state.check_plugin.plugin_status_rx,
 })
 

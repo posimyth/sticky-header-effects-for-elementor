@@ -12,7 +12,7 @@ const ElementorTemplates = (props) => {
     var ajax_url = shed_data.ajax_url;
     var wdk_api = shed_data.shed_wdkit_url;
     var api_url = wdk_api + 'api/front/getfilterbrowsetemplates';
-    var Tpae_card_bg = plugin_url + 'assets/images/theme_bulider/she-dummy-bg.png';
+    var she_card_bg = plugin_url + 'assets/images/theme_bulider/she-dummy-bg.png';
     var plugin_status = props.plugin_check[1];
 
     var api_body = {
@@ -138,7 +138,7 @@ const ElementorTemplates = (props) => {
                         return (
                             <div className='she-ele-temp-box' key={index}>
                                 <div className='she-ele-temp-cov-img-box'>
-                                    <img className='she-elementor-template-img' src={Tpae_card_bg} draggable={false} />
+                                    <img className='she-elementor-template-img' src={she_card_bg} draggable={false} />
                                     <img className='she-elementor-template-img' src={t_data.responsive_image[1].url} draggable={false} style={{ position: 'absolute' }} />
                                 </div>
                                 <div className='she-ele-temp-detail'>

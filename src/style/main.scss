@@ -26,14 +26,6 @@
   display: none !important;
 }
 
-.tpae-notice-show {
-  display: flex !important;
-}
-
-.tp-update-notice {
-  display: flex !important;
-}
-
 /** The Plus Addons Style Guide end **/
 
 .she-main-container {
@@ -198,49 +190,7 @@
   }
 }
 
-.tpae_tertiary_btn {
-  color: $she_dark_pink;
-  font-family: $she_font_family;
-  font-size: 14px;
-  line-height: 24px;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px;
-    bottom: -5px;
-    left: 0;
-    background-color: $she_dark_pink;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-
-  &:focus {
-    border: none;
-    outline: none;
-    box-shadow: none;
-  }
-
-  &:hover {
-    color: $she_dark_pink;
-
-    &::before {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-  }
-
-  &:focus {
-    box-shadow: none;
-  }
-}
-
-.theplus_elementor_widgets_banner_top_sm_strip {
+.she_elementor_widgets_banner_top_sm_strip {
   position: relative;
   display: flex;
   align-items: center;
@@ -295,73 +245,7 @@
     min-height: max-content;
     margin: 0;
   }
-
-  .tpae_card_top_detail {
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    flex-direction: column;
-    gap: 12px;
-    position: relative;
-  }
 }
-
-.tpae_field_card_cover {
-  width: 100%;
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  .tpae_inn_sec_he {
-    font-size: 14px;
-    font-weight: 500;
-    font-family: $she_font_family;
-
-    &.nxt_top_sec_title {
-      font-size: 14px;
-      line-height: 18px;
-    }
-  }
-
-  .tpae_crd_h_strip {
-    display: flex;
-    width: 100%;
-    font-family: $she_font_family;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-
-    .nxt_text_info {
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  .tpae_field_card_bottom {
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 12px;
-    position: relative;
-  }
-
-  .nxt_text_info {
-    font-family: $she_font_family;
-    font-size: 12px;
-    line-height: 22px;
-    font-weight: 400;
-    color: #727272;
-    margin: 0;
-    position: relative;
-  }
-}
-
 
 .she_field_dropdown {
   width: 100%;
@@ -591,8 +475,6 @@
     padding: 10px 20px;
   }
 
-
-  /** TPAE New Banner end **/
 }
 
 @media (max-width: 782px) {

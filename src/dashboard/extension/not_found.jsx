@@ -17,7 +17,7 @@ const NotFound = (props) => {
                     <h3 className='she-section-heading'>{__('WordPress Widgets Library from WDesignKit', 'she-header')}</h3>
                     <p className='she_card_descrip'>{__('Explore our curated selection of pre-built Widgets for Elementor from the WDesignKit Widgets Library.', 'she-header')}</p>
                     <a href='https://wdesignkit.com/widgets?builder=1' target='_blank' rel="noopener noreferrer" className='she-ghost-btn'>{__('View Widgets Library*', 'she-header')}</a>
-                    <span className='tpae_sm_txt'>{__('* WDesignKit Plugin Required', 'she-header')}</span>
+                    <span className='she_sm_txt'>{__('* WDesignKit Plugin Required', 'she-header')}</span>
                 </div>
 
                 <div className='she_nowid_info she_field_card she-section-heading-cover'>
@@ -27,7 +27,7 @@ const NotFound = (props) => {
                     {__('convert your custom code into a', 'she-header')}<br />
                     {__('Elementor Widget.', 'she-header')}</p>
                     <a href='https://wdesignkit.com/widget-builder/elementor-widget-builder' target='_blank' rel="noopener noreferrer" className='she-ghost-btn'>{__('View Widget Builder*', 'she-header')}</a>
-                    <span className='tpae_sm_txt'>{__('*WDesignKit Plugin Required', 'she-header')}</span>
+                    <span className='she_sm_txt'>{__('*WDesignKit Plugin Required', 'she-header')}</span>
                 </div>
 
                 <div className='she_nowid_info she_field_card she-section-heading-cover'>

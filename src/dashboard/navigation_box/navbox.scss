@@ -111,10 +111,6 @@
             // }
         }
 
-        .tpae_navlink_icon {
-            transition: 0.3s linear;
-        }
-
         .she_navlink_cover {
             display: flex;
             align-items: center;
@@ -130,14 +126,14 @@
         margin: 0px 15px;
 
         .she_version,
-        .tpae_system_info {
+        .she_system_info {
             text-wrap: nowrap;
             color: $she_gray_primary_normal;
             text-decoration: none;
             font-size: 12px;
         }
 
-        .tpae_system_info:focus {
+        .she_system_info:focus {
             box-shadow: unset
         }
     }
@@ -323,7 +319,7 @@
                 padding: 9px;
 
                 .she_version,
-                .tpae_system_info {
+                .she_system_info {
                     padding: 0px;
                 }
             }

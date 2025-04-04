@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import routes from '../router/routes.js';
 import NavBox from './navigation_box/navbox';
-import ElementorWidgetsBanner from './elementor_widgets_banner/elementor_banner';
 import { connect } from 'react-redux';
 import { __ } from '@wordpress/i18n';
 

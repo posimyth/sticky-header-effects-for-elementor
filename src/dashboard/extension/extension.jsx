@@ -11,11 +11,9 @@ const Extension = (props) => {
     var plugin_url = shed_data.shed_url;
     var nonce = shed_data.nonce;
     var ajax_url = shed_data.ajax_url;
-    // var pro_plugin = tpae_db_object.tpae_pro;
     var pro_plugin = '1';
     var plugin_status = props.plugin_check;
 
-    // const free_pro = tpae_db_object?.tpae_pro == '1' ? true : false;
     const free_pro = '1';
     const [EnableWidget, setEnableWidget] = useState([]);
     const [FreePro, setFreePro] = useState('all');
@@ -184,8 +182,6 @@ const Extension = (props) => {
                                             </h3>
                                             <div className='she-cat-qik-info'>
                                                 <span className='she-ttl-wid-num'>{extension_options.length} {__('Total Extensions', 'she-header')} </span>
-                                                {/* •
-                                            <span className='tpae-active-widget-numbers'>{Active_widget_count(extension_options, 'extras_elements') + __(' Active')}</span> */}
                                             </div>
                                         </div>
                                     </div>
@@ -259,7 +255,7 @@ const Extension = (props) => {
 
     return (
         <>
-            <div className={`she-widgets-inner-main she-main-container ${props?.tpae_dashboard_data?.success ? '' : 'she-skeleton'}`}>
+            <div className={`she-widgets-inner-main she-main-container ${props?.she_dashboard_data?.success ? '' : 'she-skeleton'}`}>
                 <div className='she-section-heading-cover'>
                     <h3 className='she-section-heading'>{__('Extensions', 'she-header')}</h3>
                 </div>
@@ -297,7 +293,7 @@ const Extension = (props) => {
 
 const get_redux = state => ({
     plugin_check: state.check_plugin.plugin_status_rx,
-    tpae_dashboard_data: state.Dashboard_data.db_rx,
+    she_dashboard_data: state.Dashboard_data.db_rx,
 })
 
 

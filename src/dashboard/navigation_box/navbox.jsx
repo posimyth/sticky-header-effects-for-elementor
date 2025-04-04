@@ -13,9 +13,6 @@ const NavBox = (props) => {
     var nonce = shed_data.nonce;
     var ajax_url = shed_data.ajax_url;
 
-
-    const free_pro = shed_data?.tpae_pro == '1' ? true : false;
-
     const location = useLocation();
     const fullUrl = window.location.href;
     const baseUrl = fullUrl.split('/admin.php')[0];
@@ -29,7 +26,7 @@ const NavBox = (props) => {
     const toggleDropdown = (e) => {
 
         const parentElement = e.target.closest('.she_extra_options_navlink_cover');
-        const rotateIcon = parentElement.querySelector('.tpae_navlink_icon');
+        const rotateIcon = parentElement.querySelector('.she_navlink_icon');
 
         if (!isDropdownOpen) {
             rotateIcon.style.transform = 'rotate(90deg)';
@@ -77,15 +74,7 @@ const NavBox = (props) => {
                 <div className='she_logo_strip'>
                     <img className='she_main_logo' src={plugin_url + 'assets/svg/navbox/SHE_logo.svg'} />
                     <div className='she-mobile-menu-cn'>
-                        <div className='she_hint_text'>
-                            {free_pro && (
-                                <>
-                                    <img src={plugin_url + 'assets/svg/premium_icon.svg'} draggable={false} />
-                                    {'PRO'}
-                                </>
-                            )}
-                            {!free_pro && 'FREE'}
-                        </div>
+                        <div className='she_hint_text'>FREE</div>
                         <svg className='she-menu-btn' onClick={() => { setmenuToggel(!menuToggel) }} xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                             <path d="M4 16H28M4 8H28M4 24H28" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -104,7 +93,7 @@ const NavBox = (props) => {
                         </li>
                         <li><Link className={`${location.pathname == '/extension' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/extension" onClick={() => { setmenuToggel(false) }}>{__('Extensions', 'she-header')}</Link></li>
                         <div className='she_extra_options_navlink_cover'>
-                            <li className={`${location.pathname == '/extra_options' ? 'she_navlink she_active_tab' : 'she_navlink'}`} onClick={(e) => { toggleDropdown(e) }} >{__('Extra Options', 'she-header')}<span className='tpae_navlink_icon'><img src={plugin_url + 'assets/svg/chevron_right_icon.svg'} draggable={false} /></span></li>
+                            <li className={`${location.pathname == '/extra_options' ? 'she_navlink she_active_tab' : 'she_navlink'}`} onClick={(e) => { toggleDropdown(e) }} >{__('Extra Options', 'she-header')}<span className='she_navlink_icon'><img src={plugin_url + 'assets/svg/chevron_right_icon.svg'} draggable={false} /></span></li>
                             {isDropdownOpen && (
                                 <ul className='she_ext_opt_in_tabs'>
                                     <li className='she_nav_dropdown_links'><Link className={`${location.pathname == '/more_products' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/more_products" onClick={() => { setmenuToggel(false) }}>{__('More Products', 'she-header')}</Link></li>
@@ -114,7 +103,7 @@ const NavBox = (props) => {
                     </ul>
                     <div className='she_ver_nd_sys_info'>
                         <p className='she_version'>{__('Version', 'she-header')} {she_version}</p> |
-                        <a href={baseUrl + '/site-health.php'} target="_blank" rel="noopener noreferrer" className='tpae_system_info'>{__('System Info', 'she-header')}</a>
+                        <a href={baseUrl + '/site-health.php'} target="_blank" rel="noopener noreferrer" className='she_system_info'>{__('System Info', 'she-header')}</a>
                     </div>
                 </div>
                 <div className='she_content_area'></div>
@@ -124,7 +113,7 @@ const NavBox = (props) => {
                 <div className='she_dwd_sections'>
                     {plugin_status?.status === "active" || pluginActive ?
 
-                        <a href={wdkit_Plugin_url()} className='she_dwd_btn' onClick={(e) => handleClick(e)}>{__('Open Templates', 'tpae')}</a>
+                        <a href={wdkit_Plugin_url()} className='she_dwd_btn' onClick={(e) => handleClick(e)}>{__('Open Templates', 'she-header')}</a>
                         :
                         <a className='she_dwd_btn' onClick={(e) => handleClick(e)}>{buttonText}</a>
                     }
@@ -139,7 +128,6 @@ const NavBox = (props) => {
 }
 
 const get_redux = state => ({
-    tpae_dashboard_data: state.Dashboard_data.db_rx,
     plugin_check: state.check_plugin.plugin_status_rx,
 })
 
