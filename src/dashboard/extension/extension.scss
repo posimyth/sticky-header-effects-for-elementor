@@ -674,3 +674,11 @@
     }
 
 }
+
+@media (max-width: 500px) {
+
+    .she-catwise-wid-manage-cov .she-wid-box-cover{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}

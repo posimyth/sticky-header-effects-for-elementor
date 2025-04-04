@@ -122,6 +122,12 @@
     }
 }
 
+@media (min-width: 767px) and (max-width: 1100px) {
+    .she_products_cover_main .she_product_box{
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 767px) {
     .she_products_cover_main .she_product_box {
         padding: 25px;
@@ -133,5 +139,12 @@
             }
 
         }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .she_products_cover_main .she_product_box{
+        flex-direction: column;
     }
 }
