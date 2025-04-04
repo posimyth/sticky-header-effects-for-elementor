@@ -1,6 +1,6 @@
 // Set Dashboard welcome page
 
-const tpae_dashboard_rx = {
+const she_dashboard_rx = {
     db_rx: {
         roles: [''],
         user_image: "",
@@ -8,7 +8,7 @@ const tpae_dashboard_rx = {
     }
 }
 
-export function Dashboard_data(state = tpae_dashboard_rx, action) {
+export function Dashboard_data(state = she_dashboard_rx, action) {
     switch (action.type) {
         case 'set_dashboard':
             return {
@@ -23,11 +23,11 @@ export function Dashboard_data(state = tpae_dashboard_rx, action) {
 
 // Set Dashboard widget page
 
-const tpae_widgets_rx = {
+const she_widgets_rx = {
     widgets_rx: [],
 }
 
-export function widgets_data(state = tpae_widgets_rx, action) {
+export function widgets_data(state = she_widgets_rx, action) {
     switch (action.type) {
         case 'set_widgets':
             return {
@@ -42,11 +42,11 @@ export function widgets_data(state = tpae_widgets_rx, action) {
 
 // Set Dashboard Extra Option
 
-const tpae_extra_option_rx = {
+const she_extra_option_rx = {
     extra_option_rx: [],
 }
 
-export function extra_option_data(state = tpae_extra_option_rx, action) {
+export function extra_option_data(state = she_extra_option_rx, action) {
     switch (action.type) {
         case 'set_extra_option':
             return {
@@ -59,7 +59,7 @@ export function extra_option_data(state = tpae_extra_option_rx, action) {
     }
 }
 
-const tpae_plugin_check = {
+const she_plugin_check = {
     plugin_status_rx: [
         {
             'wdesignkit': false,
@@ -67,7 +67,7 @@ const tpae_plugin_check = {
     ],
 }
 
-export function check_plugin(state = tpae_plugin_check, action) {
+export function check_plugin(state = she_plugin_check, action) {
     switch (action.type) {
         case 'set_plugin_status':
             return {
@@ -101,7 +101,7 @@ export function check_theme(state = she_theme_check, action) {
     }
 }
 
-const tpae_lising_data = {
+const she_lising_data = {
     lising_data_rx: {
         'client_post_type': 'disable',
         'testimonial_post_type': 'disable',
@@ -109,7 +109,7 @@ const tpae_lising_data = {
     },
 }
 
-export function Listing_data(state = tpae_lising_data, action) {
+export function Listing_data(state = she_lising_data, action) {
     switch (action.type) {
         case 'set_lising_data':
             return {
@@ -122,14 +122,14 @@ export function Listing_data(state = tpae_lising_data, action) {
     }
 }
 
-const tpae_custom_code = {
+const she_custom_code = {
     custom_code_rx: {
         'custom_css': '',
         'custom_js': '',
     },
 }
 
-export function Custom_code(state = tpae_custom_code, action) {
+export function Custom_code(state = she_custom_code, action) {
     switch (action.type) {
         case 'set_custom_code':
             return {
@@ -142,13 +142,13 @@ export function Custom_code(state = tpae_custom_code, action) {
     }
 }
 
-const tpae_performance = {
+const she_performance = {
     performance_rx: {
         'plus_cache_option': 'external',
     },
 }
 
-export function Performance_data(state = tpae_performance, action) {
+export function Performance_data(state = she_performance, action) {
     switch (action.type) {
         case 'set_performance':
             return {
@@ -161,13 +161,13 @@ export function Performance_data(state = tpae_performance, action) {
     }
 }
 
-const tpae_white_lable = {
+const she_white_lable = {
     white_lable_rx: {
         'white_label': '',
     },
 }
 
-export function White_label(state = tpae_white_lable, action) {
+export function White_label(state = she_white_lable, action) {
     switch (action.type) {
         case 'set_white_lable':
             return {
@@ -180,11 +180,11 @@ export function White_label(state = tpae_white_lable, action) {
     }
 }
 
-const tpae_wdkit_widgets = {
+const she_wdkit_widgets = {
     wdkit_widgets_rx: [],
 }
 
-export function Wdkit_widgets_list(state = tpae_wdkit_widgets, action) {
+export function Wdkit_widgets_list(state = she_wdkit_widgets, action) {
     switch (action.type) {
         case 'wdkit_widgets':
             return {
@@ -197,7 +197,7 @@ export function Wdkit_widgets_list(state = tpae_wdkit_widgets, action) {
     }
 }
 
-const tpae_license = {
+const she_license = {
     license_rx: {
         'activations_left': 0,
         'customer_email': '',
@@ -215,7 +215,7 @@ const tpae_license = {
     },
 }
 
-export function license_data(state = tpae_license, action) {
+export function license_data(state = she_license, action) {
     switch (action.type) {
         case 'set_license':
             return {

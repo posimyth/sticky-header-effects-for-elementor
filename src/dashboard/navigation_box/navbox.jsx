@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +10,9 @@ const NavBox = (props) => {
 
     var plugin_url = shed_data.shed_url;
     var she_version = shed_data.shed_wp_version;
+    var nonce = shed_data.nonce;
+    var ajax_url = shed_data.ajax_url;
+
 
     const free_pro = shed_data?.tpae_pro == '1' ? true : false;
 
@@ -40,7 +44,6 @@ const NavBox = (props) => {
 
         setButtonText('Installing WDesignKit');
 
-        setLoaderVisible(true);
 
         let form = new FormData();
         form.append('action', 'she_dashboard_ajax_call');
@@ -55,10 +58,8 @@ const NavBox = (props) => {
         if (data.success) {
             setButtonText('Installed WDesignKit');
             setPluginActive(true);
-            setLoaderVisible(true);
         } else {
             setButtonText('Installation Failed');
-            setLoaderVisible(false);
         }
     };
 

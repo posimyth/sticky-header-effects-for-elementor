@@ -12,7 +12,7 @@ const ElementorTemplates = (props) => {
     var ajax_url = shed_data.ajax_url;
     var wdk_api = shed_data.shed_wdkit_url;
     var api_url = wdk_api + 'api/front/getfilterbrowsetemplates';
-    var Tpae_card_bg = plugin_url + 'assets/images/new_dashboard/she-dummy-bg.png';
+    var Tpae_card_bg = plugin_url + 'assets/images/theme_bulider/she-dummy-bg.png';
     var plugin_status = props.plugin_check[1];
 
     var api_body = {

@@ -433,7 +433,7 @@ const DashboardInnerMain = (props) => {
                             <input
                                 className='she_subscribe_input'
                                 type='text'
-                                value={!tpaeuser_name ? userName : tpaeuser_name}
+                                value={tpaeuser_name !== null ? tpaeuser_name : userName}
                                 onChange={(e) => { setTpaeuser_name(e.target.value); setErrorTooltip({ 'tpaeName': false, 'tpaeEmail': false }) }}
                                 placeholder={__('Your Name', 'she-header')} />
                             {
@@ -445,7 +445,7 @@ const DashboardInnerMain = (props) => {
                             <input
                                 className='she_subscribe_input'
                                 type='email'
-                                value={!tpaeuser_email ? userEmail : tpaeuser_email}
+                                value={tpaeuser_email !== null ? tpaeuser_email : userEmail}
                                 onChange={(e) => { setTpaeuser_email(e.target.value); setErrorTooltip({ 'tpaeName': false, 'tpaeEmail': false }) }}
                                 placeholder={__('Your Email', 'she-header')} />
                             {ErrorTooltip.tpaeEmail &&
