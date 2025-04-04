@@ -1,0 +1,282 @@
+.she-preset-main-raw-main {
+    display: flex;
+    justify-content: space-around;
+    gap: 16px;
+    margin-bottom: 15px
+  }
+  
+  .she-preset-live-demo {
+    color: #464F57;
+    background: #fff;
+    border: 1px solid #464F56;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 400 !important;
+    font-size: 13px;
+    transition: all 0.3sease-in;
+    cursor: pointer;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    border-block-end: 1px solid #464F56 !important
+  }
+  
+  .she-preset-editor-raw {
+    color: #fff;
+    background: #464F57;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 400 !important;
+    font-size: 13px;
+    transition: all 0.3sease-in;
+    cursor: pointer;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    border-block-end: unset !important
+  }
+  
+  .she-preset-live-demo:hover {
+    color: #464F57
+  }
+  
+  .she-preset-editor-raw:hover {
+    color: #fff;
+    border-block-end: unset !important
+  }
+  
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.she-wkit-cb-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.wkit-she-preset-checkbox {
+    display: flex;
+    gap: 15px;
+}
+
+.she-preset-checkbox-content {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.she-preset-label {
+    margin: 0;
+    color: #B1B1D9;
+}
+
+.she-pink-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #C22076;
+    border-radius: 6px;
+    border: 1px solid #C22076;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 15px 25px;
+    text-transform: capitalize;
+    transition: 0.3s linear;
+    cursor: pointer;
+    gap:8px;
+}
+
+.she-pink-btn:hover {
+    background: #9B1A5E;
+    border: 1px solid #9B1A5E;
+    color: #FFFFFF;
+
+}
+
+.tp-post-comment .comment-list .comment-section-title {
+    font-family: "Plus Jakarta Sans", sans-serif !important
+}
+
+#she-wdkit-elementorp .tp-main-container-preset {
+    width: 75vw;
+    background-color: #040483;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    position: relative;
+    padding: 20px 20px 0;
+    overflow: hidden;
+    align-items: center;
+    gap: 30px
+}
+
+#she-wdkit-elementorp.dialog-type-lightbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center
+}
+
+#she-wdkit-elementorp.dialog-type-lightbox .dialog-widget-content {
+    top: unset !important;
+    left: unset !important;
+    border-radius: 10px
+}
+
+#she-wdkit-elementorp .tp-top-sections {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%
+}
+
+#she-wdkit-elementorp .tp-top-sections .tp-message a {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 10px;
+    color: #fff;
+    line-height: 14px;
+    font-weight: 400;
+    position: relative;
+    text-decoration: none;
+    display: inline-block
+}
+
+#she-wdkit-elementorp .tp-top-sections .tp-message .tp-not-show-again:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left
+}
+
+#she-wdkit-elementorp .tp-top-sections .tp-close-btn {
+    cursor: pointer
+}
+
+#she-wdkit-elementorp .she-middel-sections {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+#she-wdkit-elementorp .she-middel-sections .she-text-top {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#she-wdkit-elementorp .she-middel-sections .tp-text-bottom {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px
+}
+
+#she-wdkit-elementorp .she-middel-sections .tp-learn-more-about {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center
+}
+
+#she-wdkit-elementorp .she-middel-sections .tp-learn-more-about a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px
+}
+
+#she-wdkit-elementorp .tp-wdesign-about,
+#she-wdkit-elementorp .she-wdesign-install .she-enable-text,
+#she-wdkit-elementorp .she-wdesign-install .tp-visit-plugin {
+    line-height: 14px;
+    font-weight: 400;
+    position: relative;
+    text-decoration: none;
+    display: inline-block
+}
+
+#she-wdkit-elementorp .tp-top-sections .tp-message .tp-not-show-again::after,
+#she-wdkit-elementorp .tp-wdesign-about::after,
+#she-wdkit-elementorp .she-wdesign-install .she-enable-text::after,
+#she-wdkit-elementorp .she-wdesign-install .tp-visit-plugin::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform .25s ease-out
+}
+
+#she-wdkit-elementorp .tp-wdesign-about:hover::after,
+#she-wdkit-elementorp .she-wdesign-install .she-enable-text:hover::after,
+#she-wdkit-elementorp .she-wdesign-install .tp-visit-plugin:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left
+}
+
+#she-wdkit-elementorp .she-image-sections {
+    display: flex;
+    width: 75vw;
+    height: 20vw;
+    position: relative;
+    background-image: url(../images/banner/wdkit-frame.png);
+    background-size: cover
+}
+
+#she-wdkit-elementorp .she-wdesign-install .she-wkit-publish-loader {
+    justify-content: center;
+    align-items: center
+}
+
+#she-wdkit-elementorp .she-wdesign-install .she-wkit-publish-loader .she-wb-loader-circle {
+    display: none;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    width: 18px;
+    border-top: 4px solid #ffffff59;
+    height: 18px;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite
+}
+
+@media (max-width:768px) {
+    #she-wdkit-elementorp .she-middel-sections .tp-text-bottom {
+        font-size: 10px
+    }
+
+    #she-wdkit-elementorp .she-middel-sections .she-text-top {
+        font-size: 15px
+    }
+}
+
+@media (max-width:480px) {
+    .she-middel-sections .tp-text-bottom {
+        font-size: 9px
+    }
+
+    #she-wdkit-elementorp .she-wdesign-install {
+        padding: 6px 12px
+    }
+}
