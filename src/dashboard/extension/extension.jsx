@@ -15,7 +15,6 @@ const Extension = (props) => {
     var plugin_status = props.plugin_check;
 
     const free_pro = '1';
-    const [EnableWidget, setEnableWidget] = useState([]);
     const [FreePro, setFreePro] = useState('all');
     const [search_filter, setsearch_filter] = useState('');
     const [ActiveTab, setActiveTab] = useState('');
@@ -74,21 +73,6 @@ const Extension = (props) => {
     const closePopup = () => {
         NexterPopup(false);
     };
-
-    const nexter_poup_accordian = [
-        {
-            question: __('What is Nexter Extension? Why Do I Need an Extra Plugin for These Features?', 'she-header'),
-            answer: __('Nexter Extension is a unique set of features provided through a separate plugin. We’ve made it independent from The Plus Addons for Elementor widgets. While The Plus Addons focuses on extra Elementor widgets, Nexter Extension helps you prepare your WordPress site for production with better security and higher performance.', 'she-header'),
-        },
-        {
-            question: __('Do I Need to Pay Anything to Use These Features?', 'she-header'),
-            answer: __('Most of the Nexter Extensions are free, while only some are paid. These paid features are included for Pro users of The Plus Addons for Elementor. All Pro users also unlock Nexter Extension Pro.', 'she-header'),
-        },
-        {
-            question: __('Will This Affect My Site’s Performance?', 'she-header'),
-            answer: __('Not at all! These are great features designed to make your WordPress website more secure, faster, and smarter, saving you a lot of time. It’s a single plugin that eliminates multiple hassles, making it easy to create a powerful WordPress website.', 'she-header'),
-        }
-    ];
 
     const CheckIcon = (<svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0C6.15661 -9.78424e-09 6.80679 0.129329 7.41342 0.380602C8.02004 0.631876 8.57124 1.00017 9.03553 1.46447C9.49983 1.92876 9.86812 2.47995 10.1194 3.08658C10.3707 3.69321 10.5 4.34339 10.5 5C10.5 5.65661 10.3707 6.30679 10.1194 6.91342C9.86812 7.52004 9.49983 8.07124 9.03553 8.53553C8.57124 8.99983 8.02004 9.36812 7.41342 9.6194C6.80679 9.87067 6.15661 10 5.5 10C4.17392 10 2.90215 9.47322 1.96447 8.53553C1.02678 7.59785 0.5 6.32608 0.5 5C0.5 3.67392 1.02678 2.40215 1.96447 1.46447C2.90215 0.526784 4.17392 1.97602e-08 5.5 0ZM7.26667 3.47L4.875 5.86833L3.71167 4.705C3.67293 4.66626 3.62694 4.63553 3.57632 4.61456C3.5257 4.5936 3.47145 4.58281 3.41667 4.58281C3.36188 4.58281 3.30763 4.5936 3.25701 4.61456C3.2064 4.63553 3.16041 4.66626 3.12167 4.705C3.08293 4.74374 3.0522 4.78973 3.03123 4.84035C3.01026 4.89096 2.99947 4.94521 2.99947 5C2.99947 5.05479 3.01026 5.10904 3.03123 5.15965C3.0522 5.21027 3.08293 5.25626 3.12167 5.295L4.58 6.75333C4.6187 6.79214 4.66468 6.82292 4.71531 6.84393C4.76593 6.86493 4.82019 6.87574 4.875 6.87574C4.92981 6.87574 4.98407 6.86493 5.03469 6.84393C5.08532 6.82292 5.1313 6.79214 5.17 6.75333L7.85667 4.05833C7.93246 3.97964 7.97432 3.87433 7.97322 3.76508C7.97212 3.65583 7.92815 3.55138 7.85078 3.47423C7.77342 3.39709 7.66884 3.35341 7.55959 3.35262C7.45034 3.35183 7.34514 3.39398 7.26667 3.47Z" fill="white" /></svg>);
 
