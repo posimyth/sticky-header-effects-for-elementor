@@ -60,6 +60,7 @@ if ( ! class_exists( 'She_Loader' ) ) {
 		 * Add Menu Page WdKit.
 		 *
 		 * @since 1.7.3
+		 * @version 2.0
 		 */
 		public function she_load() {
 

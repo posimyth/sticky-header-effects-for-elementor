@@ -3,7 +3,7 @@
  * It is Main File to load all Notice, Upgrade Menu and all
  *
  * @link       https://posimyth.com/
- * @since      6.5.6
+ * @since      2.0
  *
  * @package    Theplus
  * @subpackage ThePlus/Notices
@@ -21,14 +21,14 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 	/**
 	 * This class used for Wdesign-kit releted
 	 *
-	 * @since 6.5.6
+	 * @since 2.0
 	 */
 	class Tp_She_Preset {
 
 		/**
 		 * Instance
 		 *
-		 * @since 6.5.6
+		 * @since 2.0
 		 * @static
 		 * @var instance of the class.
 		 */
@@ -37,7 +37,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		/**
 		 * Instance
 		 *
-		 * @since 6.5.6
+		 * @since 2.0
 		 * @var w_d_s_i_g_n_k_i_t_slug
 		 */
 		public $w_d_s_i_g_n_k_i_t_slug = 'wdesignkit/wdesignkit.php';
@@ -47,7 +47,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 *
 		 * Ensures only one instance of the class is loaded or can be loaded.
 		 *
-		 * @since 6.5.6
+		 * @since 2.0
 		 * @static
 		 * @return instance of the class.
 		 */
@@ -64,7 +64,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 *
 		 * Perform some compatibility checks to make sure basic requirements are meet.
 		 *
-		 * @since 6.5.6
+		 * @since 2.0
 		 */
 		public function __construct() {
 
@@ -82,7 +82,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		/**
 		 * Loded Wdesignkit Template Js
 		 *
-		 * @since 6.5.6
+		 * @since 2.0
 		 */
 		public function she_elementor_editor_script() {
 
@@ -104,7 +104,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		/**
 		 * Loded Wdesignkit Template CSS
 		 *
-		 * @since 6.5.6
+		 * @since 2.0
 		 */
 		public function she_elementor_editor_style() {
 			wp_enqueue_style( 'she-wdkit-elementor-popup-preset', SHE_HEADER_URL . 'assets/css/she-wdkit-install-popup.css', array(), SHE_HEADER_VERSION );
@@ -113,7 +113,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		/**
 		 * Install Wdesign kit
 		 *
-		 * @since 6.5.6
+		 * @since 2.0
 		 */
 		public function she_install_wdkit() {
 
@@ -178,7 +178,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		/**
 		 * Check plugin status
 		 *
-		 * @since 6.5.6
+		 * @since 2.0
 		 * @return array
 		 */
 		public function she_check_plugin_status() {
@@ -203,7 +203,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		/**
 		 * It is WDesignKit Popup Design for Download and install
 		 *
-		 * @since 6.5.6
+		 * @since 2.0
 		 */
 		public function she_preview_html_popup() {
 			?>
@@ -268,7 +268,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 * @param boolean $success pass message.
 		 * @param string  $data pass message.
 		 *
-		 * @since 6.5.6
+		 * @since 2.0
 		 */
 		public function she_response( $message = '', $description = '', $success = false, $data = '' ) {
 			return array(

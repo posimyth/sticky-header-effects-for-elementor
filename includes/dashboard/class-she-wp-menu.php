@@ -61,6 +61,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 		 * Add Menu Page WdKit.
 		 *
 		 * @since 1.7.3
+		 * @version 2.0
 		 */
 		public function she_admin_menu() {
 			$capability = 'manage_options';

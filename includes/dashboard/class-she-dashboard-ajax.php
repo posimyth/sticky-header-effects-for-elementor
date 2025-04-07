@@ -3,7 +3,7 @@
  * This file is used to load widget builder files and the builder.
  *
  * @link       https://posimyth.com/
- * @since      1.7.3
+ * @since      2.0
  *
  * @package    she-header
  */
@@ -20,7 +20,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 	/**
 	 * This class used for widget load
 	 *
-	 * @since 1.7.3
+	 * @since 2.0
 	 */
 	class She_Dashboard_Ajax {
 
@@ -29,14 +29,14 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 * Ensures only one instance of the class is loaded or can be loaded.
 		 *
 		 * @var instance
-		 * @since 1.7.3
+		 * @since 2.0
 		 */
 		private static $instance = null;
 
 		/**
 		 * This instance is used to load class
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 */
 		public static function instance() {
 
@@ -50,7 +50,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		/**
 		 * This constructor is used to load builder files.
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 */
 		public function __construct() {
 			add_action( 'wp_ajax_she_dashboard_ajax_call', array( $this, 'she_dashboard_ajax_call' ) );
@@ -59,7 +59,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		/**
 		 * Load wdkit page content.
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 */
 		public function she_dashboard_ajax_call() {
 
@@ -120,7 +120,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		/**
 		 * Set Response
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 */
 		public function shed_onload_data() {
 
@@ -187,7 +187,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 *
 		 * It is Use for Check Plugin Dependency of template.
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 *
 		 * @param array $plugins List of required plugins to check.
 		 */
@@ -220,7 +220,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 *
 		 * It is Use for Check Theme Dependency of template.
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 *
 		 * @param array $theme_slug List of required theme to check.
 		 */
@@ -254,7 +254,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 *
 		 * It is Use for Active Theme of template.
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 *
 		 * @param array $plugins List of required plugins to check.
 		 */
@@ -278,7 +278,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		/**
 		 * Get Plugin Previous Versions
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 */
 		public function she_prev_version() {
 
@@ -335,7 +335,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		/**
 		 * Rollback to Previous Versions
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 */
 		public function she_rollback_check() {
 
@@ -398,7 +398,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		/**
 		 * Plugin Install
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 */
 		public function she_plugin_install() {
 
@@ -474,7 +474,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		/**
 		 * Theme Install
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 */
 		public function she_theme_install() {
 
@@ -559,7 +559,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		/**
 		 * API call and get Response
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 */
 		public function she_api_call() {
 
@@ -602,7 +602,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		/**
 		 * Set the response data.
 		 *
-		 * @since 1.7.3
+		 * @since 2.0
 		 *
 		 * @param bool   $success     Indicates whether the operation was successful. Default is false.
 		 * @param string $message     The main message to include in the response. Default is an empty string.

@@ -17,10 +17,21 @@ class Module extends Module_Base {
 		$this->add_actions();
 	}
 
+	/**
+	 * Get Widget Name.
+	 *
+	 * @since 1.0.0
+	 */
 	public function get_name() {
 		return 'transparent';
 	}
 
+	/**
+	 * Register controls.
+	 *
+	 * @since 1.0.0
+	 * @version 2.0
+	 */
 	public function register_controls( Controls_Stack $element ) {
 		$element->start_controls_section(
 			'section_sticky_header_effect',
@@ -1476,6 +1487,10 @@ $element->add_control(
 		$element->end_controls_section();
 	}
 
+	/**
+	 * Add actions to the elementor editor
+	 * @since 1.0.0
+	 */
 	private function add_actions()
 	{
 		if (!function_exists('is_plugin_active')) {
@@ -1500,6 +1515,10 @@ $element->add_control(
 		}
 	}
 
+	/**
+	 * Enqueue styles and scripts
+	 * @since 1.0.0
+	 */
 	public function enqueue_styles() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
@@ -1512,6 +1531,10 @@ $element->add_control(
 
 	}
 
+	/**
+	 * Enqueue scripts
+	 * @since 1.0.0
+	 */
 	public function enqueue_scripts() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
