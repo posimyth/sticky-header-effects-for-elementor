@@ -293,7 +293,7 @@ const DashboardInnerMain = (props) => {
         const encodedName = encodeURIComponent(sheuser_name);
         const encodedEmail = encodeURIComponent(sheuser_email);
 
-        const welcomeEmailUrl = `https://store.posimyth.com/?fluentcrm=1&route=contact&hash=30275c78-0cf5-42f1-adb0-32901bb25b90&full_name=${encodedName}&email=${encodedEmail}`;
+        const welcomeEmailUrl = `https://store.posimyth.com/?fluentcrm=1&route=contact&hash=f808721e-d3c0-4554-9146-2bc6a63a2974&full_name=${encodedName}&email=${encodedEmail}`;
 
         setSHeuser_email('');
         setSHeuser_name('');
@@ -459,7 +459,7 @@ const DashboardInnerMain = (props) => {
                 <div className='she_qikinfo_grp_cover'>
                     <div className='she_qik_infocrd_cover she_docs'>
                         <h4 className='she_qik_info_crd_title'>{__('Documentation', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://theplusaddons.com/docs?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='she-ghost-btn'>{__('Read Now', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href='https://stickyheadereffects.com/docs/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='she-ghost-btn'>{__('Read Now', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover she_help'>
@@ -484,14 +484,14 @@ const DashboardInnerMain = (props) => {
                         <h4 className='she_qik_info_crd_title'>{__('Rate Sticky Header Effects', 'she-header')}</h4>
                         <div className='she_rating_box'>
                             {ratingSvg.map((obj, index) => (
-                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/reviews/?filter=5#new-post&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://go.posimyth.com/review-tpae?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='she-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
+                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/reviews/?filter=5#new-post&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://go.posimyth.com/review-she?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='she-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
                             ))}
                         </div>
                     </div>
 
-                    <div className='she_qik_infocrd_cover'>
+                    <div className='she_qik_infocrd_cover she_video_tut'>
                         <h4 className='she_qik_info_crd_title'>{__('Video Tutorials', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href="https://www.youtube.com/watch?v=DfkjFCRhqNE&list=PLFRO-irWzXaLK9H5opSt88xueTnRhqvO5&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings" className='she-ghost-btn'>{__('Watch Now', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href="https://www.youtube.com/watch?v=DfkjFCRhqNE&list=PLFRO-irWzXaLK9H5opSt88xueTnRhqvO5&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings" className='she-ghost-btn'>{__('Coming Soon', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover she_dashboard_social_icons_card_box'>
@@ -526,30 +526,29 @@ const DashboardInnerMain = (props) => {
                         <img className='she_whats_new_close_btn' onClick={(e) => setSlideLeft(false)} src={plugin_url + 'assets/svg/dashboard_tab/close_icon.svg'} draggable={false} />
                     </div>
 
-                    {whatsnew.length > 0 ?
-                        whatsnew?.map((data, index) => (
+                    {/* {whatsnew.length > 0 ? */}
+                        {/* whatsnew?.map((data, index) => ( */}
                             <div className='she_whats_new_card_info_cover'>
                                 <div className='she_whats_new_img_cover'>
-                                    <img className='she_whatsn_new_img' src={Tpae_card_bg} draggable={false} />
-                                    <img className='she_whatsn_new_img' src={data?.image || plugin_url + 'assets/images/tp-placeholder.jpg'} draggable={false} style={{ position: 'absolute', left: 0, top: 0 }}></img>
+                                    {/* <img className='she_whatsn_new_img' src={Tpae_card_bg} draggable={false} /> */}
+                                    <img className='she_whatsn_new_img' src={plugin_url + 'assets/images/tp-placeholder.jpg'} draggable={false}></img>
                                 </div>
-                                <h4 className='she_img_heading_info'>{data.title}</h4>
-                                <p className='she_text_info'>{data.description}</p>
+                                <h4 className='she_img_heading_info'>{__('Introducing CSS Grid Layout in Nexter Blocks – More Control, More Creativity!')}</h4>
+                                <p className='she_text_info'>{__('Were excited to bring CSS Grid Layout to Nexter Blocks with the latest update! Now, you can design complex layouts with ease—think full-page designs, photo galleries, product listings, and more—all neatly arranged in rows and columns.')}</p>
                                 <div className='she_whats_new_btn_group'>
-                                    {data?.demo &&
-                                        <a href={data.demo} target="_blank" rel="noopener noreferrer" className='she_whats_new_info_cta_btn'>{__('Live Demo')}</a>
-                                    }
-                                    {data?.link &&
-                                        <a href={data.link} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a>
-                                    }
+                                    {/* {data?.demo && */}
+                                        <a href={''} target="_blank" rel="noopener noreferrer" className='she_whats_new_info_cta_btn'>{__('Live Demo')}</a>
+                                    {/* } */}
+                                    {/* {data?.link && */}
+                                        <a href={''} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a>
+                                    {/* } */}
                                 </div>
                             </div>
-                        ))
+                        {/* ))
                         :
                         <div className='she-data-loader'>
                             <svg viewBox="25 25 50 50"><circle r="20" cy="50" cx="50"></circle></svg>
-                        </div>
-                    }
+                        </div> */}
 
                     <a href='https://roadmap.theplusaddons.com/updates/' target='_blank' rel='noopener noreferrer' className='she-ghost-btn she_wht_ghst_cmn_btn'>
                         {__('Read Full Changelog')}

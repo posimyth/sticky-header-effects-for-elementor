@@ -368,7 +368,11 @@
         .she-ghost-btn {
             width: 100%;
         }
-
+        .she_video_tut .she-ghost-btn {
+            width: 100%;
+            pointer-events: none;
+        }
+        
         .she_qik_infocrd_cover {
             display: flex;
             box-sizing: border-box;
@@ -386,6 +390,11 @@
             &.she_ratings_box {
                 max-width: 49.2%;
                 width: 55%;
+            }
+
+            &.she_video_tut {
+                opacity: 0.5;
+                cursor: help;
             }
         }
 
@@ -694,10 +703,6 @@
             cursor: pointer;
             position: relative;
             text-decoration: none;
-
-            &:hover {
-                background-color: $she_purple_dark;
-            }
         }
 
         .she_whats_new_btn_link {
@@ -834,7 +839,7 @@
     }
 
     .shw_arrow {
-       z-index: -99;
+        z-index: -99;
     }
 }
 
@@ -999,5 +1004,14 @@
 @media (max-width:720px) {
     .she_dashboard_main_cover .she_qik_infocrd_main .she_qik_infocrd_cover {
         width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .she_dash_inner_main .she_wlcm_sec_cover .she_wlcm_sec_in {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
     }
 }

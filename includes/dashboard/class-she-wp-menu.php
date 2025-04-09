@@ -74,8 +74,8 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 				add_action('admin_menu', function () {
 					add_submenu_page(
 						'elementor', 
-						__('Sticky Header Effect', 'she-header'), 
-						__('Sticky Header Effect', 'she-header'), 
+						__('Sticky Header Effects', 'she-header'), 
+						__('Sticky Header Effects', 'she-header'), 
 						'manage_options', 
 						'she-header',
 						array($this, 'she_menu_page_template'),
