@@ -119,7 +119,7 @@
 
                                     if (true === res.success) {
                                         elementor.saver.update.apply().then(function () {
-                                            window.location.hash = window.location.hash + '?wdesignkit=open'
+                                            window.location.hash = window.location.hash + '?wdesignkit=open&she=true'
                                             window.location.reload();
                                         });
 
