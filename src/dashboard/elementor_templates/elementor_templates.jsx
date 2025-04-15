@@ -64,7 +64,7 @@ const ElementorTemplates = (props) => {
         }
     }
 
-    const [buttonText, setButtonText] = useState('Enable Templates');
+    const [buttonText, setButtonText] = useState('More Templates');
     const [pluginActive, setPluginActive] = useState(false);
 
     const [loaderVisible, setLoaderVisible] = useState(false);
@@ -154,7 +154,7 @@ const ElementorTemplates = (props) => {
                     {plugin_status?.status === "active" || pluginActive ?
                         <a href="?page=wdesign-kit#/browse" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('Open Templates', 'she-header')}</a>
                         :
-                        <a href="https://wdesignkit.com/templates?builder=1001" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('View More Header Templates', 'she-header')}</a>
+                        <a href="https://wdesignkit.com/templates?builder=1001" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('Explore More Elementor Templates', 'she-header')}</a>
                     }
                 </div>
             </div>

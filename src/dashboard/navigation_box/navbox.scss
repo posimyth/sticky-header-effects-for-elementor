@@ -88,6 +88,7 @@
             border: 1px solid transparent;
             position: relative;
             white-space: nowrap;
+            justify-content: space-between;
 
             &:hover {
                 color: $she_dark_blk;

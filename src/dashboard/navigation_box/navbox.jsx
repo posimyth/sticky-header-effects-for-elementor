@@ -84,6 +84,7 @@ const NavBox = (props) => {
                     <ul className='she_navlinks_inner_cover'>
                         <li><Link className={`${location.pathname == '/' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/" onClick={() => { setmenuToggel(false) }}>{__('Dashboard', 'she-header')}</Link></li>
                         <li><Link className={`${location.pathname == '/elementor_templates' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/elementor_templates" onClick={() => { setmenuToggel(false) }}>{__('Header Templates', 'she-header')}</Link></li>
+                        <li><Link className={`${location.pathname == '/header_widgets' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/header_widgets" onClick={() => { setmenuToggel(false) }}>{__('Header Widgets', 'she-header')}</Link></li>
                         <li className='she_navlink_cover'>
                             <Link className={`${location.pathname == '/theme_builder' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/theme_builder" onClick={() => { setmenuToggel(false) }}>{__('Elementor Theme Builder ', 'she-header')}
                                 <div className='she-nav-tag'>
@@ -117,7 +118,7 @@ const NavBox = (props) => {
                         :
                         <a className='she_dwd_btn' onClick={(e) => handleClick(e)}>{buttonText}</a>
                     }
-                    <a className='she_dwd_link' href="#">Learn More</a>
+                    <a className='she_dwd_link' href="https://wdesignkit.com/">Learn More</a>
                 </div>
                 <div className='she_footer_img'>
                     {/* <img src={plugin_url + 'assets/images/banner/footer_wdk.png'} alt="" /> */}

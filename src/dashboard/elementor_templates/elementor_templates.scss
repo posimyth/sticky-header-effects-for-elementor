@@ -39,6 +39,7 @@
                     &:hover~.she-float-box-title {
                         margin: auto auto 105px auto;
                         opacity: 1;
+                        z-index: 99;
                     }
                 }
 

@@ -200,7 +200,7 @@ const DashboardInnerMain = (props) => {
         var tp_slug = '';
         var tp_widgets_name = '';
         if ('tpae' === key) {
-            tp_slug = 'the-plus-addons-for-elementor-page-builder/theplus-elementor-addon.php'
+            tp_slug = 'the-plus-addons-for-elementor-page-builder/theplus_elementor_addon.php'
             tp_widgets_name = 'the-plus-addons-for-elementor-page-builder';
         } else if ('wdesignkit' === key) {
             tp_slug = 'wdesignkit/wdesignkit.php'
@@ -377,7 +377,7 @@ const DashboardInnerMain = (props) => {
                     <div className='she_numinfo_wdkit_cover'>
                         <div className='she_numeric_info_cover'>
                             <div className='she_numeric_card'>
-                                <div className='she_sm_abt_num'>{__('Watch How it Works ', 'she-header')}</div>
+                                <div className='she_sm_abt_num'>{__('Watch How it Works ( Coming Soon ) ', 'she-header')}</div>
                                 <div className='shw_arrow'>
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6 18.0518L18 6.05176M18 6.05176H10M18 6.05176V14.0518" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

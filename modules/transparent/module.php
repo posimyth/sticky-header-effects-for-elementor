@@ -77,7 +77,7 @@ class Module extends Module_Base {
 						<a href="%s" class="she-preset-live-demo" id="she-preset-live-demo" data-temp_id="18061" target="_blank" rel="noopener noreferrer">%s</a>
 						<a class="she-preset-editor-raw" id="she-preset-editor-raw" data-temp_id="18061">%s</a>
 					</div>',
-					esc_url('https://etemplates.wdesignkit.com/theplusaddons/elementor-animated-number-counter-demo'),
+					esc_url('https://stickyheadereffects.com/demos/'),
 					esc_html__('Live Demo', 'she-header'),
 					esc_html__('Import Presets', 'she-header')
 				),

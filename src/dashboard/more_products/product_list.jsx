@@ -5,17 +5,17 @@ const productsData = {
         Product_Url: 'https://theplusaddons.com/',
         id: 'the-plus-addons-for-elementor-page-builder'
     },
-    uichemy: {
-        logo: 'uichemy-product-logo.png',
-        product_txt: 'UiChemy - Figma to Elementor Convertor',
-        Product_Url: 'https://uichemy.com/',
-        id: 'uichemy'
-    },
     wdesignkit: {
         logo: 'wdesignkit-product-logo.png',
         product_txt: 'WDesignKit – Templates, Widgets, Cloud Storage & More',
         Product_Url: 'https://wdesignkit.com/',
         id: 'wdesignkit'
+    },
+    uichemy: {
+        logo: 'uichemy-product-logo.png',
+        product_txt: 'UiChemy - Figma to Elementor Convertor',
+        Product_Url: 'https://uichemy.com/',
+        id: 'uichemy'
     },
     nexter_extension: {
         logo: 'nexter-extention-product-logo.svg',

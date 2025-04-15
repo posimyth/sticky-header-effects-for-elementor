@@ -4,6 +4,7 @@ import ThemeBuilder from '../dashboard/theme_builder/theme_builder';
 import RollBack from '../dashboard/rollback_plugin/rollback';
 import ElementorTemplates from '../dashboard/elementor_templates/elementor_templates';
 import Extension from '../dashboard/extension/extension';
+import Header_widgets from '../dashboard/header_widgets/header_widgets';
 
 
 const routes = [
@@ -30,6 +31,10 @@ const routes = [
   {
     path: '/extension',
     element: <Extension />
+  },
+  {
+    path: '/header_widgets',
+    element: <Header_widgets />
   },
   {
     path: '*',
