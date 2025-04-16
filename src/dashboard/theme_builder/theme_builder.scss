@@ -15,10 +15,10 @@
     }
 
     .she_theme_builder_grid_view_box {
-
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
+        user-select: none;
         position: relative;
     }
 

@@ -13,6 +13,7 @@
     z-index: 99;
 
     .she_logo_strip {
+        user-select: none;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -57,6 +58,7 @@
         position: relative;
         box-sizing: border-box;
         padding: 20px 10px;
+        user-select: none;
     }
 
     .she_navlinks_inner_cover {
@@ -125,6 +127,11 @@
         align-items: center;
         gap: 10px;
         margin: 0px 15px;
+
+        .she_version{
+            display: flex;
+            user-select: none;
+        }
 
         .she_version,
         .she_system_info {

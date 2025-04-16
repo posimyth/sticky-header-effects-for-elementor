@@ -14,13 +14,15 @@ const ElementorTemplates = (props) => {
     var api_url = wdk_api + 'api/front/getfilterbrowsetemplates';
     var she_card_bg = plugin_url + 'assets/images/theme_bulider/she-dummy-bg.png';
     var plugin_status = props.plugin_check[1];
+    var plugins = JSON.stringify([1014]);
 
     var api_body = {
         ParPage: 9,
         CurrentPage: 1,
         builder_req: 1001,
         temp_type_req: 'websitekit',
-        freepro_req: 'all'
+        freepro_req: 'all',
+        plugin_req: plugins,
     };
 
     const [template_list, settemplate_list] = useState([]);

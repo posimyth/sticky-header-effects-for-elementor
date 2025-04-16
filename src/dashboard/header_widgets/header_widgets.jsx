@@ -123,7 +123,7 @@ const Header_widgets = (props) => {
                             </div>
                         ))}
                     </div>
-                </div>  
+                </div>
             </>
         )
     }
@@ -212,20 +212,23 @@ const Header_widgets = (props) => {
         var data = response.data;
 
         if (data.success) {
-
             if (type == 'tpae') {
                 SetTpae(true);
                 ThePlusPopup(false)
+                SetDwonloadBtn('Instaling Success');
             }
-
             if (type == 'wdkit') {
                 SetWdkit(true);
                 SetWdkitPopup(false)
+                setButtonText('Instaling Success');
             }
-
-            SetDwonloadBtn('Instaling Success');
         } else {
-            SetDwonloadBtn('Instaling Failed');
+            if (type == 'tpae') {
+                SetDwonloadBtn('Instaling Failed');
+            }
+            if (type == 'wdkit') {
+                setButtonText('Instaling Failed');
+            }
         }
     };
 
@@ -299,7 +302,7 @@ const Header_widgets = (props) => {
                                                         </div>
                                                         <div className='she-abt-wid-qik-link-cov'>
                                                             {data.demoUrl &&
-                                                            <a href={data.demoUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-widgets-link'>{__('Live Demo', 'she-header')}</a>
+                                                                <a href={data.demoUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-widgets-link'>{__('Live Demo', 'she-header')}</a>
                                                             }
                                                             {(data.docUrl) &&
                                                                 <span> | </span>
@@ -437,6 +440,5 @@ const get_redux = state => ({
     plugin_check: state.check_plugin.plugin_status_rx,
     she_dashboard_data: state.Dashboard_data.db_rx,
 })
-
 
 export default connect(get_redux)(Header_widgets)

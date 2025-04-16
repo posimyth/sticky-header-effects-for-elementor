@@ -66,6 +66,7 @@
         }
 
         .she_user_img_wn {
+            user-select: none;
             display: flex;
             justify-content: left;
             align-items: center;
@@ -405,6 +406,8 @@
         }
 
         .she_qik_info_crd_title {
+            display: flex;
+            user-select: none;
             font-family: $she_font_family;
             font-size: 16px;
             line-height: 19px;
