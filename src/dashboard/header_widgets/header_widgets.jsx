@@ -298,7 +298,9 @@ const Header_widgets = (props) => {
                                                             }
                                                         </div>
                                                         <div className='she-abt-wid-qik-link-cov'>
-                                                            <a href={'https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-widgets-link'>{__('Live Demo', 'she-header')}</a>
+                                                            {data.demoUrl &&
+                                                            <a href={data.demoUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-widgets-link'>{__('Live Demo', 'she-header')}</a>
+                                                            }
                                                             {(data.docUrl) &&
                                                                 <span> | </span>
                                                             }

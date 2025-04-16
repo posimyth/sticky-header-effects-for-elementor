@@ -9,7 +9,7 @@ const plugin_widgets = [
                 name: 'she_wodpress_menu',
                 label: __('WordPress Menu', 'she-header'),
                 demoUrl: '',
-                docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
+                docUrl: '',
                 videoUrl: '',
                 tag: 'Pro',
                 labelIcon: '',
