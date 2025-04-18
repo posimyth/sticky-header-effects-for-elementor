@@ -120,9 +120,7 @@ const NavBox = (props) => {
                     }
                     <a className='she_dwd_link' href="https://wdesignkit.com/">Learn More</a>
                 </div>
-                <div className='she_footer_img'>
-                    {/* <img src={plugin_url + 'assets/images/banner/footer_wdk.png'} alt="" /> */}
-                </div>
+                <div className="she_footer_img" style={{ backgroundImage: `url(${plugin_url}assets/images/banner/footer_wdk.png)`,}}></div>
             </div>
         </>
     );

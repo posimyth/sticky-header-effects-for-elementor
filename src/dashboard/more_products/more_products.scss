@@ -23,6 +23,7 @@
 
         .she_product_name {
             font-size: 14px;
+            user-select: none;
         }
 
         .she-installation {
@@ -83,6 +84,7 @@
                 object-fit: contain;
                 object-position: center;
                 position: relative;
+                user-select: none;
             }
         }
 

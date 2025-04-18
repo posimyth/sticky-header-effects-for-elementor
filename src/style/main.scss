@@ -224,6 +224,7 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    user-select: none;
 
     .she_field_card_title {
       font-family: $she_font_family;

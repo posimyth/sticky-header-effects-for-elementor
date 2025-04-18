@@ -92,7 +92,7 @@ const Extension = (props) => {
                     <a href='https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target="_blank" rel="noopener noreferrer" className='she-nexter-learn'>{__('Learn More', 'she-header')}</a>
                 </div>
             </div>
-            <div className='she-nexter-group'></div>
+            <div className='she-nexter-group' style={{ backgroundImage: `url(${plugin_url}assets/images/banner/nexter_group.png)`,}}></div>
            </>
 
         )

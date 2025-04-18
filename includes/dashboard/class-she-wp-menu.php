@@ -115,6 +115,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 						'nonce'           => wp_create_nonce( 'she-db-nonce' ),
 						'shed_url'        => SHE_HEADER_URL,
 						'shed_wp_version' => SHE_HEADER_VERSION,
+						'she_wp_version' => get_bloginfo( 'version' ),
 						'shed_pro'        => 0,
 						'shed_wdkit_url'  => SHE_WDKIT_URL,
 					),

@@ -91,7 +91,7 @@ const Header_widgets = (props) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
-    const nexter_poup_accordian = [
+    const tpae_poup_accordian = [
         {
             question: __('Why Do I Need The Plus Addons for Elementor?', 'she-header'),
             answer: __('The Elementor Free version does not come with a free Navigation Menu widget. Therefore, by installing The Plus Addons, you can create your Header Menu easily.', 'she-header'),
@@ -104,11 +104,11 @@ const Header_widgets = (props) => {
                 <div className="she-tpae-content">
                     <div className="she-tpae-title">{__('Get a Free Elementor Navigation Menu Widget with The Plus Addons for Elementor.', 'she-header')}</div>
                     <div className="she-install-activate">
-                        <a className='she-nexter-btn' onClick={(e) => handle_plugin(e, 'tpae')}>{TpDwonloadBtn}</a>
+                        <a className='she-tpae-btn' onClick={(e) => handle_plugin(e, 'tpae')}>{TpDwonloadBtn}</a>
                         <a href='https://theplusaddons.com/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target="_blank" rel="noopener noreferrer" className='she-nexter-learn'>{__('Learn More', 'she-header')}</a>
                     </div>
                     <div className="she-tpae-accordion">
-                        {nexter_poup_accordian.map((item, index) => (
+                        {tpae_poup_accordian.map((item, index) => (
                             <div key={index} className="she-tpae-accordion-item">
                                 <div className={`she-tpae-accordio-content ${activeIndex === index ? "she-tpae-content-opan" : ""}`} onClick={() => handleToggle(index)}>
                                     <div className="she-tpae-accd-qui">{item.question}</div>
@@ -310,6 +310,12 @@ const Header_widgets = (props) => {
                                                             {data.docUrl &&
                                                                 <a href={data.docUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-widgets-link'>{__('Read Docs', 'she-header')}</a>
                                                             }
+                                                            {(data.videoUrl) &&
+                                                                <span> | </span>
+                                                            }
+                                                            {data.videoUrl &&
+                                                                <a href={data.videoUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-widgets-link'>{__('Video', 'she-header')}</a>
+                                                            }
                                                         </div>
                                                     </div>
                                                     <div className='she-widget-inner-toggle'>
@@ -354,7 +360,7 @@ const Header_widgets = (props) => {
                                                             )}
 
                                                             {data?.type === 'elementor' && (
-                                                                <a className='she-plugin-redirect' href={preview_Plugin_url('elementor')} target="_blank" rel="noopener noreferrer">
+                                                                <a className='she-plugin-redirect' href={'https://elementor.com/pro/'} target="_blank" rel="noopener noreferrer">
                                                                     <div className="she-widgets-download-template">
                                                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                             <path fillRule="evenodd" clipRule="evenodd" d="M8.75033 2.33268C8.42816 2.33268 8.16699 2.07152 8.16699 1.74935C8.16699 1.42718 8.42816 1.16602 8.75033 1.16602H12.2502H12.2503C12.3751 1.16602 12.4908 1.20521 12.5856 1.27196C12.7356 1.37752 12.8337 1.55199 12.8337 1.74935V5.24935C12.8337 5.57152 12.5725 5.83268 12.2503 5.83268C11.9282 5.83268 11.667 5.57152 11.667 5.24935V3.15756L6.24606 8.57849C6.01825 8.8063 5.6489 8.8063 5.4211 8.57849C5.19329 8.35069 5.19329 7.98134 5.4211 7.75354L10.842 2.33268H8.75033ZM2.91699 4.08268C2.76228 4.08268 2.61391 4.14414 2.50451 4.25354C2.39512 4.36293 2.33366 4.51131 2.33366 4.66602V11.0827C2.33366 11.2374 2.39512 11.3858 2.50451 11.4952C2.61391 11.6046 2.76228 11.666 2.91699 11.666H9.33366C9.48837 11.666 9.63674 11.6046 9.74614 11.4952C9.85553 11.3858 9.91699 11.2374 9.91699 11.0827V7.58268C9.91699 7.26052 10.1782 6.99935 10.5003 6.99935C10.8225 6.99935 11.0837 7.26052 11.0837 7.58268V11.0827C11.0837 11.5468 10.8993 11.9919 10.5711 12.3201C10.2429 12.6483 9.79779 12.8327 9.33366 12.8327H2.91699C2.45286 12.8327 2.00774 12.6483 1.67956 12.3201C1.35137 11.9919 1.16699 11.5468 1.16699 11.0827V4.66602C1.16699 4.20189 1.35137 3.75677 1.67956 3.42858C2.00774 3.10039 2.45286 2.91602 2.91699 2.91602H6.41699C6.73916 2.91602 7.00033 3.17718 7.00033 3.49935C7.00033 3.82152 6.73916 4.08268 6.41699 4.08268H2.91699Z" fill="black" />

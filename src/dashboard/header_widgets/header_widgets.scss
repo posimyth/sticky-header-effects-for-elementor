@@ -416,12 +416,12 @@
         }
 
         &:hover {
-            color: $she_nexter_purple;
+            color: $she_btn_hover;
 
             &::before {
                 transform: scaleX(1);
                 transform-origin: bottom left;
-                background-color: $she_nexter_purple;
+                background-color: $she_btn_hover;
             }
         }
 
@@ -520,7 +520,7 @@
         padding: 10px;
     }
 
-    .she-nexter-btn {
+    .she-tpae-btn {
         padding: 12px 25px 12px 25px;
         background: $she_nexter_red;
         border-radius: 5px;
@@ -579,6 +579,7 @@
         font-size: 25px;
         line-height: 1.4;
         padding-bottom: 25px;
+        user-select: none;
     }
 
     .she-tpae-accordion {
@@ -592,6 +593,7 @@
     .she-tpae-accordion-item {
         border: 1px solid #ffffff30;
         border-radius: 8px;
+        user-select: none;
     }
 
     .she-tpae-accordio-content {
@@ -689,11 +691,13 @@
         font-weight: 500;
         font-size: 25px;
         line-height: 1.4;
+        user-select: none;
     }
 
 
     .she-wdkit-features-dic {
         text-align: center;
+        user-select: none;
     }
 
     .she-wdkit-features-dic ul {
@@ -755,6 +759,7 @@
         flex-direction: column;
         gap: 8px;
         padding: 30px 0px 30px 0px;
+        user-select: none;
     }
 
     .she-wdkit-accordion-item {
