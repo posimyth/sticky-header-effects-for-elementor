@@ -292,7 +292,7 @@ const Header_widgets = (props) => {
                                                 {categoryKey.label}
                                             </h3>
                                             <div className='she-cat-qik-info'>
-                                                <span className='she-ttl-wid-num'>{extension_options.length} {__('Total Extensions', 'she-header')} </span>
+                                                <span className='she-ttl-wid-num'>{extension_options.length} {__('Total Widgets', 'she-header')} </span>
                                             </div>
                                         </div>
                                     </div>
@@ -415,6 +415,15 @@ const Header_widgets = (props) => {
                                                             )}
 
                                                             {data?.type === 'elementor' && data?.name === 'she_menu' && (
+                                                                 !ElementPro ? (
+                                                                    <a className='she-plugin-redirect' href={'https://elementor.com/pro/'} target="_blank" rel="noopener noreferrer">
+                                                                        <div className="she-widgets-download-template">
+                                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <path fillRule="evenodd" clipRule="evenodd" d="M8.75033 2.33268C8.42816 2.33268 8.16699 2.07152 8.16699 1.74935C8.16699 1.42718 8.42816 1.16602 8.75033 1.16602H12.2502H12.2503C12.3751 1.16602 12.4908 1.20521 12.5856 1.27196C12.7356 1.37752 12.8337 1.55199 12.8337 1.74935V5.24935C12.8337 5.57152 12.5725 5.83268 12.2503 5.83268C11.9282 5.83268 11.667 5.57152 11.667 5.24935V3.15756L6.24606 8.57849C6.01825 8.8063 5.6489 8.8063 5.4211 8.57849C5.19329 8.35069 5.19329 7.98134 5.4211 7.75354L10.842 2.33268H8.75033ZM2.91699 4.08268C2.76228 4.08268 2.61391 4.14414 2.50451 4.25354C2.39512 4.36293 2.33366 4.51131 2.33366 4.66602V11.0827C2.33366 11.2374 2.39512 11.3858 2.50451 11.4952C2.61391 11.6046 2.76228 11.666 2.91699 11.666H9.33366C9.48837 11.666 9.63674 11.6046 9.74614 11.4952C9.85553 11.3858 9.91699 11.2374 9.91699 11.0827V7.58268C9.91699 7.26052 10.1782 6.99935 10.5003 6.99935C10.8225 6.99935 11.0837 7.26052 11.0837 7.58268V11.0827C11.0837 11.5468 10.8993 11.9919 10.5711 12.3201C10.2429 12.6483 9.79779 12.8327 9.33366 12.8327H2.91699C2.45286 12.8327 2.00774 12.6483 1.67956 12.3201C1.35137 11.9919 1.16699 11.5468 1.16699 11.0827V4.66602C1.16699 4.20189 1.35137 3.75677 1.67956 3.42858C2.00774 3.10039 2.45286 2.91602 2.91699 2.91602H6.41699C6.73916 2.91602 7.00033 3.17718 7.00033 3.49935C7.00033 3.82152 6.73916 4.08268 6.41699 4.08268H2.91699Z" fill="black" />
+                                                                            </svg>
+                                                                        </div>
+                                                                    </a>
+                                                                ) : (
                                                                 <a className='she-plugin-redirect' href={preview_Plugin_url('elementor_free')} target="_blank" rel="noopener noreferrer">
                                                                     <div className="she-widgets-download-template">
                                                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -422,6 +431,7 @@ const Header_widgets = (props) => {
                                                                         </svg>
                                                                     </div>
                                                                 </a>
+                                                                )
                                                             )}
                                                         </label>
                                                     </div>
@@ -487,7 +497,7 @@ const Header_widgets = (props) => {
                         <div className='she-cate-btns-cover'>
                             <span className={ActiveTab == 'she_elementor' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_elementor') }}>{__('Elementor', 'she-header')}</span>
                             <span className={ActiveTab == 'she_theplus_addon' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_theplus_addon') }}>{__('The Plus Addons for Elementor', 'she-header')}</span>
-                            <span className={ActiveTab == 'she_wdesign_kit' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_wdesign_kit') }}>{__('WDesignkit', 'she-header')}</span>
+                            <span className={ActiveTab == 'she_wdesign_kit' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_wdesign_kit') }}>{__('WDesignKit', 'she-header')}</span>
                         </div>
                     </div>
                 </div>

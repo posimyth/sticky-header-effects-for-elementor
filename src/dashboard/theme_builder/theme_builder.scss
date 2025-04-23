@@ -2,6 +2,20 @@
 
 .she-theme-bulder-main {
 
+
+    .she-main-sections-heading {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .she-section-free-heading{
+        background: rgb(222 179 196 / 42%);
+        padding: 2px 8px 4px 8px;
+        margin: 0;
+        border-radius: 4px;
+        color: rgb(157, 26, 79);
+    }
     .she_theme_builder_box_cover_main {
         display: flex;
         flex-direction: column;
@@ -65,7 +79,7 @@
         box-sizing: border-box;
         margin: 0;
         position: relative;
-    }   
+    }
 }
 
 @media (max-width:991px) {

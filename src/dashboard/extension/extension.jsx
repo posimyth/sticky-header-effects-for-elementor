@@ -78,22 +78,22 @@ const Extension = (props) => {
 
     const InstallPopup = () => {
         return (
-           <>
-            <div className="she-nexter-content">
-                <div className="she-nexter-title">{__('Build a Strong, Secure and High-Performance Website with 22+ Unique WordPress Extensions from Nexter.', 'she-header')}</div>
-                <div className="she-features-ndic">
-                    <ul><li>{CheckIcon}{__('22+ Power up Extensions', 'she-header')}</li>
-                        <li>{CheckIcon}{__('Works with Popular WordPress Themes', 'she-header')}</li>
-                        <li>{CheckIcon}{__('Performance Booster', 'she-header')}</li>
-                        <li>{CheckIcon}{__('Security Hardener', 'she-header')}</li></ul>
+            <>
+                <div className="she-nexter-content">
+                    <div className="she-nexter-title">{__('Build a Strong, Secure and High-Performance Website with 22+ Unique WordPress Extensions from Nexter.', 'she-header')}</div>
+                    <div className="she-features-ndic">
+                        <ul><li>{CheckIcon}{__('22+ Power up Extensions', 'she-header')}</li>
+                            <li>{CheckIcon}{__('Works with Popular WordPress Themes', 'she-header')}</li>
+                            <li>{CheckIcon}{__('Performance Booster', 'she-header')}</li>
+                            <li>{CheckIcon}{__('Security Hardener', 'she-header')}</li></ul>
+                    </div>
+                    <div className="she-install-activate">
+                        <a className='she-nexter-btn' onClick={(e) => handleClick(e)}>{NexterBtn}</a>
+                        <a href='https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target="_blank" rel="noopener noreferrer" className='she-nexter-learn'>{__('Learn More', 'she-header')}</a>
+                    </div>
                 </div>
-                <div className="she-install-activate">
-                    <a className='she-nexter-btn' onClick={(e) => handleClick(e)}>{NexterBtn}</a>
-                    <a href='https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target="_blank" rel="noopener noreferrer" className='she-nexter-learn'>{__('Learn More', 'she-header')}</a>
-                </div>
-            </div>
-            <div className='she-nexter-group' style={{ backgroundImage: `url(${plugin_url}assets/images/banner/nexter_group.png)`,}}></div>
-           </>
+                <div className='she-nexter-group' style={{ backgroundImage: `url(${plugin_url}assets/images/banner/nexter_group.png)`, }}></div>
+            </>
 
         )
     }
@@ -184,15 +184,15 @@ const Extension = (props) => {
                                                                 <span className={`she-wid-sm-tag she-wid-name-hint-text tp-tag-color-${data.pro_status}`}>{data.pro_status}</span>
                                                             }
                                                         </div>
-                                                            <div className='she-abt-wid-qik-link-cov'>
-                                                                <a href={'https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-nexter-link'>{__('Live Demo', 'she-header')}</a>
-                                                                {(data.docUrl) &&
-                                                                    <span> | </span>
-                                                                }
-                                                                {data.docUrl &&
-                                                                    <a href={data.docUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-nexter-link'>{__('Read Docs', 'she-header')}</a>
-                                                                }
-                                                            </div>
+                                                        <div className='she-abt-wid-qik-link-cov'>
+                                                            <a href={'https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-nexter-link'>{__('Live Demo', 'she-header')}</a>
+                                                            {(data.docUrl) &&
+                                                                <span> | </span>
+                                                            }
+                                                            {data.docUrl &&
+                                                                <a href={data.docUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-nexter-link'>{__('Read Docs', 'she-header')}</a>
+                                                            }
+                                                        </div>
                                                     </div>
                                                     <div className='she-widget-inner-toggle'>
                                                         <label className="she-nexter-tgl-btn-cover">
@@ -218,20 +218,21 @@ const Extension = (props) => {
                                                 </div>
                                             )
                                         })}
-                                        {NShowPopup && (
-                                            <div className="she-nexter-popup">
-                                                <div className="she-nexter-bg">
-                                                    <div className="she-model-close" onClick={closePopup}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div>
-                                                    <InstallPopup />
-                                                </div>
-                                            </div>
-                                        )}
+
                                     </div>
                                 </div >
                             );
                         }
                     })
                 }
+                {NShowPopup && (
+                    <div className="she-nexter-popup">
+                        <div className="she-nexter-bg">
+                            <div className="she-model-close" onClick={closePopup}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div>
+                            <InstallPopup />
+                        </div>
+                    </div>
+                )}
                 {null_check && <NotFound />}
             </>
         );

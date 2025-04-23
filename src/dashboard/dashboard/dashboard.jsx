@@ -12,13 +12,13 @@ const DashboardInnerMain = (props) => {
 
     const slides = [
         {
-            key: 'tpae',
+            key: 'the-plus-addons-for-elementor-page-builder',
             heading: __('Best Elementor Addon with 120+ Widgets', 'she-header'),
             subheading: __('', 'she-header'),
             buttonLabel: __('Install', 'she-header'),
-            buttonLinkLabel: __('Learn More', 'she-header'),
+            buttonLinkLabel: __('Enable Widgets', 'she-header'),
             status: 'unavailable',
-            learnLink: 'https://wdesignkit.com/?utm_source=wpbackend&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings ',
+            learnLink: 'https://theplusaddons.com/',
             imgSrc: plugin_url + 'assets/images/banner/tpae.png',
             imgAlt: __('WdesignKit Image', 'she-header'),
             browseLink: '?page=theplus_welcome_page#/widgets',
@@ -199,7 +199,7 @@ const DashboardInnerMain = (props) => {
         var ajax_url = shed_data.ajax_url;
         var tp_slug = '';
         var tp_widgets_name = '';
-        if ('tpae' === key) {
+        if ('the-plus-addons-for-elementor-page-builder' === key) {
             tp_slug = 'the-plus-addons-for-elementor-page-builder/theplus_elementor_addon.php'
             tp_widgets_name = 'the-plus-addons-for-elementor-page-builder';
         } else if ('wdesignkit' === key) {
@@ -222,7 +222,7 @@ const DashboardInnerMain = (props) => {
             form.append('name', 'nexter');
         }
 
-        if ('wdesignkit' === key || 'uichemy' === key || 'nexter-extension' === key || 'the-plus-addons-for-block-editor' === key || 'tpae' === key) {
+        if ('wdesignkit' === key || 'uichemy' === key || 'nexter-extension' === key || 'the-plus-addons-for-block-editor' === key || 'the-plus-addons-for-elementor-page-builder' === key) {
 
             var form = new FormData();
             form.append('action', 'she_dashboard_ajax_call');

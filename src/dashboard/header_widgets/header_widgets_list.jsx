@@ -22,7 +22,7 @@ const plugin_widgets = [
                 demoUrl: '',
                 docUrl: 'https://elementor.com/help/the-menu-widget/',
                 videoUrl: '',
-                tag: 'free',
+                tag: 'pro',
                 labelIcon: '',
                 type:'elementor',
                 keyword: ['elementor menu', 'menu'],
@@ -59,7 +59,7 @@ const plugin_widgets = [
     },
     {
         name:'wdesign_kit',
-        label: __('WDesignkit', 'she-header'),
+        label: __('WDesignKit', 'she-header'),
         widgets: [
             {
                 name: 'side_sticky_header_menu',

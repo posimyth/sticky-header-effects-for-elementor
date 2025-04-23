@@ -94,8 +94,10 @@ const ThemeBuilder = (props) => {
     return (
         <div className='she-theme-bulder-main she-main-container'>
             <div className='she-section-heading-cover'>
-                <h3 className='she-section-heading'>{__('Elementor Theme Builder', 'she-header')}</h3>
-
+                <div className='she-main-sections-heading'>
+                   <h3 className='she-section-heading'>{__('Elementor Theme Builder', 'she-header')}</h3>
+                   <p className='she-section-free-heading'>{__('FREE', 'she-header')}</p>
+                </div>
                 <div className='she_head_tgl_btn_grp'>
                     {props?.plugin_check[4]?.status !== 'active' ?
                         <button className='she-purple-common-btn' onClick={() => { Install_Nexter() }}>{nexter_btn}</button>

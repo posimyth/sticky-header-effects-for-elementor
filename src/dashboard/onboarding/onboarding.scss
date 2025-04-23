@@ -37,7 +37,7 @@
         width: 100%;
         justify-content: flex-start;
         padding-top: 7%;
-        gap: 30px;
+        // gap: 30px;
     }
 
     // ---------common classes end-------- //
@@ -270,12 +270,38 @@
     .she-strt-crd-cover {
         gap: 20px;
         width: min-content;
+        height: 210px;
 
 
         .she-main-cover {
             background: linear-gradient(to bottom, #9d1a4f 0%, #9d1a4f 70%, #ffffff 70%, #ffffff 100%);
             border-radius: 10px;
         }
+ 
+        .she-main-cover.no-elementor-pro[data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 1;
+            pointer-events: none;
+            z-index: 10;
+          }
+          
+          .she-main-cover.no-elementor-pro {
+            cursor: no-drop;
+            // pointer-events: none;
+            opacity: 0.5;
+            position: relative;
+          }
+
 
         .she-main-cover-select {
             display: none;

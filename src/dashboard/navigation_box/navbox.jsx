@@ -114,11 +114,11 @@ const NavBox = (props) => {
                 <div className='she_dwd_sections'>
                     {plugin_status?.status === "active" || pluginActive ?
 
-                        <a href={wdkit_Plugin_url()} className='she_dwd_btn' onClick={(e) => handleClick(e)}>{__('Open Templates', 'she-header')}</a>
+                        <a href={wdkit_Plugin_url()} className='she_dwd_btn' target="_blank" onClick={(e) => handleClick(e)}>{__('Open Templates', 'she-header')}</a>
                         :
-                        <a className='she_dwd_btn' onClick={(e) => handleClick(e)}>{buttonText}</a>
+                        <a className='she_dwd_btn' target="_blank" onClick={(e) => handleClick(e)}>{buttonText}</a>
                     }
-                    <a className='she_dwd_link' href="https://wdesignkit.com/">Learn More</a>
+                    <a className='she_dwd_link' href="https://wdesignkit.com/templates" target="_blank">Learn More</a>
                 </div>
                 <div className="she_footer_img" style={{ backgroundImage: `url(${plugin_url}assets/images/banner/footer_wdk.png)`,}}></div>
             </div>
