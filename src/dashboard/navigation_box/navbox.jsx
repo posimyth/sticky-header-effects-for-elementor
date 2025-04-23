@@ -118,7 +118,7 @@ const NavBox = (props) => {
                         :
                         <a className='she_dwd_btn' target="_blank" onClick={(e) => handleClick(e)}>{buttonText}</a>
                     }
-                    <a className='she_dwd_link' href="https://wdesignkit.com/templates" target="_blank">Learn More</a>
+                    <a className='she_dwd_link' href="https://wdesignkit.com/templates?builder=1001&temp_type=websitekit" target="_blank">Learn More</a>
                 </div>
                 <div className="she_footer_img" style={{ backgroundImage: `url(${plugin_url}assets/images/banner/footer_wdk.png)`,}}></div>
             </div>

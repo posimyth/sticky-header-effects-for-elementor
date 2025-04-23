@@ -1,6 +1,6 @@
 @import "../../style/global.scss";
 
-.tpae-onboarding-cover {
+.she-onboarding-cover {
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -107,7 +107,7 @@
 
     // -----------------Steps Design Started----------------- //
 
-    .tpae-steps-cover {
+    .she-steps-cover {
         display: flex;
         width: 100%;
         // justify-content: space-between;
@@ -163,7 +163,7 @@
         }
 
         .tpae-step-number,
-        .tpae-step-name {
+        .she-step-name {
             text-align: center;
             z-index: 2;
             position: relative;
@@ -194,7 +194,7 @@
                 fill: $she_dark_pink;
             }
 
-            .tpae-step-name {
+            .she-step-name {
                 color: $she_black;
             }
 
@@ -205,7 +205,7 @@
             // }
         }
 
-        .tpae-step-name {
+        .she-step-name {
             font-family: $she_font_family;
             font-size: 14px;
             font-weight: 500;
@@ -453,7 +453,7 @@
         box-sizing: border-box;
         position: relative;
 
-        .tpae-rit-btn-cover {
+        .she-rit-btn-cover {
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -502,361 +502,12 @@
 
     // -----------------Step 2 Design Start----------------- //
 
-    .tpae-select-wid-temp {
-        gap: 30px;
-        justify-content: flex-start;
-        width: 100%;
 
-        &.tpae-seltemp {
-            width: 50%;
-        }
-
-        &.tpae-selwidgets {
-            width: 100%;
-        }
-
-        .tpae-select-wid-cover,
-        .tpae-select-website {
-            gap: 30px;
-            width: 100%;
-        }
-
-        .tpae-select-website {
-            .tpae-webtyp-btnver {
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-                justify-content: center;
-                align-items: center;
-                box-sizing: border-box;
-                position: relative;
-            }
-        }
-
-        .tpae-onbrd-wid-crd {
-            width: 28%;
-            height: auto;
-            min-height: 52px;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: $she_white;
-            border-radius: 8px;
-            position: relative;
-
-            .tpae-widget-name {
-                font-family: $she_font_family;
-                font-size: 14px;
-                line-height: 20px;
-                font-weight: 400;
-            }
-        }
-
-        .tpae-widtgl-list {
-            display: flex;
-            gap: 20px;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .tpae-widget-checklist {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            justify-content: flex-start;
-            align-items: flex-start;
-            background-color: $she_white;
-            box-sizing: border-box;
-            border-radius: 8px;
-            padding: 24px;
-            width: 100%;
-            height: 80vh;
-            overflow-y: scroll;
-
-            &::-webkit-scrollbar {
-                width: 4px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background-color: transparent;
-                border-radius: 10px;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background: $she_dark_pink;
-                border-radius: 10px;
-            }
-
-            &::-webkit-scrollbar-thumb:hover {
-                background: $she_dark_pink;
-            }
-
-            .tpae-widlist-name {
-                font-family: $she_font_family;
-                font-size: 16px;
-                font-weight: 500;
-                color: $she_black;
-                line-height: 24px;
-                padding-bottom: 15px;
-            }
-
-            .tpae-check-widlist {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                gap: 18px;
-                flex-wrap: wrap;
-            }
-
-            .tpae-wid-list {
-                display: flex;
-                gap: 6px;
-                width: 22%;
-                justify-content: flex-start;
-                align-items: center;
-            }
-        }
-
-        .tpae-wid-checklist-main {
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            position: relative;
-            box-sizing: border-box;
-        }
-
-        // --------------------------------------------------------//
-
-        .tpae-fp-tag {
-            width: fit-content;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $she_widget_hint_txt_bg;
-            color: $she_white;
-            font-family: $she_font_family;
-            font-size: 12px;
-            line-height: 16px;
-            padding: 4px 8px;
-            border-radius: 4px;
-        }
-
-        .tpae-webtype-list {
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: flex-start;
-
-            .tpae-webtylist-cover {
-                display: flex;
-                gap: 12px;
-                justify-content: flex-start;
-                align-items: center;
-                box-sizing: border-box;
-            }
-
-            .tpae-webtype {
-                width: fit-content;
-                padding: 8px 12px;
-                border: 1px solid $she_toggle_off_bg;
-                border-radius: 5px;
-                box-sizing: border-box;
-                position: relative;
-                font-family: $she_font_family;
-                font-size: 14px;
-                line-height: 20px;
-                font-weight: 400;
-                color: $she_gray_primary_normal;
-                cursor: pointer;
-                transition: all 0.1s ease-out;
-
-                &:hover {
-                    color: $she_white;
-                    background-color: $she_dark_pink;
-                    border-color: $she_dark_pink;
-                }
-
-                &:focus {
-                    background-color: $she_dark_pink;
-                }
-            }
-        }
-    }
 
     // -----------------Step 2 Design Completed----------------- //
 
     // -----------------Step 3 Design Start----------------- //
-    .tpae-enbls-temp {
-        justify-content: flex-start;
-        gap: 30px;
-        width: 100%;
 
-        &.tpae-select-temp {
-            // dis-----------------------//
-            display: none;
-
-            .tpae-sech-btn {
-                justify-content: center;
-                align-items: flex-start;
-            }
-
-            .tpae-selweb-filter {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .tpae-tab-filter {
-                display: flex;
-                gap: 10px;
-                justify-content: flex-start;
-                align-items: center;
-                position: relative;
-            }
-
-            .tpae-onbsearch-box {
-                width: 100%;
-                font-family: $she_font_family;
-                font-size: 14px;
-                line-height: 20px;
-                color: $she_black;
-                border: 1px solid $she-ghost-btn_border;
-                border-radius: 4px;
-                padding: 8px 20px 8px 35px;
-
-                &::placeholder {
-                    font-family: $she_font_family;
-                    color: $she_gray_primary_normal;
-                }
-
-                &:hover {
-                    border-color: $she_dark_pink;
-                }
-
-                &:focus {
-                    border-color: $she_dark_pink;
-                    box-shadow: none;
-                    outline: none;
-                }
-            }
-
-            .tpae-srch-main {
-                display: flex;
-                width: 100%;
-                box-sizing: border-box;
-                position: relative;
-
-                .tpae-temponb-srchicon {
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    margin: auto;
-                    left: 10px;
-                }
-            }
-
-            .tpae-search-drop {
-                display: flex;
-                width: 20%;
-                box-sizing: border-box;
-                position: relative;
-            }
-        }
-
-        .she-onbrd-crd-h {
-            text-align: left;
-        }
-
-        .tpae-sech-btn {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            box-sizing: border-box;
-            position: relative;
-
-            .she-pink-common-btn {
-                min-width: 14%;
-            }
-        }
-
-        .tpae-templ-cover {
-            width: 100%;
-            row-gap: 20px;
-            column-gap: 14px;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: space-between;
-            padding: 24px;
-            height: 80vh;
-            overflow-y: scroll;
-
-            &::-webkit-scrollbar {
-                width: 4px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background-color: transparent;
-                border-radius: 10px;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background: $she_dark_pink;
-                border-radius: 10px;
-            }
-
-            &::-webkit-scrollbar-thumb:hover {
-                background: $she_dark_pink;
-            }
-
-            .tpae-wtempl-card {
-                width: 21%;
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                gap: 9px;
-                justify-content: flex-start;
-                align-items: flex-start;
-                border: 1px solid $she_toggle_off_bg;
-                border-radius: 8px;
-                padding: 12px;
-
-                &:hover {
-                    border-color: $she_dark_pink;
-                }
-            }
-
-            .tpae-temimg-cover {
-                width: 100%;
-                height: 250px;
-                border: 1px solid $she_toggle_off_bg;
-                border-radius: 8px;
-                overflow: hidden;
-                border-radius: 4px;
-
-                .tpae-wtemp-img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    object-position: center;
-                }
-            }
-
-            .tpae-in-sec-heading {
-                line-clamp: 2;
-                box-orient: vertical;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-                cursor: default;
-                height: 46px;
-                max-height: max-content;
-                overflow: hidden;
-            }
-        }
-    }
 
     // -----------------Step 3 Design Complted----------------- //
 
@@ -994,176 +645,6 @@
     // -----------------Step 4 Design Complted----------------- //
 
     // -------------------Special Offer Start-------------------//
-    .tpae-specof-cover {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 40px;
-        width: 100%;
-        box-sizing: border-box;
-
-        .tpae-spctop-secs {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            box-sizing: border-box;
-            width: 100%;
-            position: relative;
-
-            .she-onbrd-crd-h {
-                width: 95%;
-            }
-        }
-
-        .tpae-hbtn-list {
-            display: flex;
-            width: 50%;
-            gap: 15px;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-
-            .tpae-spof-hintxt {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                width: fit-content;
-                gap: 4px;
-                padding: 4px;
-                border-radius: 3px;
-                background-color: $she_green;
-            }
-
-            .tpae-smtxt {
-                font-family: $she_font_family;
-                font-size: 12px;
-                line-height: 14px;
-                font-weight: 400;
-                color: $she_white;
-            }
-
-            .she-onbrd-crd-h {
-                text-align: left;
-                border-bottom: 1px solid $she_toggle_off_bg;
-                padding-bottom: 15px;
-            }
-
-            .she-pink-common-btn {
-                background-color: $she_red_btn_bg;
-                font-weight: 500;
-
-                &:hover {
-                    background-color: $she_red_btn_bg_dark;
-                }
-            }
-
-            .she-link-btn {
-                font-weight: 500;
-            }
-        }
-
-        .tpae-use-code {
-            font-family: $she_font_family;
-            font-size: 14px;
-            line-height: 20px;
-            font-weight: 500;
-
-            .tpae-uc-l {
-                color: $she_gray_primary_normal;
-                text-transform: uppercase;
-            }
-
-            .tpae-uc-sndtxt {
-                color: $she_dark_pink;
-                text-transform: uppercase;
-            }
-        }
-
-        .tpae-ritsm-list {
-            display: flex;
-            padding-left: 40px;
-            flex-direction: column;
-            gap: 15px;
-            width: 50%;
-            justify-content: center;
-            align-items: flex-start;
-            border-left: 1px solid $she_toggle_off_bg;
-            height: auto;
-
-            .tpae-chlist {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                gap: 5px;
-            }
-
-            .tpae-lismtxt {
-                font-family: $she_font_family;
-                font-size: 14px;
-                line-height: 20px;
-                font-weight: 500;
-            }
-        }
-
-        .tpae-btmbtn-grp {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .tpae-spwidlst-cover {
-            width: 100%;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 24px;
-
-            .tpae-spwid-crd {
-                display: flex;
-                flex-direction: column;
-                width: 23%;
-                gap: 14px;
-                justify-content: space-between;
-                align-items: center;
-                position: relative;
-            }
-
-            .tpae-spwidimg-cover {
-                width: 100%;
-                height: 240px;
-                border-radius: 8px;
-                overflow: hidden;
-
-                .tpae-spwid-img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    object-position: center;
-                }
-            }
-
-            .tpae-crd-btmh {
-                width: 70%;
-                text-align: center;
-                font-family: $she_font_family;
-                color: $she_gray_primary_normal;
-                font-size: 14px;
-                line-height: 20px;
-                font-weight: 400;
-                line-clamp: 2;
-                box-orient: vertical;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-                cursor: default;
-                height: 42px;
-                max-height: max-content;
-                overflow: hidden;
-            }
-        }
-    }
 
     // -----------------Stay Updated Start-------------------- //
     .she-stay-upcover {
@@ -1258,84 +739,6 @@
     }
 
     // -----------------Stay Updated Completed-------------------- //
-
-    .tpae-conf-allcover {
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-        justify-content: center;
-        box-sizing: border-box;
-        position: relative;
-
-        .tpae-setup-h {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .tpae-infcrd-cover {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            gap: 12px;
-            padding: 32px;
-            border-radius: 10px;
-            background-color: $she_white;
-            position: relative;
-        }
-
-        .tpae-smxtx-incover {
-            background-color: $she_gray_litint;
-            border: 1px solid $she_toggle_off_bg;
-            border-radius: 5px;
-            padding: 20px;
-            position: relative;
-
-            .tpae-sm-intxt {
-                font-family: $she_font_family;
-                color: $she_black;
-                font-size: 12px;
-                line-height: 18px;
-                font-weight: 400;
-                margin: 0;
-            }
-        }
-
-        .tpae-btn-grp {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            width: 100%;
-            box-sizing: border-box;
-            align-items: center;
-        }
-
-        .she-pink-common-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-
-            &.tpae-x-btn {
-                background-color: #14171a;
-
-                &:hover {
-                    background-color: #000000;
-                }
-            }
-
-            &.tpae-face-btn {
-                background-color: #4267b2;
-
-                &:hover {
-                    background-color: #2b4b8b;
-                }
-            }
-        }
-    }
 
 
     // wdkit popup
@@ -1511,46 +914,8 @@
 
     // -------------------Media Query Start ------------------- //
 
-    @media (max-width: 1440px) {
-        .tpae-enbls-temp {
-            .tpae-templ-cover {
-                padding: 24px;
-
-                .tpae-wtempl-card {
-                    width: 21%;
-                }
-            }
-        }
-    }
-
     @media (max-width: 1242px) {
-        .tpae-select-wid-temp {
-            .tpae-onbrd-wid-crd {
-                width: 26%;
-            }
-        }
-
-        .tpae-in-sec-heading {
-            font-size: 14px;
-        }
-
-
-        .tpae-enbls-temp {
-            .tpae-templ-cover {
-                height: 50vh;
-                justify-content: center;
-                padding: 24px 10px;
-
-                .tpae-wtempl-card {
-                    width: 20%;
-                }
-
-                .tpae-temimg-cover {
-                    height: 150px;
-                }
-            }
-        }
-
+  
         .she-enbltempl-cover {
             .tpae-pageimport-cover {
                 .tpae-impage-crd {
@@ -1580,48 +945,8 @@
                 font-size: 14px;
             }
 
-            .tpae-step-name {
+            .she-step-name {
                 font-size: 12px;
-            }
-        }
-
-        .tpae-select-wid-temp {
-            .tpae-widget-checklist {
-                .tpae-wid-list {
-                    width: 29%;
-                }
-
-                .tpae-check-widlist {
-                    column-gap: 28px;
-                }
-            }
-        }
-
-        .she-enbltempl-cover {
-            .tpae-pageimport-cover {
-                .tpae-page-crdgrid {
-                    width: 84%;
-                }
-
-                .tpae-impage-crd {
-                    width: 42%;
-
-                    .tpae-import-pageimg {
-                        height: 200px;
-                    }
-                }
-            }
-        }
-
-        .tpae-specof-cover {
-            .tpae-spwidlst-cover {
-                .tpae-spwid-crd {
-                    width: 29%;
-                }
-
-                .tpae-spwidimg-cover {
-                    height: 199px;
-                }
             }
         }
 
@@ -1637,32 +962,15 @@
                 height: 30px;
             }
         }
-
-        .tpae-enbls-temp {
-            .tpae-templ-cover {
-                .tpae-wtempl-card {
-                    width: 27%;
-                }
-            }
-        }
     }
 
     @media (max-width: 768px) {
-        .tpae-select-wid-temp {
-            .tpae-onbrd-wid-crd {
-                width: 36%;
-            }
-
-            &.tpae-seltemp {
-                width: 80%;
-            }
-        }
 
         .she-strt-crd-cover {
             flex-wrap: wrap;
         }
 
-        .tpae-steps-cover {
+        .she-steps-cover {
             &::before {
                 top: 46%;
             }
@@ -1675,26 +983,8 @@
         }
 
         .she-step-box {
-            .tpae-step-name {
+            .she-step-name {
                 display: none;
-            }
-        }
-
-        .tpae-enbls-temp {
-            .tpae-sech-btn {
-                .she-onbrd-crd-h {
-                    width: 62%;
-                }
-
-                .she-pink-common-btn {
-                    width: 28%;
-                }
-            }
-
-            .tpae-templ-cover {
-                .tpae-wtempl-card {
-                    width: 36%;
-                }
             }
         }
 
@@ -1702,28 +992,6 @@
             .tpae-pageimport-cover {
                 .tpae-page-crdgrid {
                     width: 100%;
-                }
-            }
-        }
-
-        .tpae-specof-cover {
-            .tpae-spwidlst-cover {
-                .tpae-spwidimg-cover {
-                    height: 250px;
-                }
-
-                .tpae-spwid-crd {
-                    width: 45%;
-                }
-            }
-
-            .tpae-ritsm-list {
-                padding-left: 22px;
-
-                .tpae-chlist {
-                    svg {
-                        flex-shrink: 0;
-                    }
                 }
             }
         }
@@ -1738,94 +1006,8 @@
     }
 
     @media (max-width: 576px) {
-        .tpae-select-wid-temp {
-            &.tpae-seltemp {
-                width: 100%;
-            }
-        }
 
-        .tpae-pageimport-cover {
-            .tpae-page-crdgrid {
-                padding: 20px;
-            }
-        }
-
-        .tpae-select-wid-temp {
-            .tpae-onbrd-wid-crd {
-                width: 100%;
-            }
-
-            .tpae-widget-checklist {
-                .tpae-wid-list {
-                    width: 100%;
-                }
-            }
-        }
-
-        .she-enbltempl-cover {
-            .tpae-pageimport-cover {
-                .tpae-impage-crd {
-                    width: 100%;
-
-                    .tpae-import-pageimg {
-                        height: 300px;
-                    }
-                }
-            }
-        }
-
-        .tpae-enbls-temp {
-            .tpae-sech-btn {
-                flex-wrap: wrap;
-                row-gap: 12px;
-
-                .she-onbrd-crd-h {
-                    width: 100%;
-                }
-
-                .she-pink-common-btn {
-                    width: 44%;
-                }
-            }
-
-            .tpae-templ-cover {
-                .tpae-wtempl-card {
-                    width: 38%;
-                }
-
-                .tpae-temimg-cover {
-                    height: 130px;
-                }
-            }
-        }
-
-        .tpae-specof-cover {
-            .tpae-spctop-secs {
-                flex-wrap: wrap;
-                gap: 24px;
-            }
-
-            .tpae-ritsm-list {
-                width: 100%;
-                padding: 0;
-                border-left: 0;
-            }
-
-            .tpae-hbtn-list {
-                width: 100%;
-            }
-
-            .tpae-spwidlst-cover {
-                padding: 12px;
-
-                .tpae-spwidimg-cover {
-                    height: 189px;
-                }
-            }
-        }
-
-        .she-stay-upcover,
-        .tpae-conf-allcover {
+        .she-stay-upcover {
             width: 100%;
         }
 
@@ -1835,7 +1017,7 @@
     }
 
     @media (max-width: 375px) {
-        .tpae-steps-cover {
+        .she-steps-cover {
             .she-step-box {
                 &::after {
                     padding: 18px;
@@ -1847,38 +1029,12 @@
             padding-top: 12%;
         }
 
-        .tpae-enbls-temp {
-            .tpae-sech-btn {
-                .she-pink-common-btn {
-                    width: 52%;
-                }
-            }
-
-            .tpae-templ-cover {
-                .tpae-wtempl-card {
-                    width: 100%;
-                }
-
-                .tpae-temimg-cover {
-                    height: 160px;
-                }
-            }
-        }
-
         .she-enbltempl-cover {
             .tpae-pageimport-cover {
                 .tpae-impage-crd {
                     .tpae-import-pageimg {
                         height: 154px;
                     }
-                }
-            }
-        }
-
-        .tpae-specof-cover {
-            .tpae-spwidlst-cover {
-                .tpae-spwid-crd {
-                    width: 100%;
                 }
             }
         }
@@ -1897,7 +1053,7 @@
 }
 
 // -----------------Global for onboarding-------------------- //
-.tpae-onboarding-cover .she-disable-element {
+.she-onboarding-cover .she-disable-element {
     opacity: 0.5;
     cursor: not-allowed;
 }

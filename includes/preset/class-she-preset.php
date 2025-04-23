@@ -210,7 +210,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 			<div id="she-wdkit-wrap" class="tp-main-container-preset" style="display: none">
 				<div class="she-middel-sections">
 				<div class="she-text-top">
-					<?php echo esc_html__( 'Import 50+ Pre-Designed ', 'she-header' ) . '<br />' . esc_html__( 'Sticky Header Templates ', 'she-header' ); ?>
+					<?php echo esc_html__( 'Import 50+ Pre-Designed Sticky Header Templates', 'she-header' ) ?>
 				</div>
 
 					<!-- <div class="tp-text-bottom">
@@ -244,6 +244,27 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 									<?php echo esc_html__( 'Explore Versatile Layout Options', 'she-header' ); ?>
 								</p>
 							</span>
+						</div>
+					</div>
+					<div class="she-suport-main-wap">
+						<div class="she-suport-text">
+							<?php echo esc_html__( 'Supports Widgets :', 'she-header' ); ?>
+						</div>
+						<div class="she-support-icon-main">
+							<div class="she-support-icon">
+								<div class="she-icon-list">
+								  <img src="<?php echo SHE_HEADER_URL . 'assets/images/products/tpae-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
+								   <p>TPAE Free Widgets</p>
+								</div>
+								<div class="she-icon-list">
+								  <img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
+								   <p>Elementor WordPress Menu</p>
+								</div>
+								<div class="she-icon-list">
+								  <img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
+								   <p>Elementor Nav Menu</p>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="wkit-she-preset-enable">
