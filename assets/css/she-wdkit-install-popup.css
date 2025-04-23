@@ -115,7 +115,7 @@
 }
 
 #she-wdkit-elementorp .tp-main-container-preset {
-    width: 75vw;
+    width: 60vw;
     background-color: #040483;
     display: flex;
     flex-direction: column;
@@ -238,7 +238,7 @@
 
 #she-wdkit-elementorp .she-image-sections {
     display: flex;
-    width: 75vw;
+    width: 60vw;
     height: 20vw;
     position: relative;
     background-image: url(../images/banner/wdkit-frame.png);

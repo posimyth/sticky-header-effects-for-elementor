@@ -2,8 +2,8 @@ import { __ } from '@wordpress/i18n';
 
 const plus_extension = [
     {
-        name: 'utitlies',
-        label: __('Utitlies', 'she-header'),
+        name: 'utilities',
+        label: __('Utilities', 'she-header'),
         widgets: [
             {
                 name: 'she_adobe_fonts',

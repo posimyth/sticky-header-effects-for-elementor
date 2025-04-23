@@ -431,12 +431,15 @@
 
                 svg {
                     fill: $she_toggle_off_bg;
+                    path {
+                        fill: #f9b744;
+                    }
                 }
 
                 &:hover {
                     svg {
                         path {
-                            fill: #f9b744;
+                            fill: #9f8048;
 
                         }
                     }
@@ -845,6 +848,10 @@
     }
 
     .shw_arrow {
+        z-index: -99;
+    }
+
+    .she_rating_box a{
         z-index: -99;
     }
 }

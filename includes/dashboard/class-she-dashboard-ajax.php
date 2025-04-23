@@ -108,6 +108,12 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				case 'she_api_call':
 					$response = $this->she_api_call();
 					break;
+				case 'she_create_page':
+					$response = $this->she_create_page();
+					break;
+				case 'she_onboarding_setup':
+					$response = $this->she_onboarding_setup();
+					break;
 				default:
 					$response = $this->she_set_response( false, 'Invalid type.', 'Something went wrong.' );
 					break;
@@ -150,6 +156,11 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 					'status'      => '',
 					'plugin_slug' => 'nexter-extension/nexter-extension.php',
 				),
+				array(
+					'name'        => 'elementor-pro',
+					'status'      => '',
+					'plugin_slug' => 'elementor-pro/elementor-pro.php',
+				),
 			);
 
 			$plugin_details = $this->she_check_plugins_depends( $plugins );
@@ -162,20 +173,29 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 			$tpae_pro = 0;
 
+			$check_onboarding = get_option( 'she_onboarding_setup' );
+
+			if ( $check_onboarding ) {
+				$set_onboarding = true;
+			} else {
+				$set_onboarding = false;
+			}
+
 			$user_info = array(
-				'user_image' => $user_image,
-				'roles'      => $user->roles,
-				'user_name'  => $user->display_name,
-				'user_email'  => $user->user_email,
-				'tpae_pro'   => $tpae_pro,
-				'success'    => true,
+				'user_image'       => $user_image,
+				'roles'            => $user->roles,
+				'user_name'        => $user->display_name,
+				'user_email'       => $user->user_email,
+				'tpae_pro'         => $tpae_pro,
+				'check_onboarding' => $set_onboarding,
+				'success'          => true,
 			);
 
 			$response = array(
-				'success'     => true,
-				'message'     => esc_html__( 'success', 'she-header' ),
-				'description' => esc_html__( 'success', 'she-header' ),
-				'user_info'   => $user_info,
+				'success'       => true,
+				'message'       => esc_html__( 'success', 'she-header' ),
+				'description'   => esc_html__( 'success', 'she-header' ),
+				'user_info'     => $user_info,
 				'plugin_detail' => $plugin_details,
 				'theme_detail'  => $theme_details,
 			);
@@ -224,20 +244,20 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 *
 		 * @param array $theme_slug List of required theme to check.
 		 */
-		public function she_check_theme_depends($theme_slug) {
+		public function she_check_theme_depends( $theme_slug ) {
 
-			$theme = wp_get_theme($theme_slug);
-		
-			if (!$theme->exists()) {
+			$theme = wp_get_theme( $theme_slug );
+
+			if ( ! $theme->exists() ) {
 				return array(
 					'name'   => $theme_slug,
 					'status' => 'unavailable',
 				);
 			}
-		
+
 			$current_theme = wp_get_theme();
-		
-			if ($theme_slug === $current_theme->get_stylesheet()) {
+
+			if ( $theme_slug === $current_theme->get_stylesheet() ) {
 				return array(
 					'name'   => $theme_slug,
 					'status' => 'active',
@@ -250,7 +270,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			}
 		}
 
-        /**
+		/**
 		 *
 		 * It is Use for Active Theme of template.
 		 *
@@ -261,7 +281,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		public function she_activate_theme() {
 
 			$theme_slug = isset( $_POST['theme_slug'] ) ? sanitize_text_field( wp_unslash( $_POST['theme_slug'] ) ) : '';
-			
+
 			$active_theme = wp_get_theme();
 			$theme_name   = $active_theme->get( 'Name' );
 
@@ -599,6 +619,67 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			return $final;
 		}
 
+
+		/**
+		 * Create Page for Header
+		 */
+		public function she_create_page() {
+			$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( $_POST['post_type'] ) : 'elementor_library';
+
+			$post_args = array(
+				'post_type'   => $post_type,
+				'post_title'  => 'sticky-header',
+				'post_status' => 'draft',
+			);
+
+			$post_id = wp_insert_post( $post_args );
+
+			if ( $post_type === 'nxt_builder' ) {
+				if ( $post_id && ! is_wp_error( $post_id ) ) {
+					update_post_meta( $post_id, 'template_type', 'header' );
+					update_post_meta( $post_id, 'nxt-hooks-layout-sections', 'header' );
+				}
+			} elseif ( $post_type === 'elementor_library' ) {
+				if ( $post_id && ! is_wp_error( $post_id ) ) {
+					update_post_meta( $post_id, '_elementor_template_type', 'header' );
+				}
+			}
+
+			$elementor_edit_url = admin_url( 'post.php?post=' . $post_id . '&action=elementor' );
+
+			return $this->she_set_response(
+				true,
+				'Page created successfully',
+				'',
+				array(
+					'post_id'  => $post_id,
+					'edit_url' => $elementor_edit_url,
+				)
+			);
+		}
+
+		/**
+		 * Onboarding Setup
+		 *
+		 * @since 2.0
+		 */
+		public function she_onboarding_setup() {
+
+			$onboarding = get_option( 'she_onboarding_setup' );
+
+			if ( ! $onboarding ) {
+				update_option( 'she_onboarding_setup', true );
+			}
+
+			$onboarding = get_option( 'she_onboarding_setup' );
+			if ( $onboarding ) {
+				$response = $this->she_set_response( true, 'Onboarding Setup', 'Onboarding Setup', '' );
+			} else {
+				$response = $this->she_set_response( false, 'Onboarding Setup Failed', 'Onboarding Setup Failed', '' );
+			}
+			return $response;
+		}
+
 		/**
 		 * Set the response data.
 		 *
@@ -615,6 +696,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				'success'     => $success,
 				'message'     => esc_html( $message ),
 				'description' => esc_html( $description ),
+				'data'        => $data,
 			);
 
 			return $response;

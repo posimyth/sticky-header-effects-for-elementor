@@ -4,8 +4,12 @@ import routes from '../router/routes.js';
 import NavBox from './navigation_box/navbox';
 import { connect } from 'react-redux';
 import { __ } from '@wordpress/i18n';
+import Onboarding from './onboarding/onboarding.jsx';
+
 
 const Dashboard = (props) => {
+
+    var check_onboarding = props.she_dashboard_data?.check_onboarding;
 
     const Outside_click = (e) => {
 
@@ -19,26 +23,32 @@ const Dashboard = (props) => {
 
     return (
         <>
-            <div className='she_dashboard_main_cover' onClick={(e) => { Outside_click(e); }}>
-                <div className='she_main_cover'>
-                    <div className='she_navbox_cover'>
-                        <NavBox />
-                    </div>
-                    <div className='she_dash_inner_main_cover'>
-                        <Routes>
-                            {routes.map((route, index) => (
-                                <Route key={index} path={route.path} element={route.element} />))
-                            }
-                        </Routes>
+            {typeof check_onboarding === 'boolean' && !check_onboarding ? (
+                <Onboarding />
+            ) : (
+                <div className='she_dashboard_main_cover' onClick={(e) => { Outside_click(e); }}>
+                    <div className='she_main_cover'>
+                        <div className='she_navbox_cover'>
+                            <NavBox />
+                        </div>
+                        <div className='she_dash_inner_main_cover'>
+                            <Routes>
+                                {routes.map((route, index) => (
+                                    <Route key={index} path={route.path} element={route.element} />
+                                ))}
+                            </Routes>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
         </>
-    )
+    );
+
 }
 
 const get_redux = state => ({
     plugin_check: state.check_plugin.plugin_status_rx,
+    she_dashboard_data: state.Dashboard_data.db_rx,
 })
 
 export default connect(get_redux)(Dashboard);

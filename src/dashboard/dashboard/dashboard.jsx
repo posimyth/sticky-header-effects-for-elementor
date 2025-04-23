@@ -21,7 +21,7 @@ const DashboardInnerMain = (props) => {
             learnLink: 'https://wdesignkit.com/?utm_source=wpbackend&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings ',
             imgSrc: plugin_url + 'assets/images/banner/tpae.png',
             imgAlt: __('WdesignKit Image', 'she-header'),
-            browseLink: '?page=wdesign-kit#/browse',
+            browseLink: '?page=theplus_welcome_page#/widgets',
             bg_color: 'linear-gradient(rgba(109, 104, 254, 1),rgba(180, 70, 255, 1))',
             bt_color: '#FF5A6E',
             bt_txt_color: '#ffffff'

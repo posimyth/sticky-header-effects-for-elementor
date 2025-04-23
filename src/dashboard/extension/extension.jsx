@@ -43,7 +43,7 @@ const Extension = (props) => {
 
         document.addEventListener('scroll', () => {
             /**code for activate tabs in menu  */
-            let plus_special = document.getElementById('she_utitlies')?.getBoundingClientRect()?.top - 350;
+            let plus_special = document.getElementById('she_utilities')?.getBoundingClientRect()?.top - 350;
             let plus_global = document.getElementById('she_performance')?.getBoundingClientRect()?.top - 350;
             let plus_columns = document.getElementById('she_security')?.getBoundingClientRect()?.top - 350;
             let plus_effect = document.getElementById('she_admin_Interface')?.getBoundingClientRect()?.top - 350;
@@ -55,7 +55,7 @@ const Extension = (props) => {
             } else if (plus_global < 0) {
                 setActiveTab('she_performance')
             } else if (plus_special < 0) {
-                setActiveTab('she_utitlies')
+                setActiveTab('she_utilities')
             }
         })
     })
@@ -262,7 +262,7 @@ const Extension = (props) => {
                     <div className='she-cat-strip-cov-main theplus-second-strip'>
 
                         <div className='she-cate-btns-cover'>
-                            <span className={ActiveTab == 'she_utitlies' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_utitlies') }}>{__('Utitlies', 'she-header')}</span>
+                            <span className={ActiveTab == 'she_utilities' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_utitlies') }}>{__('Utilities', 'she-header')}</span>
                             <span className={ActiveTab == 'she_performance' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_performance') }}>{__('Performance', 'she-header')}</span>
                             <span className={ActiveTab == 'she_security' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_security') }}>{__('Security', 'she-header')}</span>
                             <span className={ActiveTab == 'she_admin_Interface' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_admin_Interface') }}>{__('Admin Interface', 'she-header')}</span>

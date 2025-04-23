@@ -1,0 +1,1877 @@
+@import "../../style/global.scss";
+
+.tpae-onboarding-cover {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: #f9fbfd;
+    position: relative;
+
+    // ---------common classes start-------- //
+
+    .she-onbsec-cover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .she-whitebg-cover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $she_white;
+        border-radius: 10px;
+        padding: 24px;
+        box-sizing: border-box;
+        position: relative;
+        align-items: flex-end;
+    }
+
+    .she-steps-tab-cover {
+        width: 100%;
+        justify-content: flex-start;
+        padding-top: 7%;
+        gap: 30px;
+    }
+
+    // ---------common classes end-------- //
+
+    .she-chkbox-style {
+        appearance: none;
+        background-color: $she_white;
+        border: 1px solid $she_toggle_off_bg;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        margin: 0 5px 0 0;
+        outline: none;
+        position: relative;
+        transition: all 0.3s;
+
+        &::after {
+            border: solid $she_white;
+            border-width: 0 2px 2px 0;
+            content: "";
+            height: 8px;
+            left: 4px;
+            opacity: 0;
+            position: absolute;
+            top: 7px;
+            transform: rotate(45deg) scale(0) translate(-50%, -50%);
+            transition:
+                all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),
+                opacity 0.1s;
+            width: 4px;
+        }
+
+        &:focus {
+            box-shadow: none;
+            outline: none;
+            border-color: $she_dark_pink;
+        }
+
+        &:checked {
+            background-color: $she_dark_pink;
+            border-color: $she_dark_pink;
+            opacity: 1;
+
+            &::after {
+                opacity: 1;
+                transform: rotate(45deg) scale(1) translate(-50%, -50%);
+                transition: all 0.1s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    .she-wid-chk-name {
+        font-family: $she_font_family;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        color: $she_black;
+        cursor: pointer;
+        position: relative;
+        user-select: none;
+    }
+
+    // -----------------Steps Design Started----------------- //
+
+    .tpae-steps-cover {
+        display: flex;
+        width: 100%;
+        // justify-content: space-between;
+        box-sizing: border-box;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        user-select: none;
+
+        // &::before {
+        //     content: " ";
+        //     position: absolute;
+        //     top: 27%;
+        //     width: 96%;
+        //     border-top: 2px dashed $she-ghost-btn_border;
+        //     left: 0;
+        //     right: 0;
+        //     margin: auto;
+        // }
+    }
+
+    .she-step-box {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border-radius: 8px;
+        padding: 5px;
+        border: 1px solid #9f9f9f;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // row-gap: 12px;
+        // align-items: center;
+        // position: relative;
+        // cursor: pointer;
+        // box-sizing: border-box;
+
+        svg {
+            fill: #d9d9d9;
+            width: 20px;
+            height: 20px;
+        }
+
+        &::after {
+            // content: " ";
+            // position: absolute;
+            // background-color: #f9fbfd;
+            // width: auto;
+            // height: 100%;
+            // padding: 30px;
+            // z-index: 1;
+        }
+
+        .tpae-step-number,
+        .tpae-step-name {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .tpae-step-number {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 9px;
+            font-family: $she_font_family;
+            font-size: 18px;
+            font-weight: 500;
+            background-color: $she_white;
+            color: $she_gray_primary_normal;
+            border: 1px solid $she-ghost-btn_border;
+            border-radius: 100px;
+        }
+
+        &.she-step-active {
+
+            border: 1px solid $she_dark_pink;
+
+            svg {
+                fill: $she_dark_pink;
+            }
+
+            .tpae-step-name {
+                color: $she_black;
+            }
+
+            // .tpae-step-number {
+            //     background-color: $she_dark_pink;
+            //     color: $she_white;
+            //     border-color: $she_dark_pink;
+            // }
+        }
+
+        .tpae-step-name {
+            font-family: $she_font_family;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            text-wrap: nowrap;
+            width: 100%;
+            color: #9f9f9f;
+        }
+    }
+
+    // -----------------Steps Design Completed----------------- //
+
+    // -----------------Cards Design Started----------------- //
+
+    .she-start-crd-main {
+        gap: 10px;
+        width: max-content;
+        width: -moz-max-content;
+
+        .she-pink-common-btn {
+            padding: 6px 15px 6px 15px;
+            background: $she_dark_pink;
+            color: #ffffff;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            align-self: flex-end;
+            cursor: pointer;
+        }
+
+        .she-pink-common-btn.she-disable-element {
+
+            cursor: not-allowed;
+
+        }
+    }
+
+    .she-onbrd-crd-h {
+        font-size: 20px;
+        text-align: center;
+        font-family: $she_font_family;
+        font-weight: 500;
+        margin: 0;
+        position: relative;
+        line-height: 25px;
+        user-select: none;
+    }
+
+    .she-onbrd-crd-d {
+        font-size: 12px;
+        text-align: center;
+        line-height: 30px;
+        font-family: $she_font_family;
+        font-weight: 500;
+        margin: 0;
+        position: relative;
+        user-select: none;
+    }
+
+    .she-strt-crd-cover {
+        gap: 20px;
+        width: min-content;
+
+
+        .she-main-cover {
+            background: linear-gradient(to bottom, #9d1a4f 0%, #9d1a4f 70%, #ffffff 70%, #ffffff 100%);
+            border-radius: 10px;
+        }
+
+        .she-main-cover-select {
+            display: none;
+            justify-content: center;
+            gap: 5px;
+            background: #9d1a4f;
+            height: 19px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+            align-items: center;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+        }
+
+        .she-main-cover-select.show {
+            transform: translateY(0);
+            display: flex;
+            opacity: 1;
+        }
+
+        .she-main-text {
+            color: #ffffff;
+        }
+
+        .she-strat-card {
+            width: auto;
+            min-width: 212px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 32px;
+            border: 1px solid $she_toggle_off_bg;
+            gap: 8px;
+            border-radius: 10px;
+            transition: all 0.2s ease-in;
+            cursor: pointer;
+            position: relative;
+            background: #ffff;
+            user-select: none;
+
+            &:hover,
+            &.tpae-active-board-card {
+                border-color: $she_dark_pink;
+            }
+
+            .she-icon-box {
+                width: 20px;
+                height: 20px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $she_dark_pink;
+                border: 1px solid $she_prpl_strip_tint;
+                border-radius: 5px;
+                position: relative;
+            }
+
+            .she-element-pro {
+                position: absolute;
+                background: #F9B744;
+                top: -4px;
+                padding: 2px;
+                border-radius: 5px;
+                right: -3px;
+            }
+
+
+            .she-crd-h {
+                font-size: 16px;
+                line-height: 24px;
+                text-align: center;
+                font-weight: 500;
+                color: $she_black;
+                font-family: $she_font_family;
+                margin: 0;
+                position: relative;
+            }
+
+            .tpar-crd-desc {
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+                margin: 0;
+                font-weight: 400;
+                color: $she_gray_primary_normal;
+                font-family: $she_font_family;
+                position: relative;
+            }
+        }
+
+        .tpae-info-icon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+
+            &:hover {
+                .tpae-tip-txt {
+                    visibility: visible;
+                }
+            }
+
+            .tpae-tip-txt {
+                visibility: hidden;
+                width: 199px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px;
+                position: absolute;
+                z-index: 1;
+                bottom: 150%;
+                left: 50%;
+                margin-left: -100px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: black transparent transparent transparent;
+                }
+            }
+        }
+    }
+
+    .she-pink-common-btn {
+        background: #841742;
+        color: #ffffff;
+        padding: 8px;
+        border-radius: 8px;
+        min-width: max-content;
+        cursor: pointer;
+    }
+
+    .she-btmsm-btn {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+
+        .tpae-rit-btn-cover {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 15px;
+        }
+    }
+
+    .she-btmsm-btn.theme-bulider-sections {
+        justify-content: space-around;
+    }
+
+    .she-link-btn {
+        font-family: $she_font_family;
+        width: fit-content;
+        font-size: 14px;
+        line-height: 20px;
+        color: $she_gray_primary_normal;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+            color: $she_dark_pink;
+
+            &::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+                background-color: $she_dark_pink;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: $she_dark_pink;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+    }
+
+    // -----------------Cards Design End----------------- //
+
+    // -----------------Step 2 Design Start----------------- //
+
+    .tpae-select-wid-temp {
+        gap: 30px;
+        justify-content: flex-start;
+        width: 100%;
+
+        &.tpae-seltemp {
+            width: 50%;
+        }
+
+        &.tpae-selwidgets {
+            width: 100%;
+        }
+
+        .tpae-select-wid-cover,
+        .tpae-select-website {
+            gap: 30px;
+            width: 100%;
+        }
+
+        .tpae-select-website {
+            .tpae-webtyp-btnver {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                position: relative;
+            }
+        }
+
+        .tpae-onbrd-wid-crd {
+            width: 28%;
+            height: auto;
+            min-height: 52px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $she_white;
+            border-radius: 8px;
+            position: relative;
+
+            .tpae-widget-name {
+                font-family: $she_font_family;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 400;
+            }
+        }
+
+        .tpae-widtgl-list {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .tpae-widget-checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            background-color: $she_white;
+            box-sizing: border-box;
+            border-radius: 8px;
+            padding: 24px;
+            width: 100%;
+            height: 80vh;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: $she_dark_pink;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: $she_dark_pink;
+            }
+
+            .tpae-widlist-name {
+                font-family: $she_font_family;
+                font-size: 16px;
+                font-weight: 500;
+                color: $she_black;
+                line-height: 24px;
+                padding-bottom: 15px;
+            }
+
+            .tpae-check-widlist {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            .tpae-wid-list {
+                display: flex;
+                gap: 6px;
+                width: 22%;
+                justify-content: flex-start;
+                align-items: center;
+            }
+        }
+
+        .tpae-wid-checklist-main {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        // --------------------------------------------------------//
+
+        .tpae-fp-tag {
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $she_widget_hint_txt_bg;
+            color: $she_white;
+            font-family: $she_font_family;
+            font-size: 12px;
+            line-height: 16px;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .tpae-webtype-list {
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-start;
+
+            .tpae-webtylist-cover {
+                display: flex;
+                gap: 12px;
+                justify-content: flex-start;
+                align-items: center;
+                box-sizing: border-box;
+            }
+
+            .tpae-webtype {
+                width: fit-content;
+                padding: 8px 12px;
+                border: 1px solid $she_toggle_off_bg;
+                border-radius: 5px;
+                box-sizing: border-box;
+                position: relative;
+                font-family: $she_font_family;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 400;
+                color: $she_gray_primary_normal;
+                cursor: pointer;
+                transition: all 0.1s ease-out;
+
+                &:hover {
+                    color: $she_white;
+                    background-color: $she_dark_pink;
+                    border-color: $she_dark_pink;
+                }
+
+                &:focus {
+                    background-color: $she_dark_pink;
+                }
+            }
+        }
+    }
+
+    // -----------------Step 2 Design Completed----------------- //
+
+    // -----------------Step 3 Design Start----------------- //
+    .tpae-enbls-temp {
+        justify-content: flex-start;
+        gap: 30px;
+        width: 100%;
+
+        &.tpae-select-temp {
+            // dis-----------------------//
+            display: none;
+
+            .tpae-sech-btn {
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .tpae-selweb-filter {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .tpae-tab-filter {
+                display: flex;
+                gap: 10px;
+                justify-content: flex-start;
+                align-items: center;
+                position: relative;
+            }
+
+            .tpae-onbsearch-box {
+                width: 100%;
+                font-family: $she_font_family;
+                font-size: 14px;
+                line-height: 20px;
+                color: $she_black;
+                border: 1px solid $she-ghost-btn_border;
+                border-radius: 4px;
+                padding: 8px 20px 8px 35px;
+
+                &::placeholder {
+                    font-family: $she_font_family;
+                    color: $she_gray_primary_normal;
+                }
+
+                &:hover {
+                    border-color: $she_dark_pink;
+                }
+
+                &:focus {
+                    border-color: $she_dark_pink;
+                    box-shadow: none;
+                    outline: none;
+                }
+            }
+
+            .tpae-srch-main {
+                display: flex;
+                width: 100%;
+                box-sizing: border-box;
+                position: relative;
+
+                .tpae-temponb-srchicon {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    left: 10px;
+                }
+            }
+
+            .tpae-search-drop {
+                display: flex;
+                width: 20%;
+                box-sizing: border-box;
+                position: relative;
+            }
+        }
+
+        .she-onbrd-crd-h {
+            text-align: left;
+        }
+
+        .tpae-sech-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+
+            .she-pink-common-btn {
+                min-width: 14%;
+            }
+        }
+
+        .tpae-templ-cover {
+            width: 100%;
+            row-gap: 20px;
+            column-gap: 14px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 24px;
+            height: 80vh;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: $she_dark_pink;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: $she_dark_pink;
+            }
+
+            .tpae-wtempl-card {
+                width: 21%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 9px;
+                justify-content: flex-start;
+                align-items: flex-start;
+                border: 1px solid $she_toggle_off_bg;
+                border-radius: 8px;
+                padding: 12px;
+
+                &:hover {
+                    border-color: $she_dark_pink;
+                }
+            }
+
+            .tpae-temimg-cover {
+                width: 100%;
+                height: 250px;
+                border: 1px solid $she_toggle_off_bg;
+                border-radius: 8px;
+                overflow: hidden;
+                border-radius: 4px;
+
+                .tpae-wtemp-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .tpae-in-sec-heading {
+                line-clamp: 2;
+                box-orient: vertical;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                cursor: default;
+                height: 46px;
+                max-height: max-content;
+                overflow: hidden;
+            }
+        }
+    }
+
+    // -----------------Step 3 Design Complted----------------- //
+
+    // -----------------Step 4 Design Started----------------- /
+
+    .she-enbltempl-cover {
+        gap: 30px;
+        justify-content: flex-start;
+
+        .she-header-main-cover {
+            padding: 15px;
+            background: #ffffff;
+        }
+
+
+        .tpae-pageimport-cover {
+            gap: 30px;
+            width: 100%;
+
+            .tpae-page-crdgrid {
+                width: 74%;
+                height: 61vh;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+                background-color: $she_white;
+                overflow-y: scroll;
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: transparent;
+                    border-radius: 10px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: $she_dark_pink;
+                    border-radius: 10px;
+                }
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: $she_dark_pink;
+                }
+            }
+
+            .tpae-impage-name {
+                font-family: $she_font_family;
+                font-size: 14px;
+                font-weight: 500;
+                color: $she_black;
+                line-height: 20px;
+                margin: 0px;
+            }
+
+            .tpae-impage-crd {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                width: 28%;
+                border: 1px solid $she_toggle_off_bg;
+                padding: 12px;
+                border-radius: 4px;
+                transition: all 0.1s ease-out;
+                overflow: hidden;
+                position: relative;
+
+                .tpae-import-pageimg {
+                    width: 100%;
+                    height: 188px;
+                    border-radius: 4px;
+                    position: relative;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+
+                    &::before {
+                        visibility: hidden;
+                        content: " ";
+                        background-color: #000000b5;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        opacity: 0;
+                        transition: opacity 0.1s ease-out;
+                    }
+                }
+
+                &:hover {
+                    border-color: $she_dark_pink;
+
+                    .tpae-import-pageimg {
+                        &::before {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    .she-pink-common-btn {
+                        display: block;
+                    }
+                }
+
+                .she-pink-common-btn {
+                    display: none;
+                    padding: 12px 14px;
+                    background-color: $she_white;
+                    color: $she_gray_primary_normal;
+
+                    &:hover {
+                        background-color: $she_table_border;
+                    }
+                }
+
+                .tpae-tempcrd-link {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+
+    // -----------------Step 4 Design Complted----------------- //
+
+    // -------------------Special Offer Start-------------------//
+    .tpae-specof-cover {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 40px;
+        width: 100%;
+        box-sizing: border-box;
+
+        .tpae-spctop-secs {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            box-sizing: border-box;
+            width: 100%;
+            position: relative;
+
+            .she-onbrd-crd-h {
+                width: 95%;
+            }
+        }
+
+        .tpae-hbtn-list {
+            display: flex;
+            width: 50%;
+            gap: 15px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .tpae-spof-hintxt {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: fit-content;
+                gap: 4px;
+                padding: 4px;
+                border-radius: 3px;
+                background-color: $she_green;
+            }
+
+            .tpae-smtxt {
+                font-family: $she_font_family;
+                font-size: 12px;
+                line-height: 14px;
+                font-weight: 400;
+                color: $she_white;
+            }
+
+            .she-onbrd-crd-h {
+                text-align: left;
+                border-bottom: 1px solid $she_toggle_off_bg;
+                padding-bottom: 15px;
+            }
+
+            .she-pink-common-btn {
+                background-color: $she_red_btn_bg;
+                font-weight: 500;
+
+                &:hover {
+                    background-color: $she_red_btn_bg_dark;
+                }
+            }
+
+            .she-link-btn {
+                font-weight: 500;
+            }
+        }
+
+        .tpae-use-code {
+            font-family: $she_font_family;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 500;
+
+            .tpae-uc-l {
+                color: $she_gray_primary_normal;
+                text-transform: uppercase;
+            }
+
+            .tpae-uc-sndtxt {
+                color: $she_dark_pink;
+                text-transform: uppercase;
+            }
+        }
+
+        .tpae-ritsm-list {
+            display: flex;
+            padding-left: 40px;
+            flex-direction: column;
+            gap: 15px;
+            width: 50%;
+            justify-content: center;
+            align-items: flex-start;
+            border-left: 1px solid $she_toggle_off_bg;
+            height: auto;
+
+            .tpae-chlist {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .tpae-lismtxt {
+                font-family: $she_font_family;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 500;
+            }
+        }
+
+        .tpae-btmbtn-grp {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .tpae-spwidlst-cover {
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px;
+
+            .tpae-spwid-crd {
+                display: flex;
+                flex-direction: column;
+                width: 23%;
+                gap: 14px;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+
+            .tpae-spwidimg-cover {
+                width: 100%;
+                height: 240px;
+                border-radius: 8px;
+                overflow: hidden;
+
+                .tpae-spwid-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .tpae-crd-btmh {
+                width: 70%;
+                text-align: center;
+                font-family: $she_font_family;
+                color: $she_gray_primary_normal;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 400;
+                line-clamp: 2;
+                box-orient: vertical;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                cursor: default;
+                height: 42px;
+                max-height: max-content;
+                overflow: hidden;
+            }
+        }
+    }
+
+    // -----------------Stay Updated Start-------------------- //
+    .she-stay-upcover {
+        justify-content: flex-start;
+        width: 55%;
+        gap: 30px;
+
+        .she-onbrd-crd-h {
+            width: 82%;
+        }
+
+        .she-whinf-cover {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            gap: 12px;
+
+            .she-sm-txt,
+            .she-icotxt {
+                margin: 0;
+            }
+
+            .she-sm-txt {
+                font-family: $she_font_family;
+                color: $she_gray_primary_normal;
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 400;
+                user-select: none;
+            }
+
+            .she-grp-txtico {
+                svg {
+                    width: 12px;
+                }
+            }
+
+            .she-icotxt {
+                font-family: $she_font_family;
+                color: $she_green;
+                text-transform: uppercase;
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 400;
+                user-select: none;
+            }
+
+            .she-staywid-list {
+                .she-wid-chk-name {
+                    font-size: 12px;
+                    color: $she_gray_primary_normal;
+                }
+            }
+        }
+
+        .she-top-stxt {
+            display: flex;
+            width: 100%;
+            gap: 9px;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .she-grp-txtico {
+            display: flex;
+            gap: 6px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .she-in-boxfield {
+            font-family: $she_font_family;
+            font-size: 14px;
+            line-height: 20px;
+            width: 100%;
+            color: $she_black;
+            padding: 10px 15px;
+            border: 1px solid $she_toggle_off_bg;
+            border-radius: 5px;
+            box-shadow: none;
+
+            &:hover {
+                border-color: $she_dark_pink;
+            }
+
+            &:focus {
+                border-color: $she_dark_pink;
+                box-shadow: none;
+                outline: none;
+            }
+        }
+    }
+
+    // -----------------Stay Updated Completed-------------------- //
+
+    .tpae-conf-allcover {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        justify-content: center;
+        box-sizing: border-box;
+        position: relative;
+
+        .tpae-setup-h {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tpae-infcrd-cover {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            padding: 32px;
+            border-radius: 10px;
+            background-color: $she_white;
+            position: relative;
+        }
+
+        .tpae-smxtx-incover {
+            background-color: $she_gray_litint;
+            border: 1px solid $she_toggle_off_bg;
+            border-radius: 5px;
+            padding: 20px;
+            position: relative;
+
+            .tpae-sm-intxt {
+                font-family: $she_font_family;
+                color: $she_black;
+                font-size: 12px;
+                line-height: 18px;
+                font-weight: 400;
+                margin: 0;
+            }
+        }
+
+        .tpae-btn-grp {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            width: 100%;
+            box-sizing: border-box;
+            align-items: center;
+        }
+
+        .she-pink-common-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+
+            &.tpae-x-btn {
+                background-color: #14171a;
+
+                &:hover {
+                    background-color: #000000;
+                }
+            }
+
+            &.tpae-face-btn {
+                background-color: #4267b2;
+
+                &:hover {
+                    background-color: #2b4b8b;
+                }
+            }
+        }
+    }
+
+
+    // wdkit popup
+
+    // .she-tpae-wdkit-popup {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: rgba(0, 0, 0, 0.1);
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     z-index: 99999;
+    // }
+
+    .she-theme-content-bg {
+        position: relative;
+        // padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        padding-bottom: 30px;
+        // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        // width: 50vw;
+        // height: auto;
+    }
+
+    .she-wdkit-popup-close {
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+        width: -moz-max-content;
+        width: max-content;
+        right: 20px;
+        z-index: 999;
+    }
+
+    .she-onbording-accordion {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+
+    .she-wdkit-popup-content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        padding: 20px 40px 20px 40px;
+        width: 55%;
+        background: $she_white;
+    }
+
+    .she-wdkit-popup-title {
+        color: $she_black;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 1.4;
+        user-select: none;
+    }
+
+
+    .she-wdkit-features-dic {
+        text-align: center;
+        user-select: none;
+    }
+
+    .she-wdkit-features-dic ul {
+        list-style-type: none;
+        padding: 2px;
+        color: $she_black;
+        display: flex;
+        justify-content: center;
+        gap: 5px 26px;
+        flex-wrap: wrap;
+    }
+
+    .she-wdkit-features-dic ul li {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .she-wdkit-install-btn {
+        padding: 12px 25px 12px 25px;
+        background: #C22076;
+        border-radius: 5px;
+        color: #ffff;
+        cursor: pointer;
+    }
+
+    .she-wdkit-learn-more {
+        display: inline-block;
+        position: relative;
+        padding-left: 15px;
+        color: #ffff;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    .she-wdkit-learn-more::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: -4px;
+        left: 8px;
+        background-color: #ffff;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    .she-wdkit-learn-more:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .she-wdkit-popup-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        // padding: 30px 0px 30px 0px;
+        user-select: none;
+    }
+
+    .she-wdkit-accordion-item {
+        border: 1px solid rgb(240 240 240);
+        border-radius: 8px;
+    }
+
+    .she-wdkit-accordio-content {
+        display: flex;
+        justify-content: space-between;
+        background: #F0F0F0;
+        padding: 10px;
+        border-radius: 8px;
+        color: $she_black;
+    }
+
+    .she-tpae-content-opan {
+        border-bottom: 1px solid #ffffff30;
+        border-radius: 8px 8px 0px 0px;
+    }
+
+    .she-wdkit-accd-ans {
+        height: 0px;
+        overflow: hidden;
+        padding: 0px;
+        color: $she_black;
+        transition: height 0.3s ease, padding 0.3s ease;
+        word-spacing: 4px;
+    }
+
+    .she-wdkit-accd-ans.opan-accordion {
+        height: auto;
+        overflow: unset;
+        padding: 10px;
+        text-align: left;
+    }
+
+    // -------------------Media Query Start ------------------- //
+
+    @media (max-width: 1440px) {
+        .tpae-enbls-temp {
+            .tpae-templ-cover {
+                padding: 24px;
+
+                .tpae-wtempl-card {
+                    width: 21%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1242px) {
+        .tpae-select-wid-temp {
+            .tpae-onbrd-wid-crd {
+                width: 26%;
+            }
+        }
+
+        .tpae-in-sec-heading {
+            font-size: 14px;
+        }
+
+
+        .tpae-enbls-temp {
+            .tpae-templ-cover {
+                height: 50vh;
+                justify-content: center;
+                padding: 24px 10px;
+
+                .tpae-wtempl-card {
+                    width: 20%;
+                }
+
+                .tpae-temimg-cover {
+                    height: 150px;
+                }
+            }
+        }
+
+        .she-enbltempl-cover {
+            .tpae-pageimport-cover {
+                .tpae-impage-crd {
+                    .tpae-import-pageimg {
+                        height: 145px;
+                    }
+                }
+            }
+        }
+
+        .she-enbltempl-cover {
+            .tpae-pageimport-cover {
+                .tpae-page-crdgrid {
+                    width: 92%;
+                }
+            }
+        }
+
+        .she-stay-upcover {
+            width: 68%;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .she-step-box {
+            .tpae-step-number {
+                font-size: 14px;
+            }
+
+            .tpae-step-name {
+                font-size: 12px;
+            }
+        }
+
+        .tpae-select-wid-temp {
+            .tpae-widget-checklist {
+                .tpae-wid-list {
+                    width: 29%;
+                }
+
+                .tpae-check-widlist {
+                    column-gap: 28px;
+                }
+            }
+        }
+
+        .she-enbltempl-cover {
+            .tpae-pageimport-cover {
+                .tpae-page-crdgrid {
+                    width: 84%;
+                }
+
+                .tpae-impage-crd {
+                    width: 42%;
+
+                    .tpae-import-pageimg {
+                        height: 200px;
+                    }
+                }
+            }
+        }
+
+        .tpae-specof-cover {
+            .tpae-spwidlst-cover {
+                .tpae-spwid-crd {
+                    width: 29%;
+                }
+
+                .tpae-spwidimg-cover {
+                    height: 199px;
+                }
+            }
+        }
+
+        .she-stay-upcover {
+            width: 77%;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .she-step-box {
+            .tpae-step-number {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .tpae-enbls-temp {
+            .tpae-templ-cover {
+                .tpae-wtempl-card {
+                    width: 27%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .tpae-select-wid-temp {
+            .tpae-onbrd-wid-crd {
+                width: 36%;
+            }
+
+            &.tpae-seltemp {
+                width: 80%;
+            }
+        }
+
+        .she-strt-crd-cover {
+            flex-wrap: wrap;
+        }
+
+        .tpae-steps-cover {
+            &::before {
+                top: 46%;
+            }
+
+            .she-step-box {
+                &::after {
+                    padding: 30px 22px;
+                }
+            }
+        }
+
+        .she-step-box {
+            .tpae-step-name {
+                display: none;
+            }
+        }
+
+        .tpae-enbls-temp {
+            .tpae-sech-btn {
+                .she-onbrd-crd-h {
+                    width: 62%;
+                }
+
+                .she-pink-common-btn {
+                    width: 28%;
+                }
+            }
+
+            .tpae-templ-cover {
+                .tpae-wtempl-card {
+                    width: 36%;
+                }
+            }
+        }
+
+        .she-enbltempl-cover {
+            .tpae-pageimport-cover {
+                .tpae-page-crdgrid {
+                    width: 100%;
+                }
+            }
+        }
+
+        .tpae-specof-cover {
+            .tpae-spwidlst-cover {
+                .tpae-spwidimg-cover {
+                    height: 250px;
+                }
+
+                .tpae-spwid-crd {
+                    width: 45%;
+                }
+            }
+
+            .tpae-ritsm-list {
+                padding-left: 22px;
+
+                .tpae-chlist {
+                    svg {
+                        flex-shrink: 0;
+                    }
+                }
+            }
+        }
+
+        .she-stay-upcover {
+            .she-whinf-cover {
+                .she-icotxt {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        .tpae-select-wid-temp {
+            &.tpae-seltemp {
+                width: 100%;
+            }
+        }
+
+        .tpae-pageimport-cover {
+            .tpae-page-crdgrid {
+                padding: 20px;
+            }
+        }
+
+        .tpae-select-wid-temp {
+            .tpae-onbrd-wid-crd {
+                width: 100%;
+            }
+
+            .tpae-widget-checklist {
+                .tpae-wid-list {
+                    width: 100%;
+                }
+            }
+        }
+
+        .she-enbltempl-cover {
+            .tpae-pageimport-cover {
+                .tpae-impage-crd {
+                    width: 100%;
+
+                    .tpae-import-pageimg {
+                        height: 300px;
+                    }
+                }
+            }
+        }
+
+        .tpae-enbls-temp {
+            .tpae-sech-btn {
+                flex-wrap: wrap;
+                row-gap: 12px;
+
+                .she-onbrd-crd-h {
+                    width: 100%;
+                }
+
+                .she-pink-common-btn {
+                    width: 44%;
+                }
+            }
+
+            .tpae-templ-cover {
+                .tpae-wtempl-card {
+                    width: 38%;
+                }
+
+                .tpae-temimg-cover {
+                    height: 130px;
+                }
+            }
+        }
+
+        .tpae-specof-cover {
+            .tpae-spctop-secs {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .tpae-ritsm-list {
+                width: 100%;
+                padding: 0;
+                border-left: 0;
+            }
+
+            .tpae-hbtn-list {
+                width: 100%;
+            }
+
+            .tpae-spwidlst-cover {
+                padding: 12px;
+
+                .tpae-spwidimg-cover {
+                    height: 189px;
+                }
+            }
+        }
+
+        .she-stay-upcover,
+        .tpae-conf-allcover {
+            width: 100%;
+        }
+
+        .she-steps-tab-cover {
+            padding-top: 10%;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .tpae-steps-cover {
+            .she-step-box {
+                &::after {
+                    padding: 18px;
+                }
+            }
+        }
+
+        .she-steps-tab-cover {
+            padding-top: 12%;
+        }
+
+        .tpae-enbls-temp {
+            .tpae-sech-btn {
+                .she-pink-common-btn {
+                    width: 52%;
+                }
+            }
+
+            .tpae-templ-cover {
+                .tpae-wtempl-card {
+                    width: 100%;
+                }
+
+                .tpae-temimg-cover {
+                    height: 160px;
+                }
+            }
+        }
+
+        .she-enbltempl-cover {
+            .tpae-pageimport-cover {
+                .tpae-impage-crd {
+                    .tpae-import-pageimg {
+                        height: 154px;
+                    }
+                }
+            }
+        }
+
+        .tpae-specof-cover {
+            .tpae-spwidlst-cover {
+                .tpae-spwid-crd {
+                    width: 100%;
+                }
+            }
+        }
+
+        .she-stay-upcover {
+            .she-top-stxt {
+                flex-wrap: wrap;
+                gap: 9px;
+            }
+
+            .she-onbrd-crd-h {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// -----------------Global for onboarding-------------------- //
+.tpae-onboarding-cover .she-disable-element {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
