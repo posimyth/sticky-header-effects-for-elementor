@@ -10,14 +10,12 @@ const Dashboard = (props) => {
     const check_onboarding = props.she_dashboard_data?.check_onboarding;
     const [isCheckDone, setIsCheckDone] = useState(false);
 
-    // Check when data becomes available
     useEffect(() => {
         if (typeof check_onboarding === 'boolean') {
             setIsCheckDone(true);
         }
     }, [check_onboarding]);
 
-    // Outside click logic
     const Outside_click = (e) => {
         let drop_down = document.querySelectorAll(".she_ctm_drpdwn_content.theplus_wp_show");
         if (!e.target.closest(".she_ctm_drpdwn_header") && drop_down) {
@@ -27,7 +25,6 @@ const Dashboard = (props) => {
         }
     };
 
-    // Until data is available, render nothing
     if (!isCheckDone) {
         return null;
     }

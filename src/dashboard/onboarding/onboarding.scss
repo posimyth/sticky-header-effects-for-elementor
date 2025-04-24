@@ -899,7 +899,7 @@
     .she-wdkit-accd-ans {
         height: 0px;
         overflow: hidden;
-        padding: 0px;
+        padding:0px 5px 0px 5px;
         color: $she_black;
         transition: height 0.3s ease, padding 0.3s ease;
         word-spacing: 4px;
@@ -908,7 +908,7 @@
     .she-wdkit-accd-ans.opan-accordion {
         height: auto;
         overflow: unset;
-        padding: 10px;
+        padding: 10px 5px 10px 5px;
         text-align: left;
     }
 
