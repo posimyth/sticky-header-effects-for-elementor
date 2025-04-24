@@ -6,24 +6,35 @@ import { connect } from 'react-redux';
 import { __ } from '@wordpress/i18n';
 import Onboarding from './onboarding/onboarding.jsx';
 
-
 const Dashboard = (props) => {
+    const check_onboarding = props.she_dashboard_data?.check_onboarding;
+    const [isCheckDone, setIsCheckDone] = useState(false);
 
-    var check_onboarding = props.she_dashboard_data?.check_onboarding;
+    // Check when data becomes available
+    useEffect(() => {
+        if (typeof check_onboarding === 'boolean') {
+            setIsCheckDone(true);
+        }
+    }, [check_onboarding]);
 
+    // Outside click logic
     const Outside_click = (e) => {
-
-        let drop_down = document.querySelectorAll(".she_ctm_drpdwn_content.theplus_wp_show")
+        let drop_down = document.querySelectorAll(".she_ctm_drpdwn_content.theplus_wp_show");
         if (!e.target.closest(".she_ctm_drpdwn_header") && drop_down) {
             drop_down.forEach((content) => {
                 content.classList.remove("theplus_wp_show");
-            })
+            });
         }
+    };
+
+    // Until data is available, render nothing
+    if (!isCheckDone) {
+        return null;
     }
 
     return (
         <>
-            {typeof check_onboarding === 'boolean' && !check_onboarding ? (
+            {!check_onboarding ? (
                 <Onboarding />
             ) : (
                 <div className='she_dashboard_main_cover' onClick={(e) => { Outside_click(e); }}>
@@ -43,12 +54,11 @@ const Dashboard = (props) => {
             )}
         </>
     );
-
-}
+};
 
 const get_redux = state => ({
     plugin_check: state.check_plugin.plugin_status_rx,
     she_dashboard_data: state.Dashboard_data.db_rx,
-})
+});
 
 export default connect(get_redux)(Dashboard);
