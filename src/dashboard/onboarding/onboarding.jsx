@@ -148,7 +148,7 @@ const Onboarding = (props) => {
 
     const subscribe_she = async () => {
 
-        setSubscribeBtn('Submited !');
+        setSubscribeBtn('Submitted !');
         const encodedEmail = encodeURIComponent(email);
 
         const welcomeEmailUrl = `https://store.posimyth.com/?fluentcrm=1&route=contact&hash=f808721e-d3c0-4554-9146-2bc6a63a2974&email=${encodedEmail}`;

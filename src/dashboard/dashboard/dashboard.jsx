@@ -308,7 +308,7 @@ const DashboardInnerMain = (props) => {
         });
 
         if (response) {
-            setSubscribe_btn('Submited !');
+            setSubscribe_btn('Submitted !');
 
             setTimeout(() => {
                 setSubscribe_btn('Subscribe Now');
