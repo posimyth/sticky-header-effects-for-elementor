@@ -396,11 +396,11 @@ const Onboarding = (props) => {
             var data = response.data;
 
             if (data.success) {
-                setTrueStep(prevSteps =>
-                    prevSteps.map(step =>
-                        step.id === 'install_free_theme_builder' ? { ...step, active: true } : step
-                    )
-                );
+                // setTrueStep(prevSteps =>
+                //     prevSteps.map(step =>
+                //         step.id === 'install_free_theme_builder' ? { ...step, active: true } : step
+                //     )
+                // );
                 SetNexter(true);
                 SetNexterBtn('Create Header');
             } else {
