@@ -10,8 +10,6 @@
     background-color: #f9fbfd;
     position: relative;
 
-    // ---------common classes start-------- //
-
     .she-onbsec-cover {
         display: flex;
         justify-content: center;
@@ -33,14 +31,17 @@
         align-items: flex-end;
     }
 
+    .she-step-two .she-whitebg-cover {
+        padding: 25px 25px;
+        min-height: 170px;
+        justify-content: flex-start;
+    }
+
     .she-steps-tab-cover {
         width: 100%;
         justify-content: flex-start;
         padding-top: 7%;
-        // gap: 30px;
     }
-
-    // ---------common classes end-------- //
 
     .she-chkbox-style {
         appearance: none;
@@ -105,68 +106,39 @@
         user-select: none;
     }
 
-    // -----------------Steps Design Started----------------- //
-
     .she-steps-cover {
         display: flex;
         width: 100%;
-        // justify-content: space-between;
         box-sizing: border-box;
         position: relative;
         align-items: center;
         justify-content: center;
-        gap: 30px;
+        gap: 20px;
         user-select: none;
-
-        // &::before {
-        //     content: " ";
-        //     position: absolute;
-        //     top: 27%;
-        //     width: 96%;
-        //     border-top: 2px dashed $she-ghost-btn_border;
-        //     left: 0;
-        //     right: 0;
-        //     margin: auto;
-        // }
     }
 
     .she-step-box {
         display: flex;
         align-items: center;
         gap: 4px;
-        border-radius: 8px;
-        padding: 5px;
+        border-radius: 5px;
+        padding: 5px 15px;
         border: 1px solid #9f9f9f;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // row-gap: 12px;
-        // align-items: center;
-        // position: relative;
-        // cursor: pointer;
-        // box-sizing: border-box;
 
         svg {
             fill: #d9d9d9;
             width: 20px;
             height: 20px;
         }
-
-        &::after {
-            // content: " ";
-            // position: absolute;
-            // background-color: #f9fbfd;
-            // width: auto;
-            // height: 100%;
-            // padding: 30px;
-            // z-index: 1;
-        }
-
+ 
         .tpae-step-number,
         .she-step-name {
             text-align: center;
             z-index: 2;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .tpae-step-number {
@@ -188,6 +160,7 @@
 
         &.she-step-active {
 
+            background: #FFF0F6;
             border: 1px solid $she_dark_pink;
 
             svg {
@@ -195,7 +168,7 @@
             }
 
             .she-step-name {
-                color: $she_black;
+                color: #9D1A4F
             }
 
             // .tpae-step-number {
@@ -207,9 +180,8 @@
 
         .she-step-name {
             font-family: $she_font_family;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 500;
-            line-height: 20px;
             text-wrap: nowrap;
             width: 100%;
             color: #9f9f9f;
@@ -221,12 +193,12 @@
     // -----------------Cards Design Started----------------- //
 
     .she-start-crd-main {
-        gap: 10px;
+        gap: 20px;
         width: max-content;
         width: -moz-max-content;
 
         .she-pink-common-btn {
-            padding: 6px 15px 6px 15px;
+            padding: 8px 14px;
             background: $she_dark_pink;
             color: #ffffff;
             border-radius: 5px;
@@ -277,7 +249,7 @@
             background: linear-gradient(to bottom, #9d1a4f 0%, #9d1a4f 70%, #ffffff 70%, #ffffff 100%);
             border-radius: 10px;
         }
- 
+
         .she-main-cover.no-elementor-pro[data-tooltip]:hover::after {
             content: attr(data-tooltip);
             position: absolute;
@@ -293,14 +265,14 @@
             opacity: 1;
             pointer-events: none;
             z-index: 10;
-          }
-          
-          .she-main-cover.no-elementor-pro {
+        }
+
+        .she-main-cover.no-elementor-pro {
             cursor: no-drop;
             // pointer-events: none;
             opacity: 0.5;
             position: relative;
-          }
+        }
 
 
         .she-main-cover-select {
@@ -371,6 +343,8 @@
                 padding: 2px;
                 border-radius: 5px;
                 right: -3px;
+                width: 8px;
+                height: 8px;
             }
 
 
@@ -439,8 +413,8 @@
     .she-pink-common-btn {
         background: #841742;
         color: #ffffff;
-        padding: 8px;
-        border-radius: 8px;
+        padding: 8px 14px;
+        border-radius: 5px;
         min-width: max-content;
         cursor: pointer;
     }
@@ -461,8 +435,14 @@
         }
     }
 
+    .she-btmsm-btn.she-step-three-btn {
+        justify-content: center;
+    }
+
     .she-btmsm-btn.theme-bulider-sections {
-        justify-content: space-around;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
     }
 
     .she-link-btn {
@@ -522,6 +502,11 @@
             background: #ffffff;
         }
 
+        .she-btn-wreper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
 
         .tpae-pageimport-cover {
             gap: 30px;
@@ -642,11 +627,24 @@
         }
     }
 
-    // -----------------Step 4 Design Complted----------------- //
+    .she-onbsec-cover .she-step-foure {
+        display: flex;
+        align-items: center;
+        width: 45%;
+        user-select: none;
 
-    // -------------------Special Offer Start-------------------//
+        .she-header-main-cover {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
 
-    // -----------------Stay Updated Start-------------------- //
+        .she-last-child {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
     .she-stay-upcover {
         justify-content: flex-start;
         width: 55%;
@@ -688,7 +686,7 @@
                 text-transform: uppercase;
                 font-size: 12px;
                 line-height: 16px;
-                font-weight: 400;
+                font-weight: 500;
                 user-select: none;
             }
 
@@ -793,8 +791,8 @@
         flex-direction: column;
         gap: 15px;
         align-items: center;
-        padding: 20px 40px 20px 40px;
-        width: 55%;
+        padding: 40px;
+        width: 45%;
         background: $she_white;
     }
 
@@ -804,6 +802,7 @@
         font-size: 25px;
         line-height: 1.4;
         user-select: none;
+        width: 65%;
     }
 
 
@@ -899,7 +898,7 @@
     .she-wdkit-accd-ans {
         height: 0px;
         overflow: hidden;
-        padding:0px 5px 0px 5px;
+        padding: 0px 5px 0px 5px;
         color: $she_black;
         transition: height 0.3s ease, padding 0.3s ease;
         word-spacing: 4px;
@@ -915,7 +914,7 @@
     // -------------------Media Query Start ------------------- //
 
     @media (max-width: 1242px) {
-  
+
         .she-enbltempl-cover {
             .tpae-pageimport-cover {
                 .tpae-impage-crd {

@@ -8,16 +8,12 @@ import { redirect } from "react-router-dom";
 const Onboarding = (props) => {
 
     const [onBoardingStep, setOnBoardingStep] = useState(1)
-    const [accordionIndex, setAccordionIndex] = useState(0)
     const [selectElementor, SetElemetor] = useState('')
-
     const [activeIndex, setActiveIndex] = useState(0);
-
     const [email, setEmail] = useState('');
     const [isChecked, setIsChecked] = useState(true);
     const [subscribeBtn, setSubscribeBtn] = useState('Subscribe and Continue');
     const [subscribeBtncheck, setSubscribeBtncheck] = useState(false);
-
     const [NexterBtn, SetNexterBtn] = useState('Enable Theme Builder');
     const [Nextercheck, SetNexter] = useState(false);
     const [createheaderBtn, SetcreateheaderBtn] = useState({
@@ -27,7 +23,13 @@ const Onboarding = (props) => {
 
     const [ElementPro, SetElementPro] = useState(false);
 
-    var plugin_url = shed_data.shed_url;
+    const [TrueStep, setTrueStep] = useState([
+        { id: 'select_mode', step_number: 1, step_name: __('Select Mode', 'she-header'), active: false },
+        { id: 'get_updates', step_number: 2, step_name: __('Get Updates', 'she-header'), active: false },
+        { id: 'install_free_theme_builder', step_number: 3, step_name: __('Install Free Theme Builder', 'she-header'), active: false },
+        { id: 'create_header', step_number: 4, step_name: __('Create Header', 'she-header'), active: false },
+    ]);
+
     var nonce = shed_data.nonce;
     var ajax_url = shed_data.ajax_url;
     var plugin_status = props.plugin_check;
@@ -52,12 +54,24 @@ const Onboarding = (props) => {
 
     }, [plugin_status]);
 
-    const [TrueStep, setTrueStep] = useState([
-        { id: 'select_mode', step_number: 1, step_name: __('Select Mode', 'she-header'), active: false },
-        { id: 'get_updates', step_number: 2, step_name: __('Get Updates', 'she-header'), active: false },
-        { id: 'install_free_theme_builder', step_number: 3, step_name: __('Install Free Theme Builder', 'she-header'), active: false },
-        { id: 'create_header', step_number: 4, step_name: __('Create Header', 'she-header'), active: false },
-    ]);
+    var screenWidth = window.innerWidth;
+    var screenHeight = window.innerHeight;
+    var resolutions = (screenWidth + ' x ' + screenHeight);
+
+    const user_meta_data = async () => {
+
+        let form = new FormData();
+        form.append('action', 'she_dashboard_ajax_call');
+        form.append('nonce', nonce);
+        form.append('type', 'she_user_meta_data');
+        form.append('resolutions', resolutions);
+        var response = await axios.post(ajax_url, form);
+    }
+
+    useEffect(() => {
+        user_meta_data()
+    }, [])
+
 
     const handleOnboarding = () => {
         if (1 == onBoardingStep) {
@@ -87,9 +101,20 @@ const Onboarding = (props) => {
         );
     }
 
+    const HendalBackclick = (id) => {
+        setTrueStep(prevSteps =>
+            prevSteps.map(step =>
+                step.id === id ? { ...step, active: false } : step
+            )
+        );
+    }
+
     const getClassName = (step) => {
-        if (step <= onBoardingStep) {
+
+        if (step == onBoardingStep) {
             return "she-step-box she-step-active";
+        } else if (step <= onBoardingStep) {
+            return "she-step-box she-step-completed";
         }
         return "she-step-box";
     }
@@ -125,9 +150,15 @@ const Onboarding = (props) => {
             }
 
             setTrueStep(prevSteps =>
-                prevSteps.map(step =>
-                    step.id === 'create_header' ? { ...step, active: true } : step
-                )
+                prevSteps.map(step => {
+                    if (step.id === 'create_header') {
+                      return { ...step, active: true };
+                    }
+                    if (step.id === 'install_free_theme_builder') {
+                      return { ...step, active: true };
+                    }
+                    return step;
+                  })
             );
 
             let editUrl = page_data.data.edit_url.replace(/&amp;/g, '&');
@@ -179,10 +210,11 @@ const Onboarding = (props) => {
     };
 
     const isFormValid = isValidEmail(email) && isChecked;
+    
 
     const select_mode = () => {
         return (
-            <div className="she-start-crd-main she-onbsec-cover">
+            <div className="she-start-crd-main she-onbsec-cover she-step-one">
                 <h2 className="she-onbrd-crd-h">{__('Select Your Elementor Version', 'she-header')}</h2>
                 <h2 className="she-onbrd-crd-d">{__('We’ve detected your Elementor setup. Choose the right mode to proceed with Sticky Header onboarding.', 'she-header')}</h2>
 
@@ -244,12 +276,11 @@ const Onboarding = (props) => {
         )
     }
 
-
     const get_updates = () => {
 
         return (
 
-            <div className="she-stay-upcover she-onbsec-cover">
+            <div className="she-stay-upcover she-onbsec-cover she-step-two">
 
                 <h2 className="she-onbrd-crd-h">{__('Get Exclusive Elementor Tips, Tricks and Resources Delivered Straight to Your Inbox!', 'she-header')}</h2>
 
@@ -258,8 +289,8 @@ const Onboarding = (props) => {
                         <p className="she-sm-txt">{__('Join our 500K+ Business Owners, Marketers, WordPress users.', 'she-header')}</p>
 
                         <div className="she-grp-txtico">
-                            <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15.9552 2.9486L9.15521 0.130446C8.98255 0.0588995 8.68913 0 8.50212 0C8.31399sh 0 8.02223 0.0588995 7.84833 0.130446L1.04869 2.9486C0.414375 3.20893 0 3.8254 0 4.4771C0 13.5692 6.70083 18.036 8.49646 18.036C10.3098 18.036 17 13.5199 17 4.4771C17 3.8254 16.5856 3.20893 15.9552 2.9486ZM11.9 7.04515C11.9 7.23999 11.8327 7.43582 11.6953 7.5954L8.29526 11.5408C8.05729 11.8184 7.74208 11.8043 7.65 11.8043C7.42532 11.8043 7.20835 11.7152 7.04898 11.5566L5.34898 9.86574C5.18146 9.73297 5.1 9.51456 5.1 9.26797C5.1 8.81742 5.46479 8.42253 5.95 8.42253C6.16749 8.42253 6.38492 8.5051 6.55102 8.67021L7.60254 9.7161L10.4051 6.46324C10.5736 6.26836 10.8116 6.16867 11.0511 6.16867C11.7017 6.1997 11.9 6.78447 11.9 7.04515Z" fill="#1ECB2B" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <path d="M12.3849 2.28878L7.10652 0.101255C6.9725 0.0457194 6.74473 0 6.59958 0C6.45354 0 6.22707 0.0457194 6.09209 0.101255L0.814019 2.28878C0.321649 2.49086 0 2.96938 0 3.47525C0 10.5328 5.20136 14 6.59518 14C8.00273 14 13.1959 10.4945 13.1959 3.47525C13.1959 2.96938 12.8742 2.49086 12.3849 2.28878ZM9.2371 5.46863C9.2371 5.61987 9.18484 5.77188 9.07817 5.89575L6.439 8.95829C6.25428 9.17376 6.00961 9.16282 5.93813 9.16282C5.76373 9.16282 5.59532 9.09362 5.47161 8.97057L4.15202 7.65805C4.02199 7.55499 3.95876 7.38546 3.95876 7.19405C3.95876 6.84432 4.24192 6.53779 4.61855 6.53779C4.78737 6.53779 4.95614 6.60188 5.08508 6.73004L5.9013 7.54189L8.07669 5.01694C8.20752 4.86567 8.39229 4.78828 8.57813 4.78828C9.08315 4.81237 9.2371 5.26629 9.2371 5.46863Z" fill="#1ECB2B" />
                             </svg>
                             <p className="she-icotxt">{__('NO SPAM GUARANTEE', 'she-header')}</p>
                         </div>
@@ -287,7 +318,7 @@ const Onboarding = (props) => {
                 </div>
 
                 <div className="she-btmsm-btn">
-                    <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep - 1) }}>Back</span>
+                    <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep - 1); HendalBackclick('select_mode'); }}>Back</span>
                     <div className="she-rit-btn-cover">
                         <span
                             className="she-link-btn"
@@ -305,7 +336,7 @@ const Onboarding = (props) => {
                                 ) : (
                                     <a className="she-pink-common-btn"
                                         style={{ pointerEvents: 'none', cursor: 'not-allowed', opacity: 0.6, }}>
-                                        {__('Subscribe and Continue', 'she-header')}
+                                        {__('Subscribe & Continue', 'she-header')}
                                     </a>
                                 )
                             ) : (
@@ -332,19 +363,19 @@ const Onboarding = (props) => {
         const handleToggle = (index) => {
             setActiveIndex(activeIndex === index ? null : index);
         };
-        
+
         const wdkit_poup_accordian = [
             {
-                question: __('Why do I need the Nexter Extension?','she-header'),
-                answer:   __('Elementor’s free version doesn’t include a Theme Builder. The Nexter Extension fills this gap, allowing you to design and customize your website’s header, footer, and other theme components without upgrading to Elementor Pro.','she-header'),
+                question: __('Why do I need the Nexter Extension?', 'she-header'),
+                answer: __('Elementor’s free version doesn’t include a Theme Builder. The Nexter Extension fills this gap, allowing you to design and customize your website’s header, footer, and other theme components without upgrading to Elementor Pro.', 'she-header'),
             },
             {
-                question:  __('Will this work with any WordPress theme?','she-header'),
-                answer: __('Yes, the Nexter Extension is designed to work with any classic WordPress theme. However, for optimal performance, we recommend using it with themes like Hello Elementor, Nexter Theme, Astra, or GeneratePress. If you encounter any issues, please connect with us via our website’s live chat.','she-header'),
+                question: __('Will this work with any WordPress theme?', 'she-header'),
+                answer: __('Yes, the Nexter Extension is designed to work with any classic WordPress theme. However, for optimal performance, we recommend using it with themes like Hello Elementor, Nexter Theme, Astra, or GeneratePress. If you encounter any issues, please connect with us via our website’s live chat.', 'she-header'),
             },
             {
-                question: __('Will it break my current website?','she-header'),
-                answer: __('Not at all. The Nexter Extension is designed to integrate seamlessly with your existing website. Your current design and content will remain intact unless you choose to overwrite them with new Theme Builder templates from Nexter.','she-header'),
+                question: __('Will it break my current website?', 'she-header'),
+                answer: __('Not at all. The Nexter Extension is designed to integrate seamlessly with your existing website. Your current design and content will remain intact unless you choose to overwrite them with new Theme Builder templates from Nexter.', 'she-header'),
             }
         ];
 
@@ -381,53 +412,55 @@ const Onboarding = (props) => {
         return (
 
             <>
-                <div className="she-theme-content-bg">
-                    {/* <div className="she-wdkit-popup-close" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div> */}
-                    <div className='she-onbording-accordion'>
-                        <div className="she-wdkit-popup-content">
-                            <div className="she-wdkit-popup-title">Get Free Theme Builder for Elementor with Nexter Extension</div>
-                            <div className="she-wdkit-features-dic">
-                                <ul>
-                                    <li>{CheckIcon}{__('Free Elementor Header & Footer Builder', 'she-header')}</li>
-                                    <li>{CheckIcon}{__('Free Single, Archive & 404 Page Builder', 'she-header')}</li>
-                                    <li>{CheckIcon}{__('Pre-Made Theme Builder Section Templates', 'she-header')}</li>
-                                    <li>{CheckIcon}{__('100% Customisable with Widgets', 'she-header')}</li>
-                                </ul>
-                            </div>
-                            {/* <div className="she-wdkit-install-activate">
+                <div className="she-onbsec-cover she-step-three">
+                    <div className="she-theme-content-bg">
+                        {/* <div className="she-wdkit-popup-close" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div> */}
+                        <div className='she-onbording-accordion'>
+                            <div className="she-wdkit-popup-content">
+                                <div className="she-wdkit-popup-title">Get Free Theme Builder for Elementor with Nexter Extension</div>
+                                <div className="she-wdkit-features-dic">
+                                    <ul>
+                                        <li>{CheckIcon}{__('Free Elementor Header & Footer Builder', 'she-header')}</li>
+                                        <li>{CheckIcon}{__('Free Single, Archive & 404 Page Builder', 'she-header')}</li>
+                                        <li>{CheckIcon}{__('Pre-Made Theme Builder Section Templates', 'she-header')}</li>
+                                        <li>{CheckIcon}{__('100% Customisable with Widgets', 'she-header')}</li>
+                                    </ul>
+                                </div>
+                                {/* <div className="she-wdkit-install-activate">
                             <a className='she-wdkit-install-btn' >{'buttonText'}</a>
                             <a className='she-wdkit-learn-more' href='https://wdesignkit.com/' target='_blank' rel="noopener noreferrer">Learn More</a>
                              </div> */}
 
-                            <div className="she-wdkit-popup-accordion">
-                                {wdkit_poup_accordian.map((item, index) => (
-                                    <div key={index} className="she-wdkit-accordion-item">
-                                        <div className={`she-wdkit-accordio-content ${activeIndex === index ? "she-tpae-content-opan" : ""}`} onClick={() => handleToggle(index)}>
-                                            <div className="she-wdkit-accd-qui">{item.question}</div>
-                                            <div>
-                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    {activeIndex !== index && (<path d="M10 4.16675V15.8334" stroke="black" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />)}
-                                                    <path d="M4.16797 10H15.8346" stroke="black" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
-                                                </svg>
+                                <div className="she-wdkit-popup-accordion">
+                                    {wdkit_poup_accordian.map((item, index) => (
+                                        <div key={index} className="she-wdkit-accordion-item">
+                                            <div className={`she-wdkit-accordio-content ${activeIndex === index ? "she-tpae-content-opan" : ""}`} onClick={() => handleToggle(index)}>
+                                                <div className="she-wdkit-accd-qui">{item.question}</div>
+                                                <div>
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        {activeIndex !== index && (<path d="M10 4.16675V15.8334" stroke="black" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />)}
+                                                        <path d="M4.16797 10H15.8346" stroke="black" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
+                                                    </svg>
+                                                </div>
                                             </div>
+                                            <div className={`she-wdkit-accd-ans ${activeIndex === index ? "opan-accordion" : ""}`}>{item.answer}</div>
                                         </div>
-                                        <div className={`she-wdkit-accd-ans ${activeIndex === index ? "opan-accordion" : ""}`}>{item.answer}</div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-                <div className="she-btmsm-btn theme-bulider-sections">
-                    <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep - 1) }}>Back</span>
-                    <div className="she-rit-btn-cover">
-                        {!Nextercheck ? (
-                            <a className="she-pink-common-btn" onClick={(e) => install_nexter(e)}>{NexterBtn}</a>
-                        ) : (
-                            <a className="she-pink-common-btn" onClick={(e) => create_header_temp('nxt_builder')}>{createheaderBtn.btn_one}</a>
-                        )}
+                <div className="she-btmsm-btn she-step-three-btn">
+                    <div className="she-btmsm-btn theme-bulider-sections">
+                        <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep - 1); HendalBackclick('get_updates'); }}>Back</span>
+                        <div className="she-rit-btn-cover">
+                            {!Nextercheck ? (
+                                <a className="she-pink-common-btn" onClick={(e) => install_nexter(e)}>{NexterBtn}</a>
+                            ) : (
+                                <a className="she-pink-common-btn" onClick={(e) => create_header_temp('nxt_builder')}>{createheaderBtn.btn_one}</a>
+                            )}
+                        </div>
                     </div>
                 </div>
             </>
@@ -437,19 +470,20 @@ const Onboarding = (props) => {
     const create_header = () => {
 
         return (
-            <div className="she-enbltempl-cover she-onbsec-cover">
+            <div className="she-enbltempl-cover she-onbsec-cover she-step-foure">
 
                 <div className="she-header-main-cover">
                     <div className="she-header-main-cover-left">
-                        <h2 className="she-onbrd-crd-h">{__('You\'re All Set! Now, Create Your Sticky Header', 'she-header')}</h2>
-                        <p className="she-sm-txt">{__('Everything is set up! Click below to open Elementor Theme Builder and create your Sticky Header effortlessly.', 'she-header')}</p>
+                        <h2 className="she-onbrd-crd-h">{__('You\'re All Set!', 'she-header')}</h2>
+                        <h2 className="she-onbrd-crd-h">{__('Now, Create Your Sticky Header', 'she-header')}</h2>
+                        <p className="she-sm-txt">{__('Everything is set up! Click below to open Elementor Theme Builder and ', 'she-header')}</p>
+                        <p className="she-sm-txt she-last-child">{__('create your Sticky Header effortlessly.', 'she-header')}</p>
                     </div>
                 </div>
-                <div className="she-btmsm-btn">
+
+                <div className="she-btn-wreper she-step-foure-btn">
                     <a className="she-link-btn" onClick={() => {
-                        setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? -2 : -1));
-                        Hendalclick('get_updates');
-                    }}>Back</a>
+                        setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? -2 : -1)); HendalBackclick('get_updates');}}>Back</a>
                     <div className="she-rit-btn-cover">
                         <a className="she-pink-common-btn" onClick={(e) => create_header_temp('elementor_library')}>{createheaderBtn.btn_two}</a>
                     </div>
@@ -457,9 +491,6 @@ const Onboarding = (props) => {
             </div>
         )
     }
-
-
-
 
     return (
 
@@ -477,10 +508,10 @@ const Onboarding = (props) => {
                             <React.Fragment key={index}>
                                 <div className={getClassName(data.step_number)}>
                                     {data?.active ? (
-                                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0C6.15661 -9.78424e-09 6.80679 0.129329 7.41342 0.380602C8.02004 0.631876 8.57124 1.00017 9.03553 1.46447C9.49983 1.92876 9.86812 2.47995 10.1194 3.08658C10.3707 3.69321 10.5 4.34339 10.5 5C10.5 5.65661 10.3707 6.30679 10.1194 6.91342C9.86812 7.52004 9.49983 8.07124 9.03553 8.53553C8.57124 8.99983 8.02004 9.36812 7.41342 9.6194C6.80679 9.87067 6.15661 10 5.5 10C4.17392 10 2.90215 9.47322 1.96447 8.53553C1.02678 7.59785 0.5 6.32608 0.5 5C0.5 3.67392 1.02678 2.40215 1.96447 1.46447C2.90215 0.526784 4.17392 1.97602e-08 5.5 0ZM7.26667 3.47L4.875 5.86833L3.71167 4.705C3.67293 4.66626 3.62694 4.63553 3.57632 4.61456C3.5257 4.5936 3.47145 4.58281 3.41667 4.58281C3.36188 4.58281 3.30763 4.5936 3.25701 4.61456C3.2064 4.63553 3.16041 4.66626 3.12167 4.705C3.08293 4.74374 3.0522 4.78973 3.03123 4.84035C3.01026 4.89096 2.99947 4.94521 2.99947 5C2.99947 5.05479 3.01026 5.10904 3.03123 5.15965C3.0522 5.21027 3.08293 5.25626 3.12167 5.295L4.58 6.75333C4.6187 6.79214 4.66468 6.82292 4.71531 6.84393C4.76593 6.86493 4.82019 6.87574 4.875 6.87574C4.92981 6.87574 4.98407 6.86493 5.03469 6.84393C5.08532 6.82292 5.1313 6.79214 5.17 6.75333L7.85667 4.05833C7.93246 3.97964 7.97432 3.87433 7.97322 3.76508C7.97212 3.65583 7.92815 3.55138 7.85078 3.47423C7.77342 3.39709 7.66884 3.35341 7.55959 3.35262C7.45034 3.35183 7.34514 3.39398 7.26667 3.47Z"
+                                        <svg viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0C6.15661 -9.78424e-09 6.80679 0.129329 7.41342 0.380602C8.02004 0.631876 8.57124 1.00017 9.03553 1.46447C9.49983 1.92876 9.86812 2.47995 10.1194 3.08658C10.3707 3.69321 10.5 4.34339 10.5 5C10.5 5.65661 10.3707 6.30679 10.1194 6.91342C9.86812 7.52004 9.49983 8.07124 9.03553 8.53553C8.57124 8.99983 8.02004 9.36812 7.41342 9.6194C6.80679 9.87067 6.15661 10 5.5 10C4.17392 10 2.90215 9.47322 1.96447 8.53553C1.02678 7.59785 0.5 6.32608 0.5 5C0.5 3.67392 1.02678 2.40215 1.96447 1.46447C2.90215 0.526784 4.17392 1.97602e-08 5.5 0ZM7.26667 3.47L4.875 5.86833L3.71167 4.705C3.67293 4.66626 3.62694 4.63553 3.57632 4.61456C3.5257 4.5936 3.47145 4.58281 3.41667 4.58281C3.36188 4.58281 3.30763 4.5936 3.25701 4.61456C3.2064 4.63553 3.16041 4.66626 3.12167 4.705C3.08293 4.74374 3.0522 4.78973 3.03123 4.84035C3.01026 4.89096 2.99947 4.94521 2.99947 5C2.99947 5.05479 3.01026 5.10904 3.03123 5.15965C3.0522 5.21027 3.08293 5.25626 3.12167 5.295L4.58 6.75333C4.6187 6.79214 4.66468 6.82292 4.71531 6.84393C4.76593 6.86493 4.82019 6.87574 4.875 6.87574C4.92981 6.87574 4.98407 6.86493 5.03469 6.84393C5.08532 6.82292 5.1313 6.79214 5.17 6.75333L7.85667 4.05833C7.93246 3.97964 7.97432 3.87433 7.97322 3.76508C7.97212 3.65583 7.92815 3.55138 7.85078 3.47423C7.77342 3.39709 7.66884 3.35341 7.55959 3.35262C7.45034 3.35183 7.34514 3.39398 7.26667 3.47Z"
                                             fill="#14C38E" /></svg>
                                     ) : (
-                                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0C6.15661 -9.78424e-09 6.80679 0.129329 7.41342 0.380602C8.02004 0.631876 8.57124 1.00017 9.03553 1.46447C9.49983 1.92876 9.86812 2.47995 10.1194 3.08658C10.3707 3.69321 10.5 4.34339 10.5 5C10.5 5.65661 10.3707 6.30679 10.1194 6.91342C9.86812 7.52004 9.49983 8.07124 9.03553 8.53553C8.57124 8.99983 8.02004 9.36812 7.41342 9.6194C6.80679 9.87067 6.15661 10 5.5 10C4.17392 10 2.90215 9.47322 1.96447 8.53553C1.02678 7.59785 0.5 6.32608 0.5 5C0.5 3.67392 1.02678 2.40215 1.96447 1.46447C2.90215 0.526784 4.17392 1.97602e-08 5.5 0ZM7.26667 3.47L4.875 5.86833L3.71167 4.705C3.67293 4.66626 3.62694 4.63553 3.57632 4.61456C3.5257 4.5936 3.47145 4.58281 3.41667 4.58281C3.36188 4.58281 3.30763 4.5936 3.25701 4.61456C3.2064 4.63553 3.16041 4.66626 3.12167 4.705C3.08293 4.74374 3.0522 4.78973 3.03123 4.84035C3.01026 4.89096 2.99947 4.94521 2.99947 5C2.99947 5.05479 3.01026 5.10904 3.03123 5.15965C3.0522 5.21027 3.08293 5.25626 3.12167 5.295L4.58 6.75333C4.6187 6.79214 4.66468 6.82292 4.71531 6.84393C4.76593 6.86493 4.82019 6.87574 4.875 6.87574C4.92981 6.87574 4.98407 6.86493 5.03469 6.84393C5.08532 6.82292 5.1313 6.79214 5.17 6.75333L7.85667 4.05833C7.93246 3.97964 7.97432 3.87433 7.97322 3.76508C7.97212 3.65583 7.92815 3.55138 7.85078 3.47423C7.77342 3.39709 7.66884 3.35341 7.55959 3.35262C7.45034 3.35183 7.34514 3.39398 7.26667 3.47Z"
+                                        <svg viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0C6.15661 -9.78424e-09 6.80679 0.129329 7.41342 0.380602C8.02004 0.631876 8.57124 1.00017 9.03553 1.46447C9.49983 1.92876 9.86812 2.47995 10.1194 3.08658C10.3707 3.69321 10.5 4.34339 10.5 5C10.5 5.65661 10.3707 6.30679 10.1194 6.91342C9.86812 7.52004 9.49983 8.07124 9.03553 8.53553C8.57124 8.99983 8.02004 9.36812 7.41342 9.6194C6.80679 9.87067 6.15661 10 5.5 10C4.17392 10 2.90215 9.47322 1.96447 8.53553C1.02678 7.59785 0.5 6.32608 0.5 5C0.5 3.67392 1.02678 2.40215 1.96447 1.46447C2.90215 0.526784 4.17392 1.97602e-08 5.5 0ZM7.26667 3.47L4.875 5.86833L3.71167 4.705C3.67293 4.66626 3.62694 4.63553 3.57632 4.61456C3.5257 4.5936 3.47145 4.58281 3.41667 4.58281C3.36188 4.58281 3.30763 4.5936 3.25701 4.61456C3.2064 4.63553 3.16041 4.66626 3.12167 4.705C3.08293 4.74374 3.0522 4.78973 3.03123 4.84035C3.01026 4.89096 2.99947 4.94521 2.99947 5C2.99947 5.05479 3.01026 5.10904 3.03123 5.15965C3.0522 5.21027 3.08293 5.25626 3.12167 5.295L4.58 6.75333C4.6187 6.79214 4.66468 6.82292 4.71531 6.84393C4.76593 6.86493 4.82019 6.87574 4.875 6.87574C4.92981 6.87574 4.98407 6.86493 5.03469 6.84393C5.08532 6.82292 5.1313 6.79214 5.17 6.75333L7.85667 4.05833C7.93246 3.97964 7.97432 3.87433 7.97322 3.76508C7.97212 3.65583 7.92815 3.55138 7.85078 3.47423C7.77342 3.39709 7.66884 3.35341 7.55959 3.35262C7.45034 3.35183 7.34514 3.39398 7.26667 3.47Z"
                                         /></svg>
                                     )}
                                     <div className="she-step-name">{data.step_name}</div>
