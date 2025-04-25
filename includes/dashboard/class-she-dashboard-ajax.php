@@ -708,6 +708,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			$user_data['screen_resolution'] = $resolutions;
 			$user_data['server'] = ! empty( $_SERVER['SERVER_SOFTWARE'] ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) ) : '';
 			$user_data['db_version'] = $wpdb->db_version();
+			$user_data['she_version '] = SHE_HEADER_VERSION;
 
 			// Active Plugin Name.
 			$act_plugin = array();
