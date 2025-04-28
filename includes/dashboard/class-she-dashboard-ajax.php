@@ -190,7 +190,6 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				'roles'            => $user->roles,
 				'user_name'        => $user->display_name,
 				'user_email'       => $user->user_email,
-				'tpae_pro'         => $tpae_pro,
 				'check_onboarding' => $set_onboarding,
 				'success'          => true,
 			);
@@ -394,7 +393,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			$plugin_info->new_version = $this_version;
 			$plugin_info->slug        = $this_pluginslug;
 			$plugin_info->package     = $this_plugin_url;
-			$plugin_info->url         = 'https://theplusaddons.com/';
+			$plugin_info->url         = 'https://stickyheadereffects.com/';
 
 			$update_plugins_data->response[ $this_pluginname ] = $plugin_info;
 
@@ -694,21 +693,21 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 			global $wpdb;
 
-			$resolutions = !empty($_POST['resolutions']) ? $_POST['resolutions'] : '';
+			$resolutions = ! empty( $_POST['resolutions'] ) ? $_POST['resolutions'] : '';
 
-			$user_data  = array();
+			$user_data = array();
 
-			$user_data['memory_limit'] = ini_get( 'memory_limit' );
+			$user_data['memory_limit']       = ini_get( 'memory_limit' );
 			$user_data['max_execution_time'] = ini_get( 'max_execution_time' );
-			$user_data['php_version'] = phpversion();
-			$user_data['wp_version'] = get_bloginfo( 'version' );
-			$user_data['email'] = get_option( 'admin_email' );
-			$user_data['url'] = get_option( 'siteurl' );
-			$user_data['language'] = get_bloginfo( 'language' );
-			$user_data['screen_resolution'] = $resolutions;
-			$user_data['server'] = ! empty( $_SERVER['SERVER_SOFTWARE'] ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) ) : '';
-			$user_data['db_version'] = $wpdb->db_version();
-			$user_data['she_version'] = SHE_HEADER_VERSION;
+			$user_data['php_version']        = phpversion();
+			$user_data['wp_version']         = get_bloginfo( 'version' );
+			$user_data['email']              = get_option( 'admin_email' );
+			$user_data['url']                = get_option( 'siteurl' );
+			$user_data['language']           = get_bloginfo( 'language' );
+			$user_data['screen_resolution']  = $resolutions;
+			$user_data['server']             = ! empty( $_SERVER['SERVER_SOFTWARE'] ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) ) : '';
+			$user_data['db_version']         = $wpdb->db_version();
+			$user_data['she_version']        = SHE_HEADER_VERSION;
 
 			// Active Plugin Name.
 			$act_plugin = array();
@@ -726,11 +725,9 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			$user_data['plugins'] = implode( ',', $act_plugin );
 
 			$acthemeobj = wp_get_theme();
-				if ( $acthemeobj->get( 'Name' ) !== null && ! empty( $acthemeobj->get( 'Name' ) ) ) {
-					$user_data['theme'] = $acthemeobj->get( 'Name' );
-				}
-
-
+			if ( $acthemeobj->get( 'Name' ) !== null && ! empty( $acthemeobj->get( 'Name' ) ) ) {
+				$user_data['theme'] = $acthemeobj->get( 'Name' );
+			}
 
 			$response = wp_remote_post(
 				$this->onbording_api,

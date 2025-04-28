@@ -86,7 +86,6 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 */
 		public function she_elementor_editor_script() {
 
-
 			wp_enqueue_script( 'she-wdkit-preview-popup', SHE_HEADER_URL . 'assets/js/she-preset-btn.js', array( 'jquery', 'wp-i18n' ), SHE_HEADER_VERSION, true );
 
 			wp_localize_script(
@@ -210,7 +209,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 			<div id="she-wdkit-wrap" class="tp-main-container-preset" style="display: none">
 				<div class="she-middel-sections">
 				<div class="she-text-top">
-					<?php echo esc_html__( 'Import 50+ Pre-Designed Sticky Header Templates', 'she-header' ) ?>
+					<?php echo esc_html__( 'Import 50+ Pre-Designed Sticky Header Templates', 'she-header' ); ?>
 				</div>
 
 					<!-- <div class="tp-text-bottom">
@@ -253,16 +252,16 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 						<div class="she-support-icon-main">
 							<div class="she-support-icon">
 								<div class="she-icon-list">
-								  <img src="<?php echo SHE_HEADER_URL . 'assets/images/products/tpae-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
-								   <p>TPAE Free Widgets</p>
+									<img src="<?php echo SHE_HEADER_URL . 'assets/images/products/tpae-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
+									<p>TPAE Free Widgets</p>
 								</div>
 								<div class="she-icon-list">
-								  <img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
-								   <p>Elementor WordPress Menu</p>
+									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
+									<p>Elementor WordPress Menu</p>
 								</div>
 								<div class="she-icon-list">
-								  <img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
-								   <p>Elementor Nav Menu</p>
+									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
+									<p>Elementor Nav Menu</p>
 								</div>
 							</div>
 						</div>

@@ -2,7 +2,7 @@
     const { __ } = wp.i18n;
 
     const ENABLE_TEMPLATES_TEXT = __("Enable Templates", "tpebl");
-    
+
     jQuery("document").ready(function () {
         jQuery(document).on('click', ".she-preset-editor-raw", function (event) {
 

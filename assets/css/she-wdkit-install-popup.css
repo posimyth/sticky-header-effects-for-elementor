@@ -299,6 +299,7 @@
     animation: spin 1.5s linear infinite
 }
 
+/** Controller logo */
 .elementor-control-section_sticky_header_effect::before{
     content: "";
     position: absolute;

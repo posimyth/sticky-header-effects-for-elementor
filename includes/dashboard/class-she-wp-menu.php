@@ -67,21 +67,25 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 			$capability = 'manage_options';
 
 			// if ( current_user_can( $capability ) ) {
-			// 	add_menu_page( __( 'SHE for Elementor', 'she-header' ), __( 'SHE for Elementor', 'she-header' ), 'manage_options', 'she-header', array( $this, 'she_menu_page_template' ), '', 67 );
+			// add_menu_page( __( 'SHE for Elementor', 'she-header' ), __( 'SHE for Elementor', 'she-header' ), 'manage_options', 'she-header', array( $this, 'she_menu_page_template' ), '', 67 );
 			// }
 
-			if (current_user_can($capability)) {
-				add_action('admin_menu', function () {
-					add_submenu_page(
-						'elementor', 
-						__('Sticky Header Effects', 'she-header'), 
-						__('Sticky Header Effects', 'she-header'), 
-						'manage_options', 
-						'she-header',
-						array($this, 'she_menu_page_template'),
-						14 
-					);
-				}, 80);
+			if ( current_user_can( $capability ) ) {
+				add_action(
+					'admin_menu',
+					function () {
+						add_submenu_page(
+							'elementor',
+							__( 'Sticky Header Effects', 'she-header' ),
+							__( 'Sticky Header Effects', 'she-header' ),
+							'manage_options',
+							'she-header',
+							array( $this, 'she_menu_page_template' ),
+							14
+						);
+					},
+					80
+				);
 			}
 		}
 
@@ -98,7 +102,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 		 * Register the JavaScript for the admin area.
 		 *
 		 * @param string $page give builder name.
-		 * @since 1.0.0
+		 * @since 2.0
 		 */
 		public function she_enqueue_scripts( $page ) {
 
@@ -115,7 +119,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 						'nonce'           => wp_create_nonce( 'she-db-nonce' ),
 						'shed_url'        => SHE_HEADER_URL,
 						'shed_wp_version' => SHE_HEADER_VERSION,
-						'she_wp_version' => get_bloginfo( 'version' ),
+						'she_wp_version'  => get_bloginfo( 'version' ),
 						'shed_pro'        => 0,
 						'shed_wdkit_url'  => SHE_WDKIT_URL,
 					),

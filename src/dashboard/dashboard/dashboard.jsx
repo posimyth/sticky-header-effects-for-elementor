@@ -357,11 +357,6 @@ const DashboardInnerMain = (props) => {
                     <div className='she_user_img_wn'>
                         <div className='she_user_img_cover'>
                             <img className='she_user_img' src={userImage || plugin_url + 'assets/images/tp-placeholder.jpg'} draggable={false} />
-                            {/* {tpae_pro == '1' &&
-                                <span className='she-pro-check'>
-                                    <img src={plugin_url + 'assets/svg/premium_icon.svg'} draggable={false} />
-                                </span>
-                            } */}
                         </div>
                         <h3 className='she_user_name'>{__('Welcome,', 'she-header')} {userName || '...'}</h3>
                     </div>
