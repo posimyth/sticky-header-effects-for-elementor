@@ -12,7 +12,7 @@ const Onboarding = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [email, setEmail] = useState('');
     const [isChecked, setIsChecked] = useState(true);
-    const [subscribeBtn, setSubscribeBtn] = useState('Subscribe and Continue');
+    const [subscribeBtn, setSubscribeBtn] = useState('Subscribe & Continue');
     const [subscribeBtncheck, setSubscribeBtncheck] = useState(false);
     const [NexterBtn, SetNexterBtn] = useState('Enable Theme Builder');
     const [Nextercheck, SetNexter] = useState(false);
@@ -152,13 +152,13 @@ const Onboarding = (props) => {
             setTrueStep(prevSteps =>
                 prevSteps.map(step => {
                     if (step.id === 'create_header') {
-                      return { ...step, active: true };
+                        return { ...step, active: true };
                     }
                     if (step.id === 'install_free_theme_builder') {
-                      return { ...step, active: true };
+                        return { ...step, active: true };
                     }
                     return step;
-                  })
+                })
             );
 
             let editUrl = page_data.data.edit_url.replace(/&amp;/g, '&');
@@ -210,7 +210,7 @@ const Onboarding = (props) => {
     };
 
     const isFormValid = isValidEmail(email) && isChecked;
-    
+
 
     const select_mode = () => {
         return (
@@ -483,7 +483,8 @@ const Onboarding = (props) => {
 
                 <div className="she-btn-wreper she-step-foure-btn">
                     <a className="she-link-btn" onClick={() => {
-                        setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? -2 : -1)); HendalBackclick('get_updates');}}>Back</a>
+                        setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? -2 : -1)); HendalBackclick('get_updates');
+                    }}>Back</a>
                     <div className="she-rit-btn-cover">
                         <a className="she-pink-common-btn" onClick={(e) => create_header_temp('elementor_library')}>{createheaderBtn.btn_two}</a>
                     </div>

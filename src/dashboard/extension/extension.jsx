@@ -263,7 +263,7 @@ const Extension = (props) => {
                     <div className='she-cat-strip-cov-main theplus-second-strip'>
 
                         <div className='she-cate-btns-cover'>
-                            <span className={ActiveTab == 'she_utilities' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_utitlies') }}>{__('Utilities', 'she-header')}</span>
+                            <span className={ActiveTab == 'she_utilities' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_utilities') }}>{__('Utilities', 'she-header')}</span>
                             <span className={ActiveTab == 'she_performance' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_performance') }}>{__('Performance', 'she-header')}</span>
                             <span className={ActiveTab == 'she_security' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_security') }}>{__('Security', 'she-header')}</span>
                             <span className={ActiveTab == 'she_admin_Interface' ? 'she-category-btn she-act-cat' : 'she-category-btn'} onClick={() => { scroll_to_id('#she_admin_Interface') }}>{__('Admin Interface', 'she-header')}</span>
