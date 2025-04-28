@@ -248,7 +248,7 @@ const DashboardInnerMain = (props) => {
     const Notification_validation = async (e) => {
 
         let OriginalOBJ = ErrorTooltip;
-    
+
         if (!sheuser_name.trim() || !sheuser_email.trim()) {
 
             var newOBJ = {
@@ -522,24 +522,24 @@ const DashboardInnerMain = (props) => {
                     </div>
 
                     {/* {whatsnew.length > 0 ? */}
-                        {/* whatsnew?.map((data, index) => ( */}
-                            <div className='she_whats_new_card_info_cover'>
-                                <div className='she_whats_new_img_cover'>
-                                    {/* <img className='she_whatsn_new_img' src={Tpae_card_bg} draggable={false} /> */}
-                                    <img className='she_whatsn_new_img' src={plugin_url + 'assets/images/tp-placeholder.jpg'} draggable={false}></img>
-                                </div>
-                                <h4 className='she_img_heading_info'>{__('Introducing CSS Grid Layout in Nexter Blocks – More Control, More Creativity!')}</h4>
-                                <p className='she_text_info'>{__('Were excited to bring CSS Grid Layout to Nexter Blocks with the latest update! Now, you can design complex layouts with ease—think full-page designs, photo galleries, product listings, and more—all neatly arranged in rows and columns.')}</p>
-                                <div className='she_whats_new_btn_group'>
-                                    {/* {data?.demo && */}
-                                        <a href={''} target="_blank" rel="noopener noreferrer" className='she_whats_new_info_cta_btn'>{__('Live Demo')}</a>
-                                    {/* } */}
-                                    {/* {data?.link && */}
-                                        <a href={''} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a>
-                                    {/* } */}
-                                </div>
-                            </div>
-                        {/* ))
+                    {/* whatsnew?.map((data, index) => ( */}
+                    <div className='she_whats_new_card_info_cover'>
+                        <div className='she_whats_new_img_cover'>
+                            {/* <img className='she_whatsn_new_img' src={Tpae_card_bg} draggable={false} /> */}
+                            <img className='she_whatsn_new_img' src={plugin_url + 'assets/images/tp-placeholder.jpg'} draggable={false}></img>
+                        </div>
+                        <h4 className='she_img_heading_info'>{__('Introducing CSS Grid Layout in Nexter Blocks – More Control, More Creativity!')}</h4>
+                        <p className='she_text_info'>{__('Were excited to bring CSS Grid Layout to Nexter Blocks with the latest update! Now, you can design complex layouts with ease—think full-page designs, photo galleries, product listings, and more—all neatly arranged in rows and columns.')}</p>
+                        <div className='she_whats_new_btn_group'>
+                            {/* {data?.demo && */}
+                            <a href={''} target="_blank" rel="noopener noreferrer" className='she_whats_new_info_cta_btn'>{__('Live Demo')}</a>
+                            {/* } */}
+                            {/* {data?.link && */}
+                            <a href={''} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a>
+                            {/* } */}
+                        </div>
+                    </div>
+                    {/* ))
                         :
                         <div className='she-data-loader'>
                             <svg viewBox="25 25 50 50"><circle r="20" cy="50" cx="50"></circle></svg>

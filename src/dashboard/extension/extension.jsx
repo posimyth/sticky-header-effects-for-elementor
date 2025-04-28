@@ -22,7 +22,6 @@ const Extension = (props) => {
     const [NShowPopup, NexterPopup] = useState(false);
     const [NexterBtn, SetNexterBtn] = useState('Enable Extensions for WordPress');
     const [activeIndex, setActiveIndex] = useState(0);
-    const [Wlabel, setWlabel] = useState(0);
 
     useEffect(() => {
 
