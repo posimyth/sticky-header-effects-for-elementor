@@ -190,7 +190,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				'roles'            => $user->roles,
 				'user_name'        => $user->display_name,
 				'user_email'       => $user->user_email,
-				'check_onboarding' => $set_onboarding,
+				// 'check_onboarding' => $set_onboarding,
 				'success'          => true,
 			);
 
@@ -201,6 +201,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				'user_info'     => $user_info,
 				'plugin_detail' => $plugin_details,
 				'theme_detail'  => $theme_details,
+				'check_onboarding' => $set_onboarding,
 			);
 
 			return $response;

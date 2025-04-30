@@ -11,6 +11,7 @@ import {
     White_label,
     license_data,
     Wdkit_widgets_list,
+    Check_onbording,
 } from "./reducer";
 
 export default combineReducers({
@@ -25,4 +26,5 @@ export default combineReducers({
     White_label,
     license_data,
     Wdkit_widgets_list,
+    Check_onbording,
 });

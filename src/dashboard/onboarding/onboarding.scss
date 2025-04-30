@@ -130,7 +130,7 @@
             width: 20px;
             height: 20px;
         }
- 
+
         .tpae-step-number,
         .she-step-name {
             text-align: center;
@@ -436,6 +436,8 @@
         }
     }
 
+
+
     .she-btmsm-btn.she-step-three-btn {
         justify-content: center;
     }
@@ -507,6 +509,13 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+        }
+
+        .she-rit-btn-cover.step-foure-btn {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            gap: 16px;
         }
 
         .tpae-pageimport-cover {

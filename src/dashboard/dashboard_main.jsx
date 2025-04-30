@@ -7,7 +7,9 @@ import { __ } from '@wordpress/i18n';
 import Onboarding from './onboarding/onboarding.jsx';
 
 const Dashboard = (props) => {
-    const check_onboarding = props.she_dashboard_data?.check_onboarding;
+
+    // const check_onboarding = props.she_dashboard_data?.check_onboarding;
+    const check_onboarding = props?.she_onbording_data;
     const [isCheckDone, setIsCheckDone] = useState(false);
 
     useEffect(() => {
@@ -56,6 +58,7 @@ const Dashboard = (props) => {
 const get_redux = state => ({
     plugin_check: state.check_plugin.plugin_status_rx,
     she_dashboard_data: state.Dashboard_data.db_rx,
+    she_onbording_data: state.Check_onbording.she_onbording_rx,
 });
 
 export default connect(get_redux)(Dashboard);

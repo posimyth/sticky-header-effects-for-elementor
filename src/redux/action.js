@@ -75,6 +75,14 @@ const wdkit_widgets_a_rx = (data) => {
     }
 }
 
+const she_onbording_a_rx = (data) => {
+    
+    return {
+        type: 'she_onbording',
+        data: data
+    }
+}
+
 export {
     Dashboard_a_rx,
     widgets_a_rx,
@@ -87,4 +95,5 @@ export {
     white_lable_a_rx,
     license_a_rx,
     wdkit_widgets_a_rx,
+    she_onbording_a_rx,
 }

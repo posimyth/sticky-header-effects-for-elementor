@@ -11,7 +11,7 @@ const ThemeBuilder = (props) => {
     var nonce = shed_data.nonce;
     var ajax_url = shed_data.ajax_url;
 
-    var image_url = 'https://wdesignkit.com/images/plugins/sticky-header-effects-for-elementor/';
+    var image_url = 'https://wdesignkit.com/images/plugins/theme-builder/';
 
     const Navigate = useNavigate();
     const [nexter_btn, setNexter_btn] = useState('Enable Theme Builder');

@@ -80,6 +80,25 @@ export function check_plugin(state = she_plugin_check, action) {
     }
 }
 
+const she_onbording_check = {
+    she_onbording_rx: {
+        'check_onboarding': false
+    }
+}
+
+export function Check_onbording(state = she_onbording_check, action) {
+    switch (action.type) {
+        case 'she_onbording':
+            return {
+                ...StaticRange,
+                she_onbording_rx: action.data
+            }
+            break;
+        default:
+            return state
+    }
+}
+
 const she_theme_check = {
     theme_status_rx: [
         {

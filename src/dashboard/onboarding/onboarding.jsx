@@ -4,6 +4,8 @@ import './onboarding.scss'
 import React, { useEffect, useState } from 'react';
 import { __ } from "@wordpress/i18n";
 import { redirect } from "react-router-dom";
+import { she_onbording_a_rx } from '../../redux/action.js';
+
 
 const Onboarding = (props) => {
 
@@ -358,6 +360,19 @@ const Onboarding = (props) => {
         )
     }
 
+    const she_skip_onbording = async () => {
+
+        props.she_onbording_a_rxx({ check_onboarding: true });
+
+        let form = new FormData();
+        form.append('action', 'she_dashboard_ajax_call');
+        form.append('nonce', nonce);
+        form.append('type', 'she_onboarding_setup');
+
+        var response = await axios.post(ajax_url, form);
+
+    }
+
     const install_theme_bulider = () => {
 
         const handleToggle = (index) => {
@@ -455,6 +470,7 @@ const Onboarding = (props) => {
                     <div className="she-btmsm-btn theme-bulider-sections">
                         <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep - 1); HendalBackclick('get_updates'); }}>Back</span>
                         <div className="she-rit-btn-cover">
+                            <span className="she-link-btn" onClick={() => she_skip_onbording()}>Skip</span>
                             {!Nextercheck ? (
                                 <a className="she-pink-common-btn" onClick={(e) => install_nexter(e)}>{NexterBtn}</a>
                             ) : (
@@ -485,7 +501,8 @@ const Onboarding = (props) => {
                     <a className="she-link-btn" onClick={() => {
                         setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? -2 : -1)); HendalBackclick('get_updates');
                     }}>Back</a>
-                    <div className="she-rit-btn-cover">
+                    <div className="she-rit-btn-cover step-foure-btn">
+                        <span className="she-link-btn" onClick={() => she_skip_onbording()}>Skip</span>
                         <a className="she-pink-common-btn" onClick={(e) => create_header_temp('elementor_library')}>{createheaderBtn.btn_two}</a>
                     </div>
                 </div>
@@ -535,12 +552,16 @@ const Onboarding = (props) => {
 
         </div>
     );
-}
 
+}
 
 const get_redux = state => ({
     plugin_check: state.check_plugin.plugin_status_rx,
     she_dashboard_data: state.Dashboard_data.db_rx,
+    she_onbording_data: state.Check_onbording.she_onbording_rx,
 })
 
-export default connect(get_redux)(Onboarding)
+const set_redux = (dispatch) => ({
+    she_onbording_a_rxx: (data) => dispatch(she_onbording_a_rx(data)),
+})
+export default connect(get_redux, set_redux)(Onboarding)
