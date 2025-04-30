@@ -307,11 +307,12 @@
     width: 23px;
     top: 13px;
     right: 20px;
-    background-image: url(../../assets/svg/navbox/SHE.svg);
+    background-image: url(../../assets/svg/navbox/SHE-1.svg);
     background-position: center center;
     background-size: cover;
     z-index: 1;
     display: flex;
+    border-radius: 12px;
   }
 
 @media (max-width:768px) {
