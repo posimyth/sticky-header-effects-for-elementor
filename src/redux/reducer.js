@@ -46,7 +46,7 @@ export function check_plugin(state = she_plugin_check, action) {
 
 const she_onbording_check = {
     she_onbording_rx: {
-        'check_onboarding': false
+        'check_onboarding': 'null'
     }
 }
 

@@ -5,18 +5,34 @@ import NavBox from './navigation_box/navbox';
 import { connect } from 'react-redux';
 import { __ } from '@wordpress/i18n';
 import Onboarding from './onboarding/onboarding.jsx';
+import SupportToggle from './support/support.jsx';
+
 
 const Dashboard = (props) => {
 
-    // const check_onboarding = props.she_dashboard_data?.check_onboarding;
-    const check_onboarding = props?.she_onbording_data;
-    const [isCheckDone, setIsCheckDone] = useState(false);
+    const r_get_onboridng = props?.she_onbording_data;
+    const get_onboridng = shed_data.onboarding_setup;
+
+    const [show_obording, setShow_obording] = useState('null');
 
     useEffect(() => {
-        if (typeof check_onboarding === 'boolean') {
-            setIsCheckDone(true);
+        if (get_onboridng == 'hide') {
+            setShow_obording('hide');
+        }else{
+            setShow_obording('show');
         }
-    }, [check_onboarding]);
+    }, [get_onboridng]);
+    
+    useEffect(() => {
+       
+        if ( r_get_onboridng?.check_onboarding == 'hide' ) {
+            setShow_obording('hide');
+        }
+
+        if ( r_get_onboridng?.check_onboarding == 'show' ) {
+            setShow_obording('show');
+        }
+    }, [r_get_onboridng]);
 
     const Outside_click = (e) => {
         let drop_down = document.querySelectorAll(".she_ctm_drpdwn_content.theplus_wp_show");
@@ -27,15 +43,15 @@ const Dashboard = (props) => {
         }
     };
 
-    if (!isCheckDone) {
-        return null;
-    }
 
     return (
         <>
-            {!check_onboarding ? (
+            { show_obording == 'null' ? (
+                ''
+            ): show_obording !== 'hide' ? (
                 <Onboarding />
             ) : (
+                <>
                 <div className='she_dashboard_main_cover' onClick={(e) => { Outside_click(e); }}>
                     <div className='she_main_cover'>
                         <div className='she_navbox_cover'>
@@ -50,6 +66,8 @@ const Dashboard = (props) => {
                         </div>
                     </div>
                 </div>
+                 <SupportToggle />
+                </>
             )}
         </>
     );

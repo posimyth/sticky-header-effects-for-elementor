@@ -179,10 +179,9 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 			$check_onboarding = get_option( 'she_onboarding_setup' );
 
+			$set_onboarding['check_onboarding'] = 'show';
 			if ( $check_onboarding ) {
-				$set_onboarding = true;
-			} else {
-				$set_onboarding = false;
+				$set_onboarding['check_onboarding'] = 'hide';
 			}
 
 			$user_info = array(
@@ -591,6 +590,19 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			$api_url = isset( $_POST['api_url'] ) ? sanitize_text_field( wp_unslash( $_POST['api_url'] ) ) : '';
 			$body    = isset( $_POST['url_body'] ) ? json_decode( wp_unslash( $_POST['url_body'] ) ) : array();
 
+			$header_template = isset( $_POST['store'] ) ? sanitize_text_field( wp_unslash( $_POST['store'] ) ) : '';
+
+			if( 'header_template' === $header_template ) {
+				$she_header_template = get_transient('she_header_template');
+
+				if ( $she_header_template != false ) {
+					return get_option( 'she_header_template' );
+				}
+
+				delete_option('she_header_template');
+				delete_transient('she_header_template');
+			}
+
 			$args = array(
 				'method'  => $method,
 				'headers' => array(
@@ -610,14 +622,22 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				$response = wp_remote_get( $api_url, $args );
 			}
 
-			$statuscode = wp_remote_retrieve_response_code( $response );
+			$status_code = wp_remote_retrieve_response_code( $response );
 			$getdataone = wp_remote_retrieve_body( $response );
-			$statuscode = array( 'HTTP_CODE' => $statuscode );
+			$statuscode = array( 'HTTP_CODE' => $status_code );
 
 			$response = json_decode( $getdataone, true );
 
 			if ( is_array( $statuscode ) && is_array( $response ) ) {
 				$final = array_merge( $statuscode, $response );
+
+				if( 200 == $status_code ){
+					if( 'header_template' === $header_template ) {
+						add_option( 'she_header_template', $final );
+						set_transient('she_header_template', 'header_template', 24 * HOUR_IN_SECONDS);
+						// set_transient('she_header_template', 'header_template', 120);
+					}
+				}
 			}
 
 			return $final;
@@ -672,7 +692,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			$onboarding = get_option( 'she_onboarding_setup' );
 
 			if ( ! $onboarding ) {
-				update_option( 'she_onboarding_setup', true );
+				update_option( 'she_onboarding_setup', 'hide' );
 			}
 
 			$onboarding = get_option( 'she_onboarding_setup' );

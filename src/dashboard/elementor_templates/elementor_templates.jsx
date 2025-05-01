@@ -53,6 +53,7 @@ const ElementorTemplates = (props) => {
         form.append('method', 'POST');
         form.append('api_url', api_url);
         form.append('url_body', JSON.stringify(api_body));
+        form.append('store', 'header_template');
 
         var response = await axios.post(ajax_url, form);
         var data = response.data;

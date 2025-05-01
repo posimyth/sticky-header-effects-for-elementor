@@ -362,15 +362,14 @@ const Onboarding = (props) => {
 
     const she_skip_onbording = async () => {
 
-        props.she_onbording_a_rxx({ check_onboarding: true });
+        props.she_onbording_({ check_onboarding: 'hide' });
 
         let form = new FormData();
         form.append('action', 'she_dashboard_ajax_call');
         form.append('nonce', nonce);
         form.append('type', 'she_onboarding_setup');
 
-        var response = await axios.post(ajax_url, form);
-
+        await axios.post(ajax_url, form);
     }
 
     const install_theme_bulider = () => {
@@ -562,6 +561,6 @@ const get_redux = state => ({
 })
 
 const set_redux = (dispatch) => ({
-    she_onbording_a_rxx: (data) => dispatch(she_onbording_a_rx(data)),
+    she_onbording_: (data) => dispatch(she_onbording_a_rx(data)),
 })
 export default connect(get_redux, set_redux)(Onboarding)

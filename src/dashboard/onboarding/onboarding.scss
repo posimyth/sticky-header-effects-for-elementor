@@ -301,6 +301,10 @@
             user-select: none;
         }
 
+        .she-main-cover-select.show + .she-strat-card {
+            border-color: $she_dark_pink;
+        }
+
         .she-strat-card {
             width: auto;
             min-width: 212px;

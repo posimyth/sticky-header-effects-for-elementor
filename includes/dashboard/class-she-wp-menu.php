@@ -122,6 +122,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 						'she_wp_version'  => get_bloginfo( 'version' ),
 						'shed_pro'        => 0,
 						'shed_wdkit_url'  => SHE_WDKIT_URL,
+						'onboarding_setup'  => get_option( 'she_onboarding_setup' ),
 					),
 				);
 			}
