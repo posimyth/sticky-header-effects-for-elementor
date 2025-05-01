@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import './more_products.scss'
 import axios from 'axios';
 import { plugin_status_a_rx } from '../../redux/action.js';
-import { theme_status_a_rx } from '../../redux/action.js';
 import { __ } from '@wordpress/i18n';
 
 const MoreProducts = (props) => {
@@ -272,7 +271,6 @@ const get_redux = state => ({
 
 const set_redux = dispatch => ({
     tpae_set_plugin_status: data => dispatch(plugin_status_a_rx(data)),
-    tpae_set_theme_status: data => dispatch(theme_status_a_rx(data)),
 })
 
 export default connect(get_redux, set_redux)(MoreProducts);

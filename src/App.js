@@ -8,7 +8,7 @@ import SupportToggle from './dashboard/support/support.jsx';
 
 const App = (props) => {
 
-    var check_onboarding = props.she_dashboard_data?.check_onboarding;
+    var check_onboarding = props?.she_onbording_data;
 
     return (
         <HashRouter>
@@ -22,7 +22,8 @@ const App = (props) => {
 }
 
 const get_redux = state => ({
-    she_dashboard_data: state.Dashboard_data.db_rx,
+    she_onbording_data: state.Check_onbording.she_onbording_rx,
+
 })
 
 export default connect(get_redux)(App); 
