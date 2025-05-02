@@ -17,10 +17,21 @@ class Module extends Module_Base {
 		$this->add_actions();
 	}
 
+	/**
+	 * Get Widget Name.
+	 *
+	 * @since 1.0.0
+	 */
 	public function get_name() {
 		return 'transparent';
 	}
 
+	/**
+	 * Register controls.
+	 *
+	 * @since 1.0.0
+	 * @version 2.0
+	 */
 	public function register_controls( Controls_Stack $element ) {
 		$element->start_controls_section(
 			'section_sticky_header_effect',
@@ -56,6 +67,26 @@ class Module extends Module_Base {
 		// 		],
 		// 	]
 		// );
+
+		$element->add_control(
+			'smart-preset-button',
+			array(
+                'type'=> Controls_Manager::RAW_HTML,
+                'raw' => sprintf(
+					'<div class="she-preset-main-raw-main">
+						<a href="%s" class="she-preset-live-demo" id="she-preset-live-demo" data-temp_id="18061" target="_blank" rel="noopener noreferrer">%s</a>
+						<a class="she-preset-editor-raw" id="she-preset-editor-raw" data-temp_id="18061">%s</a>
+					</div>',
+					esc_url('https://stickyheadereffects.com/demos/'),
+					esc_html__('Live Demo', 'she-header'),
+					esc_html__('Import Presets', 'she-header')
+				),
+                'label_block' => true,
+				'condition' => [
+					'transparent!' => '',
+				],
+            )
+		);
 		
 		$element->add_control(
 			'upgrade_notice',
@@ -1456,6 +1487,10 @@ $element->add_control(
 		$element->end_controls_section();
 	}
 
+	/**
+	 * Add actions to the elementor editor
+	 * @since 1.0.0
+	 */
 	private function add_actions()
 	{
 		if (!function_exists('is_plugin_active')) {
@@ -1480,6 +1515,10 @@ $element->add_control(
 		}
 	}
 
+	/**
+	 * Enqueue styles and scripts
+	 * @since 2.0.0
+	 */
 	public function enqueue_styles() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
@@ -1492,6 +1531,10 @@ $element->add_control(
 
 	}
 
+	/**
+	 * Enqueue scripts
+	 * @since 2.0.0
+	 */
 	public function enqueue_scripts() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 

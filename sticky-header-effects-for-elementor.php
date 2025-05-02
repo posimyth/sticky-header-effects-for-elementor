@@ -3,7 +3,7 @@
  * Plugin Name:			Sticky Header Effects for Elementor
  * Plugin URI:			https://stickyheadereffects.com
  * Description:			Custom settings to change sticky header on scroll using Elementor Pro.
- * Version:				1.7.8
+ * Version:				2.0
  * Author:				Rwattner
  * Author URI:			https://stickyheadereffects.com
  * Requires at least:	5.3
@@ -19,8 +19,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-define( 'SHE_HEADER_VERSION', '1.7.8' );
-define( 'SHE_HEADER_PREVIOUS_STABLE_VERSION', '1.7.2' );
+define( 'SHE_HEADER_VERSION', '2.0' );
+define( 'SHE_HEADER_PREVIOUS_STABLE_VERSION', '1.7.8' );
 
 define( 'SHE_HEADER__FILE__', __FILE__ );
 define( 'SHE_HEADER_PLUGIN_BASE', plugin_basename( SHE_HEADER__FILE__ ) );
@@ -29,6 +29,7 @@ define( 'SHE_HEADER_MODULES_PATH', SHE_HEADER_PATH . 'modules/' );
 define( 'SHE_HEADER_URL', plugins_url( '/', SHE_HEADER__FILE__ ) );
 define( 'SHE_HEADER_ASSETS_URL', SHE_HEADER_URL . 'assets/' );
 define( 'SHE_HEADER_MODULES_URL', SHE_HEADER_URL . 'modules/' );
+define( 'SHE_WDKIT_URL', 'https://wdesignkit.com/' );
 
 /**
  * Load gettext translate for our text domain.
@@ -56,7 +57,8 @@ function she_header_load_plugin() {
 		add_action( 'admin_notices', 'she_header_admin_notice_upgrade_recommendation' );
 	}
 
-	require( SHE_HEADER_PATH . 'plugin.php' );
+	require SHE_HEADER_PATH . 'plugin.php';
+	require SHE_HEADER_PATH . 'includes/class-she-loader.php';
 }
 add_action( 'plugins_loaded', 'she_header_load_plugin' );
 
