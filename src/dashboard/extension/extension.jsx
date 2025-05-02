@@ -103,7 +103,7 @@ const Extension = (props) => {
 
     const handleClick = async () => {
 
-        SetNexterBtn('Instaling Nexter');
+        SetNexterBtn('Installing Nexter');
 
         let form = new FormData();
         form.append('action', 'she_dashboard_ajax_call');
@@ -118,9 +118,9 @@ const Extension = (props) => {
         if (data.success) {
             SetNexter(true);
             NexterPopup(false)
-            SetNexterBtn('Instaling Success');
+            SetNexterBtn('Installing Success');
         } else {
-            SetNexterBtn('Instaling Failed');
+            SetNexterBtn('Installing Failed');
         }
     };
 

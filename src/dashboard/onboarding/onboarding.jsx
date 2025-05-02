@@ -418,7 +418,7 @@ const Onboarding = (props) => {
                 SetNexter(true);
                 SetNexterBtn('Create Header');
             } else {
-                SetNexterBtn('Instaling Failed');
+                SetNexterBtn('Installing Failed');
             }
         }
 

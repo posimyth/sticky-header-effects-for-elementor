@@ -197,7 +197,7 @@ const Header_widgets = (props) => {
 
         if (type == 'tpae') {
 
-            SetDwonloadBtn('Instaling TPAE');
+            SetDwonloadBtn('Installing TPAE');
             she_slug = 'the-plus-addons-for-elementor-page-builder/theplus_elementor_addon.php';
             she_name = 'the-plus-addons-for-elementor-page-builder';
 
@@ -224,19 +224,19 @@ const Header_widgets = (props) => {
             if (type == 'tpae') {
                 SetTpae(true);
                 ThePlusPopup(false)
-                SetDwonloadBtn('Instaling Success');
+                SetDwonloadBtn('Installing Success');
             }
             if (type == 'wdkit') {
                 SetWdkit(true);
                 SetWdkitPopup(false)
-                setButtonText('Instaling Success');
+                setButtonText('Installing Success');
             }
         } else {
             if (type == 'tpae') {
-                SetDwonloadBtn('Instaling Failed');
+                SetDwonloadBtn('Installing Failed');
             }
             if (type == 'wdkit') {
-                setButtonText('Instaling Failed');
+                setButtonText('Installing Failed');
             }
         }
     };
