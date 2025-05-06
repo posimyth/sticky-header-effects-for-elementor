@@ -372,11 +372,12 @@
         .she-ghost-btn {
             width: 100%;
         }
+
         .she_video_tut .she-ghost-btn {
             width: 100%;
             pointer-events: none;
         }
-        
+
         .she_qik_infocrd_cover {
             display: flex;
             box-sizing: border-box;
@@ -431,6 +432,7 @@
 
                 svg {
                     fill: $she_toggle_off_bg;
+
                     path {
                         fill: #f9b744;
                     }
@@ -851,7 +853,7 @@
         z-index: -99;
     }
 
-    .she_rating_box a{
+    .she_rating_box a {
         z-index: -99;
     }
 }
