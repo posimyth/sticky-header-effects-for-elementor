@@ -25,6 +25,11 @@ const Onboarding = (props) => {
 
     const [ElementPro, SetElementPro] = useState(false);
 
+
+    useEffect(() => {
+        setEmail(props.she_dashboard_data?.user_email || '');
+    }, [props.she_dashboard_data]);
+
     const [TrueStep, setTrueStep] = useState([
         { id: 'select_mode', step_number: 1, step_name: __('Select Mode', 'she-header'), active: false },
         { id: 'get_updates', step_number: 2, step_name: __('Get Updates', 'she-header'), active: false },
@@ -46,12 +51,20 @@ const Onboarding = (props) => {
             SetNexter(false);
         }
 
-        const element_pro = plugin_status.find((check_status) => check_status.name === 'elementor-pro' && check_status.status === 'active');
+        const hasElementor = plugin_status.some(
+            (check_status) => check_status?.name === 'elementor-pro'
+        );
+
+        if (!hasElementor) return;
+
+        const element_pro = plugin_status.find((check_status) => check_status?.name === 'elementor-pro' && check_status.status === 'active');
 
         if (element_pro) {
             SetElementPro(true);
+            SetElemetor('elementor_pro');
         } else {
             SetElementPro(false);
+            SetElemetor('elementor_free');
         }
 
     }, [plugin_status]);
@@ -200,6 +213,12 @@ const Onboarding = (props) => {
             setSubscribeBtncheck(true);
             setSubscribeBtn('Success !');
 
+            if (selectElementor === 'elementor_pro') {
+                setOnBoardingStep(onBoardingStep + 2);
+            } else {
+                setOnBoardingStep(onBoardingStep + 1);
+            }
+
             setTimeout(() => {
                 setSubscribeBtn('Next');
             }, 2000);
@@ -222,38 +241,41 @@ const Onboarding = (props) => {
 
                 <div className="she-strt-crd-cover she-whitebg-cover">
 
-                    <div className="she-main-cover">
+                    <div className={`she-main-cover ${selectElementor === 'elementor_pro' ? 'no-elementor-free' : ''}`}>
 
                         {selectElementor === 'elementor_free' &&
-                            <div className={`she-main-cover-select ${selectElementor === 'elementor_free' ? 'show' : ''}`}>
+                            <div className={`she-main-cover-select`}>
                                 <div className="she-main-svg">
                                     <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0C6.15661 -9.78424e-09 6.80679 0.129329 7.41342 0.380602C8.02004 0.631876 8.57124 1.00017 9.03553 1.46447C9.49983 1.92876 9.86812 2.47995 10.1194 3.08658C10.3707 3.69321 10.5 4.34339 10.5 5C10.5 5.65661 10.3707 6.30679 10.1194 6.91342C9.86812 7.52004 9.49983 8.07124 9.03553 8.53553C8.57124 8.99983 8.02004 9.36812 7.41342 9.6194C6.80679 9.87067 6.15661 10 5.5 10C4.17392 10 2.90215 9.47322 1.96447 8.53553C1.02678 7.59785 0.5 6.32608 0.5 5C0.5 3.67392 1.02678 2.40215 1.96447 1.46447C2.90215 0.526784 4.17392 1.97602e-08 5.5 0ZM7.26667 3.47L4.875 5.86833L3.71167 4.705C3.67293 4.66626 3.62694 4.63553 3.57632 4.61456C3.5257 4.5936 3.47145 4.58281 3.41667 4.58281C3.36188 4.58281 3.30763 4.5936 3.25701 4.61456C3.2064 4.63553 3.16041 4.66626 3.12167 4.705C3.08293 4.74374 3.0522 4.78973 3.03123 4.84035C3.01026 4.89096 2.99947 4.94521 2.99947 5C2.99947 5.05479 3.01026 5.10904 3.03123 5.15965C3.0522 5.21027 3.08293 5.25626 3.12167 5.295L4.58 6.75333C4.6187 6.79214 4.66468 6.82292 4.71531 6.84393C4.76593 6.86493 4.82019 6.87574 4.875 6.87574C4.92981 6.87574 4.98407 6.86493 5.03469 6.84393C5.08532 6.82292 5.1313 6.79214 5.17 6.75333L7.85667 4.05833C7.93246 3.97964 7.97432 3.87433 7.97322 3.76508C7.97212 3.65583 7.92815 3.55138 7.85078 3.47423C7.77342 3.39709 7.66884 3.35341 7.55959 3.35262C7.45034 3.35183 7.34514 3.39398 7.26667 3.47Z"
                                         fill="#ffffff" /></svg>
                                 </div>
-                                <div className="she-main-text">Selected</div>
+                                <div className="she-main-text">Detected</div>
                             </div>
                         }
-                        <div className={`she-strat-card ${'import_web' === selectElementor ? 'tpae-active-board-card' : ''} `} onClick={() => { SetElemetor('elementor_free') }}>
+                        <div className={`she-strat-card`}>
                             <div className="she-icon-box">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
                                     <path d="M20 0.101562C8.95321 0.101562 0 9.05477 0 20.1016C0 31.1447 8.95321 40.1016 20 40.1016C31.0468 40.1016 40 31.1484 40 20.1016C39.9964 9.05477 31.0431 0.101562 20 0.101562ZM15.0009 28.4322H11.6694V11.7674H15.0009V28.4322ZM28.3306 28.4322H18.3324V25.1007H28.3306V28.4322ZM28.3306 21.7655H18.3324V18.434H28.3306V21.7655ZM28.3306 15.0989H18.3324V11.7674H28.3306V15.0989Z" fill="#ffff" />
                                 </svg>
                             </div>
                             <h3 className="she-crd-h">{__('Elementor Free', 'she-header')}</h3>
+                            <div className="she-elementor-button">
+                                <span>Installed</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div className={`she-main-cover ${!ElementPro ? 'no-elementor-pro' : ''}`} data-tooltip={!ElementPro ? 'Add Elementor Pro ' : ''}>
+                    <div className={`she-main-cover ${selectElementor === 'elementor_free' ? 'no-elementor-pro' : ''}`}>
                         {selectElementor === 'elementor_pro' &&
-                            <div className={`she-main-cover-select ${selectElementor === 'elementor_pro' ? 'show' : ''}`}>
+                            <div className={`she-main-cover-select`}>
                                 <div className="she-main-svg">
                                     <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0C6.15661 -9.78424e-09 6.80679 0.129329 7.41342 0.380602C8.02004 0.631876 8.57124 1.00017 9.03553 1.46447C9.49983 1.92876 9.86812 2.47995 10.1194 3.08658C10.3707 3.69321 10.5 4.34339 10.5 5C10.5 5.65661 10.3707 6.30679 10.1194 6.91342C9.86812 7.52004 9.49983 8.07124 9.03553 8.53553C8.57124 8.99983 8.02004 9.36812 7.41342 9.6194C6.80679 9.87067 6.15661 10 5.5 10C4.17392 10 2.90215 9.47322 1.96447 8.53553C1.02678 7.59785 0.5 6.32608 0.5 5C0.5 3.67392 1.02678 2.40215 1.96447 1.46447C2.90215 0.526784 4.17392 1.97602e-08 5.5 0ZM7.26667 3.47L4.875 5.86833L3.71167 4.705C3.67293 4.66626 3.62694 4.63553 3.57632 4.61456C3.5257 4.5936 3.47145 4.58281 3.41667 4.58281C3.36188 4.58281 3.30763 4.5936 3.25701 4.61456C3.2064 4.63553 3.16041 4.66626 3.12167 4.705C3.08293 4.74374 3.0522 4.78973 3.03123 4.84035C3.01026 4.89096 2.99947 4.94521 2.99947 5C2.99947 5.05479 3.01026 5.10904 3.03123 5.15965C3.0522 5.21027 3.08293 5.25626 3.12167 5.295L4.58 6.75333C4.6187 6.79214 4.66468 6.82292 4.71531 6.84393C4.76593 6.86493 4.82019 6.87574 4.875 6.87574C4.92981 6.87574 4.98407 6.86493 5.03469 6.84393C5.08532 6.82292 5.1313 6.79214 5.17 6.75333L7.85667 4.05833C7.93246 3.97964 7.97432 3.87433 7.97322 3.76508C7.97212 3.65583 7.92815 3.55138 7.85078 3.47423C7.77342 3.39709 7.66884 3.35341 7.55959 3.35262C7.45034 3.35183 7.34514 3.39398 7.26667 3.47Z"
                                         fill="#ffffff" /></svg>
                                 </div>
-                                <div className="she-main-text">Selected</div>
+                                <div className="she-main-text">Detected</div>
                             </div>
                         }
-                        <div className={`she-strat-card ${'ele_widgets' === selectElementor ? 'tpae-active-board-card' : ''}`} onClick={() => { if (ElementPro) { SetElemetor('elementor_pro'); } }}>
+                        <div className={`she-strat-card`}>
                             <div className="she-icon-box">
                                 <svg className="she-element-pro" xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
                                     <path fillRule="evenodd" clipRule="evenodd" d="M0.666812 1.46893L1.07235 4.54743H6.92245L7.32798 1.46893C7.35794 1.24145 7.13632 1.08631 6.97867 1.2244L5.71523 2.33106C5.57656 2.45249 5.37901 2.41299 5.28287 2.24456L4.23103 0.401903C4.11987 0.207178 3.8749 0.207178 3.76374 0.401903L2.7119 2.24456C2.61577 2.41299 2.41821 2.45252 2.27954 2.33106L1.0161 1.2244C0.858456 1.08631 0.636834 1.24145 0.666812 1.46893ZM1.37741 6.25589H6.61749C6.78594 6.25589 6.92249 6.09641 6.92251 5.89969V5.11721H1.07241V5.89969C1.07241 6.09641 1.20896 6.25589 1.37741 6.25589Z" fill="white" />
@@ -264,6 +286,18 @@ const Onboarding = (props) => {
                             </div>
 
                             <h3 className="she-crd-h">{__('Elementor Pro', 'she-header')}</h3>
+                            <div className="she-elementor-button">
+                                {ElementPro ? (
+                                    <span>Installed</span>
+                                ) : (
+                                    <>
+                                        <a className="she-elem-pro" href="https://elementor.com/pro/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings">Get Pro</a>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#ffff" xmlns="http://www.w3.org/2000/svg">
+                                            <path fillRule="evenodd" clipRule="evenodd" d="M8.75033 2.33268C8.42816 2.33268 8.16699 2.07152 8.16699 1.74935C8.16699 1.42718 8.42816 1.16602 8.75033 1.16602H12.2502H12.2503C12.3751 1.16602 12.4908 1.20521 12.5856 1.27196C12.7356 1.37752 12.8337 1.55199 12.8337 1.74935V5.24935C12.8337 5.57152 12.5725 5.83268 12.2503 5.83268C11.9282 5.83268 11.667 5.57152 11.667 5.24935V3.15756L6.24606 8.57849C6.01825 8.8063 5.6489 8.8063 5.4211 8.57849C5.19329 8.35069 5.19329 7.98134 5.4211 7.75354L10.842 2.33268H8.75033ZM2.91699 4.08268C2.76228 4.08268 2.61391 4.14414 2.50451 4.25354C2.39512 4.36293 2.33366 4.51131 2.33366 4.66602V11.0827C2.33366 11.2374 2.39512 11.3858 2.50451 11.4952C2.61391 11.6046 2.76228 11.666 2.91699 11.666H9.33366C9.48837 11.666 9.63674 11.6046 9.74614 11.4952C9.85553 11.3858 9.91699 11.2374 9.91699 11.0827V7.58268C9.91699 7.26052 10.1782 6.99935 10.5003 6.99935C10.8225 6.99935 11.0837 7.26052 11.0837 7.58268V11.0827C11.0837 11.5468 10.8993 11.9919 10.5711 12.3201C10.2429 12.6483 9.79779 12.8327 9.33366 12.8327H2.91699C2.45286 12.8327 2.00774 12.6483 1.67956 12.3201C1.35137 11.9919 1.16699 11.5468 1.16699 11.0827V4.66602C1.16699 4.20189 1.35137 3.75677 1.67956 3.42858C2.00774 3.10039 2.45286 2.91602 2.91699 2.91602H6.41699C6.73916 2.91602 7.00033 3.17718 7.00033 3.49935C7.00033 3.82152 6.73916 4.08268 6.41699 4.08268H2.91699Z" fill="#ffff" />
+                                        </svg>
+                                    </>
+                                )}
+                            </div>
                             {/* <p className="tpar-crd-desc">{__('Create your design with our highly customisable widgets', 'she-header')}</p> */}
                         </div>
                     </div>

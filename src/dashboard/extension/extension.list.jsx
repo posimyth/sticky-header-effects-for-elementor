@@ -13,6 +13,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'utilities',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
@@ -23,6 +24,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'utilities',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
@@ -33,6 +35,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'utilities',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
@@ -43,6 +46,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'utilities',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
@@ -53,6 +57,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'BETA',
                 labelIcon: '',
+                category:'utilities',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
         ],
@@ -69,6 +74,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'performance',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
@@ -79,6 +85,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'performance',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
@@ -89,6 +96,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'performance',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
@@ -99,6 +107,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'performance',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
@@ -109,6 +118,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'performance',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
@@ -119,6 +129,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'performance',
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
         ],
@@ -135,6 +146,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'pro',
                 labelIcon: '',
+                category:'security',
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
             {
@@ -145,6 +157,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'pro',
                 labelIcon: '',
+                category:'security',
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
             {
@@ -155,6 +168,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'security',
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
             {
@@ -165,6 +179,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'security',
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
             {
@@ -175,6 +190,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'security',
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
             {
@@ -185,6 +201,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'pro',
                 labelIcon: '',
+                category:'security',
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
         ],
@@ -201,6 +218,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'free',
                 labelIcon: '',
+                category:'admin_interface',
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
             {
@@ -211,6 +229,7 @@ const plus_extension = [
                 videoUrl: '',
                 tag: 'pro',
                 labelIcon: '',
+                category:'admin_interface',
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
         ],

@@ -459,17 +459,17 @@ const DashboardInnerMain = (props) => {
 
                     <div className='she_qik_infocrd_cover she_help'>
                         <h4 className='she_qik_info_crd_title'>{__('Need Help?', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='she-ghost-btn'>{__('Raise Ticket', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href='https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/' className='she-ghost-btn'>{__('Raise Ticket', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover'>
                         <h4 className='she_qik_info_crd_title'>{__('Join Community', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/groups/theplus4elementor??utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='she-ghost-btn'>{__('Join Now', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/groups/theplus4elementor?' className='she-ghost-btn'>{__('Join Now', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover'>
                         <h4 className='she_qik_info_crd_title'>{__('Request Feature', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='she-ghost-btn'>{__('Suggest Now', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href='https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/' className='she-ghost-btn'>{__('Suggest Now', 'she-header')}</a>
                     </div>
                 </div>
 
@@ -492,19 +492,19 @@ const DashboardInnerMain = (props) => {
                     <div className='she_qik_infocrd_cover she_dashboard_social_icons_card_box'>
                         <h4 className='she_qik_info_crd_title'>{__("We're Active on", 'she-header')}</h4>
                         <div className='she_icon_bx_cover'>
-                            <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/posimyth?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/posimyth' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/facebook_icon.svg'} draggable={false} />
                             </a>
-                            <a target='_blank' rel="noopener noreferrer" href='https://x.com/posimyth?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://x.com/posimyth' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/X_icon.svg'} draggable={false} />
                             </a>
-                            <a target='_blank' rel="noopener noreferrer" href='https://www.instagram.com/posimyth/?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://www.instagram.com/posimyth/' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/instagram_icon.svg'} draggable={false} />
                             </a>
-                            <a target='_blank' rel="noopener noreferrer" href='https://t.me/posimyth?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://t.me/posimyth?' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/telegram_icon.svg'} draggable={false} />
                             </a>
-                            <a target='_blank' rel="noopener noreferrer" href='https://in.linkedin.com/company/posimyth?utm_source=wpbackend&utm_medium=stickyheader&utm_campaign=plugindashboard' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://in.linkedin.com/company/posimyth?' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/linkedin_icon.svg'} draggable={false} />
                             </a>
                         </div>
