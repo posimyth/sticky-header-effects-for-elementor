@@ -669,7 +669,8 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				}
 			}
 
-			$elementor_edit_url = admin_url( 'post.php?post=' . $post_id . '&action=elementor' );
+			// $elementor_edit_url = admin_url( 'post.php?post=' . $post_id . '&action=elementor' );
+		    $elementor_edit_url = admin_url( 'post.php?post=' . $post_id . '&action=elementor&she_onload=true' );
 
 			return $this->she_set_response(
 				true,
