@@ -1,0 +1,36 @@
+
+.toplevel_page_elementor.menu-top-first.she-admin-notice-active > a .wp-menu-name::after{
+   content: '1';
+    background: #d5353b;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 9px;
+    right: 11px;
+    width: 16px;
+    font-size: 12px;
+    height: 16px;
+    text-align: center;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.toplevel_page_elementor.menu-top-first.she-admin-notice-active > ul > li > a[href="admin.php?page=she-header"]::after{
+    content: '';
+    background: #d5353b;
+    color: #fff;
+    border-radius: 50%;
+    position: relative;
+    top: -13px;
+    right: 3px;
+    width: 10px; 
+    font-size: 12px;
+    height: 10px;
+    text-align: center;
+    line-height: 17px;
+    display: flex;
+    justify-content: center;
+    left: 130px;
+}

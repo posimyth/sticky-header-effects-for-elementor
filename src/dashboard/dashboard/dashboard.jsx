@@ -122,6 +122,10 @@ const DashboardInnerMain = (props) => {
     const [slideIndex, setSlideIndex] = useState(0);
 
     useEffect(() => {
+        setSlideLeft(shed_data?.shed_notification);
+    }, [shed_data?.shed_notification]);
+
+    useEffect(() => {
         const stars = document.querySelectorAll('.she-star path');
         stars.forEach((star, index) => {
             if (selectedIndex !== null && index <= selectedIndex) {
@@ -545,7 +549,7 @@ const DashboardInnerMain = (props) => {
                             <svg viewBox="25 25 50 50"><circle r="20" cy="50" cx="50"></circle></svg>
                         </div> */}
 
-                    <a href='https://roadmap.theplusaddons.com/updates/' target='_blank' rel='noopener noreferrer' className='she-ghost-btn she_wht_ghst_cmn_btn'>
+                    <a href='https://wordpress.org/plugins/sticky-header-effects-for-elementor/#developers' target='_blank' rel='noopener noreferrer' className='she-ghost-btn she_wht_ghst_cmn_btn'>
                         {__('Read Full Changelog')}
                     </a>
                 </div>

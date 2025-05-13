@@ -9,6 +9,7 @@
     box-sizing: border-box;
     background-color: #f9fbfd;
     position: relative;
+    align-items: center;
 
     .she-onbsec-cover {
         display: flex;
@@ -38,7 +39,7 @@
     }
 
     .she-steps-tab-cover {
-        width: 100%;
+        width: 50%;
         justify-content: flex-start;
         padding-top: 7%;
     }
@@ -108,7 +109,7 @@
 
     .she-steps-cover {
         display: flex;
-        width: 100%;
+        width: 50%;
         box-sizing: border-box;
         position: relative;
         align-items: center;
@@ -379,7 +380,7 @@
                 gap: 6px;
             }
 
-            .she-elem-pro{
+            .she-elem-pro {
                 text-decoration: none;
                 color: #ffffff;
             }
@@ -467,9 +468,10 @@
     }
 
     .she-btmsm-btn.theme-bulider-sections {
-        width: 50%;
+        // width: 50%;
         display: flex;
         justify-content: space-between;
+        padding-top: 20px;
     }
 
     .she-link-btn {
@@ -665,7 +667,7 @@
     .she-onbsec-cover .she-step-foure {
         display: flex;
         align-items: center;
-        width: 45%;
+        width: 100%;
         user-select: none;
 
         .she-header-main-cover {
@@ -682,7 +684,7 @@
 
     .she-stay-upcover {
         justify-content: flex-start;
-        width: 55%;
+        // width: 55%;
         gap: 30px;
 
         .she-onbrd-crd-h {
@@ -789,6 +791,14 @@
     //     z-index: 99999;
     // }
 
+    .she-accodion-main-cover {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
     .she-theme-content-bg {
         position: relative;
         // padding: 20px;
@@ -811,6 +821,10 @@
         z-index: 999;
     }
 
+    .she-onbsec-cover.she-step-three{
+        width: 100%;
+        background: #ffffff;
+    }
     .she-onbording-accordion {
         position: relative;
         display: flex;
@@ -827,7 +841,7 @@
         gap: 15px;
         align-items: center;
         padding: 40px;
-        width: 45%;
+        // width: 70%;
         background: $she_white;
     }
 
@@ -837,7 +851,7 @@
         font-size: 25px;
         line-height: 1.4;
         user-select: none;
-        width: 65%;
+        // width: 65%;
     }
 
 
@@ -969,7 +983,17 @@
         }
 
         .she-stay-upcover {
-            width: 68%;
+            // width: 68%;
+        }
+
+        .she-steps-tab-cover {
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .she-steps-tab-cover {
+            width: 100%;
         }
     }
 
@@ -985,7 +1009,7 @@
         }
 
         .she-stay-upcover {
-            width: 77%;
+            // width: 77%;
         }
     }
 

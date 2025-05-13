@@ -702,6 +702,13 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			} else {
 				$response = $this->she_set_response( false, 'Onboarding Setup Failed', 'Onboarding Setup Failed', '' );
 			}
+			
+			$get_notification = get_option( 'she_menu_notificetions' );
+
+			if( $get_notification !== SHE_MENU_NOTIFICETIONS ){
+				update_option( 'she_menu_notificetions', SHE_MENU_NOTIFICETIONS );
+			}
+			
 			return $response;
 		}
 
