@@ -79,7 +79,7 @@ const SupportToggle = (props) => {
             </div>
 
             {isOpen &&
-                <a href="https://posimyth.com/" className="she-support-bottom" target="_blank" rel="noopener noreferrer"> Powered by POSIMYTH Innovations </a>
+                <a href="https://posimyth.com/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings" className="she-support-bottom" target="_blank" rel="noopener noreferrer"> Powered by POSIMYTH Innovations </a>
             }
 
             <div className={`she-dashsu-content ${isOpen ? 'active' : ''}`}>

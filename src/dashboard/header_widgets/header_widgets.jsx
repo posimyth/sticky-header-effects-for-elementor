@@ -166,7 +166,7 @@ const Header_widgets = (props) => {
                 </div>
                 <div className="she-wdkit-install-activate">
                     <a className='she-wdkit-install-btn' onClick={(e) => handle_plugin(e, 'wdkit')}>{buttonText}</a>
-                    <a className='she-wdkit-learn-more' href='https://wdesignkit.com/' target='_blank' rel="noopener noreferrer">Learn More</a>
+                    <a className='she-wdkit-learn-more' href='https://wdesignkit.com/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target='_blank' rel="noopener noreferrer">Learn More</a>
                 </div>
 
                 <div className="she-wdkit-popup-accordion">

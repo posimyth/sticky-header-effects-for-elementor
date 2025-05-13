@@ -18,7 +18,7 @@ const DashboardInnerMain = (props) => {
             buttonLabel: __('Install', 'she-header'),
             buttonLinkLabel: __('Enable Widgets', 'she-header'),
             status: 'unavailable',
-            learnLink: 'https://theplusaddons.com/',
+            learnLink: 'https://theplusaddons.com/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings',
             imgSrc: plugin_url + 'assets/images/banner/tpae.png',
             imgAlt: __('WdesignKit Image', 'she-header'),
             browseLink: '?page=theplus_welcome_page#/widgets',
@@ -33,7 +33,7 @@ const DashboardInnerMain = (props) => {
             buttonLabel: __('Install Theme', 'she-header'),
             buttonLinkLabel: __('Theme Customizer', 'she-header'),
             status: 'unavailable',
-            learnLink: 'https://nexterwp.com/nexter-theme?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings ',
+            learnLink: 'https://nexterwp.com/nexter-theme/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings ',
             imgSrc: plugin_url + 'assets/images/banner/nexter-theme.png',
             imgAlt: __('Nexter Theme Image', 'she-header'),
             browseLink: 'customize.php?theme=nexter',
@@ -93,7 +93,7 @@ const DashboardInnerMain = (props) => {
             buttonLabel: __('Enable Blocks', 'she-header'),
             buttonLinkLabel: __('Open Nexter', 'she-header'),
             status: 'unavailable',
-            learnLink: 'https://nexterwp.com/nexter-blocks/',
+            learnLink: 'https://nexterwp.com/nexter-blocks/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings',
             imgSrc: plugin_url + 'assets/images/banner/nexter-new.png',
             imgAlt: __('Nexter Theme Image', 'she-header'),
             browseLink: 'edit.php?page=nexter_welcome_page',
@@ -325,18 +325,18 @@ const DashboardInnerMain = (props) => {
 
         setSlideLeft(true);
 
-        let form = new FormData();
-        form.append('action', 'tpae_dashboard_ajax_call');
-        form.append('type', 'tpae_transient_manage');
-        form.append('nonce', nonce);
-        form.append('key', 'tp_dashboard_overview');
-        form.append('operation', 'get');
+        // let form = new FormData();
+        // form.append('action', 'tpae_dashboard_ajax_call');
+        // form.append('type', 'tpae_transient_manage');
+        // form.append('nonce', nonce);
+        // form.append('key', 'tp_dashboard_overview');
+        // form.append('operation', 'get');
 
-        var response = await axios.post(ajax_url, form);
+        // var response = await axios.post(ajax_url, form);
 
-        if (response?.data?.data) {
-            setwhatsnew(response.data.data);
-        }
+        // if (response?.data?.data) {
+        //     setwhatsnew(response.data.data);
+        // }
 
     }
 
@@ -483,7 +483,7 @@ const DashboardInnerMain = (props) => {
                         <h4 className='she_qik_info_crd_title'>{__('Rate Sticky Header Effects', 'she-header')}</h4>
                         <div className='she_rating_box'>
                             {ratingSvg.map((obj, index) => (
-                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/reviews/?filter=5#new-post&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' : 'https://go.posimyth.com/review-she?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='she-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
+                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/reviews/?filter=5#new-post' : 'https://go.posimyth.com/review-she?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='she-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
                             ))}
                         </div>
                     </div>

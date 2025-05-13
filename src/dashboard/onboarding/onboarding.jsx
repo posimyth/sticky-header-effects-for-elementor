@@ -20,7 +20,7 @@ const Onboarding = (props) => {
     const [Nextercheck, SetNexter] = useState(false);
     const [createheaderBtn, SetcreateheaderBtn] = useState({
         btn_one: 'Create Header',
-        btn_two: 'Open Free Elementor Header Builder',
+        btn_two: 'Create Header',
     });
 
     const [ElementPro, SetElementPro] = useState(false);
@@ -161,7 +161,7 @@ const Onboarding = (props) => {
             }
 
             if (post_type === 'elementor_library') {
-                SetcreateheaderBtn({ btn_two: 'Open Free Elementor Header Builder' })
+                SetcreateheaderBtn({ btn_two: 'Create Header' })
             }
 
             setTrueStep(prevSteps =>
