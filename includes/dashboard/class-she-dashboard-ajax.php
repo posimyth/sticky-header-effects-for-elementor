@@ -189,6 +189,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				'roles'            => $user->roles,
 				'user_name'        => $user->display_name,
 				'user_email'       => $user->user_email,
+				'she_notificetions'=> "open",
 				// 'check_onboarding' => $set_onboarding,
 				'success'          => true,
 			);

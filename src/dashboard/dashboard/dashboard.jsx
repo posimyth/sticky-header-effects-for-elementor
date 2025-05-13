@@ -3,6 +3,8 @@ import axios from 'axios';
 import './dashboard.scss';
 import { connect } from 'react-redux';
 import { __ } from '@wordpress/i18n';
+import { Dashboard_a_rx} from '../../redux/action.js';
+
 
 const DashboardInnerMain = (props) => {
 
@@ -120,9 +122,13 @@ const DashboardInnerMain = (props) => {
     const [selectedIndex, setSelectedIndex] = useState(null);
 
     const [slideIndex, setSlideIndex] = useState(0);
-
+    
     useEffect(() => {
-        setSlideLeft(shed_data?.shed_notification);
+        
+        if(props?.she_dashboard_data?.she_notificetions === 'open' && shed_data?.shed_notificetions === 'open'){
+            setSlideLeft(true);
+        }
+
     }, [shed_data?.shed_notification]);
 
     useEffect(() => {
@@ -145,8 +151,6 @@ const DashboardInnerMain = (props) => {
         setSHeuser_name(props.she_dashboard_data?.user_name || '');
         setSHeuser_email(props.she_dashboard_data?.user_email || '');
     }, [props.she_dashboard_data]);
-
-
 
     useEffect(() => {
 
@@ -350,6 +354,13 @@ const DashboardInnerMain = (props) => {
         setSlideIndex(n - 1);
     };
 
+    const handleNewsCloese = () => {
+
+        let newData = { ...props.she_dashboard_data, 'she_notificetions': 'close' }
+        setSlideLeft(false); 
+        props.she_notification(newData);
+    }
+
     return (
         <div className={`she_dash_inner_main she-main-container ${props?.she_dashboard_data?.success ? '' : 'she-skeleton'}`}>
             <div className='she-section-heading-cover'>
@@ -518,11 +529,11 @@ const DashboardInnerMain = (props) => {
             {/*---------------------------------- what's New Button Slider Start ---------------------------------- */}
 
             <div className={slideLeft ? 'she_whats_new_cover she_whats_new_box_opened' : 'she_whats_new_cover she_whats_new_box_closed'}>
-                <div className='she-whats-new-outer' onClick={(e) => setSlideLeft(false)}></div>
+                <div className='she-whats-new-outer' onClick={(e) => { handleNewsCloese() }}></div>
                 <div className='she-whats-new-inner'>
                     <div className='she_heading_icon_strip'>
                         <h4 className='she_whats_new_heading'>{__("What's New?")}</h4>
-                        <img className='she_whats_new_close_btn' onClick={(e) => setSlideLeft(false)} src={plugin_url + 'assets/svg/dashboard_tab/close_icon.svg'} draggable={false} />
+                        <img className='she_whats_new_close_btn' onClick={(e) => { handleNewsCloese() }} src={plugin_url + 'assets/svg/dashboard_tab/close_icon.svg'} draggable={false} />
                     </div>
 
                     {/* {whatsnew.length > 0 ? */}
@@ -558,10 +569,12 @@ const DashboardInnerMain = (props) => {
         </div>
     )
 }
-
+const set_redux = (dispatch) => ({
+    she_notification: (data) => dispatch(Dashboard_a_rx(data)),
+})
 const get_redux = state => ({
     she_dashboard_data: state.Dashboard_data.db_rx,
     plugin_check: state.check_plugin.plugin_status_rx,
 })
 
-export default connect(get_redux)(DashboardInnerMain)
+export default connect(get_redux,set_redux)(DashboardInnerMain)

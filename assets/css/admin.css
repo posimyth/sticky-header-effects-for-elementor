@@ -1,6 +1,5 @@
-
-.toplevel_page_elementor.menu-top-first.she-admin-notice-active > a .wp-menu-name::after{
-   content: '1';
+.toplevel_page_elementor.menu-top-first.she-admin-notice-active>a .wp-menu-name::after {
+    content: '1';
     background: #d5353b;
     color: #fff;
     border-radius: 50%;
@@ -17,20 +16,21 @@
     justify-content: space-around;
 }
 
-.toplevel_page_elementor.menu-top-first.she-admin-notice-active > ul > li > a[href="admin.php?page=she-header"]::after{
+.toplevel_page_elementor.menu-top-first.she-admin-notice-active>ul>li>a[href="admin.php?page=she-header"] {
+    position: relative;
+    white-space: nowrap;}
+
+.toplevel_page_elementor.menu-top-first.she-admin-notice-active>ul>li>a[href="admin.php?page=she-header"]::after {
     content: '';
     background: #d5353b;
     color: #fff;
     border-radius: 50%;
-    position: relative;
-    top: -13px;
-    right: 3px;
-    width: 10px; 
-    font-size: 12px;
-    height: 10px;
+    position: absolute;
+    top: 11px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
     text-align: center;
-    line-height: 17px;
     display: flex;
     justify-content: center;
-    left: 130px;
 }

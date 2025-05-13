@@ -362,7 +362,7 @@ const Onboarding = (props) => {
                                 setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? 2 : 1));
                                 Hendalclick('get_updates');
                             }}>
-                            Continue without Subscribing
+                           Skip
                         </span>
 
                         {

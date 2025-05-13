@@ -5,6 +5,7 @@ const she_dashboard_rx = {
         roles: [''],
         user_image: "",
         user_name: "",
+        she_notificetions: "open",
     }
 }
 
