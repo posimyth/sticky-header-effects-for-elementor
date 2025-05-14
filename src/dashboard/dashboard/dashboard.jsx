@@ -543,14 +543,14 @@ const DashboardInnerMain = (props) => {
                             {/* <img className='she_whatsn_new_img' src={Tpae_card_bg} draggable={false} /> */}
                             <img className='she_whatsn_new_img' src={plugin_url + 'assets/images/tp-placeholder.jpg'} draggable={false}></img>
                         </div>
-                        <h4 className='she_img_heading_info'>{__('Introducing CSS Grid Layout in Nexter Blocks – More Control, More Creativity!')}</h4>
-                        <p className='she_text_info'>{__('Were excited to bring CSS Grid Layout to Nexter Blocks with the latest update! Now, you can design complex layouts with ease—think full-page designs, photo galleries, product listings, and more—all neatly arranged in rows and columns.')}</p>
+                        <h4 className='she_img_heading_info'>{__('Sticky Header for Elementor 2.0 – Plugin Acquired, 50+Header  Templates, Elementor Free Integration & More')}</h4>
+                        <p className='she_text_info'>{__('Sticky Header for Elementor is now acquired and better than ever! Get 50+ header templates, improved features, and full support for Elementor Free. Uncover the full acquired news')}</p>
                         <div className='she_whats_new_btn_group'>
                             {/* {data?.demo && */}
-                            <a href={''} target="_blank" rel="noopener noreferrer" className='she_whats_new_info_cta_btn'>{__('Live Demo')}</a>
+                            <a href={'https://stickyheadereffects.com/massive-updates-2.0'} target="_blank" rel="noopener noreferrer" className='she_whats_new_info_cta_btn'>{__('Live Demo')}</a>
                             {/* } */}
                             {/* {data?.link && */}
-                            <a href={''} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a>
+                            {/* <a href={''} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a> */}
                             {/* } */}
                         </div>
                     </div>

@@ -132,7 +132,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 						'shed_pro'        => 0,
 						'shed_wdkit_url'  => SHE_WDKIT_URL,
 						'onboarding_setup'  => get_option( 'she_onboarding_setup' ),
-						'she_notificetions' => $she_notificetions,
+						'shed_notificetions' => $she_notificetions,
 					),
 				);
 			}
