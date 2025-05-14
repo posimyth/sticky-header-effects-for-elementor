@@ -30,6 +30,7 @@
         box-sizing: border-box;
         position: relative;
         align-items: flex-end;
+        width: 640px;
     }
 
     .she-step-two .she-whitebg-cover {
@@ -242,7 +243,7 @@
 
     .she-strt-crd-cover {
         gap: 20px;
-        width: min-content;
+        // width: min-content;
         height: 270px;
 
 
@@ -447,7 +448,8 @@
 
     .she-btmsm-btn {
         display: flex;
-        width: 100%;
+        // width: 100%;
+        width: 640px;
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
@@ -527,7 +529,7 @@
         justify-content: flex-start;
 
         .she-header-main-cover {
-            padding: 15px;
+            padding: 15px 0px;
             background: #ffffff;
         }
 
@@ -667,7 +669,8 @@
     .she-onbsec-cover .she-step-foure {
         display: flex;
         align-items: center;
-        width: 100%;
+        // width: 100%;
+        width: 640px;
         user-select: none;
 
         .she-header-main-cover {
@@ -694,7 +697,7 @@
         .she-whinf-cover {
             flex-direction: column;
             align-items: flex-start;
-            width: 100%;
+            // width: 100%;
             gap: 12px;
 
             .she-sm-txt,
@@ -794,7 +797,8 @@
     .she-accodion-main-cover {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        // width: 100%;
+        width:640px;
         justify-content: center;
         align-items: center;
     }

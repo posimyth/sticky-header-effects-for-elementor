@@ -114,7 +114,7 @@ const Header_widgets = (props) => {
                     <div className="she-tpae-title">{__('Get a Free Elementor Navigation Menu Widget with The Plus Addons for Elementor.', 'she-header')}</div>
                     <div className="she-install-activate">
                         <a className='she-tpae-btn' onClick={(e) => handle_plugin(e, 'tpae')}>{TpDwonloadBtn}</a>
-                        <a href='https://theplusaddons.com/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target="_blank" rel="noopener noreferrer" className='she-nexter-learn'>{__('Learn More', 'she-header')}</a>
+                        <a href='https://theplusaddons.com/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader' target="_blank" rel="noopener noreferrer" className='she-nexter-learn'>{__('Learn More', 'she-header')}</a>
                     </div>
                     <div className="she-tpae-accordion">
                         {tpae_poup_accordian.map((item, index) => (
@@ -166,7 +166,7 @@ const Header_widgets = (props) => {
                 </div>
                 <div className="she-wdkit-install-activate">
                     <a className='she-wdkit-install-btn' onClick={(e) => handle_plugin(e, 'wdkit')}>{buttonText}</a>
-                    <a className='she-wdkit-learn-more' href='https://wdesignkit.com/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target='_blank' rel="noopener noreferrer">Learn More</a>
+                    <a className='she-wdkit-learn-more' href='https://wdesignkit.com/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader' target='_blank' rel="noopener noreferrer">Learn More</a>
                 </div>
 
                 <div className="she-wdkit-popup-accordion">
@@ -344,7 +344,7 @@ const Header_widgets = (props) => {
                                                         <div className='she-abt-wid-qik-link-cov'>
                                                             {data.demoUrl && (
                                                                 <a
-                                                                    href={data.demoUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'}
+                                                                    href={data.demoUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'}
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
                                                                     className='she-widgets-link'
@@ -357,7 +357,7 @@ const Header_widgets = (props) => {
 
                                                             {data.docUrl && (
                                                                 <a
-                                                                    href={data.docUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'}
+                                                                    href={data.docUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'}
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
                                                                     className='she-widgets-link'
@@ -370,7 +370,7 @@ const Header_widgets = (props) => {
 
                                                             {data.videoUrl && (
                                                                 <a
-                                                                    href={data.videoUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'}
+                                                                    href={data.videoUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'}
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
                                                                     className='she-widgets-link'

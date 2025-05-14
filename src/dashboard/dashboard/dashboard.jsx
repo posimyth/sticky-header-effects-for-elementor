@@ -20,7 +20,7 @@ const DashboardInnerMain = (props) => {
             buttonLabel: __('Install', 'she-header'),
             buttonLinkLabel: __('Enable Widgets', 'she-header'),
             status: 'unavailable',
-            learnLink: 'https://theplusaddons.com/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings',
+            learnLink: 'https://theplusaddons.com/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader',
             imgSrc: plugin_url + 'assets/images/banner/tpae.png',
             imgAlt: __('WdesignKit Image', 'she-header'),
             browseLink: '?page=theplus_welcome_page#/widgets',
@@ -35,7 +35,7 @@ const DashboardInnerMain = (props) => {
             buttonLabel: __('Install Theme', 'she-header'),
             buttonLinkLabel: __('Theme Customizer', 'she-header'),
             status: 'unavailable',
-            learnLink: 'https://nexterwp.com/nexter-theme/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings ',
+            learnLink: 'https://nexterwp.com/nexter-theme/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader ',
             imgSrc: plugin_url + 'assets/images/banner/nexter-theme.png',
             imgAlt: __('Nexter Theme Image', 'she-header'),
             browseLink: 'customize.php?theme=nexter',
@@ -50,7 +50,7 @@ const DashboardInnerMain = (props) => {
             buttonLabel: __('Install WDesignKit', 'she-header'),
             buttonLinkLabel: __('Open Templates', 'she-header'),
             status: 'unavailable',
-            learnLink: 'https://wdesignkit.com/?utm_source=wpbackend&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings ',
+            learnLink: 'https://wdesignkit.com/?utm_source=wpbackend&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader ',
             imgSrc: plugin_url + 'assets/images/banner/wdesinKit.png',
             imgAlt: __('WdesignKit Image', 'she-header'),
             browseLink: '?page=wdesign-kit#/browse',
@@ -65,7 +65,7 @@ const DashboardInnerMain = (props) => {
             buttonLabel: __('Enable Extension', 'she-header'),
             buttonLinkLabel: __('Extension Setting', 'she-header'),
             status: 'unavailable',
-            learnLink: 'https://nexterwp.com/nexter-extension?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings ',
+            learnLink: 'https://nexterwp.com/nexter-extension?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader ',
             imgSrc: plugin_url + 'assets/images/banner/nexter-extension.png',
             imgAlt: __('Nexter Theme Image', 'she-header'),
             browseLink: 'edit.php?post_type=nxt_builder',
@@ -80,7 +80,7 @@ const DashboardInnerMain = (props) => {
             buttonLabel: __('Install UiChemy', 'she-header'),
             buttonLinkLabel: __('UiChemy Setting', 'she-header'),
             status: 'unavailable',
-            learnLink: 'https://uichemy.com?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings ',
+            learnLink: 'https://uichemy.com?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader ',
             imgSrc: plugin_url + 'assets/images/banner/uichemy.png',
             imgAlt: __('UiChemy', 'she-header'),
             browseLink: '?page=uichemy-welcome',
@@ -95,7 +95,7 @@ const DashboardInnerMain = (props) => {
             buttonLabel: __('Enable Blocks', 'she-header'),
             buttonLinkLabel: __('Open Nexter', 'she-header'),
             status: 'unavailable',
-            learnLink: 'https://nexterwp.com/nexter-blocks/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings',
+            learnLink: 'https://nexterwp.com/nexter-blocks/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader',
             imgSrc: plugin_url + 'assets/images/banner/nexter-new.png',
             imgAlt: __('Nexter Theme Image', 'she-header'),
             browseLink: 'edit.php?page=nexter_welcome_page',
@@ -469,7 +469,7 @@ const DashboardInnerMain = (props) => {
                 <div className='she_qikinfo_grp_cover'>
                     <div className='she_qik_infocrd_cover she_docs'>
                         <h4 className='she_qik_info_crd_title'>{__('Documentation', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://stickyheadereffects.com/docs/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' className='she-ghost-btn'>{__('Read Now', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href='https://stickyheadereffects.com/docs/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader' className='she-ghost-btn'>{__('Read Now', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover she_help'>
@@ -479,7 +479,7 @@ const DashboardInnerMain = (props) => {
 
                     <div className='she_qik_infocrd_cover'>
                         <h4 className='she_qik_info_crd_title'>{__('Join Community', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/groups/theplus4elementor?' className='she-ghost-btn'>{__('Join Now', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/groups/theplus4elementor' className='she-ghost-btn'>{__('Join Now', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover'>
@@ -494,14 +494,14 @@ const DashboardInnerMain = (props) => {
                         <h4 className='she_qik_info_crd_title'>{__('Rate Sticky Header Effects', 'she-header')}</h4>
                         <div className='she_rating_box'>
                             {ratingSvg.map((obj, index) => (
-                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/reviews/?filter=5#new-post' : 'https://go.posimyth.com/review-she?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings')} target="_blank" rel="noopener noreferrer" className='she-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
+                                <a key={index} href={(index == 4 ? 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/reviews/?filter=5#new-post' : 'https://go.posimyth.com/review-she?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader')} target="_blank" rel="noopener noreferrer" className='she-star' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onClick={() => setSelectedIndex(index)} > {obj.svg} </a>
                             ))}
                         </div>
                     </div>
 
                     <div className='she_qik_infocrd_cover she_video_tut'>
                         <h4 className='she_qik_info_crd_title'>{__('Video Tutorials', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href="https://www.youtube.com/watch?v=DfkjFCRhqNE&list=PLFRO-irWzXaLK9H5opSt88xueTnRhqvO5&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings" className='she-ghost-btn'>{__('Coming Soon', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href="https://www.youtube.com/watch?v=DfkjFCRhqNE&list=PLFRO-irWzXaLK9H5opSt88xueTnRhqvO5&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader" className='she-ghost-btn'>{__('Coming Soon', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover she_dashboard_social_icons_card_box'>
@@ -516,10 +516,10 @@ const DashboardInnerMain = (props) => {
                             <a target='_blank' rel="noopener noreferrer" href='https://www.instagram.com/posimyth/' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/instagram_icon.svg'} draggable={false} />
                             </a>
-                            <a target='_blank' rel="noopener noreferrer" href='https://t.me/posimyth?' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://t.me/posimyth' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/telegram_icon.svg'} draggable={false} />
                             </a>
-                            <a target='_blank' rel="noopener noreferrer" href='https://in.linkedin.com/company/posimyth?' className='theplus_icon_cover'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://in.linkedin.com/company/posimyth' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/linkedin_icon.svg'} draggable={false} />
                             </a>
                         </div>
@@ -547,10 +547,10 @@ const DashboardInnerMain = (props) => {
                         <p className='she_text_info'>{__('Sticky Header for Elementor is now acquired and better than ever! Get 50+ header templates, improved features, and full support for Elementor Free. Uncover the full acquired news')}</p>
                         <div className='she_whats_new_btn_group'>
                             {/* {data?.demo && */}
-                            <a href={'https://stickyheadereffects.com/massive-updates-2.0'} target="_blank" rel="noopener noreferrer" className='she_whats_new_info_cta_btn'>{__('Live Demo')}</a>
+                            {/* <a href={'https://stickyheadereffects.com/massive-updates-2.0'} target="_blank" rel="noopener noreferrer" className='she_whats_new_info_cta_btn'>{__('Live Demo')}</a> */}
                             {/* } */}
                             {/* {data?.link && */}
-                            {/* <a href={''} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a> */}
+                            <a href={'https://stickyheadereffects.com/massive-updates-2.0/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a>
                             {/* } */}
                         </div>
                     </div>

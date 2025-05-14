@@ -88,7 +88,7 @@ const Extension = (props) => {
                     </div>
                     <div className="she-install-activate">
                         <a className='she-nexter-btn' onClick={(e) => handleClick(e)}>{NexterBtn}</a>
-                        <a href='https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings' target="_blank" rel="noopener noreferrer" className='she-nexter-learn'>{__('Learn More', 'she-header')}</a>
+                        <a href='https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader' target="_blank" rel="noopener noreferrer" className='she-nexter-learn'>{__('Learn More', 'she-header')}</a>
                     </div>
                 </div>
                 <div className='she-nexter-group' style={{ backgroundImage: `url(${plugin_url}assets/images/banner/nexter_group.png)`, }}></div>
@@ -186,12 +186,12 @@ const Extension = (props) => {
                                                             }
                                                         </div>
                                                         <div className='she-abt-wid-qik-link-cov'>
-                                                            <a href={'https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-nexter-link'>{__('Live Demo', 'she-header')}</a>
+                                                            <a href={'https://nexterwp.com/nexter-extension/features/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" rel="noopener noreferrer" className='she-nexter-link'>{__('Live Demo', 'she-header')}</a>
                                                             {(data.docUrl) &&
                                                                 <span> | </span>
                                                             }
                                                             {data.docUrl &&
-                                                                <a href={data.docUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" rel="noopener noreferrer" className='she-nexter-link'>{__('Read Docs', 'she-header')}</a>
+                                                                <a href={data.docUrl + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" rel="noopener noreferrer" className='she-nexter-link'>{__('Read Docs', 'she-header')}</a>
                                                             }
                                                         </div>
                                                     </div>

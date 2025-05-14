@@ -147,7 +147,7 @@ const ElementorTemplates = (props) => {
                                 </div>
                                 <div className='she-ele-temp-detail'>
                                     <h4 className='she-elementor-template-title she-in-sec-heading'>{t_data.title}</h4>
-                                    <a href={t_data.post_url+'?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target="_blank" className='she-ghost-btn'>{__('Live Preview', 'she-header')}</a>
+                                    <a href={t_data.post_url+'?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" className='she-ghost-btn'>{__('Live Preview', 'she-header')}</a>
                                     <span className='she-float-box-title'>{t_data.title}</span>
                                 </div>
                             </div>

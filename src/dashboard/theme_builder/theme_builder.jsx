@@ -134,7 +134,7 @@ const ThemeBuilder = (props) => {
                     {props?.plugin_check[4]?.status !== 'active' ?
                         <button onClick={() => { Install_Nexter() }} target="_blank" rel="noopener noreferrer" className='she-ghost-btn'>{nexter_btn}</button>
                         :
-                        <a href="https://nexterwp.com/nexter-extension/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings" target="_blank" rel="noopener noreferrer" className='she-ghost-btn'>{__('View all Nexter Extension Features', 'she-header')}</a>
+                        <a href="https://nexterwp.com/nexter-extension/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader" target="_blank" rel="noopener noreferrer" className='she-ghost-btn'>{__('View all Nexter Extension Features', 'she-header')}</a>
                     }
 
                 </div>

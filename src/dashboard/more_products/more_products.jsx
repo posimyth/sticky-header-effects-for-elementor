@@ -254,7 +254,7 @@ const MoreProducts = (props) => {
                                 </svg>
                             </button>
                         )}
-                        <a href={'https://nexterwp.com/nexter-theme/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=plussettings'} target='_blank' rel="noopener noreferrer" className='she-ghost-btn'>{__('Learn More', 'she-header')}</a>
+                        <a href={'https://nexterwp.com/nexter-theme/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target='_blank' rel="noopener noreferrer" className='she-ghost-btn'>{__('Learn More', 'she-header')}</a>
                     </div>
                 </div>
             </div>

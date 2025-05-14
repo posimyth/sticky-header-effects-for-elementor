@@ -67,7 +67,7 @@ const plus_extension = [
         label: __('Performance', 'she-header'),
         widgets: [
             {
-                name: 'duplicate_post',
+                name: 'advanced_performance',
                 label: __('Advanced Performance', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
@@ -78,7 +78,7 @@ const plus_extension = [
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
-                name: 'duplicate_post',
+                name: 'google_fonts',
                 label: __('Google Fonts', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
@@ -89,7 +89,7 @@ const plus_extension = [
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
-                name: 'duplicate_post',
+                name: 'disable_comments',
                 label: __('Disable Comments', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
@@ -100,7 +100,7 @@ const plus_extension = [
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
-                name: 'duplicate_post',
+                name: 'disable_image_sizes',
                 label: __('Disable Image Sizes', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
@@ -111,7 +111,7 @@ const plus_extension = [
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
-                name: 'duplicate_post',
+                name: 'register_custom_image',
                 label: __('Register Custom Image Sizes', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
@@ -122,7 +122,7 @@ const plus_extension = [
                 keyword: ['Duplicate post', 'Clone post page', 'bulk copy'],
             },
             {
-                name: 'duplicate_post',
+                name: 'disable_icons',
                 label: __('Disable Icons', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
@@ -161,7 +161,7 @@ const plus_extension = [
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
             {
-                name: 'duplicate_post',
+                name: 'advanced_security',
                 label: __('Advanced Security', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
@@ -172,7 +172,7 @@ const plus_extension = [
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
             {
-                name: 'duplicate_post',
+                name: 'she_capatcha',
                 label: __('CAPTCHA', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
@@ -183,7 +183,7 @@ const plus_extension = [
                 keyword: ['Duplicate post','Clone post page','bulk copy'],
             },
             {
-                name: 'duplicate_post',
+                name: 'custom_login_url',
                 label: __('Custom Login URL', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
@@ -211,7 +211,7 @@ const plus_extension = [
         label: __('Admin Interface', 'she-header'),
         widgets: [
             {
-                name: 'duplicate_post',
+                name: 'disable_admin_settings',
                 label: __('Disable Admin Settings', 'she-header'),
                 demoUrl: '',
                 docUrl: 'https://nexterwp.com/docs/duplicate-post-pages-cpt-products-at-bulk-in-wordpress/',
