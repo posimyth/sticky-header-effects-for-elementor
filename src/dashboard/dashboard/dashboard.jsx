@@ -541,7 +541,7 @@ const DashboardInnerMain = (props) => {
                     <div className='she_whats_new_card_info_cover'>
                         <div className='she_whats_new_img_cover'>
                             {/* <img className='she_whatsn_new_img' src={Tpae_card_bg} draggable={false} /> */}
-                            <img className='she_whatsn_new_img' src={plugin_url + 'assets/images/banner/blog_image.png'} draggable={false}></img>
+                            <img className='she_whatsn_new_img' src='https://wdesignkit.com/images/plugins/theme-builder/whatsnew1.png' draggable={false}></img>
                         </div>
                         <h4 className='she_img_heading_info'>{__('Sticky Header for Elementor 2.0 – Plugin Acquired, 50+Header  Templates, Elementor Free Integration & More')}</h4>
                         <p className='she_text_info'>{__('Sticky Header for Elementor is now acquired and better than ever! Get 50+ header templates, improved features, and full support for Elementor Free. Uncover the full acquired news')}</p>

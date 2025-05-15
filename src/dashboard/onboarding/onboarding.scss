@@ -230,6 +230,10 @@
         user-select: none;
     }
 
+    .she-sm-txt{
+        margin: 4px;
+    }
+
     .she-onbrd-crd-d {
         font-size: 12px;
         text-align: center;
@@ -986,9 +990,9 @@
             }
         }
 
-        .she-stay-upcover {
+        // .she-stay-upcover {
             // width: 68%;
-        }
+        // }
 
         .she-steps-tab-cover {
             width: 70%;
@@ -1012,9 +1016,9 @@
             }
         }
 
-        .she-stay-upcover {
+        // .she-stay-upcover {
             // width: 77%;
-        }
+        // }
     }
 
     @media (max-width: 900px) {

@@ -64,21 +64,22 @@ if ( ! class_exists( 'She_Loader' ) ) {
 		 */
 		public function she_load() {
 
-			if( is_admin() && current_user_can( 'manage_options' ) ){
+			if ( is_admin() && current_user_can( 'manage_options' ) ) {
 				require SHE_HEADER_PATH . 'includes/dashboard/class-she-dashboard-ajax.php';
 				require SHE_HEADER_PATH . 'includes/dashboard/class-she-wp-menu.php';
-				add_action('admin_footer', array($this, 'she_link_in_new_tab'));
-				add_option( 'she_menu_notificetions','1');
+				require SHE_HEADER_PATH . 'includes/meta/class-she-meta.php';
+				add_action( 'admin_footer', array( $this, 'she_add_notificetions' ) );
+				add_option( 'she_menu_notificetions', '1' );
 			}
 
 			require SHE_HEADER_PATH . 'includes/preset/class-she-preset.php';
 		}
 
-		function she_link_in_new_tab(){
+		function she_add_notificetions() {
 
 			$get_notification = get_option( 'she_menu_notificetions' );
 
-			if( $get_notification !== SHE_MENU_NOTIFICETIONS ){
+			if ( $get_notification !== SHE_MENU_NOTIFICETIONS ) {
 				?>
 				<script type="text/javascript">
 					document.addEventListener('DOMContentLoaded', function() {
@@ -88,7 +89,7 @@ if ( ! class_exists( 'She_Loader' ) ) {
 						}
 					});
 				</script>
-			<?php
+				<?php
 			}
 		}
 	}

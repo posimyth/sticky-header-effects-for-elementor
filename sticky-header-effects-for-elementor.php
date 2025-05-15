@@ -4,8 +4,8 @@
  * Plugin URI:			https://stickyheadereffects.com
  * Description:			Custom settings to change sticky header on scroll using Elementor Pro.
  * Version:				2.0
- * Author:				Rwattner
- * Author URI:			https://stickyheadereffects.com
+ * Author:				POSIMYTH
+ * Author URI:			https://posimyth.com/
  * Requires at least:	5.3
  * Tested up to:		6.7
  *
@@ -14,7 +14,7 @@
  *
  * @package sticky-header-effects-for-elementor
  * @category Core
- * @author Rwattner
+ * @author POSIMYTH
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -31,6 +31,9 @@ define( 'SHE_HEADER_ASSETS_URL', SHE_HEADER_URL . 'assets/' );
 define( 'SHE_HEADER_MODULES_URL', SHE_HEADER_URL . 'modules/' );
 define( 'SHE_WDKIT_URL', 'https://wdesignkit.com/' );
 define( 'SHE_MENU_NOTIFICETIONS', '2' );
+define( 'SHE_PBNAME', plugin_basename( __FILE__ ) );
+
+
 
 /**
  * Load gettext translate for our text domain.
