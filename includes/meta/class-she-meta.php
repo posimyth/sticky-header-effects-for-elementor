@@ -70,7 +70,7 @@ if ( ! class_exists( 'She_meta' ) ) {
 
 			if ( strpos( $plugin_file, SHE_PBNAME ) !== false ) {
 				$new_links = array(
-					'official-site'    => '<a href="' . esc_url( 'https://stickyheadereffects.com/?utm_source=wpbackend&utm_medium=pluginpage&utm_campaign=pluginpage' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Visit Plugin site', 'tpebl' ) . '</a>',
+					// 'official-site'    => '<a href="' . esc_url( 'https://stickyheadereffects.com/?utm_source=wpbackend&utm_medium=pluginpage&utm_campaign=pluginpage' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Visit Plugin site', 'tpebl' ) . '</a>',
 					'docs'             => '<a href="' . esc_url( 'https://stickyheadereffects.com/docs?utm_source=wpbackend&utm_medium=pluginpage&utm_campaign=pluginpage' ) . '" target="_blank" rel="noopener noreferrer" style="color:green;">' . esc_html__( 'Docs', 'tpebl' ) . '</a>',
 					'video-tutorials'  => '<a href="' . esc_url( 'https://www.youtube.com/c/POSIMYTHInnovations/?sub_confirmation=1' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Video Tutorials', 'tpebl' ) . '</a>',
 					'join-community'   => '<a href="' . esc_url( 'https://www.facebook.com/groups/theplus4elementor' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Join Community', 'tpebl' ) . '</a>',
