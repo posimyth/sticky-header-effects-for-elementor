@@ -106,7 +106,7 @@ if ( ! class_exists( 'She_meta' ) ) {
 			$links[]      = $setting_link;
 
 			/**Need Help.*/
-				$need_help = sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>', esc_url( 'https://theplusaddons.com/help/getting-started/?utm_source=wpbackend&utm_medium=banner&utm_campaign=links' ), __( 'Need Help?', 'tpebl' ) );
+				$need_help = sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>', esc_url( 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/?utm_source=wpbackend&utm_medium=pluginpage&utm_campaign=pluginpage' ), __( 'Need Help?', 'tpebl' ) );
 				$links     = (array) $links;
 				$links[]   = $need_help;
 			return $links;
