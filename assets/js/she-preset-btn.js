@@ -4,6 +4,15 @@
     const ENABLE_TEMPLATES_TEXT = __("Enable Templates", "tpebl");
 
     jQuery("document").ready(function () {
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const sheOnload = urlParams.get('she_onload');
+
+        if (sheOnload === 'true') {
+            const postId = 18061;
+            she_load_wdkit(postId);
+        }
+
         jQuery(document).on('click', ".she-preset-editor-raw", function (event) {
 
             var $link = jQuery(this);
@@ -15,6 +24,12 @@
             }, 5000);
 
             let id = event.target?.dataset?.temp_id;
+
+            she_load_wdkit(id);
+
+        });
+
+        function she_load_wdkit(id) {
 
             jQuery.ajax({
                 url: she_wdkit_preview_popup.ajax_url,
@@ -115,17 +130,21 @@
                                 },
                                 success: function (res) {
 
-                                    $loader.css('display', 'none');
-
                                     if (true === res.success) {
                                         elementor.saver.update.apply().then(function () {
                                             window.location.hash = window.location.hash + '?wdesignkit=open&she=true'
                                             window.location.reload();
+                                            $loader.css('display', 'none');
+
                                         });
 
                                     } else {
                                         $text.text(ENABLE_TEMPLATES_TEXT);
+                                        $loader.css('display', 'none');
+
                                     }
+
+
                                 },
                                 error: function () {
                                     $loader.css('display', 'none');
@@ -140,6 +159,6 @@
                 error: function (res) {
                 }
             });
-        });
+        }
     });
 })(jQuery);
