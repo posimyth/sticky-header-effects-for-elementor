@@ -9,7 +9,7 @@
         const sheOnload = urlParams.get('she_onload');
 
         if (sheOnload === 'true') {
-            const postId = 18061; 
+            const postId = 18061;
             she_load_wdkit(postId);
         }
 
@@ -30,7 +30,7 @@
         });
 
         function she_load_wdkit(id) {
-            
+
             jQuery.ajax({
                 url: she_wdkit_preview_popup.ajax_url,
                 dataType: 'json',
@@ -130,17 +130,21 @@
                                 },
                                 success: function (res) {
 
-                                    $loader.css('display', 'none');
-
                                     if (true === res.success) {
                                         elementor.saver.update.apply().then(function () {
                                             window.location.hash = window.location.hash + '?wdesignkit=open&she=true'
                                             window.location.reload();
+                                            $loader.css('display', 'none');
+
                                         });
 
                                     } else {
                                         $text.text(ENABLE_TEMPLATES_TEXT);
+                                        $loader.css('display', 'none');
+
                                     }
+
+
                                 },
                                 error: function () {
                                     $loader.css('display', 'none');

@@ -144,8 +144,6 @@ const MoreProducts = (props) => {
 
         let response = await axios.post(ajax_url, form);
 
-        console.log(response.status);
-
         if (response.status === 200) {
             setThemeBtnloader(false);
             setActiveName('Activated');
