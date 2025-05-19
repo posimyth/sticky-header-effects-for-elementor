@@ -33,6 +33,13 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 */
 		private static $instance = null;
 
+		/**
+		 *
+		 * Get User Data.
+		 *
+		 * @var instance
+		 * @since 2.0
+		 */
 		public $onbording_api = 'https://api.posimyth.com/wp-json/she/v2/she_store_user_data';
 		/**
 		 * This instance is used to load class
@@ -185,21 +192,21 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			}
 
 			$user_info = array(
-				'user_image'       => $user_image,
-				'roles'            => $user->roles,
-				'user_name'        => $user->display_name,
-				'user_email'       => $user->user_email,
-				// 'check_onboarding' => $set_onboarding,
-				'success'          => true,
+				'user_image'        => $user_image,
+				'roles'             => $user->roles,
+				'user_name'         => $user->display_name,
+				'user_email'        => $user->user_email,
+				'she_notificetions' => 'open',
+				'success'           => true,
 			);
 
 			$response = array(
-				'success'       => true,
-				'message'       => esc_html__( 'success', 'she-header' ),
-				'description'   => esc_html__( 'success', 'she-header' ),
-				'user_info'     => $user_info,
-				'plugin_detail' => $plugin_details,
-				'theme_detail'  => $theme_details,
+				'success'          => true,
+				'message'          => esc_html__( 'success', 'she-header' ),
+				'description'      => esc_html__( 'success', 'she-header' ),
+				'user_info'        => $user_info,
+				'plugin_detail'    => $plugin_details,
+				'theme_detail'     => $theme_details,
 				'check_onboarding' => $set_onboarding,
 			);
 
@@ -592,15 +599,15 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 			$header_template = isset( $_POST['store'] ) ? sanitize_text_field( wp_unslash( $_POST['store'] ) ) : '';
 
-			if( 'header_template' === $header_template ) {
-				$she_header_template = get_transient('she_header_template');
+			if ( 'header_template' === $header_template ) {
+				$she_header_template = get_transient( 'she_header_template' );
 
 				if ( $she_header_template != false ) {
 					return get_option( 'she_header_template' );
 				}
 
-				delete_option('she_header_template');
-				delete_transient('she_header_template');
+				delete_option( 'she_header_template' );
+				delete_transient( 'she_header_template' );
 			}
 
 			$args = array(
@@ -623,18 +630,18 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			}
 
 			$status_code = wp_remote_retrieve_response_code( $response );
-			$getdataone = wp_remote_retrieve_body( $response );
-			$statuscode = array( 'HTTP_CODE' => $status_code );
+			$getdataone  = wp_remote_retrieve_body( $response );
+			$statuscode  = array( 'HTTP_CODE' => $status_code );
 
 			$response = json_decode( $getdataone, true );
 
 			if ( is_array( $statuscode ) && is_array( $response ) ) {
 				$final = array_merge( $statuscode, $response );
 
-				if( 200 == $status_code ){
-					if( 'header_template' === $header_template ) {
+				if ( 200 == $status_code ) {
+					if ( 'header_template' === $header_template ) {
 						add_option( 'she_header_template', $final );
-						set_transient('she_header_template', 'header_template', 24 * HOUR_IN_SECONDS);
+						set_transient( 'she_header_template', 'header_template', 24 * HOUR_IN_SECONDS );
 						// set_transient('she_header_template', 'header_template', 120);
 					}
 				}
@@ -646,6 +653,8 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 		/**
 		 * Create Page for Header
+		 * 
+		 * @since 2.0
 		 */
 		public function she_create_page() {
 			$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( $_POST['post_type'] ) : 'elementor_library';
@@ -669,7 +678,8 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				}
 			}
 
-			$elementor_edit_url = admin_url( 'post.php?post=' . $post_id . '&action=elementor' );
+			// $elementor_edit_url = admin_url( 'post.php?post=' . $post_id . '&action=elementor' );
+			$elementor_edit_url = admin_url( 'post.php?post=' . $post_id . '&action=elementor&she_onload=true' );
 
 			return $this->she_set_response(
 				true,
@@ -701,6 +711,13 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			} else {
 				$response = $this->she_set_response( false, 'Onboarding Setup Failed', 'Onboarding Setup Failed', '' );
 			}
+
+			$get_notification = get_option( 'she_menu_notificetions' );
+
+			if ( $get_notification !== SHE_MENU_NOTIFICETIONS ) {
+				update_option( 'she_menu_notificetions', SHE_MENU_NOTIFICETIONS );
+			}
+
 			return $response;
 		}
 

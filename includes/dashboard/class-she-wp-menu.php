@@ -68,7 +68,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 
 			// if ( current_user_can( $capability ) ) {
 			// add_menu_page( __( 'SHE for Elementor', 'she-header' ), __( 'SHE for Elementor', 'she-header' ), 'manage_options', 'she-header', array( $this, 'she_menu_page_template' ), '', 67 );
-			// }
+			// } 	 
 
 			if ( current_user_can( $capability ) ) {
 				add_action(
@@ -106,6 +106,15 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 		 */
 		public function she_enqueue_scripts( $page ) {
 
+			wp_enqueue_style( 'she-admin-style', SHE_HEADER_URL . '/assets/css/admin.css', array(), SHE_HEADER_VERSION, 'all' );
+			
+			$get_notification = get_option( 'she_menu_notificetions' );
+
+			$she_notificetions = 'close';
+			if( $get_notification !== SHE_MENU_NOTIFICETIONS ){
+				$she_notificetions = 'open';
+			}
+
 			if ( 'elementor_page_she-header' === $page ) {
 				wp_enqueue_style( 'she-editor-css', SHE_HEADER_URL . 'build/index.css', array(), SHE_HEADER_VERSION );
 
@@ -123,6 +132,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 						'shed_pro'        => 0,
 						'shed_wdkit_url'  => SHE_WDKIT_URL,
 						'onboarding_setup'  => get_option( 'she_onboarding_setup' ),
+						'shed_notificetions' => $she_notificetions,
 					),
 				);
 			}
