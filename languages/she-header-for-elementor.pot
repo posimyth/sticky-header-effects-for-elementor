@@ -1,0 +1,1271 @@
+# Copyright (C) 2025 POSIMYTH
+# This file is distributed under the same license as the Sticky Header Effects for Elementor plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Sticky Header Effects for Elementor 2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sticky-header-effects-for-elementor\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-05-20T14:44:15+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: she-header\n"
+
+#. Plugin Name of the plugin
+#: sticky-header-effects-for-elementor.php
+msgid "Sticky Header Effects for Elementor"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: sticky-header-effects-for-elementor.php
+msgid "https://stickyheadereffects.com"
+msgstr ""
+
+#. Description of the plugin
+#: sticky-header-effects-for-elementor.php
+msgid "Create stunning sticky headers with multiple scroll effects like shrink, fade, slide, and blur—packed with 50+ ready-to-import templates and fully customizable using Elementor."
+msgstr ""
+
+#. Author of the plugin
+#: sticky-header-effects-for-elementor.php
+msgid "POSIMYTH"
+msgstr ""
+
+#. Author URI of the plugin
+#: sticky-header-effects-for-elementor.php
+msgid "https://posimyth.com/"
+msgstr ""
+
+#: base/module-base.php:33
+#: base/module-base.php:44
+#: plugin.php:44
+#: plugin.php:55
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: includes/dashboard/class-she-dashboard-ajax.php:205
+#: includes/dashboard/class-she-dashboard-ajax.php:206
+msgid "success"
+msgstr ""
+
+#: includes/dashboard/class-she-dashboard-ajax.php:417
+msgid "Rollback to Previous Version"
+msgstr ""
+
+#: includes/dashboard/class-she-dashboard-ajax.php:476
+#: includes/preset/class-she-preset.php:149
+msgid "Failed to retrieve plugin information."
+msgstr ""
+
+#: includes/dashboard/class-she-wp-menu.php:79
+#: includes/dashboard/class-she-wp-menu.php:80
+#: modules/transparent/module.php:39
+#: plugin.php:133
+msgid "Sticky Header Effects"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:212
+msgid "Import 50+ Pre-Designed Sticky Header Templates"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:216
+msgid "Uniquely designed Elementor Templates for every website type made with Elementor & The Plus Addons for Elementor Widgets."
+msgstr ""
+
+#: includes/preset/class-she-preset.php:223
+msgid "Design Quickly without starting from Scratch"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:229
+msgid "Fully Customizable for Any Style"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:237
+msgid "Time-Saving and Efficient Workflow"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:243
+msgid "Explore Versatile Layout Options"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:250
+msgid "Supports Widgets :"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:271
+msgid "Enable Header Templates"
+msgstr ""
+
+#: modules/transparent/module.php:47
+msgid "Enable"
+msgstr ""
+
+#: modules/transparent/module.php:49
+#: modules/transparent/module.php:289
+#: modules/transparent/module.php:326
+#: modules/transparent/module.php:530
+#: modules/transparent/module.php:631
+#: modules/transparent/module.php:893
+#: modules/transparent/module.php:950
+#: modules/transparent/module.php:1056
+#: modules/transparent/module.php:1098
+#: modules/transparent/module.php:1142
+#: modules/transparent/module.php:1195
+#: modules/transparent/module.php:1223
+#: modules/transparent/module.php:1266
+#: modules/transparent/module.php:1294
+#: modules/transparent/module.php:1322
+#: modules/transparent/module.php:1352
+#: modules/transparent/module.php:1437
+msgid "On"
+msgstr ""
+
+#: modules/transparent/module.php:81
+#: build/index.js:1
+msgid "Live Demo"
+msgstr ""
+
+#: modules/transparent/module.php:82
+msgid "Import Presets"
+msgstr ""
+
+#: modules/transparent/module.php:97
+msgid "New FREE Pro Features"
+msgstr ""
+
+#: modules/transparent/module.php:98
+msgid "Disable Fully Transparent Background, Background Type, Custom Menu Toggle Button, Bottom Shadow, Blur Background settings"
+msgstr ""
+
+#: modules/transparent/module.php:108
+msgid "IMPORTANT: This plugin does NOT control the sticky position of the header. Please use the above Motion Effects tab sticky options to make the header sticky"
+msgstr ""
+
+#: modules/transparent/module.php:120
+msgid "Enable On"
+msgstr ""
+
+#: modules/transparent/module.php:126
+msgid "Desktop"
+msgstr ""
+
+#: modules/transparent/module.php:127
+msgid "Tablet"
+msgstr ""
+
+#: modules/transparent/module.php:128
+msgid "Mobile"
+msgstr ""
+
+#: modules/transparent/module.php:141
+#: modules/transparent/module.php:1466
+msgid "Scroll Distance (px)"
+msgstr ""
+
+#: modules/transparent/module.php:153
+msgid "Choose the scroll distance to enable Sticky Header Effects"
+msgstr ""
+
+#: modules/transparent/module.php:164
+msgid "Remember: The settings below will not be applied until the page is scrolled the distance set above"
+msgstr ""
+
+#: modules/transparent/module.php:176
+#: modules/transparent/module.php:191
+msgid "After Sticky"
+msgstr ""
+
+#: modules/transparent/module.php:178
+msgid "Default"
+msgstr ""
+
+#: modules/transparent/module.php:179
+msgid "Custom"
+msgstr ""
+
+#: modules/transparent/module.php:199
+msgid "Offset"
+msgstr ""
+
+#: modules/transparent/module.php:226
+#: modules/transparent/module.php:696
+msgid "Width"
+msgstr ""
+
+#: modules/transparent/module.php:253
+msgid "Padding"
+msgstr ""
+
+#: modules/transparent/module.php:273
+msgid "Adjust properties once Status will be changed to Sticky."
+msgstr ""
+
+#: modules/transparent/module.php:286
+msgid "Transparent Header"
+msgstr ""
+
+#: modules/transparent/module.php:302
+msgid "Sets the header position to \"absolute\" so negative margins are not needed"
+msgstr ""
+
+#: modules/transparent/module.php:309
+msgid ""
+"This will make the header overlap the main page so extra spacing at the top of sections may be needed<br><br>\n"
+"\t\t\t\tDoes NOT work on/override elementor sticky settings"
+msgstr ""
+
+#: modules/transparent/module.php:323
+msgid "Background Color"
+msgstr ""
+
+#: modules/transparent/module.php:334
+msgid "Choose what color to change the background to after scrolling"
+msgstr ""
+
+#: modules/transparent/module.php:341
+msgid "Background Type"
+msgstr ""
+
+#: modules/transparent/module.php:351
+msgid "Classic"
+msgstr ""
+
+#: modules/transparent/module.php:355
+msgid "Gradient"
+msgstr ""
+
+#: modules/transparent/module.php:366
+#: modules/transparent/module.php:909
+#: modules/transparent/module.php:969
+msgid "Color"
+msgstr ""
+
+#: modules/transparent/module.php:380
+msgid "Please note that gradients will not be transitioned"
+msgstr ""
+
+#: modules/transparent/module.php:393
+#: modules/transparent/module.php:429
+msgid "Location"
+msgstr ""
+
+#: modules/transparent/module.php:413
+msgid "Second Color"
+msgstr ""
+
+#: modules/transparent/module.php:449
+msgid "Type"
+msgstr ""
+
+#: modules/transparent/module.php:452
+msgid "Linear"
+msgstr ""
+
+#: modules/transparent/module.php:453
+msgid "Radial"
+msgstr ""
+
+#: modules/transparent/module.php:469
+msgid "Angle"
+msgstr ""
+
+#: modules/transparent/module.php:497
+msgid "Position"
+msgstr ""
+
+#: modules/transparent/module.php:500
+msgid "Center Center"
+msgstr ""
+
+#: modules/transparent/module.php:501
+msgid "Center Left"
+msgstr ""
+
+#: modules/transparent/module.php:502
+msgid "Center Right"
+msgstr ""
+
+#: modules/transparent/module.php:503
+msgid "Top Center"
+msgstr ""
+
+#: modules/transparent/module.php:504
+msgid "Top Left"
+msgstr ""
+
+#: modules/transparent/module.php:505
+msgid "Top Right"
+msgstr ""
+
+#: modules/transparent/module.php:506
+msgid "Bottom Center"
+msgstr ""
+
+#: modules/transparent/module.php:507
+msgid "Bottom Left"
+msgstr ""
+
+#: modules/transparent/module.php:508
+msgid "Bottom Right"
+msgstr ""
+
+#: modules/transparent/module.php:527
+msgid "Custom Menu Toggle Button"
+msgstr ""
+
+#: modules/transparent/module.php:531
+#: modules/transparent/module.php:632
+#: modules/transparent/module.php:894
+#: modules/transparent/module.php:951
+#: modules/transparent/module.php:1057
+#: modules/transparent/module.php:1099
+#: modules/transparent/module.php:1143
+#: modules/transparent/module.php:1196
+#: modules/transparent/module.php:1224
+#: modules/transparent/module.php:1267
+#: modules/transparent/module.php:1295
+#: modules/transparent/module.php:1323
+#: modules/transparent/module.php:1353
+#: modules/transparent/module.php:1438
+msgid "Off"
+msgstr ""
+
+#: modules/transparent/module.php:538
+msgid "Customize and add animation to the Elementor menu icon<br>*Only supports Elementor nav menu"
+msgstr ""
+
+#: modules/transparent/module.php:566
+msgid "This option ONLY works on the WordPress menu widget hamburger icon.<br><br>Tip: Set the nav menu toggle button size first. All of these settings are scaled off of that size"
+msgstr ""
+
+#: modules/transparent/module.php:579
+msgid "Toggle Button Type"
+msgstr ""
+
+#: modules/transparent/module.php:584
+msgid "Lines"
+msgstr ""
+
+#: modules/transparent/module.php:589
+msgid "Dots/Squares"
+msgstr ""
+
+#: modules/transparent/module.php:603
+msgid "<b>Lines</b><br>Separately adjustable line weight and width"
+msgstr ""
+
+#: modules/transparent/module.php:616
+msgid "<b>Dots/Squares</b><br>Line weight and width are equal with an adjustable width for the active(close button) lines"
+msgstr ""
+
+#: modules/transparent/module.php:629
+msgid "Only 2"
+msgstr ""
+
+#: modules/transparent/module.php:640
+msgid "If 3 is too many, try only 2"
+msgstr ""
+
+#: modules/transparent/module.php:650
+msgid "Weight"
+msgstr ""
+
+#: modules/transparent/module.php:743
+msgid "Active Width(Close Button)"
+msgstr ""
+
+#: modules/transparent/module.php:797
+msgid "Gap"
+msgstr ""
+
+#: modules/transparent/module.php:844
+msgid "Radius"
+msgstr ""
+
+#: modules/transparent/module.php:890
+msgid "Bottom Border"
+msgstr ""
+
+#: modules/transparent/module.php:901
+msgid "Choose bottom border size and color"
+msgstr ""
+
+#: modules/transparent/module.php:923
+msgid "Bottom Border Thickness (px)"
+msgstr ""
+
+#: modules/transparent/module.php:935
+msgid "Note: A border size(even 0px) must be set on the header for the transition to work both ways"
+msgstr ""
+
+#: modules/transparent/module.php:947
+msgid "Bottom Shadow"
+msgstr ""
+
+#: modules/transparent/module.php:958
+msgid "Choose bottom shadow options after scrolling"
+msgstr ""
+
+#: modules/transparent/module.php:984
+msgid "Vertical"
+msgstr ""
+
+#: modules/transparent/module.php:1007
+msgid "Blur"
+msgstr ""
+
+#: modules/transparent/module.php:1030
+msgid "Spread"
+msgstr ""
+
+#: modules/transparent/module.php:1053
+msgid "Shrink Header"
+msgstr ""
+
+#: modules/transparent/module.php:1061
+msgid "Choose header height after scrolling"
+msgstr ""
+
+#: modules/transparent/module.php:1071
+msgid "Header Height (px)"
+msgstr ""
+
+#: modules/transparent/module.php:1083
+msgid "Remember: The header cannot shrink smaller than the elements inside of it"
+msgstr ""
+
+#: modules/transparent/module.php:1095
+msgid "Shrink Logo"
+msgstr ""
+
+#: modules/transparent/module.php:1103
+msgid "Resize logo after scrolling"
+msgstr ""
+
+#: modules/transparent/module.php:1113
+msgid "Logo Height (%)"
+msgstr ""
+
+#: modules/transparent/module.php:1139
+msgid "Change Logo Color"
+msgstr ""
+
+#: modules/transparent/module.php:1147
+msgid "Change the logo image color before or after the user reaches the scroll distance set above"
+msgstr ""
+
+#: modules/transparent/module.php:1159
+msgid "Please select <b>only 1 option</b> for each tab"
+msgstr ""
+
+#: modules/transparent/module.php:1180
+msgid "Before scrolling"
+msgstr ""
+
+#: modules/transparent/module.php:1193
+#: modules/transparent/module.php:1264
+msgid "White Logo"
+msgstr ""
+
+#: modules/transparent/module.php:1200
+#: modules/transparent/module.php:1271
+msgid "Change the logo to white"
+msgstr ""
+
+#: modules/transparent/module.php:1221
+#: modules/transparent/module.php:1292
+msgid "Black Logo"
+msgstr ""
+
+#: modules/transparent/module.php:1228
+#: modules/transparent/module.php:1299
+msgid "Change the logo to black"
+msgstr ""
+
+#: modules/transparent/module.php:1251
+msgid "After Scrolling"
+msgstr ""
+
+#: modules/transparent/module.php:1320
+msgid "Full Color Logo"
+msgstr ""
+
+#: modules/transparent/module.php:1327
+msgid "Removes all filters to allow a full color logo image"
+msgstr ""
+
+#: modules/transparent/module.php:1349
+msgid "Blur Background"
+msgstr ""
+
+#: modules/transparent/module.php:1361
+msgid "Add a modern blur effect to a semi-transparent header background color after scrolling"
+msgstr ""
+
+#: modules/transparent/module.php:1372
+msgid "Tip: Low saturation works best with no background color<br><br>DEFAULTS: Blur 20px, Saturation 1.80"
+msgstr ""
+
+#: modules/transparent/module.php:1385
+msgid "Blur Amount (Px)"
+msgstr ""
+
+#: modules/transparent/module.php:1410
+msgid "Saturation Amount"
+msgstr ""
+
+#: modules/transparent/module.php:1434
+msgid "Hide header on scroll down"
+msgstr ""
+
+#: modules/transparent/module.php:1442
+msgid "Hides the header if scrolling down, and shows header if scrolling up"
+msgstr ""
+
+#: modules/transparent/module.php:1453
+msgid "WARNING: This might break section/container entrance animations"
+msgstr ""
+
+#: modules/transparent/module.php:1478
+msgid "Choose the scroll distance to start hiding the header"
+msgstr ""
+
+#: sticky-header-effects-for-elementor.php:91
+msgid "Sticky Header Effects not working because you need to activate the Elementor plugin."
+msgstr ""
+
+#: sticky-header-effects-for-elementor.php:92
+msgid "Activate Elementor Now"
+msgstr ""
+
+#: sticky-header-effects-for-elementor.php:100
+msgid "Sticky Header Effects is not working because you need to install the Elementor plugin"
+msgstr ""
+
+#: sticky-header-effects-for-elementor.php:101
+msgid "Install Elementor Now"
+msgstr ""
+
+#: sticky-header-effects-for-elementor.php:115
+msgid "Sticky Header Effects not working because you are using an old version of Elementor."
+msgstr ""
+
+#: sticky-header-effects-for-elementor.php:116
+#: sticky-header-effects-for-elementor.php:130
+msgid "Update Elementor Now"
+msgstr ""
+
+#: sticky-header-effects-for-elementor.php:129
+msgid "A new version of Elementor is available. For better performance and compatibility of Sticky Header Effects, we recommend updating to the latest version."
+msgstr ""
+
+#: build/index.js:1
+msgid "Best Elementor Addon with 120+ Widgets"
+msgstr ""
+
+#: build/index.js:1
+msgid "Install"
+msgstr ""
+
+#: build/index.js:1
+msgid "Enable Widgets"
+msgstr ""
+
+#: build/index.js:1
+msgid "WdesignKit Image"
+msgstr ""
+
+#: build/index.js:1
+msgid "Lightest Starter Theme for Page Builders"
+msgstr ""
+
+#: build/index.js:1
+msgid "Page Builders"
+msgstr ""
+
+#: build/index.js:1
+msgid "Install Theme"
+msgstr ""
+
+#: build/index.js:1
+msgid "Theme Customizer"
+msgstr ""
+
+#: build/index.js:1
+msgid "Nexter Theme Image"
+msgstr ""
+
+#: build/index.js:1
+msgid "Get 1000+ Pre-Designed WordPress Pages & Templates."
+msgstr ""
+
+#: build/index.js:1
+msgid "WordPress Pages & Templates."
+msgstr ""
+
+#: build/index.js:1
+msgid "Install WDesignKit"
+msgstr ""
+
+#: build/index.js:1
+msgid "Open Templates"
+msgstr ""
+
+#: build/index.js:1
+msgid "50+ WordPress Extensions to Make Site More Secure, Performant & Smart"
+msgstr ""
+
+#: build/index.js:1
+msgid "Site More Secure, Performant & Smart"
+msgstr ""
+
+#: build/index.js:1
+msgid "Enable Extension"
+msgstr ""
+
+#: build/index.js:1
+msgid "Extension Setting"
+msgstr ""
+
+#: build/index.js:1
+msgid "Convert Figma to WordPress in Minutes"
+msgstr ""
+
+#: build/index.js:1
+msgid "Install UiChemy"
+msgstr ""
+
+#: build/index.js:1
+msgid "UiChemy Setting"
+msgstr ""
+
+#: build/index.js:1
+msgid "UiChemy"
+msgstr ""
+
+#: build/index.js:1
+msgid "90+ Best WordPress Blocks for Gutenberg Editor"
+msgstr ""
+
+#: build/index.js:1
+msgid "Enable Blocks"
+msgstr ""
+
+#: build/index.js:1
+msgid "Open Nexter"
+msgstr ""
+
+#: build/index.js:1
+msgid "Dashboard"
+msgstr ""
+
+#: build/index.js:1
+msgid "Welcome,"
+msgstr ""
+
+#: build/index.js:1
+msgid "Watch How it Works ( Coming Soon ) "
+msgstr ""
+
+#: build/index.js:1
+msgid "Stay Update with Elementor News & Plugin Updates."
+msgstr ""
+
+#: build/index.js:1
+msgid "Your Name"
+msgstr ""
+
+#: build/index.js:1
+msgid "Please enter valid Name"
+msgstr ""
+
+#: build/index.js:1
+msgid "Your Email"
+msgstr ""
+
+#: build/index.js:1
+msgid "Please enter valid email"
+msgstr ""
+
+#: build/index.js:1
+msgid "Documentation"
+msgstr ""
+
+#: build/index.js:1
+msgid "Read Now"
+msgstr ""
+
+#: build/index.js:1
+msgid "Need Help?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Raise Ticket"
+msgstr ""
+
+#: build/index.js:1
+msgid "Join Community"
+msgstr ""
+
+#: build/index.js:1
+msgid "Join Now"
+msgstr ""
+
+#: build/index.js:1
+msgid "Request Feature"
+msgstr ""
+
+#: build/index.js:1
+msgid "Suggest Now"
+msgstr ""
+
+#: build/index.js:1
+msgid "Rate Sticky Header Effects"
+msgstr ""
+
+#: build/index.js:1
+msgid "Video Tutorials"
+msgstr ""
+
+#: build/index.js:1
+msgid "Coming Soon"
+msgstr ""
+
+#: build/index.js:1
+msgid "We're Active on"
+msgstr ""
+
+#: build/index.js:1
+msgid "More Products"
+msgstr ""
+
+#: build/index.js:1
+msgid "Visit Official Website"
+msgstr ""
+
+#: build/index.js:1
+msgid "Install & Activate"
+msgstr ""
+
+#: build/index.js:1
+msgid "Activate Now"
+msgstr ""
+
+#: build/index.js:1
+msgid "Activated"
+msgstr ""
+
+#: build/index.js:1
+msgid "Learn More"
+msgstr ""
+
+#: build/index.js:1
+msgid "Nexter WP Theme"
+msgstr ""
+
+#: build/index.js:1
+msgid "Advanced Header Builder"
+msgstr ""
+
+#: build/index.js:1
+msgid "Get rid of the limited Header customizer. Use Elementor Widgets or Blocks to create custom. menu."
+msgstr ""
+
+#: build/index.js:1
+msgid "Advanced Footer Builder"
+msgstr ""
+
+#: build/index.js:1
+msgid "Your custom Footer with no limit of layout. Create any footer layout you want with our Footer Builder."
+msgstr ""
+
+#: build/index.js:1
+msgid "Breadcrumbs Bar"
+msgstr ""
+
+#: build/index.js:1
+msgid "Help users navigate your website by adding breadcrumb bar that shows the path they've taken."
+msgstr ""
+
+#: build/index.js:1
+msgid "404 Page"
+msgstr ""
+
+#: build/index.js:1
+msgid "Turn a \"Page Not Found\" into an opportunity by customizing your 404 error page with your branding and helpful content."
+msgstr ""
+
+#: build/index.js:1
+msgid "Single Pages"
+msgstr ""
+
+#: build/index.js:1
+msgid "Create custom Single pages for your CPT, Blog Posts, or WooCommerce Product Pages."
+msgstr ""
+
+#: build/index.js:1
+msgid "Archive Pages"
+msgstr ""
+
+#: build/index.js:1
+msgid "Create custom listing pages for posts, CPT or WooCommerce Products."
+msgstr ""
+
+#: build/index.js:1
+msgid "Code Snippets"
+msgstr ""
+
+#: build/index.js:1
+msgid "Get rid of the limited Header customizer. Use WordPress Blocks or Blocks to create custom menu."
+msgstr ""
+
+#: build/index.js:1
+msgid "Display Rules for Theme Builder Sections"
+msgstr ""
+
+#: build/index.js:1
+msgid "Control where and how your theme builder sections appear on your site."
+msgstr ""
+
+#: build/index.js:1
+msgid "Action & Filter Hooks"
+msgstr ""
+
+#: build/index.js:1
+msgid "Fine-tune your website's behavior and appearance by utilizing action and filter hooks for developers to extend functionalities."
+msgstr ""
+
+#: build/index.js:1
+msgid "Elementor Theme Builder"
+msgstr ""
+
+#: build/index.js:1
+msgid "FREE"
+msgstr ""
+
+#: build/index.js:1
+msgid "Open Theme Builder"
+msgstr ""
+
+#: build/index.js:1
+msgid "View all Nexter Extension Features"
+msgstr ""
+
+#: build/index.js:1
+msgid "Name Of the Template"
+msgstr ""
+
+#: build/index.js:1
+msgid "Live Preview"
+msgstr ""
+
+#: build/index.js:1
+msgid "Header Templates"
+msgstr ""
+
+#: build/index.js:1
+msgid "Explore More Elementor Templates"
+msgstr ""
+
+#: build/index.js:1
+msgid "Utilities"
+msgstr ""
+
+#: build/index.js:1
+msgid "Adobe Fonts"
+msgstr ""
+
+#: build/index.js:1
+msgid "Custom Fonts Upload"
+msgstr ""
+
+#: build/index.js:1
+msgid "Replace URL & Text"
+msgstr ""
+
+#: build/index.js:1
+msgid "Duplicate Post"
+msgstr ""
+
+#: build/index.js:1
+msgid "Regenerate Thumbnails"
+msgstr ""
+
+#: build/index.js:1
+msgid "Performance"
+msgstr ""
+
+#: build/index.js:1
+msgid "Advanced Performance"
+msgstr ""
+
+#: build/index.js:1
+msgid "Google Fonts"
+msgstr ""
+
+#: build/index.js:1
+msgid "Disable Comments"
+msgstr ""
+
+#: build/index.js:1
+msgid "Disable Image Sizes"
+msgstr ""
+
+#: build/index.js:1
+msgid "Register Custom Image Sizes"
+msgstr ""
+
+#: build/index.js:1
+msgid "Disable Icons"
+msgstr ""
+
+#: build/index.js:1
+msgid "Security"
+msgstr ""
+
+#: build/index.js:1
+msgid "2-Factor Authentication"
+msgstr ""
+
+#: build/index.js:1
+msgid "Content Protection"
+msgstr ""
+
+#: build/index.js:1
+msgid "Advanced Security"
+msgstr ""
+
+#: build/index.js:1
+msgid "CAPTCHA"
+msgstr ""
+
+#: build/index.js:1
+msgid "Custom Login URL"
+msgstr ""
+
+#: build/index.js:1
+msgid "Login Email Notification"
+msgstr ""
+
+#: build/index.js:1
+msgid "Admin Interface"
+msgstr ""
+
+#: build/index.js:1
+msgid "Disable Admin Settings"
+msgstr ""
+
+#: build/index.js:1
+msgid "Branded WP Admin"
+msgstr ""
+
+#: build/index.js:1
+msgid "Oops, No Extension Found!"
+msgstr ""
+
+#: build/index.js:1
+msgid "or more common term!"
+msgstr ""
+
+#: build/index.js:1
+msgid "WordPress Widgets Library from WDesignKit"
+msgstr ""
+
+#: build/index.js:1
+msgid "Explore our curated selection of pre-built Widgets for Elementor from the WDesignKit Widgets Library."
+msgstr ""
+
+#: build/index.js:1
+msgid "View Widgets Library*"
+msgstr ""
+
+#: build/index.js:1
+msgid "* WDesignKit Plugin Required"
+msgstr ""
+
+#: build/index.js:1
+msgid "Developer? Create Your Custom Elementor Widget"
+msgstr ""
+
+#: build/index.js:1
+msgid "With WDesignKit, you can easily"
+msgstr ""
+
+#: build/index.js:1
+msgid "convert your custom code into a"
+msgstr ""
+
+#: build/index.js:1
+msgid "Elementor Widget."
+msgstr ""
+
+#: build/index.js:1
+msgid "View Widget Builder*"
+msgstr ""
+
+#: build/index.js:1
+msgid "*WDesignKit Plugin Required"
+msgstr ""
+
+#: build/index.js:1
+msgid "Request for Widget"
+msgstr ""
+
+#: build/index.js:1
+msgid "Request Widget"
+msgstr ""
+
+#: build/index.js:1
+msgid "Extensions"
+msgstr ""
+
+#: build/index.js:1
+msgid "All"
+msgstr ""
+
+#: build/index.js:1
+msgid "Free"
+msgstr ""
+
+#: build/index.js:1
+msgid "Pro"
+msgstr ""
+
+#: build/index.js:1
+msgid "Total Extensions"
+msgstr ""
+
+#: build/index.js:1
+msgid "Read Docs"
+msgstr ""
+
+#: build/index.js:1
+msgid "Build a Strong, Secure and High-Performance Website with 22+ Unique WordPress Extensions from Nexter."
+msgstr ""
+
+#: build/index.js:1
+msgid "22+ Power up Extensions"
+msgstr ""
+
+#: build/index.js:1
+msgid "Works with Popular WordPress Themes"
+msgstr ""
+
+#: build/index.js:1
+msgid "Performance Booster"
+msgstr ""
+
+#: build/index.js:1
+msgid "Security Hardener"
+msgstr ""
+
+#: build/index.js:1
+msgid "Elementor"
+msgstr ""
+
+#: build/index.js:1
+msgid "WordPress Menu"
+msgstr ""
+
+#: build/index.js:1
+msgid "Menu"
+msgstr ""
+
+#: build/index.js:1
+msgid "The Plus Addons for Elementor"
+msgstr ""
+
+#: build/index.js:1
+msgid "Navigation Menu"
+msgstr ""
+
+#: build/index.js:1
+msgid "Navigation Menu Lite"
+msgstr ""
+
+#: build/index.js:1
+msgid "WDesignKit"
+msgstr ""
+
+#: build/index.js:1
+msgid "Side Sticky Header Menu"
+msgstr ""
+
+#: build/index.js:1
+msgid "Toggle Menu"
+msgstr ""
+
+#: build/index.js:1
+msgid "Oops, No Header Widgets Found!"
+msgstr ""
+
+#: build/index.js:1
+msgid "Why Do I Need The Plus Addons for Elementor?"
+msgstr ""
+
+#: build/index.js:1
+msgid "The Elementor Free version does not come with a free Navigation Menu widget. Therefore, by installing The Plus Addons, you can create your Header Menu easily."
+msgstr ""
+
+#: build/index.js:1
+msgid "Get a Free Elementor Navigation Menu Widget with The Plus Addons for Elementor."
+msgstr ""
+
+#: build/index.js:1
+msgid "Header Widgets"
+msgstr ""
+
+#: build/index.js:1
+msgid "Total Widgets"
+msgstr ""
+
+#: build/index.js:1
+msgid "Video"
+msgstr ""
+
+#: build/index.js:1
+msgid "Roll Back Plugin"
+msgstr ""
+
+#: build/index.js:1
+msgid "Rollback"
+msgstr ""
+
+#: build/index.js:1
+msgid "Select Version"
+msgstr ""
+
+#: build/index.js:1
+msgid "Warning: Please backup your database before making the rollback."
+msgstr ""
+
+#: build/index.js:1
+msgid "Elementor Theme Builder "
+msgstr ""
+
+#: build/index.js:1
+msgid "Extra Options"
+msgstr ""
+
+#: build/index.js:1
+msgid "Roll Back"
+msgstr ""
+
+#: build/index.js:1
+msgid "Version"
+msgstr ""
+
+#: build/index.js:1
+msgid "System Info"
+msgstr ""
+
+#: build/index.js:1
+msgid "Select Mode"
+msgstr ""
+
+#: build/index.js:1
+msgid "Get Updates"
+msgstr ""
+
+#: build/index.js:1
+msgid "Install Free Theme Builder"
+msgstr ""
+
+#: build/index.js:1
+msgid "Create Header"
+msgstr ""
+
+#: build/index.js:1
+msgid "Select Your Elementor Version"
+msgstr ""
+
+#: build/index.js:1
+msgid "We’ve detected your Elementor setup. Choose the right mode to proceed with Sticky Header onboarding."
+msgstr ""
+
+#: build/index.js:1
+msgid "Elementor Free"
+msgstr ""
+
+#: build/index.js:1
+msgid "Elementor Pro"
+msgstr ""
+
+#: build/index.js:1
+msgid "Get Exclusive Elementor Tips, Tricks and Resources Delivered Straight to Your Inbox!"
+msgstr ""
+
+#: build/index.js:1
+msgid "Join our 500K+ Business Owners, Marketers, WordPress users."
+msgstr ""
+
+#: build/index.js:1
+msgid "NO SPAM GUARANTEE"
+msgstr ""
+
+#: build/index.js:1
+msgid "Agree to contribute to make Sticky Header better by sharing non-sensitive details."
+msgstr ""
+
+#: build/index.js:1
+msgid "Subscribe & Continue"
+msgstr ""
+
+#: build/index.js:1
+msgid "Why do I need the Nexter Extension?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Elementor’s free version doesn’t include a Theme Builder. The Nexter Extension fills this gap, allowing you to design and customize your website’s header, footer, and other theme components without upgrading to Elementor Pro."
+msgstr ""
+
+#: build/index.js:1
+msgid "Will this work with any WordPress theme?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Yes, the Nexter Extension is designed to work with any classic WordPress theme. However, for optimal performance, we recommend using it with themes like Hello Elementor, Nexter Theme, Astra, or GeneratePress. If you encounter any issues, please connect with us via our website’s live chat."
+msgstr ""
+
+#: build/index.js:1
+msgid "Will it break my current website?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Not at all. The Nexter Extension is designed to integrate seamlessly with your existing website. Your current design and content will remain intact unless you choose to overwrite them with new Theme Builder templates from Nexter."
+msgstr ""
+
+#: build/index.js:1
+msgid "Free Elementor Header & Footer Builder"
+msgstr ""
+
+#: build/index.js:1
+msgid "Free Single, Archive & 404 Page Builder"
+msgstr ""
+
+#: build/index.js:1
+msgid "Pre-Made Theme Builder Section Templates"
+msgstr ""
+
+#: build/index.js:1
+msgid "100% Customisable with Widgets"
+msgstr ""
+
+#: build/index.js:1
+msgid "You're All Set!"
+msgstr ""
+
+#: build/index.js:1
+msgid "Now, Create Your Sticky Header"
+msgstr ""
+
+#: build/index.js:1
+msgid "Everything is set up! Click below to open Elementor Theme Builder and "
+msgstr ""
+
+#: build/index.js:1
+msgid "create your Sticky Header effortlessly."
+msgstr ""
