@@ -112,13 +112,13 @@ const SupportToggle = (props) => {
                             </a>
                         </div>
                         <div className="she-sup-list">
-                            <a href="https://roadmap.theplusaddons.com/boards/feature-request" target="_blank" className="tpae-sup-link" rel="noopener noreferrer">
+                            <a href="https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/" target="_blank" className="tpae-sup-link" rel="noopener noreferrer">
                                 <span className="she-title-wrap"> {__('Suggest New Features', 'tpebl')} </span>
                                 {animSvg}
                             </a>
                         </div>
                         <div className="she-sup-list">
-                            <a href="https://roadmap.theplusaddons.com/boards/feature-request" target="_blank" className="tpae-sup-link" rel="noopener noreferrer">
+                            <a href="https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/" target="_blank" className="tpae-sup-link" rel="noopener noreferrer">
                                 <span className="she-title-wrap">  {__('Report Bug', 'tpebl')} </span>
                                 {animSvg}
                             </a>
@@ -146,12 +146,12 @@ const SupportToggle = (props) => {
                                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="none" viewBox="0 0 27 27"><circle cx="13.5" cy="13.5" r="13.5" fill="rgb(157, 26, 79)" /><path fill="#ffffff" d="M13.503 9.962a3.529 3.529 0 0 0-3.534 3.535 3.529 3.529 0 0 0 3.534 3.535 3.529 3.529 0 0 0 3.535-3.535 3.529 3.529 0 0 0-3.535-3.535Zm0 5.833a2.302 2.302 0 0 1-2.297-2.298 2.3 2.3 0 0 1 2.297-2.298 2.3 2.3 0 0 1 2.298 2.298 2.302 2.302 0 0 1-2.298 2.298Zm4.504-5.977c0 .458-.37.824-.825.824a.824.824 0 1 1 .824-.824Zm2.34.837c-.051-1.105-.304-2.083-1.113-2.889-.806-.806-1.784-1.058-2.888-1.114-1.138-.064-4.55-.064-5.688 0-1.101.053-2.08.305-2.889 1.11-.809.807-1.058 1.785-1.113 2.89-.065 1.138-.065 4.55 0 5.687.052 1.105.304 2.083 1.113 2.889.81.806 1.785 1.058 2.889 1.113 1.138.065 4.55.065 5.688 0 1.104-.052 2.082-.304 2.888-1.113.806-.806 1.058-1.784 1.114-2.889.065-1.138.065-4.546 0-5.684Zm-1.47 6.906a2.326 2.326 0 0 1-1.31 1.31c-.907.36-3.06.277-4.064.277-1.002 0-3.159.08-4.063-.277a2.326 2.326 0 0 1-1.31-1.31c-.36-.908-.278-3.061-.278-4.064 0-1.003-.08-3.16.277-4.064a2.326 2.326 0 0 1 1.31-1.31c.908-.36 3.062-.277 4.064-.277 1.003 0 3.16-.08 4.064.277.603.24 1.067.704 1.31 1.31.36.908.277 3.061.277 4.064 0 1.003.083 3.16-.276 4.064Z" /></svg>
                             </span>
                         </a>
-                        <a href='https://store.posimyth.com/affiliate-program' className="tpae-panel-col tpae-social-link" title="Affiliate" target="_blank" rel="noopener noreferrer">
+                        <a href='https://stickyheadereffects.com/blog/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader' className="tpae-panel-col tpae-social-link" title="Blog" target="_blank" rel="noopener noreferrer">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="none" viewBox="0 0 27 27"><circle cx="13.5" cy="13.5" r="13.5" fill="rgb(157, 26, 79)" /><g clipPath="url(#a)"><path fill="#ffffff" d="M7.687 11.16a.706.706 0 0 0-.748.652.703.703 0 0 0 .656.748c3.519.23 6.612 3.301 6.844 6.843.025.375.332.66.675.66l.047-.002a.703.703 0 0 0 .656-.747c-.249-4.223-3.908-7.882-8.13-8.155Zm.188-4.223a.937.937 0 1 0 0 1.875c5.687 0 10.313 4.626 10.313 10.313a.937.937 0 1 0 1.875 0c0-6.72-5.467-12.188-12.188-12.188Zm.911 9.372c-1.01 0-1.848.841-1.848 1.878 0 1.038.838 1.875 1.848 1.875 1.01 0 1.878-.838 1.878-1.875a1.862 1.862 0 0 0-1.878-1.878Z" /></g><defs><clipPath id="a"><path fill="#fff" d="M6 6h15v15H6z" /></clipPath></defs></svg>
                             </span>
                         </a>
-                        <a href='https://theplusaddons.com/blog/' className="tpae-panel-col tpae-social-link" title="blog" target="_blank" rel="noopener noreferrer">
+                        <a href='https://store.posimyth.com/affiliate-program/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader' className="tpae-panel-col tpae-social-link" title="Affiliate" target="_blank" rel="noopener noreferrer">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="none" viewBox="0 0 27 27"><circle cx="13.5" cy="13.5" r="13.5" fill="rgb(157, 26, 79)" /><path fill="#ffffff" d="M13.994 18.135a5.613 5.613 0 0 1-1.633-.22 3.999 3.999 0 0 1-1.386-.804 1.025 1.025 0 0 1-.26-.324.805.805 0 0 1-.09-.363c0-.199.07-.371.207-.518a.719.719 0 0 1 .545-.234c.164 0 .31.052.44.156.329.268.652.47.972.61.328.137.73.206 1.205.206.32 0 .614-.047.882-.142.267-.104.483-.238.648-.402a.826.826 0 0 0 .246-.583.98.98 0 0 0-.234-.66c-.155-.182-.393-.333-.712-.454-.32-.13-.726-.23-1.218-.299a5.687 5.687 0 0 1-1.232-.31 3.126 3.126 0 0 1-.894-.545 2.268 2.268 0 0 1-.531-.777 2.7 2.7 0 0 1-.181-1.011c0-.562.142-1.041.427-1.439.294-.397.687-.7 1.18-.907a4.167 4.167 0 0 1 1.632-.31c.562 0 1.08.086 1.555.258.484.165.877.376 1.18.635.25.2.375.428.375.687 0 .19-.073.363-.22.519a.69.69 0 0 1-.518.233.568.568 0 0 1-.35-.117 2.21 2.21 0 0 0-.557-.337 4.183 4.183 0 0 0-.739-.272 2.762 2.762 0 0 0-1.672.026c-.25.095-.44.225-.57.389a.894.894 0 0 0-.194.57c0 .26.073.475.22.648.155.164.376.298.66.402a8.33 8.33 0 0 0 1.025.259c.518.095.972.207 1.36.337.398.13.726.298.985.505.26.199.454.454.583.765.13.302.195.674.195 1.114 0 .562-.156 1.046-.467 1.452a2.98 2.98 0 0 1-1.23.933 4.08 4.08 0 0 1-1.634.324Zm.933.7c0 .224-.077.41-.233.557a.734.734 0 0 1-.557.233.719.719 0 0 1-.544-.233.755.755 0 0 1-.22-.558V8.416a.776.776 0 0 1 .79-.79c.224-.001.406.077.544.232.147.147.22.333.22.558v10.418Z" /></svg>
                             </span>
