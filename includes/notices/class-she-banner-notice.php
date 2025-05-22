@@ -97,7 +97,7 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 					$output .= '</div>';
 
 					$output .= '<div style="display: flex; flex-direction: column; margin-left: 15px; gap: 12px;">';
-						$output .= '<h2 style="margin: 0;">' . esc_html__( 'Sticky Header for Elementor Just Got a Major Upgrade!', 'she-header' ) . '</h2>';
+						$output .= '<h2 style="margin:0;font-weight: bold;">' . esc_html__( 'Sticky Header for Elementor Just Got a Major Upgrade!', 'she-header' ) . '</h2>';
 						$message = esc_html__( 'Now acquired by POSIMYTH Innovations — with powerful new features and 50+ ready-to-use templates just for you.', 'she-header' );
 						$output .= '<p style="margin: 0 0 2px; color: #000000;">' . esc_html( $message ) . '</p>';
 					$output .= '</div>';
@@ -105,7 +105,7 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 				$output .= '</div>';
 
 				$output .= '<div style="display: flex; justify-content: center; align-items: center; border: 1px solid #9D1A4F; padding: 5px 20px; height: 30px; border-radius: 4px;cursor: pointer;">';
-					$output .= '<a href="https://stickyheadereffects.com/blog/?utm_source=wpbackend&utm_medium=adminpage&utm_campaign=adminpage" style="color: #9D1A4F; font-size: 14px; font-weight: 500;text-decoration:none; width: max-content;">' . esc_html__( 'Learn More', 'she-header' ) . '</a>';
+					$output .= '<a target="_blank" rel="noopener noreferrer" href="https://stickyheadereffects.com/blog/?utm_source=wpbackend&utm_medium=adminpage&utm_campaign=adminpage" style="color: #9D1A4F; font-size: 14px; font-weight: 500;text-decoration:none; width: max-content;">' . esc_html__( 'Learn More', 'she-header' ) . '</a>';
 				$output .= '</div>';
 
 			$output .= '</div>';
