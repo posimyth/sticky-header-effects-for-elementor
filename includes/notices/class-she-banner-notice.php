@@ -28,11 +28,19 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 		 * Instance
 		 *
 		 * @since 2.0
-		 * @access private
-		 * @static
+		 * 
 		 * @var instance of the class.
 		 */
 		private static $instance = null;
+
+		/**
+		 *
+		 * Ensures only one instance of the class is loaded or can be loaded.
+		 * 
+		 * @var db_key
+		 * @since 2.0
+		 */
+		public $db_key = 'she_dismissed_notice_plugin';
 
 		/**
 		 * Instance
@@ -41,7 +49,6 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 		 *
 		 * @since 2.0
 		 * @access public
-		 * @static
 		 * @return instance of the class.
 		 */
 		public static function instance() {
@@ -57,8 +64,7 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 		 *
 		 * Perform some compatibility checks to make sure basic requirements are meet.
 		 *
-		 * @since 5.2.3
-		 * @version 5.3.3
+		 * @since 2.0
 		 */
 		public function __construct() {
 			add_action( 'admin_notices', array( $this, 'she_plugin_banner_notice' ) );
@@ -73,7 +79,7 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 		public function she_plugin_banner_notice() {
 			$current_screen_id = get_current_screen()->id;
 
-			if ( get_user_meta( get_current_user_id(), 'she_dismissed_notice_plugin', true ) ) {
+			if ( get_user_meta( get_current_user_id(), $this->db_key, true ) ) {
 				return;
 			}
 
@@ -86,24 +92,23 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 
 				$output .= '<div class="she-notice-side" style="display: flex; align-items: center;">';
 
-					$output .= '<div style="width: 100px; height: 70px; display: flex; align-items: center;">';
-						$output .= '<img src="' . esc_url( SHE_HEADER_URL . 'assets/images/banner/she-notice-benner.png' ) . '" alt="Plus Logo" style="width: 100%; height: 100%; object-fit: contain;" />';
+					$output .= '<div style="display: flex;align-items: center;">';
+						$output .= '<img src="' . esc_url( SHE_HEADER_URL . 'assets/images/banner/she-notice-benner.png' ) . '" alt="Plus Logo" style="width: 100px;display: flex;" />';
 					$output .= '</div>';
 
 					$output .= '<div style="display: flex; flex-direction: column; margin-left: 15px; gap: 12px;">';
 						$output .= '<h2 style="margin: 0;">' . esc_html__( 'Sticky Header for Elementor Just Got a Major Upgrade!', 'she-header' ) . '</h2>';
-						$message = __( 'Now acquired by POSIMYTH Innovations — with powerful new features and 50+ ready-to-use templates just for you.', 'she-header' );
+						$message = esc_html__( 'Now acquired by POSIMYTH Innovations — with powerful new features and 50+ ready-to-use templates just for you.', 'she-header' );
 						$output .= '<p style="margin: 0 0 2px; color: #000000;">' . esc_html( $message ) . '</p>';
 					$output .= '</div>';
 
 				$output .= '</div>';
 
 				$output .= '<div style="display: flex; justify-content: center; align-items: center; border: 1px solid #9D1A4F; padding: 5px 20px; height: 30px; border-radius: 4px;cursor: pointer;">';
-					$output .= '<a href="https://stickyheadereffects.com/blog/?utm_source=wpbackend&utm_medium=adminpage&utm_campaign=adminpage" style="color: #9D1A4F; font-size: 14px; font-weight: 500;text-decoration: none;">' . esc_html__( 'Learn More', 'she-header' ) . '</a>';
+					$output .= '<a href="https://stickyheadereffects.com/blog/?utm_source=wpbackend&utm_medium=adminpage&utm_campaign=adminpage" style="color: #9D1A4F; font-size: 14px; font-weight: 500;text-decoration:none; width: max-content;">' . esc_html__( 'Learn More', 'she-header' ) . '</a>';
 				$output .= '</div>';
 
 			$output .= '</div>';
-
 
 			$output .= '<script>;
 				jQuery(document).ready(function ($) {
@@ -125,19 +130,27 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 		/**
 		 * New widget demos link notice
 		 *
-		 * @since 5.3.1
-		 * @version 5.3.3
-		 * @access public
+		 * @since 2.0
 		 */
 		public function she_dismiss_notice() {
 
 			if ( ! is_user_logged_in() ) {
-				wp_send_json_error( array( 'content' => __( 'Insufficient permissions.', 'she-header' ) ) );
+				$result = array( 
+					'message' => esc_html__( 'Insufficient permissions.', 'she-header' ),
+					'status'   => false,
+				);
+
+				wp_send_json($result);
 			}
 
-			update_user_meta( get_current_user_id(), 'she_dismissed_notice_plugin', 1 );
+			update_user_meta( get_current_user_id(), $this->db_key, 1 );
 
-			wp_die();
+			$result = array( 
+				'message' => esc_html__( 'Success.', 'she-header' ),
+				'status'   => true,
+			);
+
+			wp_send_json($result);
 		}
 	}
 
