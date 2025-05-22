@@ -97,7 +97,7 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 					$output .= '</div>';
 
 					$output .= '<div style="display: flex; flex-direction: column; margin-left: 15px; gap: 12px;">';
-						$output .= '<h2 style="margin:0;font-weight: bold;">' . esc_html__( 'Sticky Header for Elementor Just Got a Major Upgrade!', 'she-header' ) . '</h2>';
+						$output .= '<h2 style="margin:0;font-weight:bold;color:#1d2327;font-size:1.3em;">' . esc_html__( 'Sticky Header for Elementor Just Got a Major Upgrade!', 'she-header' ) . '</h2>';
 						$message = esc_html__( 'Now acquired by POSIMYTH Innovations — with powerful new features and 50+ ready-to-use templates just for you.', 'she-header' );
 						$output .= '<p style="margin: 0 0 2px; color: #000000;">' . esc_html( $message ) . '</p>';
 					$output .= '</div>';
