@@ -13,7 +13,7 @@ const Onboarding = (props) => {
     const [selectElementor, SetElemetor] = useState('')
     const [activeIndex, setActiveIndex] = useState(0);
     const [email, setEmail] = useState('');
-    const [isChecked, setIsChecked] = useState(true);
+    const [isChecked, setIsChecked] = useState(false);
     const [subscribeBtn, setSubscribeBtn] = useState('Subscribe');
     const [subscribeBtncheck, setSubscribeBtncheck] = useState(false);
     const [NexterBtn, SetNexterBtn] = useState('Enable Theme Builder');
@@ -380,7 +380,7 @@ const Onboarding = (props) => {
                                 ) : (
                                     <a className="she-pink-common-btn"
                                         style={{ pointerEvents: 'none', cursor: 'not-allowed', opacity: 0.6, }}>
-                                        {__('Subscribe & Continue', 'she-header')}
+                                        {__('Subscribe', 'she-header')}
                                     </a>
                                 )
                             ) : (
