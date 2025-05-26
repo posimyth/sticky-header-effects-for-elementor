@@ -14,7 +14,7 @@ const Onboarding = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [email, setEmail] = useState('');
     const [isChecked, setIsChecked] = useState(true);
-    const [subscribeBtn, setSubscribeBtn] = useState('Subscribe & Continue');
+    const [subscribeBtn, setSubscribeBtn] = useState('Subscribe');
     const [subscribeBtncheck, setSubscribeBtncheck] = useState(false);
     const [NexterBtn, SetNexterBtn] = useState('Enable Theme Builder');
     const [Nextercheck, SetNexter] = useState(false);
@@ -73,19 +73,19 @@ const Onboarding = (props) => {
     var screenHeight = window.innerHeight;
     var resolutions = (screenWidth + ' x ' + screenHeight);
 
-    const user_meta_data = async () => {
+    // const user_meta_data = async () => {
 
-        let form = new FormData();
-        form.append('action', 'she_dashboard_ajax_call');
-        form.append('nonce', nonce);
-        form.append('type', 'she_user_meta_data');
-        form.append('resolutions', resolutions);
-        var response = await axios.post(ajax_url, form);
-    }
+    //     let form = new FormData();
+    //     form.append('action', 'she_dashboard_ajax_call');
+    //     form.append('nonce', nonce);
+    //     form.append('type', 'she_user_meta_data');
+    //     form.append('resolutions', resolutions);
+    //     var response = await axios.post(ajax_url, form);
+    // }
 
-    useEffect(() => {
-        user_meta_data()
-    }, [])
+    // useEffect(() => {
+    //     user_meta_data()
+    // }, [])
 
 
     const handleOnboarding = () => {
@@ -195,6 +195,14 @@ const Onboarding = (props) => {
     const subscribe_she = async () => {
 
         setSubscribeBtn('Submitted !');
+
+        let form = new FormData();
+        form.append('action', 'she_dashboard_ajax_call');
+        form.append('nonce', nonce);
+        form.append('type', 'she_user_meta_data');
+        // form.append('resolutions', resolutions);
+        var axiosResponse = await axios.post(ajax_url, form);
+
         const encodedEmail = encodeURIComponent(email);
 
         const welcomeEmailUrl = `https://store.posimyth.com/?fluentcrm=1&route=contact&hash=f808721e-d3c0-4554-9146-2bc6a63a2974&email=${encodedEmail}`;
@@ -220,7 +228,7 @@ const Onboarding = (props) => {
             }
 
             setTimeout(() => {
-                setSubscribeBtn('Next');
+                setSubscribeBtn('Subscribe');
             }, 2000);
         }
 
@@ -362,7 +370,7 @@ const Onboarding = (props) => {
                                 setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? 2 : 1));
                                 Hendalclick('get_updates');
                             }}>
-                           Skip
+                           Next
                         </span>
 
                         {
