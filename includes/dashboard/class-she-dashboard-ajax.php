@@ -731,44 +731,11 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 			global $wpdb;
 
-			$resolutions = ! empty( $_POST['resolutions'] ) ? $_POST['resolutions'] : '';
-
 			$user_data = array();
 
-			$user_data['memory_limit']       = ini_get( 'memory_limit' );
-			$user_data['max_execution_time'] = ini_get( 'max_execution_time' );
-			$user_data['php_version']        = phpversion();
-			$user_data['wp_version']         = get_bloginfo( 'version' );
-			$user_data['email']              = get_option( 'admin_email' );
-			$user_data['url']                = get_option( 'siteurl' );
-			$user_data['language']           = get_bloginfo( 'language' );
-			$user_data['screen_resolution']  = $resolutions;
-			$user_data['server']             = ! empty( $_SERVER['SERVER_SOFTWARE'] ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) ) : '';
-			$user_data['db_version']         = $wpdb->db_version();
-			$user_data['she_version']        = SHE_HEADER_VERSION;
+			$user_data['email'] = get_option( 'admin_email' );
 
-			// Active Plugin Name.
-			$act_plugin = array();
-			$actplu     = get_option( 'active_plugins' );
-			if ( ! function_exists( 'get_plugins' ) ) {
-				require_once ABSPATH . 'wp-admin/includes/plugin.php';
-			}
-			$plugins = get_plugins();
-			foreach ( $actplu as $p ) {
-				if ( isset( $plugins[ $p ] ) ) {
-					$act_plugin[] = $plugins[ $p ]['Name'];
-				}
-			}
-
-			$user_data['plugins'] = implode( ',', $act_plugin );
-
-			$acthemeobj = wp_get_theme();
-			if ( $acthemeobj->get( 'Name' ) !== null && ! empty( $acthemeobj->get( 'Name' ) ) ) {
-				$user_data['theme'] = $acthemeobj->get( 'Name' );
-			}
-
-			$response = wp_remote_post(
-				$this->onbording_api,
+			$response = wp_remote_post( $this->onbording_api,
 				array(
 					'method' => 'POST',
 					'body'   => wp_json_encode( $user_data ),
