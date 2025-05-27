@@ -735,6 +735,10 @@
             }
 
             .she-staywid-list {
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                
                 .she-wid-chk-name {
                     font-size: 12px;
                     color: $she_gray_primary_normal;
