@@ -50,6 +50,9 @@
                 text: 'Skip & Deactivate',
                 callback: self.skipFeedback.bind(self)
               });
+              $(document).on('click', '#she-feedback-close-button', function () {
+                $('#she-deactivate-feedback-modal').hide();
+              });
             },
             onShow: function onShow() {
               var $dialogModal = $('#she-deactivate-feedback-modal'),
@@ -62,7 +65,7 @@
                 $radio.prop('checked', true);
                 $textareaWrapper.show();
               });
-             
+
             }
           });
         }
@@ -79,14 +82,14 @@
       var formData = new URLSearchParams(queryString);
 
       var issue_type = formData.get('she_issue_type');
-      if (!issue_type) {
-        return;
-      }
+      // if (!issue_type) {
+      //   return;
+      // }
 
       self.getModal().getElements('submit').text('').addClass('shed-loading');
 
       jQuery.ajax({
-        url: theplus_ajax_url,
+        url: formData.get('she_admin_url'),
         type: "post",
         data: {
           action: 'she_deactivate_rateus_notice',

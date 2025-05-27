@@ -2,9 +2,9 @@
 Contributors: posimyththemes, sagarpatel124, devangvachheta
 Tags: Elementor, Elementor Page Builder, Add-ons, Header, Sticky Header
 Requires at least: 6.3
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 1.7.7
+Stable tag: 2.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 

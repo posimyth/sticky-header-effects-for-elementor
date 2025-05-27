@@ -200,6 +200,7 @@ if ( ! class_exists( 'She_Deactivate_Feedback' ) ) {
 
 				<form id="she-feedback-dialog-form" method="post">
 					<input type="hidden" name="nonce" value="<?php echo esc_attr( $security ); ?>" />
+					<input type="hidden" name="she_admin_url" value="<?php echo admin_url( 'admin-ajax.php' ); ?>" />
 					
 					<div class="she-feedback-dialog-radio-content">
 						<div class="she-feedback-dialog-content">
