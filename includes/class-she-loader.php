@@ -2,10 +2,10 @@
 /**
  * This file is used to load widget builder files and the builder.
  *
- * @link       https://posimyth.com/
- * @since      1.7.3
+ * @link https://posimyth.com/
+ * @since 1.7.3
  *
- * @package    she-header
+ * @package she-header
  */
 
 /**
@@ -73,14 +73,14 @@ if ( ! class_exists( 'She_Loader' ) ) {
 			}
 
 			require SHE_HEADER_PATH . 'includes/preset/class-she-preset.php';
+			require SHE_HEADER_PATH . 'includes/notices/class-she-notice-main.php';
 		}
 
 		function she_add_notificetions() {
 
 			$get_notification = get_option( 'she_menu_notificetions' );
 
-			if ( $get_notification !== SHE_MENU_NOTIFICETIONS ) {
-				?>
+			if ( $get_notification !== SHE_MENU_NOTIFICETIONS ) { ?>
 				<script type="text/javascript">
 					document.addEventListener('DOMContentLoaded', function() {
 						var menuItem = document.querySelector('.toplevel_page_elementor.menu-top-first');

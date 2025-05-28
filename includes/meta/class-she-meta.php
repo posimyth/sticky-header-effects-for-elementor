@@ -2,10 +2,10 @@
 /**
  * This file is used to load plugin links.
  *
- * @link       https://posimyth.com/
- * @since     2.0
+ * @link https://posimyth.com/
+ * @since 2.0
  *
- * @package    she-header
+ * @package she-header
  */
 
 /**
