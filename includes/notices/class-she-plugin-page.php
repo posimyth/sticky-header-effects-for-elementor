@@ -90,7 +90,7 @@ if ( ! class_exists( 'She_Pluign_Page' ) ) {
 						<td colspan="4" style="padding: 20px 40px; background: #f0f6fc; border-left: 4px solid #72aee6; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);">
 							<div class="she-plugin-update-notice inline notice notice-alt notice-warning" style="position: relative;>
 								<h4 style="margin-top:10px;margin-bottom:7px;font-size:14px;">' . esc_html__( 'This Plugin is now part of POSIMYTH Innovations', 'the-plus-addons-for-block-editor' ) . '</h4>
-								<a target="_blank" rel="noopener noreferrer" href="' . esc_url( 'https://stickyheadereffects.com/massive-updates-2-0/?utm_source=wpbackend&utm_medium=pluginpage&utm_campaign=links' ) . '" style="text-decoration:underline;display:inline-block;">' . esc_html__( 'Read Whats New in Sticky Header Effects for Elementor', 'the-plus-addons-for-block-editor' ) . '</a>
+								<a target="_blank" rel="noopener noreferrer" href="' . esc_url( 'https://stickyheadereffects.com/massive-updates-2-0/?utm_source=wpbackend&utm_medium=admin&utm_campaign=links' ) . '" style="text-decoration:underline;display:inline-block;">' . esc_html__( 'Read Whats New in Sticky Header Effects for Elementor', 'the-plus-addons-for-block-editor' ) . '</a>
 								<span class="she-plugin-notice-dismiss"></span>
 							</div>
 						</td>

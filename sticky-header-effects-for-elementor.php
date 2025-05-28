@@ -7,7 +7,7 @@
  * Author:				POSIMYTH
  * Author URI:			https://posimyth.com/
  * Requires at least:	5.3
- * Tested up to:		6.7
+ * Tested up to:		6.8
  *
  * Text Domain: she-header
  * Domain Path: /languages/
@@ -32,8 +32,6 @@ define( 'SHE_HEADER_MODULES_URL', SHE_HEADER_URL . 'modules/' );
 define( 'SHE_WDKIT_URL', 'https://wdesignkit.com/' );
 define( 'SHE_MENU_NOTIFICETIONS', '2' );
 define( 'SHE_PBNAME', plugin_basename( __FILE__ ) );
-
-
 
 /**
  * Load gettext translate for our text domain.
