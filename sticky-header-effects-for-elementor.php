@@ -59,8 +59,8 @@ function she_header_load_plugin() {
 		add_action( 'admin_notices', 'she_header_admin_notice_upgrade_recommendation' );
 	}
 
-	require( SHE_HEADER_PATH . 'plugin.php' );
-	require SHE_HEADER_PATH . 'includes/class-she-loader.php';
+	include( SHE_HEADER_PATH . 'plugin.php' );
+	include SHE_HEADER_PATH . 'includes/class-she-loader.php';
 }
 add_action( 'plugins_loaded', 'she_header_load_plugin' );
 

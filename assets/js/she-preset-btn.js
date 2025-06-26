@@ -45,7 +45,7 @@
             </div>
 
             <div class="she-toss-sections-end">
-              <span>To access Sticky Header Effects settings, <strong>select a container </strong> or section, and then go to the <strong>Advanced tab </strong>. There, you’ll find the Sticky Header Effects settings where you can enable and configure the sticky header options.</span>
+              <span>To access Sticky Header Effects settings, <strong>select a container </strong> or section, and then go to the <strong>Advanced tab</strong>. There, you’ll find the Sticky Header Effects settings where you can enable and configure the sticky header options.</span>
             </div>
         </div>
          `;
