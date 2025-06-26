@@ -17,7 +17,7 @@ class Discord_Box_Control extends Base_Data_Control {
     public function content_template() {
     echo '<div class="she-discord-box-control">';
 
-        echo '<a href="https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/" target="_blank" class="she-request-box-button">';
+        echo '<a href="https://go.posimyth.com/request-feature-she/?utm_source=wpbackend&utm_medium=admin&utm_campaign=links" target="_blank" class="she-request-box-button">';
             echo esc_html__('Request Feature', 'she-header');
         echo '</a>';
 
@@ -30,7 +30,7 @@ class Discord_Box_Control extends Base_Data_Control {
                 echo '</p>';
             echo '</div>';
 
-            echo '<a href="https://discord.com/invite/SJwaHypc" target="_blank" class="she-discord-box-button">';
+            echo '<a href="https://go.posimyth.com/she-discord/?utm_source=wpbackend&utm_medium=admin&utm_campaign=links" target="_blank" class="she-discord-box-button">';
                 echo esc_html__('- Join Discord Now', 'she-header');
             echo '</a>';
         echo '</div>';

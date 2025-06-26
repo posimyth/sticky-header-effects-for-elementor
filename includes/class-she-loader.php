@@ -65,15 +65,15 @@ if ( ! class_exists( 'She_Loader' ) ) {
 		public function she_load() {
 
 			if ( is_admin() && current_user_can( 'manage_options' ) ) {
-				require SHE_HEADER_PATH . 'includes/dashboard/class-she-dashboard-ajax.php';
-				require SHE_HEADER_PATH . 'includes/dashboard/class-she-wp-menu.php';
-				require SHE_HEADER_PATH . 'includes/meta/class-she-meta.php';
+				include SHE_HEADER_PATH . 'includes/dashboard/class-she-dashboard-ajax.php';
+				include SHE_HEADER_PATH . 'includes/dashboard/class-she-wp-menu.php';
+				include SHE_HEADER_PATH . 'includes/meta/class-she-meta.php';
 				add_action( 'admin_footer', array( $this, 'she_add_notificetions' ) );
 				add_option( 'she_menu_notificetions', '1' );
 			}
 
-			require SHE_HEADER_PATH . 'includes/preset/class-she-preset.php';
-			require SHE_HEADER_PATH . 'includes/notices/class-she-notice-main.php';
+			include SHE_HEADER_PATH . 'includes/preset/class-she-preset.php';
+			include SHE_HEADER_PATH . 'includes/notices/class-she-notice-main.php';
 
 			add_action( 'elementor/controls/controls_registered', function( $controls_manager ) {
     			include SHE_HEADER_PATH . 'includes/notices/class-she-custom-controller.php';
