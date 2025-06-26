@@ -505,7 +505,7 @@ const Onboarding = (props) => {
                         setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? -2 : -1)); HendalBackclick('get_updates');
                     }}>Back</a>
                     <div className="she-rit-btn-cover step-foure-btn">
-                        <span className="she-link-btn" onClick={() => she_skip_onbording()}>Skip</span>
+                        <span className="she-link-btn" onClick={() => she_skip_onbording()}>{__('Skip','she-header')}</span>
                         <a className="she-pink-common-btn" onClick={(e) => create_header_temp('elementor_library')}>{createheaderBtn.btn_two}</a>
                     </div>
                 </div>
@@ -516,6 +516,9 @@ const Onboarding = (props) => {
     return (
 
         <div className="she-onboarding-cover">
+            <div className="she-onbording-close">
+                <span className="she-onbording-btn" onClick={() => she_skip_onbording()}>{__('Skip','she-header')}</span>
+            </div>
             <div className="she-steps-cover">
                 {TrueStep
                     .filter(step => {

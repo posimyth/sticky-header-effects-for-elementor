@@ -11,6 +11,17 @@
     position: relative;
     align-items: center;
 
+    .she-onbording-close{
+     display: flex;
+     justify-content: flex-end;
+     width: 100%;
+    }
+
+    .she-onbording-btn{
+        cursor: pointer;
+        font-size: 14px;
+    }
+
     .she-onbsec-cover {
         display: flex;
         justify-content: center;
