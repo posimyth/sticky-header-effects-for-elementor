@@ -74,6 +74,12 @@ if ( ! class_exists( 'She_Loader' ) ) {
 
 			require SHE_HEADER_PATH . 'includes/preset/class-she-preset.php';
 			require SHE_HEADER_PATH . 'includes/notices/class-she-notice-main.php';
+
+			add_action( 'elementor/controls/controls_registered', function( $controls_manager ) {
+    			include SHE_HEADER_PATH . 'includes/notices/class-she-custom-controller.php';
+   				 $controls_manager->register_control( 'she_discord_box', new \Elementor\Discord_Box_Control() );
+			} );
+
 		}
 
 		function she_add_notificetions() {

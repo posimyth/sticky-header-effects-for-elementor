@@ -1483,6 +1483,15 @@ $element->add_control(
 				],
 			]
 		);
+		$element->add_control(
+			'discord_box_notice',
+			array(
+				'type' => 'she_discord_box',
+				'condition'   => array(
+					'transparent!' => '',
+				),
+			)
+		);
 
 		$element->end_controls_section();
 	}

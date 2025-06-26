@@ -4,6 +4,9 @@ $j( document ).ready( function() {
 	"use strict";
 	// She header
 	sheHeader();
+     $j(window).on('resize', function () {
+        sheHeader();
+    });
 } );
 	
 
@@ -81,6 +84,14 @@ function sheHeader() {
         she_offset = data_settings["she_offset_top_mobile"];
         she_padding = data_settings["she_padding_mobile"];
         she_width = data_settings["she_width_mobile"];
+    }
+    
+    if (header.hasClass("she-header")) {
+            header.css("width", she_width.size + she_width.unit);
+            header.css("padding-top", she_padding.top + she_padding.unit);
+            header.css("padding-bottom", she_padding.bottom + she_padding.unit);
+            header.css("padding-left", she_padding.left + she_padding.unit);
+            header.css("padding-right", she_padding.right + she_padding.unit);
     }
 	
 	// add transparent class
