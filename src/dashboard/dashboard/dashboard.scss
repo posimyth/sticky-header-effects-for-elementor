@@ -395,7 +395,7 @@
             align-items: flex-start;
             background-color: $she_white;
             border-radius: 10px;
-            width: 26%;
+            width: 34%;
             min-height: 119px;
             padding: 20px;
             gap: 15px;
@@ -867,34 +867,6 @@
     }
 }
 
-@media (max-width: 1400px) {
-
-    .she_qik_infocrd_main .she_qikinfo_grp_cover.she_section_two {
-        flex-wrap: wrap;
-        gap: 20px;
-
-        .she_dash_inner_main .she_qik_infocrd_main .she_qik_infocrd_cover {
-            min-height: 130px;
-            padding: 16px;
-            width: 31.6%;
-        }
-    }
-}
-
-@media (max-width: 1400px) {
-
-    .she_dash_inner_main .she_qik_infocrd_main .she_qik_infocrd_cover {
-        min-height: 130px;
-        padding: 16px;
-        width: 31.6%;
-    }
-    .she_dash_inner_main .she_qik_infocrd_main .she_qik_infocrd_cover.she_ratings_box {
-        width: 100%;
-        max-width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-}
 
 @media (max-width: 1440px) {
     .she_dash_inner_main .she_wlcm_sec_cover .she_subscribe_form_h {

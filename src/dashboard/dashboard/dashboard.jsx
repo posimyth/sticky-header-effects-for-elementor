@@ -478,8 +478,8 @@ const DashboardInnerMain = (props) => {
                     </div>
 
                     <div className='she_qik_infocrd_cover'>
-                        <h4 className='she_qik_info_crd_title'>{__('Join FB Community', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/groups/theplus4elementor' className='she-ghost-btn'>{__('Join Now', 'she-header')}</a>
+                        <h4 className='she_qik_info_crd_title'>{__('Join Discord Community', 'she-header')}</h4>
+                        <a target='_blank' rel="noopener noreferrer" href='https://go.posimyth.com/she-discord/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader' className='she-ghost-btn'>{__('Join Now', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover'>
@@ -488,7 +488,7 @@ const DashboardInnerMain = (props) => {
                     </div>
                 </div>
 
-                <div className='she_qikinfo_grp_cover she_section_two'>
+                <div className='she_qikinfo_grp_cover'>
 
                     <div className='she_qik_infocrd_cover she_ratings_box'>
                         <h4 className='she_qik_info_crd_title'>{__('Rate Sticky Header Effects', 'she-header')}</h4>
@@ -500,10 +500,6 @@ const DashboardInnerMain = (props) => {
                     </div>
 
                     <div className='she_qik_infocrd_cover she_video_tut'>
-                        <h4 className='she_qik_info_crd_title'>{__('Join Discord', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href="https://go.posimyth.com/she-discord/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader" className='she-ghost-btn'>{__('Join Community', 'she-header')}</a>
-                    </div>
-                    <div className='she_qik_infocrd_cover she_video_tut'>
                         <h4 className='she_qik_info_crd_title'>{__('Video Tutorials', 'she-header')}</h4>
                         <a target='_blank' rel="noopener noreferrer" href="https://youtu.be/daQ7j75ycWo" className='she-ghost-btn'>{__('Watch Now', 'she-header')}</a>
                     </div>
@@ -511,9 +507,6 @@ const DashboardInnerMain = (props) => {
                     <div className='she_qik_infocrd_cover she_dashboard_social_icons_card_box'>
                         <h4 className='she_qik_info_crd_title'>{__("We're Active on", 'she-header')}</h4>
                         <div className='she_icon_bx_cover'>
-                            <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/posimyth' className='theplus_icon_cover'>
-                                <img src={plugin_url + 'assets/svg/dashboard_tab/facebook_icon.svg'} draggable={false} />
-                            </a>
                             <a target='_blank' rel="noopener noreferrer" href='https://x.com/posimyth' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/X_icon.svg'} draggable={false} />
                             </a>
