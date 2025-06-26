@@ -76,11 +76,8 @@ class Module extends Module_Base {
 				'type'        => Controls_Manager::RAW_HTML,
 				'raw'         => sprintf(
 					'<div class="she-preset-main-raw-main">
-						<a href="%s" class="she-preset-live-demo" id="she-preset-live-demo" data-temp_id="18061" target="_blank" rel="noopener noreferrer">%s</a>
 						<a class="she-preset-editor-raw" id="she-preset-editor-raw" data-temp_id="18061">%s</a>
 					</div>',
-					esc_url( 'https://stickyheadereffects.com/demos/' ),
-					esc_html__( 'Live Demo', 'she-header' ),
 					esc_html__( 'Import Presets', 'she-header' )
 				),
 				'label_block' => true,
@@ -90,19 +87,19 @@ class Module extends Module_Base {
 			)
 		);
 
-		$element->add_control(
-			'upgrade_notice',
-			array(
-				'type'        => Controls_Manager::NOTICE,
-				'notice_type' => 'info',
-				'dismissible' => true,
-				'heading'     => esc_html__( 'New FREE Pro Features', 'she-header' ),
-				'content'     => esc_html__( 'Disable Fully Transparent Background, Background Type, Custom Menu Toggle Button, Bottom Shadow, Blur Background settings', 'she-header' ),
-				'condition'   => array(
-					'transparent!' => '',
-				),
-			)
-		);
+		// $element->add_control(
+		// 	'upgrade_notice',
+		// 	array(
+		// 		'type'        => Controls_Manager::NOTICE,
+		// 		'notice_type' => 'info',
+		// 		'dismissible' => true,
+		// 		'heading'     => esc_html__( 'New FREE Pro Features', 'she-header' ),
+		// 		'content'     => esc_html__( 'Disable Fully Transparent Background, Background Type, Custom Menu Toggle Button, Bottom Shadow, Blur Background settings', 'she-header' ),
+		// 		'condition'   => array(
+		// 			'transparent!' => '',
+		// 		),
+		// 	)
+		// );
 
 		// $element->add_control(
 		// 	'sticky_header_notice',
