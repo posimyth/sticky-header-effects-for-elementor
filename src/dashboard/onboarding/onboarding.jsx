@@ -73,21 +73,6 @@ const Onboarding = (props) => {
     var screenHeight = window.innerHeight;
     var resolutions = (screenWidth + ' x ' + screenHeight);
 
-    // const user_meta_data = async () => {
-
-    //     let form = new FormData();
-    //     form.append('action', 'she_dashboard_ajax_call');
-    //     form.append('nonce', nonce);
-    //     form.append('type', 'she_user_meta_data');
-    //     form.append('resolutions', resolutions);
-    //     var response = await axios.post(ajax_url, form);
-    // }
-
-    // useEffect(() => {
-    //     user_meta_data()
-    // }, [])
-
-
     const handleOnboarding = () => {
         if (1 == onBoardingStep) {
             return (
@@ -194,7 +179,11 @@ const Onboarding = (props) => {
 
     const subscribe_she = async () => {
 
-        setSubscribeBtn('Submitted !');
+        if (!isFormValid) {
+            return;
+        }
+
+        // setSubscribeBtn('Submitted !');
 
         let form = new FormData();
         form.append('action', 'she_dashboard_ajax_call');
@@ -218,20 +207,13 @@ const Onboarding = (props) => {
 
         if (response) {
 
-            setSubscribeBtncheck(true);
-            setSubscribeBtn('Success !');
-
             if (selectElementor === 'elementor_pro') {
                 setOnBoardingStep(onBoardingStep + 2);
             } else {
                 setOnBoardingStep(onBoardingStep + 1);
             }
-
-            setTimeout(() => {
-                setSubscribeBtn('Subscribe');
-            }, 2000);
+           
         }
-
     };
 
     const isValidEmail = (email) => {
@@ -364,37 +346,15 @@ const Onboarding = (props) => {
                 <div className="she-btmsm-btn">
                     <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep - 1); HendalBackclick('select_mode'); }}>Back</span>
                     <div className="she-rit-btn-cover">
-                        <span
-                            className="she-link-btn"
+                        <a className="she-pink-common-btn"
                             onClick={() => {
                                 setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? 2 : 1));
                                 Hendalclick('get_updates');
-                            }}>
-                           Next
-                        </span>
-
-                        {
-                            !subscribeBtncheck ? (
-                                isFormValid ? (
-                                    <a className="she-pink-common-btn" onClick={() => subscribe_she()}>{subscribeBtn}</a>
-                                ) : (
-                                    <a className="she-pink-common-btn"
-                                        style={{ pointerEvents: 'none', cursor: 'not-allowed', opacity: 0.6, }}>
-                                        {__('Subscribe', 'she-header')}
-                                    </a>
-                                )
-                            ) : (
-                                <a className="she-pink-common-btn"
-                                    onClick={() => {
-                                        setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? 2 : 1));
-                                        Hendalclick('get_updates');
-                                    }}
-                                >
-                                    {subscribeBtn}
-                                </a>
-                            )
-                        }
-
+                                subscribe_she();
+                            }}
+                        >
+                            Next
+                        </a>
                     </div>
                 </div>
 

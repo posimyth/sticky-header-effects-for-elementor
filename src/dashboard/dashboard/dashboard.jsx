@@ -386,14 +386,14 @@ const DashboardInnerMain = (props) => {
                 <div className='she_slide_form_sec'>
                     <div className='she_numinfo_wdkit_cover'>
                         <div className='she_numeric_info_cover'>
-                            <div className='she_numeric_card'>
-                                <div className='she_sm_abt_num'>{__('Watch How it Works ( Coming Soon ) ', 'she-header')}</div>
+                            <a href='https://youtu.be/daQ7j75ycWo' target="_blank" className='she_numeric_card'>
+                                <div className='she_sm_abt_num'>{__('Watch How it Works', 'she-header')}</div>
                                 <div className='shw_arrow'>
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6 18.0518L18 6.05176M18 6.05176H10M18 6.05176V14.0518" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div className='she_product_slider'>
                             {props?.she_dashboard_data?.success ?
@@ -478,7 +478,7 @@ const DashboardInnerMain = (props) => {
                     </div>
 
                     <div className='she_qik_infocrd_cover'>
-                        <h4 className='she_qik_info_crd_title'>{__('Join Community', 'she-header')}</h4>
+                        <h4 className='she_qik_info_crd_title'>{__('Join FB Community', 'she-header')}</h4>
                         <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/groups/theplus4elementor' className='she-ghost-btn'>{__('Join Now', 'she-header')}</a>
                     </div>
 
@@ -488,7 +488,7 @@ const DashboardInnerMain = (props) => {
                     </div>
                 </div>
 
-                <div className='she_qikinfo_grp_cover'>
+                <div className='she_qikinfo_grp_cover she_section_two'>
 
                     <div className='she_qik_infocrd_cover she_ratings_box'>
                         <h4 className='she_qik_info_crd_title'>{__('Rate Sticky Header Effects', 'she-header')}</h4>
@@ -500,8 +500,12 @@ const DashboardInnerMain = (props) => {
                     </div>
 
                     <div className='she_qik_infocrd_cover she_video_tut'>
+                        <h4 className='she_qik_info_crd_title'>{__('Join Discord', 'she-header')}</h4>
+                        <a target='_blank' rel="noopener noreferrer" href="https://go.posimyth.com/she-discord" className='she-ghost-btn'>{__('Join Community', 'she-header')}</a>
+                    </div>
+                    <div className='she_qik_infocrd_cover she_video_tut'>
                         <h4 className='she_qik_info_crd_title'>{__('Video Tutorials', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href="https://www.youtube.com/watch?v=DfkjFCRhqNE&list=PLFRO-irWzXaLK9H5opSt88xueTnRhqvO5&utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader" className='she-ghost-btn'>{__('Coming Soon', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href="https://youtu.be/daQ7j75ycWo" className='she-ghost-btn'>{__('Watch Now', 'she-header')}</a>
                     </div>
 
                     <div className='she_qik_infocrd_cover she_dashboard_social_icons_card_box'>

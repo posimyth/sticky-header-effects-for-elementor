@@ -135,8 +135,16 @@
             border: 1px solid $she_light_gray_tint;
             border-radius: 8px;
             align-items: center;
-            opacity: 0.5;
-            cursor: help;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:focus {
+                box-shadow: none;
+                outline: none;
+                border: 1px solid $she_white;
+            }
+
+            ;
         }
 
         .shw_arrow {
@@ -371,11 +379,12 @@
 
         .she-ghost-btn {
             width: 100%;
+            white-space: nowrap;
         }
 
         .she_video_tut .she-ghost-btn {
             width: 100%;
-            pointer-events: none;
+            // pointer-events: none;
         }
 
         .she_qik_infocrd_cover {
@@ -397,10 +406,10 @@
                 width: 55%;
             }
 
-            &.she_video_tut {
-                opacity: 0.5;
-                cursor: help;
-            }
+            // &.she_video_tut {
+            //     opacity: 0.5;
+            //     cursor: help;
+            // }
         }
 
         .she-purple-common-btn {
@@ -858,6 +867,34 @@
     }
 }
 
+@media (max-width: 1400px) {
+
+    .she_qik_infocrd_main .she_qikinfo_grp_cover.she_section_two {
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .she_dash_inner_main .she_qik_infocrd_main .she_qik_infocrd_cover {
+            min-height: 130px;
+            padding: 16px;
+            width: 31.6%;
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+
+    .she_dash_inner_main .she_qik_infocrd_main .she_qik_infocrd_cover {
+        min-height: 130px;
+        padding: 16px;
+        width: 31.6%;
+    }
+    .she_dash_inner_main .she_qik_infocrd_main .she_qik_infocrd_cover.she_ratings_box {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
 @media (max-width: 1440px) {
     .she_dash_inner_main .she_wlcm_sec_cover .she_subscribe_form_h {
