@@ -501,7 +501,7 @@ const DashboardInnerMain = (props) => {
 
                     <div className='she_qik_infocrd_cover she_video_tut'>
                         <h4 className='she_qik_info_crd_title'>{__('Join Discord', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href="https://go.posimyth.com/she-discord" className='she-ghost-btn'>{__('Join Community', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href="https://go.posimyth.com/she-discord/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader" className='she-ghost-btn'>{__('Join Community', 'she-header')}</a>
                     </div>
                     <div className='she_qik_infocrd_cover she_video_tut'>
                         <h4 className='she_qik_info_crd_title'>{__('Video Tutorials', 'she-header')}</h4>
