@@ -146,6 +146,7 @@ Not at all. It’s highly optimized for performance and coded lightweight to ens
 
 = 2.1.0 =
 - Fixed: Header Resize Issue Fixed
+- Fixed: Minor Bug Fixes & Performance Improvements
 
 = 2.0 =
 - New: Dashboard for better UI/UX

@@ -4,8 +4,9 @@ $j(document).ready(function () {
     "use strict";
     // She header
     sheHeader();
-    $j(window).on('resize', function () {
-        sheHeader();
+
+    $j(window).on('resize', function (e) {
+        sheHeader(e);
     });
 });
 
@@ -15,8 +16,8 @@ HEADER EFFECTS
 ============================================== */
 
 
-function sheHeader() {
-
+function sheHeader(e) {
+   
     var header = $j('.elementor-element.she-header-yes'),
         container = $j('.she-header-yes .elementor-container, .elementor-element.she-header-yes.e-con'),
         header_elementor = $j('.elementor-edit-mode .she-header-yes'),
@@ -87,11 +88,13 @@ function sheHeader() {
         }
 
         if (header.hasClass("she-header")) {
-            header.css("width", she_width.size + she_width.unit);
-            header.css("padding-top", she_padding.top + she_padding.unit);
-            header.css("padding-bottom", she_padding.bottom + she_padding.unit);
-            header.css("padding-left", she_padding.left + she_padding.unit);
-            header.css("padding-right", she_padding.right + she_padding.unit);
+            if( e?.type === 'resize' ){
+                header.css("width", she_width.size + she_width.unit);
+                header.css("padding-top", she_padding.top + she_padding.unit);
+                header.css("padding-bottom", she_padding.bottom + she_padding.unit);
+                header.css("padding-left", she_padding.left + she_padding.unit);
+                header.css("padding-right", she_padding.right + she_padding.unit);
+            }
         }
 
         // add transparent class
