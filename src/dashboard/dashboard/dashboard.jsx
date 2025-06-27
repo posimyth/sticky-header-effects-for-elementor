@@ -550,7 +550,7 @@ const DashboardInnerMain = (props) => {
                             {/* <a href={'https://stickyheadereffects.com/massive-updates-2.0'} target="_blank" rel="noopener noreferrer" className='she_whats_new_info_cta_btn'>{__('Live Demo')}</a> */}
                             {/* } */}
                             {/* {data?.link && */}
-                            <a href={'https://stickyheadereffects.com/massive-updates-2.0/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a>
+                            <a href={'https://stickyheadereffects.com/massive-updates-2-0/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a>
                             {/* } */}
                         </div>
                     </div>
