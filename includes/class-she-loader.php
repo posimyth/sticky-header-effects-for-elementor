@@ -77,7 +77,7 @@ if ( ! class_exists( 'She_Loader' ) ) {
 
 			add_action( 'elementor/controls/controls_registered', function( $controls_manager ) {
     			include SHE_HEADER_PATH . 'includes/notices/class-she-banner-controller.php';
-   				 $controls_manager->register_control( 'she_discord_box', new \Elementor\Discord_Box_Control() );
+   				 $controls_manager->register_control( 'she_discord_box', new \Elementor\She_Discord_Box_Control() );
 			} );
 
 		}

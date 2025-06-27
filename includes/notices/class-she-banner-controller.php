@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Custom Control for Discord Invite Box
  */
-class Discord_Box_Control extends Base_Data_Control {
+class She_Discord_Box_Control extends Base_Data_Control {
 
     public function get_type() {
         return 'she_discord_box';
