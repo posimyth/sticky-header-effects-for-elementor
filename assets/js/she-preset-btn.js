@@ -29,6 +29,50 @@
 
         });
 
+        const notice = `
+        <div class="she-custom-editor-notice">
+            <div class="she-toss-sections-first">
+               <span class="she-custom-editor-close">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill="#575757" d="M15.24 14.133a.782.782 0 1 1-1.107 1.107L10 11.105 5.865 15.24a.782.782 0 1 1-1.106-1.107L8.893 10 4.76 5.864a.783.783 0 0 1 1.107-1.107L10 8.892l4.135-4.135a.783.783 0 0 1 1.107 1.106L11.107 10l4.133 4.134Z"/></svg>
+               </span>
+            </div>
+
+            <div class="she-toss-sections-middeal">
+              <span class="she-custom-editor-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#9D1A4F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10ZM12 16v-4M12 8h.01"/></svg>
+              </span>
+              <div class="she-toss-middeal-text">Sticky Header Effects for Elementor is Activated</div>
+            </div>
+
+            <div class="she-toss-sections-end">
+              <span>To access Sticky Header Effects settings, <strong>select a container </strong> or section, and then go to the <strong>Advanced tab</strong>. There, you’ll find the Sticky Header Effects settings where you can enable and configure the sticky header options.</span>
+            </div>
+        </div>
+         `;
+
+        var she_rebutton = true;
+
+        jQuery(document).on('click', ".she-design-from-scratch", function (event) {
+
+            if (she_rebutton) {
+                she_rebutton = false;
+                $('body').append(notice);
+                 setTimeout(function(){
+                     $('.she-custom-editor-notice').addClass('she-show-animate');
+                }, 50);
+                window.She_WdkitPopup.hide();
+            }
+        });
+
+        jQuery(document).on('click', ".she-custom-editor-close", function (event) {
+            $('.she-custom-editor-notice').removeClass('she-show-animate').addClass('she-hide-animate');
+
+            setTimeout(function () {
+              $('.she-custom-editor-notice').remove();
+              she_rebutton = true;
+            }, 400); 
+        });
+
         function she_load_wdkit(id) {
 
             jQuery.ajax({
@@ -100,7 +144,7 @@
                                     clonedWrapElement = clonedWrapElement.clone(true).show()
                                     dialogLightboxContent.html(clonedWrapElement);
 
-                                    dialogLightboxContent.on("click", ".tp-close-btn", function () {
+                                    dialogLightboxContent.on("click", ".she-popup-close", function () {
                                         window.She_WdkitPopup.hide();
                                     });
                                 },

@@ -207,6 +207,10 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		public function she_preview_html_popup() {
 			?>
 			<div id="she-wdkit-wrap" class="tp-main-container-preset" style="display: none">
+				<div class="she-popup-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill="#fff" fill-opacity=".8" d="M12.293.293a1 1 0 1 1 1.414 1.414L8.414 7l5.293 5.293.068.076a1 1 0 0 1-1.406 1.406l-.076-.068L7 8.414l-5.293 5.293a1 1 0 1 1-1.414-1.414L5.586 7 .293 1.707A1 1 0 1 1 1.707.293L7 5.586 12.293.293Z"/></svg>
+				</div>
+			<div class="she-popup-content">
 				<div class="she-middel-sections">
 				<div class="she-text-top">
 					<?php echo esc_html__( 'Import 50+ Pre-Designed Sticky Header Templates', 'she-header' ); ?>
@@ -271,11 +275,15 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 							<span class="she-enable-text"><?php echo esc_html__( 'Enable Header Templates', 'she-header' ); ?></span>
 							<div class="she-wkit-publish-loader">
 								<div class="she-wb-loader-circle"></div>
+								</div>
+							</div>
+							<div class="she-design-from-scratch">
+								<span class="she-scratch-text"><?php echo esc_html__( 'Design from Scratch', 'she-header' ); ?></span>
 							</div>
 						</div>
 					</div>
+					<div class="she-image-sections"></div>
 				</div>
-				<div class="she-image-sections"></div>
 			</div>
 			<?php
 		}
