@@ -519,6 +519,9 @@ const DashboardInnerMain = (props) => {
                             <a target='_blank' rel="noopener noreferrer" href='https://in.linkedin.com/company/posimyth' className='theplus_icon_cover'>
                                 <img src={plugin_url + 'assets/svg/dashboard_tab/linkedin_icon.svg'} draggable={false} />
                             </a>
+                            <a target='_blank' rel="noopener noreferrer" href='https://go.posimyth.com/she-discord/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader' className='theplus_icon_cover'>
+                                <img src={plugin_url + 'assets/svg/dashboard_tab/discord.svg'} draggable={false} />
+                            </a>
                         </div>
                     </div>
                 </div>
