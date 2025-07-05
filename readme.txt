@@ -1,10 +1,10 @@
 === Sticky Header Effects for Elementor ===
-Contributors: posimyththemes, sagarpatel124, devangvachheta
+Contributors: posimyththemes, devangvachheta, sagarpatel124, rwattner, dgovea
 Tags: Elementor, Elementor Page Builder, Add-ons, Header, Sticky Header
 Requires at least: 6.3
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 2.0
+Stable tag: 2.1.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -95,7 +95,7 @@ Align your sticky effects with sections above the main header for unified motion
 
 == Installation ==
 
-## ☑️ How to Install Sticky Header Effects for Elementor in 3 Easy Steps
+### ☑️ How to Install Sticky Header Effects for Elementor in 3 Easy Steps
 
 1. Make sure Elementor (Free or Pro) is installed and activated.
 2. Install the **Sticky Header Effects for Elementor** plugin from the WordPress plugin repository.
@@ -103,20 +103,33 @@ Align your sticky effects with sections above the main header for unified motion
 
 == Frequently Asked Questions ==
 
-**1. Do I need Elementor Pro to use this plugin?**  
-No, this plugin works perfectly with Elementor Free. You’ll only need Elementor Pro if you're using Pro widgets or features.
+** Why isn't the "shrink" effect working? **
 
-**2. Is this a standalone plugin?**  
-No, it requires Elementor Free or Pro. It extends Elementor’s functionality with new header scroll effects.
+The header cannot shrink smaller than the objects inside of it!
 
-**3. Where can I find the Sticky Header Effects settings?**  
+The "shrink" effect is restricted by the size of the content in the header section. Such as logos, images, menus, widgets, and also all of the padding and margins of those elements. This also inclused the padding and margins of the sections and columns themselves.
+
+To get the best "shrink" effect use these settings:
+* Set the top and bottom padding to 0px on your sticky header section, column, and elements inside of it.
+* Set a custom logo and other image height(you can leave the width blank for "auto").
+* Set the header section height to "min height" and adjust it to your desired height.
+
+Basically what happens is that the content of the header is "too tall" to shrink down anymore.
+
+** Do I need Elementor Pro to use this plugin?**  
+No, this plugin works perfectly with Elementor Free, If you are using Free Navigation Widget from The Plus Addons for Elementor. You’ll only need Elementor Pro if you're using Pro Navigation widgets.
+
+** Is this a standalone plugin?**  
+No, it requires Elementor Free or Pro. It extends Elementor’s functionality with new header scroll effects. 
+
+** Where can I find the Sticky Header Effects settings?**  
 Inside Elementor Editor → Select any container → Go to **Advanced Tab** → Scroll to **Sticky Header Effects** section.
 
-**4. Will this plugin work with any WordPress theme?**  
+** Will this plugin work with any WordPress theme?**  
 Yes, it works seamlessly with most Elementor-optimized themes, including Hello, Nexter, Astra, and more.
 
-**5. Will this slow down my website?**  
-No. It’s optimized for performance and coded lightweight to ensure fast page loads.
+** Will this slow down my website?**  
+Not at all. It’s highly optimized for performance and coded lightweight to ensure fast page loads. It's lightest sticky header menu option with Google Page Speed optimized for top notch score. 
 
 == Screenshots ==
 
@@ -130,6 +143,10 @@ No. It’s optimized for performance and coded lightweight to ensure fast page l
 8. Smarter Scroll Behaviors – Transparent, Distance Control, Sticky Logic
 
 == Changelog ==
+
+= 2.1.0 =
+- Fixed: Header Resize Issue Fixed
+- Fixed: Minor Bug Fixes & Performance Improvements
 
 = 2.0 =
 - New: Dashboard for better UI/UX

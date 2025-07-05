@@ -105,7 +105,7 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 				$output .= '</div>';
 
 				$output .= '<div style="display: flex; justify-content: center; align-items: center; border: 1px solid #9D1A4F; padding: 5px 20px; height: 30px; border-radius: 4px;cursor: pointer;">';
-					$output .= '<a target="_blank" rel="noopener noreferrer" href="https://stickyheadereffects.com/blog/?utm_source=wpbackend&utm_medium=adminpage&utm_campaign=adminpage" style="color: #9D1A4F; font-size: 14px; font-weight: 500;text-decoration:none; width: max-content;">' . esc_html__( 'Learn More', 'she-header' ) . '</a>';
+					$output .= '<a target="_blank" rel="noopener noreferrer" href="https://stickyheadereffects.com/massive-updates-2-0/?utm_source=wpbackend&utm_medium=adminpage&utm_campaign=adminpage" style="color: #9D1A4F; font-size: 14px; font-weight: 500;text-decoration:none; width: max-content;">' . esc_html__( 'Learn More', 'she-header' ) . '</a>';
 				$output .= '</div>';
 
 			$output .= '</div>';

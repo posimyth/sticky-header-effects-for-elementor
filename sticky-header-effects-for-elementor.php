@@ -3,11 +3,11 @@
  * Plugin Name:			Sticky Header Effects for Elementor
  * Plugin URI:			https://stickyheadereffects.com
  * Description:			Create stunning sticky headers with multiple scroll effects like shrink, fade, slide, and blur—packed with 50+ ready-to-import templates and fully customizable using Elementor.
- * Version:				2.0
+ * Version:				2.1.0
  * Author:				POSIMYTH
  * Author URI:			https://posimyth.com/
  * Requires at least:	5.3
- * Tested up to:		6.7
+ * Tested up to:		6.8
  *
  * Text Domain: she-header
  * Domain Path: /languages/
@@ -19,8 +19,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-define( 'SHE_HEADER_VERSION', '2.0' );
-define( 'SHE_HEADER_PREVIOUS_STABLE_VERSION', '1.7.8' );
+define( 'SHE_HEADER_VERSION', '2.1.0' );
+define( 'SHE_HEADER_PREVIOUS_STABLE_VERSION', '2.0' );
 
 define( 'SHE_HEADER__FILE__', __FILE__ );
 define( 'SHE_HEADER_PLUGIN_BASE', plugin_basename( SHE_HEADER__FILE__ ) );
@@ -32,8 +32,6 @@ define( 'SHE_HEADER_MODULES_URL', SHE_HEADER_URL . 'modules/' );
 define( 'SHE_WDKIT_URL', 'https://wdesignkit.com/' );
 define( 'SHE_MENU_NOTIFICETIONS', '2' );
 define( 'SHE_PBNAME', plugin_basename( __FILE__ ) );
-
-
 
 /**
  * Load gettext translate for our text domain.
@@ -61,8 +59,8 @@ function she_header_load_plugin() {
 		add_action( 'admin_notices', 'she_header_admin_notice_upgrade_recommendation' );
 	}
 
-	require( SHE_HEADER_PATH . 'plugin.php' );
-	require SHE_HEADER_PATH . 'includes/class-she-loader.php';
+	include( SHE_HEADER_PATH . 'plugin.php' );
+	include SHE_HEADER_PATH . 'includes/class-she-loader.php';
 }
 add_action( 'plugins_loaded', 'she_header_load_plugin' );
 
