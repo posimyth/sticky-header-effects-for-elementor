@@ -5,6 +5,9 @@
     margin-bottom: 15px
   }
   
+  .wkit-main-menu-dashbord .wkit-left-side{
+    display: none !important;
+  }
   .she-preset-editor-raw {
     color: #464F57;
     background: #fff;
@@ -143,6 +146,11 @@
     gap: 8px;
 }
 
+.she-design-from-scratch:hover {
+    background: #fff8f8;
+    color: #040483;
+}
+
 .she-pink-btn:hover {
     background: #9B1A5E;
     border: 1px solid #9B1A5E;
@@ -265,7 +273,6 @@
 
 #she-wdkit-elementorp .tp-top-sections .tp-message .tp-not-show-again::after,
 #she-wdkit-elementorp .tp-wdesign-about::after,
-#she-wdkit-elementorp .she-wdesign-install .she-enable-text::after,
 #she-wdkit-elementorp .she-wdesign-install .tp-visit-plugin::after {
     content: "";
     position: absolute;
@@ -280,7 +287,6 @@
 }
 
 #she-wdkit-elementorp .tp-wdesign-about:hover::after,
-#she-wdkit-elementorp .she-wdesign-install .she-enable-text:hover::after,
 #she-wdkit-elementorp .she-wdesign-install .tp-visit-plugin:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left

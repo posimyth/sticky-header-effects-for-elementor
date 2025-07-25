@@ -8,6 +8,11 @@
         const urlParams = new URLSearchParams(window.location.search);
         const sheOnload = urlParams.get('she_onload');
 
+        urlParams.delete('she_onload');
+        const newUrl = window.location.pathname + '?' + urlParams.toString();
+        window.history.replaceState({}, '', newUrl);
+
+
         if (sheOnload === 'true') {
             const postId = 18061;
             she_load_wdkit(postId);
@@ -57,8 +62,8 @@
             if (she_rebutton) {
                 she_rebutton = false;
                 $('body').append(notice);
-                 setTimeout(function(){
-                     $('.she-custom-editor-notice').addClass('she-show-animate');
+                setTimeout(function () {
+                    $('.she-custom-editor-notice').addClass('she-show-animate');
                 }, 50);
                 window.She_WdkitPopup.hide();
             }
@@ -68,9 +73,9 @@
             $('.she-custom-editor-notice').removeClass('she-show-animate').addClass('she-hide-animate');
 
             setTimeout(function () {
-              $('.she-custom-editor-notice').remove();
-              she_rebutton = true;
-            }, 400); 
+                $('.she-custom-editor-notice').remove();
+                she_rebutton = true;
+            }, 400);
         });
 
         function she_load_wdkit(id) {
