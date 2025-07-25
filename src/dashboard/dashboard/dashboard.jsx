@@ -123,13 +123,13 @@ const DashboardInnerMain = (props) => {
 
     const [slideIndex, setSlideIndex] = useState(0);
     
-    useEffect(() => {
+    // useEffect(() => {
         
-        if(props?.she_dashboard_data?.she_notificetions === 'open' && shed_data?.shed_notificetions === 'open'){
-            setSlideLeft(true);
-        }
+    //     if(props?.she_dashboard_data?.she_notificetions === 'open' && shed_data?.shed_notificetions === 'open'){
+    //         setSlideLeft(true);
+    //     }
 
-    }, [shed_data?.shed_notification]);
+    // }, [shed_data?.shed_notification]);
 
     useEffect(() => {
         const stars = document.querySelectorAll('.she-star path');
@@ -204,7 +204,7 @@ const DashboardInnerMain = (props) => {
         updatedLabels[index].buttonLabel = 'Installing..';
         setplugin_detail(updatedLabels);
 
-        var ajax_url = shed_data.ajax_url;
+        // var ajax_url = shed_data.ajax_url;
         var tp_slug = '';
         var tp_widgets_name = '';
         if ('the-plus-addons-for-elementor-page-builder' === key) {

@@ -352,9 +352,7 @@ const Onboarding = (props) => {
                                 Hendalclick('get_updates');
                                 subscribe_she();
                             }}
-                        >
-                            Next
-                        </a>
+                        >{isFormValid ? "Next" : "Skip"}</a>
                     </div>
                 </div>
 
@@ -517,7 +515,7 @@ const Onboarding = (props) => {
 
         <div className="she-onboarding-cover">
             <div className="she-onbording-close">
-                <span className="she-onbording-btn" onClick={() => she_skip_onbording()}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#9f9f9f" d="M18.707 6.707a1 1 0 0 0-1.414-1.414L12 10.586 6.707 5.293a1 1 0 0 0-1.414 1.414L10.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414L12 13.414l5.293 5.293a1 1 0 0 0 1.414-1.414L13.414 12l5.293-5.293Z"/></svg></span>
+                <span className="she-onbording-btn" onClick={() => she_skip_onbording()}>Skip Setup</span>
             </div>
             <div className="she-steps-cover">
                 {TrueStep

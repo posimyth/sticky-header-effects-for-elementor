@@ -14,7 +14,7 @@
     top: 107px;
     z-index: 99;
     user-select: none;
-    
+
     .she-cat-strip-cov-main {
         display: flex;
         gap: 10px;
@@ -480,8 +480,16 @@
         border-radius: 8px;
         text-align: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        width: 50%;
+        width: 30%;
+        max-width: 30%;
         height: auto;
+        padding: 25px 40px;
+    }
+
+    .she-tpae-popup-close {
+        position: relative;
+        width: 100%;
+
     }
 
     .she-tpae-model-close {
@@ -489,6 +497,10 @@
         justify-content: flex-end;
         cursor: pointer;
         padding: 10px;
+        position: absolute;
+        display: flex;
+        top: -22px;
+        right: -30px;
     }
 
     .she-features-ndic {
@@ -852,6 +864,7 @@
         width: 75vw;
     }
 }
+
 @media (max-width: 650px) {
     .she-catwise-wid-manage-cov .she-wid-box-cover .she-wdkit-content-bg {
         width: 85vw;

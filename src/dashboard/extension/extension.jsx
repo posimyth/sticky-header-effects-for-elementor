@@ -20,7 +20,7 @@ const Extension = (props) => {
     const [ActiveTab, setActiveTab] = useState('');
     const [Nextercheck, SetNexter] = useState(false);
     const [NShowPopup, NexterPopup] = useState(false);
-    const [NexterBtn, SetNexterBtn] = useState('Enable Extensions for WordPress');
+    const [NexterBtn, SetNexterBtn] = useState('Install Nexter Extensions Plugin');
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {

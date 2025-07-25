@@ -32,6 +32,15 @@ const ElementorTemplates = (props) => {
         get_etemplates()
     }, [])
 
+    const wdkit_template_url = (templateTitle) => {
+        var fullUrl = window.location.href;
+        var baseUrl = fullUrl.split('/admin.php')[0];
+
+        const url = `${baseUrl}?page=wdesign-kit#/browse?search=${encodeURIComponent(templateTitle)}`;
+
+        window.open(url, '_blank');
+    }
+
     const Wkit_template_Skeleton = () => {
         return (
             <div className='she-ele-temp-box she-skeleton'>
@@ -117,7 +126,7 @@ const ElementorTemplates = (props) => {
                         <a href={wdkit_Plugin_url()} className='she-purple-common-btn' target='_blank' rel="noopener noreferrer">{__('Open Templates', 'she-header')}</a>
                         :
                         <a className='she-purple-common-btn' onClick={(e) => handleClick(e)} >{buttonText}</a>
-                     }
+                    }
 
                 </div>
             </div>
@@ -138,7 +147,7 @@ const ElementorTemplates = (props) => {
                     }
 
                     {template_list?.length > 0 && template_list.map((t_data, index) => {
-                        
+
                         return (
                             <div className='she-ele-temp-box' key={index}>
                                 <div className='she-ele-temp-cov-img-box'>
@@ -147,8 +156,12 @@ const ElementorTemplates = (props) => {
                                 </div>
                                 <div className='she-ele-temp-detail'>
                                     <h4 className='she-elementor-template-title she-in-sec-heading'>{t_data.title}</h4>
-                                    <a href={t_data.post_url+'?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" className='she-ghost-btn'>{__('Live Preview', 'she-header')}</a>
-                                    <span className='she-float-box-title'>{t_data.title}</span>
+                                    {/* <span className='she-float-box-title'>{t_data.title}</span> */}
+                                    {plugin_status?.status === "active" || pluginActive ?
+                                        <a onClick={(e) => wdkit_template_url(t_data.title)} target="_blank" className='she-ghost-btn'>{__('Import Template', 'she-header')}</a>
+                                        :
+                                        <a href={t_data.post_url + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" className='she-ghost-btn'>{__('Live Preview', 'she-header')}</a>
+                                    }
                                 </div>
                             </div>
                         );
@@ -158,7 +171,7 @@ const ElementorTemplates = (props) => {
                     {plugin_status?.status === "active" || pluginActive ?
                         <a href="?page=wdesign-kit#/browse" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('Open Templates', 'she-header')}</a>
                         :
-                        <a href="https://wdesignkit.com/templates?builder=1001" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('Explore More Elementor Templates', 'she-header')}</a>
+                        <a href="https://wdesignkit.com/templates?builder=1001" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('Explore More Header Templates', 'she-header')}</a>
                     }
                 </div>
             </div>

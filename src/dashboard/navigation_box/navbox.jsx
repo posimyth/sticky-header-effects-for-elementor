@@ -18,10 +18,7 @@ const NavBox = (props) => {
     const baseUrl = fullUrl.split('/admin.php')[0];
     const [menuToggel, setmenuToggel] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-    const [buttonText, setButtonText] = useState('Enable Templates');
-    const [pluginActive, setPluginActive] = useState(false);
-    var plugin_status = props.plugin_check[1];
+    const [themeBuilder_plugin, setThemeBuilder_plugin] = useState(false);
 
     const toggleDropdown = (e) => {
 
@@ -37,35 +34,15 @@ const NavBox = (props) => {
         setIsDropdownOpen(!isDropdownOpen);
     };
 
-    const handleClick = async () => {
-
-        setButtonText('Installing WDesignKit');
-
-
-        let form = new FormData();
-        form.append('action', 'she_dashboard_ajax_call');
-        form.append('nonce', nonce);
-        form.append('type', 'she_plugin_install');
-        form.append('slug', 'wdesignkit/wdesignkit.php');
-        form.append('name', 'wdesignkit');
-
-        var response = await axios.post(ajax_url, form);
-        var data = response.data;
-
-        if (data.success) {
-            setButtonText('Installed WDesignKit');
-            setPluginActive(true);
-        } else {
-            setButtonText('Installation Failed');
+    useEffect(() => {
+        if (props?.she_dashboard_data?.success && Array.isArray(props.plugin_check)) {
+            const plugin_list = props.plugin_check;
+            const index = plugin_list.findIndex((plg) => plg.name === 'nexter-extension');
+            if (index > -1 && plugin_list[index]?.status === 'active') {
+                setThemeBuilder_plugin(true);
+            }
         }
-    };
-
-    const wdkit_Plugin_url = () => {
-        var fullUrl = window.location.href;
-        var baseUrl = fullUrl.split('/admin.php')[0];
-
-        return baseUrl + '?page=wdesign-kit';
-    }
+    }, [props?.she_dashboard_data, props?.plugin_check]);
 
     return (
 
@@ -82,16 +59,18 @@ const NavBox = (props) => {
                 </div>
                 <div className={`she_navlinks_cover ${menuToggel ? 'she_open_menu' : ''}`}>
                     <ul className='she_navlinks_inner_cover'>
-                        <li><Link className={`${location.pathname == '/' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/" onClick={() => { setmenuToggel(false) }}>{__('Dashboard', 'she-header')}</Link></li>
-                        <li><Link className={`${location.pathname == '/elementor_templates' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/elementor_templates" onClick={() => { setmenuToggel(false) }}>{__('Header Templates', 'she-header')}</Link></li>
+                        <li><Link className={`${location.pathname == '/dashboard_main' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/dashboard_main" onClick={() => { setmenuToggel(false) }}>{__('Dashboard', 'she-header')}</Link></li>
+                        <li><Link className={`${location.pathname == '/' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/" onClick={() => { setmenuToggel(false) }}>{__('Header Templates', 'she-header')}</Link></li>
                         <li><Link className={`${location.pathname == '/header_widgets' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/header_widgets" onClick={() => { setmenuToggel(false) }}>{__('Header Widgets', 'she-header')}</Link></li>
-                        <li className='she_navlink_cover'>
-                            <Link className={`${location.pathname == '/theme_builder' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/theme_builder" onClick={() => { setmenuToggel(false) }}>{__('Elementor Theme Builder ', 'she-header')}
-                                <div className='she-nav-tag'>
-                                    <span className='she-nav-tag-txt'>FREE</span>
-                                </div>
-                            </Link>
-                        </li>
+                        {!themeBuilder_plugin && (
+                            <li className='she_navlink_cover'>
+                                <Link className={`${location.pathname == '/theme_builder' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/theme_builder" onClick={() => { setmenuToggel(false) }}>{__('Elementor Theme Builder ', 'she-header')}
+                                    <div className='she-nav-tag'>
+                                        <span className='she-nav-tag-txt'>FREE</span>
+                                    </div>
+                                </Link>
+                            </li>
+                        )}
                         <li><Link className={`${location.pathname == '/extension' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/extension" onClick={() => { setmenuToggel(false) }}>{__('Extensions', 'she-header')}</Link></li>
                         <div className='she_extra_options_navlink_cover'>
                             <li className={`${location.pathname == '/extra_options' ? 'she_navlink she_active_tab' : 'she_navlink'}`} onClick={(e) => { toggleDropdown(e) }} >{__('Extra Options', 'she-header')}<span className='she_navlink_icon'><img src={plugin_url + 'assets/svg/chevron_right_icon.svg'} draggable={false} /></span></li>
@@ -109,25 +88,14 @@ const NavBox = (props) => {
                 </div>
                 <div className='she_content_area'></div>
             </div>
-            <div className='she_nav_bnner'>
-                <p className='she_bnner_txt'>Get 1000+ Elementor Templates & Sections</p>
-                <div className='she_dwd_sections'>
-                    {plugin_status?.status === "active" || pluginActive ?
-
-                        <a href={wdkit_Plugin_url()} className='she_dwd_btn' target="_blank" onClick={(e) => handleClick(e)}>{__('Open Templates', 'she-header')}</a>
-                        :
-                        <a className='she_dwd_btn' target="_blank" onClick={(e) => handleClick(e)}>{buttonText}</a>
-                    }
-                    <a className='she_dwd_link' href="https://wdesignkit.com/templates?builder=1001&temp_type=websitekit" target="_blank">Learn More</a>
-                </div>
-                <div className="she_footer_img" style={{ backgroundImage: `url(${plugin_url}assets/images/banner/footer_wdk.png)`,}}></div>
-            </div>
         </>
     );
 }
 
 const get_redux = state => ({
     plugin_check: state.check_plugin.plugin_status_rx,
+    she_dashboard_data: state.Dashboard_data.db_rx,
+
 })
 
 export default connect(get_redux)(NavBox);

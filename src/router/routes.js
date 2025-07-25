@@ -9,7 +9,7 @@ import Header_widgets from '../dashboard/header_widgets/header_widgets';
 
 const routes = [
   {
-    path: '/',
+    path: '/dashboard_main',
    element: <DashboardInnerMain />
   },
   {
@@ -25,7 +25,7 @@ const routes = [
     element: <RollBack />
   },
   {
-    path: '/elementor_templates',
+    path: '/',
     element: <ElementorTemplates />
   },
   {
@@ -38,7 +38,7 @@ const routes = [
   },
   {
     path: '*',
-    element: <DashboardInnerMain />
+    element: <ElementorTemplates />
   },
 ];
 
