@@ -111,7 +111,10 @@ const ElementorTemplates = (props) => {
         var fullUrl = window.location.href;
         var baseUrl = fullUrl.split('/admin.php')[0];
 
-        return baseUrl + '?page=wdesign-kit';
+    const pluginId = '[1014]';
+    const encodedPluginId = encodeURIComponent(pluginId);
+
+    return baseUrl + '/admin.php?page=wdesign-kit#/browse?plugin=' + encodedPluginId;
     }
 
     const items = Array.from({ length: 9 });
