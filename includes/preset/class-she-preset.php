@@ -272,7 +272,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 					</div>
 					<div class="wkit-she-preset-enable">
 						<div class="she-pink-btn she-wdesign-install">
-							<span class="she-enable-text"><?php echo esc_html__( 'Enable Header Templates', 'she-header' ); ?></span>
+							<span class="she-enable-text"><?php echo esc_html__( 'Install WDesignKit Plugin for Templates', 'she-header' ); ?></span>
 							<div class="she-wkit-publish-loader">
 								<div class="she-wb-loader-circle"></div>
 								</div>

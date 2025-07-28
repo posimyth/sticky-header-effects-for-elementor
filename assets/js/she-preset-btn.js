@@ -166,7 +166,7 @@
                             var $loader = $button.find('.she-wb-loader-circle');
                             var $text = $button.find('.she-enable-text');
 
-                            $loader.css('display', 'block');
+                            $loader.css('visibility', 'visible');
 
                             jQuery.ajax({
                                 url: she_wdkit_preview_popup.ajax_url,
@@ -183,13 +183,13 @@
                                         elementor.saver.update.apply().then(function () {
                                             window.location.hash = window.location.hash + '?wdesignkit=open&she=true'
                                             window.location.reload();
-                                            $loader.css('display', 'none');
+                                            $loader.css('visibility', 'hidden');
 
                                         });
 
                                     } else {
                                         $text.text(ENABLE_TEMPLATES_TEXT);
-                                        $loader.css('display', 'none');
+                                        $loader.css('visibility', 'hidden');
 
                                     }
 
