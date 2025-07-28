@@ -79,7 +79,10 @@ const Extension = (props) => {
         return (
             <>
                 <div className="she-nexter-content">
-                    <div className="she-nexter-title">{__('Build a Strong, Secure and High-Performance Website with 22+ Unique WordPress Extensions from Nexter.', 'she-header')}</div>
+                    <div className="she-nexter-title">
+                        {__('Build a Strong, Secure and High-Performance Website', 'she-header')}<br />
+                        {__('with 22+ Unique WordPress Extensions from Nexter.', 'she-header')}
+                    </div>
                     <div className="she-features-ndic">
                         <ul><li>{CheckIcon}{__('22+ Power up Extensions', 'she-header')}</li>
                             <li>{CheckIcon}{__('Works with Popular WordPress Themes', 'she-header')}</li>
@@ -137,7 +140,7 @@ const Extension = (props) => {
                 {
                     extension_json.plus_extension.map((categoryKey, index) => {
 
-                        
+
                         const extension_options = categoryKey.widgets.filter((data) => {
                             if ('all' == FreePro) {
                                 return data;
@@ -172,7 +175,7 @@ const Extension = (props) => {
 
                                     <div className='she-wid-box-cover'>
                                         {extension_options.map((data, index) => {
-                                            
+
                                             return (
                                                 <div className={`she-part-wid-mng-box ${(data?.tag == 'pro') && !free_pro ? 'she-widget-pro' : ''}`} key={index}>
                                                     <div className='she-wid-in-left'>
