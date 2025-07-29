@@ -207,11 +207,11 @@ const Onboarding = (props) => {
 
         if (response) {
 
-            if (selectElementor === 'elementor_pro') {
-                setOnBoardingStep(onBoardingStep + 2);
-            } else {
-                setOnBoardingStep(onBoardingStep + 1);
-            }
+            // if (selectElementor === 'elementor_pro') {
+            //     setOnBoardingStep(onBoardingStep + 2);
+            // } else {
+            //     setOnBoardingStep(onBoardingStep + 1);
+            // }
            
         }
     };
@@ -346,13 +346,23 @@ const Onboarding = (props) => {
                 <div className="she-btmsm-btn">
                     <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep - 1); HendalBackclick('select_mode'); }}>Back</span>
                     <div className="she-rit-btn-cover">
-                        <a className="she-pink-common-btn"
+                        <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? 2 : 1)); }}>Skip</span>
+                        <a
+                            className="she-pink-common-btn"
+                            style={{
+                                opacity: isFormValid ? 1 : 0.5,
+                                pointerEvents: isFormValid ? 'auto' : 'none',
+                                cursor: isFormValid ? 'pointer' : 'not-allowed'
+                            }}
                             onClick={() => {
                                 setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? 2 : 1));
                                 Hendalclick('get_updates');
                                 subscribe_she();
                             }}
-                        >{isFormValid ? "Next" : "Skip"}</a>
+                        >
+                            Subscribe
+                        </a>
+
                     </div>
                 </div>
 
@@ -426,60 +436,60 @@ const Onboarding = (props) => {
         return (
 
             <>
-            <div className="she-accodion-main-cover">
-                <div className="she-onbsec-cover she-step-three">
-                    <div className="she-theme-content-bg">
-                        {/* <div className="she-wdkit-popup-close" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div> */}
-                        <div className='she-onbording-accordion'>
-                            <div className="she-wdkit-popup-content">
-                                <div className="she-wdkit-popup-title">Get Free Theme Builder for Elementor <br /> With Nexter Extension</div>
-                                <div className="she-wdkit-features-dic">
-                                    <ul>
-                                        <li>{CheckIcon}{__('Free Elementor Header & Footer Builder', 'she-header')}</li>
-                                        <li>{CheckIcon}{__('Free Single, Archive & 404 Page Builder', 'she-header')}</li>
-                                        <li>{CheckIcon}{__('Pre-Made Theme Builder Section Templates', 'she-header')}</li>
-                                        <li>{CheckIcon}{__('100% Customisable with Widgets', 'she-header')}</li>
-                                    </ul>
-                                </div>
-                                {/* <div className="she-wdkit-install-activate">
+                <div className="she-accodion-main-cover">
+                    <div className="she-onbsec-cover she-step-three">
+                        <div className="she-theme-content-bg">
+                            {/* <div className="she-wdkit-popup-close" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div> */}
+                            <div className='she-onbording-accordion'>
+                                <div className="she-wdkit-popup-content">
+                                    <div className="she-wdkit-popup-title">Get Free Theme Builder for Elementor <br /> With Nexter Extension</div>
+                                    <div className="she-wdkit-features-dic">
+                                        <ul>
+                                            <li>{CheckIcon}{__('Free Elementor Header & Footer Builder', 'she-header')}</li>
+                                            <li>{CheckIcon}{__('Free Single, Archive & 404 Page Builder', 'she-header')}</li>
+                                            <li>{CheckIcon}{__('Pre-Made Theme Builder Section Templates', 'she-header')}</li>
+                                            <li>{CheckIcon}{__('100% Customisable with Widgets', 'she-header')}</li>
+                                        </ul>
+                                    </div>
+                                    {/* <div className="she-wdkit-install-activate">
                             <a className='she-wdkit-install-btn' >{'buttonText'}</a>
                             <a className='she-wdkit-learn-more' href='https://wdesignkit.com/' target='_blank' rel="noopener noreferrer">Learn More</a>
                              </div> */}
 
-                                <div className="she-wdkit-popup-accordion">
-                                    {wdkit_poup_accordian.map((item, index) => (
-                                        <div key={index} className="she-wdkit-accordion-item">
-                                            <div className={`she-wdkit-accordio-content ${activeIndex === index ? "she-tpae-content-opan" : ""}`} onClick={() => handleToggle(index)}>
-                                                <div className="she-wdkit-accd-qui">{item.question}</div>
-                                                <div className="she-wdkit-accd-icon">
-                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        {activeIndex !== index && (<path d="M10 4.16675V15.8334" stroke="black" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />)}
-                                                        <path d="M4.16797 10H15.8346" stroke="black" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
-                                                    </svg>
+                                    <div className="she-wdkit-popup-accordion">
+                                        {wdkit_poup_accordian.map((item, index) => (
+                                            <div key={index} className="she-wdkit-accordion-item">
+                                                <div className={`she-wdkit-accordio-content ${activeIndex === index ? "she-tpae-content-opan" : ""}`} onClick={() => handleToggle(index)}>
+                                                    <div className="she-wdkit-accd-qui">{item.question}</div>
+                                                    <div className="she-wdkit-accd-icon">
+                                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            {activeIndex !== index && (<path d="M10 4.16675V15.8334" stroke="black" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />)}
+                                                            <path d="M4.16797 10H15.8346" stroke="black" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
+                                                        </svg>
+                                                    </div>
                                                 </div>
+                                                <div className={`she-wdkit-accd-ans ${activeIndex === index ? "opan-accordion" : ""}`}>{item.answer}</div>
                                             </div>
-                                            <div className={`she-wdkit-accd-ans ${activeIndex === index ? "opan-accordion" : ""}`}>{item.answer}</div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="she-btmsm-btn she-step-three-btn">
-                    <div className="she-btmsm-btn theme-bulider-sections">
-                        <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep - 1); HendalBackclick('get_updates'); }}>Back</span>
-                        <div className="she-rit-btn-cover">
-                            <span className="she-link-btn" onClick={() => she_skip_onbording()}>Skip</span>
-                            {!Nextercheck ? (
-                                <a className="she-pink-common-btn" onClick={(e) => install_nexter(e)}>{NexterBtn}</a>
-                            ) : (
-                                <a className="she-pink-common-btn" onClick={(e) => create_header_temp('nxt_builder')}>{createheaderBtn.btn_one}</a>
-                            )}
+                    <div className="she-btmsm-btn she-step-three-btn">
+                        <div className="she-btmsm-btn theme-bulider-sections">
+                            <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep - 1); HendalBackclick('get_updates'); }}>Back</span>
+                            <div className="she-rit-btn-cover">
+                                <span className="she-link-btn" onClick={() => she_skip_onbording()}>Skip</span>
+                                {!Nextercheck ? (
+                                    <a className="she-pink-common-btn" onClick={(e) => install_nexter(e)}>{NexterBtn}</a>
+                                ) : (
+                                    <a className="she-pink-common-btn" onClick={(e) => create_header_temp('nxt_builder')}>{createheaderBtn.btn_one}</a>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </>
         )
     }
@@ -503,7 +513,7 @@ const Onboarding = (props) => {
                         setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? -2 : -1)); HendalBackclick('get_updates');
                     }}>Back</a>
                     <div className="she-rit-btn-cover step-foure-btn">
-                        <span className="she-link-btn" onClick={() => she_skip_onbording()}>{__('Skip','she-header')}</span>
+                        <span className="she-link-btn" onClick={() => she_skip_onbording()}>{__('Skip', 'she-header')}</span>
                         <a className="she-pink-common-btn" onClick={(e) => create_header_temp('elementor_library')}>{createheaderBtn.btn_two}</a>
                     </div>
                 </div>
