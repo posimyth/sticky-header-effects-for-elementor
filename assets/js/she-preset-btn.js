@@ -7,17 +7,16 @@
 
         const urlParams = new URLSearchParams(window.location.search);
         const sheOnload = urlParams.get('she_onload');
-
-        urlParams.delete('she_onload');
-        const newUrl = window.location.pathname + '?' + urlParams.toString();
-        window.history.replaceState({}, '', newUrl);
-
-
+        
         if (sheOnload === 'true') {
             const postId = 18061;
             she_load_wdkit(postId);
         }
 
+        const url = new URL(window.location.href);
+        url.searchParams.delete('she_onload');
+        window.history.replaceState({}, '', url);
+        
         jQuery(document).on('click', ".she-preset-editor-raw", function (event) {
 
             var $link = jQuery(this);
