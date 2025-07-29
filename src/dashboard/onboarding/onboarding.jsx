@@ -162,7 +162,8 @@ const Onboarding = (props) => {
             );
 
             let editUrl = page_data.data.edit_url.replace(/&amp;/g, '&');
-            window.open(editUrl, '_blank');
+            window.location.href = editUrl;
+            // window.open(editUrl);
 
             let form = new FormData();
             form.append('action', 'she_dashboard_ajax_call');
