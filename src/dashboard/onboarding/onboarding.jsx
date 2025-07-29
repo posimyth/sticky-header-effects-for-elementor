@@ -213,7 +213,7 @@ const Onboarding = (props) => {
             // } else {
             //     setOnBoardingStep(onBoardingStep + 1);
             // }
-           
+
         }
     };
 
@@ -526,7 +526,9 @@ const Onboarding = (props) => {
 
         <div className="she-onboarding-cover">
             <div className="she-onbording-close">
-                <span className="she-onbording-btn" onClick={() => she_skip_onbording()}>Skip Setup</span>
+                <span className="she-onbording-btn" onClick={() => she_skip_onbording()}>Skip Setup
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M15 5 5 15M5 5l10 10"></path></svg>
+                </span>
             </div>
             <div className="she-steps-cover">
                 {TrueStep
