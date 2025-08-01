@@ -12,6 +12,7 @@ const NavBox = (props) => {
     var she_version = shed_data.shed_wp_version;
     var nonce = shed_data.nonce;
     var ajax_url = shed_data.ajax_url;
+    var she_nexter_plugin = shed_data.shed_plugins;    
 
     const location = useLocation();
     const fullUrl = window.location.href;
@@ -42,7 +43,16 @@ const NavBox = (props) => {
                 setThemeBuilder_plugin(true);
             }
         }
-    }, [props?.she_dashboard_data, props?.plugin_check]);
+
+        if (she_nexter_plugin) {
+            const plugin_list = she_nexter_plugin;
+            const index = plugin_list.findIndex((plg) => plg.name === 'nexter-extension');
+            if (index > -1 && plugin_list[index]?.status === 'active') {
+                setThemeBuilder_plugin(true);
+            }
+        }
+
+    }, [props?.she_dashboard_data, props?.plugin_check,she_nexter_plugin]);
 
     return (
 

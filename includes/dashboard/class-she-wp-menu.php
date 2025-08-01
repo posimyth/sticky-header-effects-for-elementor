@@ -115,6 +115,34 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 				$she_notificetions = 'open';
 			}
 
+			
+			$plugins = array(
+				array(
+					'name'        => 'nexter-extension',
+					'status'      => '',
+					'plugin_slug' => 'nexter-extension/nexter-extension.php',
+				),
+			);
+
+			$all_plugins = get_plugins();
+			$update_plugin = array();
+			foreach ( $plugins as $plugin ) {
+				$pluginslug = ! empty( $plugin['plugin_slug'] ) ? sanitize_text_field( wp_unslash( $plugin['plugin_slug'] ) ) : '';
+
+				if ( ! is_plugin_active( $pluginslug ) ) {
+					if ( ! isset( $all_plugins[ $pluginslug ] ) ) {
+							$plugin['status'] = 'unavailable';
+					} else {
+						$plugin['status'] = 'inactive';
+					}
+
+					$update_plugin[] = $plugin;
+				} elseif ( is_plugin_active( $pluginslug ) ) {
+					$plugin['status'] = 'active';
+					$update_plugin[]  = $plugin;
+				}
+			}
+
 			if ( 'elementor_page_she-header' === $page ) {
 				wp_enqueue_style( 'she-editor-css', SHE_HEADER_URL . 'build/index.css', array(), SHE_HEADER_VERSION );
 
@@ -133,6 +161,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 						'shed_wdkit_url'  => SHE_WDKIT_URL,
 						'onboarding_setup'  => get_option( 'she_onboarding_setup' ),
 						'shed_notificetions' => $she_notificetions,
+						'shed_plugins' => $update_plugin,
 					),
 				);
 			}

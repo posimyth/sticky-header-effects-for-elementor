@@ -180,48 +180,51 @@ const Onboarding = (props) => {
 
     const subscribe_she = async () => {
 
-        if (!isFormValid) {
-            return;
-        }
+        // if (!isFormValid) {
+        //     return;
+        // }
 
         // setSubscribeBtn('Submitted !');
 
-        let form = new FormData();
-        form.append('action', 'she_dashboard_ajax_call');
-        form.append('nonce', nonce);
-        form.append('type', 'she_user_meta_data');
-        // form.append('resolutions', resolutions);
-        var axiosResponse = await axios.post(ajax_url, form);
-
-        const encodedEmail = encodeURIComponent(email);
-
-        const welcomeEmailUrl = `https://store.posimyth.com/?fluentcrm=1&route=contact&hash=f808721e-d3c0-4554-9146-2bc6a63a2974&email=${encodedEmail}`;
-
-        const response = await fetch(welcomeEmailUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'http://localhost/',
-            },
-            mode: 'no-cors',
-        });
-
-        if (response) {
-
-            // if (selectElementor === 'elementor_pro') {
-            //     setOnBoardingStep(onBoardingStep + 2);
-            // } else {
-            //     setOnBoardingStep(onBoardingStep + 1);
-            // }
-
+        if (isChecked) {
+            let form = new FormData();
+            form.append('action', 'she_dashboard_ajax_call');
+            form.append('nonce', nonce);
+            form.append('type', 'she_user_meta_data');
+            // form.append('resolutions', resolutions);
+            var axiosResponse = await axios.post(ajax_url, form);
         }
+
+        if (isValidEmail(email)) {
+            const encodedEmail = encodeURIComponent(email);
+
+            const welcomeEmailUrl = `https://store.posimyth.com/?fluentcrm=1&route=contact&hash=f808721e-d3c0-4554-9146-2bc6a63a2974&email=${encodedEmail}`;
+
+            const response = await fetch(welcomeEmailUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': 'http://localhost/',
+                },
+                mode: 'no-cors',
+            });
+
+            if (response) {
+                // if (selectElementor === 'elementor_pro') {
+                //     setOnBoardingStep(onBoardingStep + 2);
+                // } else {
+                //     setOnBoardingStep(onBoardingStep + 1);
+                // }
+            }
+        }
+
     };
 
     const isValidEmail = (email) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     };
 
-    const isFormValid = isValidEmail(email) && isChecked;
+    // const isFormValid = isValidEmail(email) && isChecked;
 
 
     const select_mode = () => {
@@ -348,21 +351,9 @@ const Onboarding = (props) => {
                     <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep - 1); HendalBackclick('select_mode'); }}>Back</span>
                     <div className="she-rit-btn-cover">
                         <span className="she-link-btn" onClick={() => { setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? 2 : 1)); }}>Skip</span>
-                        <a
-                            className="she-pink-common-btn"
-                            style={{
-                                opacity: isFormValid ? 1 : 0.5,
-                                pointerEvents: isFormValid ? 'auto' : 'none',
-                                cursor: isFormValid ? 'pointer' : 'not-allowed'
-                            }}
-                            onClick={() => {
-                                setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? 2 : 1));
-                                Hendalclick('get_updates');
-                                subscribe_she();
-                            }}
-                        >
-                            Subscribe
-                        </a>
+                        <a className="she-pink-common-btn"
+                            onClick={() => { setOnBoardingStep(onBoardingStep + (selectElementor === 'elementor_pro' ? 2 : 1)); Hendalclick('get_updates'); subscribe_she(); }}
+                        >Subscribe</a>
 
                     </div>
                 </div>
