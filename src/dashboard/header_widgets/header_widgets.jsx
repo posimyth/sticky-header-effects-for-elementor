@@ -197,7 +197,7 @@ const Header_widgets = (props) => {
 
         if (type == 'tpae') {
 
-            SetDwonloadBtn('Installing TPAE');
+            SetDwonloadBtn('Installing The Plus Addons');
             she_slug = 'the-plus-addons-for-elementor-page-builder/theplus_elementor_addon.php';
             she_name = 'the-plus-addons-for-elementor-page-builder';
 
