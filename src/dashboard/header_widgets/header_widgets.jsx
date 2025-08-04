@@ -139,16 +139,20 @@ const Header_widgets = (props) => {
 
     const wdkit_poup_accordian = [
         {
-            question: "Why do I need to install the WDesignKit plugin to access widgets?",
-            answer: "WDesignKit plugin offers access to over 100+ exclusive widgets designed for Elementor, Gutenberg, and Bricks Builder."
+            question: "Why Do I Need to Install WDesignKit If I Already Have The Plus Addons for Elementor?",
+            answer: "Using WDesignKit you will get access of extra Elementor Widgets, which is not part of The Plus Addons for Elementor. Those widgets built from Widget Builder of WDesignKit and You can edit them from our Easy to Use Widget Builder as well."
         },
         {
-            question: "Are these widgets customizable?",
-            answer: "WDesignKit plugin offers access to over 100+ exclusive widgets."
+            question: "Why Can’t These Widgets Be Part of The Plus Addons for Elementor?",
+            answer: "We designed The Plus Addons to focus on essential and core widgets that are required for most websites. WDesignKit, on the other hand, is a library with specialized widgets. You can download only those you want to use in WDesignKit."
         },
         {
-            question: "Will the plugin impact my site’s speed?",
-            answer: "Widgets designed for Elementor, Gutenberg, and Bricks Builder."
+            question: "Will the Widgets Remain If I Remove WDesignKit?",
+            answer: "No, the widgets will be removed if you delete WDesignKit, as it is required for widgets used from WDesignKit."
+        },
+        {
+            question: "Will This Affect My Website Performance?",
+            answer: "Not at all. Performance is our priority. WDesignKit will load assets of only widgets you downloaded and used on on that page. No extra assets will be loaded ever."
         }
     ];
 
