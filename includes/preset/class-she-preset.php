@@ -257,7 +257,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 							<div class="she-support-icon">
 								<div class="she-icon-list">
 									<img src="<?php echo SHE_HEADER_URL . 'assets/images/products/tpae-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
-									<p>Navigation Widgets</p>
+									<p>Navigation Menu Widget</p>
 								</div>
 								<div class="she-icon-list">
 									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
