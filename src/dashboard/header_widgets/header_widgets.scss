@@ -665,7 +665,7 @@
         border-radius: 8px;
         text-align: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        width: 34vw;
+        width: 40vw;
         height: auto;
     }
 
@@ -693,9 +693,9 @@
     .she-wdkit-popup-content {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 5px;
         align-items: center;
-        padding: 20px 40px 0px 40px;
+        padding: 20px 20px 0px;
     }
 
     .she-wdkit-popup-title {
