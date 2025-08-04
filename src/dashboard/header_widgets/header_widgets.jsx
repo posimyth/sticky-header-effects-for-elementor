@@ -159,12 +159,14 @@ const Header_widgets = (props) => {
     const Wdesign_popup = () => {
         return (
             <div className="she-wdkit-popup-content">
-                <div className="she-wdkit-popup-title">Get Access to 50+ More Unique Elementor Widgets from WDesignKit</div>
+                <div className="she-wdkit-popup-title">Get Access to 50+ More Unique </div>
+                <div className="she-wdkit-popup-title">Elementor Widgets from WDesignKit</div>
                 <div className="she-wdkit-features-dic">
                     <ul>
                         <li>Get Access to 1000+ Elementor Templates</li>
                         <li>50+ Unique Elementor Widgets</li>
-                        <li>Custom Elementor Widget Builder</li>
+                    </ul>
+                    <ul><li>Custom Elementor Widget Builder</li>
                         <li>100% Customizable Widgets</li>
                     </ul>
                 </div>
