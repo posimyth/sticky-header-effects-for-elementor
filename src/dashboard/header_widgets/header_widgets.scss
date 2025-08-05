@@ -665,7 +665,7 @@
         border-radius: 8px;
         text-align: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        width: 40vw;
+        width: 38vw;
         height: auto;
     }
 
@@ -713,7 +713,7 @@
     }
 
     .she-wdkit-features-dic ul {
-        list-style-type: disc;
+        // list-style-type: disc;
         // padding: 2px;
         color: white;
         display: flex;
@@ -724,6 +724,9 @@
 
     .she-wdkit-features-dic ul li {
         font-size: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
     .she-wdkit-install-btn {
@@ -788,7 +791,8 @@
         color: #ffff;
         text-align: left;
     }
-    .she-wdkit-accd-qui{
+
+    .she-wdkit-accd-qui {
         text-align: left;
     }
 
