@@ -161,7 +161,7 @@ const ElementorTemplates = (props) => {
                                     <h4 className='she-elementor-template-title she-in-sec-heading'>{t_data.title}</h4>
                                     {/* <span className='she-float-box-title'>{t_data.title}</span> */}
                                     {plugin_status?.status === "active" || pluginActive ?
-                                        <a onClick={(e) => wdkit_template_url(t_data.title)} target="_blank" className='she-ghost-btn'>{__('Import Template', 'she-header')}</a>
+                                        <a onClick={(e) => wdkit_template_url(t_data.title)} target="_blank" className='she-ghost-btn'>{__('Download Template', 'she-header')}</a>
                                         :
                                         <a href={t_data.post_url + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" className='she-ghost-btn'>{__('Live Preview', 'she-header')}</a>
                                     }
