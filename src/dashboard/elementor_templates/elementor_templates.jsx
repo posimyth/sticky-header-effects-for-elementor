@@ -13,7 +13,6 @@ const ElementorTemplates = (props) => {
     var wdk_api = shed_data.shed_wdkit_url;
     var api_url = wdk_api + 'api/front/getfilterbrowsetemplates';
     var she_card_bg = plugin_url + 'assets/images/theme_bulider/she-dummy-bg.png';
-    var plugin_status = props.plugin_check[1];
     var plugins = JSON.stringify([1014]);
 
     var api_body = {
@@ -27,10 +26,35 @@ const ElementorTemplates = (props) => {
 
     const [template_list, settemplate_list] = useState([]);
     const [wdkit_skeleton, setwdkit_skeleton] = useState(true);
+    const [ElementPro, SetElementPro] = useState(false);
+    const [buttonText, setButtonText] = useState('Enable Templates');
+    const [pluginActive, setPluginActive] = useState(false);
 
     useEffect(() => {
         get_etemplates()
     }, [])
+
+    var plugin_status_check = props.plugin_check;
+
+    useEffect(() => {
+
+        const element_pro = plugin_status_check.find((check_status) => check_status?.name === 'elementor-pro' && check_status.status === 'active');
+
+        if (element_pro) {
+            SetElementPro(true);
+        } else {
+            SetElementPro(false);
+        }
+
+        const Wdesign_kit = plugin_status_check.find((check_status) => check_status?.name === 'wdesignkit' && check_status.status === 'active');
+
+        if (Wdesign_kit) {
+            setPluginActive(true);
+        } else {
+            setPluginActive(false);
+        }
+
+    }, [plugin_status_check]);
 
     const wdkit_template_url = (templateTitle) => {
         var fullUrl = window.location.href;
@@ -39,6 +63,23 @@ const ElementorTemplates = (props) => {
         const url = `${baseUrl}?page=wdesign-kit#/browse?search=${encodeURIComponent(templateTitle)}`;
 
         window.open(url, '_blank');
+    }
+
+    const wdkit_Plugin_url = () => {
+        var fullUrl = window.location.href;
+        var baseUrl = fullUrl.split('/admin.php')[0];
+
+        var pluginId = '';
+
+        if (ElementPro) {
+            pluginId = '[1014,1003,1004]';
+        } else {
+            pluginId = '[1014,1003]';
+        }
+
+        const encodedPluginId = encodeURIComponent(pluginId);
+
+        return baseUrl + '/admin.php?page=wdesign-kit#/browse?plugin=' + encodedPluginId;
     }
 
     const Wkit_template_Skeleton = () => {
@@ -76,9 +117,6 @@ const ElementorTemplates = (props) => {
         }
     }
 
-    const [buttonText, setButtonText] = useState('More Templates');
-    const [pluginActive, setPluginActive] = useState(false);
-
     const [loaderVisible, setLoaderVisible] = useState(false);
 
     const handleClick = async () => {
@@ -93,6 +131,7 @@ const ElementorTemplates = (props) => {
         form.append('type', 'she_plugin_install');
         form.append('slug', 'wdesignkit/wdesignkit.php');
         form.append('name', 'wdesignkit');
+        form.append('she_plugin', 'she_plugin');
 
         var response = await axios.post(ajax_url, form);
         var data = response.data;
@@ -107,16 +146,6 @@ const ElementorTemplates = (props) => {
         }
     };
 
-    const wdkit_Plugin_url = () => {
-        var fullUrl = window.location.href;
-        var baseUrl = fullUrl.split('/admin.php')[0];
-
-        const pluginId = '[1014]';
-        const encodedPluginId = encodeURIComponent(pluginId);
-
-        return baseUrl + '/admin.php?page=wdesign-kit#/browse?plugin=' + encodedPluginId;
-    }
-
     const items = Array.from({ length: 9 });
 
     return (
@@ -124,14 +153,12 @@ const ElementorTemplates = (props) => {
             <div className='she-section-heading-cover'>
                 <h3 className='she-section-heading'>{__('Header Templates', 'she-header')}</h3>
 
-                <div className='she-common-btn'>
-                    {plugin_status?.status === "active" || pluginActive ?
-                        <a href={wdkit_Plugin_url()} className='she-purple-common-btn' target='_blank' rel="noopener noreferrer">{__('Open Templates', 'she-header')}</a>
-                        :
-                        <a className='she-purple-common-btn' onClick={(e) => handleClick(e)} >{buttonText}</a>
-                    }
+                {!pluginActive &&
+                    <div className='she-common-btn'>
+                        <a className='she-purple-common-btn' onClick={(e) => handleClick(e)}>{buttonText}</a>
+                    </div>
+                }
 
-                </div>
             </div>
 
             <div className='she-element-temp-bx-cov-main'>
@@ -160,7 +187,7 @@ const ElementorTemplates = (props) => {
                                 <div className='she-ele-temp-detail'>
                                     <h4 className='she-elementor-template-title she-in-sec-heading'>{t_data.title}</h4>
                                     {/* <span className='she-float-box-title'>{t_data.title}</span> */}
-                                    {plugin_status?.status === "active" || pluginActive ?
+                                    {pluginActive ?
                                         <a onClick={(e) => wdkit_template_url(t_data.title)} target="_blank" className='she-ghost-btn'>{__('Download Template', 'she-header')}</a>
                                         :
                                         <a href={t_data.post_url + '?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" className='she-ghost-btn'>{__('Live Preview', 'she-header')}</a>
@@ -171,10 +198,10 @@ const ElementorTemplates = (props) => {
                     })}
                 </div>
                 <div className="she-btn-wrap">
-                    {plugin_status?.status === "active" || pluginActive ?
-                        <a href="?page=wdesign-kit#/browse" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('Open Templates', 'she-header')}</a>
+                    {pluginActive ?
+                        <a href={wdkit_Plugin_url()} target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('Open Templates', 'she-header')}</a>
                         :
-                        <a href="https://wdesignkit.com/templates?builder=1001" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('Explore More Header Templates', 'she-header')}</a>
+                        <a href="https://wdesignkit.com/templates?builder=1001" target="_blank" rel="noopener noreferrer" className="she-common-btn">{__('View More Website Templates', 'she-header')}</a>
                     }
                 </div>
             </div>

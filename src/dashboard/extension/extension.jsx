@@ -24,6 +24,19 @@ const Extension = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
+        const handleEsc = (event) => {
+            if (event.key === "Escape") {
+                NexterPopup(false);
+            }
+        };
+
+        window.addEventListener("keydown", handleEsc);
+        return () => {
+            window.removeEventListener("keydown", handleEsc);
+        };
+    }, []);
+
+    useEffect(() => {
 
         const nexterStatus = plugin_status.find((check_status) => check_status.name === 'nexter-extension' && check_status.status === 'active');
 

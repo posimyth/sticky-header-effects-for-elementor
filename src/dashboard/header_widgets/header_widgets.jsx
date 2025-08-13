@@ -28,6 +28,20 @@ const Header_widgets = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
+        const handleEsc = (event) => {
+            if (event.key === "Escape") {
+                ThePlusPopup(false);
+                SetWdkitPopup(false);
+            }
+        };
+
+        window.addEventListener("keydown", handleEsc);
+        return () => {
+            window.removeEventListener("keydown", handleEsc);
+        };
+    }, []);
+
+    useEffect(() => {
 
         const tpae_Status = plugin_status.find((check_status) => check_status.name === 'the-plus-addons-for-elementor-page-builder' && check_status.status === 'active');
 
