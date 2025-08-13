@@ -160,6 +160,15 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 				$activation_result = activate_plugin( $plugin_basename );
 
 				$success = null === $activation_result;
+				
+				$wdkit_onbording = get_option( 'wkit_onbording_end', null );
+
+				if ( $wdkit_onbording === null ) {
+					add_option( 'wkit_onbording_end', true );
+				} else {
+					update_option( 'wkit_onbording_end', true );
+				}
+
 				$result  = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
 
 			} elseif ( isset( $installed_plugins[ $plugin_basename ] ) ) {
