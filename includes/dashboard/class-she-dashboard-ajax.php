@@ -429,6 +429,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 * Plugin Install
 		 *
 		 * @since 2.0
+		 * @version 2.1.1
 		 */
 		public function she_plugin_install() {
 
@@ -443,6 +444,19 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			$name = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
 			if ( ! $slug ) {
 				return $this->she_set_response( false, 'Slug Not Found.', 'Something went wrong.' );
+			}
+
+			$she_plugin = isset( $_POST['she_plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['she_plugin'] ) ) : '';
+
+			if(!empty($she_plugin)){
+
+				$wdkit_onbording = get_option( 'wkit_onbording_end', null );
+
+				if ( $wdkit_onbording === null ) {
+					add_option( 'wkit_onbording_end', true );
+				} else {
+					update_option( 'wkit_onbording_end', true );
+				}
 			}
 
 			$installed_plugins = get_plugins();

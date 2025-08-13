@@ -163,7 +163,7 @@
 }
 
 #she-wdkit-elementorp .tp-main-container-preset {
-    width: 60vw;
+    width: 900px;
     background-color: #040483;
 }
 
@@ -180,7 +180,7 @@
     color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
     position: relative;
-    padding: 30px 50px 0;
+    /* padding: 30px 50px 0; */
     overflow: hidden;
     align-items: center;
     gap: 12px
@@ -294,8 +294,8 @@
 
 #she-wdkit-elementorp .she-image-sections {
     display: flex;
-    width: 60vw;
-    height: 20vw;
+    width: 900px;
+    height: 348px;
     position: relative;
     background-image: url(../images/banner/wdkit-frame.png);
     background-size: cover
