@@ -446,19 +446,6 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				return $this->she_set_response( false, 'Slug Not Found.', 'Something went wrong.' );
 			}
 
-			$she_plugin = isset( $_POST['she_plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['she_plugin'] ) ) : '';
-
-			if(!empty($she_plugin)){
-
-				$wdkit_onbording = get_option( 'wkit_onbording_end', null );
-
-				if ( $wdkit_onbording === null ) {
-					add_option( 'wkit_onbording_end', true );
-				} else {
-					update_option( 'wkit_onbording_end', true );
-				}
-			}
-
 			$installed_plugins = get_plugins();
 
 			include_once ABSPATH . 'wp-admin/includes/file.php';
@@ -501,6 +488,18 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				$activation_result = activate_plugin( $plugin_basename );
 
 				$success = null === $activation_result;
+
+				$she_plugin = isset( $_POST['she_plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['she_plugin'] ) ) : '';
+				if(!empty($she_plugin)){
+
+					$wdkit_onbording = get_option( 'wkit_onbording_end', null );
+
+					if ( $wdkit_onbording === null ) {
+						add_option( 'wkit_onbording_end', true );
+					} else {
+						update_option( 'wkit_onbording_end', true );
+					}
+				}
 				$result  = $this->she_set_response( $success, 'Successfully Install', 'Successfully Install', '' );
 
 			} elseif ( isset( $installed_plugins[ $plugin_basename ] ) ) {
@@ -508,6 +507,18 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				$activation_result = activate_plugin( $plugin_basename );
 
 				$success = null === $activation_result;
+				$she_plugin = isset( $_POST['she_plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['she_plugin'] ) ) : '';
+
+				if(!empty($she_plugin)){
+
+					$wdkit_onbording = get_option( 'wkit_onbording_end', null );
+
+					if ( $wdkit_onbording === null ) {
+						add_option( 'wkit_onbording_end', true );
+					} else {
+						update_option( 'wkit_onbording_end', true );
+					}
+				}
 				$result  = $this->she_set_response( $success, 'Successfully Activate', 'Successfully Activate', '' );
 
 			}
