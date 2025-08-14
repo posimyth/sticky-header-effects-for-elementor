@@ -121,6 +121,11 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 					'status'      => '',
 					'plugin_slug' => 'nexter-extension/nexter-extension.php',
 				),
+				array(
+					'name'        => 'wdesignkit',
+					'status'      => '',
+					'plugin_slug' => 'wdesignkit/wdesignkit.php',
+				),
 			);
 
 			$all_plugins   = get_plugins();
