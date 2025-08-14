@@ -39,9 +39,9 @@ const ElementorTemplates = (props) => {
         if (she_wdkit_plugin) {
             const plugin_list = she_wdkit_plugin;
             if (plugin_list[1]?.status === 'active') {
-                setPluginActive('hide');
+                setPluginActive(true);
             }else{
-                setPluginActive('show');
+                setPluginActive(false);
             }            
         }
     }, []);
@@ -61,7 +61,7 @@ const ElementorTemplates = (props) => {
         const Wdesign_kit = plugin_status_check.find((check_status) => check_status?.name === 'wdesignkit' && check_status.status === 'active');
 
         if (Wdesign_kit) {
-            setPluginActive('hide');
+            setPluginActive(true);
         }
 
     }, [plugin_status_check]);
@@ -148,7 +148,7 @@ const ElementorTemplates = (props) => {
 
         if (data.success) {
             setButtonText('Installed WDesignKit');
-            setPluginActive('hide');
+            setPluginActive(true);
             setLoaderVisible(true);
         } else {
             setButtonText('Installation Failed');
@@ -164,7 +164,7 @@ const ElementorTemplates = (props) => {
                 <h3 className='she-section-heading'>{__('Header Templates', 'she-header')}</h3>
 
                 <>
-                    {pluginActive === 'show' && (
+                    {pluginActive === false && (
                         <div className='she-common-btn'>
                             <a className='she-purple-common-btn' onClick={(e) => handleClick(e)}>{buttonText}</a>
                         </div>
