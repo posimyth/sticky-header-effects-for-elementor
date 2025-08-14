@@ -14,6 +14,7 @@ const ElementorTemplates = (props) => {
     var api_url = wdk_api + 'api/front/getfilterbrowsetemplates';
     var she_card_bg = plugin_url + 'assets/images/theme_bulider/she-dummy-bg.png';
     var plugins = JSON.stringify([1014]);
+    var she_wdkit_plugin = shed_data.shed_plugins;
 
     var api_body = {
         ParPage: 9,
@@ -28,11 +29,22 @@ const ElementorTemplates = (props) => {
     const [wdkit_skeleton, setwdkit_skeleton] = useState(true);
     const [ElementPro, SetElementPro] = useState(false);
     const [buttonText, setButtonText] = useState('Enable Templates');
-    const [pluginActive, setPluginActive] = useState(false);
+    const [pluginActive, setPluginActive] = useState('');
 
     useEffect(() => {
         get_etemplates()
     }, [])
+
+    useEffect(() => {
+        if (she_wdkit_plugin) {
+            const plugin_list = she_wdkit_plugin;
+            if (plugin_list[1]?.status === 'active') {
+                setPluginActive('hide');
+            }else{
+                setPluginActive('show');
+            }            
+        }
+    }, []);
 
     var plugin_status_check = props.plugin_check;
 
@@ -49,9 +61,7 @@ const ElementorTemplates = (props) => {
         const Wdesign_kit = plugin_status_check.find((check_status) => check_status?.name === 'wdesignkit' && check_status.status === 'active');
 
         if (Wdesign_kit) {
-            setPluginActive(true);
-        } else {
-            setPluginActive(false);
+            setPluginActive('hide');
         }
 
     }, [plugin_status_check]);
@@ -138,7 +148,7 @@ const ElementorTemplates = (props) => {
 
         if (data.success) {
             setButtonText('Installed WDesignKit');
-            setPluginActive(true);
+            setPluginActive('hide');
             setLoaderVisible(true);
         } else {
             setButtonText('Installation Failed');
@@ -153,12 +163,13 @@ const ElementorTemplates = (props) => {
             <div className='she-section-heading-cover'>
                 <h3 className='she-section-heading'>{__('Header Templates', 'she-header')}</h3>
 
-                {!pluginActive &&
-                    <div className='she-common-btn'>
-                        <a className='she-purple-common-btn' onClick={(e) => handleClick(e)}>{buttonText}</a>
-                    </div>
-                }
-
+                <>
+                    {pluginActive === 'show' && (
+                        <div className='she-common-btn'>
+                            <a className='she-purple-common-btn' onClick={(e) => handleClick(e)}>{buttonText}</a>
+                        </div>
+                    )}
+                </>
             </div>
 
             <div className='she-element-temp-bx-cov-main'>
