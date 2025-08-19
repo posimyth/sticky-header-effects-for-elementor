@@ -7,7 +7,7 @@
 
         const urlParams = new URLSearchParams(window.location.search);
         const sheOnload = urlParams.get('she_onload');
-        
+
         if (sheOnload === 'true') {
             const postId = 18061;
             she_load_wdkit(postId);
@@ -16,7 +16,7 @@
         const url = new URL(window.location.href);
         url.searchParams.delete('she_onload');
         window.history.replaceState({}, '', url);
-        
+
         jQuery(document).on('click', ".she-preset-editor-raw", function (event) {
 
             var $link = jQuery(this);
@@ -56,7 +56,18 @@
 
         var she_rebutton = true;
 
-        jQuery(document).on('click', ".she-design-from-scratch, .she-popup-close", function (event) {
+        jQuery(document).on('click', ".she-design-from-scratch", function (event) {
+            if (she_rebutton) {
+                she_rebutton = false;
+                $('body').append(notice);
+                setTimeout(function () {
+                    $('.she-custom-editor-notice').addClass('she-show-animate');
+                }, 50);
+                window.She_WdkitPopup.hide();
+            }
+        });
+
+        jQuery(document).on('click', ".she-popup-close", function (event) {
 
             she_rebutton = false;
 
