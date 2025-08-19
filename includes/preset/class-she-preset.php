@@ -76,8 +76,36 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 			add_action( 'wp_ajax_check_plugin_status', array( $this, 'she_check_plugin_status' ) );
 			add_action( 'wp_ajax_she_install_wdkit', array( $this, 'she_install_wdkit' ) );
 
+			add_action( 'wp_ajax_she_insert_entry', array( $this, 'she_design_scratch' ) );
+
 			add_action( 'elementor/editor/footer', array( $this, 'she_preview_html_popup' ) );
 		}
+
+		/**
+		 * Insert Entry Design From Scratch
+		 *
+		 * @since 2.1.1
+		 */
+		public function she_design_scratch() {
+
+			check_ajax_referer( 'she_wdkit_preview_popup', 'security' );
+
+			$option_key = 'she_design_from_scratch';
+
+			if ( get_option( $option_key ) ) {
+				wp_send_json_error( 'Already saved.' );
+			}
+
+			$updated = add_option( $option_key, true );
+
+			if ( $updated ) {
+				wp_send_json_success( 'Option saved successfully.' );
+			} else {
+				wp_send_json_error( 'Failed to save option.' );
+			}
+
+			wp_die();
+	    }
 
 		/**
 		 * Loded Wdesignkit Template Js
