@@ -56,6 +56,37 @@
 
         var she_rebutton = true;
 
+        function showNoticeAjx() {
+            
+            jQuery.ajax({
+                url: she_wdkit_preview_popup.ajax_url,
+                type: 'POST',
+                async: true,
+                data: {
+                    action: 'she_insert_entry',
+                    security: she_wdkit_preview_popup.nonce
+                },
+                success: function (response) {
+                    if (response.success) {
+                        $('body').append(notice);
+                        setTimeout(function () {
+                            $('.she-custom-editor-notice').addClass('she-show-animate');
+                        }, 50);
+                    }
+                    she_rebutton = false;
+                },
+                error: function () {
+                    she_rebutton = true;
+                }
+            });
+        }
+
+        jQuery(document).on('keydown', function (e) {
+            if (e.key === "Escape" || e.keyCode === 27) {
+                showNoticeAjx();
+            }
+        });
+
         jQuery(document).on('click', ".she-design-from-scratch", function (event) {
             if (she_rebutton) {
                 she_rebutton = false;
@@ -73,28 +104,8 @@
 
             window.She_WdkitPopup.hide();
 
-            jQuery.ajax({
-                url: she_wdkit_preview_popup.ajax_url,
-                type: 'POST',
-                async: true,
-                data: {
-                    action: 'she_insert_entry',
-                    security: she_wdkit_preview_popup.nonce
-                },
-                success: function (response) {
-                    
-                    if (response.success) {
-                        $('body').append(notice);
-                        setTimeout(function () {
-                            $('.she-custom-editor-notice').addClass('she-show-animate');
-                        }, 50);
-                    }
-                    she_rebutton = false;
-                },
-                error: function () {
-                    she_rebutton = true;
-                }
-            });
+            showNoticeAjx();
+
         });
 
         jQuery(document).on('click', ".she-custom-editor-close, .she-preset-editor-raw", function (event) {
