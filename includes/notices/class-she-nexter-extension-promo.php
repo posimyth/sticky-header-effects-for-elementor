@@ -3,10 +3,8 @@
  * Exit if accessed directly.
  *
  * @link       https://posimyth.com/
- * @since      5.6.11
+ * @since      2.1.1
  *
- * @package    Theplus
- * @subpackage ThePlus/Notices
  * */
 
 namespace Tp\Notices\TPAGInstallNotice;
@@ -40,7 +38,7 @@ if ( ! class_exists( 'She_Nexter_Extension_Promo_Notice' ) ) {
 		/**
 		 * Instance
 		 *
-		 * @since 5.6.11
+		 * @since 2.1.1
 		 * @access public
 		 * @var t_p_a_g_slug
 		 */
@@ -49,9 +47,9 @@ if ( ! class_exists( 'She_Nexter_Extension_Promo_Notice' ) ) {
 		/**
 		 * Instance
 		 *
-		 * @since 5.6.11
+		 * @since 2.1.1
 		 * @access public
-		 * @var t_p_a_g_slug
+		 * @var t_p_a_slug
 		 */
 		public $t_p_a_slug = 'the-plus-addons-for-elementor-page-builder/theplus_elementor_addon.php';
 
@@ -79,7 +77,7 @@ if ( ! class_exists( 'She_Nexter_Extension_Promo_Notice' ) ) {
 		 *
 		 * Perform some compatibility checks to make sure basic requirements are meet.
 		 *
-		 * @since 5.6.11
+		 * @since 2.1.1
 		 */
 		public function __construct() {
 			add_action( 'admin_notices', array( $this, 'she_nexter_extension_promo' ) );
@@ -89,7 +87,7 @@ if ( ! class_exists( 'She_Nexter_Extension_Promo_Notice' ) ) {
 		/**
 		 * Plugin Active Theplus Addons for Block Editor Notice Installing Notice show
 		 *
-		 * @since 5.6.11
+		 * @since 2.1.1
 		 */
 		public function she_nexter_extension_promo() {
 			$installed_plugins = get_plugins();

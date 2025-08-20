@@ -20,7 +20,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 define( 'SHE_HEADER_VERSION', '2.1.1' );
-define( 'SHE_HEADER_PREVIOUS_STABLE_VERSION', '2.0' );
+define( 'SHE_HEADER_PREVIOUS_STABLE_VERSION', '2.1.0' );
 
 define( 'SHE_HEADER__FILE__', __FILE__ );
 define( 'SHE_HEADER_PLUGIN_BASE', plugin_basename( SHE_HEADER__FILE__ ) );
