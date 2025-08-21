@@ -88,29 +88,29 @@ class Module extends Module_Base {
 		);
 
 		// $element->add_control(
-		// 	'upgrade_notice',
-		// 	array(
-		// 		'type'        => Controls_Manager::NOTICE,
-		// 		'notice_type' => 'info',
-		// 		'dismissible' => true,
-		// 		'heading'     => esc_html__( 'New FREE Pro Features', 'she-header' ),
-		// 		'content'     => esc_html__( 'Disable Fully Transparent Background, Background Type, Custom Menu Toggle Button, Bottom Shadow, Blur Background settings', 'she-header' ),
-		// 		'condition'   => array(
-		// 			'transparent!' => '',
-		// 		),
-		// 	)
+		// 'upgrade_notice',
+		// array(
+		// 'type'        => Controls_Manager::NOTICE,
+		// 'notice_type' => 'info',
+		// 'dismissible' => true,
+		// 'heading'     => esc_html__( 'New FREE Pro Features', 'she-header' ),
+		// 'content'     => esc_html__( 'Disable Fully Transparent Background, Background Type, Custom Menu Toggle Button, Bottom Shadow, Blur Background settings', 'she-header' ),
+		// 'condition'   => array(
+		// 'transparent!' => '',
+		// ),
+		// )
 		// );
 
 		// $element->add_control(
-		// 	'sticky_header_notice',
-		// 	array(
-		// 		'raw'             => __( 'IMPORTANT: This plugin does NOT control the sticky position of the header. Please use the above Motion Effects tab sticky options to make the header sticky', 'she-header' ),
-		// 		'type'            => Controls_Manager::RAW_HTML,
-		// 		'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
-		// 		'condition'       => array(
-		// 			'transparent!' => '',
-		// 		),
-		// 	)
+		// 'sticky_header_notice',
+		// array(
+		// 'raw'             => __( 'IMPORTANT: This plugin does NOT control the sticky position of the header. Please use the above Motion Effects tab sticky options to make the header sticky', 'she-header' ),
+		// 'type'            => Controls_Manager::RAW_HTML,
+		// 'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
+		// 'condition'       => array(
+		// 'transparent!' => '',
+		// ),
+		// )
 		// );
 
 		$element->add_control(

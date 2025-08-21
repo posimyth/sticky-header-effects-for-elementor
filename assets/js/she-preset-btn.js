@@ -13,6 +13,10 @@
             she_load_wdkit(postId);
         }
 
+        const url = new URL(window.location.href);
+        url.searchParams.delete('she_onload');
+        window.history.replaceState({}, '', url);
+
         jQuery(document).on('click', ".she-preset-editor-raw", function (event) {
 
             var $link = jQuery(this);
@@ -52,25 +56,65 @@
 
         var she_rebutton = true;
 
-        jQuery(document).on('click', ".she-design-from-scratch", function (event) {
+        function showNoticeAjx() {
+            
+            jQuery.ajax({
+                url: she_wdkit_preview_popup.ajax_url,
+                type: 'POST',
+                async: true,
+                data: {
+                    action: 'she_insert_entry',
+                    security: she_wdkit_preview_popup.nonce
+                },
+                success: function (response) {
+                    if (response.success) {
+                        $('body').append(notice);
+                        setTimeout(function () {
+                            $('.she-custom-editor-notice').addClass('she-show-animate');
+                        }, 50);
+                    }
+                    she_rebutton = false;
+                },
+                error: function () {
+                    she_rebutton = true;
+                }
+            });
+        }
 
+        jQuery(document).on('keydown', function (e) {
+            if (e.key === "Escape" || e.keyCode === 27) {
+                showNoticeAjx();
+            }
+        });
+
+        jQuery(document).on('click', ".she-design-from-scratch", function (event) {
             if (she_rebutton) {
                 she_rebutton = false;
                 $('body').append(notice);
-                 setTimeout(function(){
-                     $('.she-custom-editor-notice').addClass('she-show-animate');
+                setTimeout(function () {
+                    $('.she-custom-editor-notice').addClass('she-show-animate');
                 }, 50);
                 window.She_WdkitPopup.hide();
             }
         });
 
-        jQuery(document).on('click', ".she-custom-editor-close", function (event) {
+        jQuery(document).on('click', ".she-popup-close", function (event) {
+
+            she_rebutton = false;
+
+            window.She_WdkitPopup.hide();
+
+            showNoticeAjx();
+
+        });
+
+        jQuery(document).on('click', ".she-custom-editor-close, .she-preset-editor-raw", function (event) {
             $('.she-custom-editor-notice').removeClass('she-show-animate').addClass('she-hide-animate');
 
             setTimeout(function () {
-              $('.she-custom-editor-notice').remove();
-              she_rebutton = true;
-            }, 400); 
+                $('.she-custom-editor-notice').remove();
+                she_rebutton = true;
+            }, 400);
         });
 
         function she_load_wdkit(id) {
@@ -161,7 +205,7 @@
                             var $loader = $button.find('.she-wb-loader-circle');
                             var $text = $button.find('.she-enable-text');
 
-                            $loader.css('display', 'block');
+                            $loader.css('visibility', 'visible');
 
                             jQuery.ajax({
                                 url: she_wdkit_preview_popup.ajax_url,
@@ -178,13 +222,13 @@
                                         elementor.saver.update.apply().then(function () {
                                             window.location.hash = window.location.hash + '?wdesignkit=open&she=true'
                                             window.location.reload();
-                                            $loader.css('display', 'none');
+                                            $loader.css('visibility', 'hidden');
 
                                         });
 
                                     } else {
                                         $text.text(ENABLE_TEMPLATES_TEXT);
-                                        $loader.css('display', 'none');
+                                        $loader.css('visibility', 'hidden');
 
                                     }
 

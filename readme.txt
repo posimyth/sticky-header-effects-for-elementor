@@ -4,7 +4,7 @@ Tags: Elementor, Elementor Page Builder, Add-ons, Header, Sticky Header
 Requires at least: 6.3
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -143,6 +143,10 @@ Not at all. It’s highly optimized for performance and coded lightweight to ens
 8. Smarter Scroll Behaviors – Transparent, Distance Control, Sticky Logic
 
 == Changelog ==
+
+= 2.1.1 =
+- improvement: Header Template Import Process
+- Fixed: Minor Bug Fixes & Performance Improvements
 
 = 2.1.0 =
 - Fixed: Header Resize Issue Fixed

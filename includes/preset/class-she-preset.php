@@ -4,9 +4,6 @@
  *
  * @link       https://posimyth.com/
  * @since      2.0
- *
- * @package    Theplus
- * @subpackage ThePlus/Notices
  * */
 
 /**
@@ -76,7 +73,35 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 			add_action( 'wp_ajax_check_plugin_status', array( $this, 'she_check_plugin_status' ) );
 			add_action( 'wp_ajax_she_install_wdkit', array( $this, 'she_install_wdkit' ) );
 
+			add_action( 'wp_ajax_she_insert_entry', array( $this, 'she_design_scratch' ) );
+
 			add_action( 'elementor/editor/footer', array( $this, 'she_preview_html_popup' ) );
+		}
+
+		/**
+		 * Insert Entry Design From Scratch
+		 *
+		 * @since 2.1.1
+		 */
+		public function she_design_scratch() {
+
+			check_ajax_referer( 'she_wdkit_preview_popup', 'security' );
+
+			$option_key = 'she_design_from_scratch';
+
+			if ( get_option( $option_key ) ) {
+				$response = $this->she_response( 'Already saved.', '', false );
+			}
+
+			$updated = add_option( $option_key, true );
+
+			if ( $updated ) {
+				$response = $this->she_response( 'Option saved successfully.', '', true );
+			} else {
+				$response = $this->she_response( 'Failed to save option.', '', false );
+			}
+
+			wp_send_json( $response );
 		}
 
 		/**
@@ -107,6 +132,22 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 */
 		public function she_elementor_editor_style() {
 			wp_enqueue_style( 'she-wdkit-elementor-popup-preset', SHE_HEADER_URL . 'assets/css/she-wdkit-install-popup.css', array(), SHE_HEADER_VERSION );
+		}
+
+		/**
+		 * WdesignKit Onboarding check
+		 *
+		 * @since 2.1.1
+		 */
+		public function she_set_wdkit_onboarding() {
+
+			$wdkit_onbording = get_option( 'wkit_onbording_end', null );
+
+			if ( $wdkit_onbording === null ) {
+				add_option( 'wkit_onbording_end', true );
+			} else {
+				update_option( 'wkit_onbording_end', true );
+			}
 		}
 
 		/**
@@ -160,14 +201,20 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 				$activation_result = activate_plugin( $plugin_basename );
 
 				$success = null === $activation_result;
-				$result  = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
+
+				$this->she_set_wdkit_onboarding();
+
+				$result = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
 
 			} elseif ( isset( $installed_plugins[ $plugin_basename ] ) ) {
 
 				$activation_result = activate_plugin( $plugin_basename );
 
 				$success = null === $activation_result;
-				$result  = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
+
+				$this->she_set_wdkit_onboarding();
+
+				$result = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
 
 			}
 
@@ -208,7 +255,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 			?>
 			<div id="she-wdkit-wrap" class="tp-main-container-preset" style="display: none">
 				<div class="she-popup-close">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill="#fff" fill-opacity=".8" d="M12.293.293a1 1 0 1 1 1.414 1.414L8.414 7l5.293 5.293.068.076a1 1 0 0 1-1.406 1.406l-.076-.068L7 8.414l-5.293 5.293a1 1 0 1 1-1.414-1.414L5.586 7 .293 1.707A1 1 0 1 1 1.707.293L7 5.586 12.293.293Z"/></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill="#fff" fill-opacity=".8" d="M12.293.293a1 1 0 1 1 1.414 1.414L8.414 7l5.293 5.293.068.076a1 1 0 0 1-1.406 1.406l-.076-.068L7 8.414l-5.293 5.293a1 1 0 1 1-1.414-1.414L5.586 7 .293 1.707A1 1 0 1 1 1.707.293L7 5.586 12.293.293Z"/></svg>
 				</div>
 			<div class="she-popup-content">
 				<div class="she-middel-sections">
@@ -256,23 +303,23 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 						<div class="she-support-icon-main">
 							<div class="she-support-icon">
 								<div class="she-icon-list">
-									<img src="<?php echo SHE_HEADER_URL . 'assets/images/products/tpae-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
-									<p>TPAE Free Widgets</p>
+									<img src="<?php echo SHE_HEADER_URL . 'assets/images/products/tpae-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
+									<p><?php echo esc_html__( 'Navigation Menu Widget', 'she-header' ); ?></p>
 								</div>
 								<div class="she-icon-list">
-									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
-									<p>Elementor WordPress Menu</p>
+									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
+									<p><?php echo esc_html__( 'WordPress Menu', 'she-header' ); ?></p>
 								</div>
 								<div class="she-icon-list">
-									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.png'; ?>" alt="Elementor" class="she-support-icon-img" />
-									<p>Elementor Nav Menu</p>
+									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
+									<p><?php echo esc_html__( 'Nav Menu', 'she-header' ); ?></p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="wkit-she-preset-enable">
 						<div class="she-pink-btn she-wdesign-install">
-							<span class="she-enable-text"><?php echo esc_html__( 'Enable Header Templates', 'she-header' ); ?></span>
+							<span class="she-enable-text"><?php echo esc_html__( 'Install WDesignKit Plugin for Templates', 'she-header' ); ?></span>
 							<div class="she-wkit-publish-loader">
 								<div class="she-wb-loader-circle"></div>
 								</div>
