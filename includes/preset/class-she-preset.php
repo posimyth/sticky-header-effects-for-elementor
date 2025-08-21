@@ -5,8 +5,6 @@
  * @link       https://posimyth.com/
  * @since      2.0
  *
- * @package    Theplus
- * @subpackage ThePlus/Notices
  * */
 
 /**
@@ -93,18 +91,18 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 			$option_key = 'she_design_from_scratch';
 
 			if ( get_option( $option_key ) ) {
-				wp_send_json_error( 'Already saved.' );
+				$response = $this->she_response( 'Already saved.', '', false );
 			}
 
 			$updated = add_option( $option_key, true );
 
 			if ( $updated ) {
-				wp_send_json_success( 'Option saved successfully.' );
+				$response = $this->she_response( 'Option saved successfully.', '', true );
 			} else {
-				wp_send_json_error( 'Failed to save option.' );
+				$response = $this->she_response( 'Failed to save option.', '', false );
 			}
 
-			wp_die();
+			wp_send_json( $response );
 	    }
 
 		/**
@@ -135,6 +133,22 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 */
 		public function she_elementor_editor_style() {
 			wp_enqueue_style( 'she-wdkit-elementor-popup-preset', SHE_HEADER_URL . 'assets/css/she-wdkit-install-popup.css', array(), SHE_HEADER_VERSION );
+		}
+
+		/**
+		 * WdesignKit Onboarding check
+		 *
+		 * @since 2.1.1
+		 */
+		public function she_set_wdkit_onboarding( ) {
+
+			$wdkit_onbording = get_option( 'wkit_onbording_end', null );
+
+			if ( $wdkit_onbording === null ) {
+				add_option( 'wkit_onbording_end', true );
+			} else {
+				update_option( 'wkit_onbording_end', true );
+			}
 		}
 
 		/**
@@ -189,13 +203,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 
 				$success = null === $activation_result;
 				
-				$wdkit_onbording = get_option( 'wkit_onbording_end', null );
-
-				if ( $wdkit_onbording === null ) {
-					add_option( 'wkit_onbording_end', true );
-				} else {
-					update_option( 'wkit_onbording_end', true );
-				}
+				$this->she_set_wdkit_onboarding();
 
 				$result  = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
 
@@ -205,13 +213,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 
 				$success = null === $activation_result;
 
-				$wdkit_onbording = get_option( 'wkit_onbording_end', null );
-
-				if ( $wdkit_onbording === null ) {
-					add_option( 'wkit_onbording_end', true );
-				} else {
-					update_option( 'wkit_onbording_end', true );
-				}
+				$this->she_set_wdkit_onboarding();
 
 				$result  = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
 
@@ -303,15 +305,15 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 							<div class="she-support-icon">
 								<div class="she-icon-list">
 									<img src="<?php echo SHE_HEADER_URL . 'assets/images/products/tpae-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
-									<p>Navigation Menu Widget</p>
+									<p><?php echo esc_html__( 'Navigation Menu Widget', 'she-header' ); ?></p>
 								</div>
 								<div class="she-icon-list">
 									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
-									<p>WordPress Menu</p>
+									<p><?php echo esc_html__( 'WordPress Menu', 'she-header' ); ?></p>
 								</div>
 								<div class="she-icon-list">
 									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
-									<p>Nav Menu</p>
+									<p><?php echo esc_html__( 'Nav Menu', 'she-header' ); ?></p>
 								</div>
 							</div>
 						</div>

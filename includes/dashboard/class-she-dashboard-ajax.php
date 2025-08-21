@@ -426,6 +426,25 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		}
 
 		/**
+		 * WdesignKit Onboarding check
+		 *
+		 * @since 2.0
+		 * @version 2.1.1
+		 */
+		public function she_set_wdkit_onboarding( $she_plugin ) {
+
+			if ( ! empty( $she_plugin ) ) {
+				$wdkit_onbording = get_option( 'wkit_onbording_end', null );
+
+				if ( $wdkit_onbording === null ) {
+					add_option( 'wkit_onbording_end', true );
+				} else {
+					update_option( 'wkit_onbording_end', true );
+				}
+			}
+		}
+
+		/**
 		 * Plugin Install
 		 *
 		 * @since 2.0
@@ -490,16 +509,9 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				$success = null === $activation_result;
 
 				$she_plugin = isset( $_POST['she_plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['she_plugin'] ) ) : '';
-				if(!empty($she_plugin)){
+				
+				$this->she_set_wdkit_onboarding($she_plugin);
 
-					$wdkit_onbording = get_option( 'wkit_onbording_end', null );
-
-					if ( $wdkit_onbording === null ) {
-						add_option( 'wkit_onbording_end', true );
-					} else {
-						update_option( 'wkit_onbording_end', true );
-					}
-				}
 				$result  = $this->she_set_response( $success, 'Successfully Install', 'Successfully Install', '' );
 
 			} elseif ( isset( $installed_plugins[ $plugin_basename ] ) ) {
@@ -509,16 +521,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				$success = null === $activation_result;
 				$she_plugin = isset( $_POST['she_plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['she_plugin'] ) ) : '';
 
-				if(!empty($she_plugin)){
-
-					$wdkit_onbording = get_option( 'wkit_onbording_end', null );
-
-					if ( $wdkit_onbording === null ) {
-						add_option( 'wkit_onbording_end', true );
-					} else {
-						update_option( 'wkit_onbording_end', true );
-					}
-				}
+				$this->she_set_wdkit_onboarding($she_plugin);
 				$result  = $this->she_set_response( $success, 'Successfully Activate', 'Successfully Activate', '' );
 
 			}
