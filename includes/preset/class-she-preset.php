@@ -4,7 +4,6 @@
  *
  * @link       https://posimyth.com/
  * @since      2.0
- *
  * */
 
 /**
@@ -103,7 +102,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 			}
 
 			wp_send_json( $response );
-	    }
+		}
 
 		/**
 		 * Loded Wdesignkit Template Js
@@ -140,7 +139,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 *
 		 * @since 2.1.1
 		 */
-		public function she_set_wdkit_onboarding( ) {
+		public function she_set_wdkit_onboarding() {
 
 			$wdkit_onbording = get_option( 'wkit_onbording_end', null );
 
@@ -202,10 +201,10 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 				$activation_result = activate_plugin( $plugin_basename );
 
 				$success = null === $activation_result;
-				
+
 				$this->she_set_wdkit_onboarding();
 
-				$result  = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
+				$result = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
 
 			} elseif ( isset( $installed_plugins[ $plugin_basename ] ) ) {
 
@@ -215,7 +214,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 
 				$this->she_set_wdkit_onboarding();
 
-				$result  = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
+				$result = $this->she_response( 'Success Install WDesignKit', 'Success Install WDesignKit', $success, '' );
 
 			}
 
@@ -256,7 +255,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 			?>
 			<div id="she-wdkit-wrap" class="tp-main-container-preset" style="display: none">
 				<div class="she-popup-close">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill="#fff" fill-opacity=".8" d="M12.293.293a1 1 0 1 1 1.414 1.414L8.414 7l5.293 5.293.068.076a1 1 0 0 1-1.406 1.406l-.076-.068L7 8.414l-5.293 5.293a1 1 0 1 1-1.414-1.414L5.586 7 .293 1.707A1 1 0 1 1 1.707.293L7 5.586 12.293.293Z"/></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill="#fff" fill-opacity=".8" d="M12.293.293a1 1 0 1 1 1.414 1.414L8.414 7l5.293 5.293.068.076a1 1 0 0 1-1.406 1.406l-.076-.068L7 8.414l-5.293 5.293a1 1 0 1 1-1.414-1.414L5.586 7 .293 1.707A1 1 0 1 1 1.707.293L7 5.586 12.293.293Z"/></svg>
 				</div>
 			<div class="she-popup-content">
 				<div class="she-middel-sections">

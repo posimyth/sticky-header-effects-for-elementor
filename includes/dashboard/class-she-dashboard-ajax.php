@@ -509,20 +509,20 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				$success = null === $activation_result;
 
 				$she_plugin = isset( $_POST['she_plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['she_plugin'] ) ) : '';
-				
-				$this->she_set_wdkit_onboarding($she_plugin);
 
-				$result  = $this->she_set_response( $success, 'Successfully Install', 'Successfully Install', '' );
+				$this->she_set_wdkit_onboarding( $she_plugin );
+
+				$result = $this->she_set_response( $success, 'Successfully Install', 'Successfully Install', '' );
 
 			} elseif ( isset( $installed_plugins[ $plugin_basename ] ) ) {
 
 				$activation_result = activate_plugin( $plugin_basename );
 
-				$success = null === $activation_result;
+				$success    = null === $activation_result;
 				$she_plugin = isset( $_POST['she_plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['she_plugin'] ) ) : '';
 
-				$this->she_set_wdkit_onboarding($she_plugin);
-				$result  = $this->she_set_response( $success, 'Successfully Activate', 'Successfully Activate', '' );
+				$this->she_set_wdkit_onboarding( $she_plugin );
+				$result = $this->she_set_response( $success, 'Successfully Activate', 'Successfully Activate', '' );
 
 			}
 
@@ -681,7 +681,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 		/**
 		 * Create Page for Header
-		 * 
+		 *
 		 * @since 2.0
 		 */
 		public function she_create_page() {
@@ -763,7 +763,8 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 			$user_data['email'] = get_option( 'admin_email' );
 
-			$response = wp_remote_post( $this->onbording_api,
+			$response = wp_remote_post(
+				$this->onbording_api,
 				array(
 					'method' => 'POST',
 					'body'   => wp_json_encode( $user_data ),
