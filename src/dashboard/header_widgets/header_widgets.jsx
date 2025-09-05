@@ -170,13 +170,13 @@ const Header_widgets = (props) => {
         }
     ];
 
-    const CheckIcon_wdkit = (<svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0C6.15661 -9.78424e-09 6.80679 0.129329 7.41342 0.380602C8.02004 0.631876 8.57124 1.00017 9.03553 1.46447C9.49983 1.92876 9.86812 2.47995 10.1194 3.08658C10.3707 3.69321 10.5 4.34339 10.5 5C10.5 5.65661 10.3707 6.30679 10.1194 6.91342C9.86812 7.52004 9.49983 8.07124 9.03553 8.53553C8.57124 8.99983 8.02004 9.36812 7.41342 9.6194C6.80679 9.87067 6.15661 10 5.5 10C4.17392 10 2.90215 9.47322 1.96447 8.53553C1.02678 7.59785 0.5 6.32608 0.5 5C0.5 3.67392 1.02678 2.40215 1.96447 1.46447C2.90215 0.526784 4.17392 1.97602e-08 5.5 0ZM7.26667 3.47L4.875 5.86833L3.71167 4.705C3.67293 4.66626 3.62694 4.63553 3.57632 4.61456C3.5257 4.5936 3.47145 4.58281 3.41667 4.58281C3.36188 4.58281 3.30763 4.5936 3.25701 4.61456C3.2064 4.63553 3.16041 4.66626 3.12167 4.705C3.08293 4.74374 3.0522 4.78973 3.03123 4.84035C3.01026 4.89096 2.99947 4.94521 2.99947 5C2.99947 5.05479 3.01026 5.10904 3.03123 5.15965C3.0522 5.21027 3.08293 5.25626 3.12167 5.295L4.58 6.75333C4.6187 6.79214 4.66468 6.82292 4.71531 6.84393C4.76593 6.86493 4.82019 6.87574 4.875 6.87574C4.92981 6.87574 4.98407 6.86493 5.03469 6.84393C5.08532 6.82292 5.1313 6.79214 5.17 6.75333L7.85667 4.05833C7.93246 3.97964 7.97432 3.87433 7.97322 3.76508C7.97212 3.65583 7.92815 3.55138 7.85078 3.47423C7.77342 3.39709 7.66884 3.35341 7.55959 3.35262C7.45034 3.35183 7.34514 3.39398 7.26667 3.47Z" fill="white" /></svg>);
+    const CheckIcon_wdkit = (<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="none"><path fill="gray" d="M12.803 4.721a.5.5 0 0 1 .724.69l-7 7.334a.5.5 0 0 1-.715.008L3.478 10.42a.5.5 0 0 1 .67-.742l.038.035 1.97 1.97 6.647-6.962Z"/></svg>);
 
     const Wdesign_popup = () => {
         return (
             <div className="she-wdkit-popup-content">
-                <div className="she-wdkit-popup-title">{__('Get Access to 50+ More Unique')}</div>
-                <div className="she-wdkit-popup-title">{__('Elementor Widgets from WDesignKit')}</div>
+                <div className="she-wdkit-popup-title">{__('Get Access to 50+ More Unique Elementor')}</div>
+                <div className="she-wdkit-popup-title">{__('Widgets from WDesignKit')}</div>
                 <div className="she-wdkit-features-dic">
                     <ul className='she-dic-one' style={{ marginBottom: '0px' }}>
                         <li>{CheckIcon_wdkit}{__('Get Access to 1000+ Elementor Templates')}</li>
@@ -197,10 +197,13 @@ const Header_widgets = (props) => {
                             <div className={`she-wdkit-accordio-content ${activeIndex === index ? "she-tpae-content-opan" : ""}`} onClick={() => handleToggle(index)}>
                                 <div className="she-wdkit-accd-qui">{item.question}</div>
                                 <div>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        {activeIndex !== index && (<path d="M10 4.16675V15.8334" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />)}
-                                        <path d="M4.16797 10H15.8346" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" fill="none">
+                                    {activeIndex !== index ? (
+                                        <path fill="#020202" d="M14.165 7.733a6.167 6.167 0 1 0-12.333 0 6.167 6.167 0 0 0 12.333 0Zm-5.52-2.02a.5.5 0 0 1 .67-.035l.037.035 1.667 1.666a.5.5 0 0 1 0 .707L9.352 9.753a.5.5 0 1 1-.707-.707l.813-.813H5.332a.5.5 0 0 1 0-1h4.126l-.813-.813-.034-.038a.5.5 0 0 1 .034-.67Zm6.52 2.02a7.167 7.167 0 1 1-14.333 0 7.167 7.167 0 0 1 14.333 0Z"/>
+                                    ) : (
+                                        <path fill="#020202" d="M14.165 7.733a6.167 6.167 0 1 0-12.333 0 6.167 6.167 0 0 0 12.333 0ZM7.5 5.066a.5.5 0 1 1 1 0v4.127l.813-.813a.5.5 0 1 1 .707.707l-1.667 1.666a.5.5 0 0 1-.707 0L5.98 9.087l-.035-.038a.5.5 0 0 1 .704-.704l.038.035.813.813V5.066Zm7.666 2.667a7.167 7.167 0 1 1-14.333 0 7.167 7.167 0 0 1 14.333 0Z"/>
+                                    )}
+                                </svg>
                                 </div>
                             </div>
                             <div className={`she-wdkit-accd-ans ${activeIndex === index ? "opan-accordion" : ""}`}>{item.answer}</div>
@@ -490,7 +493,6 @@ const Header_widgets = (props) => {
                                                 </div>
                                             )
                                         })}
-
                                         {TheplusSowPopup && (
                                             <div className="she-tpae-popup" onClick={() => closePopup('tpae')}>
                                                 <div className="she-tpae-popup-bg" onClick={(e) => e.stopPropagation()}>
@@ -501,12 +503,17 @@ const Header_widgets = (props) => {
                                                 </div>
                                             </div>
                                         )}
-
-
                                         {WdkitPopup && (
                                             <div className="she-tpae-wdkit-popup" onClick={() => closePopup('wdkit')}>
                                                 <div className="she-wdkit-content-bg" onClick={(e) => e.stopPropagation()}>
-                                                    <div className="she-wdkit-popup-close" onClick={() => closePopup('wdkit')}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div>
+                                                    <div className='she-popup-header'>
+                                                        <div className='she-popup-header-svg'>
+                                                            <img src={plugin_url + 'assets/images/banner/wdkit-treadmark.svg'} alt='WDesignKit' />
+                                                        </div>
+                                                        <div className="she-wdkit-popup-close" onClick={() => closePopup('wdkit')}>
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#808080" xmlns="http://www.w3.org/2000/svg"><path fill="#808080" fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fillOpacity="0.8" /></svg>
+                                                        </div>
+                                                     </div>
                                                     <div className='she-wdkit-popup-wdk-body'>
                                                         <Wdesign_popup />
                                                     </div>

@@ -656,18 +656,24 @@
         justify-content: center;
         align-items: center;
         z-index: 99999;
+        backdrop-filter: blur(1px);
     }
 
     .she-wdkit-content-bg {
         position: relative;
-        background: #040483;
+        background: #FFFFFF;
         padding: 20px;
         border-radius: 8px;
         text-align: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        width: 38vw;
+        width: 760px;
         height: auto;
-        max-width: 600px;
+        max-width: 760px;
+    }
+
+    .she-popup-header {
+        display: flex;
+        align-items: center;
     }
 
     .she-wdkit-popup-close {
@@ -679,6 +685,8 @@
         width: max-content;
         right: 20px;
         z-index: 999;
+        border: 1px solid #F1F1F1;
+        border-radius: 4px;
     }
 
     .she-wdkit-popup-wdk-body {
@@ -700,7 +708,7 @@
     }
 
     .she-wdkit-popup-title {
-        color: #fff;
+        color: #020202;
         font-weight: 500;
         font-size: 25px;
         line-height: 1.4;
@@ -716,7 +724,7 @@
     .she-wdkit-features-dic ul {
         // list-style-type: disc;
         // padding: 2px;
-        color: white;
+        color: #808080;
         display: flex;
         justify-content: center;
         gap: 5px 26px;
@@ -732,7 +740,7 @@
 
     .she-wdkit-install-btn {
         padding: 12px 25px 12px 25px;
-        background: #C22076;
+        background: #020202;
         border-radius: 5px;
         color: #ffff;
         cursor: pointer;
@@ -742,7 +750,7 @@
         display: inline-block;
         position: relative;
         padding-left: 15px;
-        color: #ffff;
+        color: #020202;
         text-decoration: none;
         cursor: pointer;
 
@@ -760,7 +768,7 @@
         height: 1px;
         bottom: -4px;
         left: 8px;
-        background-color: #ffff;
+        background-color: #020202;
         transform-origin: bottom right;
         transition: transform 0.25s ease-out;
     }
@@ -786,10 +794,10 @@
     .she-wdkit-accordio-content {
         display: flex;
         justify-content: space-between;
-        background: #0f1a86;
+        background: #FFFFFF;
         padding: 10px;
         border-radius: 8px;
-        color: #ffff;
+        color: #020202;
         text-align: left;
     }
 
@@ -798,7 +806,7 @@
     }
 
     .she-tpae-content-opan {
-        border-bottom: 1px solid #ffffff30;
+        border-bottom: 1px solid #F1F1F1;
         border-radius: 8px 8px 0px 0px;
     }
 
@@ -806,7 +814,7 @@
         height: 0px;
         overflow: hidden;
         padding: 0px;
-        color: #ffff;
+        color: #020202;
         transition: height 0.3s ease, padding 0.3s ease;
         word-spacing: 4px;
     }

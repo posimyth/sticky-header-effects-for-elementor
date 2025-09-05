@@ -106,6 +106,10 @@
                 align-items: center;
                 text-decoration: blink;
 
+                svg{
+                    height: 20px;
+                }
+
                 .she-title-wrap {
                     font-family: $she_font_family;
                     font-size: 14px;
