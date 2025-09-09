@@ -789,6 +789,7 @@
     .she-wdkit-accordion-item {
         border: 1px solid #ffffff30;
         border-radius: 8px;
+        box-shadow: 0px 9px 14px 0px rgba(171, 171, 196, 0.12);
     }
 
     .she-wdkit-accordio-content {
@@ -805,7 +806,7 @@
         text-align: left;
     }
 
-    .she-tpae-content-opan {
+    .she-tpae-widget-content-opan {
         border-bottom: 1px solid #F1F1F1;
         border-radius: 8px 8px 0px 0px;
     }
@@ -814,7 +815,7 @@
         height: 0px;
         overflow: hidden;
         padding: 0px;
-        color: #020202;
+        color: rgba(128, 128, 128, 1);
         transition: height 0.3s ease, padding 0.3s ease;
         word-spacing: 4px;
     }

@@ -194,7 +194,7 @@ const Header_widgets = (props) => {
                 <div className="she-wdkit-popup-accordion">
                     {wdkit_poup_accordian.map((item, index) => (
                         <div key={index} className="she-wdkit-accordion-item">
-                            <div className={`she-wdkit-accordio-content ${activeIndex === index ? "she-tpae-content-opan" : ""}`} onClick={() => handleToggle(index)}>
+                            <div className={`she-wdkit-accordio-content ${activeIndex === index ? "she-tpae-widget-content-opan" : ""}`} onClick={() => handleToggle(index)}>
                                 <div className="she-wdkit-accd-qui">{item.question}</div>
                                 <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" fill="none">
