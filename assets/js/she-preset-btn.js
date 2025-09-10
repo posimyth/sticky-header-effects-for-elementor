@@ -7,6 +7,7 @@
 
         const urlParams = new URLSearchParams(window.location.search);
         const sheOnload = urlParams.get('she_onload');
+        var she_global_notification = false;
 
         if (sheOnload === 'true') {
             const postId = 18061;
@@ -18,6 +19,8 @@
         window.history.replaceState({}, '', url);
 
         jQuery(document).on('click', ".she-preset-editor-raw", function (event) {
+
+            she_global_notification = true
 
             var $link = jQuery(this);
 
@@ -82,8 +85,9 @@
         }
 
         jQuery(document).on('keydown', function (e) {
-            if (e.key === "Escape" || e.keyCode === 27) {
+            if ((e.key === "Escape" || e.keyCode === 27) && she_global_notification) {
                 showNoticeAjx();
+                she_global_notification = false
             }
         });
 

@@ -252,15 +252,27 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 * @since 2.0
 		 */
 		public function she_preview_html_popup() {
+
+			 $check_circle_svg = '<svg width="15" height="15" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M5 0C2.24311 0 0 2.24311 0 5C0 7.75689 2.24311 10 5 10C7.75689 10 10 7.75689 10 5C10 2.24311 7.75689 0 5 0ZM7.79449 3.68421L4.599 6.85464C4.41103 7.04261 4.11028 7.05514 3.90977 6.86717L2.21804 5.32581C2.01754 5.13784 2.00501 4.82456 2.18045 4.62406C2.36842 4.42356 2.6817 4.41103 2.88221 4.599L4.22306 5.82707L7.0802 2.96992C7.2807 2.76942 7.59398 2.76942 7.79449 2.96992C7.99499 3.17043 7.99499 3.48371 7.79449 3.68421Z"
+									fill="#020202" />
+								</svg>';
 			?>
 			<div id="she-wdkit-wrap" class="tp-main-container-preset" style="display: none">
-				<div class="she-popup-close">
-					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill="#fff" fill-opacity=".8" d="M12.293.293a1 1 0 1 1 1.414 1.414L8.414 7l5.293 5.293.068.076a1 1 0 0 1-1.406 1.406l-.076-.068L7 8.414l-5.293 5.293a1 1 0 1 1-1.414-1.414L5.586 7 .293 1.707A1 1 0 1 1 1.707.293L7 5.586 12.293.293Z"/></svg>
+
+			   <div class="she-popup-header">
+					<div class="she-popup-logo">
+						<img src="<?php echo SHE_HEADER_URL . 'assets/images/banner/wdkit-treadmark.svg'; ?>" alt="Sticky Header" class="she-popup-logo-img" />
+			        </div>
+					<div class="she-popup-close">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill="#808080" fill-opacity=".8" d="M12.293.293a1 1 0 1 1 1.414 1.414L8.414 7l5.293 5.293.068.076a1 1 0 0 1-1.406 1.406l-.076-.068L7 8.414l-5.293 5.293a1 1 0 1 1-1.414-1.414L5.586 7 .293 1.707A1 1 0 1 1 1.707.293L7 5.586 12.293.293Z"/></svg>
+					</div>
 				</div>
 			<div class="she-popup-content">
 				<div class="she-middel-sections">
 				<div class="she-text-top">
-					<?php echo esc_html__( 'Import 50+ Pre-Designed Sticky Header Templates', 'she-header' ); ?>
+					<?php echo esc_html__( 'Import 50+ Pre-Designed ', 'she-header' ); ?> <br />
+					<?php echo esc_html__( 'Sticky Header Templates', 'she-header' ); ?>
 				</div>
 
 					<!-- <div class="tp-text-bottom">
@@ -269,13 +281,13 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 					<div class="she-wkit-cb-data">
 						<div class="wkit-she-preset-checkbox">
 							<span class="she-preset-checkbox-content">
-								<svg width="15" height="15" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 0C2.24311 0 0 2.24311 0 5C0 7.75689 2.24311 10 5 10C7.75689 10 10 7.75689 10 5C10 2.24311 7.75689 0 5 0ZM7.79449 3.68421L4.599 6.85464C4.41103 7.04261 4.11028 7.05514 3.90977 6.86717L2.21804 5.32581C2.01754 5.13784 2.00501 4.82456 2.18045 4.62406C2.36842 4.42356 2.6817 4.41103 2.88221 4.599L4.22306 5.82707L7.0802 2.96992C7.2807 2.76942 7.59398 2.76942 7.79449 2.96992C7.99499 3.17043 7.99499 3.48371 7.79449 3.68421Z" fill="white" /></svg>
+								<?php echo $check_circle_svg; ?>
 								<p class="she-preset-label">
 								<?php echo esc_html__( 'Design Quickly without starting from Scratch', 'she-header' ); ?>
 							</p>
 						</span>
 						<span class="she-preset-checkbox-content">
-								<svg width="15" height="15" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 0C2.24311 0 0 2.24311 0 5C0 7.75689 2.24311 10 5 10C7.75689 10 10 7.75689 10 5C10 2.24311 7.75689 0 5 0ZM7.79449 3.68421L4.599 6.85464C4.41103 7.04261 4.11028 7.05514 3.90977 6.86717L2.21804 5.32581C2.01754 5.13784 2.00501 4.82456 2.18045 4.62406C2.36842 4.42356 2.6817 4.41103 2.88221 4.599L4.22306 5.82707L7.0802 2.96992C7.2807 2.76942 7.59398 2.76942 7.79449 2.96992C7.99499 3.17043 7.99499 3.48371 7.79449 3.68421Z" fill="white" /></svg>
+							    <?php echo $check_circle_svg; ?>
 								<p class="she-preset-label">
 									<?php echo esc_html__( 'Fully Customizable for Any Style', 'she-header' ); ?>
 								</p>
@@ -283,14 +295,14 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 						</div>
 						<div class="wkit-she-preset-checkbox">
 							<span class="she-preset-checkbox-content">
-								<svg width="15" height="15" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 0C2.24311 0 0 2.24311 0 5C0 7.75689 2.24311 10 5 10C7.75689 10 10 7.75689 10 5C10 2.24311 7.75689 0 5 0ZM7.79449 3.68421L4.599 6.85464C4.41103 7.04261 4.11028 7.05514 3.90977 6.86717L2.21804 5.32581C2.01754 5.13784 2.00501 4.82456 2.18045 4.62406C2.36842 4.42356 2.6817 4.41103 2.88221 4.599L4.22306 5.82707L7.0802 2.96992C7.2807 2.76942 7.59398 2.76942 7.79449 2.96992C7.99499 3.17043 7.99499 3.48371 7.79449 3.68421Z" fill="white" /></svg>
+								    <?php echo $check_circle_svg; ?>
 									<p class="she-preset-label">
 									<?php echo esc_html__( 'Time-Saving and Efficient Workflow', 'she-header' ); ?>
 								</p>
 							</span>
 							<span class="she-preset-checkbox-content">
-								<svg width="15" height="15" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 0C2.24311 0 0 2.24311 0 5C0 7.75689 2.24311 10 5 10C7.75689 10 10 7.75689 10 5C10 2.24311 7.75689 0 5 0ZM7.79449 3.68421L4.599 6.85464C4.41103 7.04261 4.11028 7.05514 3.90977 6.86717L2.21804 5.32581C2.01754 5.13784 2.00501 4.82456 2.18045 4.62406C2.36842 4.42356 2.6817 4.41103 2.88221 4.599L4.22306 5.82707L7.0802 2.96992C7.2807 2.76942 7.59398 2.76942 7.79449 2.96992C7.99499 3.17043 7.99499 3.48371 7.79449 3.68421Z" fill="white" /> </svg>
-								<p class="she-preset-label">
+								<?php echo $check_circle_svg; ?>
+        						<p class="she-preset-label">
 									<?php echo esc_html__( 'Explore Versatile Layout Options', 'she-header' ); ?>
 								</p>
 							</span>
