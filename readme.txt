@@ -145,7 +145,6 @@ Not at all. It’s highly optimized for performance and coded lightweight to ens
 == Changelog ==
 
 = 2.1.2 =
-- improvement: Header Template Import Process
 - Fixed: Minor Bug Fixes & Performance Improvements
 
 = 2.1.1 =
