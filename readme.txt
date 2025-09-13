@@ -145,6 +145,7 @@ Not at all. It’s highly optimized for performance and coded lightweight to ens
 == Changelog ==
 
 = 2.1.2 =
+- Improvement : WDesignKit 2.0 Compatibility
 - Fixed: Minor Bug Fixes & Performance Improvements
 
 = 2.1.1 =

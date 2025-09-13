@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Sticky Header Effects for Elementor plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sticky Header Effects for Elementor 2.1.1\n"
+"Project-Id-Version: Sticky Header Effects for Elementor 2.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sticky-header-effects-for-elementor\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-22T05:25:37+00:00\n"
+"POT-Creation-Date: 2025-09-13T05:06:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: she-header\n"
@@ -239,52 +239,56 @@ msgstr ""
 msgid "Notice dismissed successfully."
 msgstr ""
 
-#: includes/preset/class-she-preset.php:263
-msgid "Import 50+ Pre-Designed Sticky Header Templates"
+#: includes/preset/class-she-preset.php:274
+msgid "Import 50+ Pre-Designed "
 msgstr ""
 
-#: includes/preset/class-she-preset.php:267
+#: includes/preset/class-she-preset.php:275
+msgid "Sticky Header Templates"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:279
 msgid "Uniquely designed Elementor Templates for every website type made with Elementor & The Plus Addons for Elementor Widgets."
 msgstr ""
 
-#: includes/preset/class-she-preset.php:274
+#: includes/preset/class-she-preset.php:286
 msgid "Design Quickly without starting from Scratch"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:280
+#: includes/preset/class-she-preset.php:292
 msgid "Fully Customizable for Any Style"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:288
+#: includes/preset/class-she-preset.php:300
 msgid "Time-Saving and Efficient Workflow"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:294
+#: includes/preset/class-she-preset.php:306
 msgid "Explore Versatile Layout Options"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:301
+#: includes/preset/class-she-preset.php:313
 msgid "Supports Widgets :"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:307
+#: includes/preset/class-she-preset.php:319
 msgid "Navigation Menu Widget"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:311
+#: includes/preset/class-she-preset.php:323
 #: build/index.js:1
 msgid "WordPress Menu"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:315
+#: includes/preset/class-she-preset.php:327
 msgid "Nav Menu"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:322
+#: includes/preset/class-she-preset.php:334
 msgid "Install WDesignKit Plugin for Templates"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:328
+#: includes/preset/class-she-preset.php:340
 msgid "Design from Scratch"
 msgstr ""
 
