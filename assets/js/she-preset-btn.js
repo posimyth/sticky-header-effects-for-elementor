@@ -60,7 +60,7 @@
         var she_rebutton = true;
 
         function showNoticeAjx() {
-            
+
             jQuery.ajax({
                 url: she_wdkit_preview_popup.ajax_url,
                 type: 'POST',
@@ -221,6 +221,10 @@
                                     security: she_wdkit_preview_popup.nonce,
                                 },
                                 success: function (res) {
+
+                                    if (!res.success) {
+                                        alert('Only site admins can install presets. Please ask your admin to complete the installation.')
+                                    }
 
                                     if (true === res.success) {
                                         elementor.saver.update.apply().then(function () {

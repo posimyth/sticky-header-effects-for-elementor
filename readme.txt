@@ -4,7 +4,7 @@ Tags: Elementor, Elementor Page Builder, Add-ons, Header, Sticky Header
 Requires at least: 6.3
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 2.1.2
+Stable tag: 2.1.3
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -131,6 +131,9 @@ Yes, it works seamlessly with most Elementor-optimized themes, including Hello, 
 ** Will this slow down my website?**  
 Not at all. It’s highly optimized for performance and coded lightweight to ensure fast page loads. It's lightest sticky header menu option with Google Page Speed optimized for top notch score. 
 
+** How can I report security bugs?** 
+You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team helps validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/9151acea-1465-4a3d-a9a5-23535fa6e00b)
+
 == Screenshots ==
 
 1. Introducing Sticky Header for Elementor – Overview of all key features and updates
@@ -143,6 +146,9 @@ Not at all. It’s highly optimized for performance and coded lightweight to ens
 8. Smarter Scroll Behaviors – Transparent, Distance Control, Sticky Logic
 
 == Changelog ==
+
+= 2.1.3 =
+- Fixed: Security Patch (Low Security)
 
 = 2.1.2 =
 - Improvement : WDesignKit 2.0 Compatibility

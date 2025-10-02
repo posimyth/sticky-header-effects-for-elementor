@@ -154,10 +154,16 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 * Install Wdesign kit
 		 *
 		 * @since 2.0
+		 * @version 2.1.3
 		 */
 		public function she_install_wdkit() {
 
 			check_ajax_referer( 'she_wdkit_preview_popup', 'security' );
+
+			if ( ! current_user_can( 'install_plugins' ) || ! current_user_can( 'activate_plugins' ) ) {
+				$result = $this->she_response(__( 'Permission Denied', 'she-header' ),__( 'You do not have permission to install or activate plugins.', 'she-header' ),false);
+	         	wp_send_json( $result );
+			}
 
 			$installed_plugins = get_plugins();
 
