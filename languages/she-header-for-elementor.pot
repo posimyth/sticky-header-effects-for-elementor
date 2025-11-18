@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Sticky Header Effects for Elementor plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sticky Header Effects for Elementor 2.0\n"
+"Project-Id-Version: Sticky Header Effects for Elementor 2.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sticky-header-effects-for-elementor\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-20T14:44:15+00:00\n"
+"POT-Creation-Date: 2025-09-13T05:06:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: she-header\n"
@@ -55,270 +55,253 @@ msgstr ""
 msgid "Rollback to Previous Version"
 msgstr ""
 
-#: includes/dashboard/class-she-dashboard-ajax.php:476
-#: includes/preset/class-she-preset.php:149
+#: includes/dashboard/class-she-dashboard-ajax.php:496
+#: includes/preset/class-she-preset.php:190
 msgid "Failed to retrieve plugin information."
 msgstr ""
 
 #: includes/dashboard/class-she-wp-menu.php:79
 #: includes/dashboard/class-she-wp-menu.php:80
-#: modules/transparent/module.php:39
+#: modules/transparent/module.php:41
 #: plugin.php:133
 msgid "Sticky Header Effects"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:212
-msgid "Import 50+ Pre-Designed Sticky Header Templates"
+#: includes/meta/class-she-meta.php:74
+msgid "Docs"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:216
+#: includes/meta/class-she-meta.php:75
+#: build/index.js:1
+msgid "Video Tutorials"
+msgstr ""
+
+#: includes/meta/class-she-meta.php:76
+msgid "Join Community"
+msgstr ""
+
+#: includes/meta/class-she-meta.php:77
+msgid "What's New?"
+msgstr ""
+
+#: includes/meta/class-she-meta.php:78
+#: includes/notices/class-she-banner-controller.php:21
+#: build/index.js:1
+msgid "Request Feature"
+msgstr ""
+
+#: includes/meta/class-she-meta.php:79
+msgid "Share Review"
+msgstr ""
+
+#: includes/meta/class-she-meta.php:105
+msgid "Settings"
+msgstr ""
+
+#: includes/meta/class-she-meta.php:109
+#: build/index.js:1
+msgid "Need Help?"
+msgstr ""
+
+#: includes/notices/class-she-banner-controller.php:27
+msgid "Join our community to shape the future of"
+msgstr ""
+
+#: includes/notices/class-she-banner-controller.php:29
+msgid "Get early access and exclusive perks!"
+msgstr ""
+
+#: includes/notices/class-she-banner-controller.php:34
+msgid "- Join Discord Now"
+msgstr ""
+
+#: includes/notices/class-she-banner-notice.php:100
+msgid "Sticky Header for Elementor Just Got a Major Upgrade!"
+msgstr ""
+
+#: includes/notices/class-she-banner-notice.php:101
+msgid "Now acquired by POSIMYTH Innovations — with powerful new features and 50+ ready-to-use templates just for you."
+msgstr ""
+
+#: includes/notices/class-she-banner-notice.php:108
+#: build/index.js:1
+msgid "Learn More"
+msgstr ""
+
+#: includes/notices/class-she-banner-notice.php:139
+msgid "Insufficient permissions."
+msgstr ""
+
+#: includes/notices/class-she-banner-notice.php:149
+msgid "Success."
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:156
+msgid "Just Debugging"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:160
+msgid "Plugin Issues"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:164
+msgid "Slow Performance"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:168
+msgid "Switched to Alternative"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:172
+msgid "No Longer Needed"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:176
+msgid "Compatibility Issues"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:180
+msgid "Missing Feature"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:184
+msgid "Other Reason"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:194
+msgid "Deactivation Reason"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:228
+msgid "If you require any help, please "
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:229
+msgid "Create A Ticket"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:230
+msgid ", we reply within 24 working hours. Looking for instant solutions? - "
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:231
+msgid "Read our Documentation"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:231
+msgid "or"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:231
+msgid "Ask AI"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:238
+msgid "I agree to be contacted via email for support with this plugin."
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:264
+#: includes/notices/class-she-deactivate-feedback.php:265
+msgid "Security checked!"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:298
+#: includes/notices/class-she-deactivate-feedback.php:299
+msgid "success!."
+msgstr ""
+
+#: includes/notices/class-she-nexter-extension-promo.php:138
+msgid "Create Elementor Header, Footer, Single, Archive, 404 etc for FREE!"
+msgstr ""
+
+#: includes/notices/class-she-nexter-extension-promo.php:139
+#, php-format
+msgid "Install <a href=\"https://nexterwp.com/nexter-extension/?utm_source=wpbackend&utm_medium=banner&utm_campaign=links\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"font-weight: 500; text-decoration: underline;\">%s</a> from Sticky Header Effects for Elementor to use FREE Theme Builder for Elementor."
+msgstr ""
+
+#: includes/notices/class-she-nexter-extension-promo.php:141
+msgid "Enable FREE Theme Builder"
+msgstr ""
+
+#: includes/notices/class-she-plugin-page.php:92
+msgid "This Plugin is now part of POSIMYTH Innovations"
+msgstr ""
+
+#: includes/notices/class-she-plugin-page.php:131
+msgid "Invalid nonce. Unauthorized request."
+msgstr ""
+
+#: includes/notices/class-she-plugin-page.php:140
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/notices/class-she-plugin-page.php:150
+msgid "Notice dismissed successfully."
+msgstr ""
+
+#: includes/preset/class-she-preset.php:274
+msgid "Import 50+ Pre-Designed "
+msgstr ""
+
+#: includes/preset/class-she-preset.php:275
+msgid "Sticky Header Templates"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:279
 msgid "Uniquely designed Elementor Templates for every website type made with Elementor & The Plus Addons for Elementor Widgets."
 msgstr ""
 
-#: includes/preset/class-she-preset.php:223
+#: includes/preset/class-she-preset.php:286
 msgid "Design Quickly without starting from Scratch"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:229
+#: includes/preset/class-she-preset.php:292
 msgid "Fully Customizable for Any Style"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:237
+#: includes/preset/class-she-preset.php:300
 msgid "Time-Saving and Efficient Workflow"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:243
+#: includes/preset/class-she-preset.php:306
 msgid "Explore Versatile Layout Options"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:250
+#: includes/preset/class-she-preset.php:313
 msgid "Supports Widgets :"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:271
-msgid "Enable Header Templates"
+#: includes/preset/class-she-preset.php:319
+msgid "Navigation Menu Widget"
 msgstr ""
 
-#: modules/transparent/module.php:47
-msgid "Enable"
+#: includes/preset/class-she-preset.php:323
+#: build/index.js:1
+msgid "WordPress Menu"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:327
+msgid "Nav Menu"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:334
+msgid "Install WDesignKit Plugin for Templates"
+msgstr ""
+
+#: includes/preset/class-she-preset.php:340
+msgid "Design from Scratch"
 msgstr ""
 
 #: modules/transparent/module.php:49
-#: modules/transparent/module.php:289
-#: modules/transparent/module.php:326
-#: modules/transparent/module.php:530
-#: modules/transparent/module.php:631
-#: modules/transparent/module.php:893
-#: modules/transparent/module.php:950
-#: modules/transparent/module.php:1056
-#: modules/transparent/module.php:1098
-#: modules/transparent/module.php:1142
-#: modules/transparent/module.php:1195
-#: modules/transparent/module.php:1223
-#: modules/transparent/module.php:1266
-#: modules/transparent/module.php:1294
-#: modules/transparent/module.php:1322
-#: modules/transparent/module.php:1352
-#: modules/transparent/module.php:1437
-msgid "On"
+msgid "Enable"
 msgstr ""
 
-#: modules/transparent/module.php:81
-#: build/index.js:1
-msgid "Live Demo"
-msgstr ""
-
-#: modules/transparent/module.php:82
-msgid "Import Presets"
-msgstr ""
-
-#: modules/transparent/module.php:97
-msgid "New FREE Pro Features"
-msgstr ""
-
-#: modules/transparent/module.php:98
-msgid "Disable Fully Transparent Background, Background Type, Custom Menu Toggle Button, Bottom Shadow, Blur Background settings"
-msgstr ""
-
-#: modules/transparent/module.php:108
-msgid "IMPORTANT: This plugin does NOT control the sticky position of the header. Please use the above Motion Effects tab sticky options to make the header sticky"
-msgstr ""
-
-#: modules/transparent/module.php:120
-msgid "Enable On"
-msgstr ""
-
-#: modules/transparent/module.php:126
-msgid "Desktop"
-msgstr ""
-
-#: modules/transparent/module.php:127
-msgid "Tablet"
-msgstr ""
-
-#: modules/transparent/module.php:128
-msgid "Mobile"
-msgstr ""
-
-#: modules/transparent/module.php:141
-#: modules/transparent/module.php:1466
-msgid "Scroll Distance (px)"
-msgstr ""
-
-#: modules/transparent/module.php:153
-msgid "Choose the scroll distance to enable Sticky Header Effects"
-msgstr ""
-
-#: modules/transparent/module.php:164
-msgid "Remember: The settings below will not be applied until the page is scrolled the distance set above"
-msgstr ""
-
-#: modules/transparent/module.php:176
-#: modules/transparent/module.php:191
-msgid "After Sticky"
-msgstr ""
-
-#: modules/transparent/module.php:178
-msgid "Default"
-msgstr ""
-
-#: modules/transparent/module.php:179
-msgid "Custom"
-msgstr ""
-
-#: modules/transparent/module.php:199
-msgid "Offset"
-msgstr ""
-
-#: modules/transparent/module.php:226
-#: modules/transparent/module.php:696
-msgid "Width"
-msgstr ""
-
-#: modules/transparent/module.php:253
-msgid "Padding"
-msgstr ""
-
-#: modules/transparent/module.php:273
-msgid "Adjust properties once Status will be changed to Sticky."
-msgstr ""
-
-#: modules/transparent/module.php:286
-msgid "Transparent Header"
-msgstr ""
-
-#: modules/transparent/module.php:302
-msgid "Sets the header position to \"absolute\" so negative margins are not needed"
-msgstr ""
-
-#: modules/transparent/module.php:309
-msgid ""
-"This will make the header overlap the main page so extra spacing at the top of sections may be needed<br><br>\n"
-"\t\t\t\tDoes NOT work on/override elementor sticky settings"
-msgstr ""
-
-#: modules/transparent/module.php:323
-msgid "Background Color"
-msgstr ""
-
-#: modules/transparent/module.php:334
-msgid "Choose what color to change the background to after scrolling"
-msgstr ""
-
-#: modules/transparent/module.php:341
-msgid "Background Type"
-msgstr ""
-
-#: modules/transparent/module.php:351
-msgid "Classic"
-msgstr ""
-
-#: modules/transparent/module.php:355
-msgid "Gradient"
-msgstr ""
-
-#: modules/transparent/module.php:366
-#: modules/transparent/module.php:909
-#: modules/transparent/module.php:969
-msgid "Color"
-msgstr ""
-
-#: modules/transparent/module.php:380
-msgid "Please note that gradients will not be transitioned"
-msgstr ""
-
-#: modules/transparent/module.php:393
-#: modules/transparent/module.php:429
-msgid "Location"
-msgstr ""
-
-#: modules/transparent/module.php:413
-msgid "Second Color"
-msgstr ""
-
-#: modules/transparent/module.php:449
-msgid "Type"
-msgstr ""
-
-#: modules/transparent/module.php:452
-msgid "Linear"
-msgstr ""
-
-#: modules/transparent/module.php:453
-msgid "Radial"
-msgstr ""
-
-#: modules/transparent/module.php:469
-msgid "Angle"
-msgstr ""
-
-#: modules/transparent/module.php:497
-msgid "Position"
-msgstr ""
-
-#: modules/transparent/module.php:500
-msgid "Center Center"
-msgstr ""
-
-#: modules/transparent/module.php:501
-msgid "Center Left"
-msgstr ""
-
-#: modules/transparent/module.php:502
-msgid "Center Right"
-msgstr ""
-
-#: modules/transparent/module.php:503
-msgid "Top Center"
-msgstr ""
-
-#: modules/transparent/module.php:504
-msgid "Top Left"
-msgstr ""
-
-#: modules/transparent/module.php:505
-msgid "Top Right"
-msgstr ""
-
-#: modules/transparent/module.php:506
-msgid "Bottom Center"
-msgstr ""
-
-#: modules/transparent/module.php:507
-msgid "Bottom Left"
-msgstr ""
-
-#: modules/transparent/module.php:508
-msgid "Bottom Right"
-msgstr ""
-
-#: modules/transparent/module.php:527
-msgid "Custom Menu Toggle Button"
-msgstr ""
-
-#: modules/transparent/module.php:531
-#: modules/transparent/module.php:632
-#: modules/transparent/module.php:894
+#: modules/transparent/module.php:51
+#: modules/transparent/module.php:288
+#: modules/transparent/module.php:328
+#: modules/transparent/module.php:532
+#: modules/transparent/module.php:633
+#: modules/transparent/module.php:895
 #: modules/transparent/module.php:951
 #: modules/transparent/module.php:1057
 #: modules/transparent/module.php:1099
@@ -330,235 +313,428 @@ msgstr ""
 #: modules/transparent/module.php:1323
 #: modules/transparent/module.php:1353
 #: modules/transparent/module.php:1438
+msgid "On"
+msgstr ""
+
+#: modules/transparent/module.php:81
+msgid "Import Presets"
+msgstr ""
+
+#: modules/transparent/module.php:119
+msgid "Enable On"
+msgstr ""
+
+#: modules/transparent/module.php:125
+msgid "Desktop"
+msgstr ""
+
+#: modules/transparent/module.php:126
+msgid "Tablet"
+msgstr ""
+
+#: modules/transparent/module.php:127
+msgid "Mobile"
+msgstr ""
+
+#: modules/transparent/module.php:140
+#: modules/transparent/module.php:1467
+msgid "Scroll Distance (px)"
+msgstr ""
+
+#: modules/transparent/module.php:152
+msgid "Choose the scroll distance to enable Sticky Header Effects"
+msgstr ""
+
+#: modules/transparent/module.php:163
+msgid "Remember: The settings below will not be applied until the page is scrolled the distance set above"
+msgstr ""
+
+#: modules/transparent/module.php:175
+#: modules/transparent/module.php:190
+msgid "After Sticky"
+msgstr ""
+
+#: modules/transparent/module.php:177
+msgid "Default"
+msgstr ""
+
+#: modules/transparent/module.php:178
+msgid "Custom"
+msgstr ""
+
+#: modules/transparent/module.php:198
+msgid "Offset"
+msgstr ""
+
+#: modules/transparent/module.php:225
+#: modules/transparent/module.php:698
+msgid "Width"
+msgstr ""
+
+#: modules/transparent/module.php:252
+msgid "Padding"
+msgstr ""
+
+#: modules/transparent/module.php:272
+msgid "Adjust properties once Status will be changed to Sticky."
+msgstr ""
+
+#: modules/transparent/module.php:285
+msgid "Transparent Header"
+msgstr ""
+
+#: modules/transparent/module.php:301
+msgid "Sets the header position to \"absolute\" so negative margins are not needed"
+msgstr ""
+
+#: modules/transparent/module.php:308
+msgid ""
+"This will make the header overlap the main page so extra spacing at the top of sections may be needed<br><br>\n"
+"\t\t\t\tDoes NOT work on/override elementor sticky settings"
+msgstr ""
+
+#: modules/transparent/module.php:325
+msgid "Background Color"
+msgstr ""
+
+#: modules/transparent/module.php:336
+msgid "Choose what color to change the background to after scrolling"
+msgstr ""
+
+#: modules/transparent/module.php:343
+msgid "Background Type"
+msgstr ""
+
+#: modules/transparent/module.php:353
+msgid "Classic"
+msgstr ""
+
+#: modules/transparent/module.php:357
+msgid "Gradient"
+msgstr ""
+
+#: modules/transparent/module.php:368
+#: modules/transparent/module.php:910
+#: modules/transparent/module.php:970
+msgid "Color"
+msgstr ""
+
+#: modules/transparent/module.php:382
+msgid "Please note that gradients will not be transitioned"
+msgstr ""
+
+#: modules/transparent/module.php:395
+#: modules/transparent/module.php:431
+msgid "Location"
+msgstr ""
+
+#: modules/transparent/module.php:415
+msgid "Second Color"
+msgstr ""
+
+#: modules/transparent/module.php:451
+msgid "Type"
+msgstr ""
+
+#: modules/transparent/module.php:454
+msgid "Linear"
+msgstr ""
+
+#: modules/transparent/module.php:455
+msgid "Radial"
+msgstr ""
+
+#: modules/transparent/module.php:471
+msgid "Angle"
+msgstr ""
+
+#: modules/transparent/module.php:499
+msgid "Position"
+msgstr ""
+
+#: modules/transparent/module.php:502
+msgid "Center Center"
+msgstr ""
+
+#: modules/transparent/module.php:503
+msgid "Center Left"
+msgstr ""
+
+#: modules/transparent/module.php:504
+msgid "Center Right"
+msgstr ""
+
+#: modules/transparent/module.php:505
+msgid "Top Center"
+msgstr ""
+
+#: modules/transparent/module.php:506
+msgid "Top Left"
+msgstr ""
+
+#: modules/transparent/module.php:507
+msgid "Top Right"
+msgstr ""
+
+#: modules/transparent/module.php:508
+msgid "Bottom Center"
+msgstr ""
+
+#: modules/transparent/module.php:509
+msgid "Bottom Left"
+msgstr ""
+
+#: modules/transparent/module.php:510
+msgid "Bottom Right"
+msgstr ""
+
+#: modules/transparent/module.php:529
+msgid "Custom Menu Toggle Button"
+msgstr ""
+
+#: modules/transparent/module.php:533
+#: modules/transparent/module.php:634
+#: modules/transparent/module.php:896
+#: modules/transparent/module.php:952
+#: modules/transparent/module.php:1058
+#: modules/transparent/module.php:1100
+#: modules/transparent/module.php:1144
+#: modules/transparent/module.php:1197
+#: modules/transparent/module.php:1225
+#: modules/transparent/module.php:1268
+#: modules/transparent/module.php:1296
+#: modules/transparent/module.php:1324
+#: modules/transparent/module.php:1354
+#: modules/transparent/module.php:1439
 msgid "Off"
 msgstr ""
 
-#: modules/transparent/module.php:538
+#: modules/transparent/module.php:540
 msgid "Customize and add animation to the Elementor menu icon<br>*Only supports Elementor nav menu"
 msgstr ""
 
-#: modules/transparent/module.php:566
+#: modules/transparent/module.php:568
 msgid "This option ONLY works on the WordPress menu widget hamburger icon.<br><br>Tip: Set the nav menu toggle button size first. All of these settings are scaled off of that size"
 msgstr ""
 
-#: modules/transparent/module.php:579
+#: modules/transparent/module.php:581
 msgid "Toggle Button Type"
 msgstr ""
 
-#: modules/transparent/module.php:584
+#: modules/transparent/module.php:586
 msgid "Lines"
 msgstr ""
 
-#: modules/transparent/module.php:589
+#: modules/transparent/module.php:591
 msgid "Dots/Squares"
 msgstr ""
 
-#: modules/transparent/module.php:603
+#: modules/transparent/module.php:605
 msgid "<b>Lines</b><br>Separately adjustable line weight and width"
 msgstr ""
 
-#: modules/transparent/module.php:616
+#: modules/transparent/module.php:618
 msgid "<b>Dots/Squares</b><br>Line weight and width are equal with an adjustable width for the active(close button) lines"
 msgstr ""
 
-#: modules/transparent/module.php:629
+#: modules/transparent/module.php:631
 msgid "Only 2"
 msgstr ""
 
-#: modules/transparent/module.php:640
+#: modules/transparent/module.php:642
 msgid "If 3 is too many, try only 2"
 msgstr ""
 
-#: modules/transparent/module.php:650
+#: modules/transparent/module.php:652
 msgid "Weight"
 msgstr ""
 
-#: modules/transparent/module.php:743
+#: modules/transparent/module.php:745
 msgid "Active Width(Close Button)"
 msgstr ""
 
-#: modules/transparent/module.php:797
+#: modules/transparent/module.php:799
 msgid "Gap"
 msgstr ""
 
-#: modules/transparent/module.php:844
+#: modules/transparent/module.php:846
 msgid "Radius"
 msgstr ""
 
-#: modules/transparent/module.php:890
+#: modules/transparent/module.php:892
 msgid "Bottom Border"
 msgstr ""
 
-#: modules/transparent/module.php:901
+#: modules/transparent/module.php:903
 msgid "Choose bottom border size and color"
 msgstr ""
 
-#: modules/transparent/module.php:923
+#: modules/transparent/module.php:924
 msgid "Bottom Border Thickness (px)"
 msgstr ""
 
-#: modules/transparent/module.php:935
+#: modules/transparent/module.php:936
 msgid "Note: A border size(even 0px) must be set on the header for the transition to work both ways"
 msgstr ""
 
-#: modules/transparent/module.php:947
+#: modules/transparent/module.php:948
 msgid "Bottom Shadow"
 msgstr ""
 
-#: modules/transparent/module.php:958
+#: modules/transparent/module.php:959
 msgid "Choose bottom shadow options after scrolling"
 msgstr ""
 
-#: modules/transparent/module.php:984
+#: modules/transparent/module.php:985
 msgid "Vertical"
 msgstr ""
 
-#: modules/transparent/module.php:1007
+#: modules/transparent/module.php:1008
 msgid "Blur"
 msgstr ""
 
-#: modules/transparent/module.php:1030
+#: modules/transparent/module.php:1031
 msgid "Spread"
 msgstr ""
 
-#: modules/transparent/module.php:1053
+#: modules/transparent/module.php:1054
 msgid "Shrink Header"
 msgstr ""
 
-#: modules/transparent/module.php:1061
+#: modules/transparent/module.php:1062
 msgid "Choose header height after scrolling"
 msgstr ""
 
-#: modules/transparent/module.php:1071
+#: modules/transparent/module.php:1072
 msgid "Header Height (px)"
 msgstr ""
 
-#: modules/transparent/module.php:1083
+#: modules/transparent/module.php:1084
 msgid "Remember: The header cannot shrink smaller than the elements inside of it"
 msgstr ""
 
-#: modules/transparent/module.php:1095
+#: modules/transparent/module.php:1096
 msgid "Shrink Logo"
 msgstr ""
 
-#: modules/transparent/module.php:1103
+#: modules/transparent/module.php:1104
 msgid "Resize logo after scrolling"
 msgstr ""
 
-#: modules/transparent/module.php:1113
+#: modules/transparent/module.php:1114
 msgid "Logo Height (%)"
 msgstr ""
 
-#: modules/transparent/module.php:1139
+#: modules/transparent/module.php:1140
 msgid "Change Logo Color"
 msgstr ""
 
-#: modules/transparent/module.php:1147
+#: modules/transparent/module.php:1148
 msgid "Change the logo image color before or after the user reaches the scroll distance set above"
 msgstr ""
 
-#: modules/transparent/module.php:1159
+#: modules/transparent/module.php:1160
 msgid "Please select <b>only 1 option</b> for each tab"
 msgstr ""
 
-#: modules/transparent/module.php:1180
+#: modules/transparent/module.php:1181
 msgid "Before scrolling"
 msgstr ""
 
-#: modules/transparent/module.php:1193
-#: modules/transparent/module.php:1264
+#: modules/transparent/module.php:1194
+#: modules/transparent/module.php:1265
 msgid "White Logo"
 msgstr ""
 
-#: modules/transparent/module.php:1200
-#: modules/transparent/module.php:1271
+#: modules/transparent/module.php:1201
+#: modules/transparent/module.php:1272
 msgid "Change the logo to white"
 msgstr ""
 
-#: modules/transparent/module.php:1221
-#: modules/transparent/module.php:1292
+#: modules/transparent/module.php:1222
+#: modules/transparent/module.php:1293
 msgid "Black Logo"
 msgstr ""
 
-#: modules/transparent/module.php:1228
-#: modules/transparent/module.php:1299
+#: modules/transparent/module.php:1229
+#: modules/transparent/module.php:1300
 msgid "Change the logo to black"
 msgstr ""
 
-#: modules/transparent/module.php:1251
+#: modules/transparent/module.php:1252
 msgid "After Scrolling"
 msgstr ""
 
-#: modules/transparent/module.php:1320
+#: modules/transparent/module.php:1321
 msgid "Full Color Logo"
 msgstr ""
 
-#: modules/transparent/module.php:1327
+#: modules/transparent/module.php:1328
 msgid "Removes all filters to allow a full color logo image"
 msgstr ""
 
-#: modules/transparent/module.php:1349
+#: modules/transparent/module.php:1350
 msgid "Blur Background"
 msgstr ""
 
-#: modules/transparent/module.php:1361
+#: modules/transparent/module.php:1362
 msgid "Add a modern blur effect to a semi-transparent header background color after scrolling"
 msgstr ""
 
-#: modules/transparent/module.php:1372
+#: modules/transparent/module.php:1373
 msgid "Tip: Low saturation works best with no background color<br><br>DEFAULTS: Blur 20px, Saturation 1.80"
 msgstr ""
 
-#: modules/transparent/module.php:1385
+#: modules/transparent/module.php:1386
 msgid "Blur Amount (Px)"
 msgstr ""
 
-#: modules/transparent/module.php:1410
+#: modules/transparent/module.php:1411
 msgid "Saturation Amount"
 msgstr ""
 
-#: modules/transparent/module.php:1434
+#: modules/transparent/module.php:1435
 msgid "Hide header on scroll down"
 msgstr ""
 
-#: modules/transparent/module.php:1442
+#: modules/transparent/module.php:1443
 msgid "Hides the header if scrolling down, and shows header if scrolling up"
 msgstr ""
 
-#: modules/transparent/module.php:1453
+#: modules/transparent/module.php:1454
 msgid "WARNING: This might break section/container entrance animations"
 msgstr ""
 
-#: modules/transparent/module.php:1478
+#: modules/transparent/module.php:1479
 msgid "Choose the scroll distance to start hiding the header"
 msgstr ""
 
-#: sticky-header-effects-for-elementor.php:91
+#: sticky-header-effects-for-elementor.php:89
 msgid "Sticky Header Effects not working because you need to activate the Elementor plugin."
 msgstr ""
 
-#: sticky-header-effects-for-elementor.php:92
+#: sticky-header-effects-for-elementor.php:90
 msgid "Activate Elementor Now"
 msgstr ""
 
-#: sticky-header-effects-for-elementor.php:100
+#: sticky-header-effects-for-elementor.php:98
 msgid "Sticky Header Effects is not working because you need to install the Elementor plugin"
 msgstr ""
 
-#: sticky-header-effects-for-elementor.php:101
+#: sticky-header-effects-for-elementor.php:99
 msgid "Install Elementor Now"
 msgstr ""
 
-#: sticky-header-effects-for-elementor.php:115
+#: sticky-header-effects-for-elementor.php:113
 msgid "Sticky Header Effects not working because you are using an old version of Elementor."
 msgstr ""
 
-#: sticky-header-effects-for-elementor.php:116
-#: sticky-header-effects-for-elementor.php:130
+#: sticky-header-effects-for-elementor.php:114
+#: sticky-header-effects-for-elementor.php:128
 msgid "Update Elementor Now"
 msgstr ""
 
-#: sticky-header-effects-for-elementor.php:129
+#: sticky-header-effects-for-elementor.php:127
 msgid "A new version of Elementor is available. For better performance and compatibility of Sticky Header Effects, we recommend updating to the latest version."
 msgstr ""
 
@@ -667,7 +843,7 @@ msgid "Welcome,"
 msgstr ""
 
 #: build/index.js:1
-msgid "Watch How it Works ( Coming Soon ) "
+msgid "Watch How it Works"
 msgstr ""
 
 #: build/index.js:1
@@ -699,23 +875,15 @@ msgid "Read Now"
 msgstr ""
 
 #: build/index.js:1
-msgid "Need Help?"
-msgstr ""
-
-#: build/index.js:1
 msgid "Raise Ticket"
 msgstr ""
 
 #: build/index.js:1
-msgid "Join Community"
+msgid "Join Discord Community"
 msgstr ""
 
 #: build/index.js:1
 msgid "Join Now"
-msgstr ""
-
-#: build/index.js:1
-msgid "Request Feature"
 msgstr ""
 
 #: build/index.js:1
@@ -727,11 +895,7 @@ msgid "Rate Sticky Header Effects"
 msgstr ""
 
 #: build/index.js:1
-msgid "Video Tutorials"
-msgstr ""
-
-#: build/index.js:1
-msgid "Coming Soon"
+msgid "Watch Now"
 msgstr ""
 
 #: build/index.js:1
@@ -756,10 +920,6 @@ msgstr ""
 
 #: build/index.js:1
 msgid "Activated"
-msgstr ""
-
-#: build/index.js:1
-msgid "Learn More"
 msgstr ""
 
 #: build/index.js:1
@@ -867,7 +1027,11 @@ msgid "Header Templates"
 msgstr ""
 
 #: build/index.js:1
-msgid "Explore More Elementor Templates"
+msgid "Download Template"
+msgstr ""
+
+#: build/index.js:1
+msgid "View More Website Templates"
 msgstr ""
 
 #: build/index.js:1
@@ -1039,11 +1203,19 @@ msgid "Total Extensions"
 msgstr ""
 
 #: build/index.js:1
+msgid "Live Demo"
+msgstr ""
+
+#: build/index.js:1
 msgid "Read Docs"
 msgstr ""
 
 #: build/index.js:1
-msgid "Build a Strong, Secure and High-Performance Website with 22+ Unique WordPress Extensions from Nexter."
+msgid "Build a Strong, Secure and High-Performance Website"
+msgstr ""
+
+#: build/index.js:1
+msgid "with 22+ Unique WordPress Extensions from Nexter."
 msgstr ""
 
 #: build/index.js:1
@@ -1064,10 +1236,6 @@ msgstr ""
 
 #: build/index.js:1
 msgid "Elementor"
-msgstr ""
-
-#: build/index.js:1
-msgid "WordPress Menu"
 msgstr ""
 
 #: build/index.js:1
@@ -1211,10 +1379,6 @@ msgid "Agree to contribute to make Sticky Header better by sharing non-sensitive
 msgstr ""
 
 #: build/index.js:1
-msgid "Subscribe & Continue"
-msgstr ""
-
-#: build/index.js:1
 msgid "Why do I need the Nexter Extension?"
 msgstr ""
 
@@ -1268,4 +1432,8 @@ msgstr ""
 
 #: build/index.js:1
 msgid "create your Sticky Header effortlessly."
+msgstr ""
+
+#: build/index.js:1
+msgid "Skip"
 msgstr ""
