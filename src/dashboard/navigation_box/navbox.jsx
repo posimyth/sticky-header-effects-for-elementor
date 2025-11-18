@@ -74,11 +74,11 @@ const NavBox = (props) => {
                         <li><Link className={`${location.pathname == '/header_widgets' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/header_widgets" onClick={() => { setmenuToggel(false) }}>{__('Header Widgets', 'she-header')}</Link></li>
                         {!themeBuilder_plugin && (
                             <li className='she_navlink_cover'>
-                                <Link className={`${location.pathname == '/theme_builder' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/theme_builder" onClick={() => { setmenuToggel(false) }}>{__('Elementor Theme Builder ', 'she-header')}
+                                 <a className={`${location.pathname == '/theme_builder' ? 'she_navlink tpae_active_tab' : 'she_navlink'}`} href={baseUrl + '/admin.php?page=nxt_builder'}>{__('Elementor Theme Builder', 'tpebl')}
                                     <div className='she-nav-tag'>
                                         <span className='she-nav-tag-txt'>FREE</span>
                                     </div>
-                                </Link>
+                                </a>
                             </li>
                         )}
                         <li><Link className={`${location.pathname == '/extension' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/extension" onClick={() => { setmenuToggel(false) }}>{__('Extensions', 'she-header')}</Link></li>
