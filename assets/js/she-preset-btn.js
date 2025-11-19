@@ -222,8 +222,8 @@
                                 },
                                 success: function (res) {
 
-                                    if (!res.success) {
-                                        alert('Only site admins can install presets. Please ask your admin to complete the installation.')
+                                    if (res.data === 'permission_error') {
+                                        alert('Only site admins can install presets. Please ask your admin to complete the installation.');
                                     }
 
                                     if (true === res.success) {
