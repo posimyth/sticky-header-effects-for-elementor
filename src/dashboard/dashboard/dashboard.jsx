@@ -375,12 +375,12 @@ const DashboardInnerMain = (props) => {
                         </div>
                         <h3 className='she_user_name'>{__('Welcome,', 'she-header')} {userName || '...'}</h3>
                     </div>
-                    <div className='she_whats_new' onClick={() => whats_new_btn()}>
+                    {/* <div className='she_whats_new' onClick={() => whats_new_btn()}>
                         {props.she_dashboard_data?.whatsnew?.data?.length > 0 &&
                             <span className='she_whats_new_count'>{props.she_dashboard_data.whatsnew.data.length}</span>
                         }
                         <span className='she_whats_new_txt'>{__("What's New?")}</span>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className='she_slide_form_sec'>
@@ -538,22 +538,22 @@ const DashboardInnerMain = (props) => {
 
                     {/* {whatsnew.length > 0 ? */}
                     {/* whatsnew?.map((data, index) => ( */}
-                    <div className='she_whats_new_card_info_cover'>
-                        <div className='she_whats_new_img_cover'>
+                    {/* <div className='she_whats_new_card_info_cover'>
+                        <div className='she_whats_new_img_cover'> */}
                             {/* <img className='she_whatsn_new_img' src={Tpae_card_bg} draggable={false} /> */}
-                            <img className='she_whatsn_new_img' src='https://api.wdesignkit.com/images/plugins/theme-builder/whatsnew1.png' draggable={false}></img>
-                        </div>
+                            {/* <img className='she_whatsn_new_img' src='https://api.wdesignkit.com/images/plugins/theme-builder/whatsnew1.png' draggable={false}></img> */}
+                        {/* </div>
                         <h4 className='she_img_heading_info'>{__('Sticky Header for Elementor 2.0 – Plugin Acquired, 50+Header  Templates, Elementor Free Integration & More')}</h4>
                         <p className='she_text_info'>{__('Sticky Header for Elementor is now acquired and better than ever! Get 50+ header templates, improved features, and full support for Elementor Free. Uncover the full acquired news')}</p>
-                        <div className='she_whats_new_btn_group'>
+                        <div className='she_whats_new_btn_group'> */}
                             {/* {data?.demo && */}
                             {/* <a href={'https://stickyheadereffects.com/massive-updates-2.0'} target="_blank" rel="noopener noreferrer" className='she_whats_new_info_cta_btn'>{__('Live Demo')}</a> */}
                             {/* } */}
                             {/* {data?.link && */}
-                            <a href={'https://stickyheadereffects.com/massive-updates-2-0/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a>
+                            {/* <a href={'https://stickyheadereffects.com/massive-updates-2-0/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader'} target="_blank" rel="noopener noreferrer" className='she_whats_new_btn_link'>{__('Learn More')}</a> */}
                             {/* } */}
-                        </div>
-                    </div>
+                        {/* </div>
+                    </div> */}
                     {/* ))
                         :
                         <div className='she-data-loader'>
