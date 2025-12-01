@@ -60,7 +60,7 @@ if ( ! class_exists( 'She_Blackfriday_Banner' ) ) {
 		public function __construct() {
 
             /** SHe Bf Banner*/
-			if ( ! get_option( 'she_bfsale_notice_dismissed' ) ) {
+			if ( ! get_option( 'she_smsale_notice_dismissed' ) ) {
 				add_action( 'admin_notices', array( $this, 'she_bf_sale_banner' ) );
 			}
 
@@ -81,11 +81,11 @@ if ( ! class_exists( 'She_Blackfriday_Banner' ) ) {
 
 			$output  = '';
 
-			echo '<div class="notice notice-info is-dismissible she-banner-notice she-bf-sale" style="border-left: 4px solid #DF241B;">
+			echo '<div class="notice notice-info is-dismissible she-banner-notice she-bf-sale" style="border-left: 4px solid #006ADF;">
 				<div class="inline" style="display: flex;column-gap: 12px;align-items: center;padding: 15px 10px;position: relative;    margin-left: 0px;">
-					<img style="max-width:100px;max-height:100px;" src="' . esc_url( SHE_HEADER_URL . 'assets/images/banner/she-bf-banner.png' ) . '" />
+					<img style="max-width:100px;max-height:100px;" src="' . esc_url( SHE_HEADER_URL . 'assets/images/banner/she-bs-banner.png' ) . '" />
 					<div style="margin: 0 10px; color:#000;display:flex;flex-direction:column;height:90px;justify-content:space-around;/* gap: 10px; */">  
-						<div style="font-size:16px;font-weight:600;letter-spacing:0.1px;">' . esc_html__( 'Using our free Sticky Header Effects? Our sister plugins are on their biggest Black Friday sale - feel free to explore.', 'she-header' ) . '</div>
+						<div style="font-size:16px;font-weight:600;letter-spacing:0.1px;">' . esc_html__( 'Using our free Sticky Header Effects? Our sister plugins are on their biggest Cyber Monday sale - feel free to explore.', 'she-header' ) . '</div>
 						<a href="https://store.posimyth.com/offers/?utm_source=wpbackend&utm_medium=admin&utm_campaign=pluginpage" class="button she-notice-btn" target="_blank" rel="noopener noreferrer" style=" width:max-content;color:#fff;border-color:#DF241B;background:#DF241B;padding:3px 22px;border-radius:5px;font-weight:500;">' . esc_html__( 'View Offers', 'she-header' ) . '</a>
 					</div>
 				</div>
@@ -124,7 +124,7 @@ if ( ! class_exists( 'She_Blackfriday_Banner' ) ) {
 				wp_send_json($result);
 			}
 
-            update_option( 'she_bfsale_notice_dismissed', true );
+            update_option( 'she_smsale_notice_dismissed', true );
 
 			$result = array( 
 				'message' => esc_html__( 'Success.', 'she-header' ),
