@@ -60,7 +60,7 @@ if ( ! class_exists( 'She_Blackfriday_Banner' ) ) {
 		public function __construct() {
 
             /** SHe Bf Banner*/
-			if ( ! get_option( 'she_bfsale_notice_dismissed' ) ) {
+			if ( ! get_option( 'she_smsale_notice_dismissed' ) ) {
 				add_action( 'admin_notices', array( $this, 'she_bf_sale_banner' ) );
 			}
 
@@ -124,7 +124,7 @@ if ( ! class_exists( 'She_Blackfriday_Banner' ) ) {
 				wp_send_json($result);
 			}
 
-            update_option( 'she_bfsale_notice_dismissed', true );
+            update_option( 'she_smsale_notice_dismissed', true );
 
 			$result = array( 
 				'message' => esc_html__( 'Success.', 'she-header' ),

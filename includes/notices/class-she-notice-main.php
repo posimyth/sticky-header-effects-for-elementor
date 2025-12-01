@@ -119,9 +119,9 @@ if ( ! class_exists( 'She_Notice_Main' ) ) {
 					include SHE_HEADER_PATH . 'includes/notices/class-she-nexter-extension-promo.php';
 				}
 
-				if( ! empty( $tpae_details[0]['status'] ) && 'unavailable' == $tpae_details[0]['status'] ) {
+				// if( ! empty( $tpae_details[0]['status'] ) && 'unavailable' == $tpae_details[0]['status'] ) {
 					include SHE_HEADER_PATH . 'includes/notices/class-she-bf-banner.php';
-				}
+				// }
 
 			}
 		}
