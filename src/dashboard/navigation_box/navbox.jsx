@@ -12,7 +12,7 @@ const NavBox = (props) => {
     var she_version = shed_data.shed_wp_version;
     var nonce = shed_data.nonce;
     var ajax_url = shed_data.ajax_url;
-    var she_nexter_plugin = shed_data.shed_plugins;    
+    var she_nexter_plugin = shed_data.shed_plugins;
 
     const location = useLocation();
     const fullUrl = window.location.href;
@@ -52,7 +52,7 @@ const NavBox = (props) => {
             }
         }
 
-    }, [props?.she_dashboard_data, props?.plugin_check,she_nexter_plugin]);
+    }, [props?.she_dashboard_data, props?.plugin_check, she_nexter_plugin]);
 
     return (
 
@@ -74,7 +74,7 @@ const NavBox = (props) => {
                         <li><Link className={`${location.pathname == '/header_widgets' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/header_widgets" onClick={() => { setmenuToggel(false) }}>{__('Header Widgets', 'she-header')}</Link></li>
                         {!themeBuilder_plugin && (
                             <li className='she_navlink_cover'>
-                                 <Link className={`${location.pathname == '/theme_builder' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/theme_builder" onClick={() => { setmenuToggel(false) }}>{__('Elementor Theme Builder ', 'she-header')}
+                                <Link className={`${location.pathname == '/theme_builder' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/theme_builder" onClick={() => { setmenuToggel(false) }}>{__('Elementor Theme Builder ', 'she-header')}
                                     <div className='she-nav-tag'>
                                         <span className='she-nav-tag-txt'>FREE</span>
                                     </div>
@@ -84,11 +84,12 @@ const NavBox = (props) => {
                         <li><Link className={`${location.pathname == '/extension' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/extension" onClick={() => { setmenuToggel(false) }}>{__('Extensions', 'she-header')}</Link></li>
                         <div className='she_extra_options_navlink_cover'>
                             <li className={`${location.pathname == '/extra_options' ? 'she_navlink she_active_tab' : 'she_navlink'}`} onClick={(e) => { toggleDropdown(e) }} >{__('Extra Options', 'she-header')}<span className='she_navlink_icon'><img src={plugin_url + 'assets/svg/chevron_right_icon.svg'} draggable={false} /></span></li>
-                            {isDropdownOpen && (
-                                <ul className='she_ext_opt_in_tabs'>
-                                    <li className='she_nav_dropdown_links'><Link className={`${location.pathname == '/more_products' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/more_products" onClick={() => { setmenuToggel(false) }}>{__('More Products', 'she-header')}</Link></li>
-                                    <li className='she_nav_dropdown_links'><Link className={`${location.pathname == '/rollback_plugin' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/rollback_plugin" onClick={() => { setmenuToggel(false) }}>{__('Roll Back', 'she-header')}</Link></li>                                </ul>
-                            )}
+                            {/* {isDropdownOpen && ( */}
+                            <ul className={`she_ext_opt_in_tabs ${isDropdownOpen ? 'is-open' : ''}`}>
+                                <li className='she_nav_dropdown_links'><Link className={`${location.pathname == '/more_products' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/more_products" onClick={() => { setmenuToggel(false) }}>{__('More Products', 'she-header')}</Link></li>
+                                <li className='she_nav_dropdown_links'><Link className={`${location.pathname == '/rollback_plugin' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/rollback_plugin" onClick={() => { setmenuToggel(false) }}>{__('Roll Back', 'she-header')}</Link></li>
+                            </ul>
+                            {/* )} */}
                         </div>
                     </ul>
                     <div className='she_ver_nd_sys_info'>

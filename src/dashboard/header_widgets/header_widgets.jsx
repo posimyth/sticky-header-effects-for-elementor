@@ -170,7 +170,7 @@ const Header_widgets = (props) => {
         }
     ];
 
-    const CheckIcon_wdkit = (<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="none"><path fill="gray" d="M12.803 4.721a.5.5 0 0 1 .724.69l-7 7.334a.5.5 0 0 1-.715.008L3.478 10.42a.5.5 0 0 1 .67-.742l.038.035 1.97 1.97 6.647-6.962Z"/></svg>);
+    const CheckIcon_wdkit = (<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="none"><path fill="gray" d="M12.803 4.721a.5.5 0 0 1 .724.69l-7 7.334a.5.5 0 0 1-.715.008L3.478 10.42a.5.5 0 0 1 .67-.742l.038.035 1.97 1.97 6.647-6.962Z" /></svg>);
 
     const Wdesign_popup = () => {
         return (
@@ -197,13 +197,13 @@ const Header_widgets = (props) => {
                             <div className={`she-wdkit-accordio-content ${activeIndex === index ? "she-tpae-widget-content-opan" : ""}`} onClick={() => handleToggle(index)}>
                                 <div className="she-wdkit-accd-qui">{item.question}</div>
                                 <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" fill="none">
-                                    {activeIndex !== index ? (
-                                        <path fill="#020202" d="M14.165 7.733a6.167 6.167 0 1 0-12.333 0 6.167 6.167 0 0 0 12.333 0Zm-5.52-2.02a.5.5 0 0 1 .67-.035l.037.035 1.667 1.666a.5.5 0 0 1 0 .707L9.352 9.753a.5.5 0 1 1-.707-.707l.813-.813H5.332a.5.5 0 0 1 0-1h4.126l-.813-.813-.034-.038a.5.5 0 0 1 .034-.67Zm6.52 2.02a7.167 7.167 0 1 1-14.333 0 7.167 7.167 0 0 1 14.333 0Z"/>
-                                    ) : (
-                                        <path fill="#020202" d="M14.165 7.733a6.167 6.167 0 1 0-12.333 0 6.167 6.167 0 0 0 12.333 0ZM7.5 5.066a.5.5 0 1 1 1 0v4.127l.813-.813a.5.5 0 1 1 .707.707l-1.667 1.666a.5.5 0 0 1-.707 0L5.98 9.087l-.035-.038a.5.5 0 0 1 .704-.704l.038.035.813.813V5.066Zm7.666 2.667a7.167 7.167 0 1 1-14.333 0 7.167 7.167 0 0 1 14.333 0Z"/>
-                                    )}
-                                </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" fill="none">
+                                        {activeIndex !== index ? (
+                                            <path fill="#020202" d="M14.165 7.733a6.167 6.167 0 1 0-12.333 0 6.167 6.167 0 0 0 12.333 0Zm-5.52-2.02a.5.5 0 0 1 .67-.035l.037.035 1.667 1.666a.5.5 0 0 1 0 .707L9.352 9.753a.5.5 0 1 1-.707-.707l.813-.813H5.332a.5.5 0 0 1 0-1h4.126l-.813-.813-.034-.038a.5.5 0 0 1 .034-.67Zm6.52 2.02a7.167 7.167 0 1 1-14.333 0 7.167 7.167 0 0 1 14.333 0Z" />
+                                        ) : (
+                                            <path fill="#020202" d="M14.165 7.733a6.167 6.167 0 1 0-12.333 0 6.167 6.167 0 0 0 12.333 0ZM7.5 5.066a.5.5 0 1 1 1 0v4.127l.813-.813a.5.5 0 1 1 .707.707l-1.667 1.666a.5.5 0 0 1-.707 0L5.98 9.087l-.035-.038a.5.5 0 0 1 .704-.704l.038.035.813.813V5.066Zm7.666 2.667a7.167 7.167 0 1 1-14.333 0 7.167 7.167 0 0 1 14.333 0Z" />
+                                        )}
+                                    </svg>
                                 </div>
                             </div>
                             <div className={`she-wdkit-accd-ans ${activeIndex === index ? "opan-accordion" : ""}`}>{item.answer}</div>
@@ -493,33 +493,33 @@ const Header_widgets = (props) => {
                                                 </div>
                                             )
                                         })}
-                                        {TheplusSowPopup && (
-                                            <div className="she-tpae-popup" onClick={() => closePopup('tpae')}>
-                                                <div className="she-tpae-popup-bg" onClick={(e) => e.stopPropagation()}>
-                                                    <div className='she-tpae-popup-close'>
-                                                        <div className="she-tpae-model-close" onClick={() => closePopup('tpae')}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div>
-                                                    </div>
-                                                    <Theplus_Popup />
+                                        {/* {TheplusSowPopup && ( */}
+                                        <div className={`she-tpae-popup ${TheplusSowPopup ? 'is-open' : ''}`} onClick={() => closePopup('tpae')}>
+                                            <div className="she-tpae-popup-bg" onClick={(e) => e.stopPropagation()}>
+                                                <div className='she-tpae-popup-close'>
+                                                    <div className="she-tpae-model-close" onClick={() => closePopup('tpae')}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div>
                                                 </div>
+                                                <Theplus_Popup />
                                             </div>
-                                        )}
-                                        {WdkitPopup && (
-                                            <div className="she-tpae-wdkit-popup" onClick={() => closePopup('wdkit')}>
-                                                <div className="she-wdkit-content-bg" onClick={(e) => e.stopPropagation()}>
-                                                    <div className='she-popup-header'>
-                                                        <div className='she-popup-header-svg'>
-                                                            <img src={plugin_url + 'assets/images/banner/wdkit-treadmark.svg'} alt='WDesignKit' />
-                                                        </div>
-                                                        <div className="she-wdkit-popup-close" onClick={() => closePopup('wdkit')}>
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#808080" xmlns="http://www.w3.org/2000/svg"><path fill="#808080" fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fillOpacity="0.8" /></svg>
-                                                        </div>
-                                                     </div>
-                                                    <div className='she-wdkit-popup-wdk-body'>
-                                                        <Wdesign_popup />
+                                        </div>
+                                        {/* )} */}
+                                        {/* {WdkitPopup && ( */}
+                                        <div className={`she-tpae-wdkit-popup ${WdkitPopup ? 'is-open' : ''}`} onClick={() => closePopup('wdkit')}>
+                                            <div className="she-wdkit-content-bg" onClick={(e) => e.stopPropagation()}>
+                                                <div className='she-popup-header'>
+                                                    <div className='she-popup-header-svg'>
+                                                        <img src={plugin_url + 'assets/images/banner/wdkit-treadmark.svg'} alt='WDesignKit' />
+                                                    </div>
+                                                    <div className="she-wdkit-popup-close" onClick={() => closePopup('wdkit')}>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#808080" xmlns="http://www.w3.org/2000/svg"><path fill="#808080" fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fillOpacity="0.8" /></svg>
                                                     </div>
                                                 </div>
+                                                <div className='she-wdkit-popup-wdk-body'>
+                                                    <Wdesign_popup />
+                                                </div>
                                             </div>
-                                        )}
+                                        </div>
+                                        {/* )} */}
                                     </div>
                                 </div >
                             );

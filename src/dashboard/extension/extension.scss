@@ -496,10 +496,22 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 99999;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.she-nexter-popup.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .she-nexter-bg {
@@ -513,6 +525,17 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     // width: 50%;
     height: auto;
+
+    opacity: 0;
+    transform: scale(0.92);
+    transition:
+        opacity 0.35s ease,
+        transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.she-nexter-popup.is-open .she-nexter-bg {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .she-model-close {
@@ -523,7 +546,7 @@
     position: relative;
 }
 
-.she-model-close svg{
+.she-model-close svg {
     position: absolute;
     right: 8px;
 }

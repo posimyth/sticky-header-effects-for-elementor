@@ -99,7 +99,7 @@ const Extension = (props) => {
                     <div className="she-features-ndic">
                         <ul><li>{CheckIcon}{__('22+ Power up Extensions', 'she-header')}</li>
                             <li>{CheckIcon}{__('Works with Popular WordPress Themes', 'she-header')}</li></ul>
-                            <ul><li>{CheckIcon}{__('Performance Booster', 'she-header')}</li>
+                        <ul><li>{CheckIcon}{__('Performance Booster', 'she-header')}</li>
                             <li>{CheckIcon}{__('Security Hardener', 'she-header')}</li></ul>
                     </div>
                     <div className="she-install-activate">
@@ -242,14 +242,14 @@ const Extension = (props) => {
                         }
                     })
                 }
-                {NShowPopup && (
-                    <div className="she-nexter-popup" onClick={closePopup}>
-                        <div className="she-nexter-bg" onClick={(e) => e.stopPropagation()}>
-                            <div className="she-model-close" onClick={closePopup}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div>
-                            <InstallPopup />
-                        </div>
+                {/* {NShowPopup && ( */}
+                <div className={`she-nexter-popup ${NShowPopup ? 'is-open' : ''}`} onClick={closePopup}>
+                    <div className="she-nexter-bg" onClick={(e) => e.stopPropagation()}>
+                        <div className="she-model-close" onClick={closePopup}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z" fill="white" fillOpacity="0.8" /></svg></div>
+                        <InstallPopup />
                     </div>
-                )}
+                </div>
+                {/* )} */}
                 {null_check && <NotFound />}
             </>
         );
