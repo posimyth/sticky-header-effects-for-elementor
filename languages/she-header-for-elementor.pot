@@ -1,15 +1,15 @@
-# Copyright (C) 2025 POSIMYTH
+# Copyright (C) 2026 POSIMYTH
 # This file is distributed under the same license as the Sticky Header Effects for Elementor plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sticky Header Effects for Elementor 2.1.5\n"
+"Project-Id-Version: Sticky Header Effects for Elementor 2.1.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sticky-header-effects-for-elementor\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-01T10:32:39+00:00\n"
+"POT-Creation-Date: 2026-01-27T05:25:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: she-header\n"
@@ -129,21 +129,11 @@ msgid "Learn More"
 msgstr ""
 
 #: includes/notices/class-she-banner-notice.php:139
-#: includes/notices/class-she-bf-banner.php:120
 msgid "Insufficient permissions."
 msgstr ""
 
 #: includes/notices/class-she-banner-notice.php:149
-#: includes/notices/class-she-bf-banner.php:130
 msgid "Success."
-msgstr ""
-
-#: includes/notices/class-she-bf-banner.php:88
-msgid "Using our free Sticky Header Effects? Our sister plugins are on their biggest Cyber Monday sale - feel free to explore."
-msgstr ""
-
-#: includes/notices/class-she-bf-banner.php:89
-msgid "View Offers"
 msgstr ""
 
 #: includes/notices/class-she-deactivate-feedback.php:156
