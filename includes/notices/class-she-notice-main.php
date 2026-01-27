@@ -56,7 +56,7 @@ if ( ! class_exists( 'She_Notice_Main' ) ) {
 			$this->she_load();
 		}
 
-				/**
+		/**
 		 *
 		 * It is Use for Check Plugin Dependency of template.
 		 *
@@ -118,11 +118,6 @@ if ( ! class_exists( 'She_Notice_Main' ) ) {
 				if( ! empty( $ele_pro_details[0]['status'] ) && 'unavailable' == $ele_pro_details[0]['status'] ) {
 					include SHE_HEADER_PATH . 'includes/notices/class-she-nexter-extension-promo.php';
 				}
-
-				if( ! empty( $tpae_details[0]['status'] ) && 'unavailable' == $tpae_details[0]['status'] ) {
-					include SHE_HEADER_PATH . 'includes/notices/class-she-bf-banner.php';
-				}
-
 			}
 		}
 	}
