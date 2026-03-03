@@ -2,9 +2,9 @@
 Contributors: posimyththemes, devangvachheta, sagarpatel124, rwattner, dgovea
 Tags: Elementor, Elementor Page Builder, Add-ons, Header, Sticky Header
 Requires at least: 6.3
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 2.1.7
+Stable tag: 2.1.8
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -146,6 +146,9 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 8. Smarter Scroll Behaviors – Transparent, Distance Control, Sticky Logic
 
 == Changelog ==
+
+= 2.1.8 =
+- Maintenance: Wordpress 6.9 compatibility update
 
 = 2.1.7 =
 - Improvement: UI Related Minor Bug Fixes
