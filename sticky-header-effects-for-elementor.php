@@ -3,11 +3,11 @@
  * Plugin Name:			Sticky Header Effects for Elementor
  * Plugin URI:			https://stickyheadereffects.com
  * Description:			Create stunning sticky headers with multiple scroll effects like shrink, fade, slide, and blur—packed with 50+ ready-to-import templates and fully customizable using Elementor.
- * Version:				2.1.7
+ * Version:				2.1.8
  * Author:				POSIMYTH
  * Author URI:			https://posimyth.com/
  * Requires at least:	5.3
- * Tested up to:		6.8
+ * Tested up to:		6.9
  *
  * Text Domain: she-header
  * Domain Path: /languages/
@@ -19,8 +19,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-define( 'SHE_HEADER_VERSION', '2.1.7' );
-define( 'SHE_HEADER_PREVIOUS_STABLE_VERSION', '2.1.6' );
+define( 'SHE_HEADER_VERSION', '2.1.8' );
+define( 'SHE_HEADER_PREVIOUS_STABLE_VERSION', '2.1.7' );
 
 define( 'SHE_HEADER__FILE__', __FILE__ );
 define( 'SHE_HEADER_PLUGIN_BASE', plugin_basename( SHE_HEADER__FILE__ ) );
