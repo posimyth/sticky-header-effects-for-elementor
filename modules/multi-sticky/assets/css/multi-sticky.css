@@ -1,0 +1,88 @@
+/**
+ * Multi-Sticky Coordinator — visuals (rebuild v6).
+ *
+ * Pure JS-controlled fixed positioning. CSS only handles:
+ *   - .she-multi-fixed class: applied by JS when a container is
+ *     currently active/sticky. Container becomes `position: fixed`
+ *     at viewport top. The `top` value is set per-container inline
+ *     via JS based on mode (cumulative for Stack, 0 for Sequential).
+ *   - .she-multi-hidden class: applied to "past" containers in
+ *     Sequential mode (already taken over by a later one).
+ *   - .she-multi-placeholder: zero-content spacer inserted by JS
+ *     to preserve layout when a container goes fixed.
+ *
+ * No `:has()`, no `position: sticky` — pure JS control means consistent
+ * behavior across browsers, Elementor versions, and Theme Builder
+ * wrappers.
+ *
+ * @package she-header
+ * @since   2.2.10
+ */
+
+.she-multi-fixed {
+	position: fixed !important;
+	left: 0 !important;
+	right: 0 !important;
+	width: 100% !important;
+	margin: 0 !important;
+	z-index: 9999;
+}
+
+/*
+ * Override Free's `transition: all 0.4s ease-in-out !important` rule that
+ * comes from .she-header-yes / .she-header-yes.e-con. We use a higher-
+ * specificity selector (attribute + class = 0,2,0 vs Free's class + class =
+ * 0,2,0 but we load later so we win on ties) with !important so that the
+ * `top` property does NOT animate on every scroll update — only during the
+ * deliberate slide-in animation (.she-multi-entering).
+ */
+[data-she-multi-mode].she-multi-fixed {
+	transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+/*
+ * During activation: enable a smooth top transition. JS adds this class,
+ * waits for the animation to finish, then removes it. Specificity 0,3,0
+ * beats Free's 0,2,0 in both !important layers.
+ */
+[data-she-multi-mode].she-multi-fixed.she-multi-entering {
+	transition: top 0.35s cubic-bezier( 0.25, 0.46, 0.45, 0.94 ),
+	            opacity 0.3s ease,
+	            visibility 0.3s ease !important;
+}
+
+.she-multi-fixed.she-multi-hidden {
+	opacity: 0 !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+}
+
+.she-multi-placeholder {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	pointer-events: none;
+	visibility: hidden;
+}
+
+/*
+ * Free's she-header.js selects ALL .she-header-yes elements and adds the
+ * .she-header class to all of them when scroll passes the first container's
+ * threshold. Free's CSS then applies position:fixed !important to every
+ * container that has .she-header — including containers in the middle of
+ * the page that Multi-Sticky hasn't activated yet.
+ *
+ * This rule neutralises that for containers we manage. Specificity is
+ * 0,3,0 (attribute + :not class + class) vs Free's 0,2,0 (class + :not
+ * class), so ours wins within the !important layer.
+ *
+ * When Multi-Sticky DOES activate a container (.she-multi-fixed is added),
+ * :not(.she-multi-fixed) no longer matches, so this rule steps aside and
+ * .she-multi-fixed takes full control.
+ */
+[data-she-multi-mode]:not(.she-multi-fixed).she-header {
+	position: relative !important;
+	top: auto !important;
+}

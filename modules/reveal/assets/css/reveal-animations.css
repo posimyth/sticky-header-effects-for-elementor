@@ -1,0 +1,110 @@
+/**
+ * Reveal Animation Keyframes.
+ *
+ * Globally-defined keyframes consumed by the `animation` shorthand rule
+ * written per-section by Elementor selectors.
+ *
+ * Naming convention: `she-reveal-<effect>` — matches the SELECT control
+ * values in modules/reveal/module.php (cross-referenced via
+ * `she-reveal-{{she_reveal_effect.VALUE}}`).
+ *
+ * @package she-header
+ * @since   2.2.0
+ */
+
+@keyframes she-reveal-slide-down {
+	from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes she-reveal-slide-up {
+	from {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes she-reveal-slide-left {
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes she-reveal-slide-right {
+	from {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes she-reveal-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes she-reveal-zoom-in {
+	from {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes she-reveal-zoom-out {
+	from {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes she-reveal-flip-x {
+	from {
+		transform: perspective(800px) rotateX(-90deg);
+		opacity: 0;
+	}
+	to {
+		transform: perspective(800px) rotateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes she-reveal-flip-y {
+	from {
+		transform: perspective(800px) rotateY(-90deg);
+		opacity: 0;
+	}
+	to {
+		transform: perspective(800px) rotateY(0);
+		opacity: 1;
+	}
+}

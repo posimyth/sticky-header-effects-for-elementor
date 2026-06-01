@@ -1,0 +1,17 @@
+/**
+ * Sticky Until — released state.
+ *
+ * The JS handler adds `.she-sticky-until-released` to the section when the
+ * configured boundary is reached. We use !important to win over Free's
+ * inline `top`/style mutations and over any opacity values written by the
+ * #9 Opacity module — the released state always hides.
+ *
+ * @package she-header
+ * @since   2.2.0
+ */
+
+.she-header-yes.she-sticky-until-released {
+	opacity: 0 !important;
+	pointer-events: none !important;
+	transition: opacity 0.3s ease;
+}

@@ -1,0 +1,85 @@
+/**
+ * Header Replace on Scroll — visuals.
+ *
+ * Hidden-by-default alternate wrapper, transition variants, and the
+ * matching "swapped out" state for the original section. Transition
+ * duration comes from the per-element selector rule written by Elementor
+ * (the `she_replace_duration` control). This file holds the static
+ * behavioral rules.
+ *
+ * Admin-bar offset is included so the alternate sits below WP's admin
+ * bar instead of behind it when an admin is logged in.
+ *
+ * @package she-header
+ * @since   2.2.0
+ */
+
+/* ----------- Alternate template wrapper (hidden by default) */
+
+.she-header-alternate {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition-property: opacity, visibility, transform;
+	transition-timing-function: ease;
+	transition-duration: 0.3s;
+}
+
+.she-header-alternate--active {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+/* ----------- Original section "swapped out" state */
+
+[data-she-replace-pair-id].she-header-original--swapped-out {
+	opacity: 0 !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+	transition-property: opacity, visibility;
+	transition-timing-function: ease;
+	transition-duration: 0.3s;
+}
+
+/* ----------- Transition variants */
+
+/* Fade — handled by the default opacity transition above. */
+
+/* Slide Down: alternate starts above viewport, drops in. */
+.she-header-alternate.she-header-alternate--slide-down {
+	transform: translateY(-100%);
+}
+.she-header-alternate.she-header-alternate--slide-down.she-header-alternate--active {
+	transform: translateY(0);
+}
+
+/* Slide Up: alternate starts below viewport, rises in. */
+.she-header-alternate.she-header-alternate--slide-up {
+	transform: translateY(100%);
+}
+.she-header-alternate.she-header-alternate--slide-up.she-header-alternate--active {
+	transform: translateY(0);
+}
+
+/* None: instant swap. */
+.she-header-alternate.she-header-alternate--none {
+	transition: none !important;
+}
+
+/* ----------- WP admin bar offset */
+
+.admin-bar .she-header-alternate {
+	top: 32px;
+}
+@media screen and (max-width: 782px) {
+	.admin-bar .she-header-alternate {
+		top: 46px;
+	}
+}
