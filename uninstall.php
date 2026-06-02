@@ -17,3 +17,5 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 delete_option( 'she_rebranding_dismissed' );
+delete_option( 'she_bfsale_notice_dismissed' );
+delete_option( 'she_smsale_notice_dismissed' );

@@ -56,7 +56,7 @@ if ( ! class_exists( 'She_Notice_Main' ) ) {
 			$this->she_load();
 		}
 
-				/**
+		/**
 		 *
 		 * It is Use for Check Plugin Dependency of template.
 		 *
@@ -101,12 +101,19 @@ if ( ! class_exists( 'She_Notice_Main' ) ) {
 				include SHE_HEADER_PATH . 'includes/notices/class-she-deactivate-feedback.php';
 
 				$ele_pro_plugin = array(
-				'name'        => 'elementor-pro',
-				'status'      => '',
-				'plugin_slug' => 'elementor-pro/elementor-pro.php',
-			);
+					'name'        => 'elementor-pro',
+					'status'      => '',
+					'plugin_slug' => 'elementor-pro/elementor-pro.php',
+				);
 
-			$ele_pro_details = $this->tpae_check_plugins_depends( $ele_pro_plugin );
+				$tpae_plugin = array(
+					'name'        => 'the-plus-addons-for-elementor-page-builder',
+					'status'      => '',
+					'plugin_slug' => 'the-plus-addons-for-elementor-page-builder/theplus_elementor_addon.php',
+				);
+
+				$ele_pro_details = $this->tpae_check_plugins_depends( $ele_pro_plugin );
+				$tpae_details    = $this->tpae_check_plugins_depends( $tpae_plugin );
 			  	
 				if( ! empty( $ele_pro_details[0]['status'] ) && 'unavailable' == $ele_pro_details[0]['status'] ) {
 					include SHE_HEADER_PATH . 'includes/notices/class-she-nexter-extension-promo.php';

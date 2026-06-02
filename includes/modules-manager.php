@@ -12,9 +12,17 @@ final class Manager {
 	private $modules = [];
 
 	public function __construct() {
+		// Free plugin loads ONLY its own `transparent` module here.
+		//
+		// The Pro feature modules still physically live in this plugin's
+		// `modules/<feature>/` folders, but they are no longer registered
+		// here. They are instantiated by the separate
+		// "Sticky Header Effects for Elementor Pro" plugin when it is
+		// active (see that plugin's includes/class-pro-manager.php). With
+		// the Pro plugin inactive, these features simply do not load.
 		$modules = [
 			'transparent',
-			
+			'pro-upsell',
 		];
 
 		foreach ( $modules as $module_name ) {
