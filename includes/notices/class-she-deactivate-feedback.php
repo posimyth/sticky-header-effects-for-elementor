@@ -213,7 +213,15 @@ if ( ! class_exists( 'She_Deactivate_Feedback' ) ) {
 							<input type="radio" name="she_issue_type" id="<?php echo esc_attr( $id ); ?>" value="<?php echo esc_attr( $reason['label'] ); ?>" hidden />
 
 							<label for="<?php echo esc_attr( $id ); ?>" class="she-feedback-option">
-								<span class="she-feedback-icon"><?php echo $reason['svg']; ?></span>
+								<span class="she-feedback-icon"><?php echo wp_kses( $reason['svg'], array(
+								'svg'      => array( 'xmlns' => true, 'fill' => true, 'viewbox' => true, 'width' => true, 'height' => true, 'class' => true, 'aria-hidden' => true ),
+								'g'        => array( 'fill' => true, 'stroke' => true, 'stroke-width' => true, 'stroke-linecap' => true, 'stroke-linejoin' => true, 'clip-path' => true, 'transform' => true ),
+								'path'     => array( 'd' => true, 'fill' => true, 'fill-rule' => true, 'clip-rule' => true, 'stroke' => true, 'stroke-width' => true, 'stroke-linecap' => true, 'stroke-linejoin' => true ),
+								'circle'   => array( 'cx' => true, 'cy' => true, 'r' => true, 'fill' => true, 'stroke' => true, 'stroke-width' => true ),
+								'rect'     => array( 'x' => true, 'y' => true, 'width' => true, 'height' => true, 'rx' => true, 'ry' => true, 'fill' => true ),
+								'defs'     => array(),
+								'clippath' => array( 'id' => true ),
+							) ); ?></span>
 								<span class="she-feedback-label"><?php echo esc_html( $reason['label'] ); ?></span>
 							</label>
 						<?php } ?>
