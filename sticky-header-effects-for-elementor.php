@@ -8,6 +8,7 @@
  * Author URI:			https://posimyth.com/
  * Requires at least:	6.3
  * Tested up to:		7.0
+ * Requires PHP:		7.4
  *
  * Text Domain: she-header
  * Domain Path: /languages/
