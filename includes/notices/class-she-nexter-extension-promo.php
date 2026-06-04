@@ -176,11 +176,13 @@ if ( ! class_exists( 'She_Nexter_Extension_Promo_Notice' ) ) {
 		public function she_nexter_extension_dismiss_promo() {
 
 			if ( ! check_ajax_referer( 'she-nexter-extension', 'security', false ) ) {
-				$response = $this->she_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
+				wp_send_json( $this->she_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' ) );
+				wp_die();
 			}
 
 			if ( ! current_user_can( 'manage_options' ) ) {
-				$response = $this->she_set_response( false, 'You are not allowed to do this action', '', '' );
+				wp_send_json( $this->she_set_response( false, 'You are not allowed to do this action', '', '' ) );
+				wp_die();
 			}
 
 			update_option( 'she_nexter_extension_notice', true );
