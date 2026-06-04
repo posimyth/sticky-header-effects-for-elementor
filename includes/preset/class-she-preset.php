@@ -172,27 +172,21 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 			include_once ABSPATH . 'wp-admin/includes/class-automatic-upgrader-skin.php';
 			include_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
 
-			$result   = array();
-			$response = wp_remote_post(
-				'http://api.wordpress.org/plugins/info/1.0/',
+			$result = array();
+
+			require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+
+			$plugin_info = plugins_api(
+				'plugin_information',
 				array(
-					'body' => array(
-						'action'  => 'plugin_information',
-						'request' => serialize(
-							(object) array(
-								'slug'   => 'wdesignkit',
-								'fields' => array(
-									'version' => false,
-								),
-							)
-						),
+					'slug'   => 'wdesignkit',
+					'fields' => array(
+						'version' => false,
 					),
 				)
 			);
 
-			$plugin_info = unserialize( wp_remote_retrieve_body( $response ) );
-
-			if ( ! $plugin_info ) {
+			if ( is_wp_error( $plugin_info ) || ! isset( $plugin_info->download_link ) ) {
 				wp_send_json_error( array( 'content' => __( 'Failed to retrieve plugin information.', 'she-header' ) ) );
 			}
 
