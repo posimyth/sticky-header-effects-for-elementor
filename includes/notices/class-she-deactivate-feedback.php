@@ -295,7 +295,7 @@ if ( ! class_exists( 'She_Deactivate_Feedback' ) ) {
 				$this->deactive_url,
 				array(
 					'timeout'   => 60,
-					'sslverify' => false,
+					'sslverify' => true,
 					'body'      => $api_params,
 				)
 			);
