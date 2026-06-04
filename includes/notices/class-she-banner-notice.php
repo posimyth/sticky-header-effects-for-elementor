@@ -124,7 +124,7 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 				});
 			</script>';
 
-			echo $output;
+		echo wp_kses_post( $output );
 		}
 
 		/**
