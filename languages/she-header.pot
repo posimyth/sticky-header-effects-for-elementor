@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Sticky Header Effects for Elementor plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sticky Header Effects for Elementor 2.1.7\n"
+"Project-Id-Version: Sticky Header Effects for Elementor 2.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sticky-header-effects-for-elementor\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-27T05:25:41+00:00\n"
+"POT-Creation-Date: 2026-06-04T11:59:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: she-header\n"
@@ -55,9 +55,15 @@ msgstr ""
 msgid "Rollback to Previous Version"
 msgstr ""
 
-#: includes/dashboard/class-she-dashboard-ajax.php:496
-#: includes/preset/class-she-preset.php:196
+#: includes/dashboard/class-she-dashboard-ajax.php:488
+#: includes/preset/class-she-preset.php:190
 msgid "Failed to retrieve plugin information."
+msgstr ""
+
+#. translators: %s: theme name
+#: includes/dashboard/class-she-dashboard-ajax.php:568
+#, php-format
+msgid "Success %s"
 msgstr ""
 
 #: includes/dashboard/class-she-wp-menu.php:79
@@ -128,11 +134,15 @@ msgstr ""
 msgid "Learn More"
 msgstr ""
 
-#: includes/notices/class-she-banner-notice.php:139
+#: includes/notices/class-she-banner-notice.php:148
+msgid "Security check failed."
+msgstr ""
+
+#: includes/notices/class-she-banner-notice.php:156
 msgid "Insufficient permissions."
 msgstr ""
 
-#: includes/notices/class-she-banner-notice.php:149
+#: includes/notices/class-she-banner-notice.php:167
 msgid "Success."
 msgstr ""
 
@@ -172,41 +182,54 @@ msgstr ""
 msgid "Deactivation Reason"
 msgstr ""
 
-#: includes/notices/class-she-deactivate-feedback.php:228
+#: includes/notices/class-she-deactivate-feedback.php:230
+msgid "Please share the reason"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:236
 msgid "If you require any help, please "
 msgstr ""
 
-#: includes/notices/class-she-deactivate-feedback.php:229
+#: includes/notices/class-she-deactivate-feedback.php:237
 msgid "Create A Ticket"
 msgstr ""
 
-#: includes/notices/class-she-deactivate-feedback.php:230
+#: includes/notices/class-she-deactivate-feedback.php:238
 msgid ", we reply within 24 working hours. Looking for instant solutions? - "
 msgstr ""
 
-#: includes/notices/class-she-deactivate-feedback.php:231
+#: includes/notices/class-she-deactivate-feedback.php:239
 msgid "Read our Documentation"
 msgstr ""
 
-#: includes/notices/class-she-deactivate-feedback.php:231
+#: includes/notices/class-she-deactivate-feedback.php:239
 msgid "or"
 msgstr ""
 
-#: includes/notices/class-she-deactivate-feedback.php:231
+#: includes/notices/class-she-deactivate-feedback.php:239
 msgid "Ask AI"
 msgstr ""
 
-#: includes/notices/class-she-deactivate-feedback.php:238
+#: includes/notices/class-she-deactivate-feedback.php:246
 msgid "I agree to be contacted via email for support with this plugin."
 msgstr ""
 
-#: includes/notices/class-she-deactivate-feedback.php:264
-#: includes/notices/class-she-deactivate-feedback.php:265
+#: includes/notices/class-she-deactivate-feedback.php:272
+#: includes/notices/class-she-deactivate-feedback.php:273
 msgid "Security checked!"
 msgstr ""
 
-#: includes/notices/class-she-deactivate-feedback.php:298
-#: includes/notices/class-she-deactivate-feedback.php:299
+#: includes/notices/class-she-deactivate-feedback.php:283
+msgid "Unauthorized"
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:284
+#: includes/notices/class-she-plugin-page.php:140
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/notices/class-she-deactivate-feedback.php:317
+#: includes/notices/class-she-deactivate-feedback.php:318
 msgid "success!."
 msgstr ""
 
@@ -214,12 +237,13 @@ msgstr ""
 msgid "Create Elementor Header, Footer, Single, Archive, 404 etc for FREE!"
 msgstr ""
 
-#: includes/notices/class-she-nexter-extension-promo.php:139
+#. translators: %s: the linked "Nexter Extension Plugin" name
+#: includes/notices/class-she-nexter-extension-promo.php:141
 #, php-format
 msgid "Install <a href=\"https://nexterwp.com/nexter-extension/?utm_source=wpbackend&utm_medium=banner&utm_campaign=links\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"font-weight: 500; text-decoration: underline;\">%s</a> from Sticky Header Effects for Elementor to use FREE Theme Builder for Elementor."
 msgstr ""
 
-#: includes/notices/class-she-nexter-extension-promo.php:141
+#: includes/notices/class-she-nexter-extension-promo.php:143
 msgid "Enable FREE Theme Builder"
 msgstr ""
 
@@ -227,12 +251,12 @@ msgstr ""
 msgid "This Plugin is now part of POSIMYTH Innovations"
 msgstr ""
 
-#: includes/notices/class-she-plugin-page.php:131
-msgid "Invalid nonce. Unauthorized request."
+#: includes/notices/class-she-plugin-page.php:93
+msgid "Read Whats New in Sticky Header Effects for Elementor"
 msgstr ""
 
-#: includes/notices/class-she-plugin-page.php:140
-msgid "You do not have permission to perform this action."
+#: includes/notices/class-she-plugin-page.php:131
+msgid "Invalid nonce. Unauthorized request."
 msgstr ""
 
 #: includes/notices/class-she-plugin-page.php:150
@@ -247,56 +271,56 @@ msgstr ""
 msgid "You do not have permission to install or activate plugins."
 msgstr ""
 
-#: includes/preset/class-she-preset.php:280
+#: includes/preset/class-she-preset.php:278
 msgid "Import 50+ Pre-Designed "
 msgstr ""
 
-#: includes/preset/class-she-preset.php:281
+#: includes/preset/class-she-preset.php:279
 msgid "Sticky Header Templates"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:285
+#: includes/preset/class-she-preset.php:283
 msgid "Uniquely designed Elementor Templates for every website type made with Elementor & The Plus Addons for Elementor Widgets."
 msgstr ""
 
-#: includes/preset/class-she-preset.php:292
+#: includes/preset/class-she-preset.php:290
 msgid "Design Quickly without starting from Scratch"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:298
+#: includes/preset/class-she-preset.php:296
 msgid "Fully Customizable for Any Style"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:306
+#: includes/preset/class-she-preset.php:304
 msgid "Time-Saving and Efficient Workflow"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:312
+#: includes/preset/class-she-preset.php:310
 msgid "Explore Versatile Layout Options"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:319
+#: includes/preset/class-she-preset.php:317
 msgid "Supports Widgets :"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:325
+#: includes/preset/class-she-preset.php:323
 msgid "Navigation Menu Widget"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:329
+#: includes/preset/class-she-preset.php:327
 #: build/index.js:1
 msgid "WordPress Menu"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:333
+#: includes/preset/class-she-preset.php:331
 msgid "Nav Menu"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:340
+#: includes/preset/class-she-preset.php:338
 msgid "Install WDesignKit Plugin for Templates"
 msgstr ""
 
-#: includes/preset/class-she-preset.php:346
+#: includes/preset/class-she-preset.php:344
 msgid "Design from Scratch"
 msgstr ""
 
@@ -397,7 +421,7 @@ msgstr ""
 
 #: modules/transparent/module.php:308
 msgid ""
-"This will make the header overlap the main page so extra spacing at the top of sections may be needed<br><br>\n"
+"This will make the header overlap the main page so extra spacing at the top of sections may be needed<br><br>\r\n"
 "\t\t\t\tDoes NOT work on/override elementor sticky settings"
 msgstr ""
 
@@ -1407,6 +1431,94 @@ msgid "Video"
 msgstr ""
 
 #: build/index.js:1
+msgid "Please enter your license key."
+msgstr ""
+
+#: build/index.js:1
+msgid "Could not verify the license. Please check the key and try again."
+msgstr ""
+
+#: build/index.js:1
+msgid "Something went wrong while contacting the license server."
+msgstr ""
+
+#: build/index.js:1
+msgid "Visit POSIMYTH Store Dashboard"
+msgstr ""
+
+#: build/index.js:1
+msgid "Copy the License Key"
+msgstr ""
+
+#: build/index.js:1
+msgid "Paste the Key here & Hit Activate"
+msgstr ""
+
+#: build/index.js:1
+msgid "Upgrade Now"
+msgstr ""
+
+#: build/index.js:1
+msgid "Unlock Sticky Header Effects Pro"
+msgstr ""
+
+#: build/index.js:1
+msgid "Upgrade to Pro to unlock 11 powerful features — Display Conditions, Sticky Until, Reveal Animations, Header Replace, Logo Swap, Sticky Menu Styling, and more."
+msgstr ""
+
+#: build/index.js:1
+msgid "Activate PRO"
+msgstr ""
+
+#: build/index.js:1
+msgid "Licence Activation"
+msgstr ""
+
+#: build/index.js:1
+msgid "Enter Your License Key"
+msgstr ""
+
+#: build/index.js:1
+msgid "Deactivating…"
+msgstr ""
+
+#: build/index.js:1
+msgid "Deactivate"
+msgstr ""
+
+#: build/index.js:1
+msgid "Activating…"
+msgstr ""
+
+#: build/index.js:1
+msgid "Activate"
+msgstr ""
+
+#: build/index.js:1
+msgid "Congratulations! License successfully activated."
+msgstr ""
+
+#: build/index.js:1
+msgid "Lifetime license — never expires."
+msgstr ""
+
+#: build/index.js:1
+msgid "Valid until"
+msgstr ""
+
+#: build/index.js:1
+msgid "How to Find the Activation Key?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Facing Issues?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Check our troubleshooting guide"
+msgstr ""
+
+#: build/index.js:1
 msgid "Elementor Theme Builder "
 msgstr ""
 
@@ -1416,6 +1528,10 @@ msgstr ""
 
 #: build/index.js:1
 msgid "Roll Back"
+msgstr ""
+
+#: build/index.js:1
+msgid "Activate License"
 msgstr ""
 
 #: build/index.js:1
