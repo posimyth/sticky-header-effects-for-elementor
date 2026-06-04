@@ -154,7 +154,7 @@ if ( ! class_exists( 'She_Nexter_Extension_Promo_Notice' ) ) {
 							type: 'POST',
 							data: {
 								action: 'she_nexter_extension_dismiss_promo',
-								security: "<?php echo esc_html( $nonce ); ?>",
+								security: "<?php echo esc_js( $nonce ); ?>",
 								type: 'nexter_extension_notice',
 							},
 							success: function(response) {
