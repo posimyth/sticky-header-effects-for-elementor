@@ -296,7 +296,7 @@ if ( ! class_exists( 'She_Deactivate_Feedback' ) ) {
 				'issue_text' => $issue_text,
 			);
 
-			if ( ! empty( $_POST['collect_email'] ) && $_POST['collect_email'] == '1' ) {
+			if ( ! empty( $_POST['collect_email'] ) && '1' === sanitize_text_field( wp_unslash( $_POST['collect_email'] ) ) ) {
 				$current_user = wp_get_current_user();
 				$user_email   = $current_user->user_email;
 				$api_params['email'] = $user_email;
