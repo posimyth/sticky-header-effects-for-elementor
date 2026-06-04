@@ -634,7 +634,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			if ( is_array( $statuscode ) && is_array( $response ) ) {
 				$final = array_merge( $statuscode, $response );
 
-				if ( 200 == $status_code ) {
+				if ( 200 === (int) $status_code ) {
 					if ( 'header_template' === $header_template ) {
 						add_option( 'she_header_template', $final );
 						set_transient( 'she_header_template', 'header_template', 24 * HOUR_IN_SECONDS );
