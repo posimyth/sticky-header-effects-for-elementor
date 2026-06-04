@@ -529,81 +529,43 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		public function she_theme_install() {
 
 			if ( ! current_user_can( 'install_themes' ) ) {
-				$response = $this->she_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
-				return $response;
+				return $this->she_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
 			}
 
 			$name = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
-
-			$theme_slug    = $name;
-			$theme_api_url = 'https://api.wordpress.org/themes/info/1.0/';
-
-			// Parameters for the request
-			$args = array(
-				'body' => array(
-					'action'  => 'theme_information',
-					'request' => serialize(
-						(object) array(
-							'slug'   => $name,
-							'fields' => array(
-								'description'     => false,
-								'sections'        => false,
-								'rating'          => true,
-								'ratings'         => false,
-								'downloaded'      => true,
-								'download_link'   => true,
-								'last_updated'    => true,
-								'homepage'        => true,
-								'tags'            => true,
-								'template'        => true,
-								'active_installs' => false,
-								'parent'          => false,
-								'versions'        => false,
-								'screenshot_url'  => true,
-							),
-						)
-					),
-				),
-			);
-
-			// Make the request
-			$response = wp_remote_post( $theme_api_url, $args );
-			// Check for errors
-			if ( is_wp_error( $response ) ) {
-				$error_message = $response->get_error_message();
-
-				$result = $this->she_set_response( false, 'oops', 'oops', '' );
-			} else {
-				$theme_info    = unserialize( $response['body'] );
-				$theme_name    = $theme_info->name;
-				$theme_zip_url = $theme_info->download_link;
-
-				global $wp_filesystem;
-				// Install the theme
-				$theme = wp_remote_get( $theme_zip_url );
-
-				if ( ! function_exists( 'WP_Filesystem' ) ) {
-					require_once wp_normalize_path( ABSPATH . '/wp-admin/includes/file.php' );
-				}
-
-				WP_Filesystem();
-
-				$active_theme = wp_get_theme();
-				$theme_name   = $active_theme->get( 'Name' );
-
-				$wp_filesystem->put_contents( WP_CONTENT_DIR . '/themes/' . $theme_slug . '.zip', $theme['body'] );
-				$zip = new ZipArchive();
-				if ( $zip->open( WP_CONTENT_DIR . '/themes/' . $theme_slug . '.zip' ) === true ) {
-					$zip->extractTo( WP_CONTENT_DIR . '/themes/' );
-					$zip->close();
-				}
-
-				$wp_filesystem->delete( WP_CONTENT_DIR . '/themes/' . $theme_slug . '.zip' );
-
-				$result = $this->she_set_response( true, "Success $name", "Success $name", '' );
+			if ( ! $name ) {
+				return $this->she_set_response( false, 'Theme slug not found.', 'Something went wrong.' );
 			}
 
-			return $result;
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+			require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+			require_once ABSPATH . 'wp-admin/includes/class-automatic-upgrader-skin.php';
+			require_once ABSPATH . 'wp-admin/includes/theme-install.php';
+
+			$theme_info = themes_api(
+				'theme_information',
+				array(
+					'slug'   => $name,
+					'fields' => array(
+						'download_link' => true,
+					),
+				)
+			);
+
+			if ( is_wp_error( $theme_info ) || empty( $theme_info->download_link ) ) {
+				return $this->she_set_response( false, 'oops', 'Could not retrieve theme information.', '' );
+			}
+
+			$skin      = new \Automatic_Upgrader_Skin();
+			$upgrader  = new \Theme_Upgrader( $skin );
+			$installed = $upgrader->install( $theme_info->download_link );
+
+			if ( is_wp_error( $installed ) || ! $installed ) {
+				return $this->she_set_response( false, 'Install failed.', 'Theme could not be installed.', '' );
+			}
+
+			/* translators: %s: theme name */
+			return $this->she_set_response( true, sprintf( __( 'Success %s', 'she-header' ), esc_html( $name ) ), '', '' );
 		}
 
 		/**
