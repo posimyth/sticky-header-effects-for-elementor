@@ -148,7 +148,7 @@
 
     .she_ext_opt_in_tabs {
         list-style: none;
-        margin: 10px 0 0 19px;
+        margin: 0 0 0 19px;
         border-left: 1px solid #dcdcdc;
 
         overflow: hidden;
@@ -158,7 +158,8 @@
         transition:
             max-height 0.25s ease,
             opacity 0.25s ease,
-            transform 0.25s ease;
+            transform 0.25s ease,
+            margin-top 0.25s ease;
         pointer-events: none;
 
         .she_nav_dropdown_links {
@@ -185,6 +186,7 @@
 
     .she_ext_opt_in_tabs.is-open {
         max-height: 600px;
+        margin-top: 10px;
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;

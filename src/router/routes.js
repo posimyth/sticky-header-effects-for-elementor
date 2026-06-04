@@ -5,6 +5,7 @@ import RollBack from '../dashboard/rollback_plugin/rollback';
 import ElementorTemplates from '../dashboard/elementor_templates/elementor_templates';
 import Extension from '../dashboard/extension/extension';
 import Header_widgets from '../dashboard/header_widgets/header_widgets';
+import ActivateLicense from '../dashboard/activate_license/activate_license';
 
 
 const routes = [
@@ -35,6 +36,10 @@ const routes = [
   {
     path: '/header_widgets',
     element: <Header_widgets />
+  },
+  {
+    path: '/activate_license',
+    element: <ActivateLicense />
   },
   {
     path: '*',

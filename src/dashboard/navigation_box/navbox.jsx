@@ -91,6 +91,7 @@ const NavBox = (props) => {
                             </ul>
                             {/* )} */}
                         </div>
+                        <li><Link className={`${location.pathname == '/activate_license' ? 'she_navlink she_active_tab' : 'she_navlink'}`} to="/activate_license" onClick={() => { setmenuToggel(false) }}>{shed_data.shed_pro_installed == 1 ? __('Activate License', 'she-header') : __('Upgrade Now', 'she-header')}</Link></li>
                     </ul>
                     <div className='she_ver_nd_sys_info'>
                         <p className='she_version'>{__('Version', 'she-header')} {she_version}</p> |

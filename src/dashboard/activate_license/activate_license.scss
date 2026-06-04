@@ -1,0 +1,246 @@
+@import "../../style/global.scss";
+
+.she-activate-license-main {
+
+    .she_license_box_cover_main {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        background-color: $she_white;
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 25px;
+        width: 100%;
+        position: relative;
+    }
+
+    .she_license_card_title {
+        margin: 0;
+    }
+
+    .she_upgrade_box {
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .she_upgrade_text {
+        font-family: $she_font_family;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+        color: $she_gray_primary_normal;
+        margin: 0;
+        max-width: 680px;
+    }
+
+    .she_upgrade_btn span {
+        margin-left: 4px;
+    }
+
+    .she_license_field_row {
+        display: flex;
+        align-items: stretch;
+        gap: 12px;
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    .she_license_input {
+        flex: 1 1 auto;
+        font-family: $she_font_family;
+        font-size: 14px;
+        line-height: 16px;
+        color: $she_dark_blk;
+        background-color: $she_white;
+        padding: 12px 16px;
+        border: 1px solid $she-ghost-btn_border;
+        border-radius: 5px;
+        box-sizing: border-box;
+        transition: border-color 0.2s ease-in-out;
+
+        &:focus {
+            outline: none;
+            border-color: $she_dark_pink;
+            box-shadow: none;
+        }
+
+        &:disabled {
+            background-color: $she_light_gray_tint;
+            color: $she_gray_primary_normal;
+        }
+    }
+
+    .she_license_btn {
+        flex: 0 0 auto;
+        min-width: 120px;
+
+        &.disable {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+    }
+
+    .she_license_message {
+        display: flex;
+        align-items: center;
+        font-family: $she_font_family;
+        font-size: 13px;
+        line-height: 20px;
+        margin: 0;
+        padding: 0;
+
+        &.is-valid {
+            color: #0f7d2e;
+        }
+
+        &.is-invalid {
+            color: #b3261e;
+        }
+    }
+
+    .she_license_deactivate {
+        background-color: #e02b2b;
+        border-color: #e02b2b;
+        color: $she_white;
+
+        &:hover {
+            background-color: #c12020;
+            border-color: #c12020;
+            color: $she_white;
+        }
+    }
+
+    .she_license_check {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        margin-right: 7px;
+        border-radius: 50%;
+        background-color: #1ecb2b;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1;
+        vertical-align: middle;
+    }
+
+    .she_license_step_text a {
+        color: $she_dark_pink;
+        text-decoration: underline;
+    }
+
+    .she_license_expiry {
+        font-family: $she_font_family;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 500;
+        color: $she_gray_secondary_dark;
+        margin: 0;
+    }
+
+    .she_license_pro_hint {
+        font-family: $she_font_family;
+        font-size: 13px;
+        line-height: 20px;
+        color: $she_gray_primary_normal;
+        margin: 0;
+    }
+
+    .she_license_steps_cover {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        border-top: 1px solid $she_table_border;
+        padding-top: 24px;
+    }
+
+    .she_license_steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+    }
+
+    .she_license_step {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 0 0 28px;
+        position: relative;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        // vertical connector line between step numbers
+        &:not(:last-child)::before {
+            content: "";
+            position: absolute;
+            left: 18px;
+            top: 36px;
+            bottom: -8px;
+            width: 1px;
+            background-color: $she_table_border;
+        }
+    }
+
+    .she_license_step_num {
+        flex: 0 0 auto;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgba(157, 26, 79, 0.35);
+        color: $she_dark_pink;
+        font-family: $she_font_family;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: $she_nav_strip_bg_light;
+        position: relative;
+        z-index: 1;
+    }
+
+    .she_license_step_text {
+        font-family: $she_font_family;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 500;
+        color: $she_gray_secondary_dark;
+    }
+
+    .she_license_trouble {
+        font-family: $she_font_family;
+        font-size: 13px;
+        line-height: 20px;
+        color: $she_gray_primary_normal;
+        margin: 0;
+
+        a {
+            color: $she_dark_pink;
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .she-activate-license-main .she_license_field_row {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .she-activate-license-main .she_license_field_row {
+        flex-direction: column;
+    }
+
+    .she-activate-license-main .she_license_btn {
+        width: 100%;
+    }
+}
