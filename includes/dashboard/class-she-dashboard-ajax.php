@@ -653,7 +653,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 * @since 2.0
 		 */
 		public function she_create_page() {
-			$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( $_POST['post_type'] ) : 'elementor_library';
+			$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : 'elementor_library';
 
 			$post_args = array(
 				'post_type'   => $post_type,
