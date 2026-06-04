@@ -259,10 +259,14 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 */
 		public function she_preview_html_popup() {
 
-			 $check_circle_svg = '<svg width="15" height="15" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			$check_circle_svg = '<svg width="15" height="15" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M5 0C2.24311 0 0 2.24311 0 5C0 7.75689 2.24311 10 5 10C7.75689 10 10 7.75689 10 5C10 2.24311 7.75689 0 5 0ZM7.79449 3.68421L4.599 6.85464C4.41103 7.04261 4.11028 7.05514 3.90977 6.86717L2.21804 5.32581C2.01754 5.13784 2.00501 4.82456 2.18045 4.62406C2.36842 4.42356 2.6817 4.41103 2.88221 4.599L4.22306 5.82707L7.0802 2.96992C7.2807 2.76942 7.59398 2.76942 7.79449 2.96992C7.99499 3.17043 7.99499 3.48371 7.79449 3.68421Z"
 									fill="#020202" />
 								</svg>';
+			$allowed_svg = array(
+				'svg'  => array( 'width' => true, 'height' => true, 'viewbox' => true, 'fill' => true, 'xmlns' => true, 'class' => true, 'aria-hidden' => true ),
+				'path' => array( 'd' => true, 'fill' => true, 'fill-rule' => true, 'clip-rule' => true, 'stroke' => true, 'stroke-width' => true, 'stroke-linecap' => true, 'stroke-linejoin' => true ),
+			);
 			?>
 			<div id="she-wdkit-wrap" class="tp-main-container-preset" style="display: none">
 
@@ -287,13 +291,13 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 					<div class="she-wkit-cb-data">
 						<div class="wkit-she-preset-checkbox">
 							<span class="she-preset-checkbox-content">
-								<?php echo $check_circle_svg; ?>
+								<?php echo wp_kses( $check_circle_svg, $allowed_svg ); ?>
 								<p class="she-preset-label">
 								<?php echo esc_html__( 'Design Quickly without starting from Scratch', 'she-header' ); ?>
 							</p>
 						</span>
 						<span class="she-preset-checkbox-content">
-							    <?php echo $check_circle_svg; ?>
+							    <?php echo wp_kses( $check_circle_svg, $allowed_svg ); ?>
 								<p class="she-preset-label">
 									<?php echo esc_html__( 'Fully Customizable for Any Style', 'she-header' ); ?>
 								</p>
@@ -301,13 +305,13 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 						</div>
 						<div class="wkit-she-preset-checkbox">
 							<span class="she-preset-checkbox-content">
-								    <?php echo $check_circle_svg; ?>
+								    <?php echo wp_kses( $check_circle_svg, $allowed_svg ); ?>
 									<p class="she-preset-label">
 									<?php echo esc_html__( 'Time-Saving and Efficient Workflow', 'she-header' ); ?>
 								</p>
 							</span>
 							<span class="she-preset-checkbox-content">
-								<?php echo $check_circle_svg; ?>
+								<?php echo wp_kses( $check_circle_svg, $allowed_svg ); ?>
         						<p class="she-preset-label">
 									<?php echo esc_html__( 'Explore Versatile Layout Options', 'she-header' ); ?>
 								</p>
