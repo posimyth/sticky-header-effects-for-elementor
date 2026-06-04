@@ -227,7 +227,7 @@ if ( ! class_exists( 'She_Deactivate_Feedback' ) ) {
 						<?php } ?>
 
 							<div id="she-other-reason-textarea-wrapper" style="display:none;">
-								<textarea name="she_issue_text" placeholder="Please share the reason"></textarea>
+								<textarea name="she_issue_text" placeholder="<?php echo esc_attr__( 'Please share the reason', 'she-header' ); ?>"></textarea>
 							</div>
 						</div>
 
