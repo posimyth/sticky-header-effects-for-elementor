@@ -452,8 +452,6 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 */
 		public function she_plugin_install() {
 
-			add_action( 'wp_ajax_she_dashboard_ajax_call', array( $this, 'she_dashboard_ajax_call' ) );
-
 			if ( ! current_user_can( 'install_plugins' ) ) {
 				$response = $this->she_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
 				return $response;
