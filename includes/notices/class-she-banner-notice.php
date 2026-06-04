@@ -112,7 +112,14 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 
 			$dismiss_nonce = wp_create_nonce( 'wb_dismiss_notice_nonce' );
 
-		$output .= '<script>;
+			// Escape and output the banner markup. The dismiss script is printed
+			// separately below — wp_kses_post() would strip <script> tags.
+			echo wp_kses_post( $output );
+
+			// Trusted, static inline script (nonce is esc_js-escaped). Output
+			// directly because wp_kses_post() does not allow <script>.
+			?>
+			<script>
 				jQuery(document).ready(function ($) {
 					$(".tpae-bf-sale.is-dismissible").on("click", ".notice-dismiss", function () {
 						$.ajax({
@@ -120,14 +127,13 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 							url: ajaxurl,
 							data: {
 								action: "wb_dismiss_notice",
-								nonce: "' . esc_js( $dismiss_nonce ) . '",
+								nonce: "<?php echo esc_js( $dismiss_nonce ); ?>",
 							},
 						});
 					});
 				});
-			</script>';
-
-		echo wp_kses_post( $output );
+			</script>
+			<?php
 		}
 
 		/**
