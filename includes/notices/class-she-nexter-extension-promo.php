@@ -97,8 +97,8 @@ if ( ! class_exists( 'She_Nexter_Extension_Promo_Notice' ) ) {
 			$nonce          = wp_create_nonce( 'she-nexter-extension' );
 			$pt_exclude     = ! empty( $screen->post_type ) && in_array( $screen->post_type, array( 'product' ), true );
 
-			$post_type  = isset( $_GET['post_type'] ) ? sanitize_text_field( $_GET['post_type'] ) : '';
-			$tabs_group = isset( $_GET['tabs_group'] ) ? sanitize_text_field( $_GET['tabs_group'] ) : '';
+			$post_type  = isset( $_GET['post_type'] ) ? sanitize_text_field( wp_unslash( $_GET['post_type'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only admin screen display logic, no state change
+			$tabs_group = isset( $_GET['tabs_group'] ) ? sanitize_text_field( wp_unslash( $_GET['tabs_group'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only admin screen display logic, no state change
 
 			$show_notice = ( 'elementor_library' === $post_type && 'library' === $tabs_group );
 			$get_action  = ! empty( $_GET['action'] ) ? sanitize_text_field( wp_unslash( $_GET['action'] ) ) : '';
