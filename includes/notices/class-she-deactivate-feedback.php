@@ -277,6 +277,17 @@ if ( ! class_exists( 'She_Deactivate_Feedback' ) ) {
 				wp_die();
 			}
 
+			if ( ! current_user_can( 'activate_plugins' ) ) {
+				$response = array(
+					'success'     => 0,
+					'message'     => esc_html__( 'Unauthorized', 'she-header' ),
+					'description' => esc_html__( 'You do not have permission to perform this action.', 'she-header' ),
+				);
+
+				wp_send_json( $response );
+				wp_die();
+			}
+
 			$issue_type = ! empty( $_POST['issue_type'] ) ? sanitize_text_field( wp_unslash( $_POST['issue_type'] ) ) : '';
 			$issue_text = ! empty( $_POST['issue_text'] ) ? sanitize_text_field( wp_unslash( $_POST['issue_text'] ) ) : '';
 
