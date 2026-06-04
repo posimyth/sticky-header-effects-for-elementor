@@ -579,6 +579,19 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			$api_url = isset( $_POST['api_url'] ) ? sanitize_text_field( wp_unslash( $_POST['api_url'] ) ) : '';
 			$body    = isset( $_POST['url_body'] ) ? json_decode( wp_unslash( $_POST['url_body'] ) ) : array();
 
+			// Whitelist allowed external domains to prevent SSRF.
+			$allowed_hosts = array( 'stickyheadereffects.com', 'api.posimyth.com', 'posimyth.com', 'wdesignkit.com' );
+			$parsed_host   = strtolower( (string) wp_parse_url( $api_url, PHP_URL_HOST ) );
+			$parsed_host   = preg_replace( '/^www\./', '', $parsed_host );
+			if ( empty( $api_url ) || ! in_array( $parsed_host, $allowed_hosts, true ) ) {
+				return $this->she_set_response( false, 'Invalid URL.', 'Only requests to approved domains are allowed.' );
+			}
+
+			// Only POST and GET are supported.
+			if ( ! in_array( $method, array( 'POST', 'GET' ), true ) ) {
+				return $this->she_set_response( false, 'Invalid method.', 'Only GET and POST are supported.' );
+			}
+
 			$header_template = isset( $_POST['store'] ) ? sanitize_text_field( wp_unslash( $_POST['store'] ) ) : '';
 
 			if ( 'header_template' === $header_template ) {
