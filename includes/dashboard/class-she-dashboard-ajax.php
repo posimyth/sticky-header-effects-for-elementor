@@ -629,6 +629,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			$statuscode  = array( 'HTTP_CODE' => $status_code );
 
 			$response = json_decode( $getdataone, true );
+			$final    = $statuscode;
 
 			if ( is_array( $statuscode ) && is_array( $response ) ) {
 				$final = array_merge( $statuscode, $response );
