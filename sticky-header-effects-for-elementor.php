@@ -6,7 +6,7 @@
  * Version:				2.1.9
  * Author:				POSIMYTH
  * Author URI:			https://posimyth.com/
- * Requires at least:	5.3
+ * Requires at least:	6.3
  * Tested up to:		7.0
  *
  * Text Domain: she-header
