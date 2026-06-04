@@ -110,7 +110,9 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 
 			$output .= '</div>';
 
-			$output .= '<script>;
+			$dismiss_nonce = wp_create_nonce( 'wb_dismiss_notice_nonce' );
+
+		$output .= '<script>;
 				jQuery(document).ready(function ($) {
 					$(".tpae-bf-sale.is-dismissible").on("click", ".notice-dismiss", function () {
 						$.ajax({
@@ -118,6 +120,7 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 							url: ajaxurl,
 							data: {
 								action: "wb_dismiss_notice",
+								nonce: "' . esc_js( $dismiss_nonce ) . '",
 							},
 						});
 					});
@@ -134,13 +137,22 @@ if ( ! class_exists( 'She_Plugin_Notice' ) ) {
 		 */
 		public function she_dismiss_notice() {
 
+			if ( ! check_ajax_referer( 'wb_dismiss_notice_nonce', 'nonce', false ) ) {
+				wp_send_json( array(
+					'message' => esc_html__( 'Security check failed.', 'she-header' ),
+					'status'  => false,
+				) );
+				wp_die();
+			}
+
 			if ( ! is_user_logged_in() ) {
-				$result = array( 
+				$result = array(
 					'message' => esc_html__( 'Insufficient permissions.', 'she-header' ),
-					'status'   => false,
+					'status'  => false,
 				);
 
-				wp_send_json($result);
+				wp_send_json( $result );
+				wp_die();
 			}
 
 			update_user_meta( get_current_user_id(), $this->db_key, 1 );
