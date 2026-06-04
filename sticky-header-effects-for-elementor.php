@@ -41,7 +41,6 @@ define( 'SHE_PBNAME', plugin_basename( __FILE__ ) );
  * @return void
  */
 function she_header_load_plugin() {
-	load_plugin_textdomain( 'she-header-for-elementor' );
 
 	if ( ! did_action( 'elementor/loaded' ) ) {
 		add_action( 'admin_notices', 'she_header_fail_load' );
