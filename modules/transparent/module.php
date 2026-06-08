@@ -1482,6 +1482,19 @@ class Module extends Module_Base {
 				),
 			)
 		);
+		$element->end_controls_section();
+	}
+
+	/**
+	 * Append the community / Request Feature box at the very end of the Sticky
+	 * Header Effects panel — i.e. BELOW the Pro upsell (when Free) or below the
+	 * real Pro controls (when Pro is active). Hooked on before_section_end at a
+	 * later priority than the Pro modules so it always renders last.
+	 *
+	 * @param object $element Elementor section/container controls stack.
+	 * @return void
+	 */
+	public function she_add_discord_box( $element ) {
 		$element->add_control(
 			'discord_box_notice',
 			array(
@@ -1491,8 +1504,6 @@ class Module extends Module_Base {
 				),
 			)
 		);
-
-		$element->end_controls_section();
 	}
 
 	/**
@@ -1506,20 +1517,20 @@ class Module extends Module_Base {
 			include_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 
-		// add She on sections
-		if ( is_plugin_active( 'elementor/elementor.php' ) ) {
-			add_action( 'elementor/element/section/section_effects/after_section_end', array( $this, 'register_controls' ) );
-		}
-
 		add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'enqueue_styles' ) );
-		if ( Elementor\Plugin::instance()->editor->is_edit_mode() ) {
-		} else {
+		if ( ! Elementor\Plugin::instance()->editor->is_edit_mode() ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
 
-		// add She on containers
 		if ( is_plugin_active( 'elementor/elementor.php' ) ) {
+			// Register controls on both Section and Container element types.
+			add_action( 'elementor/element/section/section_effects/after_section_end', array( $this, 'register_controls' ) );
 			add_action( 'elementor/element/container/section_effects/after_section_end', array( $this, 'register_controls' ) );
+
+			// Append the community / Request Feature box LAST in the panel — after
+			// the Pro upsell or the real Pro controls (which hook at priority 10).
+			add_action( 'elementor/element/section/section_sticky_header_effect/before_section_end', array( $this, 'she_add_discord_box' ), 20 );
+			add_action( 'elementor/element/container/section_sticky_header_effect/before_section_end', array( $this, 'she_add_discord_box' ), 20 );
 		}
 	}
 
