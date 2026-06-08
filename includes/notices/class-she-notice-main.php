@@ -81,7 +81,7 @@ if ( ! class_exists( 'She_Notice_Main' ) ) {
 				}
 
 				$update_plugin[] = $plugin;
-			} elseif ( is_plugin_active( $pluginslug ) ) {
+			} else {
 				$plugin['status'] = 'active';
 				$update_plugin[]  = $plugin;
 			}
