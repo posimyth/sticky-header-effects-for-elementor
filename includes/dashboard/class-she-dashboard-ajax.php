@@ -599,7 +599,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			if ( 'header_template' === $header_template ) {
 				$she_header_template = get_transient( 'she_header_template' );
 
-				if ( $she_header_template != false ) {
+				if ( false !== $she_header_template ) {
 					return get_option( 'she_header_template' );
 				}
 
