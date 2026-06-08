@@ -36,15 +36,11 @@ final class Manager {
 	 *
 	 * @return Module_Base|Module_Base[]
 	 */
-	public function get_modules( $module_name ) {
-		if ( $module_name ) {
-			if ( isset( $this->modules[ $module_name ] ) ) {
-				return $this->modules[ $module_name ];
-			}
-
-			return null;
+	public function get_modules( $module_name = '' ) {
+		if ( ! $module_name ) {
+			return $this->modules;
 		}
 
-		return $this->modules;
+		return $this->modules[ $module_name ] ?? null;
 	}
 }
