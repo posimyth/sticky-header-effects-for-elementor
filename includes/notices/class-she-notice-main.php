@@ -99,6 +99,7 @@ if ( ! class_exists( 'She_Notice_Main' ) ) {
 				// include SHE_HEADER_PATH . 'includes/notices/class-she-banner-notice.php';
 				// include SHE_HEADER_PATH . 'includes/notices/class-she-plugin-page.php';
 				include SHE_HEADER_PATH . 'includes/notices/class-she-deactivate-feedback.php';
+				include SHE_HEADER_PATH . 'includes/notices/class-she-pro-launch-notice.php';
 
 				$ele_pro_plugin = array(
 					'name'        => 'elementor-pro',
