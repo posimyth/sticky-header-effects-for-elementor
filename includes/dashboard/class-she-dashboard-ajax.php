@@ -303,6 +303,8 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 					'status' => 'Activated',
 				);
 			}
+
+			return $this->she_set_response( false, 'Activation failed.', 'Theme not found or already active.' );
 		}
 
 		/**
@@ -725,11 +727,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 */
 		public function she_user_meta_data() {
 
-			global $wpdb;
-
-			$user_data = array();
-
-			$user_data['email'] = get_option( 'admin_email' );
+			$user_data = array( 'email' => get_option( 'admin_email' ) );
 
 			$response = wp_remote_post(
 				$this->onbording_api,
@@ -740,10 +738,12 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			);
 
 			if ( is_wp_error( $response ) ) {
-				wp_send_json( array( 'onBoarding' => false ) );
-			} else {
-				$status_one = wp_remote_retrieve_response_code( $response );
+				return $this->she_set_response( false, 'Onboarding request failed.', '' );
 			}
+
+			return $this->she_set_response( true, 'Onboarding data sent.', '', array(
+				'code' => wp_remote_retrieve_response_code( $response ),
+			) );
 		}
 
 		/**
