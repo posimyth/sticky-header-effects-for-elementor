@@ -65,6 +65,18 @@ function she_header_load_plugin() {
 add_action( 'plugins_loaded', 'she_header_load_plugin' );
 
 /**
+ * Render a standard WP admin error notice.
+ *
+ * @since 2.2.0
+ *
+ * @param string $message HTML message content (already built with safe tags).
+ * @return void
+ */
+function she_render_admin_notice( $message ) {
+	echo wp_kses_post( '<div class="error">' . $message . '</div>' );
+}
+
+/**
  * Show in WP Dashboard notice about the plugin is not activated.
  *
  * @since 1.0.0
@@ -99,7 +111,7 @@ function she_header_fail_load() {
 		$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $install_url, __( 'Install Elementor Now', 'she-header' ) ) . '</p>';
 	}
 
-	echo '<div class="error"><p>' . $message . '</p></div>';
+	she_render_admin_notice( $message );
 }
 
 function she_header_fail_load_out_of_date() {
@@ -113,7 +125,7 @@ function she_header_fail_load_out_of_date() {
 	$message = '<p>' . __( 'Sticky Header Effects not working because you are using an old version of Elementor.', 'she-header' ) . '</p>';
 	$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $upgrade_link, __( 'Update Elementor Now', 'she-header' ) ) . '</p>';
 
-	echo '<div class="error">' . $message . '</div>';
+	she_render_admin_notice( $message );
 }
 
 function she_header_admin_notice_upgrade_recommendation() {
@@ -127,7 +139,7 @@ function she_header_admin_notice_upgrade_recommendation() {
 	$message = '<p>' . __( 'A new version of Elementor is available. For better performance and compatibility of Sticky Header Effects, we recommend updating to the latest version.', 'she-header' ) . '</p>';
 	$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $upgrade_link, __( 'Update Elementor Now', 'she-header' ) ) . '</p>';
 
-	echo '<div class="error">' . $message . '</div>';
+	she_render_admin_notice( $message );
 }
 
 if ( ! function_exists( '_is_elementor_installed' ) ) {
