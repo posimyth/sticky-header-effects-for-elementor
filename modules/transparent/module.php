@@ -295,8 +295,7 @@ class Module extends Module_Base {
 					'transparent!' => '',
 				),
 				'selectors'          => array(
-					'.she-header-transparent-yes' => 'background-color: rgba(0,0,0,0) !important;',
-					'.she-header-transparent-yes' => 'position:absolute;',
+					'.she-header-transparent-yes' => 'background-color: transparent !important; position: absolute;',
 				),
 				'description'        => __( 'Sets the header position to "absolute" so negative margins are not needed', 'she-header' ),
 			)
@@ -1361,7 +1360,6 @@ class Module extends Module_Base {
 				),
 				'description'        => __( 'Add a modern blur effect to a semi-transparent header background color after scrolling', 'she-header' ),
 				'selectors'          => array(
-					'{{WRAPPER}}.she-header' => 'backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%);',
 					'{{WRAPPER}}.she-header' => 'backdrop-filter: blur({{blur_bg_blur_amount.SIZE}}{{blur_bg_blur_amount.UNIT}}) saturate({{blur_bg_saturate_amount.SIZE}}) !important; -webkit-backdrop-filter: blur({{blur_bg_blur_amount.SIZE}}{{blur_bg_blur_amount.UNIT}}) saturate({{blur_bg_saturate_amount.SIZE}}) !important;',
 				),
 			)
