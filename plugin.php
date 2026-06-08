@@ -136,7 +136,7 @@ class Plugin {
 			1
 		);
 
-		do_action( 'elementor_controls/init' );
+		do_action( 'she_header/controls/init' );
 	}
 	
 	private function setup_hooks() {
