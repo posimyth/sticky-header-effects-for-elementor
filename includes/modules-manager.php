@@ -14,7 +14,7 @@ final class Manager {
 	public function __construct() {
 		$modules = [
 			'transparent',
-			
+			'pro-upsell',
 		];
 
 		foreach ( $modules as $module_name ) {
