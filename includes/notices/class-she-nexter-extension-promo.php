@@ -123,7 +123,7 @@ if ( ! class_exists( 'She_Nexter_Extension_Promo_Notice' ) ) {
 				return;
 			}
 
-			if ( ! empty( $_GET['action'] ) && 'install-plugin' === $_GET['action'] ) {
+			if ( ! empty( $get_action ) && 'install-plugin' === $get_action ) {
 				return;
 			}
 
