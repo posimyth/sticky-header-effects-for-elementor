@@ -200,7 +200,7 @@ if ( ! class_exists( 'She_Deactivate_Feedback' ) ) {
 
 				<form id="she-feedback-dialog-form" method="post">
 					<input type="hidden" name="nonce" value="<?php echo esc_attr( $security ); ?>" />
-					<input type="hidden" name="she_admin_url" value="<?php echo admin_url( 'admin-ajax.php' ); ?>" />
+					<input type="hidden" name="she_admin_url" value="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" />
 					
 					<div class="she-feedback-dialog-radio-content">
 						<div class="she-feedback-dialog-content">
@@ -311,6 +311,9 @@ if ( ! class_exists( 'She_Deactivate_Feedback' ) ) {
 				)
 			);
 
+			if ( is_wp_error( $data ) ) {
+				wp_send_json( array( 'success' => 0, 'message' => esc_html__( 'Could not reach the feedback server.', 'she-header' ) ) );
+			}
 
 			$response = array(
 				'success'     => 1,
