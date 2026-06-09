@@ -290,14 +290,19 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 */
 		public function she_activate_theme() {
 
+			if ( ! current_user_can( 'switch_themes' ) ) {
+				return $this->she_set_response( false, 'Permission denied.', 'You do not have permission to switch themes.' );
+			}
+
 			$theme_slug = isset( $_POST['theme_slug'] ) ? sanitize_text_field( wp_unslash( $_POST['theme_slug'] ) ) : '';
 
 			$active_theme = wp_get_theme();
 			$theme_name   = $active_theme->get( 'Name' );
 
-			if ( file_exists( WP_CONTENT_DIR . '/themes/' . $theme_slug ) && 'Nexter' !== $theme_name ) {
+			$theme = wp_get_theme( $theme_slug );
+			if ( $theme->exists() && 'Nexter' !== $theme_name ) {
 
-				switch_theme( $theme_slug );
+				switch_theme( $theme->get_stylesheet() );
 				return array(
 					'name'   => $theme_slug,
 					'status' => 'Activated',
