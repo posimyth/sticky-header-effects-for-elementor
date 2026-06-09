@@ -121,6 +121,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 					'ajax_url' => admin_url( 'admin-ajax.php' ),
 					'tpae_pro' => defined( 'SHE_HEADER_VERSION' ) ? 1 : 0,
 					'tpag_pro' => defined( 'TPGBP_VERSION' ) ? 1 : 0,
+					'preset_temp_id' => 18061,
 				)
 			);
 		}
