@@ -623,12 +623,18 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 				$args['body'] = wp_json_encode( $body );
 			}
 
+			$response = null;
+
 			if ( 'POST' === $method ) {
 				$response = wp_remote_post( $api_url, $args );
 			}
 
 			if ( 'GET' === $method ) {
 				$response = wp_remote_get( $api_url, $args );
+			}
+
+			if ( is_wp_error( $response ) ) {
+				return $this->she_set_response( false, 'Request failed.', $response->get_error_message() );
 			}
 
 			$status_code = wp_remote_retrieve_response_code( $response );
