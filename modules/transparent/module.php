@@ -1540,7 +1540,6 @@ class Module extends Module_Base {
 	 * @since 2.0.0
 	 */
 	public function enqueue_styles() {
-		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		wp_enqueue_style(
 			'she-header-style',
@@ -1556,7 +1555,6 @@ class Module extends Module_Base {
 	 * @since 2.0.0
 	 */
 	public function enqueue_scripts() {
-		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		wp_enqueue_script(
 			'she-header',
