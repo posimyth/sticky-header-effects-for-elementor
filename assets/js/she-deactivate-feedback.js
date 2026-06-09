@@ -82,9 +82,6 @@
       var formData = new URLSearchParams(queryString);
 
       var issue_type = formData.get('she_issue_type');
-      // if (!issue_type) {
-      //   return;
-      // }
 
       self.getModal().getElements('submit').text('').addClass('shed-loading');
 
