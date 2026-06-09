@@ -1,7 +1,7 @@
 (function ($) {
     const { __ } = wp.i18n;
 
-    const ENABLE_TEMPLATES_TEXT = __("Enable Templates", "tpebl");
+    const ENABLE_TEMPLATES_TEXT = __("Enable Templates", "she-header");
 
     jQuery("document").ready(function () {
 
