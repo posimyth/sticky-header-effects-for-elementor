@@ -498,6 +498,11 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 			if ( ! isset( $installed_plugins[ $plugin_basename ] ) && empty( $installed_plugins[ $plugin_basename ] ) ) {
 
 				$installed         = $upgrader->install( $plugin_info->download_link );
+
+				if ( is_wp_error( $installed ) || ! $installed ) {
+					return $this->she_set_response( false, 'Install failed.', 'Plugin could not be installed.' );
+				}
+
 				$activation_result = activate_plugin( $plugin_basename );
 
 				$success = null === $activation_result;
