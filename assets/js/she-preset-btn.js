@@ -129,7 +129,7 @@
                 type: "post",
                 async: true,
                 data: {
-                    action: 'check_plugin_status',
+                    action: 'she_check_plugin_status',
                     security: she_wdkit_preview_popup.nonce,
                 },
                 success: function (res) {

@@ -70,7 +70,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 				add_action( 'elementor/editor/before_enqueue_scripts', array( $this, 'she_elementor_editor_style' ) );
 			}
 
-			add_action( 'wp_ajax_check_plugin_status', array( $this, 'she_check_plugin_status' ) );
+			add_action( 'wp_ajax_she_check_plugin_status', array( $this, 'she_check_plugin_status' ) );
 			add_action( 'wp_ajax_she_install_wdkit', array( $this, 'she_install_wdkit' ) );
 
 			add_action( 'wp_ajax_she_insert_entry', array( $this, 'she_design_scratch' ) );
@@ -228,6 +228,12 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 		 * @return array
 		 */
 		public function she_check_plugin_status() {
+
+			check_ajax_referer( 'she_wdkit_preview_popup', 'security' );
+
+			if ( ! current_user_can( 'edit_posts' ) ) {
+				wp_send_json_error();
+			}
 
 			$installed_plugins = get_plugins();
 
