@@ -371,11 +371,15 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		 */
 		public function she_rollback_check() {
 
+			if ( ! current_user_can( 'update_plugins' ) ) {
+				return $this->she_set_response( false, 'Permission denied.', 'You do not have permission to update plugins.' );
+			}
+
 			$current_ver = isset( $_POST['version'] ) ? sanitize_text_field( wp_unslash( $_POST['version'] ) ) : '';
 
 			$rv = $this->she_prev_version();
-			if ( empty( $current_ver ) || ! in_array( $current_ver, $rv ) ) {
-				return $this->she_set_response( false, 'Invalid nonce.', 'Try selecting another version.' );
+			if ( empty( $current_ver ) || ! in_array( $current_ver, $rv, true ) ) {
+				return $this->she_set_response( false, 'Invalid version.', 'Try selecting another version.' );
 			}
 
 			$plugin_slug = basename( SHE_HEADER_PLUGIN_BASE, '.php' );
