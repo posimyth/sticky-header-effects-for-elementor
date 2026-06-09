@@ -44,7 +44,7 @@ function sheHeader(e) {
         }
     }
 
-    if ($j.inArray(enabled, responsive_settings) != '-1') {
+    if ($j.inArray(enabled, responsive_settings) !== -1) {
 
         var scroll_distance = data_settings["scroll_distance"];
         var she_offset = data_settings["she_offset_top"];
