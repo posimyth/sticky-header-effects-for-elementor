@@ -22,8 +22,8 @@ function sheHeader(e) {
         container = $j('.she-header-yes .elementor-container, .elementor-element.she-header-yes.e-con'),
         header_elementor = $j('.elementor-edit-mode .she-header-yes'),
         header_logo = $j('.she-header-yes .elementor-widget-theme-site-logo img:not(.elementor-widget-n-menu img), .she-header-yes .elementor-widget-image img:not(.elementor-widget-n-menu img)'),
-        header_logo_div = $j('.she-header-yes .elementor-widget-theme-site-logo a::after, .she-header-yes .elementor-widget-image a::after');
-    data_settings = header.data('settings');
+        header_logo_div = $j('.she-header-yes .elementor-widget-theme-site-logo a::after, .she-header-yes .elementor-widget-image a::after'),
+        data_settings = header.data('settings');
 
     if (typeof data_settings != 'undefined') {
         var responsive_settings = data_settings["transparent_on"];
