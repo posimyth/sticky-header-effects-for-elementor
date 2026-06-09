@@ -278,7 +278,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 
 			   <div class="she-popup-header">
 					<div class="she-popup-logo">
-						<img src="<?php echo SHE_HEADER_URL . 'assets/images/banner/wdkit-treadmark.svg'; ?>" alt="Sticky Header" class="she-popup-logo-img" />
+						<img src="<?php echo esc_url( SHE_HEADER_URL . 'assets/images/banner/wdkit-treadmark.svg' ); ?>" alt="Sticky Header" class="she-popup-logo-img" />
 			        </div>
 					<div class="she-popup-close">
 						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill="#808080" fill-opacity=".8" d="M12.293.293a1 1 0 1 1 1.414 1.414L8.414 7l5.293 5.293.068.076a1 1 0 0 1-1.406 1.406l-.076-.068L7 8.414l-5.293 5.293a1 1 0 1 1-1.414-1.414L5.586 7 .293 1.707A1 1 0 1 1 1.707.293L7 5.586 12.293.293Z"/></svg>
@@ -331,15 +331,15 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 						<div class="she-support-icon-main">
 							<div class="she-support-icon">
 								<div class="she-icon-list">
-									<img src="<?php echo SHE_HEADER_URL . 'assets/images/products/tpae-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
+									<img src="<?php echo esc_url( SHE_HEADER_URL . 'assets/images/products/tpae-icon.svg' ); ?>" alt="Elementor" class="she-support-icon-img" />
 									<p><?php echo esc_html__( 'Navigation Menu Widget', 'she-header' ); ?></p>
 								</div>
 								<div class="she-icon-list">
-									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
+									<img class="she-elementor" src="<?php echo esc_url( SHE_HEADER_URL . 'assets/images/products/elementor-icon.svg' ); ?>" alt="Elementor" class="she-support-icon-img" />
 									<p><?php echo esc_html__( 'WordPress Menu', 'she-header' ); ?></p>
 								</div>
 								<div class="she-icon-list">
-									<img class="she-elementor" src="<?php echo SHE_HEADER_URL . 'assets/images/products/elementor-icon.svg'; ?>" alt="Elementor" class="she-support-icon-img" />
+									<img class="she-elementor" src="<?php echo esc_url( SHE_HEADER_URL . 'assets/images/products/elementor-icon.svg' ); ?>" alt="Elementor" class="she-support-icon-img" />
 									<p><?php echo esc_html__( 'Nav Menu', 'she-header' ); ?></p>
 								</div>
 							</div>
