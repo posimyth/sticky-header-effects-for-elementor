@@ -66,10 +66,6 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 		public function she_admin_menu() {
 			$capability = 'manage_options';
 
-			// if ( current_user_can( $capability ) ) {
-			// add_menu_page( __( 'SHE for Elementor', 'she-header' ), __( 'SHE for Elementor', 'she-header' ), 'manage_options', 'she-header', array( $this, 'she_menu_page_template' ), '', 67 );
-			// }
-
 			if ( current_user_can( $capability ) ) {
 				add_action(
 					'admin_menu',
