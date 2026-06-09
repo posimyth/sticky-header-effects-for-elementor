@@ -91,7 +91,7 @@ function she_header_fail_load() {
 
 	$plugin = 'elementor/elementor.php';
 
-	if ( _is_elementor_installed() ) {
+	if ( she_header_is_elementor_installed() ) {
 		if ( ! current_user_can( 'activate_plugins' ) ) {
 			return;
 		}
@@ -142,9 +142,9 @@ function she_header_admin_notice_upgrade_recommendation() {
 	she_render_admin_notice( $message );
 }
 
-if ( ! function_exists( '_is_elementor_installed' ) ) {
+if ( ! function_exists( 'she_header_is_elementor_installed' ) ) {
 
-	function _is_elementor_installed() {
+	function she_header_is_elementor_installed() {
 		$file_path = 'elementor/elementor.php';
 		$installed_plugins = get_plugins();
 
