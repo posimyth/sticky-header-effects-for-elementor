@@ -73,7 +73,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 			if ( ! check_ajax_referer( 'she-db-nonce', 'nonce', false ) ) {
 
-				$response = $this->she_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
+				$response = $this->she_set_response( false, 'Permission denied.', 'You do not have permission to perform this action.' );
 
 				wp_send_json( $response );
 				wp_die();
@@ -464,7 +464,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		public function she_plugin_install() {
 
 			if ( ! current_user_can( 'install_plugins' ) ) {
-				$response = $this->she_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
+				$response = $this->she_set_response( false, 'Permission denied.', 'You do not have permission to perform this action.' );
 				return $response;
 			}
 
