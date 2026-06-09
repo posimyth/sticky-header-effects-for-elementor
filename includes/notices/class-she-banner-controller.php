@@ -5,6 +5,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+if ( class_exists( 'Elementor\\She_Discord_Box_Control' ) ) {
+    return;
+}
+
 /**
  * Custom Control for Discord Invite Box
  */
