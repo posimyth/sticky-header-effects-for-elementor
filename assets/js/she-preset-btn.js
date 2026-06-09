@@ -10,7 +10,7 @@
         var she_global_notification = false;
 
         if (sheOnload === 'true') {
-            const postId = 18061;
+            const postId = she_wdkit_preview_popup.preset_temp_id;
             she_load_wdkit(postId);
         }
 
