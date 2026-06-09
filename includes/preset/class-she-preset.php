@@ -199,6 +199,11 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 			if ( ! isset( $installed_plugins[ $plugin_basename ] ) && empty( $installed_plugins[ $plugin_basename ] ) ) {
 
 				$installed         = $upgrader->install( $plugin_info->download_link );
+				
+				if ( is_wp_error( $installed ) || ! $installed ) {
+					wp_send_json( $this->she_response( 'Failed Install WDesignKit', 'Could not install WDesignKit.', false, '' ) );
+				}
+
 				$activation_result = activate_plugin( $plugin_basename );
 
 				$success = null === $activation_result;
