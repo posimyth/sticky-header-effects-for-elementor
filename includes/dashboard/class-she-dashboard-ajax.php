@@ -658,7 +658,7 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 				if ( 200 === (int) $status_code ) {
 					if ( 'header_template' === $header_template ) {
-						add_option( 'she_header_template', $final );
+						add_option( 'she_header_template', $final, '', 'no' );
 						set_transient( 'she_header_template', 'header_template', 24 * HOUR_IN_SECONDS );
 						// set_transient('she_header_template', 'header_template', 120);
 					}
