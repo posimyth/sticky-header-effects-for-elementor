@@ -87,7 +87,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 
 			check_ajax_referer( 'she_wdkit_preview_popup', 'security' );
 
-			if ( ! current_user_can( 'edit_posts' ) ) {
+			if ( ! current_user_can( 'manage_options' ) ) {
 				wp_send_json( $this->she_response( 'Permission denied.', '', false ) );
 			}
 
@@ -241,7 +241,7 @@ if ( ! class_exists( 'Tp_She_Preset' ) ) {
 
 			check_ajax_referer( 'she_wdkit_preview_popup', 'security' );
 
-			if ( ! current_user_can( 'edit_posts' ) ) {
+			if ( ! current_user_can( 'manage_options' ) ) {
 				wp_send_json_error();
 			}
 
