@@ -104,46 +104,46 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 
 			wp_enqueue_style( 'she-admin-style', SHE_HEADER_URL . '/assets/css/admin.css', array(), SHE_HEADER_VERSION, 'all' );
 
-			$get_notification = get_option( 'she_menu_notificetions' );
-
-			$she_notificetions = 'close';
-			if ( $get_notification !== SHE_MENU_NOTIFICETIONS ) {
-				$she_notificetions = 'open';
-			}
-
-			$plugins = array(
-				array(
-					'name'        => 'nexter-extension',
-					'status'      => '',
-					'plugin_slug' => 'nexter-extension/nexter-extension.php',
-				),
-				array(
-					'name'        => 'wdesignkit',
-					'status'      => '',
-					'plugin_slug' => 'wdesignkit/wdesignkit.php',
-				),
-			);
-
-			$all_plugins   = get_plugins();
-			$update_plugin = array();
-			foreach ( $plugins as $plugin ) {
-				$pluginslug = ! empty( $plugin['plugin_slug'] ) ? sanitize_text_field( wp_unslash( $plugin['plugin_slug'] ) ) : '';
-
-				if ( ! is_plugin_active( $pluginslug ) ) {
-					if ( ! isset( $all_plugins[ $pluginslug ] ) ) {
-							$plugin['status'] = 'unavailable';
-					} else {
-						$plugin['status'] = 'inactive';
-					}
-
-					$update_plugin[] = $plugin;
-				} elseif ( is_plugin_active( $pluginslug ) ) {
-					$plugin['status'] = 'active';
-					$update_plugin[]  = $plugin;
-				}
-			}
-
 			if ( 'elementor_page_she-header' === $page ) {
+
+				$get_notification = get_option( 'she_menu_notificetions' );
+
+				$she_notificetions = 'close';
+				if ( $get_notification !== SHE_MENU_NOTIFICETIONS ) {
+					$she_notificetions = 'open';
+				}
+
+				$plugins = array(
+					array(
+						'name'        => 'nexter-extension',
+						'status'      => '',
+						'plugin_slug' => 'nexter-extension/nexter-extension.php',
+					),
+					array(
+						'name'        => 'wdesignkit',
+						'status'      => '',
+						'plugin_slug' => 'wdesignkit/wdesignkit.php',
+					),
+				);
+
+				$all_plugins   = get_plugins();
+				$update_plugin = array();
+				foreach ( $plugins as $plugin ) {
+					$pluginslug = ! empty( $plugin['plugin_slug'] ) ? sanitize_text_field( wp_unslash( $plugin['plugin_slug'] ) ) : '';
+
+					if ( ! is_plugin_active( $pluginslug ) ) {
+						if ( ! isset( $all_plugins[ $pluginslug ] ) ) {
+								$plugin['status'] = 'unavailable';
+						} else {
+							$plugin['status'] = 'inactive';
+						}
+
+						$update_plugin[] = $plugin;
+					} elseif ( is_plugin_active( $pluginslug ) ) {
+						$plugin['status'] = 'active';
+						$update_plugin[]  = $plugin;
+					}
+				}
 				wp_enqueue_style( 'she-editor-css', SHE_HEADER_URL . 'build/index.css', array(), SHE_HEADER_VERSION );
 
 				wp_enqueue_script( 'she-editor-js', SHE_HEADER_URL . 'build/index.js', array( 'wp-i18n', 'wp-element', 'wp-components' ), SHE_HEADER_VERSION, true );
