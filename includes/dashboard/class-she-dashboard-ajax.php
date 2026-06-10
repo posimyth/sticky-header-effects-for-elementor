@@ -592,15 +592,27 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 		public function she_api_call() {
 
 			$method  = isset( $_POST['method'] ) ? sanitize_text_field( wp_unslash( $_POST['method'] ) ) : 'POST';
-			$api_url = isset( $_POST['api_url'] ) ? sanitize_text_field( wp_unslash( $_POST['api_url'] ) ) : '';
+			$api_url = isset( $_POST['api_url'] ) ? esc_url_raw( wp_unslash( $_POST['api_url'] ) ) : '';
 			$body    = isset( $_POST['url_body'] ) ? json_decode( wp_unslash( $_POST['url_body'] ) ) : array();
 
 			// Whitelist allowed external domains to prevent SSRF.
 			$allowed_hosts = array( 'stickyheadereffects.com', 'api.posimyth.com', 'posimyth.com', 'wdesignkit.com' );
-			$parsed_host   = strtolower( (string) wp_parse_url( $api_url, PHP_URL_HOST ) );
+			$parsed_url    = wp_parse_url( $api_url );
+			$parsed_host   = isset( $parsed_url['host'] ) ? strtolower( (string) $parsed_url['host'] ) : '';
 			$parsed_host   = preg_replace( '/^www\./', '', $parsed_host );
+			$parsed_scheme = isset( $parsed_url['scheme'] ) ? strtolower( $parsed_url['scheme'] ) : '';
 			if ( empty( $api_url ) || ! in_array( $parsed_host, $allowed_hosts, true ) ) {
 				return $this->she_set_response( false, 'Invalid URL.', 'Only requests to approved domains are allowed.' );
+			}
+
+			// Force HTTPS and reject any non-standard port to further harden against SSRF.
+			if ( 'https' !== $parsed_scheme || isset( $parsed_url['port'] ) ) {
+				return $this->she_set_response( false, 'Invalid URL.', 'Only standard HTTPS requests are allowed.' );
+			}
+
+			// Only accept a decoded JSON object/array as the request body.
+			if ( ! is_array( $body ) && ! is_object( $body ) ) {
+				$body = array();
 			}
 
 			// Only POST and GET are supported.
