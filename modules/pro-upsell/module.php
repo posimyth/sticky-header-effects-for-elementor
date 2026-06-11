@@ -240,7 +240,7 @@ class Module extends Module_Base {
 		.she-pro-live__title{display:block;font-size:13.5px;font-weight:700;line-height:1.35;margin:0 0 6px;color:var(--e-a-color-txt,#0c0d0e);}
 		.she-pro-live__text{font-size:11.5px;line-height:1.5;margin:0 0 13px;color:var(--e-a-color-txt-muted,#7c6b74);}
 		.she-pro-live__btn{display:inline-block;background:' . $primary . ';color:#fff !important;font-size:12px;font-weight:700;text-decoration:none;padding:8px 18px;border-radius:5px;transition:background .15s ease;}
-		.she-pro-live__btn:hover{background:' . $press . ';color:#fff !important;}
+		.she-pro-live__btn:hover{background:' . $press . ';color:#fff !important;text-decoration:none;}
 		</style>';
 
 		$close = '<button type="button" class="she-pro-live__close" aria-label="' . esc_attr__( 'Dismiss', 'she-header' ) . '"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
@@ -258,84 +258,30 @@ class Module extends Module_Base {
 	}
 
 	/**
-	 * Build the upsell HTML (banner + locked feature list + scoped CSS).
+	 * Scoped CSS for the locked Pro feature controls and their Demo/Docs links.
+	 *
+	 * (The promo "Unlock all Pro features" card was removed; only the styling
+	 * the locked controls rely on is output here.)
 	 *
 	 * @return string
 	 */
 	private function build_upsell_html() {
 		$primary = self::BRAND_PRIMARY;
-		$press   = self::BRAND_PRESS;
-		$url     = self::PRICING_URL;
-		$compare_url = 'https://stickyheadereffects.com/pricing/?utm_source=she-free&utm_medium=elementor-panel&utm_campaign=compare#compare';
 
-		$count = count( $this->get_pro_features() );
-
-		$badge_label = __( 'Pro Feature', 'she-header' );
-		$headline    = __( 'Unlock all Pro features for Sticky Header Effects', 'she-header' );
-		$benefits    = array(
-			sprintf(
-				/* translators: %d is the number of Pro features. */
-				__( '%d advanced sticky-header effects', 'she-header' ),
-				$count
-			),
-			__( 'Display Conditions, Reveal & Multi-Sticky', 'she-header' ),
-			__( 'Header Replace, Logo Swap & more', 'she-header' ),
-		);
-		$get_pro_label = __( 'Get Pro', 'she-header' );
-		$compare_label = __( 'Compare Free vs Pro', 'she-header' );
-
-		// Gem badge icon + check icon (brand-colored, inline SVG).
-		$gem   = '<svg width="11" height="11" viewBox="0 0 24 24" fill="' . esc_attr( $primary ) . '" aria-hidden="true"><path d="M6 2h12l4 7-10 13L2 9l4-7Z"/></svg>';
-		$check = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="' . esc_attr( $primary ) . '"/><path d="M7 12.4l3 3 7-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-
-		$list = '';
-		foreach ( $benefits as $b ) {
-			$list .= '<li class="she-pc__item">' . $check . '<span>' . esc_html( $b ) . '</span></li>';
-		}
-
-		// Self-contained card: subtle brand-tint surface + Elementor text vars,
-		// so it reads natively in BOTH the light and dark editor themes.
-		$css = '
+		return '
 		<style>
-		.she-pc{border:1px solid var(--e-a-border-color,rgba(230,1,126,.16));background:rgba(230,1,126,.05);border-radius:8px;padding:16px;margin:8px 0 4px;}
-		.she-pc__badge{display:inline-flex;align-items:center;gap:5px;background:rgba(230,1,126,.12);color:' . $primary . ';font-size:10px;font-weight:700;letter-spacing:.2px;padding:4px 10px;border-radius:999px;margin-bottom:12px;}
-		.she-pc__badge svg{display:block;}
-		.she-pc__title{font-size:14px;font-weight:700;line-height:1.35;margin:0 0 13px;color:var(--e-a-color-txt,#0c0d0e);}
-		.she-pc__list{list-style:none;margin:0 0 15px;padding:0;display:flex;flex-direction:column;gap:9px;}
-		.she-pc__item{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;line-height:1.45;color:var(--e-a-color-txt,#515962);}
-		.she-pc__item svg{flex:0 0 auto;margin-top:1px;}
-		.she-pc__actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-		.she-pc__btn{display:inline-block;background:' . $primary . ';color:#fff !important;font-size:12px;font-weight:700;text-decoration:none;padding:9px 18px;border-radius:5px;transition:background .15s ease;}
-		.she-pc__btn:hover{background:' . $press . ';color:#fff !important;}
-		.she-pc__link{font-size:12px;font-weight:600;color:' . $primary . ' !important;text-decoration:none;white-space:nowrap;}
-		.she-pc__link:hover{color:' . $press . ' !important;text-decoration:underline;}
-		/* Locked Pro controls: PRO badge on the label, lock icon beside the switcher, fully non-toggleable. */
+		/* Locked Pro controls: PRO badge on the label, dimmed + non-toggleable switcher. */
 		.she-pro-locked-ctrl .elementor-control-title::after{content:"PRO";display:inline-block;margin-left:6px;padding:1px 5px;border-radius:3px;background:' . $primary . ';color:#fff;font-size:8px;font-weight:700;letter-spacing:.5px;line-height:1.7;vertical-align:middle;}
-		/* Locked toggle: dimmed and non-interactive (no lock icon for now). */
 		.she-pro-locked-ctrl .elementor-switch{opacity:.5;}
-		/* Clicking anywhere on the row (label text OR switch) must never toggle it. */
 		.she-pro-locked-ctrl{cursor:not-allowed;}
 		.she-pro-locked-ctrl .elementor-control-content{pointer-events:none;}
-			/* Demo / Docs text links beneath each feature description. */
-			.she-pro-locked-ctrl .she-pro-desc{display:block;}
-			.she-pro-locked-ctrl .she-pro-links{display:flex;align-items:center;gap:7px;margin-top:7px;font-size:11px;}
-			.she-pro-locked-ctrl .she-pro-links a{pointer-events:auto;cursor:pointer;font-weight:600;text-decoration:none !important;color:var(--e-a-color-txt,#1d2327) !important;transition:color .15s ease;}
-			.she-pro-locked-ctrl .she-pro-links a:hover{color:' . $primary . ' !important;}
-			.she-pro-locked-ctrl .she-pro-links__sep{opacity:.4;}
+		/* Demo / Docs text links beneath each feature description. */
+		.she-pro-locked-ctrl .she-pro-desc{display:block;}
+		.she-pro-locked-ctrl .she-pro-links{display:flex;align-items:center;gap:7px;margin-top:7px;font-size:11px;}
+		.she-pro-locked-ctrl .she-pro-links a{pointer-events:auto;cursor:pointer;font-weight:600;text-decoration:none !important;color:var(--e-a-color-txt,#1d2327) !important;transition:color .15s ease;}
+		.she-pro-locked-ctrl .she-pro-links a:hover{color:' . $primary . ' !important;}
+		.she-pro-locked-ctrl .she-pro-links__sep{opacity:.4;}
 		</style>';
-
-		$html = '<div class="she-pc">'
-			. '<span class="she-pc__badge">' . $gem . esc_html( $badge_label ) . '</span>'
-			. '<h4 class="she-pc__title">' . esc_html( $headline ) . '</h4>'
-			. '<ul class="she-pc__list">' . $list . '</ul>'
-			. '<div class="she-pc__actions">'
-			. '<a class="she-pc__btn" href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $get_pro_label ) . '</a>'
-			. '<a class="she-pc__link" href="' . esc_url( $compare_url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $compare_label ) . ' &rsaquo;</a>'
-			. '</div>'
-			. '</div>'
-			. $css;
-
-		return $html;
 	}
 
 	/**
