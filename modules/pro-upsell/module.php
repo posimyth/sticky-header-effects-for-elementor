@@ -46,6 +46,17 @@ class Module extends Module_Base {
 	const PRICING_URL = 'https://stickyheadereffects.com/pricing/?utm_source=she-free&utm_medium=elementor-panel&utm_campaign=pro-upsell';
 
 	/**
+	 * User-meta key remembering that the current user permanently dismissed
+	 * the "Pro is now live" announcement.
+	 */
+	const LIVE_NOTICE_META = 'she_pro_live_notice_dismissed';
+
+	/**
+	 * AJAX action + nonce name for dismissing the announcement.
+	 */
+	const LIVE_NOTICE_ACTION = 'she_pro_dismiss_live_notice';
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -84,6 +95,60 @@ class Module extends Module_Base {
 	 */
 	private function is_pro_active() {
 		return defined( 'SHE_PRO_VERSION' );
+	}
+
+	/**
+	 * Has the current user dismissed the "Pro is now live" announcement?
+	 *
+	 * Stored per-user so each admin/editor manages their own dismissal.
+	 *
+	 * @return bool
+	 */
+	private function is_live_notice_dismissed() {
+		return (bool) get_user_meta( get_current_user_id(), self::LIVE_NOTICE_META, true );
+	}
+
+	/**
+	 * AJAX: persist the per-user dismissal of the announcement.
+	 *
+	 * @return void
+	 */
+	public function ajax_dismiss_live_notice() {
+		if ( ! check_ajax_referer( self::LIVE_NOTICE_ACTION, 'nonce', false ) ) {
+			wp_send_json_error();
+		}
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_send_json_error();
+		}
+		update_user_meta( get_current_user_id(), self::LIVE_NOTICE_META, 1 );
+		wp_send_json_success();
+	}
+
+	/**
+	 * Inline editor script: handle the announcement's close button — remove
+	 * the banner and POST the dismissal so it never shows again.
+	 *
+	 * @return void
+	 */
+	public function enqueue_dismiss_script() {
+		$config = wp_json_encode(
+			array(
+				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+				'nonce'   => wp_create_nonce( self::LIVE_NOTICE_ACTION ),
+				'action'  => self::LIVE_NOTICE_ACTION,
+			)
+		);
+
+		$js = 'window.SHEProNotice=' . $config . ';'
+			. '(function(){document.addEventListener("click",function(e){'
+			. 'var b=e.target.closest&&e.target.closest(".she-pro-live__close");if(!b){return;}'
+			. 'e.preventDefault();'
+			. 'var box=b.closest(".she-pro-live");if(box&&box.parentNode){box.parentNode.removeChild(box);}'
+			. 'var d=new FormData();d.append("action",window.SHEProNotice.action);d.append("nonce",window.SHEProNotice.nonce);'
+			. 'fetch(window.SHEProNotice.ajaxurl,{method:"POST",credentials:"same-origin",body:d});'
+			. '});})();';
+
+		wp_add_inline_script( 'elementor-editor', $js );
 	}
 
 	/**
@@ -166,8 +231,10 @@ class Module extends Module_Base {
 
 		$css = '
 		<style>
-		.she-pro-live{position:relative;overflow:hidden;border:1px solid var(--e-a-border-color,rgba(230,1,126,.18));border-radius:8px;padding:14px 14px 14px 16px;margin:10px 0 6px;background:rgba(230,1,126,.05);}
+		.she-pro-live{position:relative;overflow:hidden;border:1px solid var(--e-a-border-color,rgba(230,1,126,.18));border-radius:8px;padding:14px 34px 14px 16px;margin:10px 0 6px;background:rgba(230,1,126,.05);}
 		.she-pro-live::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,' . $bright . ',' . $primary . ');}
+		.she-pro-live__close{position:absolute;top:8px;right:8px;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:0;background:transparent;color:var(--e-a-color-txt-muted,#7c6b74);cursor:pointer;border-radius:4px;line-height:0;transition:background .15s ease,color .15s ease;}
+		.she-pro-live__close:hover{background:rgba(230,1,126,.12);color:var(--e-a-color-txt,#0c0d0e);}
 		.she-pro-live__badge{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(90deg,' . $bright . ',' . $primary . ');color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-bottom:10px;}
 		.she-pro-live__badge svg{display:block;}
 		.she-pro-live__title{display:block;font-size:13.5px;font-weight:700;line-height:1.35;margin:0 0 6px;color:var(--e-a-color-txt,#0c0d0e);}
@@ -176,7 +243,10 @@ class Module extends Module_Base {
 		.she-pro-live__btn:hover{background:' . $press . ';color:#fff !important;}
 		</style>';
 
+		$close = '<button type="button" class="she-pro-live__close" aria-label="' . esc_attr__( 'Dismiss', 'she-header' ) . '"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
+
 		$html = '<div class="she-pro-live">'
+			. $close
 			. '<span class="she-pro-live__badge">' . $spark . esc_html( $badge_label ) . '</span>'
 			. '<strong class="she-pro-live__title">' . esc_html( $title ) . '</strong>'
 			. '<p class="she-pro-live__text">' . esc_html( $text ) . '</p>'
@@ -367,5 +437,14 @@ class Module extends Module_Base {
 			'elementor/element/container/section_sticky_header_effect/before_section_end',
 			array( $this, 'register_controls' )
 		);
+
+		// Persist dismissal of the "Pro is now live" announcement.
+		add_action( 'wp_ajax_' . self::LIVE_NOTICE_ACTION, array( $this, 'ajax_dismiss_live_notice' ) );
+
+		// Editor-side click handler for the announcement's close button
+		// (only needed while the notice can still appear).
+		if ( ! $this->is_live_notice_dismissed() ) {
+			add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'enqueue_dismiss_script' ) );
+		}
 	}
 }
