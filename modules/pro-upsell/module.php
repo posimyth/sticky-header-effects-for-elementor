@@ -352,21 +352,24 @@ class Module extends Module_Base {
 
 		// "Pro is now live" announcement — placed near the top of the panel,
 		// right after the "Import Presets" button. Shows regardless of the
-		// main "Enable" toggle so users discover Pro immediately.
-		$element->add_control(
-			'she_pro_live_notice',
-			array(
-				'type'        => Controls_Manager::RAW_HTML,
-				'raw'         => $this->build_live_notice_html(),
-				'label_block' => true,
-			),
-			array(
-				'position' => array(
-					'of' => 'smart-preset-button',
-					'at' => 'after',
+		// main "Enable" toggle so users discover Pro immediately. Skipped once
+		// the current user has dismissed it via its close button.
+		if ( ! $this->is_live_notice_dismissed() ) {
+			$element->add_control(
+				'she_pro_live_notice',
+				array(
+					'type'        => Controls_Manager::RAW_HTML,
+					'raw'         => $this->build_live_notice_html(),
+					'label_block' => true,
 				),
-			)
-		);
+				array(
+					'position' => array(
+						'of' => 'smart-preset-button',
+						'at' => 'after',
+					),
+				)
+			);
+		}
 
 		// Every Pro feature shown as a NATIVE switcher control with a PRO badge,
 		// but LOCKED: the switcher can't be toggled on in Free (CSS disables
