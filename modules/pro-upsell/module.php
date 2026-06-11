@@ -309,11 +309,19 @@ class Module extends Module_Base {
 		.she-pc__btn:hover{background:' . $press . ';color:#fff !important;}
 		.she-pc__link{font-size:12px;font-weight:600;color:' . $primary . ' !important;text-decoration:none;white-space:nowrap;}
 		.she-pc__link:hover{color:' . $press . ' !important;text-decoration:underline;}
-		/* Locked Pro controls: lock icon + PRO badge on the label, non-toggleable switcher. */
-		.she-pro-locked-ctrl .elementor-control-title::before{content:"\\01F512";margin-right:5px;font-size:10px;opacity:.7;vertical-align:middle;}
+		/* Locked Pro controls: PRO badge on the label, lock icon beside the switcher, fully non-toggleable. */
 		.she-pro-locked-ctrl .elementor-control-title::after{content:"PRO";display:inline-block;margin-left:6px;padding:1px 5px;border-radius:3px;background:' . $primary . ';color:#fff;font-size:8px;font-weight:700;letter-spacing:.5px;line-height:1.7;vertical-align:middle;}
-		.she-pro-locked-ctrl .elementor-switch{pointer-events:none !important;opacity:.5;}
-		.she-pro-locked-ctrl .elementor-control-input-wrapper{cursor:not-allowed;}
+		/* Locked toggle: dimmed and non-interactive (no lock icon for now). */
+		.she-pro-locked-ctrl .elementor-switch{opacity:.5;}
+		/* Clicking anywhere on the row (label text OR switch) must never toggle it. */
+		.she-pro-locked-ctrl{cursor:not-allowed;}
+		.she-pro-locked-ctrl .elementor-control-content{pointer-events:none;}
+			/* Demo / Docs text links beneath each feature description. */
+			.she-pro-locked-ctrl .she-pro-desc{display:block;}
+			.she-pro-locked-ctrl .she-pro-links{display:flex;align-items:center;gap:7px;margin-top:7px;font-size:11px;}
+			.she-pro-locked-ctrl .she-pro-links a{pointer-events:auto;cursor:pointer;font-weight:600;text-decoration:none !important;color:var(--e-a-color-txt,#1d2327) !important;transition:color .15s ease;}
+			.she-pro-locked-ctrl .she-pro-links a:hover{color:' . $primary . ' !important;}
+			.she-pro-locked-ctrl .she-pro-links__sep{opacity:.4;}
 		</style>';
 
 		$html = '<div class="she-pc">'
@@ -365,27 +373,97 @@ class Module extends Module_Base {
 		// interaction; see build_upsell_html). Labels match the Pro plugin's
 		// feature headings exactly. render_type 'none' so they never affect the
 		// frontend.
+		// Each feature: label, description, and its own Live Demo + Read Docs URLs.
+		// TODO: replace the placeholder demo/docs URLs below with the real ones.
 		$pro_features = array(
-			'display_condition' => array( __( 'Display Conditions', 'she-header' ), __( 'Show or hide the sticky header on specific pages, posts, roles & more.', 'she-header' ) ),
-			'sticky_until'      => array( __( 'Sticky Until', 'she-header' ), __( 'Stop sticking at a container, element, or scroll distance.', 'she-header' ) ),
-			'reveal'            => array( __( 'Reveal Animation', 'she-header' ), __( '9 entrance effects when the header becomes sticky.', 'she-header' ) ),
-			'header_replace'    => array( __( 'Header Replace on Scroll', 'she-header' ), __( 'Swap to a different header design when sticky.', 'she-header' ) ),
-			'logo_swap'         => array( __( 'Logo Image Swap', 'she-header' ), __( 'Show a different logo (with retina) when sticky.', 'she-header' ) ),
-			'menu_style'        => array( __( 'Sticky Menu Styling', 'she-header' ), __( 'Restyle nav menus on sticky — 5 widget types.', 'she-header' ) ),
-			'backdrop_filter'   => array( __( 'Extended Backdrop Filters', 'she-header' ), __( 'Grayscale, brightness, contrast & hue effects.', 'she-header' ) ),
-			'background_image'  => array( __( 'Background Image on Sticky', 'she-header' ), __( 'Set a background image for the sticky state.', 'she-header' ) ),
-			'opacity'           => array( __( 'Opacity Transition', 'she-header' ), __( 'Smooth 0–1 opacity fade on the sticky header.', 'she-header' ) ),
-			'logo_style'        => array( __( 'Logo Styling on Sticky', 'she-header' ), __( 'Frame, border & shadow styling for the logo.', 'she-header' ) ),
-			'multi_sticky'      => array( __( 'Multi-Sticky Coordination', 'she-header' ), __( 'Stack or sequence up to 5 sticky sections.', 'she-header' ) ),
+			'display_condition' => array(
+				'label' => __( 'Display Conditions', 'she-header' ),
+				'desc'  => __( 'Show or hide the sticky header on specific pages, posts, roles & more.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/display-conditions/',
+				'docs'  => 'https://stickyheadereffects.com/docs/display-conditions/',
+			),
+			'sticky_until'      => array(
+				'label' => __( 'Sticky Until', 'she-header' ),
+				'desc'  => __( 'Stop sticking at a container, element, or scroll distance.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/sticky-until/',
+				'docs'  => 'https://stickyheadereffects.com/docs/sticky-until/',
+			),
+			'reveal'            => array(
+				'label' => __( 'Reveal Animation', 'she-header' ),
+				'desc'  => __( '9 entrance effects when the header becomes sticky.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/reveal-animation/',
+				'docs'  => 'https://stickyheadereffects.com/docs/reveal-animation/',
+			),
+			'header_replace'    => array(
+				'label' => __( 'Header Replace on Scroll', 'she-header' ),
+				'desc'  => __( 'Swap to a different header design when sticky.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/header-replace/',
+				'docs'  => 'https://stickyheadereffects.com/docs/header-replace/',
+			),
+			'logo_swap'         => array(
+				'label' => __( 'Logo Image Swap', 'she-header' ),
+				'desc'  => __( 'Show a different logo (with retina) when sticky.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/logo-swap/',
+				'docs'  => 'https://stickyheadereffects.com/docs/logo-swap/',
+			),
+			'menu_style'        => array(
+				'label' => __( 'Sticky Menu Styling', 'she-header' ),
+				'desc'  => __( 'Restyle nav menus on sticky — 5 widget types.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/menu-styling/',
+				'docs'  => 'https://stickyheadereffects.com/docs/menu-styling/',
+			),
+			'backdrop_filter'   => array(
+				'label' => __( 'Extended Backdrop Filters', 'she-header' ),
+				'desc'  => __( 'Grayscale, brightness, contrast & hue effects.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/backdrop-filter/',
+				'docs'  => 'https://stickyheadereffects.com/docs/backdrop-filter/',
+			),
+			'background_image'  => array(
+				'label' => __( 'Background Image on Sticky', 'she-header' ),
+				'desc'  => __( 'Set a background image for the sticky state.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/background-image/',
+				'docs'  => 'https://stickyheadereffects.com/docs/background-image/',
+			),
+			'opacity'           => array(
+				'label' => __( 'Opacity Transition', 'she-header' ),
+				'desc'  => __( 'Smooth 0–1 opacity fade on the sticky header.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/opacity-transition/',
+				'docs'  => 'https://stickyheadereffects.com/docs/opacity-transition/',
+			),
+			'logo_style'        => array(
+				'label' => __( 'Logo Styling on Sticky', 'she-header' ),
+				'desc'  => __( 'Frame, border & shadow styling for the logo.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/logo-styling/',
+				'docs'  => 'https://stickyheadereffects.com/docs/logo-styling/',
+			),
+			'multi_sticky'      => array(
+				'label' => __( 'Multi-Sticky Coordination', 'she-header' ),
+				'desc'  => __( 'Stack or sequence up to 5 sticky sections.', 'she-header' ),
+				'demo'  => 'https://stickyheadereffects.com/demo/multi-sticky/',
+				'docs'  => 'https://stickyheadereffects.com/docs/multi-sticky/',
+			),
 		);
 
-		$first = true;
+		$demo_label = __( 'Live Demo', 'she-header' );
+		$docs_label = __( 'Read Docs', 'she-header' );
+
 		foreach ( $pro_features as $slug => $feature ) {
+			// Demo / Docs text links beneath the description (Elementor renders
+			// control descriptions as raw HTML). "Live Demo" uses the theme text
+			// color; "Read Docs" uses the brand accent.
+			$links = '<span class="she-pro-links">'
+				. '<a class="she-link-demo" href="' . esc_url( $feature['demo'] ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $demo_label ) . '</a>'
+				. '<span class="she-pro-links__sep">|</span>'
+				. '<a class="she-link-docs" href="' . esc_url( $feature['docs'] ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $docs_label ) . '</a>'
+				. '</span>';
+
+			$description = '<span class="she-pro-desc">' . esc_html( $feature['desc'] ) . '</span>' . $links;
+
 			$element->add_control(
 				'she_pro_lock_' . $slug,
 				array(
-					'label'        => $feature[0],
-					'description'  => $feature[1],
+					'label'        => $feature['label'],
+					'description'  => $description,
 					'type'         => Controls_Manager::SWITCHER,
 					'label_on'     => __( 'On', 'she-header' ),
 					'label_off'    => __( 'Off', 'she-header' ),
@@ -393,13 +471,12 @@ class Module extends Module_Base {
 					'default'      => '',
 					'classes'      => 'she-pro-locked-ctrl',
 					'render_type'  => 'none',
-					'separator'    => $first ? 'before' : 'default',
+					'separator'    => 'before',
 					'condition'    => array(
 						'transparent!' => '',
 					),
 				)
 			);
-			$first = false;
 		}
 
 		$element->add_control(
