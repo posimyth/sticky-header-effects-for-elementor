@@ -1499,6 +1499,7 @@ class Module extends Module_Base {
 			'discord_box_notice',
 			array(
 				'type'      => 'she_discord_box',
+				'separator' => 'before',
 				'condition' => array(
 					'transparent!' => '',
 				),
@@ -1531,6 +1532,10 @@ class Module extends Module_Base {
 			// the Pro upsell or the real Pro controls (which hook at priority 10).
 			add_action( 'elementor/element/section/section_sticky_header_effect/before_section_end', array( $this, 'she_add_discord_box' ), 20 );
 			add_action( 'elementor/element/container/section_sticky_header_effect/before_section_end', array( $this, 'she_add_discord_box' ), 20 );
+
+			// Inject Demo/Docs resource links into the main free toggles.
+			add_action( 'elementor/element/section/section_sticky_header_effect/before_section_end', array( $this, 'she_inject_compare_links' ), 15 );
+			add_action( 'elementor/element/container/section_sticky_header_effect/before_section_end', array( $this, 'she_inject_compare_links' ), 15 );
 		}
 	}
 
@@ -1565,5 +1570,91 @@ class Module extends Module_Base {
 			SHE_HEADER_VERSION,
 			false
 		);
+	}
+
+	/**
+	 * Add Demo/Docs resource links beneath the main free feature toggles.
+	 *
+	 * "Live Demo" uses the Elementor theme text color (adapts to light/dark);
+	 * "Read Docs" uses the brand accent. Links render via each control's
+	 * description (Elementor outputs descriptions as raw HTML).
+	 *
+	 * TODO: replace the placeholder demo/docs URLs with the real ones.
+	 *
+	 * @param Controls_Stack $element Section/container.
+	 * @return void
+	 */
+	public function she_inject_compare_links( Controls_Stack $element ) {
+		$demo_label = __( 'Live Demo', 'she-header' );
+		$docs_label = __( 'Read Docs', 'she-header' );
+
+		// Main free feature toggles that get the resource links.
+		$toggles = array(
+			'transparent',
+			'transparent_header_show',
+			'background_show',
+			'mobile_menu_toggle_animation',
+			'bottom_border',
+			'bottom_shadow',
+			'shrink_header',
+			'shrink_header_logo',
+			'change_logo_color',
+			'blur_bg',
+			'hide_header',
+		);
+
+		$controls = $element->get_controls();
+
+		foreach ( $toggles as $id ) {
+			if ( ! isset( $controls[ $id ] ) ) {
+				continue;
+			}
+
+			// Placeholder per-feature URLs (replace with real ones later).
+			$slug = str_replace( '_', '-', $id );
+			$demo = 'https://stickyheadereffects.com/demo/' . $slug . '/';
+			$docs = 'https://stickyheadereffects.com/docs/' . $slug . '/';
+
+			$links = '<span class="she-free-links">'
+				. '<a class="she-free-demo" href="' . esc_url( $demo ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $demo_label ) . '</a>'
+				. '<span class="she-free-sep">|</span>'
+				. '<a class="she-free-docs" href="' . esc_url( $docs ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $docs_label ) . '</a>'
+				. '</span>';
+
+			$existing         = isset( $controls[ $id ]['description'] ) ? $controls[ $id ]['description'] : '';
+			$existing_classes = isset( $controls[ $id ]['classes'] ) ? $controls[ $id ]['classes'] : '';
+
+			$element->update_control(
+				$id,
+				array(
+					'description' => $existing . $links,
+					'classes'     => trim( $existing_classes . ' she-free-link-ctrl' ),
+				)
+			);
+		}
+
+		// Output the link CSS once.
+		$element->add_control(
+			'she_free_links_css',
+			array(
+				'type'        => Controls_Manager::RAW_HTML,
+				'raw'         => $this->she_compare_links_css(),
+				'label_block' => true,
+			)
+		);
+	}
+
+	/**
+	 * Scoped CSS for the free Demo/Docs resource links.
+	 *
+	 * @return string
+	 */
+	private function she_compare_links_css() {
+		return '<style>
+		.she-free-link-ctrl .she-free-links{display:flex;align-items:center;gap:7px;margin-top:7px;font-size:11px;}
+		.she-free-link-ctrl .she-free-links a{font-weight:600;text-decoration:none;color:var(--e-a-color-txt,#1d2327);transition:color .15s ease;}
+		.she-free-link-ctrl .she-free-links a:hover{color:#E6017E;}
+		.she-free-link-ctrl .she-free-sep{opacity:.4;}
+		</style>';
 	}
 }
