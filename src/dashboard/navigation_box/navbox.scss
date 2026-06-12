@@ -92,6 +92,11 @@
             white-space: nowrap;
             justify-content: space-between;
 
+            .she_activated_check {
+                display: block;
+                flex-shrink: 0;
+            }
+
             &:hover {
                 color: $she_dark_blk;
                 background-color: $she_nav_strip_bg_light;
