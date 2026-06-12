@@ -306,9 +306,12 @@ function sheHeader(e) {
 
                 header.css("top", she_offset.size + she_offset.unit);
 
-                if (width >= 768) {
-                    if (document.body.classList.contains('admin-bar')) {
-                        header.css("top", (32 + she_offset.size) + she_offset.unit);
+                if (width >= 783 && document.body.classList.contains('admin-bar')) {
+                    if (she_offset.unit === 'px') {
+                        header.css("top", (32 + she_offset.size) + "px");
+                    } else {
+                        // Mixed units — keep the 32px admin-bar offset intact.
+                        header.css("top", "calc(32px + " + she_offset.size + she_offset.unit + ")");
                     }
                 }
 
