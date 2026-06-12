@@ -159,6 +159,7 @@ if ( ! class_exists( 'She_Wp_Menu' ) ) {
 						'she_wp_version'     => get_bloginfo( 'version' ),
 						'shed_pro'           => apply_filters( 'she_pro_is_licensed', false ) ? 1 : 0,
 						'shed_pro_installed' => defined( 'SHE_PRO_VERSION' ) ? 1 : 0,
+						'shed_pro_version'   => defined( 'SHE_PRO_VERSION' ) ? SHE_PRO_VERSION : '',
 						'shed_wdkit_url'     => SHE_WDKIT_URL,
 						'onboarding_setup'   => get_option( 'she_onboarding_setup' ),
 						'shed_notificetions' => $she_notificetions,
