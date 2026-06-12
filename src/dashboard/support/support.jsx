@@ -8,7 +8,7 @@ const SupportToggle = (props) => {
     var she_version = shed_data.shed_wp_version;
     var she_wp_version = shed_data.she_wp_version;
 
-    const supportUrl = 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/';
+    const supportUrl = shed_data.shed_pro_installed == 1 ? 'https://store.posimyth.com/helpdesk/' : 'https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/';
     const youtubeUrl = 'https://www.youtube.com/c/POSIMYTHInnovations/?sub_confirmation=1';
     const twitterUrl = 'https://twitter.com/posimyth';
     const instagramUrl = 'https://www.instagram.com/posimyth';
@@ -86,7 +86,7 @@ const SupportToggle = (props) => {
                 <div className="she-sup-top">
                     <h3 className="she-section-heading"> {__('Quick Support', 'tpebl')}</h3>
                     <span className="she-sup-label">
-                       {__('FREE VERSION', 'tpebl')}
+                       {shed_data.shed_pro_installed == 1 ? __('PRO VERSION', 'tpebl') : __('FREE VERSION', 'tpebl')}
                     </span>
                 </div>
                 <div className="she-sup-inner">
@@ -94,7 +94,7 @@ const SupportToggle = (props) => {
                         <div className="she-sup-list">
                             <a href={supportUrl} target="_blank" className="tpae-sup-link" rel="noopener noreferrer">
                                 <span className="she-title-wrap">
-                                    {__('Get Free Support', 'tpebl')}
+                                    {shed_data.shed_pro_installed == 1 ? __('Get Premium Support', 'tpebl') : __('Get Free Support', 'tpebl')}
                                 </span>
                                 {animSvg}
                             </a>
@@ -160,7 +160,7 @@ const SupportToggle = (props) => {
                     </div>
                     <div className="she-panel-row" style={{ justifyContent: 'center', columnGap: '10px' }}>
                         <span className="she-version-info"> {__('WordPress Version: ', 'tpebl') + she_wp_version} </span><span>|</span>
-                        <span className="she-version-info"> {__('Plugin Version: ', 'tpebl') + she_version} </span>
+                        <span className="she-version-info"> {__('Plugin Version: ', 'tpebl') + (shed_data.shed_pro_installed == 1 && shed_data.shed_pro_version ? shed_data.shed_pro_version : she_version)} </span>
                     </div>
                 </div>
 
