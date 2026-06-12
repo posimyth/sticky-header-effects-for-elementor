@@ -244,3 +244,40 @@
         width: 100%;
     }
 }
+
+/* Initial-load skeleton for the license card (prevents the "enter key" flash). */
+.she-activate-license-main .she_license_box_cover_main.she-skeleton {
+
+    .she_sk_line,
+    .she_sk_input,
+    .she_sk_btn {
+        background: $she_skeleton_bg;
+        border-radius: 6px;
+        animation: $she_animation;
+    }
+
+    .she_sk_title {
+        width: 180px;
+        height: 22px;
+    }
+
+    .she_sk_row {
+        display: flex;
+        gap: 15px;
+    }
+
+    .she_sk_input {
+        flex: 1;
+        height: 46px;
+    }
+
+    .she_sk_btn {
+        width: 120px;
+        height: 46px;
+    }
+
+    .she_sk_msg {
+        width: 260px;
+        height: 14px;
+    }
+}

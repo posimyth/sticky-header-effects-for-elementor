@@ -27,6 +27,7 @@ const ActivateLicense = (props) => {
     const [loading, setLoading] = useState(false);
     const [activated, setActivated] = useState(false);
     const [expires, setExpires] = useState('');
+    const [initialLoading, setInitialLoading] = useState(true); // gate first render until status is fetched
 
     // Apply a status payload (from the backend) to local UI state.
     const applyStatus = (st) => {
@@ -60,6 +61,8 @@ const ActivateLicense = (props) => {
                 }
             } catch (e) {
                 // No-op.
+            } finally {
+                setInitialLoading(false);
             }
         };
         fetchStatus();
@@ -94,6 +97,10 @@ const ActivateLicense = (props) => {
                     setLicenseKey('');
                     setExpires('');
                 }
+                // Keep the sidebar "Activated" label in sync immediately (no refresh).
+                const nowLicensed = type !== 'deactivate_license' && !!(res.data?.status && res.data.status.is_valid);
+                shed_data.shed_pro = nowLicensed ? 1 : 0;
+                window.dispatchEvent(new CustomEvent('she-license-changed', { detail: { licensed: nowLicensed } }));
             } else {
                 setStatus('invalid');
                 setMessage(
@@ -144,12 +151,34 @@ const ActivateLicense = (props) => {
         );
     }
 
+    // Pro is active but the license status hasn't returned yet — show a
+    // skeleton instead of briefly flashing the "enter key" form.
+    if (initialLoading) {
+        return (
+            <div className='she-activate-license-main she-main-container'>
+                <div className='she-section-heading-cover'>
+                    <div className='she-main-sections-heading'>
+                        <h3 className='she-section-heading'>{__('Activate License', 'she-header')}</h3>
+                    </div>
+                </div>
+                <div className='she_license_box_cover_main she-skeleton'>
+                    <div className='she_sk_line she_sk_title'></div>
+                    <div className='she_sk_row'>
+                        <div className='she_sk_input'></div>
+                        <div className='she_sk_btn'></div>
+                    </div>
+                    <div className='she_sk_line she_sk_msg'></div>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className='she-activate-license-main she-main-container'>
 
             <div className='she-section-heading-cover'>
                 <div className='she-main-sections-heading'>
-                    <h3 className='she-section-heading'>{__('Activate PRO', 'she-header')}</h3>
+                    <h3 className='she-section-heading'>{__('Activate License', 'she-header')}</h3>
                 </div>
             </div>
 
@@ -180,7 +209,10 @@ const ActivateLicense = (props) => {
                         <button
                             className={`she-ghost-btn she_license_btn she_license_deactivate ${loading ? 'disable' : ''}`}
                             disabled={loading}
-                            onClick={() => { callLicenseAjax('deactivate_license'); }}
+                            onClick={() => {
+                                if (!window.confirm(__('Are you sure you want to deactivate Sticky Header Effects for Elementor Pro License Key?', 'she-header'))) { return; }
+                                callLicenseAjax('deactivate_license');
+                            }}
                         >
                             {loading ? __('Deactivating…', 'she-header') : __('Deactivate', 'she-header')}
                         </button>
