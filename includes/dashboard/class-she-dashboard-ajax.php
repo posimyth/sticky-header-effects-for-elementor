@@ -419,13 +419,11 @@ if ( ! class_exists( 'She_Dashboard_Ajax' ) ) {
 
 			require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 
-			$logo_url = SHE_HEADER_URL . 'assets/images/theplus-logo-small.png';
-
 			$args = array(
 				'url'    => 'update.php?action=upgrade-plugin&plugin=' . rawurlencode( $this_pluginname ),
 				'plugin' => $this_pluginname,
 				'nonce'  => 'upgrade-plugin_' . $this_pluginname,
-				'title'  => '<img src="' . esc_url( $logo_url ) . '" alt="theplus-logo"><div class="theplus-rb-subtitle">' . esc_html__( 'Rollback to Previous Version', 'she-header' ) . '</div>',
+				'title'  => '<div class="theplus-rb-subtitle">' . esc_html__( 'Rollback to Previous Version', 'she-header' ) . '</div>',
 			);
 
 			$upgrader_plugin = new \Plugin_Upgrader( new \Plugin_Upgrader_Skin( $args ) );
