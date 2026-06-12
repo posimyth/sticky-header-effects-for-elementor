@@ -89,8 +89,6 @@ if ( ! class_exists( 'She_Nexter_Extension_Promo_Notice' ) ) {
 		 * @since 2.1.1
 		 */
 		public function she_nexter_extension_promo() {
-			$installed_plugins = get_plugins();
-
 			$file_path      = $this->t_p_a_g_slug;
 			$file_path_tpae = $this->t_p_a_slug;
 			$screen         = get_current_screen();
@@ -114,6 +112,8 @@ if ( ! class_exists( 'She_Nexter_Extension_Promo_Notice' ) ) {
 			if ( $pt_exclude ) {
 				return;
 			}
+
+			$installed_plugins = get_plugins();
 
 			if ( is_plugin_active( $file_path ) || isset( $installed_plugins[ $file_path ] ) ) {
 				return;
