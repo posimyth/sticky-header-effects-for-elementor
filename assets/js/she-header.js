@@ -299,7 +299,7 @@ function sheHeader(e) {
                 }
             }
 
-            if (scroll >= scroll_distance["size"]) {
+            if (scroll >= sd) {
                 header.removeClass('header').addClass("she-header");
                 header.css("background-color", background);
                 header.css("border-bottom", bottom_border);
