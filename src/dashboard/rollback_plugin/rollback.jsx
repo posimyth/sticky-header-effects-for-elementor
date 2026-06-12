@@ -102,7 +102,7 @@ const RollBack = (props) => {
                 <div className='she_field_card'>
                     <div className='she_card_top_detail'>
                         <div className='she_field_card_heading_strip'>
-                            <label htmlFor="she_lazyload" className='she_field_card_title'>{__('Select Version', 'she-header')}</label>
+                            <label htmlFor="she_lazyload" className='she_field_card_title'>{__('Select Free Version', 'she-header')}</label>
                         </div>
                     </div>
                     <div className='she_field_dropdown'>
