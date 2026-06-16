@@ -50,13 +50,27 @@ function she_header_load_plugin() {
 
 	$elementor_version_required = '2.0';
 	if ( ! version_compare( ELEMENTOR_VERSION, $elementor_version_required, '>=' ) ) {
-		add_action( 'admin_notices', 'she_header_fail_load_out_of_date' );
+		add_action(
+			'admin_notices',
+			function () {
+				she_header_admin_notice_elementor_update(
+					__( 'Sticky Header Effects not working because you are using an old version of Elementor.', 'she-header' )
+				);
+			}
+		);
 		return;
 	}
 
 	$elementor_version_recommendation = '3.0';
 	if ( ! version_compare( ELEMENTOR_VERSION, $elementor_version_recommendation, '>=' ) ) {
-		add_action( 'admin_notices', 'she_header_admin_notice_upgrade_recommendation' );
+		add_action(
+			'admin_notices',
+			function () {
+				she_header_admin_notice_elementor_update(
+					__( 'A new version of Elementor is available. For better performance and compatibility of Sticky Header Effects, we recommend updating to the latest version.', 'she-header' )
+				);
+			}
+		);
 	}
 
 	include( SHE_HEADER_PATH . 'plugin.php' );
@@ -114,7 +128,20 @@ function she_header_fail_load() {
 	she_render_admin_notice( $message );
 }
 
-function she_header_fail_load_out_of_date() {
+/**
+ * Render the "Update Elementor" admin notice with the given message.
+ *
+ * Shared by both the hard out-of-date error (Elementor below the required
+ * version) and the soft upgrade recommendation (Elementor below the
+ * recommended version) — both show the same "Update Elementor Now" action and
+ * differ only in their message sentence.
+ *
+ * @since 2.2.0
+ *
+ * @param string $message Already-translated notice sentence.
+ * @return void
+ */
+function she_header_admin_notice_elementor_update( $message ) {
 	if ( ! current_user_can( 'update_plugins' ) ) {
 		return;
 	}
@@ -122,24 +149,10 @@ function she_header_fail_load_out_of_date() {
 	$file_path = 'elementor/elementor.php';
 
 	$upgrade_link = wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $file_path, 'upgrade-plugin_' . $file_path );
-	$message = '<p>' . __( 'Sticky Header Effects not working because you are using an old version of Elementor.', 'she-header' ) . '</p>';
-	$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $upgrade_link, __( 'Update Elementor Now', 'she-header' ) ) . '</p>';
+	$notice = '<p>' . $message . '</p>';
+	$notice .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $upgrade_link, __( 'Update Elementor Now', 'she-header' ) ) . '</p>';
 
-	she_render_admin_notice( $message );
-}
-
-function she_header_admin_notice_upgrade_recommendation() {
-	if ( ! current_user_can( 'update_plugins' ) ) {
-		return;
-	}
-
-	$file_path = 'elementor/elementor.php';
-
-	$upgrade_link = wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $file_path, 'upgrade-plugin_' . $file_path );
-	$message = '<p>' . __( 'A new version of Elementor is available. For better performance and compatibility of Sticky Header Effects, we recommend updating to the latest version.', 'she-header' ) . '</p>';
-	$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $upgrade_link, __( 'Update Elementor Now', 'she-header' ) ) . '</p>';
-
-	she_render_admin_notice( $message );
+	she_render_admin_notice( $notice );
 }
 
 if ( ! function_exists( 'she_header_is_elementor_installed' ) ) {
