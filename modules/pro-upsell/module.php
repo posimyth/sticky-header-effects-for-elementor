@@ -291,15 +291,16 @@ class Module extends Module_Base {
 		return '
 		<style>
 		/* Locked Pro controls: PRO badge on the label, dimmed + non-toggleable switcher. */
-		.she-pro-locked-ctrl .elementor-control-title::after{content:"PRO";display:inline-block;margin-left:6px;padding:1px 5px;border-radius:3px;background:' . $primary . ';color:#fff;font-size:8px;font-weight:700;letter-spacing:.5px;line-height:1.7;vertical-align:middle;}
+		.she-pro-locked-ctrl .elementor-control-title{display:flex;flex-wrap:wrap;align-items:center;column-gap:6px;row-gap:4px;}
+		.she-pro-locked-ctrl .elementor-control-title::after{content:"PRO";display:inline-block;padding:1px 5px;border-radius:3px;background:' . $primary . ';color:#fff;font-size:8px;font-weight:700;letter-spacing:.5px;line-height:1.7;}
 		.she-pro-locked-ctrl .elementor-switch{opacity:.5;}
 		.she-pro-locked-ctrl{cursor:not-allowed;}
 		.she-pro-locked-ctrl .elementor-control-content{pointer-events:none;}
 		/* Demo / Docs text links beneath each feature description. */
 		.she-pro-locked-ctrl .she-pro-desc{display:block;}
 		.she-pro-locked-ctrl .she-pro-links{display:flex;align-items:center;gap:7px;margin-top:7px;font-size:11px;}
-		.she-pro-locked-ctrl .she-pro-links a{pointer-events:auto;cursor:pointer;font-weight:600;text-decoration:none !important;color:var(--e-a-color-txt,#1d2327) !important;transition:color .15s ease;}
-		.she-pro-locked-ctrl .she-pro-links a:hover{color:' . $primary . ' !important;}
+		.she-pro-locked-ctrl .she-pro-links a{pointer-events:auto;cursor:pointer;font-weight:600;text-decoration:none !important;border-block-end:0 !important;color:var(--e-a-color-txt,#1d2327) !important;transition:color .15s ease;}
+		.she-pro-locked-ctrl .she-pro-links a:hover{color:' . $primary . ' !important;text-decoration:none !important;border-block-end:0 !important;}
 		.she-pro-locked-ctrl .she-pro-links__sep{opacity:.4;}
 		</style>';
 	}

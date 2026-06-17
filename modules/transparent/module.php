@@ -1650,8 +1650,8 @@ class Module extends Module_Base {
 	private function she_compare_links_css() {
 		return '<style>
 		.she-free-link-ctrl .she-free-links{display:flex;align-items:center;gap:7px;margin-top:7px;font-size:11px;}
-		.she-free-link-ctrl .she-free-links a{font-weight:600;text-decoration:none;color:var(--e-a-color-txt,#1d2327);transition:color .15s ease;}
-		.she-free-link-ctrl .she-free-links a:hover{color:#E6017E;text-decoration:none;border-block-end:none;}
+		.she-free-link-ctrl .she-free-links a{font-weight:600;color:var(--e-a-color-txt,#1d2327);text-decoration:none !important;border-block-end:0 !important;transition:color .15s ease;}
+		.she-free-link-ctrl .she-free-links a:hover{color:#E6017E;text-decoration:none !important;border-block-end:0 !important;}
 		.she-free-link-ctrl .she-free-sep{opacity:.4;}
 		</style>';
 	}
