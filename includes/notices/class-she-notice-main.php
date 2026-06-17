@@ -99,6 +99,11 @@ if ( ! class_exists( 'She_Notice_Main' ) ) {
 				include SHE_HEADER_PATH . 'includes/notices/class-she-deactivate-feedback.php';
 				include SHE_HEADER_PATH . 'includes/notices/class-she-pro-launch-notice.php';
 
+				// Join Community notice (30 days after install) — skip once dismissed.
+				if ( ! get_option( 'she_join_community_notice' ) ) {
+					include SHE_HEADER_PATH . 'includes/notices/class-she-join-community-notice.php';
+				}
+
 				$ele_pro_plugin = array(
 					'name'        => 'elementor-pro',
 					'status'      => '',
