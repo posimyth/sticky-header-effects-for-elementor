@@ -70,6 +70,8 @@ if ( ! class_exists( 'She_Loader' ) ) {
 				include SHE_HEADER_PATH . 'includes/meta/class-she-meta.php';
 				add_action( 'admin_footer', array( $this, 'she_add_notificetions' ) );
 				add_option( 'she_menu_notificetions', '1' );
+
+				add_option( 'she_header_install_time', current_time( 'mysql' ) );
 			}
 
 			// Preset (editor + admin-ajax hooks) and notices (admin_notices)
