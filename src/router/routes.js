@@ -37,10 +37,15 @@ const routes = [
     path: '/header_widgets',
     element: <Header_widgets />
   },
-  {
-    path: '/activate_license',
-    element: <ActivateLicense />
-  },
+  // The Activate License tab only exists when the Pro plugin is installed.
+  // In Free, the sidebar "Upgrade Now" links straight to the pricing page,
+  // so the route is not registered (any direct hit falls through to '*').
+  ...(typeof shed_data !== 'undefined' && shed_data.shed_pro_installed == 1
+    ? [{
+        path: '/activate_license',
+        element: <ActivateLicense />
+      }]
+    : []),
   {
     path: '*',
     element: <ElementorTemplates />
