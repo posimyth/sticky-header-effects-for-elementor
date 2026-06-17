@@ -174,7 +174,7 @@ function sheHeader(e) {
             var mywindow = $j(window),
                 mypos = mywindow.scrollTop();
 
-            mywindow.off('scroll.sheHide').on('scroll.sheHide', function () {
+            mywindow.scroll(function () {
                 var sd_hh_s = scroll_distance_hide_header["size"],
                     sd_hh_u = scroll_distance_hide_header["unit"],
                     sd_hh_tablet =
@@ -245,16 +245,8 @@ function sheHeader(e) {
             });
         }
 
-        // scroll function — throttled with requestAnimationFrame so the
-        // heavy per-property style writes below run at most once per frame.
-        var she_scroll_ticking = false;
-        $j(window).off("load.sheScroll scroll.sheScroll").on("load.sheScroll scroll.sheScroll", function (e) {
-            if (she_scroll_ticking) {
-                return;
-            }
-            she_scroll_ticking = true;
-            requestAnimationFrame(function () {
-                she_scroll_ticking = false;
+        // scroll function
+        $j(window).on("load scroll", function (e) {
             var scroll = $j(window).scrollTop();
 
             if (header_elementor) {
@@ -312,15 +304,14 @@ function sheHeader(e) {
                 header.css("background-color", background);
                 header.css("border-bottom", bottom_border);
 
-                if (!header.attr("data-she-multi-mode")) {
-                    header.css("top", she_offset.size + she_offset.unit);
+                header.css("top", she_offset.size + she_offset.unit);
 
-                    if (width >= 783 && document.body.classList.contains('admin-bar')) {
-                        if (she_offset.unit === 'px') {
-                            header.css("top", (32 + she_offset.size) + "px");
-                        } else {
-                            header.css("top", "calc(32px + " + she_offset.size + she_offset.unit + ")");
-                        }
+                if (width >= 783 && document.body.classList.contains('admin-bar')) {
+                    if (she_offset.unit === 'px') {
+                        header.css("top", (32 + she_offset.size) + "px");
+                    } else {
+                        // Mixed units — keep the 32px admin-bar offset intact.
+                        header.css("top", "calc(32px + " + she_offset.size + she_offset.unit + ")");
                     }
                 }
 
@@ -357,9 +348,7 @@ function sheHeader(e) {
                 header.removeClass("she-header").addClass('header');
                 header.css("background-color", "");
                 header.css("border-bottom", "");
-                if (!header.attr("data-she-multi-mode")) {
-                    header.css("top", "");
-                }
+                header.css("top", "");
                 header.css("padding-top", "");
                 header.css("padding-bottom", "");
                 header.css("padding-left", "");
@@ -387,7 +376,6 @@ function sheHeader(e) {
             }
 
 
-            }); // end requestAnimationFrame
         });
     }
 
