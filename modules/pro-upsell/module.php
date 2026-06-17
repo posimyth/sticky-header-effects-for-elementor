@@ -219,12 +219,20 @@ class Module extends Module_Base {
 		$primary = self::BRAND_PRIMARY;
 		$bright  = self::BRAND_BRIGHT;
 		$press   = self::BRAND_PRESS;
-		$url     = 'https://stickyheadereffects.com/pricing/?utm_source=she-free&utm_medium=elementor-panel&utm_campaign=pro-live';
+		$url     = 'https://stickyheadereffects.com/#pricing';
 
-		$badge_label = __( 'Now Live', 'she-header' );
-		$title       = __( 'Sticky Header Effects Pro is here', 'she-header' );
-		$text        = __( 'Unlock 11 advanced effects — Display Conditions, Reveal, Multi-Sticky, Header Replace, Logo Swap & more.', 'she-header' );
+		$badge_label = __( 'Pro is Live', 'she-header' );
+		$title       = __( 'Sticky Header Effects for Elementor Pro is live — 11 new effects', 'she-header' );
 		$cta_label   = __( 'Get Pro', 'she-header' );
+		$guarantee   = __( '60-day money-back guarantee', 'she-header' );
+
+		// Highlight bullets: feature name + a short benefit.
+		$features = array(
+			array( __( 'Sticky Until', 'she-header' ), __( 'stop the header exactly where you want', 'she-header' ) ),
+			array( __( 'Header Replace on Scroll', 'she-header' ), __( 'swap the whole header mid-scroll', 'she-header' ) ),
+			array( __( 'Multi-Sticky + Auto-Hide', 'she-header' ), __( 'run more than one sticky header', 'she-header' ) ),
+		);
+		$more = __( '…and 8 more, plus 50+ ready templates.', 'she-header' );
 
 		// Spark / rocket-style badge icon (inline SVG, white on gradient).
 		$spark = '<svg width="11" height="11" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9Z"/></svg>';
@@ -237,20 +245,32 @@ class Module extends Module_Base {
 		.she-pro-live__close:hover{background:rgba(230,1,126,.12);color:var(--e-a-color-txt,#0c0d0e);}
 		.she-pro-live__badge{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(90deg,' . $bright . ',' . $primary . ');color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-bottom:10px;}
 		.she-pro-live__badge svg{display:block;}
-		.she-pro-live__title{display:block;font-size:13.5px;font-weight:700;line-height:1.35;margin:0 0 6px;color:var(--e-a-color-txt,#0c0d0e);}
+		.she-pro-live__title{display:block;font-size:13.5px;font-weight:700;line-height:1.35;margin:0 0 8px;color:var(--e-a-color-txt,#0c0d0e);}
+		.she-pro-live__list{margin:0 0 8px;padding:0;list-style:none;}
+		.she-pro-live__list li{position:relative;padding-left:13px;font-size:11.5px;line-height:1.5;margin:0 0 5px;color:var(--e-a-color-txt-muted,#7c6b74);}
+		.she-pro-live__list li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;background:' . $primary . ';}
+		.she-pro-live__list strong{color:var(--e-a-color-txt,#0c0d0e);font-weight:700;}
 		.she-pro-live__text{font-size:11.5px;line-height:1.5;margin:0 0 13px;color:var(--e-a-color-txt-muted,#7c6b74);}
 		.she-pro-live__btn{display:inline-block;background:' . $primary . ';color:#fff !important;font-size:12px;font-weight:700;text-decoration:none;padding:8px 18px;border-radius:5px;transition:background .15s ease;}
 		.she-pro-live__btn:hover{background:' . $press . ';color:#fff !important;text-decoration:none;}
+		.she-pro-live__guarantee{display:block;margin-top:8px;font-size:10px;line-height:1.4;color:var(--e-a-color-txt-muted,#7c6b74);}
 		</style>';
 
 		$close = '<button type="button" class="she-pro-live__close" aria-label="' . esc_attr__( 'Dismiss', 'she-header' ) . '"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
+
+		$bullets = '';
+		foreach ( $features as $feature ) {
+			$bullets .= '<li><strong>' . esc_html( $feature[0] ) . '</strong> — ' . esc_html( $feature[1] ) . '</li>';
+		}
 
 		$html = '<div class="she-pro-live">'
 			. $close
 			. '<span class="she-pro-live__badge">' . $spark . esc_html( $badge_label ) . '</span>'
 			. '<strong class="she-pro-live__title">' . esc_html( $title ) . '</strong>'
-			. '<p class="she-pro-live__text">' . esc_html( $text ) . '</p>'
+			. '<ul class="she-pro-live__list">' . $bullets . '</ul>'
+			. '<p class="she-pro-live__text">' . esc_html( $more ) . '</p>'
 			. '<a class="she-pro-live__btn" href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $cta_label ) . '</a>'
+			. '<span class="she-pro-live__guarantee">' . esc_html( $guarantee ) . '</span>'
 			. '</div>'
 			. $css;
 
