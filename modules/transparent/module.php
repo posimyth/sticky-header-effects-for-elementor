@@ -1588,9 +1588,7 @@ class Module extends Module_Base {
 		$demo_label = __( 'Live Demo', 'she-header' );
 		$docs_label = __( 'Read Docs', 'she-header' );
 
-		// Main free feature toggles that get the resource links.
 		$toggles = array(
-			'transparent',
 			'transparent_header_show',
 			'background_show',
 			'mobile_menu_toggle_animation',
