@@ -114,7 +114,8 @@ if ( ! class_exists( 'She_Pro_Launch_Notice' ) ) {
 
 			$nonce       = wp_create_nonce( 'she_pro_launch_notice_nonce' );
 			$pricing_url = 'https://stickyheadereffects.com/#pricing';
-			$logo_img    = SHE_HEADER_URL . 'assets/images/banner/she-notice-benner.png';
+			$details_url = 'https://stickyheadereffects.com/sticky-header-effects-pro/?utm_source=wpbackend&utm_medium=adminbanner&utm_campaign=pro_launch';
+			$logo_img   = SHE_HEADER_URL . 'assets/images/banner/she-notice-benner.png';
 
 			?>
 			<style>
@@ -134,6 +135,14 @@ if ( ! class_exists( 'She_Pro_Launch_Notice' ) ) {
 					border-color: #bf0069 !important;
 					color: #fff !important;
 					box-shadow: 0 4px 12px rgba(230, 1, 126, 0.45);
+				}
+				#she-pro-launch-notice .she-btn-secondary {
+					transition: background-color 0.2s ease, border-color 0.2s ease;
+				}
+				#she-pro-launch-notice .she-btn-secondary:hover {
+					background: rgba(255, 255, 255, 0.12) !important;
+					border-color: rgba(255, 255, 255, 0.75) !important;
+					color: #fff !important;
 				}
 			</style>
 
@@ -188,6 +197,13 @@ if ( ! class_exists( 'She_Pro_Launch_Notice' ) ) {
 								class="button she-btn-primary"
 								style="margin-right:10px;background:#E6017E;border-color:#E6017E;color:#fff;text-decoration:none;white-space:nowrap;">
 								<?php esc_html_e( 'View Pricing', 'she-header' ); ?> &rarr;
+							</a>
+
+							<a href="<?php echo esc_url( $details_url ); ?>"
+								target="_blank" rel="noopener noreferrer"
+								class="button she-btn-secondary"
+								style="background:transparent;border-color:rgba(255,255,255,0.45);color:#fff;text-decoration:none;white-space:nowrap;">
+								<?php esc_html_e( 'View Details', 'she-header' ); ?>
 							</a>
 
 						</div><?php /* end buttons */ ?>
