@@ -132,12 +132,37 @@
     }
 
     .she_license_expiry {
+        display: inline-flex;
+        align-items: center;
+        align-self: flex-start;
+        gap: 8px;
         font-family: $she_font_family;
         font-size: 13px;
-        line-height: 20px;
-        font-weight: 500;
-        color: $she_gray_secondary_dark;
+        line-height: 1;
+        font-weight: 600;
+        color: #0f7d2e;
         margin: 0;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background-color: #e7f6ec;
+        border: 1px solid rgba(15, 125, 46, 0.22);
+
+        .she_license_expiry_icon {
+            display: inline-flex;
+            flex: 0 0 auto;
+            width: 16px;
+            height: 16px;
+
+            svg {
+                display: block;
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        .she_license_expiry_text {
+            line-height: 1.2;
+        }
     }
 
     .she_license_pro_hint {

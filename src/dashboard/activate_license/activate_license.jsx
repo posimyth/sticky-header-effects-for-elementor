@@ -19,7 +19,6 @@ const ActivateLicense = (props) => {
     var plugin_url = shed_data.shed_url;
     var nonce = shed_data.nonce;
     var ajax_url = shed_data.ajax_url;
-    var pro_installed = shed_data.shed_pro_installed; // 1 = Pro plugin active.
 
     const [licenseKey, setLicenseKey] = useState('');
     const [status, setStatus] = useState(null);      // 'valid' | 'invalid' | null
@@ -28,6 +27,7 @@ const ActivateLicense = (props) => {
     const [activated, setActivated] = useState(false);
     const [expires, setExpires] = useState('');
     const [initialLoading, setInitialLoading] = useState(true); // gate first render until status is fetched
+    const [justActivated, setJustActivated] = useState(false);  // true only right after activating (not on reload)
 
     // Apply a status payload (from the backend) to local UI state.
     const applyStatus = (st) => {
@@ -100,6 +100,7 @@ const ActivateLicense = (props) => {
                 // Keep the sidebar "Activated" label in sync immediately (no refresh).
                 const nowLicensed = type !== 'deactivate_license' && !!(res.data?.status && res.data.status.is_valid);
                 shed_data.shed_pro = nowLicensed ? 1 : 0;
+                setJustActivated(nowLicensed); // show the success line only this once, not on reload
                 window.dispatchEvent(new CustomEvent('she-license-changed', { detail: { licensed: nowLicensed } }));
             } else {
                 setStatus('invalid');
@@ -118,38 +119,11 @@ const ActivateLicense = (props) => {
     };
 
     const storeDashboardUrl = 'https://store.posimyth.com/dashboard/';
-    const pricingUrl = 'https://stickyheadereffects.com/pricing/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=upgrade';
     const steps = [
         { text: __('Visit POSIMYTH Store Dashboard', 'she-header'), link: storeDashboardUrl },
         { text: __('Copy the License Key', 'she-header'), link: '' },
         { text: __('Paste the Key here & Hit Activate', 'she-header'), link: '' },
     ];
-
-    // Pro plugin NOT active → show the "Upgrade Now" screen instead of the
-    // license form (mirrors The Plus Addons free-version tab). The Free vs Pro
-    // comparison table is intentionally skipped for now.
-    if (pro_installed != 1) {
-        return (
-            <div className='she-activate-license-main she-main-container'>
-                <div className='she-section-heading-cover'>
-                    <h3 className='she-section-heading'>{__('Upgrade Now', 'she-header')}</h3>
-                    <a className='she-purple-common-btn' href={pricingUrl} target='_blank' rel='noopener noreferrer'>
-                        {__('Upgrade Now', 'she-header')}
-                    </a>
-                </div>
-
-                <div className='she_license_box_cover_main she_upgrade_box'>
-                    <h3 className='she-in-sec-heading'>{__('Unlock Sticky Header Effects Pro', 'she-header')}</h3>
-                    <p className='she_upgrade_text'>
-                        {__('Upgrade to Pro to unlock 11 powerful features — Display Conditions, Sticky Until, Reveal Animations, Header Replace, Logo Swap, Sticky Menu Styling, and more.', 'she-header')}
-                    </p>
-                    <a className='she-purple-common-btn she_upgrade_btn' href={pricingUrl} target='_blank' rel='noopener noreferrer'>
-                        {__('Upgrade Now', 'she-header')} <span>&rarr;</span>
-                    </a>
-                </div>
-            </div>
-        );
-    }
 
     // Pro is active but the license status hasn't returned yet — show a
     // skeleton instead of briefly flashing the "enter key" form.
@@ -219,7 +193,7 @@ const ActivateLicense = (props) => {
                     )}
                 </div>
 
-                {activated ? (
+                {justActivated ? (
                     <p className='she_license_message is-valid'>
                         <span className='she_license_check' aria-hidden='true'>&#10003;</span>
                         {__('Congratulations! License successfully activated.', 'she-header')}
@@ -229,11 +203,20 @@ const ActivateLicense = (props) => {
                 ) : null}
 
                 {activated && expires && (
-                    <p className='she_license_expiry'>
-                        {expires === 'lifetime'
-                            ? __('Lifetime license — never expires.', 'she-header')
-                            : `${__('Valid until', 'she-header')} ${String(expires).split(' ')[0]}`}
-                    </p>
+                    <div className={`she_license_expiry ${expires === 'lifetime' ? 'is-lifetime' : ''}`}>
+                        <span className='she_license_expiry_icon' aria-hidden='true'>
+                            {expires === 'lifetime' ? (
+                                <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'><circle cx='12' cy='12' r='9' /><path d='m9 12 2 2 4-4' /></svg>
+                            ) : (
+                                <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' /><path d='M16 2v4M8 2v4M3 10h18' /></svg>
+                            )}
+                        </span>
+                        <span className='she_license_expiry_text'>
+                            {expires === 'lifetime'
+                                ? __('Lifetime license — never expires.', 'she-header')
+                                : `${__('Valid until', 'she-header')} ${String(expires).split(' ')[0]}`}
+                        </span>
+                    </div>
                 )}
 
                 {!activated && (
