@@ -3,7 +3,7 @@
  * Pro Launch Admin Notice for Sticky Header Effects for Elementor.
  *
  * Shows a one-time dismissible banner to all admins once SHE Pro is released,
- * with links to the pricing page and the Free vs Pro comparison page.
+ * with a link to the pricing page.
  *
  * @link  https://posimyth.com/
  * @since 2.2.0
@@ -112,10 +112,9 @@ if ( ! class_exists( 'She_Pro_Launch_Notice' ) ) {
 				return;
 			}
 
-			$nonce          = wp_create_nonce( 'she_pro_launch_notice_nonce' );
-			$pricing_url    = 'https://stickyheadereffects.com/pricing/?utm_source=wpbackend&utm_medium=adminbanner&utm_campaign=pro_launch';
-			$comparison_url = 'https://stickyheadereffects.com/free-vs-pro/?utm_source=wpbackend&utm_medium=adminbanner&utm_campaign=pro_launch';
-			$logo_img       = SHE_HEADER_URL . 'assets/images/banner/she-notice-benner.png';
+			$nonce       = wp_create_nonce( 'she_pro_launch_notice_nonce' );
+			$pricing_url = 'https://stickyheadereffects.com/#pricing';
+			$logo_img    = SHE_HEADER_URL . 'assets/images/banner/she-notice-benner.png';
 
 			?>
 			<style>
@@ -135,14 +134,6 @@ if ( ! class_exists( 'She_Pro_Launch_Notice' ) ) {
 					border-color: #bf0069 !important;
 					color: #fff !important;
 					box-shadow: 0 4px 12px rgba(230, 1, 126, 0.45);
-				}
-				#she-pro-launch-notice .she-btn-secondary {
-					transition: background-color 0.2s ease, border-color 0.2s ease;
-				}
-				#she-pro-launch-notice .she-btn-secondary:hover {
-					background: rgba(255, 255, 255, 0.12) !important;
-					border-color: rgba(255, 255, 255, 0.75) !important;
-					color: #fff !important;
 				}
 			</style>
 
@@ -178,7 +169,7 @@ if ( ! class_exists( 'She_Pro_Launch_Notice' ) ) {
 						<?php /* Title + PRO badge row — margin:10px 0 7px matches TPAE h3 spacing */ ?>
 						<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0 7px;">
 							<h3 style="margin:0;color:#ffffff;font-size:1.25em;font-weight:700;line-height:1.3;">
-								<?php esc_html_e( 'Sticky Header Effects Pro is Now Live!', 'she-header' ); ?>
+								<?php esc_html_e( 'Sticky Header Effects Pro Is Now Live - 11 New Effects for Elementor', 'she-header' ); ?>
 							</h3>
 							<span style="background:#E6017E;color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;line-height:1.6;">
 								<?php esc_html_e( 'PRO', 'she-header' ); ?>
@@ -186,7 +177,7 @@ if ( ! class_exists( 'She_Pro_Launch_Notice' ) ) {
 						</div>
 
 						<p style="margin:0;color:rgba(255,255,255,0.72);font-size:13px;line-height:1.5;">
-							<?php esc_html_e( 'Unlock Display Conditions, Reveal Animations, Logo Swap, Header Replace, Multi-Sticky, and more. Build smarter, more dynamic Elementor headers — upgrade to Pro today.', 'she-header' ); ?>
+							<?php esc_html_e( '12 new effects and 50+ ready-made templates. With Sticky Until, Header Replace on Scroll, Multi-Sticky, and more. Same no-code editor.', 'she-header' ); ?>
 						</p>
 
 						<?php /* Buttons — margin-top:10px matches TPAE button row spacing */ ?>
@@ -197,13 +188,6 @@ if ( ! class_exists( 'She_Pro_Launch_Notice' ) ) {
 								class="button she-btn-primary"
 								style="margin-right:10px;background:#E6017E;border-color:#E6017E;color:#fff;text-decoration:none;white-space:nowrap;">
 								<?php esc_html_e( 'View Pricing', 'she-header' ); ?> &rarr;
-							</a>
-
-							<a href="<?php echo esc_url( $comparison_url ); ?>"
-								target="_blank" rel="noopener noreferrer"
-								class="button she-btn-secondary"
-								style="background:transparent;border-color:rgba(255,255,255,0.45);color:#fff;text-decoration:none;white-space:nowrap;">
-								<?php esc_html_e( 'Free vs Pro', 'she-header' ); ?>
 							</a>
 
 						</div><?php /* end buttons */ ?>
