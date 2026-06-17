@@ -112,13 +112,13 @@ const SupportToggle = (props) => {
                             </a>
                         </div>
                         <div className="she-sup-list">
-                            <a href="https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/" target="_blank" className="tpae-sup-link" rel="noopener noreferrer">
+                            <a href="https://go.posimyth.com/she-discord/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader" target="_blank" className="tpae-sup-link" rel="noopener noreferrer">
                                 <span className="she-title-wrap"> {__('Suggest New Features', 'tpebl')} </span>
                                 {animSvg}
                             </a>
                         </div>
                         <div className="she-sup-list">
-                            <a href="https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/" target="_blank" className="tpae-sup-link" rel="noopener noreferrer">
+                            <a href="https://go.posimyth.com/she-discord/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader" target="_blank" className="tpae-sup-link" rel="noopener noreferrer">
                                 <span className="she-title-wrap">  {__('Report Bug', 'tpebl')} </span>
                                 {animSvg}
                             </a>

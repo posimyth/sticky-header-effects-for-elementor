@@ -484,7 +484,7 @@ const DashboardInnerMain = (props) => {
 
                     <div className='she_qik_infocrd_cover'>
                         <h4 className='she_qik_info_crd_title'>{__('Request Feature', 'she-header')}</h4>
-                        <a target='_blank' rel="noopener noreferrer" href='https://wordpress.org/support/plugin/sticky-header-effects-for-elementor/' className='she-ghost-btn'>{__('Suggest Now', 'she-header')}</a>
+                        <a target='_blank' rel="noopener noreferrer" href='https://go.posimyth.com/she-discord/?utm_source=wpbackend&utm_medium=dashboard&utm_campaign=stickyheader' className='she-ghost-btn'>{__('Suggest Now', 'she-header')}</a>
                     </div>
                 </div>
 
